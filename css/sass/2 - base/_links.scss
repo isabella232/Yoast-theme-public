@@ -1,0 +1,19 @@
+.link--cta {
+	color: $color-orange;
+}
+
+.link--light {
+	color: $color-white;
+}
+
+.link--naked {
+	text-decoration: none !important;
+
+	&:hover, &:focus {
+		text-decoration: underline;
+	}
+}
+
+.link--explicit {
+	text-decoration: underline !important;
+}

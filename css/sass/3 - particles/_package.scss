@@ -1,0 +1,92 @@
+.package {
+	position: relative;
+	padding: $spacing-half;
+	text-align: center;
+	font-family: $font-stack-article;
+	margin-bottom: $spacing;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	&__title {
+		font-family: $font-stack-default;
+		color: $scheme-review-primary;
+		margin-bottom: $spacing / 1.5;
+		padding-left: $spacing;
+		padding-right: $spacing;
+	}
+
+	&__content {
+		min-height: 8em;
+	}
+
+	&__notice {
+		font-style: italic;
+	}
+
+	&__ribbon {
+		position: absolute;
+		right: -8px;
+		top: -8px;
+		width: 80px;
+		height: auto;
+	}
+
+	.button {
+		margin-top: $spacing-half;
+		background-color: $scheme-review-secondary;
+		color: $color-white;
+		border: none;
+		width: 100%;
+	}
+
+
+
+	@media only screen and (min-width: $page-width-medium) {
+		border-bottom: 0;
+	}
+
+	.arrow {
+		display: none;
+
+		@media only screen and (min-width: $page-width-medium) {
+			display: block;
+			position: absolute;
+			bottom: -1.4em;
+			left: 0;
+			width: 100%;
+			height: 2em;
+		}
+	}
+
+	.edd_download_quantity_wrapper {
+		display: none;
+	}
+
+	// Because this is an input the browser puts the line-height to "normal", rectify this.
+	input[type="submit"] {
+		line-height: $line-height-default;
+		display: block !important;
+		margin-bottom: 0;
+	}
+
+	.edd_go_to_checkout {
+		display: none;
+	}
+
+
+}
+
+	.package--cta {
+		border-color: $color-orange;
+
+		.package__title {
+			color: $color-orange;
+		}
+
+		.button {
+			background-color: $color-orange;
+		}
+
+	}

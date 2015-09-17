@@ -1,0 +1,25 @@
+.text-icon {
+	// http://fortawesome.github.io/Font-Awesome/cheatsheet/
+	font-family: $font-stack-icon;
+	//font-size: .9em;
+
+	&--social {
+		font-size: 1.8em;
+  		vertical-align: middle;
+  		margin: 0 0.1rem;
+ 		line-height: 1em;
+	}
+
+	&--twitter {
+		color: #55acee;
+		&:hover, &:focus {
+			color: desaturate(lighten(#55acee, 8), 12);
+		}
+	}
+	&--linkedin {
+		color: #008cc9;
+		&:hover, &:focus {
+			color: desaturate(lighten(#008cc9, 20), 30);
+		}
+	}
+}
