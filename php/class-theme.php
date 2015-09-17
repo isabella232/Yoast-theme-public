@@ -118,7 +118,7 @@ class Theme {
 		// Remove the cross selling CSS because we overwrite it completely.
 		wp_deregister_style( 'edd-csau-css' );
 
-		if ( is_single() && ! Hide_Comments::hide_comments() && comments_open() ) {
+		if ( is_singular( 'post' ) && ! Hide_Comments::hide_comments() && comments_open() ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 	}
