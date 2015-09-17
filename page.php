@@ -1,7 +1,4 @@
 <?php
-/**
- * Template Name: Content page
- */
 
 namespace Yoast\YoastCom\Theme;
 ?>
