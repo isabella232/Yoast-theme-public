@@ -13,15 +13,18 @@ namespace Yoast\YoastCom\Theme;
 
 	<main role="main">
 
-		<article class="row">
-			<h1><?php the_title(); ?></h1>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<article class="row">
+				<h1><?php the_title(); ?></h1>
 
-			<div class="content">
-				<?php the_content(); ?>
+				<div class="content">
 
-				<?php get_template_part( 'html_includes/partials/social-share' ); ?>
-			</div>
-		</article>
+					<?php the_content(); ?>
+
+					<?php get_template_part( 'html_includes/partials/social-share' ); ?>
+				</div>
+			</article>
+		<?php endwhile; ?>
 
 		<section class="row iceberg">
 			<h2>Recent posts</h2>
