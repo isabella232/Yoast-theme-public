@@ -100,7 +100,7 @@ class Color_Scheme {
 	 * @return bool
 	 */
 	private function is_home_color_scheme() {
-		return is_front_page() || ( function_exists( 'edd_is_checkout' )  && edd_is_checkout() );
+		return is_page_template( 'page-template-front-page.php' ) || ( function_exists( 'edd_is_checkout' )  && edd_is_checkout() );
 	}
 
 	/**
