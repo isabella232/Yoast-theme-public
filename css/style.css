@@ -3347,6 +3347,11 @@ svg .llms-animated-circle {
   top: 25%;
   width: 91%; }
 
+.lifterlms .course-link {
+  text-align: right; }
+.lifterlms .llms-my-achievements {
+  display: none; }
+
 .content .llms-lesson-button-wrapper,
 .content .llms-course-navigation,
 .content .llms-parent-course-link,

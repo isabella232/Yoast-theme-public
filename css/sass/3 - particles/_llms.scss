@@ -86,6 +86,16 @@ svg .llms-animated-circle {
 	width: 91%;
 }
 
+.lifterlms {
+	.course-link {
+		text-align: right;
+	}
+
+	.llms-my-achievements {
+		display: none;
+	}
+}
+
 // Hide certain things if they are in the content.
 .content {
 	.llms-lesson-button-wrapper,
