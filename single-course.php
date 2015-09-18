@@ -21,6 +21,11 @@ namespace Yoast\YoastCom\Theme;
 				<div class="content">
 					<?php the_content(); ?>
 				</div>
+
+				<div class="extra">
+					<?php _e( 'Course Progress', 'yoastcom' ); ?>
+					<?php echo do_shortcode( '[lifterlms_course_progress]' ); ?>
+				</div>
 			</article>
 		<?php endwhile; ?>
 	</main>
