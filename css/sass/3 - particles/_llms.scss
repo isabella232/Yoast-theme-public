@@ -35,12 +35,65 @@
 	}
 }
 
+svg .llms-animated-circle {
+	stroke: $color-green;
+}
+
+.view-summary {
+	cursor: pointer;
+}
+
+.quiz-summary {
+	.panel {
+		cursor: pointer;
+	}
+}
+
+.llms-return {
+	a {
+		@extend .button, .dimmed;
+	}
+}
+
+#quiz-start-button {
+	text-align: left;
+}
+
+.llms-quiz-results {
+	h3 {
+		@extend .h2;
+		background: none;
+	}
+}
+
+.llms-quiz-result-details {
+	ul:last-child {
+		display: none;
+	}
+
+	h4,
+	h5,
+	h6,
+	a {
+		font-size: 1rem;
+		font-family: $font-stack-article;
+		color: $color-black;
+	}
+}
+
+.llms-progress-circle-count {
+	top: 25%;
+	width: 91%;
+}
+
 // Hide certain things if they are in the content.
 .content {
 	.llms-lesson-button-wrapper,
 	.llms-course-navigation,
 	.llms-parent-course-link,
-	.llms-purchase-link-wrapper {
+	.llms-purchase-link-wrapper,
+	.llms-return {
 		display: none;
 	}
 }
+
