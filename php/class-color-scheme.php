@@ -112,6 +112,9 @@ class Color_Scheme {
 		return (
 			is_singular( 'post' )
 			|| is_singular( 'yoast_ebooks' )
+			|| is_singular( 'course' )
+			|| is_singular( 'lesson' )
+			|| is_singular( 'quiz' )
 			|| is_home()
 			|| ( is_archive() && ! is_post_type_archive( array( 'yoast_plugins', 'yoast_dev_article' ) ) )
 			|| self::ACADEMY === $this->get_color_scheme_setting()
