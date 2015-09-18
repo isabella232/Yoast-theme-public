@@ -1,0 +1,46 @@
+.llms-lesson-button-wrapper {
+	@extend .island;
+
+	input[type="submit"] {
+		width: 100%;
+	}
+}
+
+.llms-button {
+	@extend .button, .default;
+	border-radius: 0;
+
+	&:hover {
+		background: $color-orange;
+	}
+}
+
+.llms-purchase-link-wrapper {
+	text-align: left;
+}
+
+.llms-course-navigation {
+	.llms-lesson-link {
+		border: 1px solid $scheme-academy-primary;
+		background: $color-white;
+		box-shadow: none;
+
+		&:hover {
+			background: $color-white;
+
+			.llms-span {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// Hide certain things if they are in the content.
+.content {
+	.llms-lesson-button-wrapper,
+	.llms-course-navigation,
+	.llms-parent-course-link,
+	.llms-purchase-link-wrapper {
+		display: none;
+	}
+}

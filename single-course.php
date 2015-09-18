@@ -24,7 +24,7 @@ namespace Yoast\YoastCom\Theme;
 
 				<div class="extra">
 					<?php _e( 'Course Progress', 'yoastcom' ); ?>
-					<?php echo do_shortcode( '[lifterlms_course_progress]' ); ?>
+					<?php llms_get_template( 'course/purchase-link.php' ); ?>
 				</div>
 			</article>
 		<?php endwhile; ?>

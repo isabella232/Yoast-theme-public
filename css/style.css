@@ -1109,9 +1109,9 @@ thead th {
       text-decoration: none; }
 .theme-home .arrowed, .theme-home .arrowed-medium, .theme-home .arrowed-small {
   border-color: #D93F69; }
-.theme-home .button, .theme-home .comment-respond input[type="submit"], .comment-respond .theme-home input[type="submit"], .theme-home button {
+.theme-home .button, .theme-home .comment-respond input[type="submit"], .comment-respond .theme-home input[type="submit"], .theme-home .llms-button, .theme-home button {
   text-decoration: none; }
-  .theme-home .button:hover, .theme-home .comment-respond input[type="submit"]:hover, .comment-respond .theme-home input[type="submit"]:hover, .theme-home .button:focus, .theme-home .comment-respond input[type="submit"]:focus, .comment-respond .theme-home input[type="submit"]:focus, .theme-home button:hover, .theme-home button:focus {
+  .theme-home .button:hover, .theme-home .comment-respond input[type="submit"]:hover, .comment-respond .theme-home input[type="submit"]:hover, .theme-home .llms-button:hover, .theme-home .button:focus, .theme-home .comment-respond input[type="submit"]:focus, .comment-respond .theme-home input[type="submit"]:focus, .theme-home .llms-button:focus, .theme-home button:hover, .theme-home button:focus {
     color: #FFF;
     text-decoration: underline; }
 .theme-home .fill {
@@ -1209,9 +1209,9 @@ thead th {
       text-decoration: none; }
 .theme-about .arrowed, .theme-about .arrowed-medium, .theme-about .arrowed-small {
   border-color: #D93F69; }
-.theme-about .button, .theme-about .comment-respond input[type="submit"], .comment-respond .theme-about input[type="submit"], .theme-about button {
+.theme-about .button, .theme-about .comment-respond input[type="submit"], .comment-respond .theme-about input[type="submit"], .theme-about .llms-button, .theme-about button {
   text-decoration: none; }
-  .theme-about .button:hover, .theme-about .comment-respond input[type="submit"]:hover, .comment-respond .theme-about input[type="submit"]:hover, .theme-about .button:focus, .theme-about .comment-respond input[type="submit"]:focus, .comment-respond .theme-about input[type="submit"]:focus, .theme-about button:hover, .theme-about button:focus {
+  .theme-about .button:hover, .theme-about .comment-respond input[type="submit"]:hover, .comment-respond .theme-about input[type="submit"]:hover, .theme-about .llms-button:hover, .theme-about .button:focus, .theme-about .comment-respond input[type="submit"]:focus, .comment-respond .theme-about input[type="submit"]:focus, .theme-about .llms-button:focus, .theme-about button:hover, .theme-about button:focus {
     color: #FFF;
     text-decoration: underline; }
 .theme-about .fill {
@@ -1309,9 +1309,9 @@ thead th {
       text-decoration: none; }
 .theme-academy .arrowed, .theme-academy .arrowed-medium, .theme-academy .arrowed-small {
   border-color: #5D237A; }
-.theme-academy .button, .theme-academy .comment-respond input[type="submit"], .comment-respond .theme-academy input[type="submit"], .theme-academy button {
+.theme-academy .button, .theme-academy .comment-respond input[type="submit"], .comment-respond .theme-academy input[type="submit"], .theme-academy .llms-button, .theme-academy button {
   text-decoration: none; }
-  .theme-academy .button:hover, .theme-academy .comment-respond input[type="submit"]:hover, .comment-respond .theme-academy input[type="submit"]:hover, .theme-academy .button:focus, .theme-academy .comment-respond input[type="submit"]:focus, .comment-respond .theme-academy input[type="submit"]:focus, .theme-academy button:hover, .theme-academy button:focus {
+  .theme-academy .button:hover, .theme-academy .comment-respond input[type="submit"]:hover, .comment-respond .theme-academy input[type="submit"]:hover, .theme-academy .llms-button:hover, .theme-academy .button:focus, .theme-academy .comment-respond input[type="submit"]:focus, .comment-respond .theme-academy input[type="submit"]:focus, .theme-academy .llms-button:focus, .theme-academy button:hover, .theme-academy button:focus {
     color: #FFF;
     text-decoration: underline; }
 .theme-academy .fill {
@@ -1409,9 +1409,9 @@ thead th {
       text-decoration: none; }
 .theme-review .arrowed, .theme-review .arrowed-medium, .theme-review .arrowed-small {
   border-color: #009288; }
-.theme-review .button, .theme-review .comment-respond input[type="submit"], .comment-respond .theme-review input[type="submit"], .theme-review button {
+.theme-review .button, .theme-review .comment-respond input[type="submit"], .comment-respond .theme-review input[type="submit"], .theme-review .llms-button, .theme-review button {
   text-decoration: none; }
-  .theme-review .button:hover, .theme-review .comment-respond input[type="submit"]:hover, .comment-respond .theme-review input[type="submit"]:hover, .theme-review .button:focus, .theme-review .comment-respond input[type="submit"]:focus, .comment-respond .theme-review input[type="submit"]:focus, .theme-review button:hover, .theme-review button:focus {
+  .theme-review .button:hover, .theme-review .comment-respond input[type="submit"]:hover, .comment-respond .theme-review input[type="submit"]:hover, .theme-review .llms-button:hover, .theme-review .button:focus, .theme-review .comment-respond input[type="submit"]:focus, .comment-respond .theme-review input[type="submit"]:focus, .theme-review .llms-button:focus, .theme-review button:hover, .theme-review button:focus {
     color: #FFF;
     text-decoration: underline; }
 .theme-review .fill {
@@ -1509,9 +1509,9 @@ thead th {
       text-decoration: none; }
 .theme-software .arrowed, .theme-software .arrowed-medium, .theme-software .arrowed-small {
   border-color: #0075B3; }
-.theme-software .button, .theme-software .comment-respond input[type="submit"], .comment-respond .theme-software input[type="submit"], .theme-software button {
+.theme-software .button, .theme-software .comment-respond input[type="submit"], .comment-respond .theme-software input[type="submit"], .theme-software .llms-button, .theme-software button {
   text-decoration: none; }
-  .theme-software .button:hover, .theme-software .comment-respond input[type="submit"]:hover, .comment-respond .theme-software input[type="submit"]:hover, .theme-software .button:focus, .theme-software .comment-respond input[type="submit"]:focus, .comment-respond .theme-software input[type="submit"]:focus, .theme-software button:hover, .theme-software button:focus {
+  .theme-software .button:hover, .theme-software .comment-respond input[type="submit"]:hover, .comment-respond .theme-software input[type="submit"]:hover, .theme-software .llms-button:hover, .theme-software .button:focus, .theme-software .comment-respond input[type="submit"]:focus, .comment-respond .theme-software input[type="submit"]:focus, .theme-software .llms-button:focus, .theme-software button:hover, .theme-software button:focus {
     color: #FFF;
     text-decoration: underline; }
 .theme-software .fill {
@@ -1926,7 +1926,7 @@ a.announcement {
   .theme-about .breadcrumb, .theme-about .breadcrumb a, .theme-about .breadcrumb .sep {
     color: #D93F69; }
 
-.button, .comment-respond input[type="submit"], button {
+.button, .comment-respond input[type="submit"], .llms-button, button {
   font-family: "Open Sans", Arial, sans-serif;
   position: relative;
   display: inline-block;
@@ -1941,11 +1941,11 @@ a.announcement {
   text-decoration: none;
   cursor: pointer; }
   @media only screen and (min-width: 30rem) {
-    .button, .comment-respond input[type="submit"], button {
+    .button, .comment-respond input[type="submit"], .llms-button, button {
       margin-right: 1.36rem;
       width: auto;
       max-height: 2.86rem; }
-      .button::after, .comment-respond input[type="submit"]::after, button::after {
+      .button::after, .comment-respond input[type="submit"]::after, .llms-button::after, button::after {
         content: '';
         position: absolute;
         top: 0;
@@ -1956,53 +1956,53 @@ a.announcement {
         border-left: 1.43rem solid #EE7100;
         border-top: 1.43rem solid transparent;
         border-bottom: 1.44rem solid transparent; } }
-  .button .arrow, .comment-respond input[type="submit"] .arrow, button .arrow {
+  .button .arrow, .comment-respond input[type="submit"] .arrow, .llms-button .arrow, button .arrow {
     display: none; }
-  .button + .button, .comment-respond input[type="submit"] + .button, .comment-respond .button + input[type="submit"], .comment-respond input[type="submit"] + input[type="submit"], button + .button, .comment-respond button + input[type="submit"], .button + button, .comment-respond input[type="submit"] + button, button + button {
+  .button + .button, .comment-respond input[type="submit"] + .button, .llms-button + .button, .comment-respond .button + input[type="submit"], .comment-respond input[type="submit"] + input[type="submit"], .comment-respond .llms-button + input[type="submit"], .button + .llms-button, .comment-respond input[type="submit"] + .llms-button, .llms-button + .llms-button, button + .button, .comment-respond button + input[type="submit"], button + .llms-button, .button + button, .comment-respond input[type="submit"] + button, .llms-button + button, button + button {
     margin-top: 1em;
     margin-left: 1.88rem; }
   .button--full, button--full {
     width: 100%; }
     .button--full::after, button--full::after {
       content: none; }
-  .button.default, .comment-respond input.default[type="submit"], button.default {
+  .button.default, .comment-respond input.default[type="submit"], .comment-respond input[type="submit"].llms-button, .llms-button, button.default, button.llms-button {
     color: #FFF;
     background-color: #EE7100; }
-    .button.default::after, .comment-respond input.default[type="submit"]::after, button.default::after {
+    .button.default::after, .comment-respond input.default[type="submit"]::after, .comment-respond input[type="submit"].llms-button::after, .llms-button::after, button.default::after, button.llms-button::after {
       border-left-color: #EE7100; }
-    .button.default:hover, .comment-respond input.default[type="submit"]:hover, .button.default a:focus, .comment-respond input.default[type="submit"] a:focus, button.default:hover, button.default a:focus {
+    .button.default:hover, .comment-respond input.default[type="submit"]:hover, .comment-respond input[type="submit"].llms-button:hover, .llms-button:hover, .button.default a:focus, .comment-respond input.default[type="submit"] a:focus, .comment-respond input[type="submit"].llms-button a:focus, .llms-button a:focus, button.default:hover, button.llms-button:hover, button.default a:focus, button.llms-button a:focus {
       color: #FFF;
       text-decoration: underline; }
-  .button.academy, .comment-respond input.academy[type="submit"], button.academy {
+  .button.academy, .comment-respond input.academy[type="submit"], .academy.llms-button, button.academy {
     color: #FFF; }
-    .button.academy::after, .comment-respond input.academy[type="submit"]::after, button.academy::after {
+    .button.academy::after, .comment-respond input.academy[type="submit"]::after, .academy.llms-button::after, button.academy::after {
       border-left-color: #5D237A; }
-  .button.software, .comment-respond input.software[type="submit"], button.software {
+  .button.software, .comment-respond input.software[type="submit"], .software.llms-button, button.software {
     color: #FFF;
     background-color: #0075B3; }
-    .button.software::after, .comment-respond input.software[type="submit"]::after, button.software::after {
+    .button.software::after, .comment-respond input.software[type="submit"]::after, .software.llms-button::after, button.software::after {
       border-left-color: #0075B3; }
-  .button.review, .comment-respond input.review[type="submit"], button.review {
+  .button.review, .comment-respond input.review[type="submit"], .review.llms-button, button.review {
     color: #FFF;
     background-color: #009288; }
-    .button.review::after, .comment-respond input.review[type="submit"]::after, button.review::after {
+    .button.review::after, .comment-respond input.review[type="submit"]::after, .review.llms-button::after, button.review::after {
       border-left-color: #009288; }
-  .button.about, .comment-respond input.about[type="submit"], button.about {
+  .button.about, .comment-respond input.about[type="submit"], .about.llms-button, button.about {
     color: #FFF;
     background-color: #D93F69; }
-    .button.about::after, .comment-respond input.about[type="submit"]::after, button.about::after {
+    .button.about::after, .comment-respond input.about[type="submit"]::after, .about.llms-button::after, button.about::after {
       border-left-color: #D93F69; }
-  .button.dimmed, .comment-respond input.dimmed[type="submit"], button.dimmed {
+  .button.dimmed, .comment-respond input.dimmed[type="submit"], .dimmed.llms-button, button.dimmed {
     color: #646464;
     background-color: #DCDCDC;
     text-shadow: none; }
-    .button.dimmed::after, .comment-respond input.dimmed[type="submit"]::after, button.dimmed::after {
+    .button.dimmed::after, .comment-respond input.dimmed[type="submit"]::after, .dimmed.llms-button::after, button.dimmed::after {
       border-left-color: #DCDCDC; }
-    .button.dimmed:hover, .comment-respond input.dimmed[type="submit"]:hover, .button.dimmed a:focus, .comment-respond input.dimmed[type="submit"] a:focus, button.dimmed:hover, button.dimmed a:focus {
+    .button.dimmed:hover, .comment-respond input.dimmed[type="submit"]:hover, .dimmed.llms-button:hover, .button.dimmed a:focus, .comment-respond input.dimmed[type="submit"] a:focus, .dimmed.llms-button a:focus, button.dimmed:hover, button.dimmed a:focus {
       background-color: #CDCDCD;
       color: #646464;
       text-decoration: none; }
-      .button.dimmed:hover::after, .comment-respond input.dimmed[type="submit"]:hover::after, .button.dimmed a:focus::after, .comment-respond input.dimmed[type="submit"] a:focus::after, button.dimmed:hover::after, button.dimmed a:focus::after {
+      .button.dimmed:hover::after, .comment-respond input.dimmed[type="submit"]:hover::after, .dimmed.llms-button:hover::after, .button.dimmed a:focus::after, .comment-respond input.dimmed[type="submit"] a:focus::after, .dimmed.llms-button a:focus::after, button.dimmed:hover::after, button.dimmed a:focus::after {
         border-left-color: #CDCDCD; }
   .button--naked, button--naked {
     border: none;
@@ -2048,16 +2048,16 @@ a.announcement {
 #edd_sl_renewal_form {
   display: none; }
 
-#edd_sl_cancel_renewal_form .button, #edd_sl_cancel_renewal_form .comment-respond input[type="submit"], .comment-respond #edd_sl_cancel_renewal_form input[type="submit"] {
+#edd_sl_cancel_renewal_form .button, #edd_sl_cancel_renewal_form .comment-respond input[type="submit"], .comment-respond #edd_sl_cancel_renewal_form input[type="submit"], #edd_sl_cancel_renewal_form .llms-button {
   color: #FFF; }
-#edd_sl_cancel_renewal_form .button, #edd_sl_cancel_renewal_form .comment-respond input[type="submit"], .comment-respond #edd_sl_cancel_renewal_form input[type="submit"], #edd_sl_cancel_renewal_form p {
+#edd_sl_cancel_renewal_form .button, #edd_sl_cancel_renewal_form .comment-respond input[type="submit"], .comment-respond #edd_sl_cancel_renewal_form input[type="submit"], #edd_sl_cancel_renewal_form .llms-button, #edd_sl_cancel_renewal_form p {
   margin: 0; }
 
 #edd_discount_code p {
   margin: 0; }
 #edd_discount_code input {
   width: 10em; }
-#edd_discount_code .button, #edd_discount_code .comment-respond input[type="submit"], .comment-respond #edd_discount_code input[type="submit"] {
+#edd_discount_code .button, #edd_discount_code .comment-respond input[type="submit"], .comment-respond #edd_discount_code input[type="submit"], #edd_discount_code .llms-button {
   color: #FFF; }
 
 .edd_empty_cart {
@@ -3195,8 +3195,34 @@ hr {
     .text-icon--linkedin:hover, .text-icon--linkedin:focus {
       color: #4fb4e0; }
 
-.island, .comment-respond {
+.island, .comment-respond, .llms-lesson-button-wrapper {
   padding-top: 1.88rem; }
+
+.llms-lesson-button-wrapper input[type="submit"] {
+  width: 100%; }
+
+.llms-button {
+  border-radius: 0; }
+  .llms-button:hover {
+    background: #EE7100; }
+
+.llms-purchase-link-wrapper {
+  text-align: left; }
+
+.llms-course-navigation .llms-lesson-link {
+  border: 1px solid #5D237A;
+  background: #FFF;
+  box-shadow: none; }
+  .llms-course-navigation .llms-lesson-link:hover {
+    background: #FFF; }
+    .llms-course-navigation .llms-lesson-link:hover .llms-span {
+      text-decoration: none; }
+
+.content .llms-lesson-button-wrapper,
+.content .llms-course-navigation,
+.content .llms-parent-course-link,
+.content .llms-purchase-link-wrapper {
+  display: none; }
 
 /* Main navigation */
 .sitenav {
@@ -3990,7 +4016,7 @@ hr {
     top: -8px;
     width: 80px;
     height: auto; }
-  .package .button, .package .comment-respond input[type="submit"], .comment-respond .package input[type="submit"] {
+  .package .button, .package .comment-respond input[type="submit"], .comment-respond .package input[type="submit"], .package .llms-button {
     margin-top: 0.94rem;
     background-color: #77B227;
     color: #FFF;
@@ -4022,7 +4048,7 @@ hr {
   border-color: #EE7100; }
   .package--cta .package__title {
     color: #EE7100; }
-  .package--cta .button, .package--cta .comment-respond input[type="submit"], .comment-respond .package--cta input[type="submit"] {
+  .package--cta .button, .package--cta .comment-respond input[type="submit"], .comment-respond .package--cta input[type="submit"], .package--cta .llms-button {
     background-color: #EE7100; }
 
 .pagination {
