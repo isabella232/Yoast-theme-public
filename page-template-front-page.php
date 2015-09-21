@@ -4,6 +4,7 @@
  */
 
 namespace Yoast\YoastCom\Theme;
+
 ?>
 <?php get_header(); ?>
 
