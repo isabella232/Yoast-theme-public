@@ -133,6 +133,12 @@ svg .llms-animated-circle {
 	}
 }
 
+.llms-syllabus-wrapper {
+	.llms-lesson-counter {
+		display: none;
+	}
+}
+
 // Hide certain things if they are in the content.
 .content {
 	.llms-lesson-button-wrapper,

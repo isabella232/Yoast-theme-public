@@ -3330,6 +3330,8 @@ svg .llms-animated-circle {
   display: block; }
 .quiz-summary .panel-body li {
   margin-top: 1.88rem; }
+  .quiz-summary .panel-body li:first-child {
+    margin-top: 0; }
 
 #quiz-start-button {
   text-align: left; }
@@ -3367,6 +3369,9 @@ svg .llms-animated-circle {
   text-indent: -23px; }
   .llms-question-wrapper .llms-question-label input[type="radio"] {
     margin: 0 5px 0 0; }
+
+.llms-syllabus-wrapper .llms-lesson-counter {
+  display: none; }
 
 .content .llms-lesson-button-wrapper,
 .content .llms-course-navigation,
