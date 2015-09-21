@@ -47,6 +47,20 @@ svg .llms-animated-circle {
 	.panel {
 		cursor: pointer;
 	}
+
+	.panel-body {
+		img {
+			display: block;
+		}
+
+		li {
+			margin-top: $spacing;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
 }
 
 .llms-return {
@@ -67,8 +81,12 @@ svg .llms-animated-circle {
 }
 
 .llms-quiz-result-details {
-	ul:last-child {
+	// Only display the first item.
+	ul {
 		display: none;
+		&:first-child {
+			display: block;
+		}
 	}
 
 	h4,
@@ -93,6 +111,25 @@ svg .llms-animated-circle {
 
 	.llms-my-achievements {
 		display: none;
+	}
+}
+
+.llms-question-wrapper {
+	.llms-option_ {
+		margin: 0.6rem 0 0 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.llms-question-label {
+		padding-left: 30px;
+		text-indent: -23px;
+
+		input[type="radio"] {
+			margin: 0 5px 0 0;
+		}
 	}
 }
 

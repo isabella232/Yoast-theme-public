@@ -94,6 +94,9 @@ class Theme {
 			'jquery-validate',
 			'jquery-payment'
 		), self::VERSION, true );
+		wp_register_script( 'yoast-com-academy', $dir . '/js/academy.min.js', array(
+			'jquery',
+		) );
 	}
 
 	/**
@@ -120,6 +123,10 @@ class Theme {
 
 		if ( is_singular( 'post' ) && ! Hide_Comments::hide_comments() && comments_open() ) {
 			wp_enqueue_script( 'comment-reply' );
+		}
+
+		if ( is_singular( array( 'course', 'lesson', 'llms_quiz' ) ) ){
+			wp_enqueue_script( 'yoast-com-academy' );
 		}
 	}
 

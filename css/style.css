@@ -3326,6 +3326,10 @@ svg .llms-animated-circle {
 
 .quiz-summary .panel {
   cursor: pointer; }
+.quiz-summary .panel-body img {
+  display: block; }
+.quiz-summary .panel-body li {
+  margin-top: 1.88rem; }
 
 #quiz-start-button {
   text-align: left; }
@@ -3333,8 +3337,10 @@ svg .llms-animated-circle {
 .llms-quiz-results h3 {
   background: none; }
 
-.llms-quiz-result-details ul:last-child {
+.llms-quiz-result-details ul {
   display: none; }
+  .llms-quiz-result-details ul:first-child {
+    display: block; }
 .llms-quiz-result-details h4,
 .llms-quiz-result-details h5,
 .llms-quiz-result-details h6,
@@ -3351,6 +3357,16 @@ svg .llms-animated-circle {
   text-align: right; }
 .lifterlms .llms-my-achievements {
   display: none; }
+
+.llms-question-wrapper .llms-option_ {
+  margin: 0.6rem 0 0 0; }
+  .llms-question-wrapper .llms-option_:first-child {
+    margin-top: 0; }
+.llms-question-wrapper .llms-question-label {
+  padding-left: 30px;
+  text-indent: -23px; }
+  .llms-question-wrapper .llms-question-label input[type="radio"] {
+    margin: 0 5px 0 0; }
 
 .content .llms-lesson-button-wrapper,
 .content .llms-course-navigation,
