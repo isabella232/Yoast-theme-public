@@ -3288,6 +3288,10 @@ hr {
     color: #008cc9; }
     .text-icon--linkedin:hover, .text-icon--linkedin:focus {
       color: #4fb4e0; }
+  .text-icon--facebook {
+    color: #3B5998; }
+    .text-icon--facebook:hover, .text-icon--facebook:focus {
+      color: #8f98aa; }
 
 .island, .comment-respond, .llms-lesson-button-wrapper {
   padding-top: 1.88rem; }
@@ -3762,6 +3766,10 @@ svg .llms-animated-circle {
     margin-right: 15px; }
   .media .img--large {
     margin-right: 3.76rem; }
+  .media .vid {
+    float: left;
+    margin-right: 30px;
+    width: 300px; }
   @media only screen and (max-width: 50rem) {
     .media--nofloat img {
       min-width: 20%;
@@ -3771,7 +3779,11 @@ svg .llms-animated-circle {
       display: inline-block;
       margin-left: 0; }
     .media--nofloat .img--large {
-      margin-right: 0; } }
+      margin-right: 0; }
+    .media--nofloat .vid {
+      float: none;
+      width: 100%;
+      margin-bottom: 1.88rem; } }
 
 .media, .media-right, .bd {
   overflow: hidden;

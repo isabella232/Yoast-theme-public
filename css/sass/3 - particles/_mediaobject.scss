@@ -19,6 +19,12 @@
 		margin-right: $spacing-double;
 	}
 
+	.vid {
+		float: left;
+		margin-right: 30px;
+		width: 300px;
+	}
+
 	// no float on responsive
 	@media only screen and (max-width: $page-width-medium) {
 		&--nofloat {
@@ -33,6 +39,11 @@
 			}
 			.img--large {
 				margin-right: 0;
+			}
+			.vid {
+				float: none;
+				width: 100%;
+				margin-bottom: $spacing;
 			}
 		}
 	}

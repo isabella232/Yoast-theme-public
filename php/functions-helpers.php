@@ -425,3 +425,14 @@ function get_twitter_share_related() {
 
 	return $related;
 }
+
+/**
+ * Returns whether or not the current post is the last post in the loop
+ *
+ * @return bool
+ */
+function is_last_post() {
+	global $wp_query;
+
+	return $wp_query->current_post === ( $wp_query->post_count - 1 );
+}
