@@ -1,6 +1,5 @@
 @charset "UTF-8";
-/*------------------------------------*\
-    STYLE.SCSS
+/*------------------------------------*    STYLE.SCSS
 \*------------------------------------*/
 /**
  * Here we start to pull everything together into one big stylesheet.
@@ -11,14 +10,12 @@
  * PARTICLES........Components and modules.
  * TRUMPS...........Helpers, overrides, ‘trump-cards’.
  */
-/*------------------------------------*\
-    #SETUP
+/*------------------------------------*    #SETUP
 \*------------------------------------*/
 /**
  * Settings, variables and tools.
  */
-/*------------------------------------*\
-    #SETTINGS
+/*------------------------------------*    #SETTINGS
 \*------------------------------------*/
 /**
  * Pull in all the settings we require for this project.
@@ -29,15 +26,13 @@
    `@include vendor(border-radius, 4px);`
  * 
  */
-/*------------------------------------*\
-    #GENERIC
+/*------------------------------------*    #GENERIC
 \*------------------------------------*/
 /**
  * These are far reaching styles that affect and underpin every element on the
  * page, e.g. `* {}`.
  */
-/*------------------------------------*\
-    #GENERIC
+/*------------------------------------*    #GENERIC
 \*------------------------------------*/
 /**
  * Pull in all our generic styles, e.g. resets.
@@ -288,8 +283,7 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"],
-input[type="reset"],
+html input[type="button"], input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -404,15 +398,13 @@ td,
 th {
   padding: 0; }
 
-/*------------------------------------*\
-    #BASE
+/*------------------------------------*    #BASE
 \*------------------------------------*/
 /**
  * These are base HTML elements, things with no classes on them, e.g. `h1 {}`,
  * `blockquote {}`.
  */
-/*------------------------------------*\
-    #BASE
+/*------------------------------------*    #BASE
 \*------------------------------------*/
 /**
  * Pull in all the base files we want.
@@ -537,13 +529,7 @@ a img.aligncenter {
     #edd_check_payment_info,
     #edd_terms_agreement, .comment-respond {
       padding: 0 1rem; } }
-  .announcement + .row, .announcement + #edd_sl_cancel_renewal_form, .announcement + #edd_discount_code, .announcement + .edd_empty_cart, .announcement + #edd_checkout_user_info,
-  .announcement + #edd_cc_fields,
-  .announcement + #edd_cc_address,
-  .announcement + #edd_purchase_submit,
-  .announcement + #edd-stripe-payment-errors,
-  .announcement + #edd_check_payment_info,
-  .announcement + #edd_terms_agreement, .announcement + .comment-respond {
+  .announcement + .row, .announcement + #edd_sl_cancel_renewal_form, .announcement + #edd_discount_code, .announcement + .edd_empty_cart, .announcement + #edd_checkout_user_info, .announcement + #edd_cc_fields, .announcement + #edd_cc_address, .announcement + #edd_purchase_submit, .announcement + #edd-stripe-payment-errors, .announcement + #edd_check_payment_info, .announcement + #edd_terms_agreement, .announcement + .comment-respond {
     padding-top: 1.88rem; }
 
 .full {
@@ -558,11 +544,11 @@ a img.aligncenter {
     margin-right: 68px;
     display: inline-block;
     vertical-align: top; }
-
   .extra {
     width: 292px;
     display: inline-block;
     vertical-align: top; } }
+
 .content--tags {
   margin-bottom: 1.88rem; }
 
@@ -615,7 +601,7 @@ a img.aligncenter {
   max-width: 45.91837%; }
 
 .offset-one-half {
-  margin-left: 50.0%; }
+  margin-left: 50%; }
 
 .one-third {
   -webkit-flex-basis: 29.79592%;
@@ -703,7 +689,7 @@ a img.aligncenter {
   margin-left: 40%; }
 
 .offset-three-fifth {
-  margin-left: 60.0%; }
+  margin-left: 60%; }
 
 .one-seventh {
   -webkit-flex-basis: 11.83673%;
@@ -768,6 +754,7 @@ a img.aligncenter {
       -ms-flex-basis: 100%;
       -o-flex-basis: 100%;
       flex-basis: 100%; } }
+
 .grid:last-child {
   margin-right: 0; }
 
@@ -779,6 +766,7 @@ a img.aligncenter {
     -o-flex-basis: 29.79592%;
     flex-basis: 29.79592%;
     max-width: 29.79592%; } }
+
 @media only screen and (min-width: 30rem) and (max-width: 50rem) {
   .medium-one-half {
     -webkit-flex-basis: 45.91837%;
@@ -787,6 +775,7 @@ a img.aligncenter {
     -o-flex-basis: 45.91837%;
     flex-basis: 45.91837%;
     max-width: 45.91837%; } }
+
 @media only screen and (max-width: 30rem) {
   .small-full {
     -webkit-flex-basis: 100%;
@@ -795,7 +784,6 @@ a img.aligncenter {
     -o-flex-basis: 100%;
     flex-basis: 100%;
     max-width: 100%; }
-
   .small-half {
     -webkit-flex-basis: 50%;
     -moz-flex-basis: 50%;
@@ -803,7 +791,6 @@ a img.aligncenter {
     -o-flex-basis: 50%;
     flex-basis: 50%;
     max-width: 50%; }
-
   .small-one-fifth {
     -webkit-flex-basis: 20%;
     -moz-flex-basis: 20%;
@@ -811,7 +798,6 @@ a img.aligncenter {
     -o-flex-basis: 20%;
     flex-basis: 20%;
     max-width: 20%; }
-
   .small-four-fifth {
     -webkit-flex-basis: 80%;
     -moz-flex-basis: 80%;
@@ -819,13 +805,14 @@ a img.aligncenter {
     -o-flex-basis: 80%;
     flex-basis: 80%;
     max-width: 80%; }
-
   .small-offset-four-fifth {
     margin-left: 80%; } }
+
 @media only screen and (max-width: 40em) {
   .newsletter .grid > div {
     flex-basis: 100% !important;
     max-width: 100% !important; } }
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, legend, .llms-quiz-results h3, .h3, .h4, .h5, .h6 {
   font-family: "Open Sans", Arial, sans-serif;
@@ -884,9 +871,11 @@ img {
   max-width: 100%; }
   .content img.noborder, .extra img.noborder {
     border: 0; }
+
 .content .alignright, .extra .alignright {
   float: right;
   margin: 0.5rem 0 0.5rem 1rem; }
+
 .content .alignleft, .extra .alignleft {
   float: left;
   margin: 0.5rem 1rem 0.5rem 0; }
@@ -912,8 +901,10 @@ ul, ol {
 .list--unstyled, .edd_download_purchase_form ul {
   list-style: none;
   padding: 0; }
+
 .list--padded {
   padding-left: 0.94rem; }
+
 .list--usp {
   list-style: none;
   padding: 0;
@@ -928,6 +919,7 @@ ul, ol {
       top: 0;
       font-family: "FontAwesome", "Open Sans", Arial, sans-serif;
       color: #77B227; }
+
 .list--plugin li {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1024,6 +1016,7 @@ ul {
 @media only screen and (max-width: 50rem) {
   .text-columns img {
     display: none; } }
+
 @media only screen and (min-width: 30rem) {
   .text-columns {
     -moz-column-count: 2;
@@ -1032,11 +1025,13 @@ ul {
     -webkit-column-gap: 1em;
     column-count: 2;
     column-gap: 1em; } }
+
 @media only screen and (min-width: 50rem) {
   .text-columns {
     -moz-column-count: 3;
     -webkit-column-count: 3;
     column-count: 3; } }
+
 @media only screen and (min-width: 63.25rem) {
   .text-columns {
     -moz-column-count: 1;
@@ -1059,58 +1054,37 @@ thead th {
 .widget.theme-home h1,
 .widget.theme-home .h1 {
   color: #D93F69; }
+
 .widget.theme-home h2, .widget.theme-home h3, .widget.theme-home h4, .widget.theme-home h5, .widget.theme-home h6,
-.widget.theme-home .h2,
-.widget.theme-home legend,
-.widget.theme-home .llms-quiz-results h3,
-.llms-quiz-results .widget.theme-home h3, .widget.theme-home .h3, .widget.theme-home .h4, .widget.theme-home .h5, .widget.theme-home .h6 {
+.widget.theme-home .h2, .widget.theme-home legend, .widget.theme-home .llms-quiz-results h3, .llms-quiz-results .widget.theme-home h3, .widget.theme-home .h3, .widget.theme-home .h4, .widget.theme-home .h5, .widget.theme-home .h6 {
   color: #D93F69; }
   .widget.theme-home h2 a, .widget.theme-home h3 a, .widget.theme-home h4 a, .widget.theme-home h5 a, .widget.theme-home h6 a,
-  .widget.theme-home .h2 a,
-  .widget.theme-home legend a,
-  .widget.theme-home .llms-quiz-results h3 a,
-  .llms-quiz-results .widget.theme-home h3 a, .widget.theme-home .h3 a, .widget.theme-home .h4 a, .widget.theme-home .h5 a, .widget.theme-home .h6 a {
+  .widget.theme-home .h2 a, .widget.theme-home legend a, .widget.theme-home .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-home h3 a, .widget.theme-home .h3 a, .widget.theme-home .h4 a, .widget.theme-home .h5 a, .widget.theme-home .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .widget.theme-home h2 a:hover, .widget.theme-home h2 a:focus, .widget.theme-home h3 a:hover, .widget.theme-home h3 a:focus, .widget.theme-home h4 a:hover, .widget.theme-home h4 a:focus, .widget.theme-home h5 a:hover, .widget.theme-home h5 a:focus, .widget.theme-home h6 a:hover, .widget.theme-home h6 a:focus,
-    .widget.theme-home .h2 a:hover,
-    .widget.theme-home legend a:hover,
-    .widget.theme-home .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .widget.theme-home h3 a:hover,
-    .widget.theme-home .h2 a:focus,
-    .widget.theme-home legend a:focus,
-    .widget.theme-home .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .widget.theme-home h3 a:focus, .widget.theme-home .h3 a:hover, .widget.theme-home .h3 a:focus, .widget.theme-home .h4 a:hover, .widget.theme-home .h4 a:focus, .widget.theme-home .h5 a:hover, .widget.theme-home .h5 a:focus, .widget.theme-home .h6 a:hover, .widget.theme-home .h6 a:focus {
+    .widget.theme-home h2 a:hover, .widget.theme-home h2 a:focus, .widget.theme-home h3 a:hover, .widget.theme-home h3 a:focus, .widget.theme-home h4 a:hover, .widget.theme-home h4 a:focus, .widget.theme-home h5 a:hover, .widget.theme-home h5 a:focus, .widget.theme-home h6 a:hover,
+    .widget.theme-home h6 a:focus,
+    .widget.theme-home .h2 a:hover, .widget.theme-home legend a:hover, .widget.theme-home .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-home h3 a:hover, .widget.theme-home .h2 a:focus, .widget.theme-home legend a:focus, .widget.theme-home .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-home h3 a:focus, .widget.theme-home .h3 a:hover, .widget.theme-home .h3 a:focus, .widget.theme-home .h4 a:hover, .widget.theme-home .h4 a:focus, .widget.theme-home .h5 a:hover, .widget.theme-home .h5 a:focus, .widget.theme-home .h6 a:hover, .widget.theme-home .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
 .theme-home h1,
 .theme-home .h1 {
   color: #D93F69; }
+
 .theme-home h2, .theme-home h3, .theme-home h4, .theme-home h5, .theme-home h6,
-.theme-home .h2,
-.theme-home legend,
-.theme-home .llms-quiz-results h3,
-.llms-quiz-results .theme-home h3, .theme-home .h3, .theme-home .h4, .theme-home .h5, .theme-home .h6 {
+.theme-home .h2, .theme-home legend, .theme-home .llms-quiz-results h3, .llms-quiz-results .theme-home h3, .theme-home .h3, .theme-home .h4, .theme-home .h5, .theme-home .h6 {
   color: #D93F69; }
   .theme-home h2 a, .theme-home h3 a, .theme-home h4 a, .theme-home h5 a, .theme-home h6 a,
-  .theme-home .h2 a,
-  .theme-home legend a,
-  .theme-home .llms-quiz-results h3 a,
-  .llms-quiz-results .theme-home h3 a, .theme-home .h3 a, .theme-home .h4 a, .theme-home .h5 a, .theme-home .h6 a {
+  .theme-home .h2 a, .theme-home legend a, .theme-home .llms-quiz-results h3 a, .llms-quiz-results .theme-home h3 a, .theme-home .h3 a, .theme-home .h4 a, .theme-home .h5 a, .theme-home .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .theme-home h2 a:hover, .theme-home h2 a:focus, .theme-home h3 a:hover, .theme-home h3 a:focus, .theme-home h4 a:hover, .theme-home h4 a:focus, .theme-home h5 a:hover, .theme-home h5 a:focus, .theme-home h6 a:hover, .theme-home h6 a:focus,
-    .theme-home .h2 a:hover,
-    .theme-home legend a:hover,
-    .theme-home .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .theme-home h3 a:hover,
-    .theme-home .h2 a:focus,
-    .theme-home legend a:focus,
-    .theme-home .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .theme-home h3 a:focus, .theme-home .h3 a:hover, .theme-home .h3 a:focus, .theme-home .h4 a:hover, .theme-home .h4 a:focus, .theme-home .h5 a:hover, .theme-home .h5 a:focus, .theme-home .h6 a:hover, .theme-home .h6 a:focus {
+    .theme-home h2 a:hover, .theme-home h2 a:focus, .theme-home h3 a:hover, .theme-home h3 a:focus, .theme-home h4 a:hover, .theme-home h4 a:focus, .theme-home h5 a:hover, .theme-home h5 a:focus, .theme-home h6 a:hover,
+    .theme-home h6 a:focus,
+    .theme-home .h2 a:hover, .theme-home legend a:hover, .theme-home .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-home h3 a:hover, .theme-home .h2 a:focus, .theme-home legend a:focus, .theme-home .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-home h3 a:focus, .theme-home .h3 a:hover, .theme-home .h3 a:focus, .theme-home .h4 a:hover, .theme-home .h4 a:focus, .theme-home .h5 a:hover, .theme-home .h5 a:focus, .theme-home .h6 a:hover, .theme-home .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
+
 .theme-home a {
   color: #A4286A;
   text-decoration: underline; }
@@ -1123,15 +1097,18 @@ thead th {
     .theme-home a.more:hover, .theme-home a.more:focus {
       color: #A4286A;
       text-decoration: none; }
+
 .theme-home .arrowed, .theme-home .arrowed-medium, .theme-home .arrowed-small {
   border-color: #D93F69; }
+
 .theme-home .button, .theme-home .comment-respond input[type="submit"], .comment-respond .theme-home input[type="submit"], .theme-home .llms-button, .theme-home .llms-return a, .llms-return .theme-home a, .theme-home button {
   text-decoration: none; }
   .theme-home .button:hover, .theme-home .comment-respond input[type="submit"]:hover, .comment-respond .theme-home input[type="submit"]:hover, .theme-home .llms-button:hover, .theme-home .llms-return a:hover, .llms-return .theme-home a:hover, .theme-home .button:focus, .theme-home .comment-respond input[type="submit"]:focus, .comment-respond .theme-home input[type="submit"]:focus, .theme-home .llms-button:focus, .theme-home .llms-return a:focus, .llms-return .theme-home a:focus, .theme-home button:hover, .theme-home button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-home .button:hover.dimmed, .theme-home .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-home input[type="submit"]:hover.dimmed, .theme-home .llms-button:hover.dimmed, .theme-home .llms-return a.llms-button:hover, .llms-return .theme-home a.llms-button:hover, .theme-home .llms-return a:hover, .llms-return .theme-home a:hover, .theme-home .button:focus.dimmed, .theme-home .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-home input[type="submit"]:focus.dimmed, .theme-home .llms-button:focus.dimmed, .theme-home .llms-return a.llms-button:focus, .llms-return .theme-home a.llms-button:focus, .theme-home .llms-return a:focus, .llms-return .theme-home a:focus, .theme-home button:hover.dimmed, .theme-home button:focus.dimmed {
+    .theme-home .button:hover.dimmed, .theme-home .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-home input[type="submit"]:hover.dimmed, .theme-home .llms-button:hover.dimmed, .theme-home .llms-return a:hover, .llms-return .theme-home a:hover, .theme-home .button:focus.dimmed, .theme-home .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-home input[type="submit"]:focus.dimmed, .theme-home .llms-button:focus.dimmed, .theme-home .llms-return a:focus, .llms-return .theme-home a:focus, .theme-home button:hover.dimmed, .theme-home button:focus.dimmed {
       color: #646464; }
+
 .theme-home .fill {
   color: #FFF; }
   .theme-home .fill a {
@@ -1142,6 +1119,7 @@ thead th {
       text-decoration: underline; }
   .theme-home .fill h1, .theme-home .fill h2, .theme-home .fill h3, .theme-home .fill h4 {
     color: #FFF; }
+
 .theme-home hr {
   border-top: 1px solid #A4286A; }
   .theme-home hr::after {
@@ -1150,87 +1128,70 @@ thead th {
     -ms-filter: drop-shadow(0 1px 0 #A4286A);
     -o-filter: drop-shadow(0 1px 0 #A4286A);
     filter: drop-shadow(0 1px 0 #A4286A); }
+
 .theme-home .extra h2, .theme-home .extra h3, .theme-home .extra h4,
-.theme-home .extra .h2,
-.theme-home .extra legend,
-.theme-home .extra .llms-quiz-results h3,
-.llms-quiz-results .theme-home .extra h3, .theme-home .extra .h3, .theme-home .extra .h4 {
+.theme-home .extra .h2, .theme-home .extra legend, .theme-home .extra .llms-quiz-results h3, .llms-quiz-results .theme-home .extra h3, .theme-home .extra .h3, .theme-home .extra .h4 {
   color: #A4286A; }
+
 .theme-home .newsletter {
   background: #A4286A;
   color: #FFF; }
   .theme-home .newsletter h1, .theme-home .newsletter h2, .theme-home .newsletter h3, .theme-home .newsletter h4,
   .theme-home .newsletter .h1, .theme-home .newsletter .h2, .theme-home .newsletter legend, .theme-home .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-home .newsletter h3, .theme-home .newsletter .h3, .theme-home .newsletter .h4 {
     color: #FFF; }
+
 .theme-home .bio p {
   color: #D93F69; }
+
 .theme-home .breadcrumb {
   color: #A4286A; }
+
 .theme-home input, .theme-home textarea {
   border-color: #A4286A; }
+
 .theme-home .sitenav {
   background-color: #A4286A; }
   @media only screen and (min-width: 50rem) {
     .theme-home .sitenav::before {
       background-color: #A4286A; } }
+
 .theme-home .subnav {
   background-color: #D93F69; }
 
 .widget.theme-about h1,
 .widget.theme-about .h1 {
   color: #D93F69; }
+
 .widget.theme-about h2, .widget.theme-about h3, .widget.theme-about h4, .widget.theme-about h5, .widget.theme-about h6,
-.widget.theme-about .h2,
-.widget.theme-about legend,
-.widget.theme-about .llms-quiz-results h3,
-.llms-quiz-results .widget.theme-about h3, .widget.theme-about .h3, .widget.theme-about .h4, .widget.theme-about .h5, .widget.theme-about .h6 {
+.widget.theme-about .h2, .widget.theme-about legend, .widget.theme-about .llms-quiz-results h3, .llms-quiz-results .widget.theme-about h3, .widget.theme-about .h3, .widget.theme-about .h4, .widget.theme-about .h5, .widget.theme-about .h6 {
   color: #D93F69; }
   .widget.theme-about h2 a, .widget.theme-about h3 a, .widget.theme-about h4 a, .widget.theme-about h5 a, .widget.theme-about h6 a,
-  .widget.theme-about .h2 a,
-  .widget.theme-about legend a,
-  .widget.theme-about .llms-quiz-results h3 a,
-  .llms-quiz-results .widget.theme-about h3 a, .widget.theme-about .h3 a, .widget.theme-about .h4 a, .widget.theme-about .h5 a, .widget.theme-about .h6 a {
+  .widget.theme-about .h2 a, .widget.theme-about legend a, .widget.theme-about .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-about h3 a, .widget.theme-about .h3 a, .widget.theme-about .h4 a, .widget.theme-about .h5 a, .widget.theme-about .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .widget.theme-about h2 a:hover, .widget.theme-about h2 a:focus, .widget.theme-about h3 a:hover, .widget.theme-about h3 a:focus, .widget.theme-about h4 a:hover, .widget.theme-about h4 a:focus, .widget.theme-about h5 a:hover, .widget.theme-about h5 a:focus, .widget.theme-about h6 a:hover, .widget.theme-about h6 a:focus,
-    .widget.theme-about .h2 a:hover,
-    .widget.theme-about legend a:hover,
-    .widget.theme-about .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .widget.theme-about h3 a:hover,
-    .widget.theme-about .h2 a:focus,
-    .widget.theme-about legend a:focus,
-    .widget.theme-about .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .widget.theme-about h3 a:focus, .widget.theme-about .h3 a:hover, .widget.theme-about .h3 a:focus, .widget.theme-about .h4 a:hover, .widget.theme-about .h4 a:focus, .widget.theme-about .h5 a:hover, .widget.theme-about .h5 a:focus, .widget.theme-about .h6 a:hover, .widget.theme-about .h6 a:focus {
+    .widget.theme-about h2 a:hover, .widget.theme-about h2 a:focus, .widget.theme-about h3 a:hover, .widget.theme-about h3 a:focus, .widget.theme-about h4 a:hover, .widget.theme-about h4 a:focus, .widget.theme-about h5 a:hover, .widget.theme-about h5 a:focus, .widget.theme-about h6 a:hover,
+    .widget.theme-about h6 a:focus,
+    .widget.theme-about .h2 a:hover, .widget.theme-about legend a:hover, .widget.theme-about .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-about h3 a:hover, .widget.theme-about .h2 a:focus, .widget.theme-about legend a:focus, .widget.theme-about .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-about h3 a:focus, .widget.theme-about .h3 a:hover, .widget.theme-about .h3 a:focus, .widget.theme-about .h4 a:hover, .widget.theme-about .h4 a:focus, .widget.theme-about .h5 a:hover, .widget.theme-about .h5 a:focus, .widget.theme-about .h6 a:hover, .widget.theme-about .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
 .theme-about h1,
 .theme-about .h1 {
   color: #D93F69; }
+
 .theme-about h2, .theme-about h3, .theme-about h4, .theme-about h5, .theme-about h6,
-.theme-about .h2,
-.theme-about legend,
-.theme-about .llms-quiz-results h3,
-.llms-quiz-results .theme-about h3, .theme-about .h3, .theme-about .h4, .theme-about .h5, .theme-about .h6 {
+.theme-about .h2, .theme-about legend, .theme-about .llms-quiz-results h3, .llms-quiz-results .theme-about h3, .theme-about .h3, .theme-about .h4, .theme-about .h5, .theme-about .h6 {
   color: #D93F69; }
   .theme-about h2 a, .theme-about h3 a, .theme-about h4 a, .theme-about h5 a, .theme-about h6 a,
-  .theme-about .h2 a,
-  .theme-about legend a,
-  .theme-about .llms-quiz-results h3 a,
-  .llms-quiz-results .theme-about h3 a, .theme-about .h3 a, .theme-about .h4 a, .theme-about .h5 a, .theme-about .h6 a {
+  .theme-about .h2 a, .theme-about legend a, .theme-about .llms-quiz-results h3 a, .llms-quiz-results .theme-about h3 a, .theme-about .h3 a, .theme-about .h4 a, .theme-about .h5 a, .theme-about .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .theme-about h2 a:hover, .theme-about h2 a:focus, .theme-about h3 a:hover, .theme-about h3 a:focus, .theme-about h4 a:hover, .theme-about h4 a:focus, .theme-about h5 a:hover, .theme-about h5 a:focus, .theme-about h6 a:hover, .theme-about h6 a:focus,
-    .theme-about .h2 a:hover,
-    .theme-about legend a:hover,
-    .theme-about .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .theme-about h3 a:hover,
-    .theme-about .h2 a:focus,
-    .theme-about legend a:focus,
-    .theme-about .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .theme-about h3 a:focus, .theme-about .h3 a:hover, .theme-about .h3 a:focus, .theme-about .h4 a:hover, .theme-about .h4 a:focus, .theme-about .h5 a:hover, .theme-about .h5 a:focus, .theme-about .h6 a:hover, .theme-about .h6 a:focus {
+    .theme-about h2 a:hover, .theme-about h2 a:focus, .theme-about h3 a:hover, .theme-about h3 a:focus, .theme-about h4 a:hover, .theme-about h4 a:focus, .theme-about h5 a:hover, .theme-about h5 a:focus, .theme-about h6 a:hover,
+    .theme-about h6 a:focus,
+    .theme-about .h2 a:hover, .theme-about legend a:hover, .theme-about .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-about h3 a:hover, .theme-about .h2 a:focus, .theme-about legend a:focus, .theme-about .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-about h3 a:focus, .theme-about .h3 a:hover, .theme-about .h3 a:focus, .theme-about .h4 a:hover, .theme-about .h4 a:focus, .theme-about .h5 a:hover, .theme-about .h5 a:focus, .theme-about .h6 a:hover, .theme-about .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
+
 .theme-about a {
   color: #A4286A;
   text-decoration: underline; }
@@ -1243,15 +1204,18 @@ thead th {
     .theme-about a.more:hover, .theme-about a.more:focus {
       color: #A4286A;
       text-decoration: none; }
+
 .theme-about .arrowed, .theme-about .arrowed-medium, .theme-about .arrowed-small {
   border-color: #D93F69; }
+
 .theme-about .button, .theme-about .comment-respond input[type="submit"], .comment-respond .theme-about input[type="submit"], .theme-about .llms-button, .theme-about .llms-return a, .llms-return .theme-about a, .theme-about button {
   text-decoration: none; }
   .theme-about .button:hover, .theme-about .comment-respond input[type="submit"]:hover, .comment-respond .theme-about input[type="submit"]:hover, .theme-about .llms-button:hover, .theme-about .llms-return a:hover, .llms-return .theme-about a:hover, .theme-about .button:focus, .theme-about .comment-respond input[type="submit"]:focus, .comment-respond .theme-about input[type="submit"]:focus, .theme-about .llms-button:focus, .theme-about .llms-return a:focus, .llms-return .theme-about a:focus, .theme-about button:hover, .theme-about button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-about .button:hover.dimmed, .theme-about .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-about input[type="submit"]:hover.dimmed, .theme-about .llms-button:hover.dimmed, .theme-about .llms-return a.llms-button:hover, .llms-return .theme-about a.llms-button:hover, .theme-about .llms-return a:hover, .llms-return .theme-about a:hover, .theme-about .button:focus.dimmed, .theme-about .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-about input[type="submit"]:focus.dimmed, .theme-about .llms-button:focus.dimmed, .theme-about .llms-return a.llms-button:focus, .llms-return .theme-about a.llms-button:focus, .theme-about .llms-return a:focus, .llms-return .theme-about a:focus, .theme-about button:hover.dimmed, .theme-about button:focus.dimmed {
+    .theme-about .button:hover.dimmed, .theme-about .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-about input[type="submit"]:hover.dimmed, .theme-about .llms-button:hover.dimmed, .theme-about .llms-return a:hover, .llms-return .theme-about a:hover, .theme-about .button:focus.dimmed, .theme-about .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-about input[type="submit"]:focus.dimmed, .theme-about .llms-button:focus.dimmed, .theme-about .llms-return a:focus, .llms-return .theme-about a:focus, .theme-about button:hover.dimmed, .theme-about button:focus.dimmed {
       color: #646464; }
+
 .theme-about .fill {
   color: #FFF; }
   .theme-about .fill a {
@@ -1262,6 +1226,7 @@ thead th {
       text-decoration: underline; }
   .theme-about .fill h1, .theme-about .fill h2, .theme-about .fill h3, .theme-about .fill h4 {
     color: #FFF; }
+
 .theme-about hr {
   border-top: 1px solid #A4286A; }
   .theme-about hr::after {
@@ -1270,87 +1235,70 @@ thead th {
     -ms-filter: drop-shadow(0 1px 0 #A4286A);
     -o-filter: drop-shadow(0 1px 0 #A4286A);
     filter: drop-shadow(0 1px 0 #A4286A); }
+
 .theme-about .extra h2, .theme-about .extra h3, .theme-about .extra h4,
-.theme-about .extra .h2,
-.theme-about .extra legend,
-.theme-about .extra .llms-quiz-results h3,
-.llms-quiz-results .theme-about .extra h3, .theme-about .extra .h3, .theme-about .extra .h4 {
+.theme-about .extra .h2, .theme-about .extra legend, .theme-about .extra .llms-quiz-results h3, .llms-quiz-results .theme-about .extra h3, .theme-about .extra .h3, .theme-about .extra .h4 {
   color: #A4286A; }
+
 .theme-about .newsletter {
   background: #A4286A;
   color: #FFF; }
   .theme-about .newsletter h1, .theme-about .newsletter h2, .theme-about .newsletter h3, .theme-about .newsletter h4,
   .theme-about .newsletter .h1, .theme-about .newsletter .h2, .theme-about .newsletter legend, .theme-about .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-about .newsletter h3, .theme-about .newsletter .h3, .theme-about .newsletter .h4 {
     color: #FFF; }
+
 .theme-about .bio p {
   color: #D93F69; }
+
 .theme-about .breadcrumb {
   color: #A4286A; }
+
 .theme-about input, .theme-about textarea {
   border-color: #A4286A; }
+
 .theme-about .sitenav {
   background-color: #A4286A; }
   @media only screen and (min-width: 50rem) {
     .theme-about .sitenav::before {
       background-color: #A4286A; } }
+
 .theme-about .subnav {
   background-color: #D93F69; }
 
 .widget.theme-academy h1,
 .widget.theme-academy .h1 {
   color: #5D237A; }
+
 .widget.theme-academy h2, .widget.theme-academy h3, .widget.theme-academy h4, .widget.theme-academy h5, .widget.theme-academy h6,
-.widget.theme-academy .h2,
-.widget.theme-academy legend,
-.widget.theme-academy .llms-quiz-results h3,
-.llms-quiz-results .widget.theme-academy h3, .widget.theme-academy .h3, .widget.theme-academy .h4, .widget.theme-academy .h5, .widget.theme-academy .h6 {
+.widget.theme-academy .h2, .widget.theme-academy legend, .widget.theme-academy .llms-quiz-results h3, .llms-quiz-results .widget.theme-academy h3, .widget.theme-academy .h3, .widget.theme-academy .h4, .widget.theme-academy .h5, .widget.theme-academy .h6 {
   color: #5D237A; }
   .widget.theme-academy h2 a, .widget.theme-academy h3 a, .widget.theme-academy h4 a, .widget.theme-academy h5 a, .widget.theme-academy h6 a,
-  .widget.theme-academy .h2 a,
-  .widget.theme-academy legend a,
-  .widget.theme-academy .llms-quiz-results h3 a,
-  .llms-quiz-results .widget.theme-academy h3 a, .widget.theme-academy .h3 a, .widget.theme-academy .h4 a, .widget.theme-academy .h5 a, .widget.theme-academy .h6 a {
+  .widget.theme-academy .h2 a, .widget.theme-academy legend a, .widget.theme-academy .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-academy h3 a, .widget.theme-academy .h3 a, .widget.theme-academy .h4 a, .widget.theme-academy .h5 a, .widget.theme-academy .h6 a {
     color: #5D237A;
     text-decoration: none; }
-    .widget.theme-academy h2 a:hover, .widget.theme-academy h2 a:focus, .widget.theme-academy h3 a:hover, .widget.theme-academy h3 a:focus, .widget.theme-academy h4 a:hover, .widget.theme-academy h4 a:focus, .widget.theme-academy h5 a:hover, .widget.theme-academy h5 a:focus, .widget.theme-academy h6 a:hover, .widget.theme-academy h6 a:focus,
-    .widget.theme-academy .h2 a:hover,
-    .widget.theme-academy legend a:hover,
-    .widget.theme-academy .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .widget.theme-academy h3 a:hover,
-    .widget.theme-academy .h2 a:focus,
-    .widget.theme-academy legend a:focus,
-    .widget.theme-academy .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .widget.theme-academy h3 a:focus, .widget.theme-academy .h3 a:hover, .widget.theme-academy .h3 a:focus, .widget.theme-academy .h4 a:hover, .widget.theme-academy .h4 a:focus, .widget.theme-academy .h5 a:hover, .widget.theme-academy .h5 a:focus, .widget.theme-academy .h6 a:hover, .widget.theme-academy .h6 a:focus {
+    .widget.theme-academy h2 a:hover, .widget.theme-academy h2 a:focus, .widget.theme-academy h3 a:hover, .widget.theme-academy h3 a:focus, .widget.theme-academy h4 a:hover, .widget.theme-academy h4 a:focus, .widget.theme-academy h5 a:hover, .widget.theme-academy h5 a:focus, .widget.theme-academy h6 a:hover,
+    .widget.theme-academy h6 a:focus,
+    .widget.theme-academy .h2 a:hover, .widget.theme-academy legend a:hover, .widget.theme-academy .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-academy h3 a:hover, .widget.theme-academy .h2 a:focus, .widget.theme-academy legend a:focus, .widget.theme-academy .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-academy h3 a:focus, .widget.theme-academy .h3 a:hover, .widget.theme-academy .h3 a:focus, .widget.theme-academy .h4 a:hover, .widget.theme-academy .h4 a:focus, .widget.theme-academy .h5 a:hover, .widget.theme-academy .h5 a:focus, .widget.theme-academy .h6 a:hover, .widget.theme-academy .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
 .theme-academy h1,
 .theme-academy .h1 {
   color: #5D237A; }
+
 .theme-academy h2, .theme-academy h3, .theme-academy h4, .theme-academy h5, .theme-academy h6,
-.theme-academy .h2,
-.theme-academy legend,
-.theme-academy .llms-quiz-results h3,
-.llms-quiz-results .theme-academy h3, .theme-academy .h3, .theme-academy .h4, .theme-academy .h5, .theme-academy .h6 {
+.theme-academy .h2, .theme-academy legend, .theme-academy .llms-quiz-results h3, .llms-quiz-results .theme-academy h3, .theme-academy .h3, .theme-academy .h4, .theme-academy .h5, .theme-academy .h6 {
   color: #5D237A; }
   .theme-academy h2 a, .theme-academy h3 a, .theme-academy h4 a, .theme-academy h5 a, .theme-academy h6 a,
-  .theme-academy .h2 a,
-  .theme-academy legend a,
-  .theme-academy .llms-quiz-results h3 a,
-  .llms-quiz-results .theme-academy h3 a, .theme-academy .h3 a, .theme-academy .h4 a, .theme-academy .h5 a, .theme-academy .h6 a {
+  .theme-academy .h2 a, .theme-academy legend a, .theme-academy .llms-quiz-results h3 a, .llms-quiz-results .theme-academy h3 a, .theme-academy .h3 a, .theme-academy .h4 a, .theme-academy .h5 a, .theme-academy .h6 a {
     color: #5D237A;
     text-decoration: none; }
-    .theme-academy h2 a:hover, .theme-academy h2 a:focus, .theme-academy h3 a:hover, .theme-academy h3 a:focus, .theme-academy h4 a:hover, .theme-academy h4 a:focus, .theme-academy h5 a:hover, .theme-academy h5 a:focus, .theme-academy h6 a:hover, .theme-academy h6 a:focus,
-    .theme-academy .h2 a:hover,
-    .theme-academy legend a:hover,
-    .theme-academy .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .theme-academy h3 a:hover,
-    .theme-academy .h2 a:focus,
-    .theme-academy legend a:focus,
-    .theme-academy .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .theme-academy h3 a:focus, .theme-academy .h3 a:hover, .theme-academy .h3 a:focus, .theme-academy .h4 a:hover, .theme-academy .h4 a:focus, .theme-academy .h5 a:hover, .theme-academy .h5 a:focus, .theme-academy .h6 a:hover, .theme-academy .h6 a:focus {
+    .theme-academy h2 a:hover, .theme-academy h2 a:focus, .theme-academy h3 a:hover, .theme-academy h3 a:focus, .theme-academy h4 a:hover, .theme-academy h4 a:focus, .theme-academy h5 a:hover, .theme-academy h5 a:focus, .theme-academy h6 a:hover,
+    .theme-academy h6 a:focus,
+    .theme-academy .h2 a:hover, .theme-academy legend a:hover, .theme-academy .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-academy h3 a:hover, .theme-academy .h2 a:focus, .theme-academy legend a:focus, .theme-academy .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-academy h3 a:focus, .theme-academy .h3 a:hover, .theme-academy .h3 a:focus, .theme-academy .h4 a:hover, .theme-academy .h4 a:focus, .theme-academy .h5 a:hover, .theme-academy .h5 a:focus, .theme-academy .h6 a:hover, .theme-academy .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
+
 .theme-academy a {
   color: #A4286A;
   text-decoration: underline; }
@@ -1363,15 +1311,18 @@ thead th {
     .theme-academy a.more:hover, .theme-academy a.more:focus {
       color: #A4286A;
       text-decoration: none; }
+
 .theme-academy .arrowed, .theme-academy .arrowed-medium, .theme-academy .arrowed-small {
   border-color: #5D237A; }
+
 .theme-academy .button, .theme-academy .comment-respond input[type="submit"], .comment-respond .theme-academy input[type="submit"], .theme-academy .llms-button, .theme-academy .llms-return a, .llms-return .theme-academy a, .theme-academy button {
   text-decoration: none; }
   .theme-academy .button:hover, .theme-academy .comment-respond input[type="submit"]:hover, .comment-respond .theme-academy input[type="submit"]:hover, .theme-academy .llms-button:hover, .theme-academy .llms-return a:hover, .llms-return .theme-academy a:hover, .theme-academy .button:focus, .theme-academy .comment-respond input[type="submit"]:focus, .comment-respond .theme-academy input[type="submit"]:focus, .theme-academy .llms-button:focus, .theme-academy .llms-return a:focus, .llms-return .theme-academy a:focus, .theme-academy button:hover, .theme-academy button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-academy .button:hover.dimmed, .theme-academy .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-academy input[type="submit"]:hover.dimmed, .theme-academy .llms-button:hover.dimmed, .theme-academy .llms-return a.llms-button:hover, .llms-return .theme-academy a.llms-button:hover, .theme-academy .llms-return a:hover, .llms-return .theme-academy a:hover, .theme-academy .button:focus.dimmed, .theme-academy .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-academy input[type="submit"]:focus.dimmed, .theme-academy .llms-button:focus.dimmed, .theme-academy .llms-return a.llms-button:focus, .llms-return .theme-academy a.llms-button:focus, .theme-academy .llms-return a:focus, .llms-return .theme-academy a:focus, .theme-academy button:hover.dimmed, .theme-academy button:focus.dimmed {
+    .theme-academy .button:hover.dimmed, .theme-academy .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-academy input[type="submit"]:hover.dimmed, .theme-academy .llms-button:hover.dimmed, .theme-academy .llms-return a:hover, .llms-return .theme-academy a:hover, .theme-academy .button:focus.dimmed, .theme-academy .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-academy input[type="submit"]:focus.dimmed, .theme-academy .llms-button:focus.dimmed, .theme-academy .llms-return a:focus, .llms-return .theme-academy a:focus, .theme-academy button:hover.dimmed, .theme-academy button:focus.dimmed {
       color: #646464; }
+
 .theme-academy .fill {
   color: #FFF; }
   .theme-academy .fill a {
@@ -1382,6 +1333,7 @@ thead th {
       text-decoration: underline; }
   .theme-academy .fill h1, .theme-academy .fill h2, .theme-academy .fill h3, .theme-academy .fill h4 {
     color: #FFF; }
+
 .theme-academy hr {
   border-top: 1px solid #A4286A; }
   .theme-academy hr::after {
@@ -1390,87 +1342,70 @@ thead th {
     -ms-filter: drop-shadow(0 1px 0 #A4286A);
     -o-filter: drop-shadow(0 1px 0 #A4286A);
     filter: drop-shadow(0 1px 0 #A4286A); }
+
 .theme-academy .extra h2, .theme-academy .extra h3, .theme-academy .extra h4,
-.theme-academy .extra .h2,
-.theme-academy .extra legend,
-.theme-academy .extra .llms-quiz-results h3,
-.llms-quiz-results .theme-academy .extra h3, .theme-academy .extra .h3, .theme-academy .extra .h4 {
+.theme-academy .extra .h2, .theme-academy .extra legend, .theme-academy .extra .llms-quiz-results h3, .llms-quiz-results .theme-academy .extra h3, .theme-academy .extra .h3, .theme-academy .extra .h4 {
   color: #A4286A; }
+
 .theme-academy .newsletter {
   background: #A4286A;
   color: #FFF; }
   .theme-academy .newsletter h1, .theme-academy .newsletter h2, .theme-academy .newsletter h3, .theme-academy .newsletter h4,
   .theme-academy .newsletter .h1, .theme-academy .newsletter .h2, .theme-academy .newsletter legend, .theme-academy .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-academy .newsletter h3, .theme-academy .newsletter .h3, .theme-academy .newsletter .h4 {
     color: #FFF; }
+
 .theme-academy .bio p {
   color: #5D237A; }
+
 .theme-academy .breadcrumb {
   color: #A4286A; }
+
 .theme-academy input, .theme-academy textarea {
   border-color: #A4286A; }
+
 .theme-academy .sitenav {
   background-color: #A4286A; }
   @media only screen and (min-width: 50rem) {
     .theme-academy .sitenav::before {
       background-color: #A4286A; } }
+
 .theme-academy .subnav {
   background-color: #5D237A; }
 
 .widget.theme-review h1,
 .widget.theme-review .h1 {
   color: #009288; }
+
 .widget.theme-review h2, .widget.theme-review h3, .widget.theme-review h4, .widget.theme-review h5, .widget.theme-review h6,
-.widget.theme-review .h2,
-.widget.theme-review legend,
-.widget.theme-review .llms-quiz-results h3,
-.llms-quiz-results .widget.theme-review h3, .widget.theme-review .h3, .widget.theme-review .h4, .widget.theme-review .h5, .widget.theme-review .h6 {
+.widget.theme-review .h2, .widget.theme-review legend, .widget.theme-review .llms-quiz-results h3, .llms-quiz-results .widget.theme-review h3, .widget.theme-review .h3, .widget.theme-review .h4, .widget.theme-review .h5, .widget.theme-review .h6 {
   color: #009288; }
   .widget.theme-review h2 a, .widget.theme-review h3 a, .widget.theme-review h4 a, .widget.theme-review h5 a, .widget.theme-review h6 a,
-  .widget.theme-review .h2 a,
-  .widget.theme-review legend a,
-  .widget.theme-review .llms-quiz-results h3 a,
-  .llms-quiz-results .widget.theme-review h3 a, .widget.theme-review .h3 a, .widget.theme-review .h4 a, .widget.theme-review .h5 a, .widget.theme-review .h6 a {
+  .widget.theme-review .h2 a, .widget.theme-review legend a, .widget.theme-review .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-review h3 a, .widget.theme-review .h3 a, .widget.theme-review .h4 a, .widget.theme-review .h5 a, .widget.theme-review .h6 a {
     color: #009288;
     text-decoration: none; }
-    .widget.theme-review h2 a:hover, .widget.theme-review h2 a:focus, .widget.theme-review h3 a:hover, .widget.theme-review h3 a:focus, .widget.theme-review h4 a:hover, .widget.theme-review h4 a:focus, .widget.theme-review h5 a:hover, .widget.theme-review h5 a:focus, .widget.theme-review h6 a:hover, .widget.theme-review h6 a:focus,
-    .widget.theme-review .h2 a:hover,
-    .widget.theme-review legend a:hover,
-    .widget.theme-review .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .widget.theme-review h3 a:hover,
-    .widget.theme-review .h2 a:focus,
-    .widget.theme-review legend a:focus,
-    .widget.theme-review .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .widget.theme-review h3 a:focus, .widget.theme-review .h3 a:hover, .widget.theme-review .h3 a:focus, .widget.theme-review .h4 a:hover, .widget.theme-review .h4 a:focus, .widget.theme-review .h5 a:hover, .widget.theme-review .h5 a:focus, .widget.theme-review .h6 a:hover, .widget.theme-review .h6 a:focus {
+    .widget.theme-review h2 a:hover, .widget.theme-review h2 a:focus, .widget.theme-review h3 a:hover, .widget.theme-review h3 a:focus, .widget.theme-review h4 a:hover, .widget.theme-review h4 a:focus, .widget.theme-review h5 a:hover, .widget.theme-review h5 a:focus, .widget.theme-review h6 a:hover,
+    .widget.theme-review h6 a:focus,
+    .widget.theme-review .h2 a:hover, .widget.theme-review legend a:hover, .widget.theme-review .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-review h3 a:hover, .widget.theme-review .h2 a:focus, .widget.theme-review legend a:focus, .widget.theme-review .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-review h3 a:focus, .widget.theme-review .h3 a:hover, .widget.theme-review .h3 a:focus, .widget.theme-review .h4 a:hover, .widget.theme-review .h4 a:focus, .widget.theme-review .h5 a:hover, .widget.theme-review .h5 a:focus, .widget.theme-review .h6 a:hover, .widget.theme-review .h6 a:focus {
       color: #77B227;
       text-decoration: underline; }
 
 .theme-review h1,
 .theme-review .h1 {
   color: #009288; }
+
 .theme-review h2, .theme-review h3, .theme-review h4, .theme-review h5, .theme-review h6,
-.theme-review .h2,
-.theme-review legend,
-.theme-review .llms-quiz-results h3,
-.llms-quiz-results .theme-review h3, .theme-review .h3, .theme-review .h4, .theme-review .h5, .theme-review .h6 {
+.theme-review .h2, .theme-review legend, .theme-review .llms-quiz-results h3, .llms-quiz-results .theme-review h3, .theme-review .h3, .theme-review .h4, .theme-review .h5, .theme-review .h6 {
   color: #009288; }
   .theme-review h2 a, .theme-review h3 a, .theme-review h4 a, .theme-review h5 a, .theme-review h6 a,
-  .theme-review .h2 a,
-  .theme-review legend a,
-  .theme-review .llms-quiz-results h3 a,
-  .llms-quiz-results .theme-review h3 a, .theme-review .h3 a, .theme-review .h4 a, .theme-review .h5 a, .theme-review .h6 a {
+  .theme-review .h2 a, .theme-review legend a, .theme-review .llms-quiz-results h3 a, .llms-quiz-results .theme-review h3 a, .theme-review .h3 a, .theme-review .h4 a, .theme-review .h5 a, .theme-review .h6 a {
     color: #009288;
     text-decoration: none; }
-    .theme-review h2 a:hover, .theme-review h2 a:focus, .theme-review h3 a:hover, .theme-review h3 a:focus, .theme-review h4 a:hover, .theme-review h4 a:focus, .theme-review h5 a:hover, .theme-review h5 a:focus, .theme-review h6 a:hover, .theme-review h6 a:focus,
-    .theme-review .h2 a:hover,
-    .theme-review legend a:hover,
-    .theme-review .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .theme-review h3 a:hover,
-    .theme-review .h2 a:focus,
-    .theme-review legend a:focus,
-    .theme-review .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .theme-review h3 a:focus, .theme-review .h3 a:hover, .theme-review .h3 a:focus, .theme-review .h4 a:hover, .theme-review .h4 a:focus, .theme-review .h5 a:hover, .theme-review .h5 a:focus, .theme-review .h6 a:hover, .theme-review .h6 a:focus {
+    .theme-review h2 a:hover, .theme-review h2 a:focus, .theme-review h3 a:hover, .theme-review h3 a:focus, .theme-review h4 a:hover, .theme-review h4 a:focus, .theme-review h5 a:hover, .theme-review h5 a:focus, .theme-review h6 a:hover,
+    .theme-review h6 a:focus,
+    .theme-review .h2 a:hover, .theme-review legend a:hover, .theme-review .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-review h3 a:hover, .theme-review .h2 a:focus, .theme-review legend a:focus, .theme-review .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-review h3 a:focus, .theme-review .h3 a:hover, .theme-review .h3 a:focus, .theme-review .h4 a:hover, .theme-review .h4 a:focus, .theme-review .h5 a:hover, .theme-review .h5 a:focus, .theme-review .h6 a:hover, .theme-review .h6 a:focus {
       color: #77B227;
       text-decoration: underline; }
+
 .theme-review a {
   color: #77B227;
   text-decoration: underline; }
@@ -1483,15 +1418,18 @@ thead th {
     .theme-review a.more:hover, .theme-review a.more:focus {
       color: #77B227;
       text-decoration: none; }
+
 .theme-review .arrowed, .theme-review .arrowed-medium, .theme-review .arrowed-small {
   border-color: #009288; }
+
 .theme-review .button, .theme-review .comment-respond input[type="submit"], .comment-respond .theme-review input[type="submit"], .theme-review .llms-button, .theme-review .llms-return a, .llms-return .theme-review a, .theme-review button {
   text-decoration: none; }
   .theme-review .button:hover, .theme-review .comment-respond input[type="submit"]:hover, .comment-respond .theme-review input[type="submit"]:hover, .theme-review .llms-button:hover, .theme-review .llms-return a:hover, .llms-return .theme-review a:hover, .theme-review .button:focus, .theme-review .comment-respond input[type="submit"]:focus, .comment-respond .theme-review input[type="submit"]:focus, .theme-review .llms-button:focus, .theme-review .llms-return a:focus, .llms-return .theme-review a:focus, .theme-review button:hover, .theme-review button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-review .button:hover.dimmed, .theme-review .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-review input[type="submit"]:hover.dimmed, .theme-review .llms-button:hover.dimmed, .theme-review .llms-return a.llms-button:hover, .llms-return .theme-review a.llms-button:hover, .theme-review .llms-return a:hover, .llms-return .theme-review a:hover, .theme-review .button:focus.dimmed, .theme-review .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-review input[type="submit"]:focus.dimmed, .theme-review .llms-button:focus.dimmed, .theme-review .llms-return a.llms-button:focus, .llms-return .theme-review a.llms-button:focus, .theme-review .llms-return a:focus, .llms-return .theme-review a:focus, .theme-review button:hover.dimmed, .theme-review button:focus.dimmed {
+    .theme-review .button:hover.dimmed, .theme-review .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-review input[type="submit"]:hover.dimmed, .theme-review .llms-button:hover.dimmed, .theme-review .llms-return a:hover, .llms-return .theme-review a:hover, .theme-review .button:focus.dimmed, .theme-review .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-review input[type="submit"]:focus.dimmed, .theme-review .llms-button:focus.dimmed, .theme-review .llms-return a:focus, .llms-return .theme-review a:focus, .theme-review button:hover.dimmed, .theme-review button:focus.dimmed {
       color: #646464; }
+
 .theme-review .fill {
   color: #FFF; }
   .theme-review .fill a {
@@ -1502,6 +1440,7 @@ thead th {
       text-decoration: underline; }
   .theme-review .fill h1, .theme-review .fill h2, .theme-review .fill h3, .theme-review .fill h4 {
     color: #FFF; }
+
 .theme-review hr {
   border-top: 1px solid #77B227; }
   .theme-review hr::after {
@@ -1510,87 +1449,70 @@ thead th {
     -ms-filter: drop-shadow(0 1px 0 #77B227);
     -o-filter: drop-shadow(0 1px 0 #77B227);
     filter: drop-shadow(0 1px 0 #77B227); }
+
 .theme-review .extra h2, .theme-review .extra h3, .theme-review .extra h4,
-.theme-review .extra .h2,
-.theme-review .extra legend,
-.theme-review .extra .llms-quiz-results h3,
-.llms-quiz-results .theme-review .extra h3, .theme-review .extra .h3, .theme-review .extra .h4 {
+.theme-review .extra .h2, .theme-review .extra legend, .theme-review .extra .llms-quiz-results h3, .llms-quiz-results .theme-review .extra h3, .theme-review .extra .h3, .theme-review .extra .h4 {
   color: #77B227; }
+
 .theme-review .newsletter {
   background: #77B227;
   color: #FFF; }
   .theme-review .newsletter h1, .theme-review .newsletter h2, .theme-review .newsletter h3, .theme-review .newsletter h4,
   .theme-review .newsletter .h1, .theme-review .newsletter .h2, .theme-review .newsletter legend, .theme-review .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-review .newsletter h3, .theme-review .newsletter .h3, .theme-review .newsletter .h4 {
     color: #FFF; }
+
 .theme-review .bio p {
   color: #009288; }
+
 .theme-review .breadcrumb {
   color: #77B227; }
+
 .theme-review input, .theme-review textarea {
   border-color: #77B227; }
+
 .theme-review .sitenav {
   background-color: #009288; }
   @media only screen and (min-width: 50rem) {
     .theme-review .sitenav::before {
       background-color: #009288; } }
+
 .theme-review .subnav {
   background-color: #77B227; }
 
 .widget.theme-software h1,
 .widget.theme-software .h1 {
   color: #0075B3; }
+
 .widget.theme-software h2, .widget.theme-software h3, .widget.theme-software h4, .widget.theme-software h5, .widget.theme-software h6,
-.widget.theme-software .h2,
-.widget.theme-software legend,
-.widget.theme-software .llms-quiz-results h3,
-.llms-quiz-results .widget.theme-software h3, .widget.theme-software .h3, .widget.theme-software .h4, .widget.theme-software .h5, .widget.theme-software .h6 {
+.widget.theme-software .h2, .widget.theme-software legend, .widget.theme-software .llms-quiz-results h3, .llms-quiz-results .widget.theme-software h3, .widget.theme-software .h3, .widget.theme-software .h4, .widget.theme-software .h5, .widget.theme-software .h6 {
   color: #0075B3; }
   .widget.theme-software h2 a, .widget.theme-software h3 a, .widget.theme-software h4 a, .widget.theme-software h5 a, .widget.theme-software h6 a,
-  .widget.theme-software .h2 a,
-  .widget.theme-software legend a,
-  .widget.theme-software .llms-quiz-results h3 a,
-  .llms-quiz-results .widget.theme-software h3 a, .widget.theme-software .h3 a, .widget.theme-software .h4 a, .widget.theme-software .h5 a, .widget.theme-software .h6 a {
+  .widget.theme-software .h2 a, .widget.theme-software legend a, .widget.theme-software .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-software h3 a, .widget.theme-software .h3 a, .widget.theme-software .h4 a, .widget.theme-software .h5 a, .widget.theme-software .h6 a {
     color: #0075B3;
     text-decoration: none; }
-    .widget.theme-software h2 a:hover, .widget.theme-software h2 a:focus, .widget.theme-software h3 a:hover, .widget.theme-software h3 a:focus, .widget.theme-software h4 a:hover, .widget.theme-software h4 a:focus, .widget.theme-software h5 a:hover, .widget.theme-software h5 a:focus, .widget.theme-software h6 a:hover, .widget.theme-software h6 a:focus,
-    .widget.theme-software .h2 a:hover,
-    .widget.theme-software legend a:hover,
-    .widget.theme-software .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .widget.theme-software h3 a:hover,
-    .widget.theme-software .h2 a:focus,
-    .widget.theme-software legend a:focus,
-    .widget.theme-software .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .widget.theme-software h3 a:focus, .widget.theme-software .h3 a:hover, .widget.theme-software .h3 a:focus, .widget.theme-software .h4 a:hover, .widget.theme-software .h4 a:focus, .widget.theme-software .h5 a:hover, .widget.theme-software .h5 a:focus, .widget.theme-software .h6 a:hover, .widget.theme-software .h6 a:focus {
+    .widget.theme-software h2 a:hover, .widget.theme-software h2 a:focus, .widget.theme-software h3 a:hover, .widget.theme-software h3 a:focus, .widget.theme-software h4 a:hover, .widget.theme-software h4 a:focus, .widget.theme-software h5 a:hover, .widget.theme-software h5 a:focus, .widget.theme-software h6 a:hover,
+    .widget.theme-software h6 a:focus,
+    .widget.theme-software .h2 a:hover, .widget.theme-software legend a:hover, .widget.theme-software .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-software h3 a:hover, .widget.theme-software .h2 a:focus, .widget.theme-software legend a:focus, .widget.theme-software .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-software h3 a:focus, .widget.theme-software .h3 a:hover, .widget.theme-software .h3 a:focus, .widget.theme-software .h4 a:hover, .widget.theme-software .h4 a:focus, .widget.theme-software .h5 a:hover, .widget.theme-software .h5 a:focus, .widget.theme-software .h6 a:hover, .widget.theme-software .h6 a:focus {
       color: #009288;
       text-decoration: underline; }
 
 .theme-software h1,
 .theme-software .h1 {
   color: #0075B3; }
+
 .theme-software h2, .theme-software h3, .theme-software h4, .theme-software h5, .theme-software h6,
-.theme-software .h2,
-.theme-software legend,
-.theme-software .llms-quiz-results h3,
-.llms-quiz-results .theme-software h3, .theme-software .h3, .theme-software .h4, .theme-software .h5, .theme-software .h6 {
+.theme-software .h2, .theme-software legend, .theme-software .llms-quiz-results h3, .llms-quiz-results .theme-software h3, .theme-software .h3, .theme-software .h4, .theme-software .h5, .theme-software .h6 {
   color: #0075B3; }
   .theme-software h2 a, .theme-software h3 a, .theme-software h4 a, .theme-software h5 a, .theme-software h6 a,
-  .theme-software .h2 a,
-  .theme-software legend a,
-  .theme-software .llms-quiz-results h3 a,
-  .llms-quiz-results .theme-software h3 a, .theme-software .h3 a, .theme-software .h4 a, .theme-software .h5 a, .theme-software .h6 a {
+  .theme-software .h2 a, .theme-software legend a, .theme-software .llms-quiz-results h3 a, .llms-quiz-results .theme-software h3 a, .theme-software .h3 a, .theme-software .h4 a, .theme-software .h5 a, .theme-software .h6 a {
     color: #0075B3;
     text-decoration: none; }
-    .theme-software h2 a:hover, .theme-software h2 a:focus, .theme-software h3 a:hover, .theme-software h3 a:focus, .theme-software h4 a:hover, .theme-software h4 a:focus, .theme-software h5 a:hover, .theme-software h5 a:focus, .theme-software h6 a:hover, .theme-software h6 a:focus,
-    .theme-software .h2 a:hover,
-    .theme-software legend a:hover,
-    .theme-software .llms-quiz-results h3 a:hover,
-    .llms-quiz-results .theme-software h3 a:hover,
-    .theme-software .h2 a:focus,
-    .theme-software legend a:focus,
-    .theme-software .llms-quiz-results h3 a:focus,
-    .llms-quiz-results .theme-software h3 a:focus, .theme-software .h3 a:hover, .theme-software .h3 a:focus, .theme-software .h4 a:hover, .theme-software .h4 a:focus, .theme-software .h5 a:hover, .theme-software .h5 a:focus, .theme-software .h6 a:hover, .theme-software .h6 a:focus {
+    .theme-software h2 a:hover, .theme-software h2 a:focus, .theme-software h3 a:hover, .theme-software h3 a:focus, .theme-software h4 a:hover, .theme-software h4 a:focus, .theme-software h5 a:hover, .theme-software h5 a:focus, .theme-software h6 a:hover,
+    .theme-software h6 a:focus,
+    .theme-software .h2 a:hover, .theme-software legend a:hover, .theme-software .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-software h3 a:hover, .theme-software .h2 a:focus, .theme-software legend a:focus, .theme-software .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-software h3 a:focus, .theme-software .h3 a:hover, .theme-software .h3 a:focus, .theme-software .h4 a:hover, .theme-software .h4 a:focus, .theme-software .h5 a:hover, .theme-software .h5 a:focus, .theme-software .h6 a:hover, .theme-software .h6 a:focus {
       color: #009288;
       text-decoration: underline; }
+
 .theme-software a {
   color: #009288;
   text-decoration: underline; }
@@ -1603,15 +1525,18 @@ thead th {
     .theme-software a.more:hover, .theme-software a.more:focus {
       color: #009288;
       text-decoration: none; }
+
 .theme-software .arrowed, .theme-software .arrowed-medium, .theme-software .arrowed-small {
   border-color: #0075B3; }
+
 .theme-software .button, .theme-software .comment-respond input[type="submit"], .comment-respond .theme-software input[type="submit"], .theme-software .llms-button, .theme-software .llms-return a, .llms-return .theme-software a, .theme-software button {
   text-decoration: none; }
   .theme-software .button:hover, .theme-software .comment-respond input[type="submit"]:hover, .comment-respond .theme-software input[type="submit"]:hover, .theme-software .llms-button:hover, .theme-software .llms-return a:hover, .llms-return .theme-software a:hover, .theme-software .button:focus, .theme-software .comment-respond input[type="submit"]:focus, .comment-respond .theme-software input[type="submit"]:focus, .theme-software .llms-button:focus, .theme-software .llms-return a:focus, .llms-return .theme-software a:focus, .theme-software button:hover, .theme-software button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-software .button:hover.dimmed, .theme-software .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-software input[type="submit"]:hover.dimmed, .theme-software .llms-button:hover.dimmed, .theme-software .llms-return a.llms-button:hover, .llms-return .theme-software a.llms-button:hover, .theme-software .llms-return a:hover, .llms-return .theme-software a:hover, .theme-software .button:focus.dimmed, .theme-software .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-software input[type="submit"]:focus.dimmed, .theme-software .llms-button:focus.dimmed, .theme-software .llms-return a.llms-button:focus, .llms-return .theme-software a.llms-button:focus, .theme-software .llms-return a:focus, .llms-return .theme-software a:focus, .theme-software button:hover.dimmed, .theme-software button:focus.dimmed {
+    .theme-software .button:hover.dimmed, .theme-software .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-software input[type="submit"]:hover.dimmed, .theme-software .llms-button:hover.dimmed, .theme-software .llms-return a:hover, .llms-return .theme-software a:hover, .theme-software .button:focus.dimmed, .theme-software .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-software input[type="submit"]:focus.dimmed, .theme-software .llms-button:focus.dimmed, .theme-software .llms-return a:focus, .llms-return .theme-software a:focus, .theme-software button:hover.dimmed, .theme-software button:focus.dimmed {
       color: #646464; }
+
 .theme-software .fill {
   color: #FFF; }
   .theme-software .fill a {
@@ -1622,6 +1547,7 @@ thead th {
       text-decoration: underline; }
   .theme-software .fill h1, .theme-software .fill h2, .theme-software .fill h3, .theme-software .fill h4 {
     color: #FFF; }
+
 .theme-software hr {
   border-top: 1px solid #009288; }
   .theme-software hr::after {
@@ -1630,41 +1556,43 @@ thead th {
     -ms-filter: drop-shadow(0 1px 0 #009288);
     -o-filter: drop-shadow(0 1px 0 #009288);
     filter: drop-shadow(0 1px 0 #009288); }
+
 .theme-software .extra h2, .theme-software .extra h3, .theme-software .extra h4,
-.theme-software .extra .h2,
-.theme-software .extra legend,
-.theme-software .extra .llms-quiz-results h3,
-.llms-quiz-results .theme-software .extra h3, .theme-software .extra .h3, .theme-software .extra .h4 {
+.theme-software .extra .h2, .theme-software .extra legend, .theme-software .extra .llms-quiz-results h3, .llms-quiz-results .theme-software .extra h3, .theme-software .extra .h3, .theme-software .extra .h4 {
   color: #009288; }
+
 .theme-software .newsletter {
   background: #009288;
   color: #FFF; }
   .theme-software .newsletter h1, .theme-software .newsletter h2, .theme-software .newsletter h3, .theme-software .newsletter h4,
   .theme-software .newsletter .h1, .theme-software .newsletter .h2, .theme-software .newsletter legend, .theme-software .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-software .newsletter h3, .theme-software .newsletter .h3, .theme-software .newsletter .h4 {
     color: #FFF; }
+
 .theme-software .bio p {
   color: #0075B3; }
+
 .theme-software .breadcrumb {
   color: #009288; }
+
 .theme-software input, .theme-software textarea {
   border-color: #009288; }
+
 .theme-software .sitenav {
   background-color: #009288; }
   @media only screen and (min-width: 50rem) {
     .theme-software .sitenav::before {
       background-color: #009288; } }
+
 .theme-software .subnav {
   background-color: #0075B3; }
 
-/*------------------------------------*\
-    #PARTICLES
+/*------------------------------------*    #PARTICLES
 \*------------------------------------*/
 /**
  * These are your components and modules; things like buttons, accordions,
  * carousels, etc.
  */
-/*------------------------------------*\
-    #OBJECTS
+/*------------------------------------*    #OBJECTS
 \*------------------------------------*/
 /**
  * Pull in all our objects and abstractions.
@@ -1754,7 +1682,8 @@ a.announcement {
     .bio .img {
       display: none; } }
 
-.promoblock, .promolink,
+.promoblock,
+.promolink,
 .bordered {
   border: 1px solid #E6E6E6;
   /* Explicit theming */ }
@@ -1769,62 +1698,80 @@ a.announcement {
     border-left: none;
     border-right: none;
     border-top: none; }
-  .theme-academy .promoblock, .theme-academy .promolink, .theme-academy
-  .bordered {
+  .theme-academy .promoblock,
+  .theme-academy .promolink,
+  .theme-academy .bordered {
     border-color: #5D237A; }
-  .theme-academy--secondary .promoblock, .theme-academy--secondary .promolink, .theme-academy--secondary
-  .bordered {
+  .theme-academy--secondary .promoblock,
+  .theme-academy--secondary .promolink,
+  .theme-academy--secondary .bordered {
     border-color: #A4286A; }
-  .theme-software .promoblock, .theme-software .promolink, .theme-software
-  .bordered {
+  .theme-software .promoblock,
+  .theme-software .promolink,
+  .theme-software .bordered {
     border-color: #0075B3; }
-  .theme-review .promoblock, .theme-review .promolink, .theme-review
-  .bordered {
+  .theme-review .promoblock,
+  .theme-review .promolink,
+  .theme-review .bordered {
     border-color: #009288; }
-  .theme-about .promoblock, .theme-about .promolink, .theme-about
-  .bordered {
+  .theme-about .promoblock,
+  .theme-about .promolink,
+  .theme-about .bordered {
     border-color: #D93F69; }
-  .theme-home .promoblock, .theme-home .promolink, .theme-home
-  .bordered {
+  .theme-home .promoblock,
+  .theme-home .promolink,
+  .theme-home .bordered {
     border-color: #D93F69; }
-  .theme-academy.promoblock, .theme-academy.promolink,
+  .theme-academy.promoblock,
+  .theme-academy.promolink,
   .bordered.theme-academy {
     border-color: #5D237A; }
-  .theme-academy--secondary.promoblock, .theme-academy--secondary.promolink,
+  .theme-academy--secondary.promoblock,
+  .theme-academy--secondary.promolink,
   .bordered.theme-academy--secondary {
     border-color: #A4286A; }
-  .theme-software.promoblock, .theme-software.promolink,
+  .theme-software.promoblock,
+  .theme-software.promolink,
   .bordered.theme-software {
     border-color: #0075B3; }
-  .theme-software--secondary.promoblock, .theme-software--secondary.promolink,
+  .theme-software--secondary.promoblock,
+  .theme-software--secondary.promolink,
   .bordered.theme-software--secondary {
     border-color: #009288; }
-  .theme-review.promoblock, .theme-review.promolink,
+  .theme-review.promoblock,
+  .theme-review.promolink,
   .bordered.theme-review {
     border-color: #009288; }
-  .theme-review--secondary.promoblock, .theme-review--secondary.promolink,
+  .theme-review--secondary.promoblock,
+  .theme-review--secondary.promolink,
   .bordered.theme-review--secondary {
     border-color: #77B227; }
-  .theme-about.promoblock, .theme-about.promolink,
+  .theme-about.promoblock,
+  .theme-about.promolink,
   .bordered.theme-about {
     border-color: #D93F69; }
-  .theme-about--secondary.promoblock, .theme-about--secondary.promolink,
+  .theme-about--secondary.promoblock,
+  .theme-about--secondary.promolink,
   .bordered.theme-about--secondary {
     border-color: #A4286A; }
-  .link.promoblock, .link.promolink,
+  .link.promoblock,
+  .link.promolink,
   .bordered.link {
     border-color: #EE7100; }
-    .link.promoblock::after, .link.promolink::after,
+    .link.promoblock::after,
+    .link.promolink::after,
     .bordered.link::after {
       -webkit-filter: drop-shadow(1px 0 0 #EE7100);
       -moz-filter: drop-shadow(1px 0 0 #EE7100);
       -ms-filter: drop-shadow(1px 0 0 #EE7100);
       -o-filter: drop-shadow(1px 0 0 #EE7100);
       filter: drop-shadow(1px 0 0 #EE7100); }
-  .cta.promoblock, .cta.promolink,
+  .cta.promoblock,
+  .cta.promolink,
   .bordered.cta {
     border-color: #EE7100; }
-    .cta.promoblock::after, .cta.promolink::after,
+    .cta.promoblock::after,
+    .cta.promolink::after,
     .bordered.cta::after {
       -webkit-filter: drop-shadow(1px 0 0 #EE7100);
       -moz-filter: drop-shadow(1px 0 0 #EE7100);
@@ -2007,6 +1954,7 @@ a.announcement {
         height: 8em;
         top: 8em;
         right: -6em; } }
+
 .breadcrumb {
   font-size: 0.88em;
   margin-bottom: 1rem; }
@@ -2058,7 +2006,7 @@ a.announcement {
         border-bottom: 1.44rem solid transparent; } }
   .button .arrow, .comment-respond input[type="submit"] .arrow, .llms-button .arrow, .llms-return a .arrow, button .arrow {
     display: none; }
-  .button + .button, .comment-respond input[type="submit"] + .button, .llms-button + .button, .llms-return a + .button, .comment-respond .button + input[type="submit"], .comment-respond input[type="submit"] + input[type="submit"], .comment-respond .llms-button + input[type="submit"], .llms-return .comment-respond a + input[type="submit"], .comment-respond .llms-return a + input[type="submit"], .button + .llms-button, .comment-respond input[type="submit"] + .llms-button, .llms-button + .llms-button, .llms-return a + .llms-button, .llms-return .button + a, .comment-respond .llms-return input[type="submit"] + a, .llms-return .comment-respond input[type="submit"] + a, .llms-return .llms-button + a, .llms-return a + a, button + .button, .comment-respond button + input[type="submit"], button + .llms-button, .llms-return button + a, .button + button, .comment-respond input[type="submit"] + button, .llms-button + button, .llms-return a + button, button + button {
+  .button + .button, .comment-respond input[type="submit"] + .button, .llms-button + .button, .llms-return a + .button, .comment-respond .button + input[type="submit"], .comment-respond input[type="submit"] + input[type="submit"], .comment-respond .llms-button + input[type="submit"], .llms-return .comment-respond a + input[type="submit"], .comment-respond .llms-return a + input[type="submit"], .button + .llms-button, .comment-respond input[type="submit"] + .llms-button, .llms-button + .llms-button, .llms-return a + .llms-button, .llms-return .button + a, .comment-respond .llms-return input[type="submit"] + a, .llms-return .comment-respond input[type="submit"] + a, .llms-return .llms-button + a, .llms-return a + a, button + button {
     margin-top: 1em;
     margin-left: 1.88rem; }
   .button--full, button--full {
@@ -2070,7 +2018,7 @@ a.announcement {
     background-color: #EE7100; }
     .button.default::after, .comment-respond input.default[type="submit"]::after, .comment-respond input[type="submit"].llms-button::after, .llms-button::after, .llms-return a.default::after, button.default::after, button.llms-button::after {
       border-left-color: #EE7100; }
-    .button.default:hover, .comment-respond input.default[type="submit"]:hover, .comment-respond input[type="submit"].llms-button:hover, .llms-button:hover, .llms-return a.default:hover, .button.default a:focus, .comment-respond input.default[type="submit"] a:focus, .comment-respond input[type="submit"].llms-button a:focus, .llms-button a:focus, .llms-return a.default a:focus, .llms-return a.llms-button a:focus, button.default:hover, button.llms-button:hover, button.default a:focus, button.llms-button a:focus {
+    .button.default:hover, .comment-respond input.default[type="submit"]:hover, .comment-respond input[type="submit"].llms-button:hover, .llms-button:hover, .llms-return a.default:hover, .button.default a:focus, .comment-respond input.default[type="submit"] a:focus, .llms-button a:focus, .llms-return a.default a:focus, button.default:hover, button.llms-button:hover, button.default a:focus, button.llms-button a:focus {
       color: #FFF;
       text-decoration: underline; }
   .button.academy, .comment-respond input.academy[type="submit"], .academy.llms-button, .llms-return a.academy, button.academy {
@@ -2098,11 +2046,11 @@ a.announcement {
     text-shadow: none; }
     .button.dimmed::after, .comment-respond input.dimmed[type="submit"]::after, .dimmed.llms-button::after, .llms-return a::after, button.dimmed::after {
       border-left-color: #DCDCDC; }
-    .button.dimmed:hover, .comment-respond input.dimmed[type="submit"]:hover, .dimmed.llms-button:hover, .llms-return a:hover, .button.dimmed a:focus, .comment-respond input.dimmed[type="submit"] a:focus, .dimmed.llms-button a:focus, .llms-return a.llms-button a:focus, .llms-return a a:focus, button.dimmed:hover, button.dimmed a:focus {
+    .button.dimmed:hover, .comment-respond input.dimmed[type="submit"]:hover, .dimmed.llms-button:hover, .llms-return a:hover, .button.dimmed a:focus, .comment-respond input.dimmed[type="submit"] a:focus, .dimmed.llms-button a:focus, .llms-return a a:focus, button.dimmed:hover, button.dimmed a:focus {
       background-color: #CDCDCD;
       color: #646464;
       text-decoration: none; }
-      .button.dimmed:hover::after, .comment-respond input.dimmed[type="submit"]:hover::after, .dimmed.llms-button:hover::after, .llms-return a:hover::after, .button.dimmed a:focus::after, .comment-respond input.dimmed[type="submit"] a:focus::after, .dimmed.llms-button a:focus::after, .llms-return a.llms-button a:focus::after, .llms-return a a:focus::after, button.dimmed:hover::after, button.dimmed a:focus::after {
+      .button.dimmed:hover::after, .comment-respond input.dimmed[type="submit"]:hover::after, .dimmed.llms-button:hover::after, .llms-return a:hover::after, .button.dimmed a:focus::after, .comment-respond input.dimmed[type="submit"] a:focus::after, .dimmed.llms-button a:focus::after, .llms-return a a:focus::after, button.dimmed:hover::after, button.dimmed a:focus::after {
         border-left-color: #CDCDCD; }
   .button--naked, button--naked {
     border: none;
@@ -2114,26 +2062,34 @@ a.announcement {
 
 .checkout li {
   min-height: 3.76rem; }
+
 .checkout .checkout__cancel {
   text-decoration: none;
   color: #646464; }
+
 .checkout__title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+
 @media only screen and (max-width: 50rem) {
   .checkout__price {
     text-align: right; } }
+
 .checkout label {
   margin-top: 0; }
+
 .checkout input[type="number"] {
   padding: 0.47rem; }
+
 .checkout select {
   margin-left: 0;
   line-height: 1.5em;
   border: none; }
+
 .checkout input[type="radio"] {
   margin-right: 0.94rem; }
+
 .checkout .item-discount {
   font-style: italic; }
 
@@ -2150,13 +2106,16 @@ a.announcement {
 
 #edd_sl_cancel_renewal_form .button, #edd_sl_cancel_renewal_form .comment-respond input[type="submit"], .comment-respond #edd_sl_cancel_renewal_form input[type="submit"], #edd_sl_cancel_renewal_form .llms-button, #edd_sl_cancel_renewal_form .llms-return a, .llms-return #edd_sl_cancel_renewal_form a {
   color: #FFF; }
+
 #edd_sl_cancel_renewal_form .button, #edd_sl_cancel_renewal_form .comment-respond input[type="submit"], .comment-respond #edd_sl_cancel_renewal_form input[type="submit"], #edd_sl_cancel_renewal_form .llms-button, #edd_sl_cancel_renewal_form .llms-return a, .llms-return #edd_sl_cancel_renewal_form a, #edd_sl_cancel_renewal_form p {
   margin: 0; }
 
 #edd_discount_code p {
   margin: 0; }
+
 #edd_discount_code input {
   width: 10em; }
+
 #edd_discount_code .button, #edd_discount_code .comment-respond input[type="submit"], .comment-respond #edd_discount_code input[type="submit"], #edd_discount_code .llms-button, #edd_discount_code .llms-return a, .llms-return #edd_discount_code a {
   color: #FFF; }
 
@@ -2166,43 +2125,58 @@ a.announcement {
 
 #edd_purchase_form p {
   display: block; }
+
 #edd_purchase_form label {
   margin-bottom: 0; }
+
 #edd_purchase_form .edd-description {
   font-size: 0.8rem; }
+
 #edd_purchase_form #edd-email-wrap {
   clear: both; }
+
 #edd_purchase_form input.error {
   border: 1px solid #E23132; }
+
 #edd_purchase_form #edd_agree_to_terms-error {
   background: none;
   display: inline;
   color: #E23132;
   margin-right: 0;
   padding-right: 0; }
+
 #edd_purchase_form label[for="edd_agree_to_terms"] {
   display: inline; }
+
 #edd_purchase_form .card-expiration label {
   margin: 0; }
+
 #edd_purchase_form .card-expiration input {
-  width: calc( 50% - ( 30px / 2 ) ); }
+  width: calc( 50% - ( 30px / 2 )); }
+
 #edd_purchase_form .card-expiration .separator {
   width: 30px;
   float: left;
   text-align: center;
   line-height: 3rem; }
+
 #edd_purchase_form .card-expiration:before, #edd_purchase_form .card-expiration:after {
   content: '';
   display: table; }
+
 #edd_purchase_form .card-expiration:after {
   clear: both; }
+
 @media only screen and (min-width: 60rem) {
   #edd_purchase_form .card-expiration {
     float: left; } }
+
 #edd_purchase_form .card-expiry-month {
   float: left; }
+
 #edd_purchase_form .card-expiry-year {
   float: left; }
+
 #edd_purchase_form #edd-card-number-wrap {
   max-width: 30rem; }
   #edd_purchase_form #edd-card-number-wrap label {
@@ -2210,19 +2184,24 @@ a.announcement {
   @media only screen and (min-width: 30rem) {
     #edd_purchase_form #edd-card-number-wrap {
       float: left; } }
+
 #edd_purchase_form #edd-card-name-wrap {
   clear: both; }
+
 #edd_purchase_form #edd-card-name-wrap input,
 #edd_purchase_form #edd-card-city-wrap input,
 #edd_purchase_form #edd-card-zip-wrap input {
   margin-bottom: 0; }
+
 #edd_purchase_form #edd-card-name-wrap label,
 #edd_purchase_form #edd-card-cvc-wrap label,
 #edd_purchase_form #edd-card-city-wrap label,
 #edd_purchase_form #edd-card-zip-wrap label {
   margin-top: 0; }
+
 #edd_purchase_form .edd-submit {
   color: #FFF; }
+
 @media only screen and (min-width: 30rem) {
   #edd_purchase_form #edd-first-name-wrap {
     float: left;
@@ -2247,33 +2226,40 @@ a.announcement {
     float: left;
     padding: 0 10px; }
   #edd_purchase_form #edd-card-city-wrap {
-    width: calc( 100% - 13rem );
+    width: calc( 100% - 13rem);
     float: left; }
   #edd_purchase_form #edd-card-zip-wrap {
     width: 13rem;
     padding: 0 0 0 40px;
     float: left; } }
+
 #edd_purchase_form .edd-cancel {
   display: none; }
 
 .edd_download_purchase_form:before, .edd_download_purchase_form:after {
   content: '';
   display: table; }
+
 .edd_download_purchase_form:after {
   clear: both; }
+
 .edd_download_purchase_form .edd-add-to-cart {
   color: #FFF; }
+
 .edd_download_purchase_form .edd_purchase_submit_wrapper {
   display: none; }
+
 .edd_download_purchase_form .edd_download_quantity_wrapper {
   float: left;
   display: block !important;
   margin-right: 20px; }
   .edd_download_purchase_form .edd_download_quantity_wrapper input[type="number"] {
     margin-left: 0; }
+
 .edd_download_purchase_form .edd-add-to-cart {
   float: left;
   margin-top: 1px; }
+
 .edd_download_purchase_form .edd_go_to_checkout {
   display: none; }
 
@@ -2340,20 +2326,25 @@ a.announcement {
     line-height: 1rem; }
   .byuser > .media > .img img {
     margin-top: 1.3125rem; }
+
 .byuser > .media .comment-content,
 .byuser > .media .comment-author {
   color: #5D237A; }
+
 .byuser.depth-1 > .img::before {
   width: 100px; }
 
 .comment-respond label {
   margin: 0; }
+
 .comment-respond input[type="submit"] {
   color: #FFF; }
+
 .comment-respond .comment-form-author input,
 .comment-respond .comment-form-email input,
 .comment-respond .comment-form-url input {
   max-width: 34em; }
+
 .comment-respond .comment-form-comment textarea {
   max-width: 34em;
   height: 12em; }
@@ -3170,7 +3161,7 @@ hr + .fullfooter {
   .header-controls .text-icon {
     font-size: 1.5em; }
   .header-controls .cart {
-    padding: .5rem 1rem 0 0;
+    padding: 0.5rem 1rem 0 0;
     position: relative;
     font-size: 1.2em; }
     .header-controls .cart .num-items {
@@ -3326,8 +3317,10 @@ svg .llms-animated-circle {
 
 .quiz-summary .panel {
   cursor: pointer; }
+
 .quiz-summary .panel-body img {
   display: block; }
+
 .quiz-summary .panel-body li {
   margin-top: 1.88rem; }
   .quiz-summary .panel-body li:first-child {
@@ -3343,6 +3336,7 @@ svg .llms-animated-circle {
   display: none; }
   .llms-quiz-result-details ul:first-child {
     display: block; }
+
 .llms-quiz-result-details h4,
 .llms-quiz-result-details h5,
 .llms-quiz-result-details h6,
@@ -3357,6 +3351,7 @@ svg .llms-animated-circle {
 
 .lifterlms .course-link {
   text-align: right; }
+
 .lifterlms .llms-my-achievements {
   display: none; }
 
@@ -3364,6 +3359,7 @@ svg .llms-animated-circle {
   margin: 0.6rem 0 0 0; }
   .llms-question-wrapper .llms-option_:first-child {
     margin-top: 0; }
+
 .llms-question-wrapper .llms-question-label {
   padding-left: 30px;
   text-indent: -23px; }
@@ -3563,7 +3559,7 @@ svg .llms-animated-circle {
   display: inline-block;
   width: 100%;
   height: 99%;
-  padding: .6rem .6rem;
+  padding: 0.6rem 0.6rem;
   font-size: .9em;
   text-decoration: none;
   color: #FFF; }
@@ -3571,7 +3567,7 @@ svg .llms-animated-circle {
     .mainnav-menuitem, .mainnav > ul > li > a {
       font-size: .95em;
       border-left: 1px solid #FFF;
-      padding: .3rem .9rem .9rem; }
+      padding: 0.3rem 0.9rem 0.9rem; }
       .mainnav__home .mainnav-menuitem:hover, .mainnav__home .mainnav > ul > li > a:hover {
         background-image: linear-gradient(#D93F69 0%, #D93F69 90%, #FFF 90%); }
       .mainnav__academy .mainnav-menuitem:hover, .mainnav__academy .mainnav > ul > li > a:hover {
@@ -3585,7 +3581,7 @@ svg .llms-animated-circle {
   @media only screen and (min-width: 57rem) {
     .mainnav-menuitem, .mainnav > ul > li > a {
       font-size: 1.125em;
-      padding: .6rem 1rem 1rem; } }
+      padding: 0.6rem 1rem 1rem; } }
   @media only screen and (min-width: 50rem) {
     .mainnav-menuitem::before, .mainnav > ul > li > a::before {
       content: '';
@@ -3608,23 +3604,20 @@ svg .llms-animated-circle {
 @media only screen and (min-width: 50rem) {
   .mainnav__home > a:hover {
     background-image: linear-gradient(#D93F69 0%, #D93F69 90%, #FFF 90%); }
-
   .mainnav__academy > a:hover {
     background: linear-gradient(#5D237A 0%, #5D237A 90%, #FFF 90%); }
-
   .mainnav__software > a:hover {
     background: linear-gradient(#0075B3 0%, #0075B3 90%, #FFF 90%); }
-
   .mainnav__review > a:hover {
     background: linear-gradient(#77B227 0%, #77B227 90%, #FFF 90%); }
-
   .mainnav__about > a:hover {
     background: linear-gradient(#D93F69 0%, #D93F69 90%, #FFF 90%); } }
+
 .sitenav--home {
   border-top: 1px solid #FFF;
   background-color: #A4286A; }
   .sitenav--home .mainnav-menuitem, .sitenav--home .mainnav > ul > li > a {
-    padding: .3rem .9rem .9rem; }
+    padding: 0.3rem 0.9rem 0.9rem; }
     .sitenav--home .mainnav-menuitem::before, .sitenav--home .mainnav > ul > li > a::before {
       bottom: 1px; }
   .sitenav--home::before {
@@ -3640,24 +3633,22 @@ svg .llms-animated-circle {
     order: 1;
     border-bottom: 1px solid #FFF;
     background-color: #A4286A; }
-
   .mainnav__software {
     -webkit-order: 3;
     order: 3;
     background-color: #0075B3; }
-
   .mainnav__review {
     -webkit-order: 2;
     order: 2;
     border-left: 1px solid #FFF;
     border-bottom: 1px solid #FFF;
     background-color: #77B227; }
-
   .mainnav__about {
     -webkit-order: 4;
     order: 4;
     border-left: 1px solid #FFF;
     background-color: #D93F69; } }
+
 .subnav {
   position: absolute;
   left: 0;
@@ -3682,7 +3673,7 @@ svg .llms-animated-circle {
     display: flex; }
   .subnav li {
     display: inline-block;
-    margin: .4rem 0.2rem .4rem 0;
+    margin: 0.4rem 0.2rem 0.4rem 0;
     padding: 0; }
     .subnav li:first-child a {
       border-left: none; }
@@ -3699,7 +3690,7 @@ svg .llms-animated-circle {
         display: block; } }
   .subnav > ul > li > a {
     display: inline-block;
-    padding: 0 .85rem;
+    padding: 0 0.85rem;
     margin: .5rem 0;
     font-size: .9em;
     text-decoration: none;
@@ -3722,7 +3713,7 @@ svg .llms-animated-circle {
   overflow: scroll;
   background-color: #FFF;
   text-shadow: none;
-  transition: right .1s linear; }
+  transition: right 0.1s linear; }
   .sitenav--offcanvas ul {
     display: block;
     width: auto; }
@@ -3745,10 +3736,10 @@ svg .llms-animated-circle {
       [data-show-mobile-nav] .sitenav--offcanvas {
         right: -1%; } }
   .admin-bar .sitenav--offcanvas {
-    top: calc( 4em + 46px ); }
+    top: calc( 4em + 46px); }
     @media only screen and (min-width: 783px) {
       .admin-bar .sitenav--offcanvas {
-        top: calc( 4em + 32px ); } }
+        top: calc( 4em + 32px); } }
 
 @media only screen and (max-width: 50rem) {
   [data-show-mobile-nav]::after {
@@ -3825,22 +3816,18 @@ svg .llms-animated-circle {
     padding-top: 0; }
   .meta > div:last-child {
     border: 0; }
-
   .meta--full {
     width: 292px;
     float: right;
     font-size: 0.94em; }
-
   .meta__author {
     position: relative; }
-
   .meta__authorpic {
     display: block;
     position: absolute;
     z-index: -1;
     bottom: 0;
     right: 0; }
-
   .meta__category a {
     vertical-align: top; }
   .meta__category img {
@@ -3849,7 +3836,6 @@ svg .llms-animated-circle {
     border-bottom-right-radius: 0;
     color: #5D237A;
     margin-right: .4em; }
-
   .meta__author,
   .meta__tags,
   .meta__category {
@@ -3858,9 +3844,9 @@ svg .llms-animated-circle {
     .meta__tags a,
     .meta__category a {
       display: block; }
-
   .meta__tags h2 {
     margin-left: 0; } }
+
 .content__tags {
   font-family: "Open Sans", Arial, sans-serif;
   margin-bottom: 1.88rem; }
@@ -3910,7 +3896,7 @@ svg .llms-animated-circle {
     padding: 0;
     margin: 0;
     width: 20%;
-    padding: .4rem 2rem 0 0;
+    padding: 0.4rem 2rem 0 0;
     border-left: none;
     text-shadow: none;
     background-color: transparent;
@@ -3918,10 +3904,10 @@ svg .llms-animated-circle {
     .mobile-search button:hover, .mobile-search button:focus {
       color: #EE7100; }
   .admin-bar .mobile-search {
-    top: calc( 4em + 46px ); }
+    top: calc( 4em + 46px); }
     @media only screen and (min-width: 783px) {
       .admin-bar .mobile-search {
-        top: calc( 4em + 32px ); } }
+        top: calc( 4em + 32px); } }
 
 .more {
   position: relative;
@@ -4012,7 +3998,8 @@ svg .llms-animated-circle {
       text-align: left; }
   .supports-filter .more__holder {
     min-height: 2.75em; }
-  .more__holder + .more__img, .more__holder + .more__plug {
+  .more__holder + .more__img,
+  .more__holder + .more__plug {
     margin: 0 0 0 1rem; }
   .more__holder--naked {
     border: 0; }
@@ -4069,7 +4056,6 @@ svg .llms-animated-circle {
     -ms-align-self: center;
     -o-align-self: center;
     align-self: center; }
-
   .more__subtitle {
     font-family: "Merriweather", Georgia, serif;
     font-weight: normal;
@@ -4080,12 +4066,10 @@ svg .llms-animated-circle {
     -ms-align-self: center;
     -o-align-self: center;
     align-self: center; }
-
   .more__supertitle {
     font-weight: 300;
     font-size: 1.2em;
     margin-right: 1rem; }
-
   .more__img {
     border: 1px solid;
     border-radius: 10px;
@@ -4097,7 +4081,6 @@ svg .llms-animated-circle {
     flex: 0 0 55px;
     height: 55px;
     margin-right: 1rem; }
-
   .more__link {
     font-weight: 400;
     -webkit-align-self: center;
@@ -4105,16 +4088,15 @@ svg .llms-animated-circle {
     -ms-align-self: center;
     -o-align-self: center;
     align-self: center; }
-
   .more__superlink {
     font-weight: 300;
     margin-top: 0.3em; }
-
   .more__sublink {
     font-family: "Merriweather", Georgia, serif;
     font-weight: normal;
     font-size: 0.8em;
     margin-top: 0.7em; } }
+
 .more__pointer {
   margin-left: 0.94rem; }
 
@@ -4421,36 +4403,27 @@ a.promoblock {
     right: 0.94rem;
     font-size: 1.5rem;
     line-height: 1; }
-
   body.theme-academy [class*="promoblock--icon"]::before {
     color: #5D237A; }
-
   body.theme-software [class*="promoblock--icon"]::before {
     color: #0075B3; }
-
   .promoblock--icon-academy::before {
     content: "\f19d"; }
-
   .promoblock--icon-pencil::before {
     content: "\f040"; }
-
   .promoblock--icon-blog::before {
     content: "\f1ea"; }
-
   .promoblock--icon-book::before {
     content: "\f02d"; }
-
   .promoblock--icon-video::before {
     content: "\f008"; }
-
   .promoblock--icon-wordpress::before {
     content: "\f19a"; }
-
   .promoblock--icon-drupal::before {
     content: "\f1a9"; }
-
   .promoblock--icon-calendar::before {
     content: "\f073"; } }
+
 @media only screen and (max-width: 30rem) {
   .arrowed-small {
     position: relative;
@@ -4481,6 +4454,7 @@ a.promoblock {
         border-left: 1.6rem solid #FFF;
         border-top: 1.6rem solid transparent;
         border-bottom: 1.6rem solid transparent; } }
+
 @media only screen and (max-width: 50rem) {
   .arrowed-medium {
     position: relative;
@@ -4511,6 +4485,7 @@ a.promoblock {
         border-left: 1.6rem solid #FFF;
         border-top: 1.6rem solid transparent;
         border-bottom: 1.6rem solid transparent; } }
+
 .arrowed {
   position: relative;
   font-size: 1.2rem;
@@ -4546,26 +4521,30 @@ a.promoblock {
       border-top: 1.8rem solid transparent;
       border-bottom: 1.8rem solid transparent; }
 
-.theme-home .arrowed-small::after, .arrowed-small.theme-home::after, .theme-home
-.arrowed-medium::after,
-.arrowed-medium.theme-home::after, .theme-home
-.arrowed::after,
+.theme-home .arrowed-small::after,
+.arrowed-small.theme-home::after,
+.theme-home .arrowed-medium::after,
+.arrowed-medium.theme-home::after,
+.theme-home .arrowed::after,
 .arrowed.theme-home::after {
   -webkit-filter: drop-shadow(1px 0 0 #D93F69);
   -moz-filter: drop-shadow(1px 0 0 #D93F69);
   -ms-filter: drop-shadow(1px 0 0 #D93F69);
   -o-filter: drop-shadow(1px 0 0 #D93F69);
   filter: drop-shadow(1px 0 0 #D93F69); }
-.theme-academy .arrowed-small::after, .arrowed-small.theme-academy::after, .theme-academy
-.arrowed-medium::after,
-.arrowed-medium.theme-academy::after, .theme-academy
-.arrowed::after,
+
+.theme-academy .arrowed-small::after,
+.arrowed-small.theme-academy::after,
+.theme-academy .arrowed-medium::after,
+.arrowed-medium.theme-academy::after,
+.theme-academy .arrowed::after,
 .arrowed.theme-academy::after {
   -webkit-filter: drop-shadow(1px 0 0 #5D237A);
   -moz-filter: drop-shadow(1px 0 0 #5D237A);
   -ms-filter: drop-shadow(1px 0 0 #5D237A);
   -o-filter: drop-shadow(1px 0 0 #5D237A);
   filter: drop-shadow(1px 0 0 #5D237A); }
+
 .arrowed-small.theme-academy--secondary::after,
 .arrowed-medium.theme-academy--secondary::after,
 .arrowed.theme-academy--secondary::after {
@@ -4574,16 +4553,19 @@ a.promoblock {
   -ms-filter: drop-shadow(1px 0 0 #A4286A);
   -o-filter: drop-shadow(1px 0 0 #A4286A);
   filter: drop-shadow(1px 0 0 #A4286A); }
-.theme-software .arrowed-small::after, .arrowed-small.theme-software::after, .theme-software
-.arrowed-medium::after,
-.arrowed-medium.theme-software::after, .theme-software
-.arrowed::after,
+
+.theme-software .arrowed-small::after,
+.arrowed-small.theme-software::after,
+.theme-software .arrowed-medium::after,
+.arrowed-medium.theme-software::after,
+.theme-software .arrowed::after,
 .arrowed.theme-software::after {
   -webkit-filter: drop-shadow(1px 0 0 #0075B3);
   -moz-filter: drop-shadow(1px 0 0 #0075B3);
   -ms-filter: drop-shadow(1px 0 0 #0075B3);
   -o-filter: drop-shadow(1px 0 0 #0075B3);
   filter: drop-shadow(1px 0 0 #0075B3); }
+
 .arrowed-small.theme-software--secondary::after,
 .arrowed-medium.theme-software--secondary::after,
 .arrowed.theme-software--secondary::after {
@@ -4592,16 +4574,19 @@ a.promoblock {
   -ms-filter: drop-shadow(1px 0 0 #009288);
   -o-filter: drop-shadow(1px 0 0 #009288);
   filter: drop-shadow(1px 0 0 #009288); }
-.theme-review .arrowed-small::after, .arrowed-small.theme-review::after, .theme-review
-.arrowed-medium::after,
-.arrowed-medium.theme-review::after, .theme-review
-.arrowed::after,
+
+.theme-review .arrowed-small::after,
+.arrowed-small.theme-review::after,
+.theme-review .arrowed-medium::after,
+.arrowed-medium.theme-review::after,
+.theme-review .arrowed::after,
 .arrowed.theme-review::after {
   -webkit-filter: drop-shadow(1px 0 0 #009288);
   -moz-filter: drop-shadow(1px 0 0 #009288);
   -ms-filter: drop-shadow(1px 0 0 #009288);
   -o-filter: drop-shadow(1px 0 0 #009288);
   filter: drop-shadow(1px 0 0 #009288); }
+
 .arrowed-small.theme-review--secondary::after,
 .arrowed-medium.theme-review--secondary::after,
 .arrowed.theme-review--secondary::after {
@@ -4610,16 +4595,19 @@ a.promoblock {
   -ms-filter: drop-shadow(1px 0 0 #77B227);
   -o-filter: drop-shadow(1px 0 0 #77B227);
   filter: drop-shadow(1px 0 0 #77B227); }
-.theme-about .arrowed-small::after, .arrowed-small.theme-about::after, .theme-about
-.arrowed-medium::after,
-.arrowed-medium.theme-about::after, .theme-about
-.arrowed::after,
+
+.theme-about .arrowed-small::after,
+.arrowed-small.theme-about::after,
+.theme-about .arrowed-medium::after,
+.arrowed-medium.theme-about::after,
+.theme-about .arrowed::after,
 .arrowed.theme-about::after {
   -webkit-filter: drop-shadow(1px 0 0 #D93F69);
   -moz-filter: drop-shadow(1px 0 0 #D93F69);
   -ms-filter: drop-shadow(1px 0 0 #D93F69);
   -o-filter: drop-shadow(1px 0 0 #D93F69);
   filter: drop-shadow(1px 0 0 #D93F69); }
+
 .arrowed-small.theme-about--secondary::after,
 .arrowed-medium.theme-about--secondary::after,
 .arrowed.theme-about--secondary::after {
@@ -4700,7 +4688,7 @@ a.promoblock {
     bottom: -5px;
     right: -7px;
     z-index: 1;
-    padding: 0 .4em;
+    padding: 0 0.4em;
     font-size: 10px;
     line-height: 1.2;
     color: #000;
@@ -4775,6 +4763,7 @@ a.promoblock {
     padding: 1rem 0 2rem;
     background-image: linear-gradient(transparent 22em, rgba(164, 40, 106, 0.25) 22em);
     border-bottom: 1px solid #FFF; } }
+
 @media only screen and (max-width: 50rem) {
   .siteheader--home {
     margin-bottom: 0rem; }
@@ -4785,6 +4774,7 @@ a.promoblock {
       margin: 0;
       border: none;
       background-color: transparent; } }
+
 @media only screen and (max-width: 30rem) {
   .siteheader--home {
     margin-bottom: 11rem; } }
@@ -4905,6 +4895,7 @@ blockquote {
   @media only screen and (max-width: 50rem) {
     .testimonial .media img {
       margin-left: 4.5rem; } }
+
 .testimonial blockquote {
   font-size: 1em;
   line-height: 2.1rem; }
@@ -4929,15 +4920,13 @@ blockquote {
     width: 100%;
     height: 100%; }
 
-/*------------------------------------*\
-    #TRUMPS
+/*------------------------------------*    #TRUMPS
 \*------------------------------------*/
 /**
  * These are helper classes and overrides that should take precedence over all
  * other styles, e.g. `.float--left {}`.
  */
-/*------------------------------------*\
-    #TRUMPS
+/*------------------------------------*    #TRUMPS
 \*------------------------------------*/
 /**
  * Pull in all our trumps and overrides.
@@ -4963,68 +4952,97 @@ blockquote {
 
 .helper-border-white {
   border-color: #FFF !important; }
+
 .helper-border-academy {
   border-color: #5D237A !important; }
+
 .helper-border-academy--secondary {
   border-color: #A4286A !important; }
+
 .helper-border-software {
   border-color: #0075B3 !important; }
+
 .helper-border-software--secondary {
   border-color: #009288 !important; }
+
 .helper-border-review {
   border-color: #009288 !important; }
+
 .helper-border-review--secondary {
   border-color: #77B227 !important; }
+
 .helper-border-about {
   border-color: #D93F69 !important; }
+
 .helper-border-about--secondary {
   border-color: #A4286A !important; }
 
 .color-academy {
   color: #5D237A !important; }
+
 .color-academy--secondary {
   color: #A4286A !important; }
+
 .color-academy--tertiary {
   color: #D93F69 !important; }
+
 .color-software {
   color: #0075B3 !important; }
+
 .color-software--secondary {
   color: #009288 !important; }
+
 .color-review {
   color: #009288 !important; }
+
 .color-review--secondary {
   color: #77B227 !important; }
+
 .color-about {
   color: #D93F69 !important; }
+
 .color-about--secondary {
   color: #A4286A !important; }
+
 .color-about--tertiary {
   color: #5D237A !important; }
+
 .color-cta {
   color: #EE7100 !important; }
+
 .color-white {
   color: #FFF !important; }
 
 a.color-academy:hover, a.color-academy:focus, button.color-academy:hover, button.color-academy:focus, input.color-academy:hover, input.color-academy:focus {
   color: #A4286A !important; }
+
 a.color-academy--secondary:hover, a.color-academy--secondary:focus, button.color-academy--secondary:hover, button.color-academy--secondary:focus, input.color-academy--secondary:hover, input.color-academy--secondary:focus {
   color: #5D237A !important; }
+
 a.color-academy--tertiary:hover, a.color-academy--tertiary:focus, button.color-academy--tertiary:hover, button.color-academy--tertiary:focus, input.color-academy--tertiary:hover, input.color-academy--tertiary:focus {
   color: #5D237A !important; }
+
 a.color-software:hover, a.color-software:focus, button.color-software:hover, button.color-software:focus, input.color-software:hover, input.color-software:focus {
   color: #009288 !important; }
+
 a.color-software--secondary:hover, a.color-software--secondary:focus, button.color-software--secondary:hover, button.color-software--secondary:focus, input.color-software--secondary:hover, input.color-software--secondary:focus {
   color: #0075B3 !important; }
+
 a.color-review:hover, a.color-review:focus, button.color-review:hover, button.color-review:focus, input.color-review:hover, input.color-review:focus {
   color: #77B227 !important; }
+
 a.color-review--secondary:hover, a.color-review--secondary:focus, button.color-review--secondary:hover, button.color-review--secondary:focus, input.color-review--secondary:hover, input.color-review--secondary:focus {
   color: #009288 !important; }
+
 a.color-about:hover, a.color-about:focus, button.color-about:hover, button.color-about:focus, input.color-about:hover, input.color-about:focus {
   color: #A4286A !important; }
+
 a.color-about--secondary:hover, a.color-about--secondary:focus, button.color-about--secondary:hover, button.color-about--secondary:focus, input.color-about--secondary:hover, input.color-about--secondary:focus {
   color: #D93F69 !important; }
+
 a.color-about--tertiary:hover, a.color-about--tertiary:focus, button.color-about--tertiary:hover, button.color-about--tertiary:focus, input.color-about--tertiary:hover, input.color-about--tertiary:focus {
   color: #D93F69 !important; }
+
 a.color-white:hover, a.color-white:focus, button.color-white:hover, button.color-white:focus, input.color-white:hover, input.color-white:focus {
   color: white !important; }
 
@@ -5074,5 +5092,3 @@ a.color-white:hover, a.color-white:focus, button.color-white:hover, button.color
 
 .align-right {
   text-align: right; }
-
-/*# sourceMappingURL=style.css.map */

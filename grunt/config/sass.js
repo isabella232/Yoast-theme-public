@@ -1,11 +1,11 @@
-// https://github.com/gruntjs/grunt-contrib-sass
+// https://github.com/sindresorhus/grunt-sass
 module.exports = {
 	options: {
-		//sourcemap: 'none'
+		precision: 5
 	},
 	nested: {
 		options: {
-			style: 'nested'
+			outputStyle: 'nested'
 		},
 		files: {
 			'css/style.css': 'css/sass/style.scss'
@@ -13,7 +13,7 @@ module.exports = {
 	},
 	compressed: {
 		options: {
-			style: 'compressed'
+			outputStyle: 'compressed'
 		},
 		files: {
 			'css/style.min.css': 'css/sass/style.scss'
