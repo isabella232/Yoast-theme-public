@@ -19,6 +19,18 @@ class Text_Changes {
 		add_filter( 'wpseo_breadcrumb_separator', array( $this, 'filter_breadcrumbs_separator' ) );
 
 		add_filter( 'the_content', array( $this, 'blockquote_full_width' ) );
+
+		add_action( 'wp_editor_expand', array( $this, 'reinstate_editor_for_posts_page' ) );
+	}
+
+	/**
+	 * Make sure we can edit the posts page text
+	 */
+	public function reinstate_editor_for_posts_page() {
+		global $post;
+		if ( $post->ID == get_option( 'page_for_posts' ) && $post->post_content === '' ) {
+			$post->post_content = ' ';
+		}
 	}
 
 	/**
@@ -28,9 +40,9 @@ class Text_Changes {
 	 *
 	 * @return string
 	 */
-	function filter_archive_title( $title ) {
+	public function filter_archive_title( $title ) {
 		if ( is_home() && ! is_front_page() ) {
-			$title = 'Blog';
+			$title = get_the_title( get_option( 'page_for_posts' ) );
 		}
 		if ( is_category() || is_tag() || is_tax() ) {
 			$title = single_term_title( '', false );
@@ -55,7 +67,7 @@ class Text_Changes {
 	 *
 	 * @return string
 	 */
-	function filter_breadcrumbs_separator() {
+	public function filter_breadcrumbs_separator() {
 		return '<span class="sep">&raquo;</span>';
 	}
 
@@ -66,7 +78,7 @@ class Text_Changes {
 	 *
 	 * @return string
 	 */
-	function blockquote_full_width( $content ) {
+	public function blockquote_full_width( $content ) {
 
 		$shortcode = new Shortcodes();
 

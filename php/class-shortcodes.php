@@ -10,6 +10,7 @@ class Shortcodes {
 	 * Adds the themes shortcodes
 	 */
 	public function add_shortcodes() {
+		add_shortcode( 'bundle', array( $this, 'bundle' ) );
 		add_shortcode( 'plugin-info', array( $this, 'plugin_info' ) );
 		add_shortcode( 'plugin-cta', array( $this, 'plugin_cta' ) );
 		add_shortcode( 'plugin-stats', array( $this, 'plugin_stats' ) );
@@ -77,19 +78,55 @@ class Shortcodes {
 		return
 			$this->get_break_out_content()
 			. get_template_part( 'html_includes/shortcodes/plugin-info', array( 'return' => true ) )
-			. '<hr class="hr--no-pointer">'
+			. '<hr>'
 			. $this->get_content_restart();
 	}
 
 	/**
 	 * Handler for the plugin-cta shortcode. Outputs the buttons to buy or download the plugin.
+	 *
+	 * @return string
 	 */
 	public function plugin_cta() {
 		return get_template_part( 'html_includes/shortcodes/plugin-cta', array( 'return' => true ) );
 	}
 
 	/**
+	 * Handler for the bundle shortcode
+	 *
+	 * @return string
+	 */
+	public function bundle( $args ) {
+		$heading = __( 'Bundle plugins and save money', 'yoastcom' );
+		if ( isset( $args['heading'] ) ) {
+			$heading = $args['heading'];
+		}
+
+		$bundles = array();
+		if ( isset( $args['bundles'] ) ) {
+			$bundles = explode( ',', $args['bundles'] );
+		}
+
+		if ( ! count( $bundles ) > 0 ) {
+			return '<p><strong>You need to define the bundles to show using the <code>bundles</code> attribute, comma separated by ID, like this: <code>[bundle bundles="1,2"]</code>.</strong></p>';
+		}
+
+		$out = $this->get_break_out_content();
+		$out .= get_template_part( 'html_includes/shortcodes/bundle', array(
+				'bundles' => $bundles,
+				'heading' => $heading,
+				'return'  => true,
+			)
+		);
+		$out .= $this->get_content_restart();
+
+		return $out;
+	}
+
+	/**
 	 * Handler for the plugin-stats shortcode. Outputs some statistics about the plugin
+	 *
+	 * @return string
 	 */
 	public function plugin_stats() {
 		return $this->get_break_out_content() . get_template_part( 'html_includes/shortcodes/plugin-stats', array( 'return' => true ) ) . $this->get_content_restart();
@@ -97,6 +134,8 @@ class Shortcodes {
 
 	/**
 	 * Handler for the yst_review_box shortcode. Outputs a price comparison box for the site reviews.
+	 *
+	 * @return string
 	 */
 	public function review_box() {
 		return $this->get_break_out_content() . '<section class="row">' . do_shortcode( post_meta( 'review-box' ) ) . '</section>' . $this->get_content_restart();
@@ -197,8 +236,7 @@ class Shortcodes {
 
 		if ( is_singular( 'yoast_plugins' ) ) {
 			$break_out_content = '</section>';
-		}
-		elseif ( is_page() || is_singular() ) {
+		} elseif ( is_page() || is_singular() ) {
 			$break_out_content = '</div>';
 		}
 
@@ -215,8 +253,7 @@ class Shortcodes {
 
 		if ( is_singular( 'yoast_plugins' ) ) {
 			$restart_content = '<section class="content">';
-		}
-		elseif ( is_page() || is_singular() ) {
+		} elseif ( is_page() || is_singular() ) {
 			$restart_content = '<div class="content">';
 		}
 
@@ -228,7 +265,7 @@ class Shortcodes {
 	 *
 	 * @return string
 	 */
-	private	function get_break_out_content() {
+	private function get_break_out_content() {
 		$break_out_content = '';
 
 		if ( is_singular( 'yoast_plugins' ) ) {

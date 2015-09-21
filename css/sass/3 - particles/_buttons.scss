@@ -7,9 +7,9 @@
 	font-size: 1.1em;
 	background-color: transparent;
 	background-color: $color-orange;
-	color: $color-white;
+	color: $color-orange;
 	border: 0;
-	text-shadow: $text-shadow;
+	//text-shadow: $text-shadow;
 	text-decoration: none;
 	cursor: pointer;
 
@@ -122,7 +122,7 @@
 	&.dimmed {
 		color: $color-grey-text;
 		background-color: $color-grey;
-		text-shadow: none;
+		//text-shadow: none;
 
 		&::after {
 			border-left-color: $color-grey;
@@ -147,7 +147,7 @@
 		border: none;
 		background-color: transparent;
 		padding: 0;
-		text-shadow: none;
+		//text-shadow: none;
 
 		&::after {
 			content: none;

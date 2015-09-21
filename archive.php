@@ -27,9 +27,26 @@ namespace Yoast\YoastCom\Theme;
 				<div class="bd content color-academy--secondary">
 					<?php
 						$home_post = get_post( get_option( 'page_for_posts' ) );
-						echo $home_post->post_excerpt;
+						if ( $home_post->post_content !== '' ) {
+							$content = $home_post->post_content;
+						}
+						else {
+							$content = $home_post->post_excerpt;
+						}
+
+						echo wpautop( do_shortcode( $content ) );
 					?>
 				</div>
+				<?php
+				$sidebar_content = wp_kses_post( get_post_meta( $home_post->ID, 'sidebar-content', true ) );
+				if ( $sidebar_content !== '' ) {
+				?>
+				<div class="alignright">
+					<section class="extra">
+						<?php echo $sidebar_content; ?>
+					</section>
+				</div>
+				<?php } ?>
 			</div>
 		</div>
 			<hr class="hr--no-pointer">

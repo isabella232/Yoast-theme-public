@@ -40,10 +40,7 @@ class Theme {
 		new Checkout();
 		new Text_Changes();
 		new Page_Academy_Settings();
-
-		if ( ! is_admin() ) {
-			new Query();
-		}
+		new Query();
 
 		$shortcodes = new Shortcodes();
 		add_action( 'init', array( $shortcodes, 'add_shortcodes' ) );

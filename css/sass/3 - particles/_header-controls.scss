@@ -130,13 +130,14 @@
 
 	&--mobile {
 		a, button, .cart {
+		  	font-size: 1.2em;
 			position: relative;
-			padding: 8px;
+			padding: 8px 15px;
 		}
 
-		.cart {
-			font-size: 1em;
-		}
+		//.cart {
+		//	font-size: 1em;
+		//}
 
 		a.is-active {
 			&::after {

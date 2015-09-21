@@ -5,11 +5,11 @@ namespace Yoast\YoastCom\Theme;
 	<div class="row">
 		<div class="media">
 			<a href="#" class="img">
-				<img src="<?php echo esc_url( url_author_image() ); ?>">
+				<img src="<?php echo esc_url( url_author_avatar() ); ?>">
 			</a>
 			<div class="bd">
 				<p>
-					<?php echo esc_html( get_the_author_meta( 'description' ) ); ?>
+					<?php the_author_meta( 'description' ); ?>
 					<a href="<?php echo esc_attr( get_the_author_meta( 'yst_profile_url' ) ); ?>"><?php
 						printf( __( 'Read all about %s', 'yoastcom' ), get_the_author_meta( 'first_name' ) ); ?> &raquo;</a>
 					<br />

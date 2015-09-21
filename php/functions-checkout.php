@@ -38,15 +38,15 @@ function the_gateway_image( $gateway ) {
 
 		case 'PayPal Standard':
 			$image = <<<'HTML'
-				<img class="edd_payment__method" src="%1$s/Paypal_90x24_x2.png" height="20">
+				<img class="edd_payment__method" alt="PayPal" src="%1$s/Paypal_90x24_x2.png" width="90" height="24"/>
 HTML;
 			break;
 
 		case 'Stripe':
 			$image = <<<'HTML'
-				<img class="edd_payment__method" src="%1$s/MasterCard_66x40_x2.png" height="20">
-				<img class="edd_payment__method" src="%1$s/Visa_59x20_x2.png" height="20">
-				<img class="edd_payment__method" src="%1$s/AMEX_50x44_x2.png" height="20">
+				<img class="edd_payment__method" alt="MasterCard" src="%1$s/MasterCard_66x40_x2.png" width="66" height="40"/>
+				<img class="edd_payment__method" alt="Visa" src="%1$s/Visa_59x20_x2.png" width="59" height="20"/>
+				<img class="edd_payment__method" alt="American Express" src="%1$s/AMEX_50x44_x2.png" width="50" height="44"/>
 HTML;
 			break;
 	}

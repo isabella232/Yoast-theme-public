@@ -54,13 +54,6 @@ ob_start(); ?>
 
 		<div class="clear"></div>
 
-		<p id="edd-card-state-wrap">
-			<label for="card_state" class="edd-label">
-				<?php _e( 'State / Province', 'yoast-theme' ); ?>
-			</label>
-			<input tabindex="14" type="text" size="8" id="card_state" name="card_state" id="card_state" class="card_state edd-input" />
-		</p>
-
 		<p id="edd-card-country-wrap">
 			<label for="billing_country" class="edd-label">
 				<?php _e( 'Country', 'yoast-theme' ); ?>
@@ -79,6 +72,13 @@ ob_start(); ?>
 				}
 				?>
 			</select>
+		</p>
+
+		<p id="edd-card-state-wrap">
+			<label for="card_state" class="edd-label">
+				<?php _e( 'State / Province', 'yoast-theme' ); ?>
+			</label>
+			<input tabindex="14" type="text" size="8" id="card_state" name="card_state" id="card_state" class="card_state edd-input" />
 		</p>
 
 		<?php do_action( 'edd_cc_billing_bottom' ); ?>

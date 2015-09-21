@@ -10,7 +10,7 @@ if ( ! isset( $template_args['class2'] ) ) {
 }
 
 $must_read = isset( $template_args['must_read'] ) && $template_args['must_read'];
-$args      = array( 'posts_per_page' => 3 );
+$args      = array( 'posts_per_page' => 3, 'post__not_in' => array( get_the_ID() ) );
 
 if ( $must_read ) {
 	$posts_query = query_must_read_articles( $args );

@@ -1,7 +1,7 @@
 <?php
 namespace Yoast\YoastCom\Theme;
 
-use Yoast\YoastCom\Settings\Hide_Comments
+use Yoast\YoastCom\Settings\Hide_Comments;
 ?>
 <div class="meta meta--full">
 	<div class="meta__author">
@@ -27,12 +27,12 @@ use Yoast\YoastCom\Settings\Hide_Comments
 		<?php $categories = wp_get_post_categories( get_the_ID() ); ?>
 		<?php if ( ! empty( $categories ) ) : ?>
 			<div class="meta__category">
+				<h2 class="p"><?php _e( 'Categories', 'yoastcom' ); ?></h2>
 				<?php foreach ( $categories as $category ) : ?>
 					<a href="<?php echo esc_url( get_category_link( $category ) ); ?>">
 						<?php echo esc_html( get_cat_name( $category ) ); ?> &raquo;
 					</a>
 				<?php endforeach; ?>
-				<a href="<?php echo esc_url( url_page_categories() ); ?>" class="link--default link--naked meta--readmore">More Categories &raquo;</a>
 			</div>
 		<?php endif; ?>
 	<?php elseif ( is_singular( 'yoast_dev_article' ) ) : ?>

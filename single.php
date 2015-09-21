@@ -25,9 +25,6 @@ get_header(); ?>
 
 			<div class="content">
 				<?php the_content(); ?>
-
-
-				<div class="content--tags"><?php the_tags(); ?></div>
 			</div>
 
 			<?php get_template_part( 'html_includes/partials/social-share' ); ?>
@@ -64,7 +61,7 @@ get_header(); ?>
 			<?php endif; ?>
 		<?php endif; ?>
 
-		<hr class="hr--no-pointer">
+		<hr>
 
 		<aside>
 			<section class="row iceberg">
@@ -73,7 +70,7 @@ get_header(); ?>
 			</section>
 		</aside>
 
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'announcement--pointer fill--secondary' ) ); ?>
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'fill--secondary' ) ); ?>
 
 	</main>
 

@@ -58,9 +58,24 @@ function link_text_author_posts_or_find() {
  * @return string
  */
 function url_author_image() {
-	$image_url = get_the_author_meta( 'yst_image_url' );
+	$image_url = get_the_author_meta( 'author-picture' );
+	if ( empty( $image_url ) ) {
+		$image_url = get_the_author_meta( 'yst_image_url' );
+	}
 	if ( empty( $image_url ) ) {
 		$image_url = get_avatar( get_the_author_meta( 'email' ) );
+	}
+
+	return $image_url;
+}
+
+/**
+ * @return false|string
+ */
+function url_author_avatar() {
+	$image_url = get_the_author_meta( 'author-avatar' );
+	if ( empty( $image_url ) ) {
+		$image_url = get_avatar( get_the_author_meta( 'ID' ) );
 	}
 
 	return $image_url;

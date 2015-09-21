@@ -2,7 +2,7 @@
 namespace Yoast\YoastCom\Theme;
 ?>
 
-<hr>
+<hr class="hr--no-pointer">
 
 <section class="row grid">
 	<div class="one-third">

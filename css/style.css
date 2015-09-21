@@ -1611,7 +1611,6 @@ thead th {
   clear: both;
   color: #FFF;
   padding: 1.3em 0 1px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   font-family: "Open Sans", Arial, sans-serif;
   border-bottom: 1px solid;
   border-top: 1px solid; }
@@ -1633,6 +1632,7 @@ thead th {
     position: absolute;
     bottom: -20px;
     left: 50%;
+    z-index: 9;
     height: 0;
     line-height: 0;
     -webkit-transform: translateX(-50%);
@@ -1656,6 +1656,10 @@ thead th {
     -ms-transform: translateX(-40px);
     -o-transform: translateX(-40px);
     transform: translateX(-40px); }
+  .announcement i {
+    float: right;
+    margin: 0.47rem 1.88rem 0.47rem 0.47rem;
+    font-size: 4rem; }
 
 a.announcement {
   color: #FFF; }
@@ -1674,10 +1678,14 @@ a.announcement {
     border-color: #A4286A; }
 
 .bio {
-  padding: 0 0 1px; }
+  padding: 0;
+  margin-bottom: 1.88rem; }
   .bio img {
     border-radius: 10px;
-    border-bottom-right-radius: 0; }
+    border-bottom-right-radius: 0;
+    max-width: 120px; }
+  .bio .media {
+    margin-bottom: 0; }
   @media only screen and (max-width: 50rem) {
     .bio .img {
       display: none; } }
@@ -1983,9 +1991,8 @@ a.announcement {
   font-size: 1.1em;
   background-color: transparent;
   background-color: #EE7100;
-  color: #FFF;
+  color: #EE7100;
   border: 0;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   text-decoration: none;
   cursor: pointer; }
   @media only screen and (min-width: 30rem) {
@@ -2042,8 +2049,7 @@ a.announcement {
       border-left-color: #D93F69; }
   .button.dimmed, .comment-respond input.dimmed[type="submit"], .dimmed.llms-button, .llms-return a, button.dimmed {
     color: #646464;
-    background-color: #DCDCDC;
-    text-shadow: none; }
+    background-color: #DCDCDC; }
     .button.dimmed::after, .comment-respond input.dimmed[type="submit"]::after, .dimmed.llms-button::after, .llms-return a::after, button.dimmed::after {
       border-left-color: #DCDCDC; }
     .button.dimmed:hover, .comment-respond input.dimmed[type="submit"]:hover, .dimmed.llms-button:hover, .llms-return a:hover, .button.dimmed a:focus, .comment-respond input.dimmed[type="submit"] a:focus, .dimmed.llms-button a:focus, .llms-return a a:focus, button.dimmed:hover, button.dimmed a:focus {
@@ -2055,8 +2061,7 @@ a.announcement {
   .button--naked, button--naked {
     border: none;
     background-color: transparent;
-    padding: 0;
-    text-shadow: none; }
+    padding: 0; }
     .button--naked::after, button--naked::after {
       content: none; }
 
@@ -2421,8 +2426,7 @@ input.valid {
 .fill {
   /* Explicit theming */ }
   .fill p, .fill .p {
-    color: #FFF;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); }
+    color: #FFF; }
   .theme-academy .fill {
     background-color: #5D237A;
     color: #FFF;
@@ -3223,10 +3227,9 @@ hr + .fullfooter {
         color: #000;
         text-decoration: none; }
   .header-controls--mobile a, .header-controls--mobile button, .header-controls--mobile .cart {
+    font-size: 1.2em;
     position: relative;
-    padding: 8px; }
-  .header-controls--mobile .cart {
-    font-size: 1em; }
+    padding: 8px 15px; }
   .header-controls--mobile a.is-active::after {
     content: '';
     position: absolute;
@@ -3384,7 +3387,6 @@ svg .llms-animated-circle {
   background-repeat: repeat-x;
   background-position: left bottom;
   width: 100%;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   position: relative;
   /* A little special treatment for the home link*/ }
   .sitenav .mainnav__home {
@@ -3397,12 +3399,11 @@ svg .llms-animated-circle {
   .sitenav.is-sticky {
     z-index: 20; }
     .sitenav.is-sticky .mainnav__home a {
-      background-image: url(./../images/Logo_Vinkje_diap.png);
+      background-image: url(./../images/logo-diap.svg);
       background-repeat: no-repeat;
       background-position: 50% 44%;
       background-size: 80%;
-      color: transparent;
-      text-shadow: none; }
+      color: transparent; }
   @media only screen and (min-width: 50rem) {
     .sitenav::before {
       content: '';
@@ -3494,10 +3495,9 @@ svg .llms-animated-circle {
     background-color: #5D237A; }
     @media only screen and (max-width: 50rem) {
       .theme-academy .mainnav .mainnav__academy {
-        background-color: #DCDCDC;
-        text-shadow: none; }
+        background-color: #DCDCDC; }
         .theme-academy .mainnav .mainnav__academy a.mainnav-menuitem, .theme-academy .mainnav .mainnav__academy > a {
-          background-color: transparent;
+          background-color: #DCDCDC !important;
           color: #646464; } }
     .theme-academy .mainnav .mainnav__academy .mainnav-menuitem, .theme-academy .mainnav .mainnav__academy > a {
       background-color: #5D237A; }
@@ -3509,10 +3509,9 @@ svg .llms-animated-circle {
     background-color: #009288; }
     @media only screen and (max-width: 50rem) {
       .theme-software .mainnav .mainnav__software {
-        background-color: #DCDCDC;
-        text-shadow: none; }
+        background-color: #DCDCDC !important; }
         .theme-software .mainnav .mainnav__software a.mainnav-menuitem, .theme-software .mainnav .mainnav__software > a {
-          background-color: transparent;
+          background-color: #DCDCDC;
           color: #646464; } }
     .theme-software .mainnav .mainnav__software .mainnav-menuitem, .theme-software .mainnav .mainnav__software > a {
       background-color: #0075B3; }
@@ -3524,10 +3523,9 @@ svg .llms-animated-circle {
     background-color: #77B227; }
     @media only screen and (max-width: 50rem) {
       .theme-review .mainnav .mainnav__review {
-        background-color: #DCDCDC;
-        text-shadow: none; }
+        background-color: #DCDCDC; }
         .theme-review .mainnav .mainnav__review a.mainnav-menuitem, .theme-review .mainnav .mainnav__review > a {
-          background-color: transparent;
+          background-color: #DCDCDC !important;
           color: #646464; } }
     .theme-review .mainnav .mainnav__review .mainnav-menuitem, .theme-review .mainnav .mainnav__review > a {
       background-color: #77B227; }
@@ -3542,10 +3540,9 @@ svg .llms-animated-circle {
     background-color: #A4286A; }
     @media only screen and (max-width: 50rem) {
       .theme-about .mainnav .mainnav__about {
-        background-color: #DCDCDC;
-        text-shadow: none; }
+        background-color: #DCDCDC; }
         .theme-about .mainnav .mainnav__about a.mainnav-menuitem, .theme-about .mainnav .mainnav__about > a {
-          background-color: transparent;
+          background-color: #DCDCDC !important;
           color: #646464; } }
     .theme-about .mainnav .mainnav__about .mainnav-menuitem, .theme-about .mainnav .mainnav__about > a {
       background-color: #D93F69; }
@@ -3712,7 +3709,6 @@ svg .llms-animated-circle {
   width: 70%;
   overflow: scroll;
   background-color: #FFF;
-  text-shadow: none;
   transition: right 0.1s linear; }
   .sitenav--offcanvas ul {
     display: block;
@@ -3736,10 +3732,10 @@ svg .llms-animated-circle {
       [data-show-mobile-nav] .sitenav--offcanvas {
         right: -1%; } }
   .admin-bar .sitenav--offcanvas {
-    top: calc( 4em + 46px); }
+    top: calc(4em + 46px); }
     @media only screen and (min-width: 783px) {
       .admin-bar .sitenav--offcanvas {
-        top: calc( 4em + 32px); } }
+        top: calc(4em + 32px); } }
 
 @media only screen and (max-width: 50rem) {
   [data-show-mobile-nav]::after {
@@ -3827,7 +3823,8 @@ svg .llms-animated-circle {
     position: absolute;
     z-index: -1;
     bottom: 0;
-    right: 0; }
+    right: 0;
+    max-width: 140px; }
   .meta__category a {
     vertical-align: top; }
   .meta__category img {
@@ -3898,7 +3895,6 @@ svg .llms-animated-circle {
     width: 20%;
     padding: 0.4rem 2rem 0 0;
     border-left: none;
-    text-shadow: none;
     background-color: transparent;
     overflow: hidden; }
     .mobile-search button:hover, .mobile-search button:focus {
@@ -4399,9 +4395,9 @@ a.promoblock {
   [class*="promoblock--icon"]::before {
     font-family: "FontAwesome", "Open Sans", Arial, sans-serif;
     position: absolute;
-    bottom: 0.94rem;
-    right: 0.94rem;
-    font-size: 1.5rem;
+    bottom: 0.47rem;
+    right: 0.47rem;
+    font-size: 2.2rem;
     line-height: 1; }
   body.theme-academy [class*="promoblock--icon"]::before {
     color: #5D237A; }
@@ -4753,7 +4749,7 @@ a.promoblock {
   text-align: center;
   color: #FFF;
   font-weight: 300;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); }
+  font-size: 2em; }
   @media only screen and (max-width: 50rem) {
     .tagline {
       display: none; } }
@@ -4785,7 +4781,6 @@ a.promoblock {
     top: 0;
     z-index: 99;
     background-color: #A4286A;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid #FFF; }
     .admin-bar .masthead {
       top: 46px; } }
@@ -4800,18 +4795,18 @@ a.promoblock {
   margin: 0;
   line-height: 1em;
   display: block;
-  background: url(./../images/Logo_Vinkje_diap.png) no-repeat left 0.94rem;
+  background: url(./../images/logo-diap.svg) no-repeat left 0.47rem;
   background-size: 80%; }
   @media only screen and (min-width: 50rem) {
     .pagetitle {
       width: 15em;
       height: 7em;
-      background-image: url(./../images/logo.png); } }
+      background-image: url(./../images/logo.svg); } }
   .pagetitle--home {
     width: 100%;
     height: 7em;
     margin: auto;
-    background: url(./../images/Logo_Vinkje_diap.png) no-repeat left 0.94rem; }
+    background: url(./../images/logo-diap.svg) no-repeat left 0.47rem; }
     @media only screen and (max-width: 50rem) {
       .pagetitle--home {
         background-size: 80%;

@@ -146,9 +146,9 @@ a.promoblock {
   [class *= "promoblock--icon"]::before {
     font-family: $font-stack-icon;
     position: absolute;
-    bottom: $spacing-half;
-    right: $spacing-half;
-    font-size: 1.5rem;
+    bottom: $spacing-quarter;
+    right: $spacing-quarter;
+    font-size: 2.2rem;
     line-height: 1;
   }
 
