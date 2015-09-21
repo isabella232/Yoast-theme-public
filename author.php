@@ -38,7 +38,7 @@ namespace Yoast\YoastCom\Theme;
 			</div>
 		</section>
 
-		<?php get_template_part( 'html_includes/partials/announcement', array( 'class' => "announcement--pointer-top island fill--secondary", 'text' => "Get more visitors! Our SEO Website review will tell you what to improve. order a SEO Website review &raquo;" ) ); ?>
+		<?php get_template_part( 'html_includes/partials/announcement', array( 'class' => "announcement--pointer-top island fill--secondary", 'text' => "Get more visitors! Our SEO Website review will tell you what to improve. Order a SEO Website review &raquo;" ) ); ?>
 
 		<?php
 			$i=1;
