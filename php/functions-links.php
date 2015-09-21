@@ -75,7 +75,7 @@ function url_author_image() {
 function url_author_avatar() {
 	$image_url = get_the_author_meta( 'author-avatar' );
 	if ( empty( $image_url ) ) {
-		$image_url = get_avatar( get_the_author_meta( 'ID' ) );
+		$image_url = get_avatar_url( get_the_author_meta( 'ID' ) );
 	}
 
 	return $image_url;
