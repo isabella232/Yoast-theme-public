@@ -16,7 +16,7 @@ namespace Yoast\YoastCom\Theme;
 
 	<main role="main">
 		<section class="row">
-			<h1 class="color-about--secondary"><?php the_author(); ?></h1>
+			<h1 class="color-about--secondary">Posts by <?php the_author(); ?></h1>
 		</section>
 
 		<hr class="hr--no-pointer">
