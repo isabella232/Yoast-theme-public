@@ -7,12 +7,24 @@
   }
 }
 
+.llms-button-wrapper {
+  input[type="submit"], input[type="button"] {
+    color: $color-white;
+  }
+}
+
 .llms-button {
   @extend .button, .default;
   border-radius: 0;
 
   &:hover {
     background: $color-orange;
+  }
+}
+
+.llms-lesson-preview .llms-lesson-complete {
+  i {
+    color: green;
   }
 }
 

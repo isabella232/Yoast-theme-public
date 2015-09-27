@@ -3303,10 +3303,16 @@ hr {
   width: 100%;
   color: #FFF; }
 
+.llms-button-wrapper input[type="submit"], .llms-button-wrapper input[type="button"] {
+  color: #FFF; }
+
 .llms-button {
   border-radius: 0; }
   .llms-button:hover {
     background: #EE7100; }
+
+.llms-lesson-preview .llms-lesson-complete i {
+  color: green; }
 
 .llms-purchase-link-wrapper {
   text-align: left; }
