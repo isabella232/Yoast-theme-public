@@ -25,6 +25,8 @@ class Shortcodes {
 		add_shortcode( 'box', array( $this, 'deprecate_box' ) );
 		add_shortcode( 'download_button', array( $this, 'deprecated_download_button' ) );
 		add_shortcode( 'support', array( $this, 'deprecate_support' ) );
+
+		add_shortcode( 'llms_take_quiz', array( $this, 'llms_complete_lesson' ) );
 	}
 
 	/**
@@ -242,7 +244,18 @@ class Shortcodes {
 			'url'  => '',
 		) );
 
-		return '<p><a class="button default" href="' . esc_url( $args['url'] ) . '"><i class="fa fa-' . esc_attr( $args['icon'] ) . '"></i>' . esc_html( $args['text'] ) . '</a></p>';
+		return '<p><a target="_blank" class="button default" href="' . esc_url( $args['url'] ) . '"><i class="fa fa-' . esc_attr( $args['icon'] ) . '"></i>' . esc_html( $args['text'] ) . '</a></p>';
+	}
+
+	/**
+	 * Creates a Take Quiz button
+	 *
+	 * @return string
+	 */
+	public function llms_complete_lesson() {
+		if ( function_exists( 'llms_get_template_part_contents' ) ) {
+			return llms_get_template_part_contents( 'course/complete-lesson-link.php' );
+		}
 	}
 
 	/**
