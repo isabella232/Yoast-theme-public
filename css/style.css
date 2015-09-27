@@ -3306,7 +3306,7 @@ hr {
 .llms-button-wrapper input[type="submit"], .llms-button-wrapper input[type="button"] {
   color: #FFF; }
 
-.llms_answer_question .button, .llms_answer_question .comment-respond input[type="submit"], .comment-respond .llms_answer_question input[type="submit"], .llms_answer_question .llms-button, .llms_answer_question .llms-return a, .llms-return .llms_answer_question a {
+#llms-quiz-question-wrapper .button, #llms-quiz-question-wrapper .comment-respond input[type="submit"], .comment-respond #llms-quiz-question-wrapper input[type="submit"], #llms-quiz-question-wrapper .llms-button, #llms-quiz-question-wrapper .llms-return a, .llms-return #llms-quiz-question-wrapper a {
   color: #FFF; }
 
 .llms-button {
