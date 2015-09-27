@@ -4,6 +4,7 @@ namespace Yoast\YoastCom\Theme;
 function yst_return_empty_string() {
 	return '';
 }
+
 ?>
 
 <?php get_header(); ?>
@@ -24,15 +25,12 @@ function yst_return_empty_string() {
 				<div class="content">
 					<?php
 					global $quiz;
-					$user_id = get_current_user_id();
-					$quiz_data = get_user_meta($user_id, 'llms_quiz_data', true );
-					$quiz_session = LLMS()->session->get( 'llms_quiz' );
-					$grade = $quiz->get_user_grade( $user_id );
+					$user_id   = get_current_user_id();
+					$grade     = $quiz->get_user_grade( $user_id );
 
-					if ( ! $quiz_data && empty( $grade ) ) {
+					if ( ! empty( $grade ) ) {
 						the_content();
-					}
-					else {
+					} else {
 						add_filter( 'the_content', 'yst_return_empty_string', 9 );
 						the_content();
 					}
