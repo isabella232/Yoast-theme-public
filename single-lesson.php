@@ -20,7 +20,23 @@ namespace Yoast\YoastCom\Theme;
 
 				<div class="content">
 					<?php the_content(); ?>
-					<?php echo llms_get_template_ajax( 'course/complete-lesson-link.php' ); ?>
+					<?php
+					//get associated quiz
+					$associated_quiz = get_post_meta( get_the_ID(), '_llms_assigned_quiz', true );
+					if ( $associated_quiz ) {
+						?>
+						<form method="POST" action="" name="take_quiz" enctype="multipart/form-data">
+
+							<input type="hidden" name="associated_lesson"
+							       value="<?php echo esc_attr( get_the_ID() ); ?>"/>
+							<input type="hidden" name="quiz_id" value="<?php echo esc_attr( $associated_quiz ); ?>"/>
+							<input type="submit" class="button" name="take_quiz"
+							       value="<?php _e( 'Take Quiz', 'lifterlms' ); ?>"/>
+							<input type="hidden" name="action" value="take_quiz"/>
+
+							<?php wp_nonce_field( 'take_quiz' ); ?>
+						</form>
+					<?php } ?>
 				</div>
 
 				<div class="extra">
