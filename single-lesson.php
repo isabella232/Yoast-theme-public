@@ -20,6 +20,7 @@ namespace Yoast\YoastCom\Theme;
 
 				<div class="content">
 					<?php the_content(); ?>
+					<?php llms_get_template( 'course/complete-lesson-link.php' ); ?>
 				</div>
 
 				<div class="extra">

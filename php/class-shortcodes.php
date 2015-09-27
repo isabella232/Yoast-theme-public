@@ -248,17 +248,6 @@ class Shortcodes {
 	}
 
 	/**
-	 * Creates a Take Quiz button
-	 *
-	 * @return string
-	 */
-	public function llms_complete_lesson() {
-		if ( function_exists( 'llms_get_template_part_contents' ) ) {
-			return llms_get_template_part_contents( 'course/complete', 'lesson-link' );
-		}
-	}
-
-	/**
 	 * Break out of the article body
 	 *
 	 * @return string
