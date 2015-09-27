@@ -1,6 +1,9 @@
 <?php
 namespace Yoast\YoastCom\Theme;
 
+function yst_return_empty_string() {
+	return '';
+}
 ?>
 
 <?php get_header(); ?>
@@ -19,7 +22,21 @@ namespace Yoast\YoastCom\Theme;
 				<h1><?php the_title(); ?></h1>
 
 				<div class="content">
-					<?php the_content(); ?>
+					<?php
+					global $quiz;
+					$user_id = get_current_user_id();
+					$quiz_data = get_user_meta($user_id, 'llms_quiz_data', true );
+					$quiz_session = LLMS()->session->get( 'llms_quiz' );
+					$grade = $quiz->get_user_grade( $user_id );
+
+					if ( ! $quiz_data && empty( $grade ) ) {
+						the_content();
+					}
+					else {
+						add_filter( 'the_content', 'yst_return_empty_string', 9 );
+						the_content();
+					}
+					?>
 				</div>
 
 				<div class="extra">
