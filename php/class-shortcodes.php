@@ -242,7 +242,7 @@ class Shortcodes {
 			'url'  => '',
 		) );
 
-		return '<a class="button default" href="' . esc_url( $args['url'] ) . '"><i class="fa fa-' . $args['icon'] . '"></i> ' . $args['text'] . '</a>';
+		return '<p><a class="button default" href="' . esc_url( $args['url'] ) . '"><i class="fa fa-' . esc_attr( $args['icon'] ) . '"></i>' . esc_html( $args['text'] ) . '</a></p>';
 	}
 
 	/**
