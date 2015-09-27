@@ -3297,7 +3297,8 @@ hr {
   padding-top: 1.88rem; }
 
 .llms-lesson-button-wrapper input[type="submit"] {
-  width: 100%; }
+  width: 100%;
+  color: #FFF; }
 
 .llms-button {
   border-radius: 0; }
@@ -3315,6 +3316,9 @@ hr {
     background: #FFF; }
     .llms-course-navigation .llms-lesson-link:hover .llms-span {
       text-decoration: none; }
+
+.llms-course-navigation .llms-lesson-preview.previous, .llms-course-navigation .llms-lesson-preview.next {
+  width: 47.5%; }
 
 svg .llms-animated-circle {
   stroke: #77B227; }
