@@ -2064,6 +2064,9 @@ a.announcement {
     padding: 0; }
     .button--naked::after, button--naked::after {
       content: none; }
+  .button i.fa, .comment-respond input[type="submit"] i.fa, .llms-button i.fa, .llms-return a i.fa, button i.fa {
+    font-size: 140%;
+    margin: 4px 10px 0 0; }
 
 .checkout li {
   min-height: 3.76rem; }
