@@ -254,7 +254,7 @@ class Shortcodes {
 	 */
 	public function llms_complete_lesson() {
 		if ( function_exists( 'llms_get_template_part_contents' ) ) {
-			return llms_get_template_part_contents( 'course/complete-lesson-link.php' );
+			return llms_get_template_part_contents( 'course/complete', 'lesson-link' );
 		}
 	}
 
