@@ -1,6 +1,9 @@
 <?php
 
 namespace Yoast\YoastCom\Theme;
+
+remove_filter( 'the_content', 'llms_get_post_content' );
+
 ?>
 
 <?php get_header(); ?>
@@ -26,14 +29,10 @@ namespace Yoast\YoastCom\Theme;
 					if ( $associated_quiz ) {
 						?>
 						<form method="POST" action="" name="take_quiz" enctype="multipart/form-data">
-
-							<input type="hidden" name="associated_lesson"
-							       value="<?php echo esc_attr( get_the_ID() ); ?>"/>
+							<input type="hidden" name="associated_lesson" value="<?php echo esc_attr( get_the_ID() ); ?>"/>
 							<input type="hidden" name="quiz_id" value="<?php echo esc_attr( $associated_quiz ); ?>"/>
-							<input type="submit" class="button" name="take_quiz"
-							       value="<?php _e( 'Take Quiz', 'lifterlms' ); ?>"/>
+							<input type="submit" class="button" name="take_quiz" value="<?php _e( 'Take Quiz', 'lifterlms' ); ?>"/>
 							<input type="hidden" name="action" value="take_quiz"/>
-
 							<?php wp_nonce_field( 'take_quiz' ); ?>
 						</form>
 					<?php } ?>
