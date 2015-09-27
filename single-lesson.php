@@ -24,8 +24,29 @@ remove_filter( 'the_content', 'llms_get_post_content' );
 				<div class="content">
 					<?php the_content(); ?>
 					<?php
+					$user = new LLMS_Person;
+					$user_postmetas = $user->get_user_postmeta_data( get_current_user_id(), get_the_ID() );
+
 					//get associated quiz
 					$associated_quiz = get_post_meta( get_the_ID(), '_llms_assigned_quiz', true );
+
+					if ( !isset( $user_postmetas['_is_complete'] ) && !$associated_quiz ) {
+						global $lesson;
+						?>
+						<form method="POST" action="" name="mark_complete" enctype="multipart/form-data">
+							<?php do_action( 'lifterlms_before_mark_complete_lesson' ); ?>
+
+							<input type="hidden" name="mark-complete" value="<?php echo esc_attr( get_the_ID() ); ?>" />
+
+							<input type="submit" class="button" name="mark_complete" value="<?php echo $lesson->single_mark_complete_text(); ?>" />
+							<input type="hidden" name="action" value="mark_complete" />
+
+							<?php wp_nonce_field( 'mark_complete' ); ?>
+							<?php do_action( 'lifterlms_after_mark_complete_lesson'  ); ?>
+						</form>
+
+					<?php }
+
 					if ( $associated_quiz ) {
 						?>
 						<form method="POST" action="" name="take_quiz" enctype="multipart/form-data">

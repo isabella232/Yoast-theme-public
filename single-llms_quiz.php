@@ -1,6 +1,8 @@
 <?php
 namespace Yoast\YoastCom\Theme;
 
+remove_filter( 'the_content', 'llms_get_post_content' );
+
 ?>
 
 <?php get_header(); ?>
