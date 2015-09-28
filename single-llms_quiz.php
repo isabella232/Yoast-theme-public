@@ -28,7 +28,7 @@ function yst_return_empty_string() {
 					$user_id   = get_current_user_id();
 					$grade     = $quiz->get_user_grade( $user_id );
 
-					if ( empty( $grade ) ) {
+					if ( $grade !== '' ) {
 						the_content();
 					} else {
 						add_filter( 'the_content', 'yst_return_empty_string', 9 );
