@@ -38,9 +38,19 @@
 
 .llms-course-navigation {
   .llms-lesson-link {
-    border: 1px solid $scheme-academy-primary;
-    background: $color-white;
+    @extend .button;
+
+    display: block;
     box-shadow: none;
+    min-height: 0;
+    color: $color-white;
+    text-align: center;
+
+    @include vendor( transition, none );
+    
+    * {
+      font-size: inherit;
+    }
 
     &:hover {
       background: $color-white;
@@ -51,7 +61,22 @@
     }
   }
   .llms-lesson-preview.previous, .llms-lesson-preview.next {
-    width: 47.5%;
+    width: 100%;
+  }
+  .llms-lesson-preview.previous {
+    .llms-lesson-link {
+      @extend .dimmed, .left;
+
+      margin-right: 1.36rem;
+    }
+  }
+
+  .llms-lesson-preview.next {
+    margin: $spacing-quarter 0 0 0;
+
+    .llms-lesson-link {
+      margin-left: 1.36rem;
+    }
   }
 }
 
@@ -85,7 +110,7 @@ svg .llms-animated-circle {
 
 .llms-return {
   a {
-    @extend .button, .dimmed;
+    @extend .button, .left, .dimmed;
   }
 }
 
@@ -170,3 +195,6 @@ svg .llms-animated-circle {
   }
 }
 
+#llms_prev_question {
+  @extend .dimmed;
+}
