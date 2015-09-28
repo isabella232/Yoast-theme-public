@@ -2064,6 +2064,9 @@ a.announcement {
     padding: 0; }
     .button--naked::after, button--naked::after {
       content: none; }
+  .button i.fa, .comment-respond input[type="submit"] i.fa, .llms-button i.fa, .llms-return a i.fa, button i.fa {
+    font-size: 140%;
+    margin: 4px 10px 0 0; }
 
 .checkout li {
   min-height: 3.76rem; }
@@ -3297,12 +3300,22 @@ hr {
   padding-top: 1.88rem; }
 
 .llms-lesson-button-wrapper input[type="submit"] {
-  width: 100%; }
+  width: 100%;
+  color: #FFF; }
+
+.llms-button-wrapper input[type="submit"], .llms-button-wrapper input[type="button"] {
+  color: #FFF; }
+
+#llms-quiz-question-wrapper .button, #llms-quiz-question-wrapper .comment-respond input[type="submit"], .comment-respond #llms-quiz-question-wrapper input[type="submit"], #llms-quiz-question-wrapper .llms-button, #llms-quiz-question-wrapper .llms-return a, .llms-return #llms-quiz-question-wrapper a {
+  color: #FFF; }
 
 .llms-button {
   border-radius: 0; }
   .llms-button:hover {
     background: #EE7100; }
+
+.llms-lesson-preview .llms-lesson-complete i {
+  color: green; }
 
 .llms-purchase-link-wrapper {
   text-align: left; }
@@ -3315,6 +3328,9 @@ hr {
     background: #FFF; }
     .llms-course-navigation .llms-lesson-link:hover .llms-span {
       text-decoration: none; }
+
+.llms-course-navigation .llms-lesson-preview.previous, .llms-course-navigation .llms-lesson-preview.next {
+  width: 47.5%; }
 
 svg .llms-animated-circle {
   stroke: #77B227; }

@@ -18,11 +18,15 @@ class Shortcodes {
 		add_shortcode( 'sidebar-content', array( $this, 'sidebar_content' ) );
 		add_shortcode( 'testimonial', array( $this, 'testimonial' ) );
 		add_shortcode( 'announcement', array( $this, 'announcement' ) );
+		add_shortcode( 'pdf-button', array( $this, 'pdf_button' ) );
+
 
 		// Deprecated shortcodes.
 		add_shortcode( 'box', array( $this, 'deprecate_box' ) );
 		add_shortcode( 'download_button', array( $this, 'deprecated_download_button' ) );
 		add_shortcode( 'support', array( $this, 'deprecate_support' ) );
+
+		add_shortcode( 'llms_take_quiz', array( $this, 'llms_complete_lesson' ) );
 	}
 
 	/**
@@ -224,6 +228,23 @@ class Shortcodes {
 		}
 
 		return $this->get_break_out_content() . get_template_part( $template, $args ) . $this->get_content_restart();
+	}
+
+	/**
+	 * Handler for the PDF button shortcode
+	 *
+	 * @param array $atts The shortcode attributes
+	 *
+	 * @return string The content to output on the page.
+	 */
+	public function pdf_button( $atts ) {
+		$args = wp_parse_args( $atts, array(
+			'icon' => 'file-pdf-o',
+			'text' => 'Read this PDF',
+			'url'  => '',
+		) );
+
+		return '<p><a target="_blank" class="button default" href="' . esc_url( $args['url'] ) . '"><i class="fa fa-' . esc_attr( $args['icon'] ) . '"></i>' . esc_html( $args['text'] ) . '</a></p>';
 	}
 
 	/**
