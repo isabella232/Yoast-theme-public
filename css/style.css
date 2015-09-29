@@ -3535,13 +3535,8 @@ hr {
 .llms-course-navigation .llms-lesson-preview.previous, .llms-course-navigation .llms-lesson-preview.next {
   width: 100%; }
 
-.llms-course-navigation .llms-lesson-preview.previous .llms-lesson-link {
-  margin-right: 1.36rem; }
-
 .llms-course-navigation .llms-lesson-preview.next {
   margin: 0.47rem 0 0 0; }
-  .llms-course-navigation .llms-lesson-preview.next .llms-lesson-link {
-    margin-left: 1.36rem; }
 
 svg .llms-animated-circle {
   stroke: #77B227; }
@@ -3603,7 +3598,6 @@ svg .llms-animated-circle {
 .llms-syllabus-wrapper .llms-lesson-counter {
   display: none; }
 
-.content .llms-lesson-button-wrapper,
 .content .llms-course-navigation,
 .content .llms-parent-course-link,
 .content .llms-purchase-link-wrapper,
