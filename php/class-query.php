@@ -50,9 +50,8 @@ class Query {
 
 		if ( isset( $_GET['post_type'] ) && in_array( $_GET['post_type'], $post_types ) ) {
 			$query->set( 'post_type', $_GET['post_type'] );
-			$query->set( 'post_parent', 0 );
-		}
-		else {
+			$query->set( 'post_parent', 0 );  // We only want the main pages, not explanatory pages
+		} else {
 			$query->set( 'post_type', $post_types );
 		}
 	}
