@@ -15,7 +15,9 @@ namespace Yoast\YoastCom\Theme;
 	</a>
 	<article class="bd">
 		<?php the_excerpt(); ?>
-		<?php echo _n( 'Category:', 'Categories:', count( get_the_category( get_the_ID() ) ) ); ?>
-		<?php the_category( ', ' ); ?>
+		<?php if ( 'post' === get_post_type() ) { ?>
+			<?php echo _n( 'Category:', 'Categories:', count( get_the_category( get_the_ID() ) ) ); ?>
+			<?php the_category( ', ' ); ?>
+		<?php } ?>
 	</article>
 </div>

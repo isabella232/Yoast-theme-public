@@ -117,6 +117,7 @@ class Color_Scheme {
 			|| is_singular( 'llms_quiz' )
 			|| is_singular( 'yoast_courses' )
 			|| is_home()
+			|| is_search()
 			|| ( is_archive() && ! is_post_type_archive( array( 'yoast_plugins', 'yoast_dev_article' ) ) )
 			|| self::ACADEMY === $this->get_color_scheme_setting()
 		);

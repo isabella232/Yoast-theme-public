@@ -31,8 +31,29 @@ class Query {
 			return;
 		}
 
+		if ( $query->is_search ) {
+			$this->search_filter( $query );
+		}
+
 		if ( $query->is_post_type_archive( 'yoast_ebooks' ) ) {
 			$this->ebooks_filter( $query );
+		}
+	}
+
+	/**
+	 * Adds other post types to search
+	 *
+	 * @param \WP_Query $query
+	 */
+	private function search_filter( $query ) {
+		$post_types = array( 'post', 'page', 'yoast_plugins', 'yoast_ebooks', 'yoast_dev_article' );
+
+		if ( isset( $_GET['post_type'] ) && in_array( $_GET['post_type'], $post_types ) ) {
+			$query->set( 'post_type', $_GET['post_type'] );
+			$query->set( 'post_parent', 0 );
+		}
+		else {
+			$query->set( 'post_type', $post_types );
 		}
 	}
 
