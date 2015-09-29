@@ -66,17 +66,11 @@
   .llms-lesson-preview.previous {
     .llms-lesson-link {
       @extend .dimmed, .left;
-
-      margin-right: 1.36rem;
     }
   }
 
   .llms-lesson-preview.next {
     margin: $spacing-quarter 0 0 0;
-
-    .llms-lesson-link {
-      margin-left: 1.36rem;
-    }
   }
 }
 
@@ -186,7 +180,6 @@ svg .llms-animated-circle {
 
 // Hide certain things if they are in the content.
 .content {
-  .llms-lesson-button-wrapper,
   .llms-course-navigation,
   .llms-parent-course-link,
   .llms-purchase-link-wrapper,
