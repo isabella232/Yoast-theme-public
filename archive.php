@@ -17,45 +17,84 @@ namespace Yoast\YoastCom\Theme;
 	<main role="main">
 		<div class="row">
 			<h1><?php echo esc_html( get_the_archive_title() ); ?></h1>
+			<?php if ( is_search() ) { ?>
+				<form action="<?php echo home_url(); ?>">
+					<input type="search" name="s" value="<?php echo get_search_query(); ?>"/>
+
+					<p>
+						You can filter your search by post type:
+						<select name="post_type">
+							<?php
+							$post_types = get_post_types( array( 'public' => true ), 'objects' );
+							unset( $post_types['attachment'], $post_types['plugin_review'] );
+
+							$post_types = array_merge(
+								array(
+									'any' => (object) array(
+										'labels' => (object) array(
+											'name' => 'Any',
+										)
+									)
+								),
+								$post_types
+							);
+
+							$req_post_type = filter_input( INPUT_GET, 'post_type' );
+							if ( ! $req_post_type ) {
+								$req_post_type = 'any';
+							}
+
+							foreach ( $post_types as $post_type => $obj ) {
+								$sel = '';
+								if ( $req_post_type === $post_type ) {
+									$sel = 'selected ';
+								}
+								echo '<option ' . $sel . 'value="' . $post_type . '">' . str_replace( 'Yoast ', '', $obj->labels->name ) . '</option>';
+							}
+							?>
+						</select>
+					</p>
+					<input type="submit" class="button default" value="Search"/>
+				</form>
+			<?php } ?>
 		</div>
 
 		<hr class="hr--no-pointer">
 
 		<?php if ( is_home() && ! is_front_page() ) : ?>
-		<div class="row">
-			<div class="media media--nofloat">
-				<div class="bd content color-academy--secondary">
-					<?php
+			<div class="row">
+				<div class="media media--nofloat">
+					<div class="bd content color-academy--secondary">
+						<?php
 						$home_post = get_post( get_option( 'page_for_posts' ) );
 						if ( $home_post->post_content !== '' ) {
 							$content = $home_post->post_content;
-						}
-						else {
+						} else {
 							$content = $home_post->post_excerpt;
 						}
 
 						echo wpautop( do_shortcode( $content ) );
-					?>
+						?>
+					</div>
+					<?php
+					$sidebar_content = wp_kses_post( get_post_meta( $home_post->ID, 'sidebar-content', true ) );
+					if ( $sidebar_content !== '' ) {
+						?>
+						<div class="alignright">
+							<section class="extra">
+								<?php echo $sidebar_content; ?>
+							</section>
+						</div>
+					<?php } ?>
 				</div>
-				<?php
-				$sidebar_content = wp_kses_post( get_post_meta( $home_post->ID, 'sidebar-content', true ) );
-				if ( $sidebar_content !== '' ) {
-				?>
-				<div class="alignright">
-					<section class="extra">
-						<?php echo $sidebar_content; ?>
-					</section>
-				</div>
-				<?php } ?>
 			</div>
-		</div>
 			<hr class="hr--no-pointer">
 		<?php elseif ( '' !== term_description() ) : ?>
 			<div class="row">
 				<div class="media media--nofloat">
-<!--					<a href="#" class="imgExt">-->
-<!--						<img src="http://placehold.it/250x160" class="promoblock promoblock--imageholder">-->
-<!--					</a>-->
+					<!--					<a href="#" class="imgExt">-->
+					<!--						<img src="http://placehold.it/250x160" class="promoblock promoblock--imageholder">-->
+					<!--					</a>-->
 					<div class="bd content color-academy--secondary">
 						<?php the_archive_description(); ?>
 					</div>
@@ -64,8 +103,9 @@ namespace Yoast\YoastCom\Theme;
 
 			<hr class="hr--no-pointer">
 		<?php endif; ?>
-<!---->
-<!--		--><?php //get_template_part( 'html_includes/partials/announcement', array( 'text' => "Want to learn more long tail keywords and keyword research? Check out our eBook Optimize your WordPress site / Optimize your website &raquo;", ) ); ?>
+		<!---->
+		<!--		--><?php //get_template_part( 'html_includes/partials/announcement', array( 'text' => "Want to learn more long tail keywords and keyword research? Check out our eBook Optimize your WordPress site / Optimize your website &raquo;", ) );
+		?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php theme_object()->excerpt->more( ' <a href="' . get_permalink() . '">&raquo;</a>' ); ?>
@@ -77,22 +117,25 @@ namespace Yoast\YoastCom\Theme;
 		<?php endwhile; ?>
 		<?php theme_object()->excerpt->clear(); ?>
 
-		<?php //get_template_part( 'html_includes/partials/announcement-addonmodules', array( 'class' => "fill--secondary", ) ); ?>
+		<?php //get_template_part( 'html_includes/partials/announcement-addonmodules', array( 'class' => "fill--secondary", ) );
+		?>
 
 		<div class="row">
 			<?php get_template_part( 'html_includes/partials/pagination' ); ?>
 		</div>
-<!--		<hr>-->
-<!--		<div class="row">-->
-<!--			<h2 class="color-academy--tertiary">Check out the Yoast Series</h2>-->
-<!--			--><?php //get_template_part( 'html_includes/partials/list-series' ); ?>
-<!--		</div>-->
-<!---->
-<!--		<hr class="hr--no-pointer">-->
-<!---->
-<!--		<div class="row">-->
-<!--			--><?php //get_template_part( 'html_includes/partials/list-series' ); ?>
-<!--		</div>-->
+		<!--		<hr>-->
+		<!--		<div class="row">-->
+		<!--			<h2 class="color-academy--tertiary">Check out the Yoast Series</h2>-->
+		<!--			--><?php //get_template_part( 'html_includes/partials/list-series' );
+		?>
+		<!--		</div>-->
+		<!---->
+		<!--		<hr class="hr--no-pointer">-->
+		<!---->
+		<!--		<div class="row">-->
+		<!--			--><?php //get_template_part( 'html_includes/partials/list-series' );
+		?>
+		<!--		</div>-->
 
 		<?php if ( is_category() ) : ?>
 			<hr>
