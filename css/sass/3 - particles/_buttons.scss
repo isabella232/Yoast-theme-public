@@ -172,9 +172,17 @@
     }
 
     &:hover, a:focus {
-      background-color: $color-pink;
+      background-color: $color-pink-hover;
       color: $color-white;
       text-decoration: underline;
+
+      &::after {
+        border-left-color: $color-pink-hover;
+      }
+
+      &::before {
+        border-right-color: $color-pink-hover;
+      }
     }
   }
 
@@ -200,7 +208,7 @@
       &:hover, a:focus {
         background-color: $color-grey-hover;
         color: $color-grey-text;
-        text-decoration: none;
+        text-decoration: underline;
         &::after {
           border-left-color: $color-grey-hover;
         }

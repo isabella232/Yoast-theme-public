@@ -26,6 +26,7 @@ $color-orange-hover:				#F58223;
 $color-grey-hover:					#CDCDCD;
 
 $color-pink: 						#D93F69;
+$color-pink-hover:					darken( $color-pink, 5% );
 
 // Color schemes
 $scheme-home-primary:				$color-pink-light;

@@ -2081,9 +2081,13 @@ a.announcement {
     .academy-course .button::before, .academy-course .comment-respond input[type="submit"]::before, .comment-respond .academy-course input[type="submit"]::before, .academy-course .llms-button::before, .academy-course .llms-course-navigation .llms-lesson-link::before, .llms-course-navigation .academy-course .llms-lesson-link::before, .academy-course .llms-return a::before, .llms-return .academy-course a::before, .academy-course button::before {
       border-right-color: #D93F69; }
     .academy-course .button:hover, .academy-course .comment-respond input[type="submit"]:hover, .comment-respond .academy-course input[type="submit"]:hover, .academy-course .llms-button:hover, .academy-course .llms-course-navigation .llms-lesson-link:hover, .llms-course-navigation .academy-course .llms-lesson-link:hover, .academy-course .llms-return a:hover, .llms-return .academy-course a:hover, .academy-course .button a:focus, .academy-course .comment-respond input[type="submit"] a:focus, .comment-respond .academy-course input[type="submit"] a:focus, .academy-course .llms-button a:focus, .academy-course .llms-course-navigation .llms-lesson-link a:focus, .llms-course-navigation .academy-course .llms-lesson-link a:focus, .academy-course .llms-return a a:focus, .llms-return .academy-course a a:focus, .academy-course button:hover, .academy-course button a:focus {
-      background-color: #D93F69;
+      background-color: #d42a59;
       color: #FFF;
       text-decoration: underline; }
+      .academy-course .button:hover::after, .academy-course .comment-respond input[type="submit"]:hover::after, .comment-respond .academy-course input[type="submit"]:hover::after, .academy-course .llms-button:hover::after, .academy-course .llms-course-navigation .llms-lesson-link:hover::after, .llms-course-navigation .academy-course .llms-lesson-link:hover::after, .academy-course .llms-return a:hover::after, .llms-return .academy-course a:hover::after, .academy-course .button a:focus::after, .academy-course .comment-respond input[type="submit"] a:focus::after, .comment-respond .academy-course input[type="submit"] a:focus::after, .academy-course .llms-button a:focus::after, .academy-course .llms-course-navigation .llms-lesson-link a:focus::after, .llms-course-navigation .academy-course .llms-lesson-link a:focus::after, .academy-course .llms-return a a:focus::after, .llms-return .academy-course a a:focus::after, .academy-course button:hover::after, .academy-course button a:focus::after {
+        border-left-color: #d42a59; }
+      .academy-course .button:hover::before, .academy-course .comment-respond input[type="submit"]:hover::before, .comment-respond .academy-course input[type="submit"]:hover::before, .academy-course .llms-button:hover::before, .academy-course .llms-course-navigation .llms-lesson-link:hover::before, .llms-course-navigation .academy-course .llms-lesson-link:hover::before, .academy-course .llms-return a:hover::before, .llms-return .academy-course a:hover::before, .academy-course .button a:focus::before, .academy-course .comment-respond input[type="submit"] a:focus::before, .comment-respond .academy-course input[type="submit"] a:focus::before, .academy-course .llms-button a:focus::before, .academy-course .llms-course-navigation .llms-lesson-link a:focus::before, .llms-course-navigation .academy-course .llms-lesson-link a:focus::before, .academy-course .llms-return a a:focus::before, .llms-return .academy-course a a:focus::before, .academy-course button:hover::before, .academy-course button a:focus::before {
+        border-right-color: #d42a59; }
   .button body.dimmed,
   .comment-respond input[type="submit"] body.dimmed,
   .llms-button body.dimmed,
@@ -2179,7 +2183,7 @@ a.announcement {
     .academy-course button.dimmed:hover, .academy-course .llms-course-navigation .llms-lesson-preview.previous button.llms-lesson-link:hover, .llms-course-navigation .llms-lesson-preview.previous .academy-course button.llms-lesson-link:hover, .academy-course button#llms_prev_question:hover, .academy-course button.dimmed a:focus, .academy-course .llms-course-navigation .llms-lesson-preview.previous button.llms-lesson-link a:focus, .llms-course-navigation .llms-lesson-preview.previous .academy-course button.llms-lesson-link a:focus, .academy-course button#llms_prev_question a:focus {
       background-color: #CDCDCD;
       color: #646464;
-      text-decoration: none; }
+      text-decoration: underline; }
       .button body.dimmed:hover::after,
       .comment-respond input[type="submit"] body.dimmed:hover::after,
       .llms-button body.dimmed:hover::after,
