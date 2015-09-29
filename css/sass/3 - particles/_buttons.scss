@@ -186,7 +186,7 @@
     }
   }
 
-  body,
+  body &,
   .academy-course & {
     &.dimmed, {
       color: $color-grey-text;
