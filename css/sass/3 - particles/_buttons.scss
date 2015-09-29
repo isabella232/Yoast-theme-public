@@ -82,11 +82,14 @@
     }
 
     &:hover, a:focus {
-      //background-color: $color-orange-hover;
+      background-color: $color-orange-hover;
       color: $color-white;
       text-decoration: underline;
       &::after {
-        //border-left-color: $color-orange-hover;
+        border-left-color: $color-orange-hover;
+      }
+      &::before {
+        border-right-color: $color-orange-hover;
       }
     }
   }
