@@ -1,152 +1,200 @@
 .llms-lesson-button-wrapper {
-	@extend .island;
+  @extend .island;
 
-	input[type="submit"] {
-		width: 100%;
-	}
+  input[type="submit"] {
+    width: 100%;
+    color: $color-white;
+  }
+}
+
+.llms-button-wrapper {
+  input[type="submit"], input[type="button"] {
+    color: $color-white;
+  }
+}
+
+#llms-quiz-question-wrapper .button {
+  color: $color-white;
 }
 
 .llms-button {
-	@extend .button, .default;
-	border-radius: 0;
+  @extend .button, .default;
+  border-radius: 0;
 
-	&:hover {
-		background: $color-orange;
-	}
+  &:hover {
+    background: $color-orange;
+  }
+}
+
+.llms-lesson-preview .llms-lesson-complete {
+  i {
+    color: green;
+  }
 }
 
 .llms-purchase-link-wrapper {
-	text-align: left;
+  text-align: left;
 }
 
 .llms-course-navigation {
-	.llms-lesson-link {
-		border: 1px solid $scheme-academy-primary;
-		background: $color-white;
-		box-shadow: none;
+  .llms-lesson-link {
+    @extend .button;
 
-		&:hover {
-			background: $color-white;
+    display: block;
+    box-shadow: none;
+    min-height: 0;
+    color: $color-white;
+    text-align: center;
 
-			.llms-span {
-				text-decoration: none;
-			}
-		}
-	}
+    @include vendor( transition, none );
+    
+    * {
+      font-size: inherit;
+    }
+
+    &:hover {
+      background: $color-white;
+
+      .llms-span {
+        text-decoration: none;
+      }
+    }
+  }
+  .llms-lesson-preview.previous, .llms-lesson-preview.next {
+    width: 100%;
+  }
+  .llms-lesson-preview.previous {
+    .llms-lesson-link {
+      @extend .dimmed, .left;
+
+      margin-right: 1.36rem;
+    }
+  }
+
+  .llms-lesson-preview.next {
+    margin: $spacing-quarter 0 0 0;
+
+    .llms-lesson-link {
+      margin-left: 1.36rem;
+    }
+  }
 }
 
 svg .llms-animated-circle {
-	stroke: $color-green;
+  stroke: $color-green;
 }
 
 .view-summary {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .quiz-summary {
-	.panel {
-		cursor: pointer;
-	}
+  .panel {
+    cursor: pointer;
+  }
 
-	.panel-body {
-		img {
-			display: block;
-		}
+  .panel-body {
+    img {
+      display: block;
+    }
 
-		li {
-			margin-top: $spacing;
+    li {
+      margin-top: $spacing;
 
-			&:first-child {
-				margin-top: 0;
-			}
-		}
-	}
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .llms-return {
-	a {
-		@extend .button, .dimmed;
-	}
+  a {
+    @extend .button, .left, .dimmed;
+  }
 }
 
 #quiz-start-button {
-	text-align: left;
+  text-align: left;
 }
 
 .llms-quiz-results {
-	h3 {
-		@extend .h2;
-		background: none;
-	}
+  h3 {
+    @extend .h2;
+    background: none;
+  }
 }
 
 .llms-quiz-result-details {
-	// Only display the first item.
-	ul {
-		display: none;
-		&:first-child {
-			display: block;
-		}
-	}
+  // Only display the first item.
+  ul {
+    display: none;
+    &:first-child {
+      display: block;
+    }
+  }
 
-	h4,
-	h5,
-	h6,
-	a {
-		font-size: 1rem;
-		font-family: $font-stack-article;
-		color: $color-black;
-	}
+  h4,
+  h5,
+  h6,
+  a {
+    font-size: 1rem;
+    font-family: $font-stack-article;
+    color: $color-black;
+  }
 }
 
 .llms-progress-circle-count {
-	top: 25%;
-	width: 91%;
+  top: 25%;
+  width: 91%;
 }
 
 .lifterlms {
-	.course-link {
-		text-align: right;
-	}
+  .course-link {
+    text-align: right;
+  }
 
-	.llms-my-achievements {
-		display: none;
-	}
+  .llms-my-achievements {
+    display: none;
+  }
 }
 
 .llms-question-wrapper {
-	.llms-option_ {
-		margin: 0.6rem 0 0 0;
+  .llms-option_ {
+    margin: 0.6rem 0 0 0;
 
-		&:first-child {
-			margin-top: 0;
-		}
-	}
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 
-	.llms-question-label {
-		padding-left: 30px;
-		text-indent: -23px;
+  .llms-question-label {
+    padding-left: 30px;
+    text-indent: -23px;
 
-		input[type="radio"] {
-			margin: 0 5px 0 0;
-		}
-	}
+    input[type="radio"] {
+      margin: 0 5px 0 0;
+    }
+  }
 }
 
 .llms-syllabus-wrapper {
-	.llms-lesson-counter {
-		display: none;
-	}
+  .llms-lesson-counter {
+    display: none;
+  }
 }
 
 // Hide certain things if they are in the content.
 .content {
-	.llms-lesson-button-wrapper,
-	.llms-course-navigation,
-	.llms-parent-course-link,
-	.llms-purchase-link-wrapper,
-	.llms-return {
-		display: none;
-	}
+  .llms-lesson-button-wrapper,
+  .llms-course-navigation,
+  .llms-parent-course-link,
+  .llms-purchase-link-wrapper,
+  .llms-return {
+    display: none;
+  }
 }
 
+#llms_prev_question {
+  @extend .dimmed;
+}

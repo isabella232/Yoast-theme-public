@@ -29,7 +29,7 @@ class Social_Widget extends Widget {
 	/**
 	 * Outputs the social links
 	 */
-	public function widget() {
+	public function widget( $args, $instance ) {
 		get_template_part( 'html_includes/partials/social' );
 	}
 }

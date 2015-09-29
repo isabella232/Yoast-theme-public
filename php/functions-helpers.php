@@ -63,11 +63,10 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 		throw new \Exception( sprintf( 'Undefined template "%s" called from %s:%s', $file, $backtrace['file'], $backtrace['line'] ) );
 	}
 
+	ob_start();
 	if ( WP_DEBUG ) {
 		printf( '<!-- Including template "%s" -->', $file );
 	}
-
-	ob_start();
 	$return = require( $file );
 	$data   = ob_get_clean();
 
