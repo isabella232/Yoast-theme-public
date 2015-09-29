@@ -54,6 +54,14 @@ class Query {
 		} else {
 			$query->set( 'post_type', $post_types );
 		}
+
+		$query->set( 'meta_query', array(
+				array(
+					'key'     => 'search_exclude',
+					'compare' => 'NOT EXISTS'
+				)
+			)
+		);
 	}
 
 	/**
