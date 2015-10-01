@@ -17,18 +17,18 @@ $parent_course_id = $lesson->get_parent_course();
 <nav class="llms-course-navigation">
 
 	<a class="button dimmed left" href="<?php echo esc_url( get_permalink( $parent_course_id ) ); ?>">
-		<?php _e( 'Back to Course', 'yoastcom' ); ?>
+		<?php _e( 'Back to course overview', 'yoastcom' ); ?>
 	</a>
 
 	<?php if ( $previous_lesson_id && ! is_singular( 'llms_quiz' ) ) : ?>
 		<a class="button previous-lesson dimmed left" href="<?php echo esc_url( get_permalink( $previous_lesson_id ) ); ?>">
-			<?php _e( 'Previous Lesson', 'yoastcom' ); ?>
+			<?php _e( 'Previous lesson', 'yoastcom' ); ?>
 		</a>
 	<?php endif; ?>
 
 	<?php if ( $next_lesson_id && $lesson->is_complete() ) : ?>
 		<a class="button next-lesson" href="<?php echo esc_url( get_permalink( $next_lesson_id ) ); ?>">
-			<?php _e( 'Next Lesson', 'yoastcom' ); ?>
+			<?php _e( 'Next lesson', 'yoastcom' ); ?>
 		</a>
 	<?php endif; ?>
 

@@ -28,10 +28,10 @@ $associated_quiz = get_post_meta( $post->ID, '_llms_assigned_quiz', true );
 		if ( $user_postmetas['_is_complete']->meta_value === 'yes' ) {
 
 			if ( $associated_quiz ) {
-				_e( 'You\'ve already completed this quiz.', 'yoastcom' );
+				echo '<em>' . __( 'You\'ve already completed this quiz.', 'yoastcom' ) . '</em>';
 			}
 			else {
-				_e( 'You\'ve already completed this lesson.', 'yoastcom' );
+				echo '<em>' . __( 'You\'ve already completed this lesson.', 'yoastcom' ) . '</em>';
 			}
 		}
 	}
@@ -54,15 +54,22 @@ $associated_quiz = get_post_meta( $post->ID, '_llms_assigned_quiz', true );
 	<?php }
 
 	if ($associated_quiz) {
+		$quiz = new LLMS_Quiz( $associated_quiz );
+		if ( is_null( $quiz->get_user_grade( get_current_user_id() ) ) ) {
+			$button_text =  __( 'Take quiz', 'yoastcom' );
+		}
+		else {
+			$button_text =  __( 'Re-take quiz', 'yoastcom' );
+		}
 		?>
 
 		<form method="POST" action="" name="take_quiz" enctype="multipart/form-data">
 
 			<input type="hidden" name="associated_lesson" value="<?php echo esc_attr( $post->ID ); ?>" />
 			<input type="hidden" name="quiz_id" value="<?php echo esc_attr( $associated_quiz ); ?>" />
-			<button type="submit" class="button" name="take_quiz" value="<?php _e( 'Take Quiz', 'yoastcom' ); ?>">
+			<button type="submit" class="button" name="take_quiz" value="<?php echo $button_text; ?>">
 				<i class="fa fa-pencil-square-o"></i>
-				<?php _e( 'Take Quiz', 'yoastcom' ); ?>
+				<?php echo $button_text; ?>
 			</button>
 			<input type="hidden" name="action" value="take_quiz" />
 
