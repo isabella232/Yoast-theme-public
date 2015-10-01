@@ -11,6 +11,19 @@
 			document.location.hash = '';
 			$( '#llms_start_quiz' ).click();
 		}
+
+		$( window ).on( 'beforeunload', maybeBlockUnload );
+	}
+
+	/**
+	 * Warns the user if they want to leave the quiz page
+	 *
+	 * @param {jQuery.Event} e
+	 */
+	function maybeBlockUnload( e ) {
+		if ( 0 !== $( '#llms_answer_question' ).length ) {
+			return 'If you leave this page you have to restart the quiz.';
+		}
 	}
 
 	$( init );
