@@ -37,40 +37,16 @@
 }
 
 .llms-course-navigation {
-  .llms-lesson-link {
-    @extend .button;
-
-    display: block;
-    box-shadow: none;
-    min-height: 0;
-    color: $color-white;
-    text-align: center;
-
-    @include vendor( transition, none );
-    
-    * {
-      font-size: inherit;
-    }
-
-    &:hover {
-      background: $color-white;
-
-      .llms-span {
-        text-decoration: none;
-      }
-    }
-  }
-  .llms-lesson-preview.previous, .llms-lesson-preview.next {
+  .button {
     width: 100%;
   }
-  .llms-lesson-preview.previous {
-    .llms-lesson-link {
-      @extend .dimmed, .left;
-    }
+
+  .next-lesson {
+    margin-left: 0;
   }
 
-  .llms-lesson-preview.next {
-    margin: $spacing-quarter 0 0 0;
+  .previous-lesson {
+    margin-left: 1.36rem;
   }
 }
 
