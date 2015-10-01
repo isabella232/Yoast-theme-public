@@ -63,6 +63,16 @@ svg .llms-animated-circle {
     cursor: pointer;
   }
 
+  .collapsed {
+    .panel-title {
+      &::after {
+        content: '\f0d7';
+        font-family: 'FontAwesome';
+        float: right;
+      }
+    }
+  }
+
   .panel-body {
     img {
       display: block;
