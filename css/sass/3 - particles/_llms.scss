@@ -181,3 +181,9 @@ svg .llms-animated-circle {
 .llms-progress .progress-bar-complete {
   background-color: $color-pink-light;
 }
+@media only screen and (min-width: 50rem) {
+  .yoast_academy .pagetitle {
+    width: 30em;
+    background-image: url(./../images/logo-academy.svg);
+  }
+}

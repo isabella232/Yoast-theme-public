@@ -162,7 +162,7 @@
     }
   }
 
-  .academy-course & {
+  .yoast_academy & {
     color: $color-white;
     background-color: $color-pink;
 
@@ -190,7 +190,7 @@
   }
 
   body &,
-  .academy-course & {
+  .yoast_academy & {
     &.dimmed, {
       color: $color-grey-text;
       background-color: $color-grey;
