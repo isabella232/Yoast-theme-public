@@ -3692,6 +3692,9 @@ svg .llms-animated-circle {
 .content .llms-return {
   display: none; }
 
+.llms-progress .progress-bar-complete {
+  background-color: #D93F69; }
+
 /* Main navigation */
 .sitenav {
   /* 1 pixel border between main and subnav */

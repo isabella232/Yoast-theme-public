@@ -177,3 +177,7 @@ svg .llms-animated-circle {
 #llms_prev_question {
   @extend .dimmed;
 }
+
+.llms-progress .progress-bar-complete {
+  background-color: $color-pink-light;
+}
