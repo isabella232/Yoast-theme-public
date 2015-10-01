@@ -135,4 +135,15 @@
     background-color: $color-subnav;
   }
 
+  .syllabus-section {
+    &::after {
+      @include vendor(filter, drop-shadow(0 1px 0 $color-primary));
+    }
+
+    &.current-section {
+      &::after {
+        @include vendor(filter, drop-shadow(0 1px 0 $color-secondary));
+      }
+    }
+  }
 }
