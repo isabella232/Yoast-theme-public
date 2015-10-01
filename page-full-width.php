@@ -22,14 +22,8 @@ namespace Yoast\YoastCom\Theme;
 
 				<?php the_content(); ?>
 
-				<?php get_template_part( 'html_includes/partials/social-share' ); ?>
 			</article>
 		<?php endwhile; ?>
-
-		<section class="row iceberg">
-			<h2>Recent posts</h2>
-			<?php get_template_part( 'html_includes/partials/more-articles' ); ?>
-		</section>
 
 		<?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
 
