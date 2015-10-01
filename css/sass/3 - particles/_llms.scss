@@ -81,7 +81,17 @@ svg .llms-animated-circle {
 .llms-return {
   a {
     @extend .button, .left, .dimmed;
+
+    .single-llms_quiz & {
+      width: 100%;
+      text-align: center;
+    }
   }
+}
+
+.single-llms_quiz .llms-course-navigation {
+  margin-top: 1em;
+  padding-top: 0;
 }
 
 #quiz-start-button {

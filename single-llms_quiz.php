@@ -39,6 +39,7 @@ function yst_return_empty_string() {
 
 				<div class="extra">
 					<?php llms_get_template( 'quiz/return-to-lesson.php' ); ?>
+					<?php llms_get_template( 'course/lesson-navigation.php' ); ?>
 				</div>
 			</article>
 		<?php endwhile; ?>

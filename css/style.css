@@ -3486,6 +3486,14 @@ svg .llms-animated-circle {
   .quiz-summary .panel-body li:first-child {
     margin-top: 0; }
 
+.single-llms_quiz .llms-return a {
+  width: 100%;
+  text-align: center; }
+
+.single-llms_quiz .llms-course-navigation {
+  margin-top: 1em;
+  padding-top: 0; }
+
 #quiz-start-button {
   text-align: left; }
 

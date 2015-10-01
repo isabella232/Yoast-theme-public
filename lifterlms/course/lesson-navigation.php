@@ -20,7 +20,7 @@ $parent_course_id = $lesson->get_parent_course();
 		<?php _e( 'Back to Course', 'yoastcom' ); ?>
 	</a>
 
-	<?php if ( $previous_lesson_id ) : ?>
+	<?php if ( $previous_lesson_id && ! is_singular( 'llms_quiz' ) ) : ?>
 		<a class="button previous-lesson dimmed left" href="<?php echo esc_url( get_permalink( $previous_lesson_id ) ); ?>">
 			<?php _e( 'Previous Lesson', 'yoastcom' ); ?>
 		</a>
