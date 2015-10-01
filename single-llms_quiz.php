@@ -38,6 +38,7 @@ function yst_return_empty_string() {
 				</div>
 
 				<div class="extra">
+					<?php get_template_part( 'html_includes/partials/llms-progress' ); ?>
 					<?php llms_get_template( 'quiz/return-to-lesson.php' ); ?>
 					<?php llms_get_template( 'course/lesson-navigation.php' ); ?>
 				</div>

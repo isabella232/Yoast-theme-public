@@ -23,8 +23,7 @@ namespace Yoast\YoastCom\Theme;
 				</div>
 
 				<div class="extra">
-					<?php _e( 'Course Progress', 'yoastcom' ); ?>
-					<?php llms_get_template( 'course/purchase-link.php' ); ?>
+					<?php get_template_part( 'html_includes/partials/llms-progress' ); ?>
 				</div>
 			</article>
 		<?php endwhile; ?>

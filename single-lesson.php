@@ -28,6 +28,7 @@ remove_filter( 'the_content', 'llms_get_post_content' );
 				</div>
 
 				<div class="extra">
+					<?php get_template_part( 'html_includes/partials/llms-progress' ); ?>
 					<?php llms_get_template( 'course/lesson-navigation.php' ); ?>
 					<?php llms_get_template( 'course/complete-lesson-link.php' ); ?>
 				</div>
