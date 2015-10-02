@@ -200,6 +200,10 @@ svg .llms-animated-circle {
   top: 115px;
 }
 
+.sticky-filled .extra + div {
+  display: none !important;
+}
+
 @media only screen and (min-width: 50rem) {
   .yoast_academy .pagetitle {
     width: 30em;
