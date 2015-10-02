@@ -176,7 +176,7 @@ class Theme {
 		$meta_tags[] = '<link rel="apple-touch-icon" href="' . get_template_directory_uri() . '/images/yoast-logo-icon-512x512.png" sizes="512x512">';
 
 		// Mask icon for Safari pinned tabs
-		$meta_tags[] = '<link rel="mask-icon" href="' . get_template_directory_uri() . '/images/yoast-logo-icon-black.svg" color="#a4286a">';
+		$meta_tags[] = "<link rel='mask-icon' color='#a4286a' href='" . get_template_directory_uri() . "'/images/yoast-logo-icon-black.svg'>";
 
 		return $meta_tags;
 	}
