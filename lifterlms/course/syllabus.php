@@ -33,6 +33,10 @@ if ( !$sections ) {
 		}
 
 		$classes = array( 'syllabus-section' );
+		if ( false === $current_section ) {
+			$classes[] = 'complete-section';
+		}
+
 		if ( $section_child->ID === $current_section ) {
 			$classes[] = 'current-section open';
 
@@ -43,7 +47,13 @@ if ( !$sections ) {
 		}
 
 		$html .= '<section class="' . esc_attr( implode( ' ', $classes ) ) . '">';
-		$html .= '<button class="llms-h3 llms-section-title toggle"><h3>' . $section->post->post_title . '<i class="fa fa-caret-down" aria-hidden="true"></i></h3></button>';
+		$html .= '<button class="llms-h3 llms-section-title toggle">';
+			$html .= '<h3>';
+				$html .= '<i class="fa fa-check-square" aria-hidden="true"></i>';
+				$html .= $section->post->post_title;
+				$html .= '<i class="fa fa-caret-down" aria-hidden="true"></i>';
+			$html .= '</h3>';
+		$html .= '</button>';
 
 		//get lesson data
 		$lessons = $section->get_children_lessons();
@@ -79,6 +89,10 @@ if ( !$sections ) {
 				else {
 					$title = LLMS_Language::output( 'Take this course to unlock this lesson' );
 					$linkclass = 'llms-lesson-link-locked';
+				}
+
+				if ( $lesson->is_complete() ) {
+					$linkclass .= ' is-complete';
 				}
 
 				$html .= '<a class="' . $linkclass . '" title="' . $title . '" href="' . $permalink . '">';

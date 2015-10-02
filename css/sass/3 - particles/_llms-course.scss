@@ -31,7 +31,14 @@
 
 		.fa {
 			font-size: 1em;
+		}
+
+		.fa-caret-down {
 			margin: 0 0 0 10px;
+		}
+
+		.fa-check-square {
+			color: $color-green;
 		}
 
 		&.closed {
@@ -51,6 +58,12 @@
 				display: none;
 			}
 		}
+
+		&.complete-section {
+			button:hover h3::before {
+				text-decoration: none;
+			}
+		}
 		
 		&.current-section {
 			border-bottom-color: $scheme-academy-secondary;
@@ -59,6 +72,10 @@
 			a,
 			h5 {
 				color: $scheme-academy-secondary;
+			}
+			
+			.fa-check-square {
+				display: none;
 			}
 		}
 
@@ -74,6 +91,10 @@
 				&:hover {
 					color: $color-grey-quote;
 				}
+			}
+
+			.fa-check-square {
+				display: none;
 			}
 		}
 	}
@@ -92,6 +113,15 @@
 
 	.lessons {
 		margin-bottom: $spacing-quarter;
+
+		.is-complete {
+			&::before {
+				content: '\f14a';
+				font-family: 'FontAwesome';
+				color: $color-green;
+				margin-right: $spacing-quarter;
+			}
+		}
 	}
 
 	.hidden {

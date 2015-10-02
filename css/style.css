@@ -3537,8 +3537,11 @@ hr {
     .llms-syllabus-wrapper .syllabus-section h5 {
       color: #5D237A; }
     .llms-syllabus-wrapper .syllabus-section .fa {
-      font-size: 1em;
+      font-size: 1em; }
+    .llms-syllabus-wrapper .syllabus-section .fa-caret-down {
       margin: 0 0 0 10px; }
+    .llms-syllabus-wrapper .syllabus-section .fa-check-square {
+      color: #77B227; }
     .llms-syllabus-wrapper .syllabus-section.closed .lessons {
       display: none; }
     .llms-syllabus-wrapper .syllabus-section.closed::after {
@@ -3547,12 +3550,16 @@ hr {
       margin-bottom: 1em; }
       .llms-syllabus-wrapper .syllabus-section.open .fa-caret-down {
         display: none; }
+    .llms-syllabus-wrapper .syllabus-section.complete-section button:hover h3::before {
+      text-decoration: none; }
     .llms-syllabus-wrapper .syllabus-section.current-section {
       border-bottom-color: #A4286A; }
       .llms-syllabus-wrapper .syllabus-section.current-section h3,
       .llms-syllabus-wrapper .syllabus-section.current-section a,
       .llms-syllabus-wrapper .syllabus-section.current-section h5 {
         color: #A4286A; }
+      .llms-syllabus-wrapper .syllabus-section.current-section .fa-check-square {
+        display: none; }
     .llms-syllabus-wrapper .syllabus-section.unavailable-section {
       border-bottom-color: #8C8C8C; }
       .llms-syllabus-wrapper .syllabus-section.unavailable-section h3,
@@ -3565,6 +3572,8 @@ hr {
         .llms-syllabus-wrapper .syllabus-section.unavailable-section h5:hover,
         .llms-syllabus-wrapper .syllabus-section.unavailable-section button:hover {
           color: #8C8C8C; }
+      .llms-syllabus-wrapper .syllabus-section.unavailable-section .fa-check-square {
+        display: none; }
   .llms-syllabus-wrapper .llms-lesson-link {
     display: block;
     text-align: left;
@@ -3575,6 +3584,11 @@ hr {
       text-decoration: underline; }
   .llms-syllabus-wrapper .lessons {
     margin-bottom: 0.47rem; }
+    .llms-syllabus-wrapper .lessons .is-complete::before {
+      content: '\f14a';
+      font-family: 'FontAwesome';
+      color: #77B227;
+      margin-right: 0.47rem; }
   .llms-syllabus-wrapper .hidden {
     display: none; }
   .llms-syllabus-wrapper button {
