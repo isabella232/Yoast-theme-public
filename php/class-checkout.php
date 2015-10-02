@@ -47,7 +47,6 @@ class Checkout {
 	 * @return bool|null
 	 */
 	private function check_vat( $country, $vat_nr ) {
-		return 2;
 
 		$country = trim( $country );
 		$vat_nr  = trim( $vat_nr );
@@ -57,7 +56,7 @@ class Checkout {
 		}
 
 		// Do the remote request
-		$client = new SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
+		$client = new \SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
 
 		try {
 			$returnVat = $client->checkVat( array(
