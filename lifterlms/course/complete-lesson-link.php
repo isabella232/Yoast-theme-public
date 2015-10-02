@@ -55,11 +55,11 @@ $associated_quiz = get_post_meta( $post->ID, '_llms_assigned_quiz', true );
 
 	if ($associated_quiz) {
 		$quiz = new LLMS_Quiz( $associated_quiz );
-		if ( is_null( $quiz->get_user_grade( get_current_user_id() ) ) ) {
-			$button_text =  __( 'Take quiz', 'yoastcom' );
+		if ( 0 === $quiz->get_total_attempts_by_user( get_current_user_id() ) ) {
+			$button_text = __( 'Take quiz', 'yoastcom' );
 		}
 		else {
-			$button_text =  __( 'Re-take quiz', 'yoastcom' );
+			$button_text = __( 'Re-take quiz', 'yoastcom' );
 		}
 		?>
 
