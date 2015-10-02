@@ -4,12 +4,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yoast.com V5 5.0.0\n"
 "Report-Msgid-Bugs-To: translate@yoast.com\n"
-"POT-Creation-Date: 2015-10-02 19:12+0200\n"
+"POT-Creation-Date: 2015-10-02 20:57+0200\n"
+"PO-Revision-Date: 2015-10-02 20:59+0200\n"
+"Last-Translator: \n"
+"Language-Team: Yoast Translate\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-10-02 19:36+0200\n"
-"Language-Team: Yoast Translate\n"
 "X-Generator: Poedit 1.8.5\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
@@ -18,8 +20,6 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
-"Last-Translator: \n"
-"Language: nl\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:17
@@ -54,7 +54,7 @@ msgstr "Begin opnieuw op de %1$shomepage%2$s."
 msgid "Search for it: "
 msgstr "Zoek er naar:"
 
-#: 404.php:35
+#: 404.php:35 page-template-front-page.php:35 page.php:30
 msgid "Recent posts"
 msgstr "Recente berichten"
 
@@ -71,36 +71,40 @@ msgstr ""
 msgid "SEO plugins by Yoast"
 msgstr "SEO plugins van Yoast"
 
-#: archive-yoast_plugins.php:19 archive-yoast_plugins.php:67
+#: archive-yoast_plugins.php:19 archive-yoast_plugins.php:61
 msgid "Google Analytics plugins"
 msgstr "Google Analytics plugins"
 
-#: archive-yoast_plugins.php:20 archive-yoast_plugins.php:50
-#: archive-yoast_plugins.php:64
+#: archive-yoast_plugins.php:20 archive-yoast_plugins.php:44
+#: archive-yoast_plugins.php:58
 msgid "Other plugins"
 msgstr "Andere plugins"
 
-#: archive-yoast_plugins.php:26
-msgid ""
-"News SEO by Yoast makes sure we can keep up to date with the changing "
-"requirements by Google"
-msgstr ""
-
-#: archive-yoast_plugins.php:39
+#: archive-yoast_plugins.php:33 page-template-front-page.php:47
 msgid "Bundle plugins and save money!"
 msgstr "Koop een bundel en bespaar!"
 
-#: archive-yoast_plugins.php:46
+#: archive-yoast_plugins.php:40
 msgid "Google Analytics by Yoast plugins"
 msgstr "Google Analytics door Yoast plugins"
 
-#: archive-yoast_plugins.php:49 archive-yoast_plugins.php:66
+#: archive-yoast_plugins.php:43 archive-yoast_plugins.php:60
 msgid "WordPress SEO plugins"
 msgstr "WordPress SEO plugins"
 
 #: archive.php:144
 msgid "Browse other Yoast Categories"
 msgstr "Bekijk andere Yoast categorieën"
+
+#: html_includes/header-controls-mobile.php:13
+#: html_includes/partials/search.php:13 html_includes/partials/search.php:15
+#: searchform.php:6 searchform.php:8
+msgid "Search"
+msgstr "Zoek"
+
+#: html_includes/header-controls-mobile.php:15
+msgid "Navigation"
+msgstr "Navigatie"
 
 #: html_includes/partials/announcement-addonmodules.php:18
 msgid "Yoast Premium Add-On Modules"
@@ -114,12 +118,6 @@ msgstr "Meer over %s"
 #: html_includes/partials/article-intro.php:6
 msgid "by"
 msgstr "door"
-
-#: html_includes/partials/article-intro.php:19
-msgid "Category:"
-msgid_plural "Categories:"
-msgstr[0] "Categorie:"
-msgstr[1] "Categorieën:"
 
 #: html_includes/partials/bio.php:14
 msgid "Read all about %s"
@@ -180,9 +178,13 @@ msgstr ""
 msgid "Course Progress"
 msgstr ""
 
+#: html_includes/partials/meta-full.php:8
+msgid "Post author"
+msgstr "Post auteur"
+
 #: html_includes/partials/meta-full.php:19
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #. Template Name of the plugin/theme
 msgid "Categories"
@@ -241,13 +243,17 @@ msgstr ""
 msgid "More information about %s"
 msgstr ""
 
+#: html_includes/partials/search.php:9
+msgid "Search &raquo;"
+msgstr "Zoek &raquo;"
+
 #: html_includes/partials/social-share.php:29
 msgid "Tweet"
-msgstr ""
+msgstr "Tweet"
 
 #: html_includes/partials/social-share.php:33
 msgid "Print"
-msgstr ""
+msgstr "Print"
 
 #: html_includes/shop/checkout-cart.php:49
 msgid "Discount"
@@ -500,6 +506,20 @@ msgstr "Bekijk onze Must Read artikelen"
 msgid "Read the latests posts on our SEO blog"
 msgstr "Lees de laatste berichten op ons blog"
 
+#: page-template-front-page.php:25
+msgid "WordPress plugins by Yoast"
+msgstr ""
+
+#: page-template-front-page.php:54
+msgid ""
+"Yoast is all about improving the web. We make websites work!  You can learn "
+"how to optimize your website yourself in our Academy &raquo;"
+msgstr ""
+
+#: page-template-front-page.php:62
+msgid "Browse our SEO Blog &raquo;"
+msgstr "Bekijk ons blog &raquo;"
+
 #: php/class-banner.php:23
 msgid "Reviews"
 msgstr "Reviews"
@@ -550,11 +570,11 @@ msgstr ""
 
 #: php/class-comment-walker.php:34
 msgid "By&nbsp;<cite class=\"fn\">%s</cite> <span class=\"date\">on %s</span>"
-msgstr ""
+msgstr "Door&nbsp;<cite class=“fn”>%s</cite> <span class=“date”>op %s</span>"
 
 #: php/class-comment-walker.php:43
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Je reactie moet nog goedgekeurd worden."
 
 #: php/class-page-academy-settings.php:23
 msgid "Page Academy Settings"
@@ -632,27 +652,31 @@ msgstr ""
 msgid "Bundle plugins and save money"
 msgstr ""
 
-#: php/class-text-changes.php:52
-msgid "Dev Blog"
-msgstr ""
+#: php/class-text-changes.php:46
+msgid "Blog"
+msgstr "Blog"
 
 #: php/class-text-changes.php:56
+msgid "Dev Blog"
+msgstr "Dev Blog"
+
+#: php/class-text-changes.php:60
 msgid "Search for \"%s\""
 msgstr "Zoek naar “%s”"
 
-#: php/class-theme.php:198
+#: php/class-theme.php:200
 msgid "Primary Navigation Menu"
 msgstr ""
 
-#: php/class-theme.php:199
+#: php/class-theme.php:201
 msgid "Secondary Navigation Menu"
 msgstr ""
 
-#: php/class-theme.php:208
+#: php/class-theme.php:210
 msgid "Footer %d"
 msgstr ""
 
-#: php/class-theme.php:221
+#: php/class-theme.php:223
 msgid "Homepage Promo Block %d"
 msgstr ""
 
@@ -703,10 +727,6 @@ msgstr "%1$sBekijk zijn andere posts%2$s of vind hem op %3$s"
 #: php/functions-links.php:48
 msgid "%1$sView their other posts%2$s or find them on %3$s"
 msgstr ""
-
-#: searchform.php:6 searchform.php:8
-msgid "Search"
-msgstr "Zoek"
 
 #: single-yoast_courses.php:72 single.php:41
 msgid "You might also like"
@@ -781,3 +801,8 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Styleguide"
 msgstr ""
+
+#~ msgid "Category:"
+#~ msgid_plural "Categories:"
+#~ msgstr[0] "Categorie:"
+#~ msgstr[1] "Categorieën:"

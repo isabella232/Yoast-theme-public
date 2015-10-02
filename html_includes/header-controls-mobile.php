@@ -10,7 +10,7 @@ namespace Yoast\YoastCom\Theme;
 	</a>
 	<?php } ?>
 
-	<a href="#mobile-search" data-toggle="data-show-mobile-search"><span class="visuallyhidden focusable">Search</span><span class="text-icon">&#xf002;</span></a>
+	<a href="#mobile-search" data-toggle="data-show-mobile-search"><span class="visuallyhidden focusable"><?php _e( 'Search', 'yoastcom' ); ?></span><span class="text-icon">&#xf002;</span></a>
 
-	<button data-toggle="data-show-mobile-nav" class="button--naked"><span class="visuallyhidden focusable">Navigation</span><span class="text-icon">&#xf0c9;</span></button>
+	<button data-toggle="data-show-mobile-nav" class="button--naked"><span class="visuallyhidden focusable"><?php _e( 'Navigation', 'yoastcom' ); ?></span><span class="text-icon">&#xf0c9;</span></button>
 </div>
