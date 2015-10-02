@@ -3716,6 +3716,11 @@ svg .llms-animated-circle {
 .llms-progress .progress-bar-complete {
   background-color: #D93F69; }
 
+.yoast_academy .extra {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 115px; }
+
 @media only screen and (min-width: 50rem) {
   .yoast_academy .pagetitle {
     width: 30em;
