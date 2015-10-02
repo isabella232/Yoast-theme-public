@@ -40,7 +40,7 @@ $certificate = new LLMS_Certificate;
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width">
 
-	<title><?php echo get_the_title(); ?></title>
+	<title><?php echo get_the_title(); ?> <?php _e( 'Certificate', 'yoastcom' ); ?></title>
 
 	<?php $certificate_url_dir = plugins_url(); // Declare Plugin Directory ?>
 
