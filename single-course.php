@@ -25,6 +25,7 @@ namespace Yoast\YoastCom\Theme;
 				<div class="extra">
 					<?php get_template_part( 'html_includes/partials/llms-progress' ); ?>
 					<?php get_template_part( 'html_includes/partials/llms-certificate-button' ); ?>
+					<?php get_template_part( 'html_includes/partials/llms-continue' ); ?>
 				</div>
 			</article>
 		<?php endwhile; ?>
