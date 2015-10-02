@@ -41,8 +41,12 @@ class Text_Changes {
 	 * @return string
 	 */
 	public function filter_archive_title( $title ) {
-		if ( is_home() && ! is_front_page() ) {
-			$title = get_the_title( get_option( 'page_for_posts' ) );
+		if ( is_home() ) {
+			if ( is_front_page() ) {
+				$title = __( 'Blog', 'yoastcom' );
+			} else {
+				$title = get_the_title( get_option( 'page_for_posts' ) );
+			}
 		}
 		if ( is_category() || is_tag() || is_tax() ) {
 			$title = single_term_title( '', false );

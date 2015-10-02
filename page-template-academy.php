@@ -43,7 +43,7 @@ namespace Yoast\YoastCom\Theme;
 			<hr>
 
 			<section class="row iceberg">
-				<h2 class="color-academy--secondary"><?php _e( 'Read our Latest Posts', 'yoastcom' ); ?></h2>
+				<h2 class="color-academy--secondary"><?php _e( 'Read the latests posts on our SEO blog', 'yoastcom' ); ?></h2>
 				<?php get_template_part( 'html_includes/partials/more-articles' ); ?>
 			</section>
 		</div>

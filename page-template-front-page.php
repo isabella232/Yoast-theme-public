@@ -22,7 +22,7 @@ namespace Yoast\YoastCom\Theme;
 		<div class="rowholder">
 			<section class="row iceberg theme-academy">
 
-				<h2><a href="<?php echo url_plugin_overview(); ?>">WordPress plugins by Yoast</a></h2>
+				<h2><a href="<?php echo url_plugin_overview(); ?>"><?php _e( 'WordPress plugins by Yoast', 'yoastcom' ); ?></a></h2>
 				<?php get_template_part( 'html_includes/partials/more-plugin' ); ?>
 			</section>
 		</div>
@@ -32,7 +32,7 @@ namespace Yoast\YoastCom\Theme;
 		<div class="rowholder">
 			<section class="row">
 
-				<h2 class="color-academy--secondary"><a class="color-academy--secondary" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Recent Posts</a></h2>
+				<h2 class="color-academy--secondary"><a class="color-academy--secondary" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Recent posts', 'yoastcom' ); ?></a></h2>
 
 				<?php get_template_part( 'html_includes/partials/recent-articles', array( 'class1' => 'theme-academy--secondary color-academy--secondary', 'class2' => 'color-academy--secondary' ) ); ?>
 
@@ -44,14 +44,14 @@ namespace Yoast\YoastCom\Theme;
 		<div class="rowholder">
 			<section class="row island iceberg theme-about">
 
-				<h2>Bundle plugins and save money!</h2>
+				<h2><?php _e( 'Bundle plugins and save money!', 'yoastcom' ); ?></h2>
 				<?php get_template_part( 'html_includes/partials/more-bundleplugin', array( 'class1' => 'color-about', 'class2' => 'color-cta' ) ); ?>
 			</section>
 		</div>
 
 		<?php get_template_part( 'html_includes/partials/announcement', array(
 			'class' => 'announcement--pointer theme-software',
-			'text'  => 'Yoast is all about improving the web. We make websites work!  You can learn how to optimize your website yourself in our Academy &raquo;',
+			'text'  => __( 'Yoast is all about improving the web. We make websites work!  You can learn how to optimize your website yourself in our Academy &raquo;', 'yoastcom' ),
 			'url'   => url_academy_overview(),
 			'icon'  => 'graduation-cap',
 		) ); ?>
@@ -59,7 +59,7 @@ namespace Yoast\YoastCom\Theme;
 		<div class="rowholder">
 			<section class="row island iceberg">
 				<?php get_template_part( 'html_includes/partials/more-categories', array( 'class' => 'color-software--secondary' ) ); ?>
-				<a href="<?php echo home_url( 'seo-blog/' ); ?>" class="color-software--secondary link--naked rightaligned">Browse our SEO Blog &raquo;</a>
+				<a href="<?php echo home_url( 'seo-blog/' ); ?>" class="color-software--secondary link--naked rightaligned"><?php _e( 'Browse our SEO Blog &raquo;', 'yoastcom' ); ?></a>
 			</section>
 		</div>
 
@@ -69,7 +69,7 @@ namespace Yoast\YoastCom\Theme;
 
 	<div class="rowholder">
 		<?php get_template_part( 'html_includes/fullfooter' ); ?>
-	</div>
+		</div>
 
 </div>
 

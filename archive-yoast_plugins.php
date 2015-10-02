@@ -20,12 +20,6 @@ namespace Yoast\YoastCom\Theme;
 				<li><a href="#other-plugins"><?php _e( 'Other plugins', 'yoastcom' ); ?> &raquo;</a></li>
 			</ul>
 			<?php get_template_part( 'html_includes/partials/more-pluginlist', array( 'categories' => array( 303 ) ) ); ?>
-
-			<div class="island">
-				<blockquote>
-					<?php _e( 'News SEO by Yoast makes sure we can keep up to date with the changing requirements by Google', 'yoastcom' ); ?>
-				</blockquote>
-			</div>
 		</div>
 
 		<?php get_template_part( 'html_includes/partials/announcement', array(
