@@ -4,6 +4,7 @@
  */
 
 namespace Yoast\YoastCom\Theme;
+
 use Yoast\YoastCom\Settings\Hide_Comments;
 
 /**
@@ -33,6 +34,8 @@ class Theme {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 20 );
 
 		add_action( 'widgets_init', array( $this, 'register_widgets' ) );
+
+		add_filter( 'site_icon_meta_tags', array( $this, 'site_icons' ) );
 
 		new Widget_Color_Setting();
 		new Ajax();
@@ -122,7 +125,7 @@ class Theme {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		if ( is_singular( array( 'course', 'lesson', 'llms_quiz' ) ) ){
+		if ( is_singular( array( 'course', 'lesson', 'llms_quiz' ) ) ) {
 			wp_enqueue_script( 'yoast-com-academy' );
 		}
 	}
@@ -157,6 +160,25 @@ class Theme {
 		$this->register_menus();
 		$this->register_sidebars();
 		$this->register_theme_support();
+	}
+
+	/**
+	 * Adds several sizes of apple touch icon and a pinned tabs icon
+	 *
+	 * @param $meta_tags
+	 *
+	 * @return array
+	 */
+	public function site_icons( $meta_tags ) {
+		// Apple touch icons
+		$meta_tags[] = '<link rel="apple-touch-icon" href="' . get_template_directory_uri() . '/images/yoast-logo-icon-120x120.png" sizes="120x120">';
+		$meta_tags[] = '<link rel="apple-touch-icon" href="' . get_template_directory_uri() . '/images/yoast-logo-icon-152x152.png" sizes="152x152">';
+		$meta_tags[] = '<link rel="apple-touch-icon" href="' . get_template_directory_uri() . '/images/yoast-logo-icon-512x512.png" sizes="512x512">';
+
+		// Mask icon for Safari pinned tabs
+		$meta_tags[] = "<link rel='mask-icon' color='#a4286a' href='" . get_template_directory_uri() . "/images/yoast-logo-icon-black.svg'>";
+
+		return $meta_tags;
 	}
 
 	/**
@@ -202,4 +224,5 @@ class Theme {
 			'after_widget'  => '</div>',
 		) );
 	}
+
 }
