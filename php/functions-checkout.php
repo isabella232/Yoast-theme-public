@@ -216,3 +216,82 @@ function has_edd_error( $field ) {
 	return false;
 }
 
+/**
+ * Returns an array filled with customer data
+ *
+ * @return array {
+ *      @type string $first_name The customer's first name.
+ *      @type string $last_name The customer's last name.
+ *      @type string $email The customer's email address.
+ * }
+ */
+function get_customer() {
+
+	$customer = EDD()->session->get( 'customer' );
+	$customer = wp_parse_args( $customer, array( 'first_name' => '', 'last_name' => '', 'email' => '' ) );
+
+	if ( is_user_logged_in() ) {
+		$user_data = get_userdata( get_current_user_id() );
+		foreach ( $customer as $key => $field ) {
+
+			if ( 'email' === $key && empty( $field ) ) {
+				$customer[ $key ] = $user_data->user_email;
+			}
+			elseif ( empty( $field ) ) {
+				$customer[ $key ] = $user_data->$key;
+			}
+		}
+	}
+
+	$customer = array_map( 'sanitize_text_field', $customer );
+
+	return $customer;
+}
+
+/**
+ * Returns an array filled with the customer address details
+ *
+ * @return array {
+ *      @type array $address {
+ *          @type string $line1 Address line 1.
+ *          @type string $line2 Address line 2.
+ *          @type string $city The customer's city.
+ *          @type string $zip The customer's zipcode.
+ *          @type string $state The customer's state.
+ *          @type string $country The customer's country.
+ *     }
+ * }
+ */
+function get_customer_address() {
+	$logged_in = is_user_logged_in();
+	$customer  = EDD()->session->get( 'customer' );
+	$customer  = wp_parse_args( $customer, array(
+		'address' => array(
+			'line1'   => '',
+			'line2'   => '',
+			'city'    => '',
+			'zip'     => '',
+			'state'   => '',
+			'country' => '',
+		),
+	) );
+
+	$customer['address'] = array_map( 'sanitize_text_field', $customer['address'] );
+
+	if ( $logged_in ) {
+
+		$user_address = get_user_meta( get_current_user_id(), '_edd_user_address', true );
+
+		foreach ( $customer['address'] as $key => $field ) {
+
+			if ( empty( $field ) && ! empty( $user_address[ $key ] ) ) {
+				$customer['address'][ $key ] = $user_address[ $key ];
+			}
+			else {
+				$customer['address'][ $key ] = '';
+			}
+		}
+	}
+
+	return $customer;
+}
