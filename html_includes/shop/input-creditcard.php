@@ -15,7 +15,7 @@ namespace Yoast\YoastCom\Theme;
 		<label class="edd-label" for="card_number">
 			<?php _e( 'Card Number', 'yoast-theme' ); ?>
 		</label>
-		<input tabindex="4" type="text" pattern="\d*" novalidate autocompletetype="cc-number" placeholder="•••• •••• •••• ••••" id="card_number" name="card_number" class="card-number edd-input" />
+		<input type="text" pattern="\d*" novalidate autocompletetype="cc-number" placeholder="•••• •••• •••• ••••" id="card_number" name="card_number" class="card-number edd-input" />
 		<span class="card-type"></span>
 	</p>
 
@@ -24,9 +24,9 @@ namespace Yoast\YoastCom\Theme;
 		<label for="card_exp_month" class="edd-label">
 			<?php _e( 'Expires', 'yoast-theme' ); ?>
 		</label>
-		<input tabindex="5" type="text" min="1" max="12" placeholder="MM" pattern="\d*" name="card_exp_month" id="card_exp_month" class="card-expiry-month edd-input edd-input-cvc" />
+		<input type="text" min="1" max="12" placeholder="MM" pattern="\d*" name="card_exp_month" id="card_exp_month" class="card-expiry-month edd-input edd-input-cvc" />
 		<span class="separator">/</span>
-		<input tabindex="6" type="text" min="1" max="99" placeholder="YY" pattern="\d*" name="card_exp_year" id="card_exp_year" class="card-expiry-year edd-input edd-input-cvc" />
+		<input type="text" min="1" max="99" placeholder="YY" pattern="\d*" name="card_exp_year" id="card_exp_year" class="card-expiry-year edd-input edd-input-cvc" />
 	</p>
 	<?php do_action( 'edd_after_cc_expiration' ); ?>
 
@@ -34,14 +34,14 @@ namespace Yoast\YoastCom\Theme;
 		<label for="card_name" class="edd-label">
 			<?php _e( 'Name on card', 'yoast-theme' ); ?>
 		</label>
-		<input tabindex="7" type="text" autocompletetype="cc-full-name" id="card_name" name="card_name" class="card-name edd-input" />
+		<input type="text" autocompletetype="cc-full-name" id="card_name" name="card_name" class="card-name edd-input" />
 	</p>
 
 	<p class="card-box" id="edd-card-cvc-wrap">
 		<label class="edd-label">
 			<?php _e( 'Card code', 'yoast-theme' ); ?>
 		</label>
-		<input placeholder="CVC" tabindex="8" type="text" size="8" pattern="\d*" novalidate autocomplete="off" autocompletetype="cc-csc" id="card_cvc" name="card_cvc" class="card-cvc edd-input edd-input-small" />
+		<input placeholder="CVC" type="text" size="8" pattern="\d*" novalidate autocomplete="off" autocompletetype="cc-csc" id="card_cvc" name="card_cvc" class="card-cvc edd-input edd-input-small" />
 	</p>
 
 </fieldset>

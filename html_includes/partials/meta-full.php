@@ -5,7 +5,7 @@ use Yoast\YoastCom\Settings\Hide_Comments;
 ?>
 <div class="meta meta--full">
 	<div class="meta__author">
-		<h2 class="p">Post author</h2>
+		<h2 class="p"><?php _e( 'Post author', 'yoastcom' ); ?></h2>
 		<a href="<?php echo esc_attr( get_the_author_meta( 'yst_profile_url' ) ); ?>"><?php the_author(); ?></a>
 		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'nicename' ) ) ); ?>" class="meta__readmore">
 			<?php echo esc_html( link_text_author_posts() ); ?> &raquo;

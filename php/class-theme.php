@@ -160,6 +160,8 @@ class Theme {
 		$this->register_menus();
 		$this->register_sidebars();
 		$this->register_theme_support();
+
+		load_theme_textdomain( 'yoastcom', get_template_directory() . '/languages' );
 	}
 
 	/**

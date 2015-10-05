@@ -31,6 +31,10 @@ class Query {
 			return;
 		}
 
+		if ( $query->is_tag ) {
+			$this->tag_filter( $query );
+		}
+
 		if ( $query->is_search ) {
 			$this->search_filter( $query );
 		}
@@ -62,6 +66,15 @@ class Query {
 				)
 			)
 		);
+	}
+
+	/**
+	 * Adjust the query for tag archives so that Dev Blog articles are included too
+	 *
+	 * @param $query \WP_Query $query
+	 */
+	private function tag_filter( $query ) {
+		$query->set( 'post_type', array( 'post', 'yoast_dev_article' ) );
 	}
 
 	/**
