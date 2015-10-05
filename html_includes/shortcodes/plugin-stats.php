@@ -5,7 +5,7 @@ namespace Yoast\YoastCom\Theme;
 
 <section class="row iceberg grid">
 	<div class="one-third">
-		<h3 class="h4"><?php _e( 'Mindblowing Stats about our free WordPress SEO Plugin', 'yoastcom' ); ?></h3>
+		<h3 class="h4"><?php _e( 'Stats about our free Yoast SEO Plugin', 'yoastcom' ); ?></h3>
 		<dl>
 			<dt><?php _e( '# Downloads', 'yoastcom' ); ?></dt>
 			<dd><?php echo esc_html( get_plugin_info( post_meta( 'plugin' ), 'downloaded' ) ); ?></dd>

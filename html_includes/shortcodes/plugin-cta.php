@@ -14,5 +14,5 @@ $premium_plugin = post_meta( 'connected_premium_plugin' );
 <?php endif; ?>
 
 <?php if ( post_meta( 'plugin' ) ) : ?>
-	<a href="<?php echo esc_url( url_plugin_download() ); ?>" class="button dimmed"><?php _e( 'Download the Free Plugin', 'yoastcom' ); ?> &raquo;</a>
+	<a href="<?php echo esc_url( url_plugin_download() ); ?>" class="button dimmed"><?php _e( 'Download the free plugin', 'yoastcom' ); ?> &raquo;</a>
 <?php endif; ?>

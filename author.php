@@ -31,7 +31,7 @@ namespace Yoast\YoastCom\Theme;
 						<?php the_author_meta( 'description' ); ?>
 					</p>
 					<p>
-						<a href="<?php echo esc_attr( get_the_author_meta( 'yst_profile_url' ) ); ?>'">Read all about <?php the_author(); ?></a> or find him on
+						<a href="<?php echo esc_attr( get_the_author_meta( 'yst_profile_url' ) ); ?>">Read all about <?php the_author(); ?></a> or find him on
 						<?php get_template_part( 'html_includes/partials/social-icons' ); ?>
 					</p>
 				</div>
@@ -46,7 +46,7 @@ namespace Yoast\YoastCom\Theme;
 				?>
 			<section class="row">
 				<?php if ( $i === 1 ) { ?>
-				<h2 class="h3 color-about--tertiary">Check out posts by <?php the_author_meta( 'first_name' ); ?></h2>
+				<h2 class="h3 color-about--tertiary"><?php printf( __( 'Check out posts by %s', 'yoastcom' ), get_the_author_meta( 'first_name' ) ); ?></h2>
 				<?php } ?>
 				<?php get_template_part( 'html_includes/partials/article-intro' ); ?>
 			</section>
