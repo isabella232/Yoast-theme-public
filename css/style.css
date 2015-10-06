@@ -3725,6 +3725,18 @@ svg .llms-animated-circle {
   display: none !important; }
 
 @media only screen and (min-width: 50rem) {
+  .llms-person-login {
+    float: left;
+    width: 50%;
+    padding-right: 0.94rem; }
+    .llms-person-login p {
+      margin-bottom: 1em; }
+  .llms-new-person-form-wrapper {
+    float: right;
+    width: 50%;
+    padding-left: 0.94rem; } }
+
+@media only screen and (min-width: 50rem) {
   .yoast_academy .pagetitle {
     width: 30em;
     background-image: url(./../images/logo-academy.svg); } }
