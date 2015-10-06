@@ -278,6 +278,7 @@ class Shortcodes {
 			'text'      => '',
 			'url'       => '',
 			'icon'      => '',
+			'class'     => 'announcement--pointer',
 			'return'    => true,
 		) );
 
