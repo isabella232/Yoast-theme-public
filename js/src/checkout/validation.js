@@ -2,6 +2,9 @@
 	var validBtwNr = false;
 
 	function recalculate_taxes(btw_verlegd) {
+		EDD_Checkout.recalculate_taxes();
+		return;
+
 		if (undefined == btw_verlegd) {
 			btw_verlegd = false;
 		}
@@ -67,8 +70,50 @@
 		});
 	}
 
+	/**
+	 * Rounds a price to two decimal places
+	 *
+	 * @param {int} price
+	 * @returns {int}
+	 */
+	function roundPrice( price ) {
+		return Math.round( price * 100 ) / 100;
+	}
+
+	/**
+	 * Fixes the tax in the UI after everything has been recalculated by EDD
+	 *
+	 * @param {jQuery.Event} e
+	 * @param {Object} data Data returned by the EDD AJAX.
+	 */
+	function fixTaxAfterRecalculation( e, data ) {
+		var taxData = data.response;
+
+		if ( validBtwNr && 0 !== taxData.tax_rate_raw ) {
+			taxData.total_raw = taxData.total_raw - parseFloat( taxData.tax_raw );
+
+			taxData.tax_raw = 0;
+			taxData.tax_rate_raw = 0;
+			taxData.tax_rate = '0%';
+
+			// Format fancy prices
+			taxData.total = '$ ' + roundPrice( taxData.total_raw );
+			taxData.tax   = '$'  + roundPrice( taxData.tax_raw );
+
+			$( '.edd_cart_amount' ).html( taxData.total );
+			$( '.yst-tax-rate' ).html( taxData.tax_rate.replace( '%', '' ) );
+			$( '.edd_cart_tax_amount' ).html( taxData.tax );
+		}
+
+		$( '#yst_secondary_tax_rate' ).html( taxData.tax_rate.replace( '%', '' ) );
+		$( '#yst_secondary_tax' ).html( taxData.tax );
+
+	}
+
 	jQuery( document ).ready( function ( $ ) {
 		var $body = $( 'body' );
+
+		$body.on( 'edd_taxes_recalculated', fixTaxAfterRecalculation );
 
 		$( '#card_number' ).payment( 'formatCardNumber' );
 		$( '#card-cvc' ).payment( 'formatCardCVC' );
@@ -175,8 +220,6 @@
 
 		$("body").on("change", "#yst_btw, #billing_country", function () {
 
-			recalculate_taxes();
-
 			var country = $('#billing_country').val();
 
 			// No special BTW rule for The Netherlands
@@ -206,10 +249,7 @@
 			// VAT nr given, check it
 			if ('' != btw_nr) {
 				checkBtwNr( country, btw_nr );
-			} else {
-				recalculate_taxes();
 			}
-
 		});
 	} );
 }( jQuery ));
