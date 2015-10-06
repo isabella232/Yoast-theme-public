@@ -11,7 +11,6 @@
 
 	function initCheckoutPage() {
 		$body.on( 'edd_quantity_updated', handleQuantityUpdate );
-		$body.on( 'change', '.edd-item-quantity', update_item_quantities );
 		$body.on( 'change', '.yst-edd-pricing-switcher', handleChangeDownloadVariation );
 
 		$( '#edd_first' ).focus();
