@@ -48,7 +48,7 @@
 	function checkBtwNr( country, btw_nr ) {
 		$( '#yst-edd-btw-wrap .fa-spinner' ).addClass( 'show' );
 
-		jQuery.post(yoast_com_checkout_vars.ajaxurl, { action: 'yst_check_vat', country: country, vat_nr: btw_nr }, function (response) {
+		var xhr = jQuery.post(yoast_com_checkout_vars.ajaxurl, { action: 'yst_check_vat', country: country, vat_nr: btw_nr }, function (response) {
 			$( '#yst-edd-btw-wrap .fa-spinner' ).removeClass( 'show' );
 			$( '#vaterror' ).remove();
 			if ('1' == response) {
@@ -70,6 +70,11 @@
 
 				validBtwNr = false;
 			}
+		});
+
+		// If we fail, try again in a second.
+		xhr.fail( function() {
+			setTimeout( checkBtwNr, 1000 );
 		});
 	}
 
