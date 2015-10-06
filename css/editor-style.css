@@ -1975,4 +1975,5 @@ a.color-white:hover, a.color-white:focus, button.color-white:hover, button.color
   width: 600px;
   max-width: 100%;
   margin: 0 auto;
-  margin-top: 1.88rem; }
+  margin-top: 1.88rem;
+  display: block; }
