@@ -162,6 +162,8 @@ class Theme {
 		$this->register_theme_support();
 
 		load_theme_textdomain( 'yoastcom', get_template_directory() . '/languages' );
+
+		add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
 	}
 
 	/**
