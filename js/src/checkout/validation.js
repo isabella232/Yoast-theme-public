@@ -175,15 +175,9 @@
 
 		$("body").on("change", "#yst_btw, #billing_country", function () {
 
-		recalculate_taxes();
+			recalculate_taxes();
 
 			var country = $('#billing_country').val();
-
-			if ('US' == country || 'CA' == country) {
-				$('#edd-card-state-wrap').show();
-			} else {
-				$('#edd-card-state-wrap').hide();
-			}
 
 			// No special BTW rule for The Netherlands
 			if ('NL' == country) {
