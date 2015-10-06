@@ -10,10 +10,16 @@ $products = array_map( function( $product_id ) {
 <div class="media media--nofloat product">
 	<a href="<?php the_permalink(); ?>" class="img img--large">
 		<div class="promoblockimage__holder">
-			<?php if ( 1 < count( $product_ids ) ) : ?>
-				<?php echo get_the_post_thumbnail( $product_ids[0],  array( 174, 232 ), array( 'class' => 'promoblock promoblock--imageholder promoblock--imageholdersmall' ) ); ?>
-				<?php echo get_the_post_thumbnail( $product_ids[1], array( 174, 232 ), array( 'class' => 'promoblock promoblock--imageholder promoblock--imageholdersmall' ) ); ?>
-			<?php endif; ?>
+			<?php
+			if ( 1 < count( $products ) ) {
+				foreach ( $products as $product ) {
+					$src   = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ) );
+					$title = get_the_title( $product->ID );
+
+					printf( '<img width="174" height="232" src="%s" alt="%s" class="promoblock promoblock--imageholder promoblock--imageholdersmall"/>', $src, $title );
+				}
+			}
+			?>
 		</div>
 	</a>
 	<div class="bd">
