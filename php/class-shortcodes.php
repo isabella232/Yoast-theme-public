@@ -10,6 +10,7 @@ class Shortcodes {
 	 * Adds the themes shortcodes
 	 */
 	public function add_shortcodes() {
+		add_shortcode( 'banner', array( $this, 'banner' ) );
 		add_shortcode( 'bundle', array( $this, 'bundle' ) );
 		add_shortcode( 'plugin-info', array( $this, 'plugin_info' ) );
 		add_shortcode( 'plugin-cta', array( $this, 'plugin_cta' ) );
@@ -262,6 +263,25 @@ class Shortcodes {
 		}
 
 		return $this->get_break_out_content() . get_template_part( $template, $args ) . $this->get_content_restart();
+	}
+
+	/**
+	 * Handler for the banner shortcode.
+	 *
+	 * @param array $atts The shortcode attributes.
+	 *
+	 * @return string The content to output on the page.
+	 */
+	public function banner( $atts ) {
+
+		$args = wp_parse_args( $atts, array(
+			'text'      => '',
+			'url'       => '',
+			'icon'      => '',
+			'return'    => true,
+		) );
+
+		return $this->get_break_out_content() . get_template_part( 'html_includes/partials/announcement', $args ) . $this->get_content_restart();
 	}
 
 	/**
