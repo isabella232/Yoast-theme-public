@@ -92,8 +92,8 @@ class Theme {
 			'jquery',
 			'chosen',
 			'jquery-validate',
-			'jquery-payment'
-		), self::VERSION, true );
+			'jquery-payment',
+		), filemtime( trailingslashit( get_stylesheet_directory() ) . '/js/checkout.min.js' ), true );
 		wp_register_script( 'yoast-com-academy', $dir . '/js/academy.min.js', array(
 			'jquery',
 		) );

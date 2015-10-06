@@ -8,19 +8,8 @@ $products = array_map( function( $product_id ) {
 
 ?>
 <div class="media media--nofloat product">
-	<a href="<?php the_permalink(); ?>" class="img img--large">
-		<div class="promoblockimage__holder">
-			<?php
-			if ( 1 < count( $products ) ) {
-				foreach ( $products as $product ) {
-					$src   = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ), array( 240, 320 ) );
-					$title = get_the_title( $product->ID );
-
-					printf( '<img width="174" height="232" src="%s" alt="%s" class="promoblock promoblock--imageholder promoblock--imageholdersmall"/>', $src[0], $title );
-				}
-			}
-			?>
-		</div>
+	<a href="<?php the_permalink(); ?>" class="img img--large promoblock--imageholder">
+		<?php the_post_thumbnail( array( 240, 320 ) ); ?>
 	</a>
 	<div class="bd">
 		<?php

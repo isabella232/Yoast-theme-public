@@ -11,8 +11,8 @@
 
 	function initCheckoutPage() {
 		$body.on( 'edd_quantity_updated', handleQuantityUpdate );
-		$body.on( 'change', '.edd-item-quantity', update_item_quantities );
 		$body.on( 'change', '.yst-edd-pricing-switcher', handleChangeDownloadVariation );
+		$body.on( 'edd_cart_billing_address_updated', hideProvinceField );
 
 		$( '#edd_first' ).focus();
 	}
@@ -57,6 +57,20 @@
 				EDD_Checkout.recalculate_taxes();
 			}
 		});
+	}
+
+	/**
+	 * If a country has no states, hide the province field
+	 *
+	 * @param {jQuery.Event} e
+	 * @param {String} data
+	 */
+	function hideProvinceField( e, data ) {
+		if ( 'nostates' === data ) {
+			$( '#edd-card-state-wrap' ).hide();
+		} else {
+			$( '#edd-card-state-wrap' ).show();
+		}
 	}
 
 	$( init );
