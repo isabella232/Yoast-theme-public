@@ -4669,6 +4669,11 @@ svg .llms-animated-circle {
       position: absolute;
       left: 100%;
       top: 0; }
+  .list--steps a {
+    color: inherit;
+    text-decoration: inherit; }
+    .list--steps a:hover, .list--steps a:focus {
+      color: inherit; }
 
 .promoblock {
   position: relative;
