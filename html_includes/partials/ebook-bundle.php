@@ -8,7 +8,7 @@ $products = array_map( function( $product_id ) {
 
 ?>
 <div class="media media--nofloat product">
-	<a href="<?php the_permalink(); ?>" class="img img--large promoblock promoblock--imageholder">
+	<a href="<?php the_permalink(); ?>" class="img img--large promoblock--imageholder">
 		<?php the_post_thumbnail( array( 240, 320 ) ); ?>
 	</a>
 	<div class="bd">
