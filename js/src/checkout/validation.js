@@ -46,7 +46,10 @@
 	 * Checks the BTW NR with the VIES API
 	 */
 	function checkBtwNr( country, btw_nr ) {
+		$( '#yst-edd-btw-wrap .fa-spinner' ).addClass( 'show' );
+
 		jQuery.post(yoast_com_checkout_vars.ajaxurl, { action: 'yst_check_vat', country: country, vat_nr: btw_nr }, function (response) {
+			$( '#yst-edd-btw-wrap .fa-spinner' ).removeClass( 'show' );
 			$( '#vaterror' ).remove();
 			if ('1' == response) {
 				$('#yst_btw').removeClass('error').addClass('valid');
