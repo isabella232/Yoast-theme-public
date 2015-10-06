@@ -13,7 +13,7 @@ $products = array_map( function( $product_id ) {
 			<?php
 			if ( 1 < count( $products ) ) {
 				foreach ( $products as $product ) {
-					$src   = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ) );
+					$src   = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ), 'large' );
 					$title = get_the_title( $product->ID );
 
 					printf( '<img width="174" height="232" src="%s" alt="%s" class="promoblock promoblock--imageholder promoblock--imageholdersmall"/>', $src[0], $title );
