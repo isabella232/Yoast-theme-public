@@ -21,6 +21,8 @@ class Text_Changes {
 		add_filter( 'the_content', array( $this, 'blockquote_full_width' ) );
 
 		add_action( 'wp_editor_expand', array( $this, 'reinstate_editor_for_posts_page' ) );
+
+		add_filter( 'edd_payment_receipt_products_title', array( $this, 'edd_payment_receipt_products_title' ) );
 	}
 
 	/**
@@ -90,5 +92,18 @@ class Text_Changes {
 		$content = str_replace( '</blockquote>', '</blockquote>' . $shortcode->get_restart_body(), $content );
 
 		return $content;
+	}
+
+	/**
+	 * Add a notice to the receipt that products include the VAT
+	 *
+	 * @param string $title The current title.
+	 *
+	 * @return string
+	 */
+	public function edd_payment_receipt_products_title( $title ) {
+		$title .= ' <small>(incl. VAT)</small>';
+
+		return $title;
 	}
 }
