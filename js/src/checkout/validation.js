@@ -273,11 +273,11 @@
 				edd_email: "Please enter a valid email address",
 				edd_agree_to_terms: "<strong>Error</strong> - Please accept our terms: ",
 				card_name: "Please enter the name on your credit card",
-				card_address: "Please enter the billing address of your credit card",
-				card_zip: "Please enter the zip / postal code of the billing address of your credit card",
+				card_address: "Please enter your billing address",
+				card_zip: "Please enter your zip / postal code",
 				card_state: "Please enter your state",
-				card_city: "Please enter the city of the billing address of your credit card",
-				billing_country: "Please enter the country of the billing address of your credit card"
+				card_city: "Please enter your city",
+				billing_country: "Please enter your country"
 			}
 		} );
 
