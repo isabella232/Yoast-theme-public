@@ -96,6 +96,27 @@ $certificate = new LLMS_Certificate;
 				display: none !important;
 			}
 		}
+
+		.contents {
+			width: 730px;
+			margin: 330px auto 0 auto;
+		}
+
+		.contents img {
+			border-radius: 30px 30px 0 30px;
+			float: left;
+			width: 150px;
+			height: 150px;
+			margin-right: 20px;
+		}
+
+		.contents .name {
+			font-size: 55px;
+		}
+		.contents .date {
+			font-size: 25px;
+		}
+
 	</style>
 	<?php //wp_head(); ?>
 </head>
@@ -111,7 +132,7 @@ $certificate = new LLMS_Certificate;
 
 
 				<h1><?php echo $certificate_title; ?></h1>
-				<p><?php echo the_content(); ?></p>
+				<div class="contents"><?php echo the_content(); ?></div>
 			</div>
 		</div>
 	</div>
