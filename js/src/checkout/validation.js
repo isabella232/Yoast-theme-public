@@ -193,8 +193,6 @@
 		$( '#card_number' ).payment( 'formatCardNumber' );
 		$( '#card-cvc' ).payment( 'formatCardCVC' );
 
-		$( '#card_number' ).payment( 'formatCardNumber' );
-
 		var card_type = undefined;
 		$( '#card_number' ).on( "input", function () {
 			if ( $.payment.validateCardNumber( $( this ).val() ) ) {
