@@ -118,8 +118,63 @@
 
 	}
 
+	/**
+	 * Hides or shows the state field based on the selected country
+	 */
+	function hideOrShowStateField() {
+		var $billingCountry = $( '#billing_country' );
+		var billingCountry = $billingCountry.val();
+		if ( '' === billingCountry ) {
+			$( '#edd-card-state-wrap' ).hide();
+		}
+		else {
+			// Trigger a 'change' in the billing country so EDD can 'fix' the state field.
+			$billingCountry.trigger( 'change' );
+		}
+	}
+
+	/**
+	 * Hides or shows the VAT Number field based on the selected country
+	 */
+	function hideOrShowVATNumber() {
+		var $billingCountry = $( '#billing_country' );
+		var billingCountry = $billingCountry.val();
+
+		// No special BTW rule for The Netherlands
+		if ('NL' == billingCountry) {
+			$('#yst-edd-btw-wrap')
+				.hide()
+				.after('<p id="yst-dutch-vat-notice"><strong>Please note:</strong> VAT will be added to the invoice. Since Yoast is based in the Netherlands we cannot reverse charge the VAT.</p>');
+				$('.edd_cart_tax_row').css('display','table-row');
+			return;
+		} else {
+			$( '#yst-dutch-vat-notice' ).remove();
+		}
+
+		// Check if the country is in our special tax list
+		if (undefined == yoast_com_checkout_vars.tax_rates[ billingCountry ]) {
+			$('#yst-edd-btw-wrap').hide();
+			$('.edd_cart_tax_row').css('display','none');
+			return;
+		} else {
+			$('.edd_cart_tax_row').css('display','table-row');
+		}
+
+		$('#yst-edd-btw-wrap').show();
+
+		var btw_nr = $('#yst_btw').val();
+
+		// VAT nr given, check it
+		if ('' != btw_nr) {
+			checkBtwNr( billingCountry, btw_nr );
+		}
+	}
+
 	jQuery( document ).ready( function ( $ ) {
 		var $body = $( 'body' );
+
+		hideOrShowStateField();
+		hideOrShowVATNumber();
 
 		$body.on( 'edd_taxes_recalculated', fixTaxAfterRecalculation );
 
@@ -227,37 +282,7 @@
 		} );
 
 		$("body").on("change", "#yst_btw, #billing_country", function () {
-
-			var country = $('#billing_country').val();
-
-			// No special BTW rule for The Netherlands
-			if ('NL' == country) {
-				$('#yst-edd-btw-wrap')
-					.hide()
-					.after('<p id="yst-dutch-vat-notice"><strong>Please note:</strong> VAT will be added to the invoice. Since Yoast is based in the Netherlands we cannot reverse charge the VAT.</p>');
-				$('.edd_cart_tax_row').css('display','table-row');
-				return;
-			} else {
-				$( '#yst-dutch-vat-notice' ).remove();
-			}
-
-			// Check if the country is in our special tax list
-			if (undefined == yoast_com_checkout_vars.tax_rates[ country ]) {
-				$('#yst-edd-btw-wrap').hide();
-				$('.edd_cart_tax_row').css('display','none');
-				return;
-			} else {
-				$('.edd_cart_tax_row').css('display','table-row');
-			}
-
-			$('#yst-edd-btw-wrap').show();
-
-			var btw_nr = $('#yst_btw').val();
-
-			// VAT nr given, check it
-			if ('' != btw_nr) {
-				checkBtwNr( country, btw_nr );
-			}
+			hideOrShowVATNumber();
 		});
 	} );
 }( jQuery ));
