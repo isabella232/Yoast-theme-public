@@ -49,8 +49,6 @@ $certificate = new LLMS_Certificate;
 		body {
 			background-color: #fff;
 			background-image: none;
-			margin: 0 auto;
-			width: <?php echo $certimage_width; ?>px;
 		}
 		.header {
 			display: none;
@@ -77,10 +75,10 @@ $certificate = new LLMS_Certificate;
 		.llms-certificate-container {
 			background-image: url(<?php echo $certimage; ?>);
 			background-repeat: no-repeat;
-			height: <?php echo $certimage_height; ?>px;
-			width: <?php echo $certimage_width; ?>px;
-			padding: 20px;
-			margin-bottom: 20px;
+			background-size: 1024px 724px;
+			width: 1024px;
+			height: 724px;
+			margin: 20px auto;
 			-webkit-print-color-adjust: exact;
 			overflow: hidden;
 		}
@@ -89,7 +87,6 @@ $certificate = new LLMS_Certificate;
 		}
 		#llms-print-certificate {
 			text-align: center;
-			width: <?php echo $certimage_width; ?>px;
 		}
 		@media print {
 			.no-print, .no-print * {
@@ -98,8 +95,8 @@ $certificate = new LLMS_Certificate;
 		}
 
 		.contents {
-			width: 730px;
-			margin: 330px auto 0 auto;
+			width: 640px;
+			margin: 280px auto 0 auto;
 		}
 
 		.contents img {
@@ -132,7 +129,13 @@ $certificate = new LLMS_Certificate;
 
 
 				<h1><?php echo $certificate_title; ?></h1>
-				<div class="contents"><?php echo the_content(); ?></div>
+				<div class="contents">
+					<?php
+					remove_filter( 'the_content', 'wpautop' );
+					echo the_content();
+					add_filter( 'the_content', 'wpautop' );
+					?>
+				</div>
 			</div>
 		</div>
 	</div>
