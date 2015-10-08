@@ -1,47 +1,6 @@
 ;(function( $ ) {
 	var validBtwNr = false;
 
-	function recalculate_taxes(btw_verlegd) {
-		EDD_Checkout.recalculate_taxes();
-		return;
-
-		if (undefined == btw_verlegd) {
-			btw_verlegd = false;
-		}
-
-		var $edd_cc_address = $('#edd_cc_address');
-
-		var postData = {
-			action         : 'yst_edd_recalculate_taxes',
-			nonce          : yoast_com_checkout_vars.checkout_nonce,
-			billing_country: $edd_cc_address.find('#billing_country').val(),
-			btw_verlegd    : btw_verlegd
-		};
-
-		$.ajax({
-			type    : "POST",
-			data    : postData,
-			dataType: "json",
-			url     : yoast_com_checkout_vars.ajaxurl,
-			success : function (tax_response) {
-				$('#edd_checkout_cart_div').replaceWith(tax_response.html);
-				$('.edd_cart_amount').html(tax_response.total);
-
-				$('#yst_secondary_tax').html( $('#yst_main_tax').html() );
-				$('#yst_secondary_tax_rate').html( $('#yst_main_tax_rate').html() );
-
-				var tax_data = new Object();
-				tax_data.postdata = postData;
-				tax_data.response = tax_response;
-				$('body').trigger('edd_taxes_recalculated', [ tax_data ]);
-			}
-		}).fail(function (data) {
-			if (window.console && window.console.log) {
-				console.log(data);
-			}
-		});
-	}
-
 	/**
 	 * Checks the BTW NR with the VIES API
 	 */
@@ -53,19 +12,19 @@
 			$( '#vaterror' ).remove();
 			if ('1' == response) {
 				$('#yst_btw').removeClass('error').addClass('valid');
-				recalculate_taxes(true);
+				EDD_Checkout.recalculate_taxes();
 
 				validBtwNr = true;
 			} else if('2' == response){
 				// Show error, the service is down
 				$('#yst_btw').removeClass('valid').addClass('error');
-				recalculate_taxes();
+				EDD_Checkout.recalculate_taxes();
 				jQuery("#yst-edd-btw-wrap").append('<span id="vaterror" class="error">We cannot check if your VAT number is correct because the VAT checking system for the EU is currently down. We\'re sorry for the inconvenience. Please send us an email on <a href="mailto:support@yoast.com">support@yoast.com</a> or try again later.</span>');
 
 				validBtwNr = false;
 			} else {
 				$('#yst_btw').removeClass('valid').addClass('error');
-				recalculate_taxes();
+				EDD_Checkout.recalculate_taxes();
 				jQuery("#yst-edd-btw-wrap").append('<span id="vaterror" class="error">We cannot verify this VAT number, this means you will have to pay VAT. Please make sure you\'ve entered the number correctly.</span>');
 
 				validBtwNr = false;
