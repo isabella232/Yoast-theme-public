@@ -264,4 +264,19 @@
 	.edd-cancel {
 		display: none;
 	}
+
+	#yst-edd-btw-wrap {
+		position: relative;
+
+		.fa-spinner {
+			position: absolute;
+			right: 14px;
+			top: 77px;
+			display: none;
+
+			&.show {
+				display: block;
+			}
+		}
+	}
 }

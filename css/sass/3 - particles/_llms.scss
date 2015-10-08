@@ -204,6 +204,24 @@ svg .llms-animated-circle {
   display: none !important;
 }
 
+@media only screen and (min-width: $page-width-medium) {
+  .llms-person-login {
+    float: left;
+    width: 50%;
+    padding-right: $spacing-half;
+
+    p {
+      margin-bottom: 1em;
+    }
+  }
+
+  .llms-new-person-form-wrapper {
+    float: right;
+    width: 50%;
+    padding-left: $spacing-half;
+  }
+}
+
 @media only screen and (min-width: 50rem) {
   .yoast_academy .pagetitle {
     width: 30em;

@@ -11,8 +11,8 @@
 
 	function initCheckoutPage() {
 		$body.on( 'edd_quantity_updated', handleQuantityUpdate );
-		$body.on( 'change', '.edd-item-quantity', update_item_quantities );
 		$body.on( 'change', '.yst-edd-pricing-switcher', handleChangeDownloadVariation );
+		$body.on( 'edd_cart_billing_address_updated', hideProvinceField );
 
 		$( '#edd_first' ).focus();
 	}
@@ -25,63 +25,6 @@
 	 */
 	function handleQuantityUpdate( e, data ) {
 		EDD_Checkout.recalculate_taxes();
-	}
-
-	/**
-	 * This is a copy of a function in `edd-checkout-global.js` and is a fix because we are using list item's as cart
-	 * instead of a table. Can be removed once
-	 * https://github.com/easydigitaldownloads/Easy-Digital-Downloads/issues/3741 is fixed.
-	 *
-	 * @param {jQuery.Event} e
-	 * @returns {boolean}
-	 */
-	function update_item_quantities( e ) {
-
-		var $this = $(this),
-			quantity = $this.val(),
-			key = $this.data('key'),
-			download_id = $this.closest('.edd_cart_item').data('download-id'),
-			options = $this.parent().find('input[name="edd-cart-download-' + key + '-options"]').val();
-
-		var postData = {
-			action: 'edd_update_quantity',
-			quantity: quantity,
-			download_id: download_id,
-			options: options
-		};
-
-		//edd_discount_loader.show();
-
-		$.ajax({
-			type: "POST",
-			data: postData,
-			dataType: "json",
-			url: edd_global_vars.ajaxurl,
-			xhrFields: {
-				withCredentials: true
-			},
-			success: function (response) {
-
-				$('.edd_cart_subtotal_amount').each(function() {
-					$(this).text(response.subtotal);
-				});
-
-				$('.edd_cart_tax_amount').each(function() {
-					$(this).text(response.taxes);
-				});
-
-				$('.edd_cart_amount').each(function() {
-					$(this).text(response.total);
-					$body.trigger('edd_quantity_updated', [ response ]);
-				});
-			}
-		}).fail(function (data) {
-			if ( window.console && window.console.log ) {
-				console.log( data );
-			}
-		});
-
-		return false;
 	}
 
 	/**
@@ -114,6 +57,20 @@
 				EDD_Checkout.recalculate_taxes();
 			}
 		});
+	}
+
+	/**
+	 * If a country has no states, hide the province field
+	 *
+	 * @param {jQuery.Event} e
+	 * @param {String} data
+	 */
+	function hideProvinceField( e, data ) {
+		if ( 'nostates' === data ) {
+			$( '#edd-card-state-wrap' ).hide();
+		} else {
+			$( '#edd-card-state-wrap' ).show();
+		}
 	}
 
 	$( init );

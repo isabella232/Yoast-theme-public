@@ -26,6 +26,8 @@ namespace Yoast\YoastCom\Theme;
 			</article>
 		<?php endwhile; ?>
 
+		<hr />
+
 		<section class="row iceberg">
 			<h2><?php _e( 'Recent posts', 'yoastcom' ); ?></h2>
 			<?php get_template_part( 'html_includes/partials/more-articles' ); ?>

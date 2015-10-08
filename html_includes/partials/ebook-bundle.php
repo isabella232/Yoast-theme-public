@@ -8,13 +8,8 @@ $products = array_map( function( $product_id ) {
 
 ?>
 <div class="media media--nofloat product">
-	<a href="<?php the_permalink(); ?>" class="img img--large">
-		<div class="promoblockimage__holder">
-			<?php if ( 1 < count( $product_ids ) ) : ?>
-				<?php echo get_the_post_thumbnail( $product_ids[0],  array( 175, 230 ), array( 'class' => 'promoblock promoblock--imageholder promoblock--imageholdersmall' ) ); ?>
-				<?php echo get_the_post_thumbnail( $product_ids[1], array( 175, 230 ), array( 'class' => 'promoblock promoblock--imageholder promoblock--imageholdersmall' ) ); ?>
-			<?php endif; ?>
-		</div>
+	<a href="<?php the_permalink(); ?>" class="img img--large promoblock--imageholder">
+		<?php the_post_thumbnail( array( 240, 320 ) ); ?>
 	</a>
 	<div class="bd">
 		<?php

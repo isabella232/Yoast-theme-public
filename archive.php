@@ -16,7 +16,7 @@ namespace Yoast\YoastCom\Theme;
 
 	<main role="main">
 		<div class="row">
-			<h1><?php echo esc_html( get_the_archive_title() ); ?></h1>
+			<h1 class="color-academy--secondary"><?php echo esc_html( get_the_archive_title() ); ?></h1>
 			<?php if ( is_search() ) { ?>
 				<form action="<?php echo home_url(); ?>">
 					<input type="search" name="s" value="<?php echo get_search_query(); ?>"/>
@@ -59,8 +59,6 @@ namespace Yoast\YoastCom\Theme;
 			<?php } ?>
 		</div>
 
-		<hr class="hr--no-pointer">
-
 		<?php if ( is_home() && ! is_front_page() ) : ?>
 			<div class="row">
 				<div class="media media--nofloat">
@@ -76,19 +74,24 @@ namespace Yoast\YoastCom\Theme;
 						echo wpautop( do_shortcode( $content ) );
 						?>
 					</div>
-					<?php
-					$sidebar_content = wp_kses_post( get_post_meta( $home_post->ID, 'sidebar-content', true ) );
-					if ( $sidebar_content !== '' ) {
-						?>
-						<div class="alignright">
-							<section class="extra">
-								<?php echo $sidebar_content; ?>
-							</section>
-						</div>
-					<?php } ?>
 				</div>
 			</div>
-			<hr class="hr--no-pointer">
+
+			<?php
+			$banner_content = get_post_meta( $home_post->ID, 'banner-content', true );
+			$banner_url     = get_post_meta( $home_post->ID, 'banner-url', true );
+			if ( $banner_content !== '' ) {
+				$args = array(
+					'text'  => $banner_content,
+				    'url'   => $banner_url,
+				    'class' => 'announcement-pointer announcement--pointer-top',
+					'icon'  => 'gears',
+				);
+				get_template_part( 'html_includes/partials/announcement', $args );
+			} else {
+				echo '<hr class="hr--no-pointer">';
+			}
+			?>
 		<?php elseif ( '' !== term_description() ) : ?>
 			<div class="row">
 				<div class="media media--nofloat">

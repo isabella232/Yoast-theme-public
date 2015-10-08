@@ -14,10 +14,12 @@ namespace Yoast\YoastCom\Theme;
 		<?php the_post_thumbnail( 'thumbnail-recent-articles' ); ?>
 	</a>
 	<article class="bd">
+		<div class="content">
 		<?php the_excerpt(); ?>
 		<?php if ( 'post' === get_post_type() ) { ?>
 			<?php echo _n( __( 'Category:', 'yoastcom' ), __( 'Categories:', 'yoastcom' ), count( get_the_category( get_the_ID() ) ) ); ?>
 			<?php the_category( ', ' ); ?>
 		<?php } ?>
+		</div>
 	</article>
 </div>

@@ -134,6 +134,15 @@ function url_shop_page() {
 }
 
 /**
+ * Returns the URL to the checkout page
+ *
+ * @return string
+ */
+function url_checkout() {
+	return home_url( 'checkout/' );
+}
+
+/**
  * Returns the URL for a zip download for a certain plugin
  *
  * @param int $post_ID The post ID to retrieve the plugin download url for.

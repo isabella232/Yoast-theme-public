@@ -8,7 +8,8 @@ module.exports = {
 			outputStyle: 'nested'
 		},
 		files: {
-			'css/style.css': 'css/sass/style.scss'
+			'css/style.css': 'css/sass/style.scss',
+			'css/editor-style.css': 'css/sass/editor-style.scss'
 		}
 	},
 	compressed: {
@@ -16,7 +17,8 @@ module.exports = {
 			outputStyle: 'compressed'
 		},
 		files: {
-			'css/style.min.css': 'css/sass/style.scss'
+			'css/style.min.css': 'css/sass/style.scss',
+			'css/editor-style.min.css': 'css/sass/editor-style.scss'
 		}
 	}
 };

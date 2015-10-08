@@ -1,14 +1,13 @@
 <?php
 /**
- * Template Name: [Academy] Courses
+ * Template Name: [Academy] Full Width
  */
 
 namespace Yoast\YoastCom\Theme;
 ?>
-
 <?php get_header(); ?>
 
-<?php get_template_part( 'html_includes/siteheader', array( 'academy-sub' => true ) ); ?>
+<?php get_template_part( 'html_includes/siteheader', array( 'about-sub' => true ) ); ?>
 <div class="site">
 
 	<div class="row">
@@ -21,12 +20,13 @@ namespace Yoast\YoastCom\Theme;
 			<article class="row">
 				<h1><?php the_title(); ?></h1>
 
-				<div class="content">
-					<?php the_content(); ?>
-				</div>
+				<?php the_content(); ?>
+
 			</article>
 		<?php endwhile; ?>
+
 	</main>
+
 </div>
 
 <?php get_footer(); ?>

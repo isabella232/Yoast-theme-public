@@ -22,7 +22,7 @@ namespace Yoast\YoastCom\Theme;
 			?>
 			<a href="<?php echo esc_url( $url ); ?>" class="more ">
 				<div
-					class="more__save "><?php printf( __( 'Save %s', 'yoastcom' ), '<span>' . $savings . '%</span>' ); ?></div>
+					class="more__save "><?php printf( __( 'Save %s', 'yoastcom' ), '<span>' . $savings . '</span>' ); ?></div>
 				<div class="more__holder">
 					<div class="more__title"><?php the_title(); ?></div>
 					<small

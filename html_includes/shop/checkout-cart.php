@@ -69,7 +69,7 @@ namespace Yoast\YoastCom\Theme;
 			<div class="row iceberg--small">
 				<div class="grid">
 					<div class="three-seventh offset-three-seventh small-four-fifth">
-						<?php printf( __( 'VAT (%s%%)', 'yoastcom' ), number_format( ( edd_get_tax_rate() * 100 ), 1 ) ); ?>
+						<?php printf( __( 'VAT (<span class="yst-tax-rate">%s</span>%%)', 'yoastcom' ), number_format( ( edd_get_tax_rate() * 100 ), 1 ) ); ?>
 					</div>
 					<div class="one-seventh small-one-fifth">
 						<span class="edd_cart_tax_amount" id="yst_main_tax" data-tax="<?php echo esc_attr( edd_get_cart_tax() ); ?>">

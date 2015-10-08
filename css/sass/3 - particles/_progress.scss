@@ -67,4 +67,13 @@
 			top: 0;
 		}
 	}
+	
+	a {
+		color: inherit;
+		text-decoration: inherit;
+
+		&:hover, &:focus {
+			color: inherit;
+		}
+	}
 }

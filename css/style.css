@@ -2454,6 +2454,16 @@ a.announcement {
 #edd_purchase_form .edd-cancel {
   display: none; }
 
+#edd_purchase_form #yst-edd-btw-wrap {
+  position: relative; }
+  #edd_purchase_form #yst-edd-btw-wrap .fa-spinner {
+    position: absolute;
+    right: 14px;
+    top: 77px;
+    display: none; }
+    #edd_purchase_form #yst-edd-btw-wrap .fa-spinner.show {
+      display: block; }
+
 .edd_download_purchase_form:before, .edd_download_purchase_form:after {
   content: '';
   display: table; }
@@ -3725,6 +3735,18 @@ svg .llms-animated-circle {
   display: none !important; }
 
 @media only screen and (min-width: 50rem) {
+  .llms-person-login {
+    float: left;
+    width: 50%;
+    padding-right: 0.94rem; }
+    .llms-person-login p {
+      margin-bottom: 1em; }
+  .llms-new-person-form-wrapper {
+    float: right;
+    width: 50%;
+    padding-left: 0.94rem; } }
+
+@media only screen and (min-width: 50rem) {
   .yoast_academy .pagetitle {
     width: 30em;
     background-image: url(./../images/logo-academy.svg); } }
@@ -4647,6 +4669,11 @@ svg .llms-animated-circle {
       position: absolute;
       left: 100%;
       top: 0; }
+  .list--steps a {
+    color: inherit;
+    text-decoration: inherit; }
+    .list--steps a:hover, .list--steps a:focus {
+      color: inherit; }
 
 .promoblock {
   position: relative;

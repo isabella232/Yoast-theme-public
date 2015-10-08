@@ -10,6 +10,7 @@ class Shortcodes {
 	 * Adds the themes shortcodes
 	 */
 	public function add_shortcodes() {
+		add_shortcode( 'banner', array( $this, 'banner' ) );
 		add_shortcode( 'bundle', array( $this, 'bundle' ) );
 		add_shortcode( 'plugin-info', array( $this, 'plugin_info' ) );
 		add_shortcode( 'plugin-cta', array( $this, 'plugin_cta' ) );
@@ -20,6 +21,7 @@ class Shortcodes {
 		add_shortcode( 'announcement', array( $this, 'announcement' ) );
 		add_shortcode( 'pdf-button', array( $this, 'pdf_button' ) );
 
+		add_shortcode( 'ebook-banner', array( $this, 'ebook_banner' ) );
 
 		// Deprecated shortcodes.
 		add_shortcode( 'box', array( $this, 'deprecate_box' ) );
@@ -206,6 +208,39 @@ class Shortcodes {
 	}
 
 	/**
+	 * Generates a banner for eBooks
+	 *
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	public function ebook_banner( $atts ) {
+		if ( ! isset( $atts['book'] ) ) {
+			$atts['book'] = 'content-seo';
+		}
+		switch( $atts['book'] ) {
+			case 'content-seo':
+				$atts['text'] = 'Want to learn more about content-writing, keyword research, and creating a good site structure? Get our Content SEO eBook &raquo;';
+				$atts['url'] = 'https://yoast.com/ebooks/content-seo/';
+				break;
+			case 'ux-conversion':
+				$atts['text'] = 'Want to improve your site\'s user experience and conversion? Get our eBook: UX & Conversion from a Holistic SEO perspective &raquo;';
+				$atts['url'] = 'https://yoast.com/ebooks/ux-conversion-seo/';
+				break;
+		}
+
+		$args = wp_parse_args( $atts, array(
+			'banner'    => 'academy',
+			'icon'      => 'book',
+			'class'     => 'announcement--pointer',
+			'no-sticky' => true,
+			'return'    => true,
+		) );
+
+		return $this->get_break_out_content() . get_template_part( 'html_includes/partials/announcement', $args ) . $this->get_content_restart();
+	}
+
+	/**
 	 * Handler for the announcement shortcode.
 	 *
 	 * @param array $atts The shortcode attributes.
@@ -228,6 +263,26 @@ class Shortcodes {
 		}
 
 		return $this->get_break_out_content() . get_template_part( $template, $args ) . $this->get_content_restart();
+	}
+
+	/**
+	 * Handler for the banner shortcode.
+	 *
+	 * @param array $atts The shortcode attributes.
+	 *
+	 * @return string The content to output on the page.
+	 */
+	public function banner( $atts ) {
+
+		$args = wp_parse_args( $atts, array(
+			'text'      => '',
+			'url'       => '',
+			'icon'      => '',
+			'class'     => 'announcement--pointer',
+			'return'    => true,
+		) );
+
+		return $this->get_break_out_content() . get_template_part( 'html_includes/partials/announcement', $args ) . $this->get_content_restart();
 	}
 
 	/**
@@ -292,8 +347,7 @@ class Shortcodes {
 		if ( is_singular( 'yoast_plugins' ) ) {
 			$break_out_content = '</section></div>';
 		}
-
-		if ( is_page() ) {
+		elseif ( is_singular() ) {
 			$break_out_content = '</div></article>';
 		}
 
@@ -309,8 +363,7 @@ class Shortcodes {
 		if ( is_singular( 'yoast_plugins' ) ) {
 			$restart_content = '<div class="row island iceberg"><section class="content">';
 		}
-
-		if ( is_page() ) {
+		elseif ( is_singular() ) {
 			$restart_content = '<article class="row"><div class="content">';
 		}
 
