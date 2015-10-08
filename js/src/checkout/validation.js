@@ -170,17 +170,7 @@
 		}
 	}
 
-	jQuery( document ).ready( function ( $ ) {
-		var $body = $( 'body' );
-
-		hideOrShowStateField();
-		hideOrShowVATNumber();
-
-		$body.on( 'edd_taxes_recalculated', fixTaxAfterRecalculation );
-
-		$( '#card_number' ).payment( 'formatCardNumber' );
-		$( '#card-cvc' ).payment( 'formatCardCVC' );
-
+	function initChosen() {
 		$( ".chosen-select" ).chosen();
 		$body.on( 'edd_cart_billing_address_updated', function() {
 			// Remove the old chosen select box.
@@ -189,6 +179,19 @@
 			// Chosenfy the new select box.
 			$( 'select[name="card_state"]' ).chosen();
 		});
+	}
+
+	jQuery( document ).ready( function ( $ ) {
+		var $body = $( 'body' );
+
+		hideOrShowStateField();
+		hideOrShowVATNumber();
+		initChosen();
+
+		$body.on( 'edd_taxes_recalculated', fixTaxAfterRecalculation );
+
+		$( '#card_number' ).payment( 'formatCardNumber' );
+		$( '#card-cvc' ).payment( 'formatCardCVC' );
 
 		$( '#card_number' ).payment( 'formatCardNumber' );
 
