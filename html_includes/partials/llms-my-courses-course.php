@@ -21,7 +21,7 @@ $completed = ( 100 === (int) $course->get_percent_complete() );
 	</h3>
 	</div>
 	<?php if ( $completed ) : ?>
-		<?php $url_certificate = \Yoast\YoastCom\Academy\get_certificate_url(); ?>
+		<?php $url_certificate = \Yoast\YoastCom\Academy\get_certificate_url( $course ); ?>
 		<div class="certificate">
 			<a class="button default" href="<?php echo esc_url( $url_certificate ); ?>">
 				<i class="fa fa-graduation-cap" aria-hidden="true"></i><?php _e( 'Show certificate', 'yoastcom' ); ?>
