@@ -3612,6 +3612,13 @@ hr {
       background: none;
       color: #5D237A; }
 
+.lifterlms:before, .lifterlms:after {
+  content: '';
+  display: table; }
+
+.lifterlms:after {
+  clear: both; }
+
 .llms-lesson-button-wrapper input[type="submit"] {
   width: 100%;
   color: #FFF; }
