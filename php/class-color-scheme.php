@@ -118,7 +118,11 @@ class Color_Scheme {
 			|| is_singular( 'yoast_courses' )
 			|| is_home()
 			|| is_search()
-			|| ( is_archive() && ! is_post_type_archive( array( 'yoast_plugins', 'yoast_dev_article' ) ) )
+			|| (
+				is_archive()
+				&& ! is_post_type_archive( array( 'yoast_plugins', 'yoast_dev_article' ) )
+				&& ! is_tax( 'yoast_dev_category' )
+			)
 			|| self::ACADEMY === $this->get_color_scheme_setting()
 		);
 	}
@@ -131,6 +135,7 @@ class Color_Scheme {
 	private function is_software_color_scheme() {
 		return (
 			is_post_type_archive( array( 'yoast_plugins', 'yoast_dev_article' ) )
+			|| is_tax( 'yoast_dev_category' )
 			|| in_array( get_post_type(), array( 'plugin_review', 'yoast_plugins', 'yoast_themes', 'yoast_dev_article' ) )
 			|| self::SOFTWARE === $this->get_color_scheme_setting()
 		);
