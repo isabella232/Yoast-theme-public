@@ -1,5 +1,6 @@
 ;(function( $ ) {
 	var validBtwNr = false;
+	var $body;
 
 	/**
 	 * Checks the BTW NR with the VIES API
@@ -141,7 +142,7 @@
 	}
 
 	jQuery( document ).ready( function ( $ ) {
-		var $body = $( 'body' );
+		$body = $( 'body' );
 
 		hideOrShowStateField();
 		hideOrShowVATNumber();
@@ -241,7 +242,7 @@
 			}
 		} );
 
-		$("body").on("change", "#yst_btw, #billing_country", function () {
+		$body.on("change", "#yst_btw, #billing_country", function () {
 			hideOrShowVATNumber();
 		});
 	} );
