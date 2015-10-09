@@ -103,9 +103,15 @@ svg .llms-animated-circle {
   }
 }
 
-.single-llms_quiz .llms-course-navigation {
-  margin-top: 1em;
-  padding-top: 0;
+.single-llms_quiz {
+  main > article {
+    min-height: 500px;
+  }
+
+  .llms-course-navigation {
+    margin-top: 1em;
+    padding-top: 0;
+  }
 }
 
 #quiz-start-button {
