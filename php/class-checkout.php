@@ -32,7 +32,7 @@ class Checkout {
 		$show_coupon = filter_input( INPUT_GET, 'show_coupon' );
 
 		if ( null !== $show_coupon ) {
-			setcookie( 'yst_edd_discount', '1' );
+			setcookie( 'yst_edd_discount', '1', null, '/' );
 			wp_redirect( home_url(), 301 );
 			exit;
 		}
