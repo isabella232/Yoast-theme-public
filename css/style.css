@@ -3763,9 +3763,28 @@ svg .llms-animated-circle {
   width: auto; }
 
 .course-list .my-courses-course {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -ms-flex-pack: justify;
   height: 55px;
   margin: 1rem 0 0 0; }
+  .old-ie .course-list .my-courses-course {
+    text-align: justify; }
+    .old-ie .course-list .my-courses-course::after {
+      content: '';
+      display: inline-block;
+      width: 100%; }
+    .old-ie .course-list .my-courses-course > * {
+      display: inline-block;
+      text-align: left; }
 
 .course-list .title {
   border: 1px solid #5D237A;

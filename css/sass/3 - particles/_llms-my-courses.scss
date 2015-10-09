@@ -7,7 +7,7 @@
 	}
 	
 	.my-courses-course {
-		display: flex;
+		@include display-flex;
 		height: $height;
 
 		margin: 1rem 0 0 0;
