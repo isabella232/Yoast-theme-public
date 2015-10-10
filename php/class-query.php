@@ -31,8 +31,8 @@ class Query {
 			return;
 		}
 
-		if ( $query->is_tag ) {
-			$this->tag_filter( $query );
+		if ( $query->is_tag || $query->is_author ) {
+			$this->posts_filter( $query );
 		}
 
 		if ( $query->is_search ) {
@@ -73,7 +73,7 @@ class Query {
 	 *
 	 * @param $query \WP_Query $query
 	 */
-	private function tag_filter( $query ) {
+	private function posts_filter( $query ) {
 		$query->set( 'post_type', array( 'post', 'yoast_dev_article' ) );
 	}
 
