@@ -184,6 +184,13 @@
 		$( '#card_exp_year' ).on( "input", function () {
 			var month = $( '#card_exp_month' ).val();
 			var year = $( this ).val();
+
+			if ( 4 === year.length ) {
+				year = year.slice( -2 );
+				$( this ).val( year );
+				return;
+			}
+
 			if ( month != '' ) {
 				if ( $.payment.validateCardExpiry( month, year ) ) {
 					$( 'edd-input-cvc' ).removeClass( 'error' ).addClass( 'valid' );
