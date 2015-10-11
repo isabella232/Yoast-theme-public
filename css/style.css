@@ -2363,6 +2363,15 @@ a.announcement {
   margin-right: 0;
   padding-right: 0; }
 
+#edd_purchase_form .edd_errors {
+  background: #E23132;
+  color: #FFF;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.5rem; }
+  #edd_purchase_form .edd_errors p {
+    margin-bottom: 0; }
+
 #edd_purchase_form label[for="edd_agree_to_terms"] {
   display: inline; }
 
@@ -3758,6 +3767,66 @@ svg .llms-animated-circle {
     width: 30em;
     background-image: url(./../images/logo-academy.svg); } }
 
+.course-list img {
+  height: 55px;
+  width: auto; }
+
+.course-list .my-courses-course {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -ms-flex-pack: justify;
+  height: 55px;
+  margin: 1rem 0 0 0; }
+  .old-ie .course-list .my-courses-course {
+    text-align: justify; }
+    .old-ie .course-list .my-courses-course::after {
+      content: '';
+      display: inline-block;
+      width: 100%; }
+    .old-ie .course-list .my-courses-course > * {
+      display: inline-block;
+      text-align: left; }
+
+.course-list .title {
+  border: 1px solid #5D237A;
+  margin: 0 0 0 1rem;
+  padding: 0 1rem;
+  flex-grow: 100; }
+  .course-list .title h3 {
+    line-height: 55px; }
+
+.course-list .my-courses-progress {
+  background: #DCDCDC;
+  color: #646464;
+  height: 55px;
+  line-height: 55px;
+  margin: 0 0 0 1rem;
+  padding: 0 1rem; }
+
+.course-list .button, .course-list .comment-respond input[type="submit"], .comment-respond .course-list input[type="submit"], .course-list .llms-button, .course-list .llms-return a, .llms-return .course-list a {
+  height: 55px;
+  line-height: 55px;
+  padding: 0;
+  max-height: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  margin: 0 0 0 1rem;
+  padding: 0 1rem; }
+  .course-list .button::after, .course-list .comment-respond input[type="submit"]::after, .comment-respond .course-list input[type="submit"]::after, .course-list .llms-button::after, .course-list .llms-return a::after, .llms-return .course-list a::after {
+    border-top-width: 27.5px;
+    border-bottom-width: 27.5px; }
+
 /* Main navigation */
 .sitenav {
   /* 1 pixel border between main and subnav */
@@ -4211,7 +4280,7 @@ svg .llms-animated-circle {
     z-index: -1;
     bottom: 0;
     right: 0;
-    max-width: 140px; }
+    max-width: 120px; }
   .meta__category a {
     vertical-align: top; }
   .meta__category img {

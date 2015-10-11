@@ -139,6 +139,18 @@
 		padding-right: 0;
 	}
 
+	.edd_errors {
+		background: $color-error;
+		color: $color-white;
+		font-style: italic;
+		margin-bottom: 1rem;
+		padding: 0.25rem 0.5rem;
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
 	label[for="edd_agree_to_terms"] {
 		display: inline;
 	}

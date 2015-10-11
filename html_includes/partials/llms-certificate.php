@@ -7,6 +7,8 @@ if ( is_user_admin() ) {
 	show_admin_bar(false);
 }
 
+$is_public = isset( $template_args['is_public'] ) && true === $template_args['is_public'];
+
 // Prevent the syllabus from showing.
 remove_filter( 'the_content', 'llms_get_post_content' );
 
@@ -44,76 +46,13 @@ $certificate = new LLMS_Certificate;
 
 	<?php $certificate_url_dir = plugins_url(); // Declare Plugin Directory ?>
 
+	<link href="<?php echo get_template_directory_uri(); ?>/css/certificate.min.css" rel="stylesheet" media="all">
+
 	<!--Make Background White to Print certificate -->
 	<style type='text/css'>
-		body {
-			background-color: #fff;
-			background-image: none;
-		}
-		.header {
-			display: none;
-		}
-		#content {
-			background: none;
-		}
-		.entry {
-			margin-bottom: 40px !important;
-			padding: 50px 60px !important;
-			background: none;
-		}
-		.hentry {
-			margin-bottom: 40px !important;
-			padding: 50px 60px !important;
-			background: none;
-		}
-		.site-header {
-			display: none;
-		}
-		.nav-primary {
-			display: none;
-		}
 		.llms-certificate-container {
 			background-image: url(<?php echo $certimage; ?>);
-			background-repeat: no-repeat;
-			background-size: 1024px 724px;
-			width: 1024px;
-			height: 724px;
-			margin: 20px auto;
-			-webkit-print-color-adjust: exact;
-			overflow: hidden;
 		}
-		.llms-certificate-container h1:first-child {
-			text-align: center;
-		}
-		#llms-print-certificate {
-			text-align: center;
-		}
-		@media print {
-			.no-print, .no-print * {
-				display: none !important;
-			}
-		}
-
-		.contents {
-			width: 640px;
-			margin: 280px auto 0 auto;
-		}
-
-		.contents img {
-			border-radius: 30px 30px 0 30px;
-			float: left;
-			width: 150px;
-			height: 150px;
-			margin-right: 20px;
-		}
-
-		.contents .name {
-			font-size: 55px;
-		}
-		.contents .date {
-			font-size: 25px;
-		}
-
 	</style>
 	<?php //wp_head(); ?>
 </head>
@@ -132,16 +71,35 @@ $certificate = new LLMS_Certificate;
 				<div class="contents">
 					<?php
 					remove_filter( 'the_content', 'wpautop' );
-					echo the_content();
+					the_content();
 					add_filter( 'the_content', 'wpautop' );
 					?>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="llms-print-certificate" class="no-print">
-		<input type="button" class="llms-button" onClick="window.print()" value="<?php echo _e('Print Certificate', 'lifterlms') ?>"/>
-	</div>
+	<?php if ( $is_public ) : ?>
+		<section class="certificate-cta row iceberg">
+			<a href="https://yoast.com/courses/" class="button default"><?php _e( 'View all our courses on yoast.com', 'yoastcom' ); ?></a>
+		</section>
+	<?php else : ?>
+		<div id="llms-print-certificate" class="no-print row">
+			<button type="button" class="default" onclick="window.print();"><?php _e( 'Print certificate', 'yoastcom' ); ?></button>
+		</div>
+
+		<section class="certificate-badge no-print row theme-academy">
+			<h2><?php _e( 'Show your certificate on your site, implement our badge.', 'yoastcom' ); ?></h2>
+
+			<?php $badge_html = \Yoast\YoastCom\Academy\get_badge_html( get_the_ID(), get_current_user_id() ); ?>
+
+			<h3><?php _e( 'Badge preview', 'yoastcom' ); ?></h3>
+			<?php echo $badge_html; ?>
+
+			<h3><?php _e( 'Badge HTML', 'yoastcom' ); ?></h3>
+			<p><?php _e( 'Use this HTML to display the badge on your site:', 'yoastcom' ); ?></p>
+			<textarea cols="100" rows="2"><?php echo esc_textarea( $badge_html ); ?></textarea>
+		</section>
+	<?php endif; ?>
 </main>
 
 </body>
