@@ -37,13 +37,13 @@ if ( $certimage == '' ) {
 
 $certificate = new LLMS_Certificate;
 
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
 	<meta name="viewport" content="width=device-width">
+	<meta name="robots" content="noindex,follow">
 
-	<title><?php echo get_the_title(); ?><?php _e( 'Certificate', 'yoastcom' ); ?></title>
+	<title><?php echo get_the_title(); ?> <?php _e( 'Certificate', 'yoastcom' ); ?></title>
 
 	<?php $certificate_url_dir = plugins_url(); // Declare Plugin Directory ?>
 
