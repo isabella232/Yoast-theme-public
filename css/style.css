@@ -502,6 +502,9 @@ a img.aligncenter {
   z-index: 100000;
   /* Above WP toolbar. */ }
 
+.clear {
+  clear: both; }
+
 .rowholder {
   background-color: #FFF;
   padding-bottom: 1px;
