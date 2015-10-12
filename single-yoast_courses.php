@@ -1,6 +1,13 @@
 <?php
 
 namespace Yoast\YoastCom\Theme;
+
+global $post;
+if ( $post->post_parent !== 0 ) {
+	get_template_part( 'single' );
+	return;
+}
+
 ?>
 <?php get_header(); ?>
 
@@ -23,7 +30,7 @@ namespace Yoast\YoastCom\Theme;
 			<div class="media">
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="imgExt">
-						<?php the_post_thumbnail(); ?>
+						<?php the_post_thumbnail( array( 150, 169 ) ); ?>
 					</div>
 				<?php endif; ?>
 
