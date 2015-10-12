@@ -31,6 +31,10 @@ class Query {
 			return;
 		}
 
+		if ( $query->is_post_type_archive( 'yoast_courses' ) ) {
+			$this->courses_filter( $query );
+		}
+
 		if ( $query->is_tag || $query->is_author ) {
 			$this->posts_filter( $query );
 		}
@@ -42,6 +46,15 @@ class Query {
 		if ( $query->is_post_type_archive( 'yoast_ebooks' ) ) {
 			$this->ebooks_filter( $query );
 		}
+	}
+
+	/**
+	 * Filter away sub-pages on the archive
+	 *
+	 * @param \WP_Query $query
+	 */
+	private function courses_filter( $query ) {
+		$query->set( 'post_parent', 0 );
 	}
 
 	/**
