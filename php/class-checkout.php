@@ -14,9 +14,7 @@ class Checkout {
 	 * Constructor
 	 */
 	public function __construct() {
-		add_action( 'template_redirect', array( $this, 'maybe_set_discount_cookie' ) );
-
-		// VAT related functions
+		// VAT related functions.
 		add_action( 'wp_ajax_yst_check_vat', array( $this, 'ajax_check_vat' ) );
 		add_action( 'wp_ajax_nopriv_yst_check_vat', array( $this, 'ajax_check_vat' ) );
 		add_action( 'edd_checkout_error_checks', array( $this, 'validate_btw_nr' ), 10, 2 );
