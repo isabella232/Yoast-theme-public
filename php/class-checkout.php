@@ -33,7 +33,9 @@ class Checkout {
 
 		if ( null !== $show_coupon ) {
 			setcookie( 'yst_edd_discount', '1', null, '/' );
-			wp_redirect( home_url(), 301 );
+
+			$redirect_url = esc_url_raw( remove_query_arg( 'show_coupon' ) );
+			wp_redirect( $redirect_url, 301 );
 			exit;
 		}
 	}
