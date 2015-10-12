@@ -475,6 +475,9 @@ a img.aligncenter {
   z-index: 100000;
   /* Above WP toolbar. */ }
 
+.clear {
+  clear: both; }
+
 .rowholder {
   background-color: #FFF;
   padding-bottom: 1px;
@@ -1839,6 +1842,12 @@ body {
 
 .certificate-cta {
   text-align: right; }
+
+.certificate-badge {
+  margin-top: 30px; }
+
+.badge-preview {
+  margin-right: 50px; }
 
 @media print {
   .no-print, .no-print * {

@@ -38,6 +38,7 @@ class Checkout_HTML {
 		$this->change_cc_form();
 		$this->change_tax_fields();
 		$this->hide_final_total();
+		$this->add_errors_on_top();
 	}
 
 	/**
@@ -174,6 +175,15 @@ class Checkout_HTML {
 	 */
 	public function hide_final_total() {
 		remove_action( 'edd_purchase_form_before_submit', 'edd_checkout_final_total', 999 );
+	}
+
+	/**
+	 * Adds the checkout errors on the top of the page.
+	 */
+	public function add_errors_on_top() {
+		add_action( 'edd_checkout_form_top', function() { echo '<div class="row">'; } );
+		add_action( 'edd_checkout_form_top', 'edd_print_errors' );
+		add_action( 'edd_checkout_form_top', function() { echo '</div>'; } );
 	}
 
 	/**

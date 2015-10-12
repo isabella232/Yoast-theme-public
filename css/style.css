@@ -502,6 +502,9 @@ a img.aligncenter {
   z-index: 100000;
   /* Above WP toolbar. */ }
 
+.clear {
+  clear: both; }
+
 .rowholder {
   background-color: #FFF;
   padding-bottom: 1px;
@@ -2362,6 +2365,15 @@ a.announcement {
   color: #E23132;
   margin-right: 0;
   padding-right: 0; }
+
+#edd_purchase_form .edd_errors {
+  background: #E23132;
+  color: #FFF;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.5rem; }
+  #edd_purchase_form .edd_errors p {
+    margin-bottom: 0; }
 
 #edd_purchase_form label[for="edd_agree_to_terms"] {
   display: inline; }
@@ -4274,7 +4286,7 @@ svg .llms-animated-circle {
     z-index: -1;
     bottom: 0;
     right: 0;
-    max-width: 140px; }
+    max-width: 120px; }
   .meta__category a {
     vertical-align: top; }
   .meta__category img {
