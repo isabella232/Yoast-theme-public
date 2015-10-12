@@ -26,21 +26,6 @@ class Checkout {
 	}
 
 	/**
-	 * Set's discount cookie if the show_coupon GET variable is present.
-	 */
-	public function maybe_set_discount_cookie() {
-		$show_coupon = filter_input( INPUT_GET, 'show_coupon' );
-
-		if ( null !== $show_coupon ) {
-			setcookie( 'yst_edd_discount', '1', null, '/' );
-
-			$redirect_url = esc_url_raw( remove_query_arg( 'show_coupon' ) );
-			wp_redirect( $redirect_url, 301 );
-			exit;
-		}
-	}
-
-	/**
 	 * Check VAT number
 	 *
 	 * @param string $country
