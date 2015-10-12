@@ -30,7 +30,11 @@ if ( $post->post_parent !== 0 ) {
 			<div class="media">
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="imgExt">
-						<?php the_post_thumbnail( array( 150, 169 ) ); ?>
+						<?php
+						$thumb_id = get_post_thumbnail_id();
+						$thumb_src = wp_get_attachment_image_src( $thumb_id );
+						?>
+						<img src="<?php echo $thumb_src; ?>" width="150" alt="<?php the_title(); ?>" />
 					</div>
 				<?php endif; ?>
 
