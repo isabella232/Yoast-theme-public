@@ -32,7 +32,7 @@ if ( $post->post_parent !== 0 ) {
 					<div class="imgExt">
 						<?php
 						$thumb_id = get_post_thumbnail_id();
-						$thumb_src = wp_get_attachment_image_src( $thumb_id );
+						$thumb_src = wp_get_attachment_image_src( $thumb_id, 'large' );
 						?>
 						<img src="<?php echo $thumb_src[0]; ?>" width="150" alt="<?php the_title(); ?>" />
 					</div>
