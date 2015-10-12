@@ -107,9 +107,10 @@ class Checkout {
 		if ( isset( $data['yst_btw'] ) && '' != $data['yst_btw'] ) {
 			$vat_response = $this->check_vat( $data['billing_country'], $data['yst_btw'] );
 
-			if ( false === $vat_response ) {
+			if ( 0 === $vat_response ) {
 				edd_set_error( 'yst_btw', __( 'VAT number incorrect.', 'yoast-theme' ) );
-			} elseif ( null == $vat_response ) {
+			}
+			elseif ( 2 === $vat_response ) {
 				edd_set_error( 'yst_btw_unavailable', __( 'VAT number check not available.', 'yoast-theme' ) );
 			}
 		}
