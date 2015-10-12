@@ -9,7 +9,7 @@ function setHomeBannerHeight() {
 
 
 function setStickyElements() {
-	
+
 	for (var i = 0; i < window.stickyEls.length; i++) {
 		stickyEl= window.stickyEls[i];
 
@@ -70,9 +70,9 @@ function setToSticky(stickyEl, i) {
 	if(stickyAnchor) {
 		elOffset= stickyAnchor.getBoundingClientRect();
 		if( elOffset.top <= topPos) {
+			stickyAnchor.style.height= getOuterHeight(stickyEl) + "px";
 			stickyEl.classList.add('is-sticky');
 			stickyEl.style.top= topPos + "px";
-			stickyAnchor.style.height= getOuterHeight(stickyEl) + "px";
 
 		} else {
 			stickyEl.classList.remove('is-sticky');

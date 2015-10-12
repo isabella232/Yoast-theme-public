@@ -72,6 +72,14 @@ body {
 	text-align: right;
 }
 
+.certificate-badge {
+  margin-top: 30px;
+}
+
+.badge-preview {
+  margin-right: 50px;
+}
+
 @media print {
 	.no-print, .no-print * {
 		display: none !important;

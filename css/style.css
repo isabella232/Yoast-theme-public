@@ -502,6 +502,9 @@ a img.aligncenter {
   z-index: 100000;
   /* Above WP toolbar. */ }
 
+.clear {
+  clear: both; }
+
 .rowholder {
   background-color: #FFF;
   padding-bottom: 1px;
@@ -3683,6 +3686,9 @@ svg .llms-animated-circle {
 .single-llms_quiz .llms-return a {
   width: 100%;
   text-align: center; }
+
+.single-llms_quiz main > article {
+  min-height: 500px; }
 
 .single-llms_quiz .llms-course-navigation {
   margin-top: 1em;
