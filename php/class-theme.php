@@ -85,18 +85,39 @@ class Theme {
 		wp_register_script( 'jquery-validate', $dir . '/js/includes/jquery.validate.min.js', array( 'jquery' ), '1.14.0', true );
 		wp_register_script( 'jquery-payment', $dir . '/js/includes/jquery.payment.min.js', array( 'jquery' ), '1.3.2', true );
 
-		wp_register_style( 'yoast-com', $dir . '/css/style.min.css', array(), filemtime( trailingslashit( get_stylesheet_directory() ) . '/css/style.min.css' ) );
+		$this->register_asset( 'style', 'yoast-com', 'css/style.min.css', array() );
 
-		wp_register_script( 'yoast-com', $dir . '/js/yoast.js', array(), self::VERSION, true );
-		wp_register_script( 'yoast-com-checkout', $dir . '/js/checkout.min.js', array(
+		$this->register_asset( 'script', 'yoast-com', 'js/yoast.js', array() );
+		$this->register_asset( 'script', 'yoast-com-checkout', 'js/checkout.min.js', array(
 			'jquery',
 			'chosen',
 			'jquery-validate',
 			'jquery-payment',
-		), filemtime( trailingslashit( get_stylesheet_directory() ) . '/js/checkout.min.js' ), true );
-		wp_register_script( 'yoast-com-academy', $dir . '/js/academy.min.js', array(
+		) );
+		$this->register_asset( 'script', 'yoast-com-academy', 'js/academy.min.js', array(
 			'jquery',
 		) );
+	}
+
+	/**
+	 * Registers a theme asset
+	 *
+	 * @param string $script_or_style Whether it is a script or a style.
+	 * @param string $handle The handle for this asset.
+	 * @param string $file_path The file path for this asset.
+	 * @param array  $dependencies The dependencies of this asset.
+	 */
+	private function register_asset( $script_or_style, $handle, $file_path, $dependencies = array() ) {
+		$url  = trailingslashit( get_stylesheet_directory_uri() ) . $file_path;
+		$global_path = trailingslashit( get_stylesheet_directory() ) . $file_path;
+		$last_modified = filemtime( $global_path );
+
+		if ( 'style' === $script_or_style ) {
+			wp_register_style( $handle, $url, $dependencies, $last_modified );
+		}
+		elseif ( 'script' === $script_or_style ) {
+			wp_register_script( $handle, $url, $dependencies, $last_modified, true );
+		}
 	}
 
 	/**

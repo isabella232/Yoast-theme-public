@@ -248,14 +248,16 @@ function get_customer() {
 	// For some reason when a Stripe error occurs the `customer` session is empty, but `edd_purchase is filled`.
 	$edd_purchase = EDD()->session->get( 'edd_purchase' );
 	$edd_purchase = $edd_purchase['post_data'];
-	$convert = array(
-		'edd_first' => 'first_name',
-		'edd_last'  => 'last_name',
-		'edd_email' => 'email',
-	);
-	foreach ( $convert as $from => $to ) {
-		if ( array_key_exists( $from, $edd_purchase ) ) {
-			$customer[ $to ] = $edd_purchase[ $from ];
+	if ( ! empty( $edd_purchase ) ) {
+		$convert = array(
+			'edd_first' => 'first_name',
+			'edd_last'  => 'last_name',
+			'edd_email' => 'email',
+		);
+		foreach ( $convert as $from => $to ) {
+			if ( array_key_exists( $from, $edd_purchase ) ) {
+				$customer[ $to ] = $edd_purchase[ $from ];
+			}
 		}
 	}
 
@@ -310,17 +312,19 @@ function get_customer_address() {
 	// For some reason when a Stripe error occurs the `customer` session is empty, but `edd_purchase is filled`.
 	$edd_purchase = EDD()->session->get( 'edd_purchase' );
 	$edd_purchase = $edd_purchase['post_data'];
-	$convert = array(
-		'card_address'    => 'line1',
-		'card_address_2'  => 'line2',
-		'card_city'       => 'city',
-		'card_zip'        => 'zip',
-		'card_state'      => 'state',
-		'billing_country' => 'country',
-	);
-	foreach ( $convert as $from => $to ) {
-		if ( array_key_exists( $from, $edd_purchase ) ) {
-			$customer['address'][ $to ] = $edd_purchase[ $from ];
+	if ( ! empty( $edd_purchase ) ) {
+		$convert = array(
+			'card_address'    => 'line1',
+			'card_address_2'  => 'line2',
+			'card_city'       => 'city',
+			'card_zip'        => 'zip',
+			'card_state'      => 'state',
+			'billing_country' => 'country',
+		);
+		foreach ( $convert as $from => $to ) {
+			if ( array_key_exists( $from, $edd_purchase ) ) {
+				$customer['address'][ $to ] = $edd_purchase[ $from ];
+			}
 		}
 	}
 

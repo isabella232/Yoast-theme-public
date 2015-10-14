@@ -310,9 +310,10 @@ class Shortcodes {
 	public function get_break_out_body() {
 		$break_out_content = '';
 
-		if ( is_singular( 'yoast_plugins' ) ) {
+		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
 			$break_out_content = '</section>';
-		} elseif ( is_page() || is_singular() ) {
+		}
+		elseif ( is_page() || is_singular() ) {
 			$break_out_content = '</div>';
 		}
 
@@ -327,9 +328,10 @@ class Shortcodes {
 	public function get_restart_body() {
 		$restart_content = '';
 
-		if ( is_singular( 'yoast_plugins' ) ) {
+		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
 			$restart_content = '<section class="content">';
-		} elseif ( is_page() || is_singular() ) {
+		}
+		elseif ( is_page() || is_singular() ) {
 			$restart_content = '<div class="content">';
 		}
 
@@ -344,7 +346,7 @@ class Shortcodes {
 	private function get_break_out_content() {
 		$break_out_content = '';
 
-		if ( is_singular( 'yoast_plugins' ) ) {
+		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
 			$break_out_content = '</section></div>';
 		}
 		elseif ( is_singular() ) {
@@ -360,7 +362,7 @@ class Shortcodes {
 	private function get_content_restart() {
 		$restart_content = '';
 
-		if ( is_singular( 'yoast_plugins' ) ) {
+		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
 			$restart_content = '<div class="row island iceberg"><section class="content">';
 		}
 		elseif ( is_singular() ) {

@@ -14,28 +14,13 @@ class Checkout {
 	 * Constructor
 	 */
 	public function __construct() {
-		add_action( 'template_redirect', array( $this, 'maybe_set_discount_cookie' ) );
-
-		// VAT related functions
+		// VAT related functions.
 		add_action( 'wp_ajax_yst_check_vat', array( $this, 'ajax_check_vat' ) );
 		add_action( 'wp_ajax_nopriv_yst_check_vat', array( $this, 'ajax_check_vat' ) );
 		add_action( 'edd_checkout_error_checks', array( $this, 'validate_btw_nr' ), 10, 2 );
 		add_filter( 'edd_payment_meta', array( $this, 'add_btw_nr_to_payment' ) );
 		add_filter( 'edd_purchase_data_before_gateway', array( $this, 'maybe_remove_tax' ) );
 		add_filter( 'edd_purchase_form_required_fields', array( $this, 'fix_state_required' ), 10 );
-	}
-
-	/**
-	 * Set's discount cookie if the show_coupon GET variable is present.
-	 */
-	public function maybe_set_discount_cookie() {
-		$show_coupon = filter_input( INPUT_GET, 'show_coupon' );
-
-		if ( null !== $show_coupon ) {
-			setcookie( 'yst_edd_discount', '1', null, '/' );
-			wp_redirect( home_url(), 301 );
-			exit;
-		}
 	}
 
 	/**
@@ -122,9 +107,10 @@ class Checkout {
 		if ( isset( $data['yst_btw'] ) && '' != $data['yst_btw'] ) {
 			$vat_response = $this->check_vat( $data['billing_country'], $data['yst_btw'] );
 
-			if ( false === $vat_response ) {
+			if ( 0 === $vat_response ) {
 				edd_set_error( 'yst_btw', __( 'VAT number incorrect.', 'yoast-theme' ) );
-			} elseif ( null == $vat_response ) {
+			}
+			elseif ( 2 === $vat_response ) {
 				edd_set_error( 'yst_btw_unavailable', __( 'VAT number check not available.', 'yoast-theme' ) );
 			}
 		}
