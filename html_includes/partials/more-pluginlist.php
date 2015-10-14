@@ -9,6 +9,7 @@ if ( isset( $template_args['categories'] ) ) {
 $args = array(
 	'posts_per_page' => 25,
 	'orderby'        => 'menu_order',
+	'order'          => 'ASC',
 );
 
 if ( ! empty( $categories ) ) {
