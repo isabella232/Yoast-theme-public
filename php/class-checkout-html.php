@@ -133,9 +133,9 @@ class Checkout_HTML {
 	 * Change the cc form with our customized one
 	 */
 	public function change_cc_form() {
-		remove_action( 'edd_cc_form', 'edd_get_cc_form' );
+		remove_action( 'edd_stripe_cc_form', 'edds_credit_card_form' );
 		remove_action( 'edd_after_cc_fields', 'edd_default_cc_address_fields' );
-		add_action( 'edd_cc_form', array( $this, 'html_cc_form' ) );
+		add_action( 'edd_stripe_cc_form', array( $this, 'html_cc_form' ) );
 		add_action( 'edd_after_cc_fields', array( $this, 'html_default_cc_address' ) );
 	}
 
@@ -143,6 +143,10 @@ class Checkout_HTML {
 	 * Outputs the HTML for the credit card fields
 	 */
 	public function html_cc_form() {
+		if ( ! wp_script_is( 'stripe-js' ) ) {
+			edd_stripe_js( true );
+		}
+
 		get_template_part( 'html_includes/shop/input-creditcard' );
 	}
 
