@@ -13,7 +13,7 @@ namespace Yoast\YoastCom\Theme;
 
 	<main role="main">
 
-		<div class="row">
+		<div class="row iceberg">
 			<h1 id="seo-plugins"><?php _e( 'SEO plugins by Yoast' ); ?></h1>
 			<ul class="list list--unstyled">
 				<li><a href="#ga-plugins"><?php _e( 'Google Analytics plugins', 'yoastcom' ); ?> &raquo;</a></li>
@@ -22,19 +22,14 @@ namespace Yoast\YoastCom\Theme;
 			<?php get_template_part( 'html_includes/partials/more-pluginlist', array( 'categories' => array( 303 ) ) ); ?>
 		</div>
 
-		<?php get_template_part( 'html_includes/partials/announcement', array(
-			'class' => 'announcement--pointer-top fill--tertiary',
-			'text'  => 'Want to know how to improve your site? Order an SEO Website Review &raquo;',
-			'url'   => home_url( '/hire-us/website-review/' ),
-		) ); ?>
-
-		<div class="announcement announcement--pointer fill fill--secondary">
+		<div class="announcement announcement--pointer announcement--pointer-top fill fill--secondary">
 			<div class="row">
 				<h2 class="h3"><?php _e( 'Bundle plugins and save money!', 'yoastcom' ); ?></h2>
 				<?php get_template_part( 'html_includes/partials/more-bundleplugin' ); ?>
 			</div>
 		</div>
 
+		<hr class="hr--no-pointer">
 
 		<section class="row island iceberg">
 			<h2 class="h1" id="ga-plugins"><?php _e( 'Google Analytics by Yoast plugins', 'yoastcom' ); ?></h2>
@@ -48,12 +43,6 @@ namespace Yoast\YoastCom\Theme;
 
 		<hr>
 
-		<section class="row island">
-			<?php get_template_part( 'html_includes/partials/testimonial' ); ?>
-		</section>
-
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => "announcement--pointer-top" ) ); ?>
-
 		<div class="row iceberg">
 			<h2 class="h1" id="other-plugins"><?php _e( 'Other plugins', 'yoastcom' ); ?></h2>
 			<ul class="list list--unstyled">
@@ -63,7 +52,7 @@ namespace Yoast\YoastCom\Theme;
 			<?php get_template_part( 'html_includes/partials/promoblocks-plugins' ); ?>
 		</div>
 
-		<hr class="hr--no-pointer">
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'theme-software announcement--pointer-top island' ) ); ?>
 
 	</main>
 

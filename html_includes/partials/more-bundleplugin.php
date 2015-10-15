@@ -9,7 +9,7 @@ if ( ! isset( $template_args['class2'] ) ) {
 	$template_args['class2'] = '';
 }
 
-$bundles = query_bundles( array( 'posts_per_page' => 2, 'orderby' => 'rand' ) );
+$bundles = query_bundles( array( 'posts_per_page' => 3, 'orderby' => 'rand' ) );
 
 ?>
 <?php while ( $bundles->have_posts() ) : $bundles->the_post() ?>
