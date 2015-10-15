@@ -91,7 +91,7 @@ namespace Yoast\YoastCom\Theme;
 				<?php endif; ?>
 			</div>
 			<div class="three-seventh small-four-fifth"><?php _e( 'Total', 'yoastcom' ); ?></div>
-			<div class="one-seventh small-one-fifth">
+			<div class="one-seventh small-one-fifth edd_cart_total">
 				<span class="edd_cart_amount" data-subtotal="<?php echo esc_attr( edd_get_cart_total() ); ?>" data-total="<?php echo esc_attr( edd_get_cart_total() ); ?>">
 					<?php edd_cart_total(); ?>
 				</span>
