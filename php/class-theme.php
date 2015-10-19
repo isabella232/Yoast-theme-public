@@ -45,6 +45,11 @@ class Theme {
 		new Page_Academy_Settings();
 		new Query();
 
+		if ( is_admin() ) {
+			$theme_settings = new Theme_Settings();
+			$theme_settings->hooks();
+		}
+
 		$shortcodes = new Shortcodes();
 		add_action( 'init', array( $shortcodes, 'add_shortcodes' ) );
 
