@@ -22,11 +22,13 @@ $completed = ( 100 === (int) $course->get_percent_complete() );
 	</div>
 	<?php if ( $completed ) : ?>
 		<?php $url_certificate = \Yoast\YoastCom\Academy\get_certificate_url( $course ); ?>
-		<div class="certificate">
-			<a class="button default" href="<?php echo esc_url( $url_certificate ); ?>">
-				<i class="fa fa-graduation-cap" aria-hidden="true"></i><?php _e( 'Show certificate', 'yoastcom' ); ?>
-			</a>
-		</div>
+		<?php if ( $url_certificate ) : ?>
+			<div class="certificate">
+				<a class="button default" href="<?php echo esc_url( $url_certificate ); ?>">
+					<i class="fa fa-graduation-cap" aria-hidden="true"></i><?php _e( 'Show certificate', 'yoastcom' ); ?>
+				</a>
+			</div>
+		<?php endif; ?>
 	<?php else : ?>
 		<div class="my-courses-progress">
 			<?php printf( __( 'Finished %d%%', 'yoastcom' ), $course->get_percent_complete() ); ?>
