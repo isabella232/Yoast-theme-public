@@ -7,8 +7,8 @@ global $wpdb;
 llms_print_notices();
 
 $code = filter_input( INPUT_GET, \Yoast\YoastCom\Academy\Inviter::INVITE_KEY );
-$invite = \Yoast\YoastCom\Academy\Invite::get_from_code( $code );
-if ( null === $invite ) {
+$invite = \Yoast\YoastCom\Academy\Order_Invite::get_from_code( $code );
+if ( null === $invite || $invite->is_used() ) {
 	\Yoast\YoastCom\Theme\get_template_part( 'html_includes/partials/llms-registration-closed' );
 	return;
 }
