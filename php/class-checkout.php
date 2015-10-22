@@ -81,20 +81,12 @@ class Checkout {
 	 * @todo ADD NONCES GODDAMNIT
 	 */
 	public function ajax_check_vat() {
-		if ( isset ( $_POST['country'] ) && isset ( $_POST['vat_nr'] ) ) {
-			if ( 1 === $this->check_vat( $_POST['country'], $_POST['vat_nr'] ) ) {
-				echo '1';
-				exit;
-			} elseif ( 0 === $this->check_vat( $_POST['country'], $_POST['vat_nr'] ) ) {
-				echo '0';
-				exit;
-			} elseif ( 2 === $this->check_vat( $_POST['country'], $_POST['vat_nr'] ) ) {
-				echo '2';
-				exit;
-			}
+		$result = 0;
+		if ( isset( $_POST['country'] ) && isset( $_POST['vat_nr'] ) ) {
+			$result = $this->check_vat( $_POST['country'], $_POST['vat_nr'] );
 		}
 
-		echo '0';
+		echo $result;
 		exit;
 	}
 
