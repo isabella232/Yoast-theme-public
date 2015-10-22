@@ -24,10 +24,10 @@ class Checkout {
 	}
 
 	/**
-	 * Check VAT number
+	 * Check a given VAT number with the europe VIES check
 	 *
-	 * @param string $country
-	 * @param string $vat_nr
+	 * @param string $country The country code to check with the VAT number.
+	 * @param string $vat_nr The VAT number to check.
 	 *
 	 * @return bool|null
 	 */
@@ -43,21 +43,22 @@ class Checkout {
 			$vat_nr = trim( substr( $vat_nr, strlen( $country ) ) );
 		}
 
-		// Do the remote request
+		// Do the remote request.
 		$client = new \SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
 
 		try {
 			$returnVat = $client->checkVat( array(
 				'countryCode' => $country,
-				'vatNumber'   => $vat_nr
+				'vatNumber'   => $vat_nr,
 			) );
-		} catch ( Exception $e ) {
+
+		} catch ( \Exception $e ) {
 			error_log( 'VIES API Error for ' . $country . ' - ' . $vat_nr . ': ' . $e->getMessage() );
 
 			return 2;
 		}
 
-		// Return the response
+		// Return the response.
 		if ( isset( $returnVat ) ) {
 			if ( true == $returnVat->valid ) {
 				return 1;
@@ -66,7 +67,7 @@ class Checkout {
 			}
 		}
 
-		// Return null if the service is down
+		// Return null if the service is down.
 		return 2;
 	}
 
