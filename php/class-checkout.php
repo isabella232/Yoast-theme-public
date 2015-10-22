@@ -109,9 +109,9 @@ class Checkout {
 	}
 
 	/**
-	 * store the custom field data in the payment meta
+	 * Store the custom field data in the payment meta
 	 *
-	 * @param array $payment_meta
+	 * @param array $payment_meta The payment meta that will be saved in the database.
 	 *
 	 * @return array
 	 */
@@ -122,29 +122,28 @@ class Checkout {
 	}
 
 	/**
-	 * @param array $purchase_data
+	 * @param array $purchase_data The purchase data for the payment.
 	 *
 	 * @return array
 	 */
 	public function maybe_remove_tax( $purchase_data ) {
 
-		if ( isset ( $purchase_data['post_data']['yst_btw'] ) && '' != $purchase_data['post_data']['yst_btw'] ) {
+		// If we get to this point with a btw nr, we can assume it's correct (validate_btw_nr takes care of the validation).
+		if ( ! empty( $purchase_data['post_data']['yst_btw'] ) ) {
 
-			// If we get to this point with a btw nr, we can assume it's correct (validate_btw_nr takes care of the validation).
-
-			// Subtract all tax from total price
-			$purchase_data['price'] = $purchase_data['price'] - $purchase_data['tax'];
+			// Subtract tax from the total price.
+			$purchase_data['price'] = ( $purchase_data['price'] - $purchase_data['tax'] );
 			$purchase_data['tax']   = 0.00;
 
-			// Update cart
-			if ( isset( $purchase_data['cart_details'] ) && is_array( $purchase_data['cart_details'] ) && count( $purchase_data['cart_details'] ) > 0 ) {
+			// Update cart with new price information.
+			if ( ! empty( $purchase_data['cart_details'] ) && is_array( $purchase_data['cart_details'] ) ) {
 				foreach ( $purchase_data['cart_details'] as $item_key => $item_value ) {
 
-					// Subtract tax from cart item
-					$item_value['price'] = $item_value['price'] - $item_value['tax'];
+					// Subtract tax from the current cart item.
+					$item_value['price'] = ( $item_value['price'] - $item_value['tax'] );
 					$item_value['tax']   = 0.00;
 
-					// Set the new item
+					// Save the new item to the array.
 					$purchase_data['cart_details'][ $item_key ] = $item_value;
 
 				}
