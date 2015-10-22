@@ -44,8 +44,8 @@ class Checkout {
 		}
 
 		try {
-		// Do the remote request.
-		$client = new \SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
+			// Do the remote request.
+			$client = new \SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
 
 			$returnVat = $client->checkVat( array(
 				'countryCode' => $country,
@@ -92,18 +92,18 @@ class Checkout {
 	/**
 	 * Check for errors with out custom fields
 	 *
-	 * @param array $valid_data Unused
-	 * @param array $data
+	 * @param array $valid_data Unused.
+	 * @param array $data The data filled in by the customer.
 	 */
 	public function validate_btw_nr( $valid_data, $data ) {
-		if ( isset( $data['yst_btw'] ) && '' != $data['yst_btw'] ) {
+		if ( ! empty( $data['yst_btw'] ) ) {
 			$vat_response = $this->check_vat( $data['billing_country'], $data['yst_btw'] );
 
 			if ( 0 === $vat_response ) {
-				edd_set_error( 'yst_btw', __( 'VAT number incorrect.', 'yoast-theme' ) );
+				edd_set_error( 'yst_btw', __( 'We cannot verify this VAT number, this means you will have to pay VAT. Please make sure you\'ve entered the number correctly.', 'yoastcom' ) );
 			}
 			elseif ( 2 === $vat_response ) {
-				edd_set_error( 'yst_btw_unavailable', __( 'VAT number check not available.', 'yoast-theme' ) );
+				edd_set_error( 'yst_btw_unavailable', __( 'We cannot check if your VAT number is correct because the VAT checking system for the EU is currently down. We\'re sorry for the inconvenience. Please try again later.', 'yoastcom' ) );
 			}
 		}
 	}
