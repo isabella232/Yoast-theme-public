@@ -43,15 +43,14 @@ class Checkout {
 			$vat_nr = trim( substr( $vat_nr, strlen( $country ) ) );
 		}
 
+		try {
 		// Do the remote request.
 		$client = new \SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
 
-		try {
 			$returnVat = $client->checkVat( array(
 				'countryCode' => $country,
 				'vatNumber'   => $vat_nr,
 			) );
-
 		} catch ( \Exception $e ) {
 			error_log( 'VIES API Error for ' . $country . ' - ' . $vat_nr . ': ' . $e->getMessage() );
 
