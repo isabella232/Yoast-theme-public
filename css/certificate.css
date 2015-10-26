@@ -262,7 +262,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -1026,9 +1027,9 @@ thead th {
   .widget.theme-home .h2 a, .widget.theme-home .h3 a, .widget.theme-home .h4 a, .widget.theme-home .h5 a, .widget.theme-home .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .widget.theme-home h2 a:hover, .widget.theme-home h2 a:focus, .widget.theme-home h3 a:hover, .widget.theme-home h3 a:focus, .widget.theme-home h4 a:hover, .widget.theme-home h4 a:focus, .widget.theme-home h5 a:hover, .widget.theme-home h5 a:focus, .widget.theme-home h6 a:hover,
-    .widget.theme-home h6 a:focus,
-    .widget.theme-home .h2 a:hover, .widget.theme-home .h2 a:focus, .widget.theme-home .h3 a:hover, .widget.theme-home .h3 a:focus, .widget.theme-home .h4 a:hover, .widget.theme-home .h4 a:focus, .widget.theme-home .h5 a:hover, .widget.theme-home .h5 a:focus, .widget.theme-home .h6 a:hover, .widget.theme-home .h6 a:focus {
+    .widget.theme-home h2 a:hover, .widget.theme-home h2 a:focus, .widget.theme-home h3 a:hover, .widget.theme-home h3 a:focus, .widget.theme-home h4 a:hover, .widget.theme-home h4 a:focus, .widget.theme-home h5 a:hover, .widget.theme-home h5 a:focus, .widget.theme-home h6 a:hover, .widget.theme-home h6 a:focus,
+    .widget.theme-home .h2 a:hover,
+    .widget.theme-home .h2 a:focus, .widget.theme-home .h3 a:hover, .widget.theme-home .h3 a:focus, .widget.theme-home .h4 a:hover, .widget.theme-home .h4 a:focus, .widget.theme-home .h5 a:hover, .widget.theme-home .h5 a:focus, .widget.theme-home .h6 a:hover, .widget.theme-home .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1043,9 +1044,9 @@ thead th {
   .theme-home .h2 a, .theme-home .h3 a, .theme-home .h4 a, .theme-home .h5 a, .theme-home .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .theme-home h2 a:hover, .theme-home h2 a:focus, .theme-home h3 a:hover, .theme-home h3 a:focus, .theme-home h4 a:hover, .theme-home h4 a:focus, .theme-home h5 a:hover, .theme-home h5 a:focus, .theme-home h6 a:hover,
-    .theme-home h6 a:focus,
-    .theme-home .h2 a:hover, .theme-home .h2 a:focus, .theme-home .h3 a:hover, .theme-home .h3 a:focus, .theme-home .h4 a:hover, .theme-home .h4 a:focus, .theme-home .h5 a:hover, .theme-home .h5 a:focus, .theme-home .h6 a:hover, .theme-home .h6 a:focus {
+    .theme-home h2 a:hover, .theme-home h2 a:focus, .theme-home h3 a:hover, .theme-home h3 a:focus, .theme-home h4 a:hover, .theme-home h4 a:focus, .theme-home h5 a:hover, .theme-home h5 a:focus, .theme-home h6 a:hover, .theme-home h6 a:focus,
+    .theme-home .h2 a:hover,
+    .theme-home .h2 a:focus, .theme-home .h3 a:hover, .theme-home .h3 a:focus, .theme-home .h4 a:hover, .theme-home .h4 a:focus, .theme-home .h5 a:hover, .theme-home .h5 a:focus, .theme-home .h6 a:hover, .theme-home .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1147,9 +1148,9 @@ thead th {
   .widget.theme-about .h2 a, .widget.theme-about .h3 a, .widget.theme-about .h4 a, .widget.theme-about .h5 a, .widget.theme-about .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .widget.theme-about h2 a:hover, .widget.theme-about h2 a:focus, .widget.theme-about h3 a:hover, .widget.theme-about h3 a:focus, .widget.theme-about h4 a:hover, .widget.theme-about h4 a:focus, .widget.theme-about h5 a:hover, .widget.theme-about h5 a:focus, .widget.theme-about h6 a:hover,
-    .widget.theme-about h6 a:focus,
-    .widget.theme-about .h2 a:hover, .widget.theme-about .h2 a:focus, .widget.theme-about .h3 a:hover, .widget.theme-about .h3 a:focus, .widget.theme-about .h4 a:hover, .widget.theme-about .h4 a:focus, .widget.theme-about .h5 a:hover, .widget.theme-about .h5 a:focus, .widget.theme-about .h6 a:hover, .widget.theme-about .h6 a:focus {
+    .widget.theme-about h2 a:hover, .widget.theme-about h2 a:focus, .widget.theme-about h3 a:hover, .widget.theme-about h3 a:focus, .widget.theme-about h4 a:hover, .widget.theme-about h4 a:focus, .widget.theme-about h5 a:hover, .widget.theme-about h5 a:focus, .widget.theme-about h6 a:hover, .widget.theme-about h6 a:focus,
+    .widget.theme-about .h2 a:hover,
+    .widget.theme-about .h2 a:focus, .widget.theme-about .h3 a:hover, .widget.theme-about .h3 a:focus, .widget.theme-about .h4 a:hover, .widget.theme-about .h4 a:focus, .widget.theme-about .h5 a:hover, .widget.theme-about .h5 a:focus, .widget.theme-about .h6 a:hover, .widget.theme-about .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1164,9 +1165,9 @@ thead th {
   .theme-about .h2 a, .theme-about .h3 a, .theme-about .h4 a, .theme-about .h5 a, .theme-about .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .theme-about h2 a:hover, .theme-about h2 a:focus, .theme-about h3 a:hover, .theme-about h3 a:focus, .theme-about h4 a:hover, .theme-about h4 a:focus, .theme-about h5 a:hover, .theme-about h5 a:focus, .theme-about h6 a:hover,
-    .theme-about h6 a:focus,
-    .theme-about .h2 a:hover, .theme-about .h2 a:focus, .theme-about .h3 a:hover, .theme-about .h3 a:focus, .theme-about .h4 a:hover, .theme-about .h4 a:focus, .theme-about .h5 a:hover, .theme-about .h5 a:focus, .theme-about .h6 a:hover, .theme-about .h6 a:focus {
+    .theme-about h2 a:hover, .theme-about h2 a:focus, .theme-about h3 a:hover, .theme-about h3 a:focus, .theme-about h4 a:hover, .theme-about h4 a:focus, .theme-about h5 a:hover, .theme-about h5 a:focus, .theme-about h6 a:hover, .theme-about h6 a:focus,
+    .theme-about .h2 a:hover,
+    .theme-about .h2 a:focus, .theme-about .h3 a:hover, .theme-about .h3 a:focus, .theme-about .h4 a:hover, .theme-about .h4 a:focus, .theme-about .h5 a:hover, .theme-about .h5 a:focus, .theme-about .h6 a:hover, .theme-about .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1268,9 +1269,9 @@ thead th {
   .widget.theme-academy .h2 a, .widget.theme-academy .h3 a, .widget.theme-academy .h4 a, .widget.theme-academy .h5 a, .widget.theme-academy .h6 a {
     color: #5D237A;
     text-decoration: none; }
-    .widget.theme-academy h2 a:hover, .widget.theme-academy h2 a:focus, .widget.theme-academy h3 a:hover, .widget.theme-academy h3 a:focus, .widget.theme-academy h4 a:hover, .widget.theme-academy h4 a:focus, .widget.theme-academy h5 a:hover, .widget.theme-academy h5 a:focus, .widget.theme-academy h6 a:hover,
-    .widget.theme-academy h6 a:focus,
-    .widget.theme-academy .h2 a:hover, .widget.theme-academy .h2 a:focus, .widget.theme-academy .h3 a:hover, .widget.theme-academy .h3 a:focus, .widget.theme-academy .h4 a:hover, .widget.theme-academy .h4 a:focus, .widget.theme-academy .h5 a:hover, .widget.theme-academy .h5 a:focus, .widget.theme-academy .h6 a:hover, .widget.theme-academy .h6 a:focus {
+    .widget.theme-academy h2 a:hover, .widget.theme-academy h2 a:focus, .widget.theme-academy h3 a:hover, .widget.theme-academy h3 a:focus, .widget.theme-academy h4 a:hover, .widget.theme-academy h4 a:focus, .widget.theme-academy h5 a:hover, .widget.theme-academy h5 a:focus, .widget.theme-academy h6 a:hover, .widget.theme-academy h6 a:focus,
+    .widget.theme-academy .h2 a:hover,
+    .widget.theme-academy .h2 a:focus, .widget.theme-academy .h3 a:hover, .widget.theme-academy .h3 a:focus, .widget.theme-academy .h4 a:hover, .widget.theme-academy .h4 a:focus, .widget.theme-academy .h5 a:hover, .widget.theme-academy .h5 a:focus, .widget.theme-academy .h6 a:hover, .widget.theme-academy .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1285,9 +1286,9 @@ thead th {
   .theme-academy .h2 a, .theme-academy .h3 a, .theme-academy .h4 a, .theme-academy .h5 a, .theme-academy .h6 a {
     color: #5D237A;
     text-decoration: none; }
-    .theme-academy h2 a:hover, .theme-academy h2 a:focus, .theme-academy h3 a:hover, .theme-academy h3 a:focus, .theme-academy h4 a:hover, .theme-academy h4 a:focus, .theme-academy h5 a:hover, .theme-academy h5 a:focus, .theme-academy h6 a:hover,
-    .theme-academy h6 a:focus,
-    .theme-academy .h2 a:hover, .theme-academy .h2 a:focus, .theme-academy .h3 a:hover, .theme-academy .h3 a:focus, .theme-academy .h4 a:hover, .theme-academy .h4 a:focus, .theme-academy .h5 a:hover, .theme-academy .h5 a:focus, .theme-academy .h6 a:hover, .theme-academy .h6 a:focus {
+    .theme-academy h2 a:hover, .theme-academy h2 a:focus, .theme-academy h3 a:hover, .theme-academy h3 a:focus, .theme-academy h4 a:hover, .theme-academy h4 a:focus, .theme-academy h5 a:hover, .theme-academy h5 a:focus, .theme-academy h6 a:hover, .theme-academy h6 a:focus,
+    .theme-academy .h2 a:hover,
+    .theme-academy .h2 a:focus, .theme-academy .h3 a:hover, .theme-academy .h3 a:focus, .theme-academy .h4 a:hover, .theme-academy .h4 a:focus, .theme-academy .h5 a:hover, .theme-academy .h5 a:focus, .theme-academy .h6 a:hover, .theme-academy .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1389,9 +1390,9 @@ thead th {
   .widget.theme-review .h2 a, .widget.theme-review .h3 a, .widget.theme-review .h4 a, .widget.theme-review .h5 a, .widget.theme-review .h6 a {
     color: #009288;
     text-decoration: none; }
-    .widget.theme-review h2 a:hover, .widget.theme-review h2 a:focus, .widget.theme-review h3 a:hover, .widget.theme-review h3 a:focus, .widget.theme-review h4 a:hover, .widget.theme-review h4 a:focus, .widget.theme-review h5 a:hover, .widget.theme-review h5 a:focus, .widget.theme-review h6 a:hover,
-    .widget.theme-review h6 a:focus,
-    .widget.theme-review .h2 a:hover, .widget.theme-review .h2 a:focus, .widget.theme-review .h3 a:hover, .widget.theme-review .h3 a:focus, .widget.theme-review .h4 a:hover, .widget.theme-review .h4 a:focus, .widget.theme-review .h5 a:hover, .widget.theme-review .h5 a:focus, .widget.theme-review .h6 a:hover, .widget.theme-review .h6 a:focus {
+    .widget.theme-review h2 a:hover, .widget.theme-review h2 a:focus, .widget.theme-review h3 a:hover, .widget.theme-review h3 a:focus, .widget.theme-review h4 a:hover, .widget.theme-review h4 a:focus, .widget.theme-review h5 a:hover, .widget.theme-review h5 a:focus, .widget.theme-review h6 a:hover, .widget.theme-review h6 a:focus,
+    .widget.theme-review .h2 a:hover,
+    .widget.theme-review .h2 a:focus, .widget.theme-review .h3 a:hover, .widget.theme-review .h3 a:focus, .widget.theme-review .h4 a:hover, .widget.theme-review .h4 a:focus, .widget.theme-review .h5 a:hover, .widget.theme-review .h5 a:focus, .widget.theme-review .h6 a:hover, .widget.theme-review .h6 a:focus {
       color: #77B227;
       text-decoration: underline; }
 
@@ -1406,9 +1407,9 @@ thead th {
   .theme-review .h2 a, .theme-review .h3 a, .theme-review .h4 a, .theme-review .h5 a, .theme-review .h6 a {
     color: #009288;
     text-decoration: none; }
-    .theme-review h2 a:hover, .theme-review h2 a:focus, .theme-review h3 a:hover, .theme-review h3 a:focus, .theme-review h4 a:hover, .theme-review h4 a:focus, .theme-review h5 a:hover, .theme-review h5 a:focus, .theme-review h6 a:hover,
-    .theme-review h6 a:focus,
-    .theme-review .h2 a:hover, .theme-review .h2 a:focus, .theme-review .h3 a:hover, .theme-review .h3 a:focus, .theme-review .h4 a:hover, .theme-review .h4 a:focus, .theme-review .h5 a:hover, .theme-review .h5 a:focus, .theme-review .h6 a:hover, .theme-review .h6 a:focus {
+    .theme-review h2 a:hover, .theme-review h2 a:focus, .theme-review h3 a:hover, .theme-review h3 a:focus, .theme-review h4 a:hover, .theme-review h4 a:focus, .theme-review h5 a:hover, .theme-review h5 a:focus, .theme-review h6 a:hover, .theme-review h6 a:focus,
+    .theme-review .h2 a:hover,
+    .theme-review .h2 a:focus, .theme-review .h3 a:hover, .theme-review .h3 a:focus, .theme-review .h4 a:hover, .theme-review .h4 a:focus, .theme-review .h5 a:hover, .theme-review .h5 a:focus, .theme-review .h6 a:hover, .theme-review .h6 a:focus {
       color: #77B227;
       text-decoration: underline; }
 
@@ -1510,9 +1511,9 @@ thead th {
   .widget.theme-software .h2 a, .widget.theme-software .h3 a, .widget.theme-software .h4 a, .widget.theme-software .h5 a, .widget.theme-software .h6 a {
     color: #0075B3;
     text-decoration: none; }
-    .widget.theme-software h2 a:hover, .widget.theme-software h2 a:focus, .widget.theme-software h3 a:hover, .widget.theme-software h3 a:focus, .widget.theme-software h4 a:hover, .widget.theme-software h4 a:focus, .widget.theme-software h5 a:hover, .widget.theme-software h5 a:focus, .widget.theme-software h6 a:hover,
-    .widget.theme-software h6 a:focus,
-    .widget.theme-software .h2 a:hover, .widget.theme-software .h2 a:focus, .widget.theme-software .h3 a:hover, .widget.theme-software .h3 a:focus, .widget.theme-software .h4 a:hover, .widget.theme-software .h4 a:focus, .widget.theme-software .h5 a:hover, .widget.theme-software .h5 a:focus, .widget.theme-software .h6 a:hover, .widget.theme-software .h6 a:focus {
+    .widget.theme-software h2 a:hover, .widget.theme-software h2 a:focus, .widget.theme-software h3 a:hover, .widget.theme-software h3 a:focus, .widget.theme-software h4 a:hover, .widget.theme-software h4 a:focus, .widget.theme-software h5 a:hover, .widget.theme-software h5 a:focus, .widget.theme-software h6 a:hover, .widget.theme-software h6 a:focus,
+    .widget.theme-software .h2 a:hover,
+    .widget.theme-software .h2 a:focus, .widget.theme-software .h3 a:hover, .widget.theme-software .h3 a:focus, .widget.theme-software .h4 a:hover, .widget.theme-software .h4 a:focus, .widget.theme-software .h5 a:hover, .widget.theme-software .h5 a:focus, .widget.theme-software .h6 a:hover, .widget.theme-software .h6 a:focus {
       color: #009288;
       text-decoration: underline; }
 
@@ -1527,9 +1528,9 @@ thead th {
   .theme-software .h2 a, .theme-software .h3 a, .theme-software .h4 a, .theme-software .h5 a, .theme-software .h6 a {
     color: #0075B3;
     text-decoration: none; }
-    .theme-software h2 a:hover, .theme-software h2 a:focus, .theme-software h3 a:hover, .theme-software h3 a:focus, .theme-software h4 a:hover, .theme-software h4 a:focus, .theme-software h5 a:hover, .theme-software h5 a:focus, .theme-software h6 a:hover,
-    .theme-software h6 a:focus,
-    .theme-software .h2 a:hover, .theme-software .h2 a:focus, .theme-software .h3 a:hover, .theme-software .h3 a:focus, .theme-software .h4 a:hover, .theme-software .h4 a:focus, .theme-software .h5 a:hover, .theme-software .h5 a:focus, .theme-software .h6 a:hover, .theme-software .h6 a:focus {
+    .theme-software h2 a:hover, .theme-software h2 a:focus, .theme-software h3 a:hover, .theme-software h3 a:focus, .theme-software h4 a:hover, .theme-software h4 a:focus, .theme-software h5 a:hover, .theme-software h5 a:focus, .theme-software h6 a:hover, .theme-software h6 a:focus,
+    .theme-software .h2 a:hover,
+    .theme-software .h2 a:focus, .theme-software .h3 a:hover, .theme-software .h3 a:focus, .theme-software .h4 a:hover, .theme-software .h4 a:focus, .theme-software .h5 a:hover, .theme-software .h5 a:focus, .theme-software .h6 a:hover, .theme-software .h6 a:focus {
       color: #009288;
       text-decoration: underline; }
 
@@ -1667,7 +1668,7 @@ thead th {
           border-bottom: 1.44rem solid transparent; } }
   .button .arrow, button .arrow {
     display: none; }
-  .button + .button, button + button {
+  .button + .button, button + .button, .button + button, button + button {
     margin-top: 1em;
     margin-left: 1.88rem; }
   .button--full, button--full {
@@ -1744,25 +1745,25 @@ thead th {
     .yoast_academy .button.dimmed::before, body button.dimmed::before,
     .yoast_academy button.dimmed::before {
       border-right-color: #DCDCDC; }
-    body .button.dimmed:hover,
-    body .button.dimmed a:focus,
-    .yoast_academy .button.dimmed:hover, .yoast_academy .button.dimmed a:focus, body button.dimmed:hover,
-    body button.dimmed a:focus,
-    .yoast_academy button.dimmed:hover, .yoast_academy button.dimmed a:focus {
+    body .button.dimmed:hover, body .button.dimmed a:focus,
+    .yoast_academy .button.dimmed:hover,
+    .yoast_academy .button.dimmed a:focus, body button.dimmed:hover, body button.dimmed a:focus,
+    .yoast_academy button.dimmed:hover,
+    .yoast_academy button.dimmed a:focus {
       background-color: #CDCDCD;
       color: #646464;
       text-decoration: underline; }
-      body .button.dimmed:hover::after,
-      body .button.dimmed a:focus::after,
-      .yoast_academy .button.dimmed:hover::after, .yoast_academy .button.dimmed a:focus::after, body button.dimmed:hover::after,
-      body button.dimmed a:focus::after,
-      .yoast_academy button.dimmed:hover::after, .yoast_academy button.dimmed a:focus::after {
+      body .button.dimmed:hover::after, body .button.dimmed a:focus::after,
+      .yoast_academy .button.dimmed:hover::after,
+      .yoast_academy .button.dimmed a:focus::after, body button.dimmed:hover::after, body button.dimmed a:focus::after,
+      .yoast_academy button.dimmed:hover::after,
+      .yoast_academy button.dimmed a:focus::after {
         border-left-color: #CDCDCD; }
-      body .button.dimmed:hover:before,
-      body .button.dimmed a:focus:before,
-      .yoast_academy .button.dimmed:hover:before, .yoast_academy .button.dimmed a:focus:before, body button.dimmed:hover:before,
-      body button.dimmed a:focus:before,
-      .yoast_academy button.dimmed:hover:before, .yoast_academy button.dimmed a:focus:before {
+      body .button.dimmed:hover:before, body .button.dimmed a:focus:before,
+      .yoast_academy .button.dimmed:hover:before,
+      .yoast_academy .button.dimmed a:focus:before, body button.dimmed:hover:before, body button.dimmed a:focus:before,
+      .yoast_academy button.dimmed:hover:before,
+      .yoast_academy button.dimmed a:focus:before {
         border-right-color: #CDCDCD; }
   .button--naked, button--naked {
     border: none;
