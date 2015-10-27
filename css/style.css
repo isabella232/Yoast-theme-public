@@ -2469,12 +2469,10 @@ a.announcement {
 #edd_purchase_form #yst-edd-btw-wrap {
   position: relative; }
   #edd_purchase_form #yst-edd-btw-wrap .fa-spinner {
-    position: absolute;
-    right: 14px;
-    top: 77px;
-    display: none; }
+    display: none;
+    margin: 0 0 0 10px; }
     #edd_purchase_form #yst-edd-btw-wrap .fa-spinner.show {
-      display: block; }
+      display: inline; }
 
 .edd_download_purchase_form:before, .edd_download_purchase_form:after {
   content: '';

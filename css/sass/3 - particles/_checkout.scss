@@ -281,13 +281,11 @@
 		position: relative;
 
 		.fa-spinner {
-			position: absolute;
-			right: 14px;
-			top: 77px;
 			display: none;
+			margin: 0 0 0 10px;
 
 			&.show {
-				display: block;
+				display: inline;
 			}
 		}
 	}
