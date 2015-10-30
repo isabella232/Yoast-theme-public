@@ -4382,6 +4382,46 @@ svg .llms-animated-circle {
     z-index: 80;
     background-color: rgba(0, 0, 0, 0.5); } }
 
+.table--invite-overview {
+  text-align: left;
+  width: 100%;
+  font-family: "Merriweather", Georgia, serif; }
+  .table--invite-overview th, .table--invite-overview td {
+    border-left: 0;
+    border-right: 0;
+    padding-left: 0; }
+  .table--invite-overview tr:first-of-type th, .table--invite-overview tr:first-of-type td {
+    border-top: 0; }
+  .table--invite-overview thead th {
+    border-bottom: 1px solid #E6E6E6; }
+  .table--invite-overview .fa-check-square {
+    margin: 0 .75rem 0 0;
+    color: #77B227; }
+  .table--invite-overview .fa-arrow-circle-right {
+    color: #8C8C8C; }
+
+.manage-invites__form {
+  display: flex; }
+  .manage-invites__form label {
+    padding-right: 15px;
+    flex-grow: 100; }
+
+.manage-invites__add-email {
+  font-family: "Merriweather", Georgia, serif; }
+  .yoast_academy .manage-invites__add-email, .yoast_academy .manage-invites__add-email:hover, .yoast_academy .manage-invites__add-email:focus {
+    background: none;
+    color: #000; }
+  .manage-invites__add-email .fa {
+    color: #DCDCDC;
+    position: relative;
+    top: 4px;
+    font-size: 170%; }
+  .manage-invites__add-email:hover .fa, .manage-invites__add-email:focus .fa {
+    color: #CDCDCD; }
+
+.manage-invites__remaining {
+  color: #D93F69; }
+
 .media {
   margin-bottom: 1.88rem; }
   .media .img img {
