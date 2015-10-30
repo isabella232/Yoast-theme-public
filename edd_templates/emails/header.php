@@ -238,7 +238,7 @@
 							<table border="0" cellpadding="0" cellspacing="0" width="600">
 								<tr>
 									<td>
-										<h1 style="font-size: 28px;margin-bottom: 30px;margin-top: 0;padding: 0;"><img src="https://gallery.mailchimp.com/ffa93edfe21752c921f860358/images/c165efc1-f705-415a-990c-6f84fdacecec.jpg" alt="" border="0" style="border: 0px none;border-color: ;border-style: none;border-width: 0px;height: 118px;width: 596px;margin: 0;padding: 0;max-width: 100%;vertical-align: bottom;" width="596" height="118"></h1>
+										<img src="https://gallery.mailchimp.com/ffa93edfe21752c921f860358/images/c165efc1-f705-415a-990c-6f84fdacecec.jpg" alt="" border="0" style="border: 0px none;border-color: ;border-style: none;border-width: 0px;height: 118px;width: 596px;margin: 0;padding: 0;max-width: 100%;vertical-align: bottom;" width="596" height="118">
 
 									</td>
 								</tr>
