@@ -283,7 +283,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -532,7 +533,13 @@ a img.aligncenter {
     #edd_check_payment_info,
     #edd_terms_agreement, .comment-respond {
       padding: 0 1rem; } }
-  .announcement + .row, .announcement + #edd_sl_cancel_renewal_form, .announcement + #edd_discount_code, .announcement + .edd_empty_cart, .announcement + #edd_checkout_user_info, .announcement + #edd_cc_fields, .announcement + #edd_cc_address, .announcement + #edd_purchase_submit, .announcement + #edd-stripe-payment-errors, .announcement + #edd_check_payment_info, .announcement + #edd_terms_agreement, .announcement + .comment-respond {
+  .announcement + .row, .announcement + #edd_sl_cancel_renewal_form, .announcement + #edd_discount_code, .announcement + .edd_empty_cart, .announcement + #edd_checkout_user_info, .announcement +
+  #edd_cc_fields, .announcement +
+  #edd_cc_address, .announcement +
+  #edd_purchase_submit, .announcement +
+  #edd-stripe-payment-errors, .announcement +
+  #edd_check_payment_info, .announcement +
+  #edd_terms_agreement, .announcement + .comment-respond {
     padding-top: 1.88rem; }
 
 .full {
@@ -1059,15 +1066,27 @@ thead th {
   color: #D93F69; }
 
 .widget.theme-home h2, .widget.theme-home h3, .widget.theme-home h4, .widget.theme-home h5, .widget.theme-home h6,
-.widget.theme-home .h2, .widget.theme-home legend, .widget.theme-home .llms-quiz-results h3, .llms-quiz-results .widget.theme-home h3, .widget.theme-home .h3, .widget.theme-home .h4, .widget.theme-home .h5, .widget.theme-home .h6 {
+.widget.theme-home .h2,
+.widget.theme-home legend,
+.widget.theme-home .llms-quiz-results h3, .llms-quiz-results
+.widget.theme-home h3, .widget.theme-home .h3, .widget.theme-home .h4, .widget.theme-home .h5, .widget.theme-home .h6 {
   color: #D93F69; }
   .widget.theme-home h2 a, .widget.theme-home h3 a, .widget.theme-home h4 a, .widget.theme-home h5 a, .widget.theme-home h6 a,
-  .widget.theme-home .h2 a, .widget.theme-home legend a, .widget.theme-home .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-home h3 a, .widget.theme-home .h3 a, .widget.theme-home .h4 a, .widget.theme-home .h5 a, .widget.theme-home .h6 a {
+  .widget.theme-home .h2 a,
+  .widget.theme-home legend a,
+  .widget.theme-home .llms-quiz-results h3 a, .llms-quiz-results
+  .widget.theme-home h3 a, .widget.theme-home .h3 a, .widget.theme-home .h4 a, .widget.theme-home .h5 a, .widget.theme-home .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .widget.theme-home h2 a:hover, .widget.theme-home h2 a:focus, .widget.theme-home h3 a:hover, .widget.theme-home h3 a:focus, .widget.theme-home h4 a:hover, .widget.theme-home h4 a:focus, .widget.theme-home h5 a:hover, .widget.theme-home h5 a:focus, .widget.theme-home h6 a:hover,
-    .widget.theme-home h6 a:focus,
-    .widget.theme-home .h2 a:hover, .widget.theme-home legend a:hover, .widget.theme-home .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-home h3 a:hover, .widget.theme-home .h2 a:focus, .widget.theme-home legend a:focus, .widget.theme-home .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-home h3 a:focus, .widget.theme-home .h3 a:hover, .widget.theme-home .h3 a:focus, .widget.theme-home .h4 a:hover, .widget.theme-home .h4 a:focus, .widget.theme-home .h5 a:hover, .widget.theme-home .h5 a:focus, .widget.theme-home .h6 a:hover, .widget.theme-home .h6 a:focus {
+    .widget.theme-home h2 a:hover, .widget.theme-home h2 a:focus, .widget.theme-home h3 a:hover, .widget.theme-home h3 a:focus, .widget.theme-home h4 a:hover, .widget.theme-home h4 a:focus, .widget.theme-home h5 a:hover, .widget.theme-home h5 a:focus, .widget.theme-home h6 a:hover, .widget.theme-home h6 a:focus,
+    .widget.theme-home .h2 a:hover,
+    .widget.theme-home legend a:hover,
+    .widget.theme-home .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .widget.theme-home h3 a:hover,
+    .widget.theme-home .h2 a:focus,
+    .widget.theme-home legend a:focus,
+    .widget.theme-home .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .widget.theme-home h3 a:focus, .widget.theme-home .h3 a:hover, .widget.theme-home .h3 a:focus, .widget.theme-home .h4 a:hover, .widget.theme-home .h4 a:focus, .widget.theme-home .h5 a:hover, .widget.theme-home .h5 a:focus, .widget.theme-home .h6 a:hover, .widget.theme-home .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1076,15 +1095,27 @@ thead th {
   color: #D93F69; }
 
 .theme-home h2, .theme-home h3, .theme-home h4, .theme-home h5, .theme-home h6,
-.theme-home .h2, .theme-home legend, .theme-home .llms-quiz-results h3, .llms-quiz-results .theme-home h3, .theme-home .h3, .theme-home .h4, .theme-home .h5, .theme-home .h6 {
+.theme-home .h2,
+.theme-home legend,
+.theme-home .llms-quiz-results h3, .llms-quiz-results
+.theme-home h3, .theme-home .h3, .theme-home .h4, .theme-home .h5, .theme-home .h6 {
   color: #D93F69; }
   .theme-home h2 a, .theme-home h3 a, .theme-home h4 a, .theme-home h5 a, .theme-home h6 a,
-  .theme-home .h2 a, .theme-home legend a, .theme-home .llms-quiz-results h3 a, .llms-quiz-results .theme-home h3 a, .theme-home .h3 a, .theme-home .h4 a, .theme-home .h5 a, .theme-home .h6 a {
+  .theme-home .h2 a,
+  .theme-home legend a,
+  .theme-home .llms-quiz-results h3 a, .llms-quiz-results
+  .theme-home h3 a, .theme-home .h3 a, .theme-home .h4 a, .theme-home .h5 a, .theme-home .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .theme-home h2 a:hover, .theme-home h2 a:focus, .theme-home h3 a:hover, .theme-home h3 a:focus, .theme-home h4 a:hover, .theme-home h4 a:focus, .theme-home h5 a:hover, .theme-home h5 a:focus, .theme-home h6 a:hover,
-    .theme-home h6 a:focus,
-    .theme-home .h2 a:hover, .theme-home legend a:hover, .theme-home .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-home h3 a:hover, .theme-home .h2 a:focus, .theme-home legend a:focus, .theme-home .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-home h3 a:focus, .theme-home .h3 a:hover, .theme-home .h3 a:focus, .theme-home .h4 a:hover, .theme-home .h4 a:focus, .theme-home .h5 a:hover, .theme-home .h5 a:focus, .theme-home .h6 a:hover, .theme-home .h6 a:focus {
+    .theme-home h2 a:hover, .theme-home h2 a:focus, .theme-home h3 a:hover, .theme-home h3 a:focus, .theme-home h4 a:hover, .theme-home h4 a:focus, .theme-home h5 a:hover, .theme-home h5 a:focus, .theme-home h6 a:hover, .theme-home h6 a:focus,
+    .theme-home .h2 a:hover,
+    .theme-home legend a:hover,
+    .theme-home .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .theme-home h3 a:hover,
+    .theme-home .h2 a:focus,
+    .theme-home legend a:focus,
+    .theme-home .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .theme-home h3 a:focus, .theme-home .h3 a:hover, .theme-home .h3 a:focus, .theme-home .h4 a:hover, .theme-home .h4 a:focus, .theme-home .h5 a:hover, .theme-home .h5 a:focus, .theme-home .h6 a:hover, .theme-home .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1109,7 +1140,7 @@ thead th {
   .theme-home .button:hover, .theme-home .comment-respond input[type="submit"]:hover, .comment-respond .theme-home input[type="submit"]:hover, .theme-home .llms-button:hover, .theme-home .llms-return a:hover, .llms-return .theme-home a:hover, .theme-home .button:focus, .theme-home .comment-respond input[type="submit"]:focus, .comment-respond .theme-home input[type="submit"]:focus, .theme-home .llms-button:focus, .theme-home .llms-return a:focus, .llms-return .theme-home a:focus, .theme-home button:hover, .theme-home button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-home .button:hover.dimmed, .theme-home .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-home input[type="submit"]:hover.dimmed, .theme-home .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-home input[type="submit"]#llms_prev_question:hover, .theme-home .llms-button:hover.dimmed, .theme-home .llms-button#llms_prev_question:hover, .theme-home .llms-return a:hover, .llms-return .theme-home a:hover, .theme-home .button#llms_prev_question:hover, .theme-home .llms-return a#llms_prev_question:hover, .llms-return .theme-home a#llms_prev_question:hover, .theme-home .button:focus.dimmed, .theme-home .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-home input[type="submit"]:focus.dimmed, .theme-home .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-home input[type="submit"]#llms_prev_question:focus, .theme-home .llms-button:focus.dimmed, .theme-home .llms-button#llms_prev_question:focus, .theme-home .llms-return a:focus, .llms-return .theme-home a:focus, .theme-home .button#llms_prev_question:focus, .theme-home .llms-return a#llms_prev_question:focus, .llms-return .theme-home a#llms_prev_question:focus, .theme-home button:hover.dimmed, .theme-home button#llms_prev_question:hover, .theme-home button:focus.dimmed, .theme-home button#llms_prev_question:focus {
+    .theme-home .button:hover.dimmed, .theme-home .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-home input[type="submit"]:hover.dimmed, .theme-home .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-home input[type="submit"]#llms_prev_question:hover, .theme-home .llms-button:hover.dimmed, .theme-home .llms-return a.llms-button:hover, .llms-return .theme-home a.llms-button:hover, .theme-home .llms-button#llms_prev_question:hover, .theme-home .llms-return a:hover, .llms-return .theme-home a:hover, .theme-home .button#llms_prev_question:hover, .theme-home .llms-return a#llms_prev_question:hover, .llms-return .theme-home a#llms_prev_question:hover, .theme-home .button:focus.dimmed, .theme-home .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-home input[type="submit"]:focus.dimmed, .theme-home .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-home input[type="submit"]#llms_prev_question:focus, .theme-home .llms-button:focus.dimmed, .theme-home .llms-return a.llms-button:focus, .llms-return .theme-home a.llms-button:focus, .theme-home .llms-button#llms_prev_question:focus, .theme-home .llms-return a:focus, .llms-return .theme-home a:focus, .theme-home .button#llms_prev_question:focus, .theme-home .llms-return a#llms_prev_question:focus, .llms-return .theme-home a#llms_prev_question:focus, .theme-home button:hover.dimmed, .theme-home button#llms_prev_question:hover, .theme-home button:focus.dimmed, .theme-home button#llms_prev_question:focus {
       color: #646464; }
 
 .theme-home .fill {
@@ -1133,7 +1164,10 @@ thead th {
     filter: drop-shadow(0 1px 0 #A4286A); }
 
 .theme-home .extra h2, .theme-home .extra h3, .theme-home .extra h4,
-.theme-home .extra .h2, .theme-home .extra legend, .theme-home .extra .llms-quiz-results h3, .llms-quiz-results .theme-home .extra h3, .theme-home .extra .h3, .theme-home .extra .h4 {
+.theme-home .extra .h2,
+.theme-home .extra legend,
+.theme-home .extra .llms-quiz-results h3, .llms-quiz-results
+.theme-home .extra h3, .theme-home .extra .h3, .theme-home .extra .h4 {
   color: #A4286A; }
 
 .theme-home .newsletter {
@@ -1180,15 +1214,27 @@ thead th {
   color: #D93F69; }
 
 .widget.theme-about h2, .widget.theme-about h3, .widget.theme-about h4, .widget.theme-about h5, .widget.theme-about h6,
-.widget.theme-about .h2, .widget.theme-about legend, .widget.theme-about .llms-quiz-results h3, .llms-quiz-results .widget.theme-about h3, .widget.theme-about .h3, .widget.theme-about .h4, .widget.theme-about .h5, .widget.theme-about .h6 {
+.widget.theme-about .h2,
+.widget.theme-about legend,
+.widget.theme-about .llms-quiz-results h3, .llms-quiz-results
+.widget.theme-about h3, .widget.theme-about .h3, .widget.theme-about .h4, .widget.theme-about .h5, .widget.theme-about .h6 {
   color: #D93F69; }
   .widget.theme-about h2 a, .widget.theme-about h3 a, .widget.theme-about h4 a, .widget.theme-about h5 a, .widget.theme-about h6 a,
-  .widget.theme-about .h2 a, .widget.theme-about legend a, .widget.theme-about .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-about h3 a, .widget.theme-about .h3 a, .widget.theme-about .h4 a, .widget.theme-about .h5 a, .widget.theme-about .h6 a {
+  .widget.theme-about .h2 a,
+  .widget.theme-about legend a,
+  .widget.theme-about .llms-quiz-results h3 a, .llms-quiz-results
+  .widget.theme-about h3 a, .widget.theme-about .h3 a, .widget.theme-about .h4 a, .widget.theme-about .h5 a, .widget.theme-about .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .widget.theme-about h2 a:hover, .widget.theme-about h2 a:focus, .widget.theme-about h3 a:hover, .widget.theme-about h3 a:focus, .widget.theme-about h4 a:hover, .widget.theme-about h4 a:focus, .widget.theme-about h5 a:hover, .widget.theme-about h5 a:focus, .widget.theme-about h6 a:hover,
-    .widget.theme-about h6 a:focus,
-    .widget.theme-about .h2 a:hover, .widget.theme-about legend a:hover, .widget.theme-about .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-about h3 a:hover, .widget.theme-about .h2 a:focus, .widget.theme-about legend a:focus, .widget.theme-about .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-about h3 a:focus, .widget.theme-about .h3 a:hover, .widget.theme-about .h3 a:focus, .widget.theme-about .h4 a:hover, .widget.theme-about .h4 a:focus, .widget.theme-about .h5 a:hover, .widget.theme-about .h5 a:focus, .widget.theme-about .h6 a:hover, .widget.theme-about .h6 a:focus {
+    .widget.theme-about h2 a:hover, .widget.theme-about h2 a:focus, .widget.theme-about h3 a:hover, .widget.theme-about h3 a:focus, .widget.theme-about h4 a:hover, .widget.theme-about h4 a:focus, .widget.theme-about h5 a:hover, .widget.theme-about h5 a:focus, .widget.theme-about h6 a:hover, .widget.theme-about h6 a:focus,
+    .widget.theme-about .h2 a:hover,
+    .widget.theme-about legend a:hover,
+    .widget.theme-about .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .widget.theme-about h3 a:hover,
+    .widget.theme-about .h2 a:focus,
+    .widget.theme-about legend a:focus,
+    .widget.theme-about .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .widget.theme-about h3 a:focus, .widget.theme-about .h3 a:hover, .widget.theme-about .h3 a:focus, .widget.theme-about .h4 a:hover, .widget.theme-about .h4 a:focus, .widget.theme-about .h5 a:hover, .widget.theme-about .h5 a:focus, .widget.theme-about .h6 a:hover, .widget.theme-about .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1197,15 +1243,27 @@ thead th {
   color: #D93F69; }
 
 .theme-about h2, .theme-about h3, .theme-about h4, .theme-about h5, .theme-about h6,
-.theme-about .h2, .theme-about legend, .theme-about .llms-quiz-results h3, .llms-quiz-results .theme-about h3, .theme-about .h3, .theme-about .h4, .theme-about .h5, .theme-about .h6 {
+.theme-about .h2,
+.theme-about legend,
+.theme-about .llms-quiz-results h3, .llms-quiz-results
+.theme-about h3, .theme-about .h3, .theme-about .h4, .theme-about .h5, .theme-about .h6 {
   color: #D93F69; }
   .theme-about h2 a, .theme-about h3 a, .theme-about h4 a, .theme-about h5 a, .theme-about h6 a,
-  .theme-about .h2 a, .theme-about legend a, .theme-about .llms-quiz-results h3 a, .llms-quiz-results .theme-about h3 a, .theme-about .h3 a, .theme-about .h4 a, .theme-about .h5 a, .theme-about .h6 a {
+  .theme-about .h2 a,
+  .theme-about legend a,
+  .theme-about .llms-quiz-results h3 a, .llms-quiz-results
+  .theme-about h3 a, .theme-about .h3 a, .theme-about .h4 a, .theme-about .h5 a, .theme-about .h6 a {
     color: #D93F69;
     text-decoration: none; }
-    .theme-about h2 a:hover, .theme-about h2 a:focus, .theme-about h3 a:hover, .theme-about h3 a:focus, .theme-about h4 a:hover, .theme-about h4 a:focus, .theme-about h5 a:hover, .theme-about h5 a:focus, .theme-about h6 a:hover,
-    .theme-about h6 a:focus,
-    .theme-about .h2 a:hover, .theme-about legend a:hover, .theme-about .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-about h3 a:hover, .theme-about .h2 a:focus, .theme-about legend a:focus, .theme-about .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-about h3 a:focus, .theme-about .h3 a:hover, .theme-about .h3 a:focus, .theme-about .h4 a:hover, .theme-about .h4 a:focus, .theme-about .h5 a:hover, .theme-about .h5 a:focus, .theme-about .h6 a:hover, .theme-about .h6 a:focus {
+    .theme-about h2 a:hover, .theme-about h2 a:focus, .theme-about h3 a:hover, .theme-about h3 a:focus, .theme-about h4 a:hover, .theme-about h4 a:focus, .theme-about h5 a:hover, .theme-about h5 a:focus, .theme-about h6 a:hover, .theme-about h6 a:focus,
+    .theme-about .h2 a:hover,
+    .theme-about legend a:hover,
+    .theme-about .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .theme-about h3 a:hover,
+    .theme-about .h2 a:focus,
+    .theme-about legend a:focus,
+    .theme-about .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .theme-about h3 a:focus, .theme-about .h3 a:hover, .theme-about .h3 a:focus, .theme-about .h4 a:hover, .theme-about .h4 a:focus, .theme-about .h5 a:hover, .theme-about .h5 a:focus, .theme-about .h6 a:hover, .theme-about .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1230,7 +1288,7 @@ thead th {
   .theme-about .button:hover, .theme-about .comment-respond input[type="submit"]:hover, .comment-respond .theme-about input[type="submit"]:hover, .theme-about .llms-button:hover, .theme-about .llms-return a:hover, .llms-return .theme-about a:hover, .theme-about .button:focus, .theme-about .comment-respond input[type="submit"]:focus, .comment-respond .theme-about input[type="submit"]:focus, .theme-about .llms-button:focus, .theme-about .llms-return a:focus, .llms-return .theme-about a:focus, .theme-about button:hover, .theme-about button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-about .button:hover.dimmed, .theme-about .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-about input[type="submit"]:hover.dimmed, .theme-about .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-about input[type="submit"]#llms_prev_question:hover, .theme-about .llms-button:hover.dimmed, .theme-about .llms-button#llms_prev_question:hover, .theme-about .llms-return a:hover, .llms-return .theme-about a:hover, .theme-about .button#llms_prev_question:hover, .theme-about .llms-return a#llms_prev_question:hover, .llms-return .theme-about a#llms_prev_question:hover, .theme-about .button:focus.dimmed, .theme-about .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-about input[type="submit"]:focus.dimmed, .theme-about .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-about input[type="submit"]#llms_prev_question:focus, .theme-about .llms-button:focus.dimmed, .theme-about .llms-button#llms_prev_question:focus, .theme-about .llms-return a:focus, .llms-return .theme-about a:focus, .theme-about .button#llms_prev_question:focus, .theme-about .llms-return a#llms_prev_question:focus, .llms-return .theme-about a#llms_prev_question:focus, .theme-about button:hover.dimmed, .theme-about button#llms_prev_question:hover, .theme-about button:focus.dimmed, .theme-about button#llms_prev_question:focus {
+    .theme-about .button:hover.dimmed, .theme-about .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-about input[type="submit"]:hover.dimmed, .theme-about .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-about input[type="submit"]#llms_prev_question:hover, .theme-about .llms-button:hover.dimmed, .theme-about .llms-return a.llms-button:hover, .llms-return .theme-about a.llms-button:hover, .theme-about .llms-button#llms_prev_question:hover, .theme-about .llms-return a:hover, .llms-return .theme-about a:hover, .theme-about .button#llms_prev_question:hover, .theme-about .llms-return a#llms_prev_question:hover, .llms-return .theme-about a#llms_prev_question:hover, .theme-about .button:focus.dimmed, .theme-about .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-about input[type="submit"]:focus.dimmed, .theme-about .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-about input[type="submit"]#llms_prev_question:focus, .theme-about .llms-button:focus.dimmed, .theme-about .llms-return a.llms-button:focus, .llms-return .theme-about a.llms-button:focus, .theme-about .llms-button#llms_prev_question:focus, .theme-about .llms-return a:focus, .llms-return .theme-about a:focus, .theme-about .button#llms_prev_question:focus, .theme-about .llms-return a#llms_prev_question:focus, .llms-return .theme-about a#llms_prev_question:focus, .theme-about button:hover.dimmed, .theme-about button#llms_prev_question:hover, .theme-about button:focus.dimmed, .theme-about button#llms_prev_question:focus {
       color: #646464; }
 
 .theme-about .fill {
@@ -1254,7 +1312,10 @@ thead th {
     filter: drop-shadow(0 1px 0 #A4286A); }
 
 .theme-about .extra h2, .theme-about .extra h3, .theme-about .extra h4,
-.theme-about .extra .h2, .theme-about .extra legend, .theme-about .extra .llms-quiz-results h3, .llms-quiz-results .theme-about .extra h3, .theme-about .extra .h3, .theme-about .extra .h4 {
+.theme-about .extra .h2,
+.theme-about .extra legend,
+.theme-about .extra .llms-quiz-results h3, .llms-quiz-results
+.theme-about .extra h3, .theme-about .extra .h3, .theme-about .extra .h4 {
   color: #A4286A; }
 
 .theme-about .newsletter {
@@ -1301,15 +1362,27 @@ thead th {
   color: #5D237A; }
 
 .widget.theme-academy h2, .widget.theme-academy h3, .widget.theme-academy h4, .widget.theme-academy h5, .widget.theme-academy h6,
-.widget.theme-academy .h2, .widget.theme-academy legend, .widget.theme-academy .llms-quiz-results h3, .llms-quiz-results .widget.theme-academy h3, .widget.theme-academy .h3, .widget.theme-academy .h4, .widget.theme-academy .h5, .widget.theme-academy .h6 {
+.widget.theme-academy .h2,
+.widget.theme-academy legend,
+.widget.theme-academy .llms-quiz-results h3, .llms-quiz-results
+.widget.theme-academy h3, .widget.theme-academy .h3, .widget.theme-academy .h4, .widget.theme-academy .h5, .widget.theme-academy .h6 {
   color: #5D237A; }
   .widget.theme-academy h2 a, .widget.theme-academy h3 a, .widget.theme-academy h4 a, .widget.theme-academy h5 a, .widget.theme-academy h6 a,
-  .widget.theme-academy .h2 a, .widget.theme-academy legend a, .widget.theme-academy .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-academy h3 a, .widget.theme-academy .h3 a, .widget.theme-academy .h4 a, .widget.theme-academy .h5 a, .widget.theme-academy .h6 a {
+  .widget.theme-academy .h2 a,
+  .widget.theme-academy legend a,
+  .widget.theme-academy .llms-quiz-results h3 a, .llms-quiz-results
+  .widget.theme-academy h3 a, .widget.theme-academy .h3 a, .widget.theme-academy .h4 a, .widget.theme-academy .h5 a, .widget.theme-academy .h6 a {
     color: #5D237A;
     text-decoration: none; }
-    .widget.theme-academy h2 a:hover, .widget.theme-academy h2 a:focus, .widget.theme-academy h3 a:hover, .widget.theme-academy h3 a:focus, .widget.theme-academy h4 a:hover, .widget.theme-academy h4 a:focus, .widget.theme-academy h5 a:hover, .widget.theme-academy h5 a:focus, .widget.theme-academy h6 a:hover,
-    .widget.theme-academy h6 a:focus,
-    .widget.theme-academy .h2 a:hover, .widget.theme-academy legend a:hover, .widget.theme-academy .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-academy h3 a:hover, .widget.theme-academy .h2 a:focus, .widget.theme-academy legend a:focus, .widget.theme-academy .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-academy h3 a:focus, .widget.theme-academy .h3 a:hover, .widget.theme-academy .h3 a:focus, .widget.theme-academy .h4 a:hover, .widget.theme-academy .h4 a:focus, .widget.theme-academy .h5 a:hover, .widget.theme-academy .h5 a:focus, .widget.theme-academy .h6 a:hover, .widget.theme-academy .h6 a:focus {
+    .widget.theme-academy h2 a:hover, .widget.theme-academy h2 a:focus, .widget.theme-academy h3 a:hover, .widget.theme-academy h3 a:focus, .widget.theme-academy h4 a:hover, .widget.theme-academy h4 a:focus, .widget.theme-academy h5 a:hover, .widget.theme-academy h5 a:focus, .widget.theme-academy h6 a:hover, .widget.theme-academy h6 a:focus,
+    .widget.theme-academy .h2 a:hover,
+    .widget.theme-academy legend a:hover,
+    .widget.theme-academy .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .widget.theme-academy h3 a:hover,
+    .widget.theme-academy .h2 a:focus,
+    .widget.theme-academy legend a:focus,
+    .widget.theme-academy .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .widget.theme-academy h3 a:focus, .widget.theme-academy .h3 a:hover, .widget.theme-academy .h3 a:focus, .widget.theme-academy .h4 a:hover, .widget.theme-academy .h4 a:focus, .widget.theme-academy .h5 a:hover, .widget.theme-academy .h5 a:focus, .widget.theme-academy .h6 a:hover, .widget.theme-academy .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1318,15 +1391,27 @@ thead th {
   color: #5D237A; }
 
 .theme-academy h2, .theme-academy h3, .theme-academy h4, .theme-academy h5, .theme-academy h6,
-.theme-academy .h2, .theme-academy legend, .theme-academy .llms-quiz-results h3, .llms-quiz-results .theme-academy h3, .theme-academy .h3, .theme-academy .h4, .theme-academy .h5, .theme-academy .h6 {
+.theme-academy .h2,
+.theme-academy legend,
+.theme-academy .llms-quiz-results h3, .llms-quiz-results
+.theme-academy h3, .theme-academy .h3, .theme-academy .h4, .theme-academy .h5, .theme-academy .h6 {
   color: #5D237A; }
   .theme-academy h2 a, .theme-academy h3 a, .theme-academy h4 a, .theme-academy h5 a, .theme-academy h6 a,
-  .theme-academy .h2 a, .theme-academy legend a, .theme-academy .llms-quiz-results h3 a, .llms-quiz-results .theme-academy h3 a, .theme-academy .h3 a, .theme-academy .h4 a, .theme-academy .h5 a, .theme-academy .h6 a {
+  .theme-academy .h2 a,
+  .theme-academy legend a,
+  .theme-academy .llms-quiz-results h3 a, .llms-quiz-results
+  .theme-academy h3 a, .theme-academy .h3 a, .theme-academy .h4 a, .theme-academy .h5 a, .theme-academy .h6 a {
     color: #5D237A;
     text-decoration: none; }
-    .theme-academy h2 a:hover, .theme-academy h2 a:focus, .theme-academy h3 a:hover, .theme-academy h3 a:focus, .theme-academy h4 a:hover, .theme-academy h4 a:focus, .theme-academy h5 a:hover, .theme-academy h5 a:focus, .theme-academy h6 a:hover,
-    .theme-academy h6 a:focus,
-    .theme-academy .h2 a:hover, .theme-academy legend a:hover, .theme-academy .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-academy h3 a:hover, .theme-academy .h2 a:focus, .theme-academy legend a:focus, .theme-academy .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-academy h3 a:focus, .theme-academy .h3 a:hover, .theme-academy .h3 a:focus, .theme-academy .h4 a:hover, .theme-academy .h4 a:focus, .theme-academy .h5 a:hover, .theme-academy .h5 a:focus, .theme-academy .h6 a:hover, .theme-academy .h6 a:focus {
+    .theme-academy h2 a:hover, .theme-academy h2 a:focus, .theme-academy h3 a:hover, .theme-academy h3 a:focus, .theme-academy h4 a:hover, .theme-academy h4 a:focus, .theme-academy h5 a:hover, .theme-academy h5 a:focus, .theme-academy h6 a:hover, .theme-academy h6 a:focus,
+    .theme-academy .h2 a:hover,
+    .theme-academy legend a:hover,
+    .theme-academy .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .theme-academy h3 a:hover,
+    .theme-academy .h2 a:focus,
+    .theme-academy legend a:focus,
+    .theme-academy .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .theme-academy h3 a:focus, .theme-academy .h3 a:hover, .theme-academy .h3 a:focus, .theme-academy .h4 a:hover, .theme-academy .h4 a:focus, .theme-academy .h5 a:hover, .theme-academy .h5 a:focus, .theme-academy .h6 a:hover, .theme-academy .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1351,7 +1436,7 @@ thead th {
   .theme-academy .button:hover, .theme-academy .comment-respond input[type="submit"]:hover, .comment-respond .theme-academy input[type="submit"]:hover, .theme-academy .llms-button:hover, .theme-academy .llms-return a:hover, .llms-return .theme-academy a:hover, .theme-academy .button:focus, .theme-academy .comment-respond input[type="submit"]:focus, .comment-respond .theme-academy input[type="submit"]:focus, .theme-academy .llms-button:focus, .theme-academy .llms-return a:focus, .llms-return .theme-academy a:focus, .theme-academy button:hover, .theme-academy button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-academy .button:hover.dimmed, .theme-academy .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-academy input[type="submit"]:hover.dimmed, .theme-academy .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-academy input[type="submit"]#llms_prev_question:hover, .theme-academy .llms-button:hover.dimmed, .theme-academy .llms-button#llms_prev_question:hover, .theme-academy .llms-return a:hover, .llms-return .theme-academy a:hover, .theme-academy .button#llms_prev_question:hover, .theme-academy .llms-return a#llms_prev_question:hover, .llms-return .theme-academy a#llms_prev_question:hover, .theme-academy .button:focus.dimmed, .theme-academy .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-academy input[type="submit"]:focus.dimmed, .theme-academy .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-academy input[type="submit"]#llms_prev_question:focus, .theme-academy .llms-button:focus.dimmed, .theme-academy .llms-button#llms_prev_question:focus, .theme-academy .llms-return a:focus, .llms-return .theme-academy a:focus, .theme-academy .button#llms_prev_question:focus, .theme-academy .llms-return a#llms_prev_question:focus, .llms-return .theme-academy a#llms_prev_question:focus, .theme-academy button:hover.dimmed, .theme-academy button#llms_prev_question:hover, .theme-academy button:focus.dimmed, .theme-academy button#llms_prev_question:focus {
+    .theme-academy .button:hover.dimmed, .theme-academy .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-academy input[type="submit"]:hover.dimmed, .theme-academy .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-academy input[type="submit"]#llms_prev_question:hover, .theme-academy .llms-button:hover.dimmed, .theme-academy .llms-return a.llms-button:hover, .llms-return .theme-academy a.llms-button:hover, .theme-academy .llms-button#llms_prev_question:hover, .theme-academy .llms-return a:hover, .llms-return .theme-academy a:hover, .theme-academy .button#llms_prev_question:hover, .theme-academy .llms-return a#llms_prev_question:hover, .llms-return .theme-academy a#llms_prev_question:hover, .theme-academy .button:focus.dimmed, .theme-academy .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-academy input[type="submit"]:focus.dimmed, .theme-academy .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-academy input[type="submit"]#llms_prev_question:focus, .theme-academy .llms-button:focus.dimmed, .theme-academy .llms-return a.llms-button:focus, .llms-return .theme-academy a.llms-button:focus, .theme-academy .llms-button#llms_prev_question:focus, .theme-academy .llms-return a:focus, .llms-return .theme-academy a:focus, .theme-academy .button#llms_prev_question:focus, .theme-academy .llms-return a#llms_prev_question:focus, .llms-return .theme-academy a#llms_prev_question:focus, .theme-academy button:hover.dimmed, .theme-academy button#llms_prev_question:hover, .theme-academy button:focus.dimmed, .theme-academy button#llms_prev_question:focus {
       color: #646464; }
 
 .theme-academy .fill {
@@ -1375,7 +1460,10 @@ thead th {
     filter: drop-shadow(0 1px 0 #A4286A); }
 
 .theme-academy .extra h2, .theme-academy .extra h3, .theme-academy .extra h4,
-.theme-academy .extra .h2, .theme-academy .extra legend, .theme-academy .extra .llms-quiz-results h3, .llms-quiz-results .theme-academy .extra h3, .theme-academy .extra .h3, .theme-academy .extra .h4 {
+.theme-academy .extra .h2,
+.theme-academy .extra legend,
+.theme-academy .extra .llms-quiz-results h3, .llms-quiz-results
+.theme-academy .extra h3, .theme-academy .extra .h3, .theme-academy .extra .h4 {
   color: #A4286A; }
 
 .theme-academy .newsletter {
@@ -1422,15 +1510,27 @@ thead th {
   color: #009288; }
 
 .widget.theme-review h2, .widget.theme-review h3, .widget.theme-review h4, .widget.theme-review h5, .widget.theme-review h6,
-.widget.theme-review .h2, .widget.theme-review legend, .widget.theme-review .llms-quiz-results h3, .llms-quiz-results .widget.theme-review h3, .widget.theme-review .h3, .widget.theme-review .h4, .widget.theme-review .h5, .widget.theme-review .h6 {
+.widget.theme-review .h2,
+.widget.theme-review legend,
+.widget.theme-review .llms-quiz-results h3, .llms-quiz-results
+.widget.theme-review h3, .widget.theme-review .h3, .widget.theme-review .h4, .widget.theme-review .h5, .widget.theme-review .h6 {
   color: #009288; }
   .widget.theme-review h2 a, .widget.theme-review h3 a, .widget.theme-review h4 a, .widget.theme-review h5 a, .widget.theme-review h6 a,
-  .widget.theme-review .h2 a, .widget.theme-review legend a, .widget.theme-review .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-review h3 a, .widget.theme-review .h3 a, .widget.theme-review .h4 a, .widget.theme-review .h5 a, .widget.theme-review .h6 a {
+  .widget.theme-review .h2 a,
+  .widget.theme-review legend a,
+  .widget.theme-review .llms-quiz-results h3 a, .llms-quiz-results
+  .widget.theme-review h3 a, .widget.theme-review .h3 a, .widget.theme-review .h4 a, .widget.theme-review .h5 a, .widget.theme-review .h6 a {
     color: #009288;
     text-decoration: none; }
-    .widget.theme-review h2 a:hover, .widget.theme-review h2 a:focus, .widget.theme-review h3 a:hover, .widget.theme-review h3 a:focus, .widget.theme-review h4 a:hover, .widget.theme-review h4 a:focus, .widget.theme-review h5 a:hover, .widget.theme-review h5 a:focus, .widget.theme-review h6 a:hover,
-    .widget.theme-review h6 a:focus,
-    .widget.theme-review .h2 a:hover, .widget.theme-review legend a:hover, .widget.theme-review .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-review h3 a:hover, .widget.theme-review .h2 a:focus, .widget.theme-review legend a:focus, .widget.theme-review .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-review h3 a:focus, .widget.theme-review .h3 a:hover, .widget.theme-review .h3 a:focus, .widget.theme-review .h4 a:hover, .widget.theme-review .h4 a:focus, .widget.theme-review .h5 a:hover, .widget.theme-review .h5 a:focus, .widget.theme-review .h6 a:hover, .widget.theme-review .h6 a:focus {
+    .widget.theme-review h2 a:hover, .widget.theme-review h2 a:focus, .widget.theme-review h3 a:hover, .widget.theme-review h3 a:focus, .widget.theme-review h4 a:hover, .widget.theme-review h4 a:focus, .widget.theme-review h5 a:hover, .widget.theme-review h5 a:focus, .widget.theme-review h6 a:hover, .widget.theme-review h6 a:focus,
+    .widget.theme-review .h2 a:hover,
+    .widget.theme-review legend a:hover,
+    .widget.theme-review .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .widget.theme-review h3 a:hover,
+    .widget.theme-review .h2 a:focus,
+    .widget.theme-review legend a:focus,
+    .widget.theme-review .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .widget.theme-review h3 a:focus, .widget.theme-review .h3 a:hover, .widget.theme-review .h3 a:focus, .widget.theme-review .h4 a:hover, .widget.theme-review .h4 a:focus, .widget.theme-review .h5 a:hover, .widget.theme-review .h5 a:focus, .widget.theme-review .h6 a:hover, .widget.theme-review .h6 a:focus {
       color: #77B227;
       text-decoration: underline; }
 
@@ -1439,15 +1539,27 @@ thead th {
   color: #009288; }
 
 .theme-review h2, .theme-review h3, .theme-review h4, .theme-review h5, .theme-review h6,
-.theme-review .h2, .theme-review legend, .theme-review .llms-quiz-results h3, .llms-quiz-results .theme-review h3, .theme-review .h3, .theme-review .h4, .theme-review .h5, .theme-review .h6 {
+.theme-review .h2,
+.theme-review legend,
+.theme-review .llms-quiz-results h3, .llms-quiz-results
+.theme-review h3, .theme-review .h3, .theme-review .h4, .theme-review .h5, .theme-review .h6 {
   color: #009288; }
   .theme-review h2 a, .theme-review h3 a, .theme-review h4 a, .theme-review h5 a, .theme-review h6 a,
-  .theme-review .h2 a, .theme-review legend a, .theme-review .llms-quiz-results h3 a, .llms-quiz-results .theme-review h3 a, .theme-review .h3 a, .theme-review .h4 a, .theme-review .h5 a, .theme-review .h6 a {
+  .theme-review .h2 a,
+  .theme-review legend a,
+  .theme-review .llms-quiz-results h3 a, .llms-quiz-results
+  .theme-review h3 a, .theme-review .h3 a, .theme-review .h4 a, .theme-review .h5 a, .theme-review .h6 a {
     color: #009288;
     text-decoration: none; }
-    .theme-review h2 a:hover, .theme-review h2 a:focus, .theme-review h3 a:hover, .theme-review h3 a:focus, .theme-review h4 a:hover, .theme-review h4 a:focus, .theme-review h5 a:hover, .theme-review h5 a:focus, .theme-review h6 a:hover,
-    .theme-review h6 a:focus,
-    .theme-review .h2 a:hover, .theme-review legend a:hover, .theme-review .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-review h3 a:hover, .theme-review .h2 a:focus, .theme-review legend a:focus, .theme-review .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-review h3 a:focus, .theme-review .h3 a:hover, .theme-review .h3 a:focus, .theme-review .h4 a:hover, .theme-review .h4 a:focus, .theme-review .h5 a:hover, .theme-review .h5 a:focus, .theme-review .h6 a:hover, .theme-review .h6 a:focus {
+    .theme-review h2 a:hover, .theme-review h2 a:focus, .theme-review h3 a:hover, .theme-review h3 a:focus, .theme-review h4 a:hover, .theme-review h4 a:focus, .theme-review h5 a:hover, .theme-review h5 a:focus, .theme-review h6 a:hover, .theme-review h6 a:focus,
+    .theme-review .h2 a:hover,
+    .theme-review legend a:hover,
+    .theme-review .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .theme-review h3 a:hover,
+    .theme-review .h2 a:focus,
+    .theme-review legend a:focus,
+    .theme-review .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .theme-review h3 a:focus, .theme-review .h3 a:hover, .theme-review .h3 a:focus, .theme-review .h4 a:hover, .theme-review .h4 a:focus, .theme-review .h5 a:hover, .theme-review .h5 a:focus, .theme-review .h6 a:hover, .theme-review .h6 a:focus {
       color: #77B227;
       text-decoration: underline; }
 
@@ -1472,7 +1584,7 @@ thead th {
   .theme-review .button:hover, .theme-review .comment-respond input[type="submit"]:hover, .comment-respond .theme-review input[type="submit"]:hover, .theme-review .llms-button:hover, .theme-review .llms-return a:hover, .llms-return .theme-review a:hover, .theme-review .button:focus, .theme-review .comment-respond input[type="submit"]:focus, .comment-respond .theme-review input[type="submit"]:focus, .theme-review .llms-button:focus, .theme-review .llms-return a:focus, .llms-return .theme-review a:focus, .theme-review button:hover, .theme-review button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-review .button:hover.dimmed, .theme-review .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-review input[type="submit"]:hover.dimmed, .theme-review .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-review input[type="submit"]#llms_prev_question:hover, .theme-review .llms-button:hover.dimmed, .theme-review .llms-button#llms_prev_question:hover, .theme-review .llms-return a:hover, .llms-return .theme-review a:hover, .theme-review .button#llms_prev_question:hover, .theme-review .llms-return a#llms_prev_question:hover, .llms-return .theme-review a#llms_prev_question:hover, .theme-review .button:focus.dimmed, .theme-review .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-review input[type="submit"]:focus.dimmed, .theme-review .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-review input[type="submit"]#llms_prev_question:focus, .theme-review .llms-button:focus.dimmed, .theme-review .llms-button#llms_prev_question:focus, .theme-review .llms-return a:focus, .llms-return .theme-review a:focus, .theme-review .button#llms_prev_question:focus, .theme-review .llms-return a#llms_prev_question:focus, .llms-return .theme-review a#llms_prev_question:focus, .theme-review button:hover.dimmed, .theme-review button#llms_prev_question:hover, .theme-review button:focus.dimmed, .theme-review button#llms_prev_question:focus {
+    .theme-review .button:hover.dimmed, .theme-review .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-review input[type="submit"]:hover.dimmed, .theme-review .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-review input[type="submit"]#llms_prev_question:hover, .theme-review .llms-button:hover.dimmed, .theme-review .llms-return a.llms-button:hover, .llms-return .theme-review a.llms-button:hover, .theme-review .llms-button#llms_prev_question:hover, .theme-review .llms-return a:hover, .llms-return .theme-review a:hover, .theme-review .button#llms_prev_question:hover, .theme-review .llms-return a#llms_prev_question:hover, .llms-return .theme-review a#llms_prev_question:hover, .theme-review .button:focus.dimmed, .theme-review .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-review input[type="submit"]:focus.dimmed, .theme-review .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-review input[type="submit"]#llms_prev_question:focus, .theme-review .llms-button:focus.dimmed, .theme-review .llms-return a.llms-button:focus, .llms-return .theme-review a.llms-button:focus, .theme-review .llms-button#llms_prev_question:focus, .theme-review .llms-return a:focus, .llms-return .theme-review a:focus, .theme-review .button#llms_prev_question:focus, .theme-review .llms-return a#llms_prev_question:focus, .llms-return .theme-review a#llms_prev_question:focus, .theme-review button:hover.dimmed, .theme-review button#llms_prev_question:hover, .theme-review button:focus.dimmed, .theme-review button#llms_prev_question:focus {
       color: #646464; }
 
 .theme-review .fill {
@@ -1496,7 +1608,10 @@ thead th {
     filter: drop-shadow(0 1px 0 #77B227); }
 
 .theme-review .extra h2, .theme-review .extra h3, .theme-review .extra h4,
-.theme-review .extra .h2, .theme-review .extra legend, .theme-review .extra .llms-quiz-results h3, .llms-quiz-results .theme-review .extra h3, .theme-review .extra .h3, .theme-review .extra .h4 {
+.theme-review .extra .h2,
+.theme-review .extra legend,
+.theme-review .extra .llms-quiz-results h3, .llms-quiz-results
+.theme-review .extra h3, .theme-review .extra .h3, .theme-review .extra .h4 {
   color: #77B227; }
 
 .theme-review .newsletter {
@@ -1543,15 +1658,27 @@ thead th {
   color: #0075B3; }
 
 .widget.theme-software h2, .widget.theme-software h3, .widget.theme-software h4, .widget.theme-software h5, .widget.theme-software h6,
-.widget.theme-software .h2, .widget.theme-software legend, .widget.theme-software .llms-quiz-results h3, .llms-quiz-results .widget.theme-software h3, .widget.theme-software .h3, .widget.theme-software .h4, .widget.theme-software .h5, .widget.theme-software .h6 {
+.widget.theme-software .h2,
+.widget.theme-software legend,
+.widget.theme-software .llms-quiz-results h3, .llms-quiz-results
+.widget.theme-software h3, .widget.theme-software .h3, .widget.theme-software .h4, .widget.theme-software .h5, .widget.theme-software .h6 {
   color: #0075B3; }
   .widget.theme-software h2 a, .widget.theme-software h3 a, .widget.theme-software h4 a, .widget.theme-software h5 a, .widget.theme-software h6 a,
-  .widget.theme-software .h2 a, .widget.theme-software legend a, .widget.theme-software .llms-quiz-results h3 a, .llms-quiz-results .widget.theme-software h3 a, .widget.theme-software .h3 a, .widget.theme-software .h4 a, .widget.theme-software .h5 a, .widget.theme-software .h6 a {
+  .widget.theme-software .h2 a,
+  .widget.theme-software legend a,
+  .widget.theme-software .llms-quiz-results h3 a, .llms-quiz-results
+  .widget.theme-software h3 a, .widget.theme-software .h3 a, .widget.theme-software .h4 a, .widget.theme-software .h5 a, .widget.theme-software .h6 a {
     color: #0075B3;
     text-decoration: none; }
-    .widget.theme-software h2 a:hover, .widget.theme-software h2 a:focus, .widget.theme-software h3 a:hover, .widget.theme-software h3 a:focus, .widget.theme-software h4 a:hover, .widget.theme-software h4 a:focus, .widget.theme-software h5 a:hover, .widget.theme-software h5 a:focus, .widget.theme-software h6 a:hover,
-    .widget.theme-software h6 a:focus,
-    .widget.theme-software .h2 a:hover, .widget.theme-software legend a:hover, .widget.theme-software .llms-quiz-results h3 a:hover, .llms-quiz-results .widget.theme-software h3 a:hover, .widget.theme-software .h2 a:focus, .widget.theme-software legend a:focus, .widget.theme-software .llms-quiz-results h3 a:focus, .llms-quiz-results .widget.theme-software h3 a:focus, .widget.theme-software .h3 a:hover, .widget.theme-software .h3 a:focus, .widget.theme-software .h4 a:hover, .widget.theme-software .h4 a:focus, .widget.theme-software .h5 a:hover, .widget.theme-software .h5 a:focus, .widget.theme-software .h6 a:hover, .widget.theme-software .h6 a:focus {
+    .widget.theme-software h2 a:hover, .widget.theme-software h2 a:focus, .widget.theme-software h3 a:hover, .widget.theme-software h3 a:focus, .widget.theme-software h4 a:hover, .widget.theme-software h4 a:focus, .widget.theme-software h5 a:hover, .widget.theme-software h5 a:focus, .widget.theme-software h6 a:hover, .widget.theme-software h6 a:focus,
+    .widget.theme-software .h2 a:hover,
+    .widget.theme-software legend a:hover,
+    .widget.theme-software .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .widget.theme-software h3 a:hover,
+    .widget.theme-software .h2 a:focus,
+    .widget.theme-software legend a:focus,
+    .widget.theme-software .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .widget.theme-software h3 a:focus, .widget.theme-software .h3 a:hover, .widget.theme-software .h3 a:focus, .widget.theme-software .h4 a:hover, .widget.theme-software .h4 a:focus, .widget.theme-software .h5 a:hover, .widget.theme-software .h5 a:focus, .widget.theme-software .h6 a:hover, .widget.theme-software .h6 a:focus {
       color: #009288;
       text-decoration: underline; }
 
@@ -1560,15 +1687,27 @@ thead th {
   color: #0075B3; }
 
 .theme-software h2, .theme-software h3, .theme-software h4, .theme-software h5, .theme-software h6,
-.theme-software .h2, .theme-software legend, .theme-software .llms-quiz-results h3, .llms-quiz-results .theme-software h3, .theme-software .h3, .theme-software .h4, .theme-software .h5, .theme-software .h6 {
+.theme-software .h2,
+.theme-software legend,
+.theme-software .llms-quiz-results h3, .llms-quiz-results
+.theme-software h3, .theme-software .h3, .theme-software .h4, .theme-software .h5, .theme-software .h6 {
   color: #0075B3; }
   .theme-software h2 a, .theme-software h3 a, .theme-software h4 a, .theme-software h5 a, .theme-software h6 a,
-  .theme-software .h2 a, .theme-software legend a, .theme-software .llms-quiz-results h3 a, .llms-quiz-results .theme-software h3 a, .theme-software .h3 a, .theme-software .h4 a, .theme-software .h5 a, .theme-software .h6 a {
+  .theme-software .h2 a,
+  .theme-software legend a,
+  .theme-software .llms-quiz-results h3 a, .llms-quiz-results
+  .theme-software h3 a, .theme-software .h3 a, .theme-software .h4 a, .theme-software .h5 a, .theme-software .h6 a {
     color: #0075B3;
     text-decoration: none; }
-    .theme-software h2 a:hover, .theme-software h2 a:focus, .theme-software h3 a:hover, .theme-software h3 a:focus, .theme-software h4 a:hover, .theme-software h4 a:focus, .theme-software h5 a:hover, .theme-software h5 a:focus, .theme-software h6 a:hover,
-    .theme-software h6 a:focus,
-    .theme-software .h2 a:hover, .theme-software legend a:hover, .theme-software .llms-quiz-results h3 a:hover, .llms-quiz-results .theme-software h3 a:hover, .theme-software .h2 a:focus, .theme-software legend a:focus, .theme-software .llms-quiz-results h3 a:focus, .llms-quiz-results .theme-software h3 a:focus, .theme-software .h3 a:hover, .theme-software .h3 a:focus, .theme-software .h4 a:hover, .theme-software .h4 a:focus, .theme-software .h5 a:hover, .theme-software .h5 a:focus, .theme-software .h6 a:hover, .theme-software .h6 a:focus {
+    .theme-software h2 a:hover, .theme-software h2 a:focus, .theme-software h3 a:hover, .theme-software h3 a:focus, .theme-software h4 a:hover, .theme-software h4 a:focus, .theme-software h5 a:hover, .theme-software h5 a:focus, .theme-software h6 a:hover, .theme-software h6 a:focus,
+    .theme-software .h2 a:hover,
+    .theme-software legend a:hover,
+    .theme-software .llms-quiz-results h3 a:hover, .llms-quiz-results
+    .theme-software h3 a:hover,
+    .theme-software .h2 a:focus,
+    .theme-software legend a:focus,
+    .theme-software .llms-quiz-results h3 a:focus, .llms-quiz-results
+    .theme-software h3 a:focus, .theme-software .h3 a:hover, .theme-software .h3 a:focus, .theme-software .h4 a:hover, .theme-software .h4 a:focus, .theme-software .h5 a:hover, .theme-software .h5 a:focus, .theme-software .h6 a:hover, .theme-software .h6 a:focus {
       color: #009288;
       text-decoration: underline; }
 
@@ -1593,7 +1732,7 @@ thead th {
   .theme-software .button:hover, .theme-software .comment-respond input[type="submit"]:hover, .comment-respond .theme-software input[type="submit"]:hover, .theme-software .llms-button:hover, .theme-software .llms-return a:hover, .llms-return .theme-software a:hover, .theme-software .button:focus, .theme-software .comment-respond input[type="submit"]:focus, .comment-respond .theme-software input[type="submit"]:focus, .theme-software .llms-button:focus, .theme-software .llms-return a:focus, .llms-return .theme-software a:focus, .theme-software button:hover, .theme-software button:focus {
     color: #FFF;
     text-decoration: underline; }
-    .theme-software .button:hover.dimmed, .theme-software .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-software input[type="submit"]:hover.dimmed, .theme-software .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-software input[type="submit"]#llms_prev_question:hover, .theme-software .llms-button:hover.dimmed, .theme-software .llms-button#llms_prev_question:hover, .theme-software .llms-return a:hover, .llms-return .theme-software a:hover, .theme-software .button#llms_prev_question:hover, .theme-software .llms-return a#llms_prev_question:hover, .llms-return .theme-software a#llms_prev_question:hover, .theme-software .button:focus.dimmed, .theme-software .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-software input[type="submit"]:focus.dimmed, .theme-software .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-software input[type="submit"]#llms_prev_question:focus, .theme-software .llms-button:focus.dimmed, .theme-software .llms-button#llms_prev_question:focus, .theme-software .llms-return a:focus, .llms-return .theme-software a:focus, .theme-software .button#llms_prev_question:focus, .theme-software .llms-return a#llms_prev_question:focus, .llms-return .theme-software a#llms_prev_question:focus, .theme-software button:hover.dimmed, .theme-software button#llms_prev_question:hover, .theme-software button:focus.dimmed, .theme-software button#llms_prev_question:focus {
+    .theme-software .button:hover.dimmed, .theme-software .comment-respond input[type="submit"]:hover.dimmed, .comment-respond .theme-software input[type="submit"]:hover.dimmed, .theme-software .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .theme-software input[type="submit"]#llms_prev_question:hover, .theme-software .llms-button:hover.dimmed, .theme-software .llms-return a.llms-button:hover, .llms-return .theme-software a.llms-button:hover, .theme-software .llms-button#llms_prev_question:hover, .theme-software .llms-return a:hover, .llms-return .theme-software a:hover, .theme-software .button#llms_prev_question:hover, .theme-software .llms-return a#llms_prev_question:hover, .llms-return .theme-software a#llms_prev_question:hover, .theme-software .button:focus.dimmed, .theme-software .comment-respond input[type="submit"]:focus.dimmed, .comment-respond .theme-software input[type="submit"]:focus.dimmed, .theme-software .comment-respond input[type="submit"]#llms_prev_question:focus, .comment-respond .theme-software input[type="submit"]#llms_prev_question:focus, .theme-software .llms-button:focus.dimmed, .theme-software .llms-return a.llms-button:focus, .llms-return .theme-software a.llms-button:focus, .theme-software .llms-button#llms_prev_question:focus, .theme-software .llms-return a:focus, .llms-return .theme-software a:focus, .theme-software .button#llms_prev_question:focus, .theme-software .llms-return a#llms_prev_question:focus, .llms-return .theme-software a#llms_prev_question:focus, .theme-software button:hover.dimmed, .theme-software button#llms_prev_question:hover, .theme-software button:focus.dimmed, .theme-software button#llms_prev_question:focus {
       color: #646464; }
 
 .theme-software .fill {
@@ -1617,7 +1756,10 @@ thead th {
     filter: drop-shadow(0 1px 0 #009288); }
 
 .theme-software .extra h2, .theme-software .extra h3, .theme-software .extra h4,
-.theme-software .extra .h2, .theme-software .extra legend, .theme-software .extra .llms-quiz-results h3, .llms-quiz-results .theme-software .extra h3, .theme-software .extra .h3, .theme-software .extra .h4 {
+.theme-software .extra .h2,
+.theme-software .extra legend,
+.theme-software .extra .llms-quiz-results h3, .llms-quiz-results
+.theme-software .extra h3, .theme-software .extra .h3, .theme-software .extra .h4 {
   color: #009288; }
 
 .theme-software .newsletter {
@@ -1763,96 +1905,80 @@ a.announcement {
     .bio .img {
       display: none; } }
 
-.promoblock,
-.promolink,
+.promoblock, .promolink,
 .bordered {
   border: 1px solid #E6E6E6;
   /* Explicit theming */ }
+  --fullwidth.promoblock, --fullwidth.promolink,
   .bordered--fullwidth {
     border-left: none;
     border-right: none; }
+  --top.promoblock, --top.promolink,
   .bordered--top {
     border-left: none;
     border-right: none;
     border-bottom: none; }
+  --bottom.promoblock, --bottom.promolink,
   .bordered--bottom {
     border-left: none;
     border-right: none;
     border-top: none; }
-  .theme-academy .promoblock,
-  .theme-academy .promolink,
-  .theme-academy .bordered {
+  .theme-academy .promoblock, .theme-academy .promolink, .theme-academy
+  .bordered {
     border-color: #5D237A; }
-  .theme-academy--secondary .promoblock,
-  .theme-academy--secondary .promolink,
-  .theme-academy--secondary .bordered {
+  .theme-academy--secondary .promoblock, .theme-academy--secondary .promolink, .theme-academy--secondary
+  .bordered {
     border-color: #A4286A; }
-  .theme-software .promoblock,
-  .theme-software .promolink,
-  .theme-software .bordered {
+  .theme-software .promoblock, .theme-software .promolink, .theme-software
+  .bordered {
     border-color: #0075B3; }
-  .theme-review .promoblock,
-  .theme-review .promolink,
-  .theme-review .bordered {
+  .theme-review .promoblock, .theme-review .promolink, .theme-review
+  .bordered {
     border-color: #009288; }
-  .theme-about .promoblock,
-  .theme-about .promolink,
-  .theme-about .bordered {
+  .theme-about .promoblock, .theme-about .promolink, .theme-about
+  .bordered {
     border-color: #D93F69; }
-  .theme-home .promoblock,
-  .theme-home .promolink,
-  .theme-home .bordered {
+  .theme-home .promoblock, .theme-home .promolink, .theme-home
+  .bordered {
     border-color: #D93F69; }
-  .theme-academy.promoblock,
-  .theme-academy.promolink,
+  .theme-academy.promoblock, .theme-academy.promolink,
   .bordered.theme-academy {
     border-color: #5D237A; }
-  .theme-academy--secondary.promoblock,
-  .theme-academy--secondary.promolink,
+  .theme-academy--secondary.promoblock, .theme-academy--secondary.promolink,
   .bordered.theme-academy--secondary {
     border-color: #A4286A; }
-  .theme-software.promoblock,
-  .theme-software.promolink,
+  .theme-software.promoblock, .theme-software.promolink,
   .bordered.theme-software {
     border-color: #0075B3; }
-  .theme-software--secondary.promoblock,
-  .theme-software--secondary.promolink,
+  .theme-software--secondary.promoblock, .theme-software--secondary.promolink,
   .bordered.theme-software--secondary {
     border-color: #009288; }
-  .theme-review.promoblock,
-  .theme-review.promolink,
+  .theme-review.promoblock, .theme-review.promolink,
   .bordered.theme-review {
     border-color: #009288; }
-  .theme-review--secondary.promoblock,
-  .theme-review--secondary.promolink,
+  .theme-review--secondary.promoblock, .theme-review--secondary.promolink,
   .bordered.theme-review--secondary {
     border-color: #77B227; }
-  .theme-about.promoblock,
-  .theme-about.promolink,
+  .theme-about.promoblock, .theme-about.promolink,
   .bordered.theme-about {
     border-color: #D93F69; }
-  .theme-about--secondary.promoblock,
-  .theme-about--secondary.promolink,
+  .theme-about--secondary.promoblock, .theme-about--secondary.promolink,
   .bordered.theme-about--secondary {
     border-color: #A4286A; }
-  .link.promoblock,
-  .link.promolink,
+  .link.promoblock, .link.promolink,
   .bordered.link {
     border-color: #EE7100; }
-    .link.promoblock::after,
-    .link.promolink::after,
+    .link.promoblock::after, .link.promolink::after,
     .bordered.link::after {
       -webkit-filter: drop-shadow(1px 0 0 #EE7100);
       -moz-filter: drop-shadow(1px 0 0 #EE7100);
       -ms-filter: drop-shadow(1px 0 0 #EE7100);
       -o-filter: drop-shadow(1px 0 0 #EE7100);
       filter: drop-shadow(1px 0 0 #EE7100); }
-  .cta.promoblock,
-  .cta.promolink,
+  .cta.promoblock, .cta.promolink,
   .bordered.cta {
     border-color: #EE7100; }
-    .cta.promoblock::after,
-    .cta.promolink::after,
+    .cta.promoblock::after, .cta.promolink::after,
     .bordered.cta::after {
       -webkit-filter: drop-shadow(1px 0 0 #EE7100);
       -moz-filter: drop-shadow(1px 0 0 #EE7100);
@@ -2102,7 +2228,7 @@ a.announcement {
           border-bottom: 1.44rem solid transparent; } }
   .button .arrow, .comment-respond input[type="submit"] .arrow, .llms-button .arrow, .llms-return a .arrow, button .arrow {
     display: none; }
-  .button + .button, .comment-respond input[type="submit"] + .button, .llms-button + .button, .llms-return a + .button, .comment-respond .button + input[type="submit"], .comment-respond input[type="submit"] + input[type="submit"], .comment-respond .llms-button + input[type="submit"], .llms-return .comment-respond a + input[type="submit"], .comment-respond .llms-return a + input[type="submit"], .button + .llms-button, .comment-respond input[type="submit"] + .llms-button, .llms-button + .llms-button, .llms-return a + .llms-button, .llms-return .button + a, .comment-respond .llms-return input[type="submit"] + a, .llms-return .comment-respond input[type="submit"] + a, .llms-return .llms-button + a, .llms-return a + a, button + button {
+  .button + .button, .comment-respond input[type="submit"] + .button, .llms-button + .button, .llms-return a + .button, .comment-respond .button + input[type="submit"], .comment-respond input[type="submit"] + input[type="submit"], .comment-respond .llms-button + input[type="submit"], .llms-return .comment-respond a + input[type="submit"], .comment-respond .llms-return a + input[type="submit"], .button + .llms-button, .comment-respond input[type="submit"] + .llms-button, .llms-button + .llms-button, .llms-return a + .llms-button, .llms-return .button + a, .comment-respond .llms-return input[type="submit"] + a, .llms-return .comment-respond input[type="submit"] + a, .llms-return .llms-button + a, .llms-return a + a, button + .button, .comment-respond button + input[type="submit"], button + .llms-button, .llms-return button + a, .button + button, .comment-respond input[type="submit"] + button, .llms-button + button, .llms-return a + button, button + button {
     margin-top: 1em;
     margin-left: 1.88rem; }
   .button--full, button--full {
@@ -2116,13 +2242,13 @@ a.announcement {
       border-left-color: #EE7100; }
     .button.default::before, .comment-respond input.default[type="submit"]::before, .comment-respond input[type="submit"].llms-button::before, .llms-button::before, .llms-return a.default::before, button.default::before, button.llms-button::before {
       border-right-color: #EE7100; }
-    .button.default:hover, .comment-respond input.default[type="submit"]:hover, .comment-respond input[type="submit"].llms-button:hover, .llms-button:hover, .llms-return a.default:hover, .button.default a:focus, .comment-respond input.default[type="submit"] a:focus, .llms-button a:focus, .llms-return a.default a:focus, button.default:hover, button.llms-button:hover, button.default a:focus, button.llms-button a:focus {
+    .button.default:hover, .comment-respond input.default[type="submit"]:hover, .comment-respond input[type="submit"].llms-button:hover, .llms-button:hover, .llms-return a.default:hover, .button.default a:focus, .comment-respond input.default[type="submit"] a:focus, .comment-respond input[type="submit"].llms-button a:focus, .llms-button a:focus, .llms-return a.default a:focus, .llms-return a.llms-button a:focus, button.default:hover, button.llms-button:hover, button.default a:focus, button.llms-button a:focus {
       background-color: #F58223;
       color: #FFF;
       text-decoration: underline; }
-      .button.default:hover::after, .comment-respond input.default[type="submit"]:hover::after, .llms-button:hover::after, .llms-return a.default:hover::after, .button.default a:focus::after, .comment-respond input.default[type="submit"] a:focus::after, .llms-button a:focus::after, .llms-return a.default a:focus::after, button.default:hover::after, button.llms-button:hover::after, button.default a:focus::after, button.llms-button a:focus::after {
+      .button.default:hover::after, .comment-respond input.default[type="submit"]:hover::after, .llms-button:hover::after, .llms-return a.default:hover::after, .button.default a:focus::after, .comment-respond input.default[type="submit"] a:focus::after, .comment-respond input[type="submit"].llms-button a:focus::after, .llms-button a:focus::after, .llms-return a.default a:focus::after, .llms-return a.llms-button a:focus::after, button.default:hover::after, button.llms-button:hover::after, button.default a:focus::after, button.llms-button a:focus::after {
         border-left-color: #F58223; }
-      .button.default:hover::before, .comment-respond input.default[type="submit"]:hover::before, .llms-button:hover::before, .llms-return a.default:hover::before, .button.default a:focus::before, .comment-respond input.default[type="submit"] a:focus::before, .llms-button a:focus::before, .llms-return a.default a:focus::before, button.default:hover::before, button.llms-button:hover::before, button.default a:focus::before, button.llms-button a:focus::before {
+      .button.default:hover::before, .comment-respond input.default[type="submit"]:hover::before, .llms-button:hover::before, .llms-return a.default:hover::before, .button.default a:focus::before, .comment-respond input.default[type="submit"] a:focus::before, .comment-respond input[type="submit"].llms-button a:focus::before, .llms-button a:focus::before, .llms-return a.default a:focus::before, .llms-return a.llms-button a:focus::before, button.default:hover::before, button.llms-button:hover::before, button.default a:focus::before, button.llms-button a:focus::before {
         border-right-color: #F58223; }
   .button.academy, .comment-respond input.academy[type="submit"], .academy.llms-button, .llms-return a.academy, button.academy {
     color: #FFF; }
@@ -2166,110 +2292,164 @@ a.announcement {
         border-left-color: #d42a59; }
       .yoast_academy .button:hover::before, .yoast_academy .comment-respond input[type="submit"]:hover::before, .comment-respond .yoast_academy input[type="submit"]:hover::before, .yoast_academy .llms-button:hover::before, .yoast_academy .llms-return a:hover::before, .llms-return .yoast_academy a:hover::before, .yoast_academy .button a:focus::before, .yoast_academy .comment-respond input[type="submit"] a:focus::before, .comment-respond .yoast_academy input[type="submit"] a:focus::before, .yoast_academy .llms-button a:focus::before, .yoast_academy .llms-return a a:focus::before, .llms-return .yoast_academy a a:focus::before, .yoast_academy button:hover::before, .yoast_academy button a:focus::before {
         border-right-color: #d42a59; }
-  body .button.dimmed,
-  body .comment-respond input.dimmed[type="submit"],
-  .comment-respond body input.dimmed[type="submit"], body .comment-respond input[type="submit"]#llms_prev_question,
-  .comment-respond body input[type="submit"]#llms_prev_question, body .dimmed.llms-button,
-  body .llms-button#llms_prev_question,
-  body .llms-return a,
-  .llms-return body a, body .button#llms_prev_question,
-  body .llms-return a#llms_prev_question,
-  .llms-return body a#llms_prev_question, .yoast_academy .button.dimmed, .yoast_academy .comment-respond input.dimmed[type="submit"], .comment-respond .yoast_academy input.dimmed[type="submit"], .yoast_academy .comment-respond input[type="submit"]#llms_prev_question, .comment-respond .yoast_academy input[type="submit"]#llms_prev_question, .yoast_academy .dimmed.llms-button, .yoast_academy .llms-button#llms_prev_question, .yoast_academy .llms-return a, .llms-return .yoast_academy a, .yoast_academy .button#llms_prev_question, .yoast_academy .llms-return a#llms_prev_question, .llms-return .yoast_academy a#llms_prev_question, body button.dimmed,
-  body button#llms_prev_question,
-  .yoast_academy button.dimmed, .yoast_academy button#llms_prev_question {
+  body .button.dimmed, body .comment-respond input.dimmed[type="submit"], .comment-respond body input.dimmed[type="submit"], body .comment-respond input[type="submit"]#llms_prev_question, .comment-respond body input[type="submit"]#llms_prev_question, body .dimmed.llms-button, body .llms-return a.llms-button, .llms-return body a.llms-button, body .llms-button#llms_prev_question, body .llms-return a, .llms-return body a, body .button#llms_prev_question, body .llms-return a#llms_prev_question, .llms-return body a#llms_prev_question,
+  .yoast_academy .button.dimmed,
+  .yoast_academy .comment-respond input.dimmed[type="submit"], .comment-respond
+  .yoast_academy input.dimmed[type="submit"],
+  .yoast_academy .comment-respond input[type="submit"]#llms_prev_question, .comment-respond
+  .yoast_academy input[type="submit"]#llms_prev_question,
+  .yoast_academy .dimmed.llms-button,
+  .yoast_academy .llms-return a.llms-button, .llms-return
+  .yoast_academy a.llms-button,
+  .yoast_academy .llms-button#llms_prev_question,
+  .yoast_academy .llms-return a, .llms-return
+  .yoast_academy a,
+  .yoast_academy .button#llms_prev_question,
+  .yoast_academy .llms-return a#llms_prev_question, .llms-return
+  .yoast_academy a#llms_prev_question, body button.dimmed, body button#llms_prev_question,
+  .yoast_academy button.dimmed,
+  .yoast_academy button#llms_prev_question {
     color: #646464;
     background-color: #DCDCDC; }
-    body .button.dimmed::after,
-    body .comment-respond input.dimmed[type="submit"]::after,
-    .comment-respond body input.dimmed[type="submit"]::after, body .comment-respond input[type="submit"]#llms_prev_question::after,
-    .comment-respond body input[type="submit"]#llms_prev_question::after, body .dimmed.llms-button::after,
-    body .llms-button#llms_prev_question::after,
-    body .llms-return a::after,
-    .llms-return body a::after, body .button#llms_prev_question::after,
-    body .llms-return a#llms_prev_question::after,
-    .llms-return body a#llms_prev_question::after, .yoast_academy .button.dimmed::after, .yoast_academy .comment-respond input.dimmed[type="submit"]::after, .comment-respond .yoast_academy input.dimmed[type="submit"]::after, .yoast_academy .comment-respond input[type="submit"]#llms_prev_question::after, .comment-respond .yoast_academy input[type="submit"]#llms_prev_question::after, .yoast_academy .dimmed.llms-button::after, .yoast_academy .llms-button#llms_prev_question::after, .yoast_academy .llms-return a::after, .llms-return .yoast_academy a::after, .yoast_academy .button#llms_prev_question::after, .yoast_academy .llms-return a#llms_prev_question::after, .llms-return .yoast_academy a#llms_prev_question::after, body button.dimmed::after,
-    body button#llms_prev_question::after,
-    .yoast_academy button.dimmed::after, .yoast_academy button#llms_prev_question::after {
+    body .button.dimmed::after, body .comment-respond input.dimmed[type="submit"]::after, .comment-respond body input.dimmed[type="submit"]::after, body .comment-respond input[type="submit"]#llms_prev_question::after, .comment-respond body input[type="submit"]#llms_prev_question::after, body .dimmed.llms-button::after, body .llms-return a.llms-button::after, .llms-return body a.llms-button::after, body .llms-button#llms_prev_question::after, body .llms-return a::after, .llms-return body a::after, body .button#llms_prev_question::after, body .llms-return a#llms_prev_question::after, .llms-return body a#llms_prev_question::after,
+    .yoast_academy .button.dimmed::after,
+    .yoast_academy .comment-respond input.dimmed[type="submit"]::after, .comment-respond
+    .yoast_academy input.dimmed[type="submit"]::after,
+    .yoast_academy .comment-respond input[type="submit"]#llms_prev_question::after, .comment-respond
+    .yoast_academy input[type="submit"]#llms_prev_question::after,
+    .yoast_academy .dimmed.llms-button::after,
+    .yoast_academy .llms-return a.llms-button::after, .llms-return
+    .yoast_academy a.llms-button::after,
+    .yoast_academy .llms-button#llms_prev_question::after,
+    .yoast_academy .llms-return a::after, .llms-return
+    .yoast_academy a::after,
+    .yoast_academy .button#llms_prev_question::after,
+    .yoast_academy .llms-return a#llms_prev_question::after, .llms-return
+    .yoast_academy a#llms_prev_question::after, body button.dimmed::after, body button#llms_prev_question::after,
+    .yoast_academy button.dimmed::after,
+    .yoast_academy button#llms_prev_question::after {
       border-left-color: #DCDCDC; }
-    body .button.dimmed::before,
-    body .comment-respond input.dimmed[type="submit"]::before,
-    .comment-respond body input.dimmed[type="submit"]::before, body .comment-respond input[type="submit"]#llms_prev_question::before,
-    .comment-respond body input[type="submit"]#llms_prev_question::before, body .dimmed.llms-button::before,
-    body .llms-button#llms_prev_question::before,
-    body .llms-return a::before,
-    .llms-return body a::before, body .button#llms_prev_question::before,
-    body .llms-return a#llms_prev_question::before,
-    .llms-return body a#llms_prev_question::before, .yoast_academy .button.dimmed::before, .yoast_academy .comment-respond input.dimmed[type="submit"]::before, .comment-respond .yoast_academy input.dimmed[type="submit"]::before, .yoast_academy .comment-respond input[type="submit"]#llms_prev_question::before, .comment-respond .yoast_academy input[type="submit"]#llms_prev_question::before, .yoast_academy .dimmed.llms-button::before, .yoast_academy .llms-button#llms_prev_question::before, .yoast_academy .llms-return a::before, .llms-return .yoast_academy a::before, .yoast_academy .button#llms_prev_question::before, .yoast_academy .llms-return a#llms_prev_question::before, .llms-return .yoast_academy a#llms_prev_question::before, body button.dimmed::before,
-    body button#llms_prev_question::before,
-    .yoast_academy button.dimmed::before, .yoast_academy button#llms_prev_question::before {
+    body .button.dimmed::before, body .comment-respond input.dimmed[type="submit"]::before, .comment-respond body input.dimmed[type="submit"]::before, body .comment-respond input[type="submit"]#llms_prev_question::before, .comment-respond body input[type="submit"]#llms_prev_question::before, body .dimmed.llms-button::before, body .llms-return a.llms-button::before, .llms-return body a.llms-button::before, body .llms-button#llms_prev_question::before, body .llms-return a::before, .llms-return body a::before, body .button#llms_prev_question::before, body .llms-return a#llms_prev_question::before, .llms-return body a#llms_prev_question::before,
+    .yoast_academy .button.dimmed::before,
+    .yoast_academy .comment-respond input.dimmed[type="submit"]::before, .comment-respond
+    .yoast_academy input.dimmed[type="submit"]::before,
+    .yoast_academy .comment-respond input[type="submit"]#llms_prev_question::before, .comment-respond
+    .yoast_academy input[type="submit"]#llms_prev_question::before,
+    .yoast_academy .dimmed.llms-button::before,
+    .yoast_academy .llms-return a.llms-button::before, .llms-return
+    .yoast_academy a.llms-button::before,
+    .yoast_academy .llms-button#llms_prev_question::before,
+    .yoast_academy .llms-return a::before, .llms-return
+    .yoast_academy a::before,
+    .yoast_academy .button#llms_prev_question::before,
+    .yoast_academy .llms-return a#llms_prev_question::before, .llms-return
+    .yoast_academy a#llms_prev_question::before, body button.dimmed::before, body button#llms_prev_question::before,
+    .yoast_academy button.dimmed::before,
+    .yoast_academy button#llms_prev_question::before {
       border-right-color: #DCDCDC; }
-    body .button.dimmed:hover,
-    body .comment-respond input.dimmed[type="submit"]:hover,
-    .comment-respond body input.dimmed[type="submit"]:hover, body .comment-respond input[type="submit"]#llms_prev_question:hover,
-    .comment-respond body input[type="submit"]#llms_prev_question:hover, body .dimmed.llms-button:hover,
-    body .llms-button#llms_prev_question:hover,
-    body .llms-return a:hover,
-    .llms-return body a:hover, body .button#llms_prev_question:hover,
-    body .llms-return a#llms_prev_question:hover,
-    .llms-return body a#llms_prev_question:hover, body .button.dimmed a:focus,
-    body .comment-respond input.dimmed[type="submit"] a:focus,
-    .comment-respond body input.dimmed[type="submit"] a:focus, body .comment-respond input[type="submit"]#llms_prev_question a:focus,
-    .comment-respond body input[type="submit"]#llms_prev_question a:focus, body .dimmed.llms-button a:focus,
-    body .llms-button#llms_prev_question a:focus,
-    body .llms-return a a:focus,
-    .llms-return body a a:focus, body .button#llms_prev_question a:focus,
-    body .llms-return a#llms_prev_question a:focus,
-    .llms-return body a#llms_prev_question a:focus, .yoast_academy .button.dimmed:hover, .yoast_academy .comment-respond input.dimmed[type="submit"]:hover, .comment-respond .yoast_academy input.dimmed[type="submit"]:hover, .yoast_academy .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond .yoast_academy input[type="submit"]#llms_prev_question:hover, .yoast_academy .dimmed.llms-button:hover, .yoast_academy .llms-button#llms_prev_question:hover, .yoast_academy .llms-return a:hover, .llms-return .yoast_academy a:hover, .yoast_academy .button#llms_prev_question:hover, .yoast_academy .llms-return a#llms_prev_question:hover, .llms-return .yoast_academy a#llms_prev_question:hover, .yoast_academy .button.dimmed a:focus, .yoast_academy .comment-respond input.dimmed[type="submit"] a:focus, .comment-respond .yoast_academy input.dimmed[type="submit"] a:focus, .yoast_academy .comment-respond input[type="submit"]#llms_prev_question a:focus, .comment-respond .yoast_academy input[type="submit"]#llms_prev_question a:focus, .yoast_academy .dimmed.llms-button a:focus, .yoast_academy .llms-button#llms_prev_question a:focus, .yoast_academy .llms-return a a:focus, .llms-return .yoast_academy a a:focus, .yoast_academy .button#llms_prev_question a:focus, .yoast_academy .llms-return a#llms_prev_question a:focus, .llms-return .yoast_academy a#llms_prev_question a:focus, body button.dimmed:hover,
-    body button#llms_prev_question:hover,
-    body button.dimmed a:focus,
-    body button#llms_prev_question a:focus,
-    .yoast_academy button.dimmed:hover, .yoast_academy button#llms_prev_question:hover, .yoast_academy button.dimmed a:focus, .yoast_academy button#llms_prev_question a:focus {
+    body .button.dimmed:hover, body .comment-respond input.dimmed[type="submit"]:hover, .comment-respond body input.dimmed[type="submit"]:hover, body .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond body input[type="submit"]#llms_prev_question:hover, body .dimmed.llms-button:hover, body .llms-return a.llms-button:hover, .llms-return body a.llms-button:hover, body .llms-button#llms_prev_question:hover, body .llms-return a:hover, .llms-return body a:hover, body .button#llms_prev_question:hover, body .llms-return a#llms_prev_question:hover, .llms-return body a#llms_prev_question:hover, body .button.dimmed a:focus, body .comment-respond input.dimmed[type="submit"] a:focus, .comment-respond body input.dimmed[type="submit"] a:focus, body .comment-respond input[type="submit"]#llms_prev_question a:focus, .comment-respond body input[type="submit"]#llms_prev_question a:focus, body .dimmed.llms-button a:focus, body .llms-return a.llms-button a:focus, .llms-return body a.llms-button a:focus, body .llms-button#llms_prev_question a:focus, body .llms-return a a:focus, .llms-return body a a:focus, body .button#llms_prev_question a:focus, body .llms-return a#llms_prev_question a:focus, .llms-return body a#llms_prev_question a:focus,
+    .yoast_academy .button.dimmed:hover,
+    .yoast_academy .comment-respond input.dimmed[type="submit"]:hover, .comment-respond
+    .yoast_academy input.dimmed[type="submit"]:hover,
+    .yoast_academy .comment-respond input[type="submit"]#llms_prev_question:hover, .comment-respond
+    .yoast_academy input[type="submit"]#llms_prev_question:hover,
+    .yoast_academy .dimmed.llms-button:hover,
+    .yoast_academy .llms-return a.llms-button:hover, .llms-return
+    .yoast_academy a.llms-button:hover,
+    .yoast_academy .llms-button#llms_prev_question:hover,
+    .yoast_academy .llms-return a:hover, .llms-return
+    .yoast_academy a:hover,
+    .yoast_academy .button#llms_prev_question:hover,
+    .yoast_academy .llms-return a#llms_prev_question:hover, .llms-return
+    .yoast_academy a#llms_prev_question:hover,
+    .yoast_academy .button.dimmed a:focus,
+    .yoast_academy .comment-respond input.dimmed[type="submit"] a:focus, .comment-respond
+    .yoast_academy input.dimmed[type="submit"] a:focus,
+    .yoast_academy .comment-respond input[type="submit"]#llms_prev_question a:focus, .comment-respond
+    .yoast_academy input[type="submit"]#llms_prev_question a:focus,
+    .yoast_academy .dimmed.llms-button a:focus,
+    .yoast_academy .llms-return a.llms-button a:focus, .llms-return
+    .yoast_academy a.llms-button a:focus,
+    .yoast_academy .llms-button#llms_prev_question a:focus,
+    .yoast_academy .llms-return a a:focus, .llms-return
+    .yoast_academy a a:focus,
+    .yoast_academy .button#llms_prev_question a:focus,
+    .yoast_academy .llms-return a#llms_prev_question a:focus, .llms-return
+    .yoast_academy a#llms_prev_question a:focus, body button.dimmed:hover, body button#llms_prev_question:hover, body button.dimmed a:focus, body button#llms_prev_question a:focus,
+    .yoast_academy button.dimmed:hover,
+    .yoast_academy button#llms_prev_question:hover,
+    .yoast_academy button.dimmed a:focus,
+    .yoast_academy button#llms_prev_question a:focus {
       background-color: #CDCDCD;
       color: #646464;
       text-decoration: underline; }
-      body .button.dimmed:hover::after,
-      body .comment-respond input.dimmed[type="submit"]:hover::after,
-      .comment-respond body input.dimmed[type="submit"]:hover::after, body .comment-respond input[type="submit"]#llms_prev_question:hover::after,
-      .comment-respond body input[type="submit"]#llms_prev_question:hover::after, body .dimmed.llms-button:hover::after,
-      body .llms-button#llms_prev_question:hover::after,
-      body .llms-return a:hover::after,
-      .llms-return body a:hover::after, body .button#llms_prev_question:hover::after,
-      body .llms-return a#llms_prev_question:hover::after,
-      .llms-return body a#llms_prev_question:hover::after, body .button.dimmed a:focus::after,
-      body .comment-respond input.dimmed[type="submit"] a:focus::after,
-      .comment-respond body input.dimmed[type="submit"] a:focus::after, body .comment-respond input[type="submit"]#llms_prev_question a:focus::after,
-      .comment-respond body input[type="submit"]#llms_prev_question a:focus::after, body .dimmed.llms-button a:focus::after,
-      body .llms-button#llms_prev_question a:focus::after,
-      body .llms-return a a:focus::after,
-      .llms-return body a a:focus::after, body .button#llms_prev_question a:focus::after,
-      body .llms-return a#llms_prev_question a:focus::after,
-      .llms-return body a#llms_prev_question a:focus::after, .yoast_academy .button.dimmed:hover::after, .yoast_academy .comment-respond input.dimmed[type="submit"]:hover::after, .comment-respond .yoast_academy input.dimmed[type="submit"]:hover::after, .yoast_academy .comment-respond input[type="submit"]#llms_prev_question:hover::after, .comment-respond .yoast_academy input[type="submit"]#llms_prev_question:hover::after, .yoast_academy .dimmed.llms-button:hover::after, .yoast_academy .llms-button#llms_prev_question:hover::after, .yoast_academy .llms-return a:hover::after, .llms-return .yoast_academy a:hover::after, .yoast_academy .button#llms_prev_question:hover::after, .yoast_academy .llms-return a#llms_prev_question:hover::after, .llms-return .yoast_academy a#llms_prev_question:hover::after, .yoast_academy .button.dimmed a:focus::after, .yoast_academy .comment-respond input.dimmed[type="submit"] a:focus::after, .comment-respond .yoast_academy input.dimmed[type="submit"] a:focus::after, .yoast_academy .comment-respond input[type="submit"]#llms_prev_question a:focus::after, .comment-respond .yoast_academy input[type="submit"]#llms_prev_question a:focus::after, .yoast_academy .dimmed.llms-button a:focus::after, .yoast_academy .llms-button#llms_prev_question a:focus::after, .yoast_academy .llms-return a a:focus::after, .llms-return .yoast_academy a a:focus::after, .yoast_academy .button#llms_prev_question a:focus::after, .yoast_academy .llms-return a#llms_prev_question a:focus::after, .llms-return .yoast_academy a#llms_prev_question a:focus::after, body button.dimmed:hover::after,
-      body button#llms_prev_question:hover::after,
-      body button.dimmed a:focus::after,
-      body button#llms_prev_question a:focus::after,
-      .yoast_academy button.dimmed:hover::after, .yoast_academy button#llms_prev_question:hover::after, .yoast_academy button.dimmed a:focus::after, .yoast_academy button#llms_prev_question a:focus::after {
+      body .button.dimmed:hover::after, body .comment-respond input.dimmed[type="submit"]:hover::after, .comment-respond body input.dimmed[type="submit"]:hover::after, body .comment-respond input[type="submit"]#llms_prev_question:hover::after, .comment-respond body input[type="submit"]#llms_prev_question:hover::after, body .dimmed.llms-button:hover::after, body .llms-return a.llms-button:hover::after, .llms-return body a.llms-button:hover::after, body .llms-button#llms_prev_question:hover::after, body .llms-return a:hover::after, .llms-return body a:hover::after, body .button#llms_prev_question:hover::after, body .llms-return a#llms_prev_question:hover::after, .llms-return body a#llms_prev_question:hover::after, body .button.dimmed a:focus::after, body .comment-respond input.dimmed[type="submit"] a:focus::after, .comment-respond body input.dimmed[type="submit"] a:focus::after, body .comment-respond input[type="submit"]#llms_prev_question a:focus::after, .comment-respond body input[type="submit"]#llms_prev_question a:focus::after, body .dimmed.llms-button a:focus::after, body .llms-return a.llms-button a:focus::after, .llms-return body a.llms-button a:focus::after, body .llms-button#llms_prev_question a:focus::after, body .llms-return a a:focus::after, .llms-return body a a:focus::after, body .button#llms_prev_question a:focus::after, body .llms-return a#llms_prev_question a:focus::after, .llms-return body a#llms_prev_question a:focus::after,
+      .yoast_academy .button.dimmed:hover::after,
+      .yoast_academy .comment-respond input.dimmed[type="submit"]:hover::after, .comment-respond
+      .yoast_academy input.dimmed[type="submit"]:hover::after,
+      .yoast_academy .comment-respond input[type="submit"]#llms_prev_question:hover::after, .comment-respond
+      .yoast_academy input[type="submit"]#llms_prev_question:hover::after,
+      .yoast_academy .dimmed.llms-button:hover::after,
+      .yoast_academy .llms-return a.llms-button:hover::after, .llms-return
+      .yoast_academy a.llms-button:hover::after,
+      .yoast_academy .llms-button#llms_prev_question:hover::after,
+      .yoast_academy .llms-return a:hover::after, .llms-return
+      .yoast_academy a:hover::after,
+      .yoast_academy .button#llms_prev_question:hover::after,
+      .yoast_academy .llms-return a#llms_prev_question:hover::after, .llms-return
+      .yoast_academy a#llms_prev_question:hover::after,
+      .yoast_academy .button.dimmed a:focus::after,
+      .yoast_academy .comment-respond input.dimmed[type="submit"] a:focus::after, .comment-respond
+      .yoast_academy input.dimmed[type="submit"] a:focus::after,
+      .yoast_academy .comment-respond input[type="submit"]#llms_prev_question a:focus::after, .comment-respond
+      .yoast_academy input[type="submit"]#llms_prev_question a:focus::after,
+      .yoast_academy .dimmed.llms-button a:focus::after,
+      .yoast_academy .llms-return a.llms-button a:focus::after, .llms-return
+      .yoast_academy a.llms-button a:focus::after,
+      .yoast_academy .llms-button#llms_prev_question a:focus::after,
+      .yoast_academy .llms-return a a:focus::after, .llms-return
+      .yoast_academy a a:focus::after,
+      .yoast_academy .button#llms_prev_question a:focus::after,
+      .yoast_academy .llms-return a#llms_prev_question a:focus::after, .llms-return
+      .yoast_academy a#llms_prev_question a:focus::after, body button.dimmed:hover::after, body button#llms_prev_question:hover::after, body button.dimmed a:focus::after, body button#llms_prev_question a:focus::after,
+      .yoast_academy button.dimmed:hover::after,
+      .yoast_academy button#llms_prev_question:hover::after,
+      .yoast_academy button.dimmed a:focus::after,
+      .yoast_academy button#llms_prev_question a:focus::after {
         border-left-color: #CDCDCD; }
-      body .button.dimmed:hover:before,
-      body .comment-respond input.dimmed[type="submit"]:hover:before,
-      .comment-respond body input.dimmed[type="submit"]:hover:before, body .comment-respond input[type="submit"]#llms_prev_question:hover:before,
-      .comment-respond body input[type="submit"]#llms_prev_question:hover:before, body .dimmed.llms-button:hover:before,
-      body .llms-button#llms_prev_question:hover:before,
-      body .llms-return a:hover:before,
-      .llms-return body a:hover:before, body .button#llms_prev_question:hover:before,
-      body .llms-return a#llms_prev_question:hover:before,
-      .llms-return body a#llms_prev_question:hover:before, body .button.dimmed a:focus:before,
-      body .comment-respond input.dimmed[type="submit"] a:focus:before,
-      .comment-respond body input.dimmed[type="submit"] a:focus:before, body .comment-respond input[type="submit"]#llms_prev_question a:focus:before,
-      .comment-respond body input[type="submit"]#llms_prev_question a:focus:before, body .dimmed.llms-button a:focus:before,
-      body .llms-button#llms_prev_question a:focus:before,
-      body .llms-return a a:focus:before,
-      .llms-return body a a:focus:before, body .button#llms_prev_question a:focus:before,
-      body .llms-return a#llms_prev_question a:focus:before,
-      .llms-return body a#llms_prev_question a:focus:before, .yoast_academy .button.dimmed:hover:before, .yoast_academy .comment-respond input.dimmed[type="submit"]:hover:before, .comment-respond .yoast_academy input.dimmed[type="submit"]:hover:before, .yoast_academy .comment-respond input[type="submit"]#llms_prev_question:hover:before, .comment-respond .yoast_academy input[type="submit"]#llms_prev_question:hover:before, .yoast_academy .dimmed.llms-button:hover:before, .yoast_academy .llms-button#llms_prev_question:hover:before, .yoast_academy .llms-return a:hover:before, .llms-return .yoast_academy a:hover:before, .yoast_academy .button#llms_prev_question:hover:before, .yoast_academy .llms-return a#llms_prev_question:hover:before, .llms-return .yoast_academy a#llms_prev_question:hover:before, .yoast_academy .button.dimmed a:focus:before, .yoast_academy .comment-respond input.dimmed[type="submit"] a:focus:before, .comment-respond .yoast_academy input.dimmed[type="submit"] a:focus:before, .yoast_academy .comment-respond input[type="submit"]#llms_prev_question a:focus:before, .comment-respond .yoast_academy input[type="submit"]#llms_prev_question a:focus:before, .yoast_academy .dimmed.llms-button a:focus:before, .yoast_academy .llms-button#llms_prev_question a:focus:before, .yoast_academy .llms-return a a:focus:before, .llms-return .yoast_academy a a:focus:before, .yoast_academy .button#llms_prev_question a:focus:before, .yoast_academy .llms-return a#llms_prev_question a:focus:before, .llms-return .yoast_academy a#llms_prev_question a:focus:before, body button.dimmed:hover:before,
-      body button#llms_prev_question:hover:before,
-      body button.dimmed a:focus:before,
-      body button#llms_prev_question a:focus:before,
-      .yoast_academy button.dimmed:hover:before, .yoast_academy button#llms_prev_question:hover:before, .yoast_academy button.dimmed a:focus:before, .yoast_academy button#llms_prev_question a:focus:before {
+      body .button.dimmed:hover:before, body .comment-respond input.dimmed[type="submit"]:hover:before, .comment-respond body input.dimmed[type="submit"]:hover:before, body .comment-respond input[type="submit"]#llms_prev_question:hover:before, .comment-respond body input[type="submit"]#llms_prev_question:hover:before, body .dimmed.llms-button:hover:before, body .llms-return a.llms-button:hover:before, .llms-return body a.llms-button:hover:before, body .llms-button#llms_prev_question:hover:before, body .llms-return a:hover:before, .llms-return body a:hover:before, body .button#llms_prev_question:hover:before, body .llms-return a#llms_prev_question:hover:before, .llms-return body a#llms_prev_question:hover:before, body .button.dimmed a:focus:before, body .comment-respond input.dimmed[type="submit"] a:focus:before, .comment-respond body input.dimmed[type="submit"] a:focus:before, body .comment-respond input[type="submit"]#llms_prev_question a:focus:before, .comment-respond body input[type="submit"]#llms_prev_question a:focus:before, body .dimmed.llms-button a:focus:before, body .llms-return a.llms-button a:focus:before, .llms-return body a.llms-button a:focus:before, body .llms-button#llms_prev_question a:focus:before, body .llms-return a a:focus:before, .llms-return body a a:focus:before, body .button#llms_prev_question a:focus:before, body .llms-return a#llms_prev_question a:focus:before, .llms-return body a#llms_prev_question a:focus:before,
+      .yoast_academy .button.dimmed:hover:before,
+      .yoast_academy .comment-respond input.dimmed[type="submit"]:hover:before, .comment-respond
+      .yoast_academy input.dimmed[type="submit"]:hover:before,
+      .yoast_academy .comment-respond input[type="submit"]#llms_prev_question:hover:before, .comment-respond
+      .yoast_academy input[type="submit"]#llms_prev_question:hover:before,
+      .yoast_academy .dimmed.llms-button:hover:before,
+      .yoast_academy .llms-return a.llms-button:hover:before, .llms-return
+      .yoast_academy a.llms-button:hover:before,
+      .yoast_academy .llms-button#llms_prev_question:hover:before,
+      .yoast_academy .llms-return a:hover:before, .llms-return
+      .yoast_academy a:hover:before,
+      .yoast_academy .button#llms_prev_question:hover:before,
+      .yoast_academy .llms-return a#llms_prev_question:hover:before, .llms-return
+      .yoast_academy a#llms_prev_question:hover:before,
+      .yoast_academy .button.dimmed a:focus:before,
+      .yoast_academy .comment-respond input.dimmed[type="submit"] a:focus:before, .comment-respond
+      .yoast_academy input.dimmed[type="submit"] a:focus:before,
+      .yoast_academy .comment-respond input[type="submit"]#llms_prev_question a:focus:before, .comment-respond
+      .yoast_academy input[type="submit"]#llms_prev_question a:focus:before,
+      .yoast_academy .dimmed.llms-button a:focus:before,
+      .yoast_academy .llms-return a.llms-button a:focus:before, .llms-return
+      .yoast_academy a.llms-button a:focus:before,
+      .yoast_academy .llms-button#llms_prev_question a:focus:before,
+      .yoast_academy .llms-return a a:focus:before, .llms-return
+      .yoast_academy a a:focus:before,
+      .yoast_academy .button#llms_prev_question a:focus:before,
+      .yoast_academy .llms-return a#llms_prev_question a:focus:before, .llms-return
+      .yoast_academy a#llms_prev_question a:focus:before, body button.dimmed:hover:before, body button#llms_prev_question:hover:before, body button.dimmed a:focus:before, body button#llms_prev_question a:focus:before,
+      .yoast_academy button.dimmed:hover:before,
+      .yoast_academy button#llms_prev_question:hover:before,
+      .yoast_academy button.dimmed a:focus:before,
+      .yoast_academy button#llms_prev_question a:focus:before {
         border-right-color: #CDCDCD; }
   .button--naked, button--naked {
     border: none;
@@ -2469,12 +2649,10 @@ a.announcement {
 #edd_purchase_form #yst-edd-btw-wrap {
   position: relative; }
   #edd_purchase_form #yst-edd-btw-wrap .fa-spinner {
-    position: absolute;
-    right: 14px;
-    top: 77px;
-    display: none; }
+    display: none;
+    margin: 0 0 0 10px; }
     #edd_purchase_form #yst-edd-btw-wrap .fa-spinner.show {
-      display: block; }
+      display: inline; }
 
 .edd_download_purchase_form:before, .edd_download_purchase_form:after {
   content: '';
@@ -3259,7 +3437,7 @@ input.valid {
     position: fixed;
     top: 0;
     left: 0;
-    background: #efb0a5 url(./../images/banners/home-small.jpg) no-repeat 50% 50%/cover; }
+    background: #efb0a5 url(./../images/banners/home-small.jpg) no-repeat 50% 50%/"cover"; }
     @media only screen and (max-width: 50rem) {
       .full-banner--home {
         top: 4em; } }
@@ -3400,7 +3578,7 @@ hr + .fullfooter {
   .header-controls .text-icon {
     font-size: 1.5em; }
   .header-controls .cart {
-    padding: 0.5rem 1rem 0 0;
+    padding: .5rem 1rem 0 0;
     position: relative;
     font-size: 1.2em; }
     .header-controls .cart .num-items {
@@ -4010,7 +4188,7 @@ svg .llms-animated-circle {
   display: inline-block;
   width: 100%;
   height: 99%;
-  padding: 0.6rem 0.6rem;
+  padding: .6rem .6rem;
   font-size: .9em;
   text-decoration: none;
   color: #FFF; }
@@ -4018,7 +4196,7 @@ svg .llms-animated-circle {
     .mainnav-menuitem, .mainnav > ul > li > a {
       font-size: .95em;
       border-left: 1px solid #FFF;
-      padding: 0.3rem 0.9rem 0.9rem; }
+      padding: .3rem .9rem .9rem; }
       .mainnav__home .mainnav-menuitem:hover, .mainnav__home .mainnav > ul > li > a:hover {
         background-image: linear-gradient(#D93F69 0%, #D93F69 90%, #FFF 90%); }
       .mainnav__academy .mainnav-menuitem:hover, .mainnav__academy .mainnav > ul > li > a:hover {
@@ -4032,7 +4210,7 @@ svg .llms-animated-circle {
   @media only screen and (min-width: 57rem) {
     .mainnav-menuitem, .mainnav > ul > li > a {
       font-size: 1.125em;
-      padding: 0.6rem 1rem 1rem; } }
+      padding: .6rem 1rem 1rem; } }
   @media only screen and (min-width: 50rem) {
     .mainnav-menuitem::before, .mainnav > ul > li > a::before {
       content: '';
@@ -4068,7 +4246,7 @@ svg .llms-animated-circle {
   border-top: 1px solid #FFF;
   background-color: #A4286A; }
   .sitenav--home .mainnav-menuitem, .sitenav--home .mainnav > ul > li > a {
-    padding: 0.3rem 0.9rem 0.9rem; }
+    padding: .3rem .9rem .9rem; }
     .sitenav--home .mainnav-menuitem::before, .sitenav--home .mainnav > ul > li > a::before {
       bottom: 1px; }
   .sitenav--home::before {
@@ -4124,7 +4302,7 @@ svg .llms-animated-circle {
     display: flex; }
   .subnav li {
     display: inline-block;
-    margin: 0.4rem 0.2rem 0.4rem 0;
+    margin: .4rem 0.2rem .4rem 0;
     padding: 0; }
     .subnav li:first-child a {
       border-left: none; }
@@ -4141,7 +4319,7 @@ svg .llms-animated-circle {
         display: block; } }
   .subnav > ul > li > a {
     display: inline-block;
-    padding: 0 0.85rem;
+    padding: 0 .85rem;
     margin: .5rem 0;
     font-size: .9em;
     text-decoration: none;
@@ -4163,7 +4341,7 @@ svg .llms-animated-circle {
   width: 70%;
   overflow: scroll;
   background-color: #FFF;
-  transition: right 0.1s linear; }
+  transition: right .1s linear; }
   .sitenav--offcanvas ul {
     display: block;
     width: auto; }
@@ -4201,6 +4379,46 @@ svg .llms-animated-circle {
     left: 0;
     z-index: 80;
     background-color: rgba(0, 0, 0, 0.5); } }
+
+.table--invite-overview {
+  text-align: left;
+  width: 100%;
+  font-family: "Merriweather", Georgia, serif; }
+  .table--invite-overview th, .table--invite-overview td {
+    border-left: 0;
+    border-right: 0;
+    padding-left: 0; }
+  .table--invite-overview tr:first-of-type th, .table--invite-overview tr:first-of-type td {
+    border-top: 0; }
+  .table--invite-overview thead th {
+    border-bottom: 1px solid #E6E6E6; }
+  .table--invite-overview .fa-check-square {
+    margin: 0 .75rem 0 0;
+    color: #77B227; }
+  .table--invite-overview .fa-arrow-circle-right {
+    color: #8C8C8C; }
+
+.manage-invites__form {
+  display: flex; }
+  .manage-invites__form label {
+    padding-right: 15px;
+    flex-grow: 100; }
+
+.manage-invites__add-email {
+  font-family: "Merriweather", Georgia, serif; }
+  .yoast_academy .manage-invites__add-email, .yoast_academy .manage-invites__add-email:hover, .yoast_academy .manage-invites__add-email:focus {
+    background: none;
+    color: #000; }
+  .manage-invites__add-email .fa {
+    color: #DCDCDC;
+    position: relative;
+    top: 4px;
+    font-size: 170%; }
+  .manage-invites__add-email:hover .fa, .manage-invites__add-email:focus .fa {
+    color: #CDCDCD; }
+
+.manage-invites__remaining {
+  color: #D93F69; }
 
 .media {
   margin-bottom: 1.88rem; }
@@ -4355,7 +4573,7 @@ svg .llms-animated-circle {
     padding: 0;
     margin: 0;
     width: 20%;
-    padding: 0.4rem 2rem 0 0;
+    padding: .4rem 2rem 0 0;
     border-left: none;
     background-color: transparent;
     overflow: hidden; }
@@ -4984,11 +5202,10 @@ a.promoblock {
       border-top: 1.8rem solid transparent;
       border-bottom: 1.8rem solid transparent; }
 
-.theme-home .arrowed-small::after,
-.arrowed-small.theme-home::after,
-.theme-home .arrowed-medium::after,
-.arrowed-medium.theme-home::after,
-.theme-home .arrowed::after,
+.theme-home .arrowed-small::after, .arrowed-small.theme-home::after, .theme-home
+.arrowed-medium::after,
+.arrowed-medium.theme-home::after, .theme-home
+.arrowed::after,
 .arrowed.theme-home::after {
   -webkit-filter: drop-shadow(1px 0 0 #D93F69);
   -moz-filter: drop-shadow(1px 0 0 #D93F69);
@@ -4996,11 +5213,10 @@ a.promoblock {
   -o-filter: drop-shadow(1px 0 0 #D93F69);
   filter: drop-shadow(1px 0 0 #D93F69); }
 
-.theme-academy .arrowed-small::after,
-.arrowed-small.theme-academy::after,
-.theme-academy .arrowed-medium::after,
-.arrowed-medium.theme-academy::after,
-.theme-academy .arrowed::after,
+.theme-academy .arrowed-small::after, .arrowed-small.theme-academy::after, .theme-academy
+.arrowed-medium::after,
+.arrowed-medium.theme-academy::after, .theme-academy
+.arrowed::after,
 .arrowed.theme-academy::after {
   -webkit-filter: drop-shadow(1px 0 0 #5D237A);
   -moz-filter: drop-shadow(1px 0 0 #5D237A);
@@ -5017,11 +5233,10 @@ a.promoblock {
   -o-filter: drop-shadow(1px 0 0 #A4286A);
   filter: drop-shadow(1px 0 0 #A4286A); }
 
-.theme-software .arrowed-small::after,
-.arrowed-small.theme-software::after,
-.theme-software .arrowed-medium::after,
-.arrowed-medium.theme-software::after,
-.theme-software .arrowed::after,
+.theme-software .arrowed-small::after, .arrowed-small.theme-software::after, .theme-software
+.arrowed-medium::after,
+.arrowed-medium.theme-software::after, .theme-software
+.arrowed::after,
 .arrowed.theme-software::after {
   -webkit-filter: drop-shadow(1px 0 0 #0075B3);
   -moz-filter: drop-shadow(1px 0 0 #0075B3);
@@ -5038,11 +5253,10 @@ a.promoblock {
   -o-filter: drop-shadow(1px 0 0 #009288);
   filter: drop-shadow(1px 0 0 #009288); }
 
-.theme-review .arrowed-small::after,
-.arrowed-small.theme-review::after,
-.theme-review .arrowed-medium::after,
-.arrowed-medium.theme-review::after,
-.theme-review .arrowed::after,
+.theme-review .arrowed-small::after, .arrowed-small.theme-review::after, .theme-review
+.arrowed-medium::after,
+.arrowed-medium.theme-review::after, .theme-review
+.arrowed::after,
 .arrowed.theme-review::after {
   -webkit-filter: drop-shadow(1px 0 0 #009288);
   -moz-filter: drop-shadow(1px 0 0 #009288);
@@ -5059,11 +5273,10 @@ a.promoblock {
   -o-filter: drop-shadow(1px 0 0 #77B227);
   filter: drop-shadow(1px 0 0 #77B227); }
 
-.theme-about .arrowed-small::after,
-.arrowed-small.theme-about::after,
-.theme-about .arrowed-medium::after,
-.arrowed-medium.theme-about::after,
-.theme-about .arrowed::after,
+.theme-about .arrowed-small::after, .arrowed-small.theme-about::after, .theme-about
+.arrowed-medium::after,
+.arrowed-medium.theme-about::after, .theme-about
+.arrowed::after,
 .arrowed.theme-about::after {
   -webkit-filter: drop-shadow(1px 0 0 #D93F69);
   -moz-filter: drop-shadow(1px 0 0 #D93F69);
@@ -5151,7 +5364,7 @@ a.promoblock {
     bottom: -5px;
     right: -7px;
     z-index: 1;
-    padding: 0 0.4em;
+    padding: 0 .4em;
     font-size: 10px;
     line-height: 1.2;
     color: #000;

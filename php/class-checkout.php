@@ -24,10 +24,10 @@ class Checkout {
 	}
 
 	/**
-	 * Check VAT number
+	 * Check a given VAT number with the europe VIES check
 	 *
-	 * @param string $country
-	 * @param string $vat_nr
+	 * @param string $country The country code to check with the VAT number.
+	 * @param string $vat_nr The VAT number to check.
 	 *
 	 * @return bool|null
 	 */
@@ -43,21 +43,21 @@ class Checkout {
 			$vat_nr = trim( substr( $vat_nr, strlen( $country ) ) );
 		}
 
-		// Do the remote request
-		$client = new \SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
-
 		try {
+			// Do the remote request.
+			$client = new \SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
+
 			$returnVat = $client->checkVat( array(
 				'countryCode' => $country,
-				'vatNumber'   => $vat_nr
+				'vatNumber'   => $vat_nr,
 			) );
-		} catch ( Exception $e ) {
+		} catch ( \Exception $e ) {
 			error_log( 'VIES API Error for ' . $country . ' - ' . $vat_nr . ': ' . $e->getMessage() );
 
 			return 2;
 		}
 
-		// Return the response
+		// Return the response.
 		if ( isset( $returnVat ) ) {
 			if ( true == $returnVat->valid ) {
 				return 1;
@@ -66,7 +66,7 @@ class Checkout {
 			}
 		}
 
-		// Return null if the service is down
+		// Return null if the service is down.
 		return 2;
 	}
 
@@ -80,46 +80,38 @@ class Checkout {
 	 * @todo ADD NONCES GODDAMNIT
 	 */
 	public function ajax_check_vat() {
-		if ( isset ( $_POST['country'] ) && isset ( $_POST['vat_nr'] ) ) {
-			if ( 1 === $this->check_vat( $_POST['country'], $_POST['vat_nr'] ) ) {
-				echo '1';
-				exit;
-			} elseif ( 0 === $this->check_vat( $_POST['country'], $_POST['vat_nr'] ) ) {
-				echo '0';
-				exit;
-			} elseif ( 2 === $this->check_vat( $_POST['country'], $_POST['vat_nr'] ) ) {
-				echo '2';
-				exit;
-			}
+		$result = 0;
+		if ( isset( $_POST['country'] ) && isset( $_POST['vat_nr'] ) ) {
+			$result = $this->check_vat( $_POST['country'], $_POST['vat_nr'] );
 		}
 
-		echo '0';
+		echo $result;
 		exit;
 	}
 
 	/**
 	 * Check for errors with out custom fields
 	 *
-	 * @param array $valid_data Unused
-	 * @param array $data
+	 * @param array $valid_data Unused.
+	 * @param array $data The data filled in by the customer.
 	 */
 	public function validate_btw_nr( $valid_data, $data ) {
-		if ( isset( $data['yst_btw'] ) && '' != $data['yst_btw'] ) {
+		if ( ! empty( $data['yst_btw'] ) ) {
 			$vat_response = $this->check_vat( $data['billing_country'], $data['yst_btw'] );
 
 			if ( 0 === $vat_response ) {
-				edd_set_error( 'yst_btw', __( 'VAT number incorrect.', 'yoast-theme' ) );
+				edd_set_error( 'yst_btw', __( 'We cannot verify this VAT number, this means you will have to pay VAT. Please make sure you\'ve entered the number correctly.', 'yoastcom' ) );
 			}
 			elseif ( 2 === $vat_response ) {
-				edd_set_error( 'yst_btw_unavailable', __( 'VAT number check not available.', 'yoast-theme' ) );
+				edd_set_error( 'yst_btw_unavailable', __( 'We cannot check if your VAT number is correct because the VAT checking system for the EU is currently down. We\'re sorry for the inconvenience. Please try again later.', 'yoastcom' ) );
 			}
 		}
 	}
 
 	/**
-	 * store the custom field data in the payment meta
+	 * Store the custom field data in the payment meta
 	 *
-	 * @param array $payment_meta
+	 * @param array $payment_meta The payment meta that will be saved in the database.
 	 *
 	 * @return array
 	 */
@@ -130,29 +122,28 @@ class Checkout {
 	}
 
 	/**
-	 * @param array $purchase_data
+	 * @param array $purchase_data The purchase data for the payment.
 	 *
 	 * @return array
 	 */
 	public function maybe_remove_tax( $purchase_data ) {
 
-		if ( isset ( $purchase_data['post_data']['yst_btw'] ) && '' != $purchase_data['post_data']['yst_btw'] ) {
+		// If we get to this point with a btw nr, we can assume it's correct (validate_btw_nr takes care of the validation).
+		if ( ! empty( $purchase_data['post_data']['yst_btw'] ) ) {
 
-			// If we get to this point with a btw nr, we can assume it's correct (validate_btw_nr takes care of the validation).
-
-			// Subtract all tax from total price
-			$purchase_data['price'] = $purchase_data['price'] - $purchase_data['tax'];
+			// Subtract tax from the total price.
+			$purchase_data['price'] = ( $purchase_data['price'] - $purchase_data['tax'] );
 			$purchase_data['tax']   = 0.00;
 
-			// Update cart
-			if ( isset( $purchase_data['cart_details'] ) && is_array( $purchase_data['cart_details'] ) && count( $purchase_data['cart_details'] ) > 0 ) {
+			// Update cart with new price information.
+			if ( ! empty( $purchase_data['cart_details'] ) && is_array( $purchase_data['cart_details'] ) ) {
 				foreach ( $purchase_data['cart_details'] as $item_key => $item_value ) {
 
-					// Subtract tax from cart item
-					$item_value['price'] = $item_value['price'] - $item_value['tax'];
+					// Subtract tax from the current cart item.
+					$item_value['price'] = ( $item_value['price'] - $item_value['tax'] );
 					$item_value['tax']   = 0.00;
 
-					// Set the new item
+					// Save the new item to the array.
 					$purchase_data['cart_details'][ $item_key ] = $item_value;
 
 				}
