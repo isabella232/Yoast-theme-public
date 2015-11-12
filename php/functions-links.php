@@ -53,6 +53,31 @@ function link_text_author_posts_or_find() {
 }
 
 /**
+ * The link text to link to an author's post archive or social media
+ *
+ * @return string
+ */
+function link_text_author_bio_or_find() {
+	$gender = get_the_author_meta( 'gender' );
+
+	switch ( $gender ) {
+		case 'Female':
+			$text = __( '%1$sRead all about %3$s%2$s or find her on ' );
+			break;
+
+		case 'Male':
+			$text = __( '%1$sRead all about %3$s%2$s or find him on ', 'yoastcom' );
+			break;
+
+		default:
+			$text = __( '%1$sRead all about %3$s%2$s or find them on ', 'yoastcom' );
+			break;
+	}
+
+	return $text;
+}
+
+/**
  * Return author image URL
  *
  * @return string
