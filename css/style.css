@@ -891,7 +891,7 @@ img {
   margin: 0.5rem 1rem 0.5rem 0; }
 
 .link--cta {
-  color: #EE7100; }
+  color: #DC5C04; }
 
 .link--light {
   color: #FFF; }
@@ -1909,16 +1909,16 @@ a.announcement {
 .bordered {
   border: 1px solid #E6E6E6;
   /* Explicit theming */ }
-  --fullwidth.promoblock, --fullwidth.promolink,
+  
   .bordered--fullwidth {
     border-left: none;
     border-right: none; }
-  --top.promoblock, --top.promolink,
+  
   .bordered--top {
     border-left: none;
     border-right: none;
     border-bottom: none; }
-  --bottom.promoblock, --bottom.promolink,
+  
   .bordered--bottom {
     border-left: none;
     border-right: none;
@@ -1967,24 +1967,24 @@ a.announcement {
     border-color: #A4286A; }
   .link.promoblock, .link.promolink,
   .bordered.link {
-    border-color: #EE7100; }
+    border-color: #DC5C04; }
     .link.promoblock::after, .link.promolink::after,
     .bordered.link::after {
-      -webkit-filter: drop-shadow(1px 0 0 #EE7100);
-      -moz-filter: drop-shadow(1px 0 0 #EE7100);
-      -ms-filter: drop-shadow(1px 0 0 #EE7100);
-      -o-filter: drop-shadow(1px 0 0 #EE7100);
-      filter: drop-shadow(1px 0 0 #EE7100); }
+      -webkit-filter: drop-shadow(1px 0 0 #DC5C04);
+      -moz-filter: drop-shadow(1px 0 0 #DC5C04);
+      -ms-filter: drop-shadow(1px 0 0 #DC5C04);
+      -o-filter: drop-shadow(1px 0 0 #DC5C04);
+      filter: drop-shadow(1px 0 0 #DC5C04); }
   .cta.promoblock, .cta.promolink,
   .bordered.cta {
-    border-color: #EE7100; }
+    border-color: #DC5C04; }
     .cta.promoblock::after, .cta.promolink::after,
     .bordered.cta::after {
-      -webkit-filter: drop-shadow(1px 0 0 #EE7100);
-      -moz-filter: drop-shadow(1px 0 0 #EE7100);
-      -ms-filter: drop-shadow(1px 0 0 #EE7100);
-      -o-filter: drop-shadow(1px 0 0 #EE7100);
-      filter: drop-shadow(1px 0 0 #EE7100); }
+      -webkit-filter: drop-shadow(1px 0 0 #DC5C04);
+      -moz-filter: drop-shadow(1px 0 0 #DC5C04);
+      -ms-filter: drop-shadow(1px 0 0 #DC5C04);
+      -o-filter: drop-shadow(1px 0 0 #DC5C04);
+      filter: drop-shadow(1px 0 0 #DC5C04); }
 
 @media only screen and (min-width: 63.25rem) {
   .boxes {
@@ -2189,8 +2189,8 @@ a.announcement {
   padding: 0.345em 1.5em 0.345em 1em;
   font-size: 1.1em;
   background-color: transparent;
-  background-color: #EE7100;
-  color: #EE7100;
+  background-color: #DC5C04;
+  color: #DC5C04;
   border: 0;
   text-decoration: none;
   cursor: pointer; }
@@ -2207,7 +2207,7 @@ a.announcement {
         height: 0;
         width: 0;
         border-right: 0;
-        border-left: 1.43rem solid #EE7100;
+        border-left: 1.43rem solid #DC5C04;
         border-top: 1.43rem solid transparent;
         border-bottom: 1.44rem solid transparent; }
       .button.left, .comment-respond input.left[type="submit"], .left.llms-button, .llms-return a, button.left {
@@ -2223,7 +2223,7 @@ a.announcement {
           height: 0;
           width: 0;
           border-left: 0;
-          border-right: 1.43rem solid #EE7100;
+          border-right: 1.43rem solid #DC5C04;
           border-top: 1.43rem solid transparent;
           border-bottom: 1.44rem solid transparent; } }
   .button .arrow, .comment-respond input[type="submit"] .arrow, .llms-button .arrow, .llms-return a .arrow, button .arrow {
@@ -2237,11 +2237,11 @@ a.announcement {
       content: none; }
   .button.default, .comment-respond input.default[type="submit"], .comment-respond input[type="submit"].llms-button, .llms-button, .llms-return a.default, .llms-return a.llms-button, button.default, button.llms-button {
     color: #FFF;
-    background-color: #EE7100; }
+    background-color: #DC5C04; }
     .button.default::after, .comment-respond input.default[type="submit"]::after, .comment-respond input[type="submit"].llms-button::after, .llms-button::after, .llms-return a.default::after, button.default::after, button.llms-button::after {
-      border-left-color: #EE7100; }
+      border-left-color: #DC5C04; }
     .button.default::before, .comment-respond input.default[type="submit"]::before, .comment-respond input[type="submit"].llms-button::before, .llms-button::before, .llms-return a.default::before, button.default::before, button.llms-button::before {
-      border-right-color: #EE7100; }
+      border-right-color: #DC5C04; }
     .button.default:hover, .comment-respond input.default[type="submit"]:hover, .comment-respond input[type="submit"].llms-button:hover, .llms-button:hover, .llms-return a.default:hover, .button.default a:focus, .comment-respond input.default[type="submit"] a:focus, .comment-respond input[type="submit"].llms-button a:focus, .llms-button a:focus, .llms-return a.default a:focus, .llms-return a.llms-button a:focus, button.default:hover, button.llms-button:hover, button.default a:focus, button.llms-button a:focus {
       background-color: #F58223;
       color: #FFF;
@@ -3437,7 +3437,7 @@ input.valid {
     position: fixed;
     top: 0;
     left: 0;
-    background: #efb0a5 url(./../images/banners/home-small.jpg) no-repeat 50% 50%/"cover"; }
+    background: #efb0a5 url(./../images/banners/home-small.jpg) no-repeat 50% 50%/cover; }
     @media only screen and (max-width: 50rem) {
       .full-banner--home {
         top: 4em; } }
@@ -3589,7 +3589,7 @@ hr + .fullfooter {
       border-radius: 10px;
       font-size: .6em;
       color: #FFF;
-      background-color: #EE7100; }
+      background-color: #DC5C04; }
       @media only screen and (min-width: 50rem) {
         .header-controls .cart .num-items {
           right: 16%; } }
@@ -3822,7 +3822,7 @@ hr {
 .llms-button {
   border-radius: 0; }
   .llms-button:hover {
-    background: #EE7100; }
+    background: #DC5C04; }
 
 .llms-lesson-preview .llms-lesson-complete i {
   color: green; }
@@ -4578,7 +4578,7 @@ svg .llms-animated-circle {
     background-color: transparent;
     overflow: hidden; }
     .mobile-search button:hover, .mobile-search button:focus {
-      color: #EE7100; }
+      color: #DC5C04; }
   .admin-bar .mobile-search {
     top: calc( 4em + 46px); }
     @media only screen and (min-width: 783px) {
@@ -4804,7 +4804,7 @@ svg .llms-animated-circle {
         margin-right: 1rem; } }
 
 .more__plug ~ .arrowed {
-  color: #EE7100; }
+  color: #DC5C04; }
 
 .package {
   position: relative;
@@ -4859,11 +4859,11 @@ svg .llms-animated-circle {
     display: none; }
 
 .package--cta {
-  border-color: #EE7100; }
+  border-color: #DC5C04; }
   .package--cta .package__title {
-    color: #EE7100; }
+    color: #DC5C04; }
   .package--cta .button, .package--cta .comment-respond input[type="submit"], .comment-respond .package--cta input[type="submit"], .package--cta .llms-button, .package--cta .llms-return a, .llms-return .package--cta a {
-    background-color: #EE7100; }
+    background-color: #DC5C04; }
 
 .pagination {
   border: 1px solid;
@@ -4999,9 +4999,9 @@ svg .llms-animated-circle {
   .promoblock h4, .promoblock .h4 {
     margin-bottom: 0.7rem; }
   .promoblock.link {
-    border-color: #EE7100; }
+    border-color: #DC5C04; }
     .promoblock.link a, .promoblock.link a:hover {
-      color: #EE7100; }
+      color: #DC5C04; }
   .promoblock--white {
     border-color: #FFF !important; }
   .promoblock.theme-academy a {
@@ -5683,7 +5683,7 @@ blockquote {
   color: #5D237A !important; }
 
 .color-cta {
-  color: #EE7100 !important; }
+  color: #DC5C04 !important; }
 
 .color-white {
   color: #FFF !important; }

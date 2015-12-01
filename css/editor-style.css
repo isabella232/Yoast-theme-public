@@ -873,7 +873,7 @@ img {
   margin: 0.5rem 1rem 0.5rem 0; }
 
 .link--cta {
-  color: #EE7100; }
+  color: #DC5C04; }
 
 .link--light {
   color: #FFF; }
@@ -1656,8 +1656,8 @@ thead th {
   padding: 0.345em 1.5em 0.345em 1em;
   font-size: 1.1em;
   background-color: transparent;
-  background-color: #EE7100;
-  color: #EE7100;
+  background-color: #DC5C04;
+  color: #DC5C04;
   border: 0;
   text-decoration: none;
   cursor: pointer; }
@@ -1674,7 +1674,7 @@ thead th {
         height: 0;
         width: 0;
         border-right: 0;
-        border-left: 1.43rem solid #EE7100;
+        border-left: 1.43rem solid #DC5C04;
         border-top: 1.43rem solid transparent;
         border-bottom: 1.44rem solid transparent; }
       .button.left, button.left {
@@ -1690,7 +1690,7 @@ thead th {
           height: 0;
           width: 0;
           border-left: 0;
-          border-right: 1.43rem solid #EE7100;
+          border-right: 1.43rem solid #DC5C04;
           border-top: 1.43rem solid transparent;
           border-bottom: 1.44rem solid transparent; } }
   .button .arrow, button .arrow {
@@ -1704,11 +1704,11 @@ thead th {
       content: none; }
   .button.default, button.default {
     color: #FFF;
-    background-color: #EE7100; }
+    background-color: #DC5C04; }
     .button.default::after, button.default::after {
-      border-left-color: #EE7100; }
+      border-left-color: #DC5C04; }
     .button.default::before, button.default::before {
-      border-right-color: #EE7100; }
+      border-right-color: #DC5C04; }
     .button.default:hover, .button.default a:focus, button.default:hover, button.default a:focus {
       background-color: #F58223;
       color: #FFF;
@@ -1890,7 +1890,7 @@ thead th {
   color: #5D237A !important; }
 
 .color-cta {
-  color: #EE7100 !important; }
+  color: #DC5C04 !important; }
 
 .color-white {
   color: #FFF !important; }
