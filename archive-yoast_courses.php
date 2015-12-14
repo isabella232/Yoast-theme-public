@@ -29,14 +29,6 @@ namespace Yoast\YoastCom\Theme;
 			<?php endif; ?>
 		<?php endwhile; ?>
 
-		<section class="announcement announcement--pointer-top fill fill--secondary">
-			<div class="row">
-				<p>
-					<a href="<?php echo esc_url( url_website_review() ); ?>" class="link--naked"><?php _e( 'Want to know how to improve your site? Order an SEO Website Review', 'yoastcom' ); ?> &raquo;</a>
-				</p>
-			</div>
-		</section>
-
 		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'announcement--pointer' ) ); ?>
 
 	</main>
