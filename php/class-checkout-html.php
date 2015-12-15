@@ -64,7 +64,10 @@ class Checkout_HTML {
 	public function hide_discount_field() {
 		$yst_edd_discount = filter_input( INPUT_COOKIE, 'yst_edd_discount' );
 
-		if ( ! $yst_edd_discount ) {
+		// Temporarily always show the discount in the checkout process.
+		$always_show_discount = true;
+
+		if ( ! $always_show_discount && ! $yst_edd_discount ) {
 			remove_action( 'edd_checkout_form_top', 'edd_discount_field', -1 );
 		}
 	}
