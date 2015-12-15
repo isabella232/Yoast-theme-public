@@ -5,48 +5,65 @@ if ( yst_skip_social() ) {
 	return;
 }
 
-$article_url = \WPSEO_Frontend::get_instance()->canonical( false );
-
 /**
- * Build a Twitter share URL
+ * Create and output a share URL
  *
- * @param string $article_url
+ * @param string $type
  */
-function yst_build_twitter_share_url( $article_url ) {
-	$title = \WPSEO_Meta::get_value( 'twitter-title', get_the_ID() );
-	if ( ! is_string( $title ) || $title === '' ) {
-		$title = get_the_title();
+function yst_build_share_url( $type ) {
+	$article_url = \WPSEO_Frontend::get_instance()->canonical( false );
+
+	$og          = new \WPSEO_OpenGraph();
+	$title       = html_entity_decode( $og->og_title( false ) );
+	$description = html_entity_decode( $og->description( false ) );
+
+	$url = '';
+
+	switch ( $type ) {
+		case 'fb':
+			$og_image = new \WPSEO_OpenGraph_Image();
+			$images   = $og_image->get_images();
+
+			$url = 'http://www.facebook.com/sharer/sharer.php?s=100';
+
+			$url .= '&p[url]=' . urlencode( $article_url );
+			$url .= '&p[title]=' . urlencode( $title );
+			$url .= '&p[images][0]=' . urlencode( $images[0] );
+			$url .= '&p[summary]=' . urlencode( $description );
+			$url .= '&u=' . urlencode( $article_url );
+			$url .= '&t=' . urlencode( $title );
+
+			break;
+
+		case 'linkedin':
+			$url = 'http://www.linkedin.com/shareArticle?mini=true&source=Yoast&summary=' . $description . '&title=' . urlencode( $title ) . '&url=' . urlencode( $article_url );
+			break;
+
+		case 'pinterest':
+			$image_id = get_post_thumbnail_id( get_the_ID() );
+			if ( $image_id ) {
+				$img = wp_get_attachment_image_src( $image_id, 'original', false );
+				$img = $img[0];
+			} else {
+				$og_image = new \WPSEO_OpenGraph_Image();
+				$images   = $og_image->get_images();
+				$img      = $images[0];
+			}
+			$url = 'https://www.pinterest.com/pin/create/button/?url=' . urlencode( $article_url ) . '&media=' . urlencode( $img ) . '&description=' . urlencode( $description );
+			break;
+
+		case 'twitter':
+			$tw_title = \WPSEO_Meta::get_value( 'twitter-title', get_the_ID() );
+			if ( ! is_string( $tw_title ) || $tw_title === '' ) {
+				$tw_title = $title;
+			}
+			$author = get_the_author_meta( 'twitter' );
+			if ( ! is_string( $author ) || $author === '' ) {
+				$author = 'jdevalk';
+			}
+			$url = 'https://twitter.com/intent/tweet?url=' . urlencode( $article_url ) . '&via=yoast&related=' . $author . '&text=' . urlencode( $tw_title );
+			break;
 	}
-	$author = get_the_author_meta( 'twitter' );
-	if ( ! is_string( $author ) || $author === '' ) {
-		$author = 'jdevalk';
-	}
-	$url    = 'https://twitter.com/intent/tweet?url=' . urlencode( $article_url ) . '&via=yoast&related=' . $author . '&text=' . urlencode( $title );
-
-	echo esc_attr( $url );
-}
-
-/**
- * Build a Facebook share URL
- *
- * @param string $article_url
- */
-function yst_build_fb_share_url( $article_url ) {
-	$og_image = new \WPSEO_OpenGraph_Image();
-	$images   = $og_image->get_images();
-
-	$og = new \WPSEO_OpenGraph();
-
-	$url = 'http://www.facebook.com/sharer/sharer.php?s=100';
-
-	$url .= '&p[url]=' . rawurlencode( $article_url );
-	$url .= '&p[title]=' . rawurlencode( $og->og_title( false ) );
-	$url .= '&p[images][0]=' . rawurlencode( $images[0] );
-	$url .= '&p[summary]=' . rawurlencode( $og->description( false ) );
-	$url .= '&u=' . rawurlencode( $article_url );
-	$url .= '&t=' . rawurlencode( $og->og_title( false ) );
-
-	$url = str_replace( '%20', '+', $url );
 
 	echo esc_attr( $url );
 }
@@ -55,14 +72,27 @@ function yst_build_fb_share_url( $article_url ) {
 ?>
 <div id="social-share">
 	<div class="socialbox pop">
-		<a rel="nofollow" href="<?php yst_build_fb_share_url( $article_url ); ?>" data-name="facebook" data-action="share"><i
+		<a rel="nofollow" href="<?php yst_build_share_url( 'fb' ); ?>" data-name="facebook"
+		   data-action="share"><i
 				class="fa fa-facebook-square text-icon--facebook"></i>Share</a>
 	</div>
 
 	<div class="socialbox pop">
 		<a rel="nofollow" data-name="twitter" data-action="tweet"
-		   href="<?php yst_build_twitter_share_url( $article_url ); ?>"><i
+		   href="<?php yst_build_share_url( 'twitter' ); ?>"><i
 				class="fa fa-twitter-square text-icon--twitter"></i>Tweet</a>
+	</div>
+
+	<div class="socialbox pop">
+		<a rel="nofollow" data-name="linkedin" data-action="share"
+		   href="<?php yst_build_share_url( 'linkedin' ); ?>"><i
+				class="fa fa-linkedin-square text-icon--linkedin"></i>Share</a>
+	</div>
+
+	<div class="socialbox pop">
+		<a rel="nofollow" data-name="pinterest" data-action="pin"
+		   href="<?php yst_build_share_url( 'pinterest' ); ?>"><i
+				class="fa fa-pinterest-square text-icon--pinterest"></i>Pin it</a>
 	</div>
 
 	<div class="socialbox print">
