@@ -17,7 +17,11 @@ function yst_build_twitter_share_url( $article_url ) {
 	if ( ! is_string( $title ) || $title === '' ) {
 		$title = get_the_title();
 	}
-	$url = 'https://twitter.com/intent/tweet?url=' . urlencode( $article_url ) . '&via=yoast&related=jdevalk&text=' . urlencode( $title );
+	$author = get_the_author_meta( 'twitter' );
+	if ( ! is_string( $author ) || $author === '' ) {
+		$author = 'jdevalk';
+	}
+	$url    = 'https://twitter.com/intent/tweet?url=' . urlencode( $article_url ) . '&via=yoast&related=' . $author . '&text=' . urlencode( $title );
 
 	echo esc_attr( $url );
 }
