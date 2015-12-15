@@ -16,14 +16,14 @@ jQuery( document ).ready( function( $ ) {
 		$( '.socialbox.pop a' ).click( function( e ) {
 			e.preventDefault();
 			if (typeof __gaTracker != "undefined") {
-				__gaTracker( 'send', 'social', $( this ).data( 'name' ) );
+				__gaTracker( 'send', 'social', $( this ).data( 'name' ), $(this ).data('action') );
 			}
 			yst_scl_popitup( $( this ).attr( 'href' ), $( this ).data( 'name' ) );
 		} );
 		$( '.socialbox.print a' ).click( function( e ) {
 			e.preventDefault();
 			if (typeof __gaTracker != "undefined") {
-				__gaTracker('send','social',$( this ).data( 'name' ));
+				__gaTracker('send','social',$( this ).data( 'name' ), $(this ).data('action') );
 			}
 			window.print();
 		} );

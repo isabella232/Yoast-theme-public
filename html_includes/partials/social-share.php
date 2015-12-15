@@ -55,17 +55,17 @@ function yst_build_fb_share_url( $article_url ) {
 ?>
 <div id="social-share">
 	<div class="socialbox pop">
-		<a rel="nofollow" href="<?php yst_build_fb_share_url( $article_url ); ?>" data-name="facebook"><i
+		<a rel="nofollow" href="<?php yst_build_fb_share_url( $article_url ); ?>" data-name="facebook" data-action="share"><i
 				class="fa fa-facebook-square text-icon--facebook"></i>Share</a>
 	</div>
 
 	<div class="socialbox pop">
-		<a rel="nofollow" data-name="twitter"
+		<a rel="nofollow" data-name="twitter" data-action="tweet"
 		   href="<?php yst_build_twitter_share_url( $article_url ); ?>"><i
 				class="fa fa-twitter-square text-icon--twitter"></i>Tweet</a>
 	</div>
 
 	<div class="socialbox print">
-		<a rel="nofollow" href="" data-name="print"><i class="fa fa-print"></i>Print</a>
+		<a rel="nofollow" href="" data-name="print" data-action="print"><i class="fa fa-print"></i>Print</a>
 	</div>
 </div>
