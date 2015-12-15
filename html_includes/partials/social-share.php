@@ -5,31 +5,67 @@ if ( yst_skip_social() ) {
 	return;
 }
 
+$article_url = \WPSEO_Frontend::get_instance()->canonical( false );
+
+/**
+ * Build a Twitter share URL
+ *
+ * @param string $article_url
+ */
+function yst_build_twitter_share_url( $article_url ) {
+	$title = \WPSEO_Meta::get_value( 'twitter-title', get_the_ID() );
+	if ( ! is_string( $title ) || $title === '' ) {
+		$title = get_the_title();
+	}
+	$author = get_the_author_meta( 'twitter' );
+	if ( ! is_string( $author ) || $author === '' ) {
+		$author = 'jdevalk';
+	}
+	$url    = 'https://twitter.com/intent/tweet?url=' . urlencode( $article_url ) . '&via=yoast&related=' . $author . '&text=' . urlencode( $title );
+
+	echo esc_attr( $url );
+}
+
+/**
+ * Build a Facebook share URL
+ *
+ * @param string $article_url
+ */
+function yst_build_fb_share_url( $article_url ) {
+	$og_image = new \WPSEO_OpenGraph_Image();
+	$images   = $og_image->get_images();
+
+	$og = new \WPSEO_OpenGraph();
+
+	$url = 'http://www.facebook.com/sharer/sharer.php?s=100';
+
+	$url .= '&p[url]=' . rawurlencode( $article_url );
+	$url .= '&p[title]=' . rawurlencode( $og->og_title( false ) );
+	$url .= '&p[images][0]=' . rawurlencode( $images[0] );
+	$url .= '&p[summary]=' . rawurlencode( $og->description( false ) );
+	$url .= '&u=' . rawurlencode( $article_url );
+	$url .= '&t=' . rawurlencode( $og->og_title( false ) );
+
+	$url = str_replace( '%20', '+', $url );
+
+	echo esc_attr( $url );
+}
+
+
 ?>
 <div id="social-share">
-	<?php if ( isset( $GLOBALS['yoast_pinterest_image'] ) ) : ?>
-		<div class="socialbox" style="margin-top: 38px">
-			<a rel="nofollow" href="<?php echo esc_url( url_share_pinterest() ); ?>" data-pin-do="buttonPin" data-pin-config="above"
-			   data-pin-color="red"
-			   data-pin-height="28"><img class="noborder" src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" alt="Pin it"/></a>
-		</div>
-	<?php endif; ?>
-
-	<div class="socialbox">
-		<div class="fb-share-button" data-href="<?php echo esc_url( get_permalink() ); ?>" data-type="box_count"></div>
+	<div class="socialbox pop">
+		<a rel="nofollow" href="<?php yst_build_fb_share_url( $article_url ); ?>" data-name="facebook" data-action="share"><i
+				class="fa fa-facebook-square text-icon--facebook"></i>Share</a>
 	</div>
 
-	<div class="socialbox">
-		<a rel="nofollow" href="http://twitter.com/share" data-url="<?php echo esc_url( get_permalink() ); ?>"
-		   data-text="<?php echo esc_attr( get_the_title() ); ?>"
-		   data-via="<?php echo esc_attr( get_twitter_share_via() ); ?>"
-		   data-related="<?php echo esc_attr( get_twitter_share_related() ); ?>"
-		   data-count="vertical"
-		   data-lang="en"
-		   class="twitter-share-button"><?php _e( 'Tweet', 'yoastcom' ); ?></a>
+	<div class="socialbox pop">
+		<a rel="nofollow" data-name="twitter" data-action="tweet"
+		   href="<?php yst_build_twitter_share_url( $article_url ); ?>"><i
+				class="fa fa-twitter-square text-icon--twitter"></i>Tweet</a>
 	</div>
 
-	<div class="socialbox">
-		<a class="print" rel="nofollow" href="<?php echo esc_url( url_share_print() ); ?>" onclick="window.print();return false;"><i class="fa fa-print"></i><span class="screen-reader-text"><?php _e( 'Print', 'yoastcom' ); ?></span></a>
+	<div class="socialbox print">
+		<a rel="nofollow" href="" data-name="print" data-action="print"><i class="fa fa-print"></i>Print</a>
 	</div>
 </div>
