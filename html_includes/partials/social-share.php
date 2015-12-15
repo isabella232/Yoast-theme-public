@@ -52,6 +52,10 @@ function yst_build_share_url( $type ) {
 			$url = 'https://www.pinterest.com/pin/create/button/?url=' . urlencode( $article_url ) . '&media=' . urlencode( $img ) . '&description=' . urlencode( $description );
 			break;
 
+		case 'print':
+			$url = 'http://www.printfriendly.com/print?url=' . urlencode( $article_url );
+			break;
+
 		case 'twitter':
 			$tw_title = \WPSEO_Meta::get_value( 'twitter-title', get_the_ID() );
 			if ( ! is_string( $tw_title ) || $tw_title === '' ) {
@@ -71,31 +75,33 @@ function yst_build_share_url( $type ) {
 
 ?>
 <div id="social-share">
-	<div class="socialbox pop">
-		<a rel="nofollow" href="<?php yst_build_share_url( 'fb' ); ?>" data-name="facebook"
-		   data-action="share"><i
+	<div class="socialbox">
+		<a rel="nofollow" target="_blank" data-name="facebook" data-action="share"
+		   href="<?php yst_build_share_url( 'fb' ); ?>"><i
 				class="fa fa-facebook-square text-icon--facebook"></i>Share</a>
 	</div>
 
-	<div class="socialbox pop">
-		<a rel="nofollow" data-name="twitter" data-action="tweet"
+	<div class="socialbox">
+		<a rel="nofollow" target="_blank" data-name="twitter" data-action="tweet"
 		   href="<?php yst_build_share_url( 'twitter' ); ?>"><i
 				class="fa fa-twitter-square text-icon--twitter"></i>Tweet</a>
 	</div>
 
-	<div class="socialbox pop">
-		<a rel="nofollow" data-name="linkedin" data-action="share"
+	<div class="socialbox">
+		<a rel="nofollow" target="_blank" data-name="linkedin" data-action="share"
 		   href="<?php yst_build_share_url( 'linkedin' ); ?>"><i
 				class="fa fa-linkedin-square text-icon--linkedin"></i>Share</a>
 	</div>
 
-	<div class="socialbox pop">
-		<a rel="nofollow" data-name="pinterest" data-action="pin"
+	<div class="socialbox">
+		<a rel="nofollow" target="_blank" data-name="pinterest" data-action="pin"
 		   href="<?php yst_build_share_url( 'pinterest' ); ?>"><i
 				class="fa fa-pinterest-square text-icon--pinterest"></i>Pin it</a>
 	</div>
 
-	<div class="socialbox print">
-		<a rel="nofollow" href="" data-name="print" data-action="print"><i class="fa fa-print"></i>Print</a>
+	<div class="socialbox">
+		<a rel="nofollow" target="_blank" data-name="print" data-action="print"
+		   href="<?php yst_build_share_url( 'print' ); ?>"><i
+				class="fa fa-print"></i>Print</a>
 	</div>
 </div>

@@ -1,34 +1,15 @@
-function yst_scl_popitup( url, name ) {
-	newwindow = window.open( url, name, 'height=550,width=500' );
-	if ( window.focus ) {
-		newwindow.focus()
-	}
-	return false;
-}
-
 jQuery( document ).ready( function( $ ) {
-		// Load PrintFriendly
-		var e = document.createElement( 'script' );
-		e.type = "text/javascript";
-		e.async = true;
-		e.src = 'https://pf-cdn.printfriendly.com/ssl/main.js';
-		document.getElementsByTagName( 'head' )[ 0 ].appendChild( e );
-		$( '.socialbox.pop a' ).click( function( e ) {
-			e.preventDefault();
-			if (typeof __gaTracker != "undefined") {
-				__gaTracker( 'send', 'social', $( this ).data( 'name' ), $(this ).data('action') );
-			}
-			yst_scl_popitup( $( this ).attr( 'href' ), $( this ).data( 'name' ) );
-		} );
-		$( '.socialbox.print a' ).click( function( e ) {
-			e.preventDefault();
-			if (typeof __gaTracker != "undefined") {
-				__gaTracker('send','social',$( this ).data( 'name' ), $(this ).data('action') );
-			}
-			window.print();
-		} );
-	}
-);
+	$( '.socialbox a' ).click( function( e ) {
+		e.preventDefault();
+		if ( typeof __gaTracker !== "undefined" ) {
+			__gaTracker( 'send', 'social', $( this ).data( 'name' ), $( this ).data( 'action' ) );
+		}
+		ystWindow = window.open( $( this ).attr( 'href' ), $( this ).data( 'name' ), 'height=550,width=500' );
+		if ( window.focus ) {
+			ystWindow.focus();
+		}
+	});
+});
 
 // YouTube tracking
 (function( document, window, config ) {
