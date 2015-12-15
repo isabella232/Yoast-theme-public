@@ -23,6 +23,8 @@ class Text_Changes {
 		add_action( 'wp_editor_expand', array( $this, 'reinstate_editor_for_posts_page' ) );
 
 		add_filter( 'edd_payment_receipt_products_title', array( $this, 'edd_payment_receipt_products_title' ) );
+
+		add_filter( 'oembed_result', array( $this, 'add_youtube_container' ), 10, 3 );
 	}
 
 	/**
@@ -105,5 +107,23 @@ class Text_Changes {
 		$title .= ' <small>(incl. VAT)</small>';
 
 		return $title;
+	}
+
+	/**
+	 * Adds responsive video container to youtube auto embed
+	 *
+	 * @param string $html The current youtube embed HTML.
+	 * @param string $url The URL that has been auto embedded.
+	 * @param array  $args The auto embed arguments.
+	 *
+	 * @return string
+	 */
+	public function add_youtube_container( $html, $url, $args ) {
+
+		if ( -1 !== strpos( $url, 'youtube' ) ) {
+			$html = '<div class="videowrapper">' . $html . '</div>';
+		}
+
+		return $html;
 	}
 }
