@@ -28,6 +28,12 @@
       color: desaturate(lighten(#3B5998, 20), 30);
     }
   }
+  &--pinterest {
+    color: #BD081C;
+    &:hover, &:focus {
+      color: desaturate(lighten(#BD081C, 20), 30);
+    }
+  }
 
 }
 
