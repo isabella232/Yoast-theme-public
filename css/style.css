@@ -3705,6 +3705,10 @@ hr {
     color: #3B5998; }
     .text-icon--facebook:hover, .text-icon--facebook:focus {
       color: #8f98aa; }
+  .text-icon--pinterest {
+    color: #BD081C; }
+    .text-icon--pinterest:hover, .text-icon--pinterest:focus {
+      color: #d75463; }
 
 .island, .comment-respond, .llms-lesson-button-wrapper {
   padding-top: 1.88rem; }
@@ -4123,11 +4127,6 @@ svg .llms-animated-circle {
     background-color: #77B227; }
   .mainnav .mainnav__about a::before {
     background-color: #D93F69; }
-  .mainnav .mainnav__sale a {
-    background-color: #009288; }
-    .mainnav .mainnav__sale a::before {
-      border-top-color: #009288;
-      background-color: #009288; }
   .theme-academy .mainnav .mainnav__academy {
     background-color: #5D237A; }
     @media only screen and (max-width: 50rem) {
@@ -4186,20 +4185,6 @@ svg .llms-animated-circle {
       .theme-about .mainnav .mainnav__about .mainnav-menuitem:hover, .theme-about .mainnav .mainnav__about .mainnav-menuitem:focus, .theme-about .mainnav .mainnav__about > a:hover, .theme-about .mainnav .mainnav__about > a:focus {
         background-image: none; }
       .theme-about .mainnav .mainnav__about .mainnav-menuitem::before, .theme-about .mainnav .mainnav__about > a::before {
-        content: none; }
-  .theme-sale .mainnav .mainnav__sale {
-    background-color: #5D237A; }
-    @media only screen and (max-width: 50rem) {
-      .theme-sale .mainnav .mainnav__sale {
-        background-color: #DCDCDC; }
-        .theme-sale .mainnav .mainnav__sale a.mainnav-menuitem, .theme-sale .mainnav .mainnav__sale > a {
-          background-color: #DCDCDC !important;
-          color: #646464; } }
-    .theme-sale .mainnav .mainnav__sale .mainnav-menuitem, .theme-sale .mainnav .mainnav__sale > a {
-      background-color: #D93F69; }
-      .theme-sale .mainnav .mainnav__sale .mainnav-menuitem:hover, .theme-sale .mainnav .mainnav__sale .mainnav-menuitem:focus, .theme-sale .mainnav .mainnav__sale > a:hover, .theme-sale .mainnav .mainnav__sale > a:focus {
-        background-image: none; }
-      .theme-sale .mainnav .mainnav__sale .mainnav-menuitem::before, .theme-sale .mainnav .mainnav__sale > a::before {
         content: none; }
 
 .mainnav-menuitem, .mainnav > ul > li > a {
@@ -5610,7 +5595,8 @@ blockquote {
   padding-bottom: 56.25%;
   /* 16:9 */
   padding-top: 25px;
-  height: 0; }
+  height: 0;
+  margin: 20px 0; }
   .videowrapper iframe {
     position: absolute;
     top: 0;
