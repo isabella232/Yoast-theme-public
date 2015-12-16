@@ -13,7 +13,7 @@ if ( ! isset( $template_args['class'] ) ) {
 				<?php if ( isset( $template_args['icon'] ) ) { ?>
 				<i class="fa fa-<?php echo esc_attr( $template_args['icon'] ); ?>"></i>
 				<?php } ?>
-				<?php echo esc_html( $template_args['text'] ); ?>
+				<?php echo str_replace( '---br---', '<br />', esc_html( str_replace( array( '<br />', '<br/>', '<br>', '&lt;br&gt;', '&lt;br/&gt;', '&lt;br /&gt;' ), '---br---', $template_args['text'] ) ) ); ?>
 			</a>
 		</p>
 	</div>
