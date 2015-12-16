@@ -236,28 +236,6 @@ function url_website_review() {
 }
 
 /**
- * Returns the URL to share the current page on pinterest
- */
-function url_share_pinterest() {
-	return sprintf(
-		'http://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s',
-		urlencode( get_permalink() ),
-		$GLOBALS['yoast_pinterest_image'],
-		urlencode( get_the_title() )
-	);
-}
-
-/**
- * Returns the URL to share the current page with the printer
- */
-function url_share_print() {
-	return sprintf(
-		'//www.printfriendly.com/print/?url=%s',
-		urlencode( get_permalink() )
-	);
-}
-
-/**
  * Returns the URL of the ebooks archive
  */
 function url_ebooks_archive() {

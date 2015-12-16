@@ -1,11 +1,12 @@
 // https://github.com/gruntjs/grunt-contrib-uglify
 module.exports = {
 	options: {
-		preserveComments: false
+		preserveComments: false,
+		sourceMap: true,
 	},
 	dist: {
 		options: {
-			banner: '/* -- Yoast.js -- */ \n\n',
+			banner: '/* -- Yoast.js -- */\n',
 		},
 		src: [
 			'js/src/*.js'

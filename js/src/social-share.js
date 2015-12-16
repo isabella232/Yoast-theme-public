@@ -2,11 +2,16 @@ jQuery( document ).ready( function( $ ) {
 	$( '.socialbox a' ).click( function( e ) {
 		e.preventDefault();
 		if ( typeof __gaTracker !== "undefined" ) {
-			__gaTracker( 'send', 'social', $( this ).data( 'name' ), $( this ).data( 'action' ) );
+			__gaTracker( 'send', 'social', $( this ).data( 'name' ), $( this ).data( 'action' ), document.querySelector( "link[rel='canonical']" ).getAttribute( "href" ) );
 		}
 		ystWindow = window.open( $( this ).attr( 'href' ), $( this ).data( 'name' ), 'height=550,width=500' );
 		if ( window.focus ) {
 			ystWindow.focus();
+		}
+	});
+	$( '.social.promoblock a' ).on( 'mousedown', function() {
+		if ( typeof __gaTracker !== "undefined" ) {
+			__gaTracker( 'send', 'social', $( this ).data( 'name' ), $( this ).data( 'action' ), $( this ).attr( 'href' ) );
 		}
 	});
 });
