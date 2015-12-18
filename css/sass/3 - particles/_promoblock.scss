@@ -156,8 +156,8 @@ a.promoblock {
     color: $scheme-about-primary;
   }
 
-  body.theme-about .promoblock a {
-    color: $color-green-blue;
+  body.theme-about .promoblock a.color-cta {
+    color: $color-green-blue !important;
   }
 
   body.theme-academy [class *= "promoblock--icon"]::before {
