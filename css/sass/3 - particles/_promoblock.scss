@@ -152,8 +152,12 @@ a.promoblock {
     line-height: 1;
   }
 
-  body.theme-about [class *= "promoblock--icon"]::before, body.theme-about .promoblock a {
-    color: $scheme-about-primary
+  body.theme-about [class *= "promoblock--icon"]::before {
+    color: $scheme-about-primary;
+  }
+
+  body.theme-about .promoblock a {
+    color: $color-green-blue;
   }
 
   body.theme-academy [class *= "promoblock--icon"]::before {
