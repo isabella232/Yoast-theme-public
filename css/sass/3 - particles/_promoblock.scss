@@ -152,6 +152,10 @@ a.promoblock {
     line-height: 1;
   }
 
+  body.theme-about [class *= "promoblock--icon"]::before, body.theme-about .promoblock a {
+    color: $scheme-about-primary
+  }
+
   body.theme-academy [class *= "promoblock--icon"]::before {
     color: $scheme-academy-primary;
   }
@@ -164,10 +168,6 @@ a.promoblock {
     content: "\f19d";
   }
 
-  .promoblock--icon-pencil::before {
-    content: "\f040";
-  }
-
   .promoblock--icon-blog::before {
     content: "\f1ea";
   }
@@ -176,20 +176,36 @@ a.promoblock {
     content: "\f02d";
   }
 
-  .promoblock--icon-video::before {
-    content: "\f008";
+  .promoblock--icon-calendar::before {
+    content: "\f073";
   }
 
-  .promoblock--icon-wordpress::before {
-    content: "\f19a";
+  .promoblock--icon-check::before {
+    content: "\f046";
   }
 
   .promoblock--icon-drupal::before {
     content: "\f1a9";
   }
 
-  .promoblock--icon-calendar::before {
-    content: "\f073";
+  .promoblock--icon-gears::before {
+    content: "\f085";
+  }
+
+  .promoblock--icon-pencil::before {
+    content: "\f040";
+  }
+
+  .promoblock--icon-plug::before {
+    content: "\f1e6";
+  }
+
+  .promoblock--icon-video::before {
+    content: "\f008";
+  }
+
+  .promoblock--icon-wordpress::before {
+    content: "\f19a";
   }
 
 }

@@ -5088,26 +5088,34 @@ a.promoblock {
     right: 0.47rem;
     font-size: 2.2rem;
     line-height: 1; }
+  body.theme-about [class*="promoblock--icon"]::before, body.theme-about .promoblock a {
+    color: #D93F69; }
   body.theme-academy [class*="promoblock--icon"]::before {
     color: #5D237A; }
   body.theme-software [class*="promoblock--icon"]::before {
     color: #0075B3; }
   .promoblock--icon-academy::before {
     content: "\f19d"; }
-  .promoblock--icon-pencil::before {
-    content: "\f040"; }
   .promoblock--icon-blog::before {
     content: "\f1ea"; }
   .promoblock--icon-book::before {
     content: "\f02d"; }
+  .promoblock--icon-calendar::before {
+    content: "\f073"; }
+  .promoblock--icon-check::before {
+    content: "\f046"; }
+  .promoblock--icon-drupal::before {
+    content: "\f1a9"; }
+  .promoblock--icon-gears::before {
+    content: "\f085"; }
+  .promoblock--icon-pencil::before {
+    content: "\f040"; }
+  .promoblock--icon-plug::before {
+    content: "\f1e6"; }
   .promoblock--icon-video::before {
     content: "\f008"; }
   .promoblock--icon-wordpress::before {
-    content: "\f19a"; }
-  .promoblock--icon-drupal::before {
-    content: "\f1a9"; }
-  .promoblock--icon-calendar::before {
-    content: "\f073"; } }
+    content: "\f19a"; } }
 
 @media only screen and (max-width: 30rem) {
   .arrowed-small {
