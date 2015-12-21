@@ -82,7 +82,7 @@ $certificate = new LLMS_Certificate;
 	</div>
 	<?php if ( $is_public ) : ?>
 		<section class="certificate-cta row iceberg">
-			<a href="https://yoast.com/courses/"
+			<a href="https://yoast.com/academy/courses/"
 			   class="button default"><?php _e( 'View all our courses on yoast.com', 'yoastcom' ); ?></a>
 		</section>
 	<?php else : ?>
