@@ -12,6 +12,7 @@ if ( yst_skip_social() ) {
  */
 function yst_build_share_url( $type ) {
 	$article_url = \WPSEO_Frontend::get_instance()->canonical( false );
+	$article_url .= '#utm_source=' . $type . '&utm_medium=social&utm_campaign=social_buttons';
 
 	$og          = new \WPSEO_OpenGraph();
 	$title       = html_entity_decode( $og->og_title( false ) );
@@ -20,7 +21,7 @@ function yst_build_share_url( $type ) {
 	$url = '';
 
 	switch ( $type ) {
-		case 'fb':
+		case 'facebook':
 			$og_image = new \WPSEO_OpenGraph_Image();
 			$images   = $og_image->get_images();
 
@@ -77,7 +78,7 @@ function yst_build_share_url( $type ) {
 <div id="social-share">
 	<div class="socialbox">
 		<a rel="nofollow" target="_blank" data-name="facebook" data-action="share"
-		   href="<?php yst_build_share_url( 'fb' ); ?>"><i
+		   href="<?php yst_build_share_url( 'facebook' ); ?>"><i
 				class="fa fa-facebook-square text-icon--facebook"></i>Share</a>
 	</div>
 
