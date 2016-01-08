@@ -354,7 +354,7 @@ class Shortcodes {
 			return '';
 		}
 
-		return '<p class="readmore">Keep reading: &lsquo;<a title="' . esc_attr( $content ) . '" href="' . esc_attr( $args['url'] ) . '">' . strip_tags( $content ) . '</a>&rsquo;</p>';
+		return '<p class="readmore"><a title="\' . esc_attr( $content ) . \'" href="\' . esc_attr( $args[\'url\'] ) . \'">Keep reading: &lsquo;' . strip_tags( $content ) . '&rsquo;</a></p>';
 	}
 
 	/**
