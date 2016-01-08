@@ -20,6 +20,7 @@ class Shortcodes {
 		add_shortcode( 'testimonial', array( $this, 'testimonial' ) );
 		add_shortcode( 'announcement', array( $this, 'announcement' ) );
 		add_shortcode( 'pdf-button', array( $this, 'pdf_button' ) );
+		add_shortcode( 'readmore', array( $this, 'read_more_link' ) );
 
 		add_shortcode( 'ebook-banner', array( $this, 'ebook_banner' ) );
 
@@ -218,14 +219,14 @@ class Shortcodes {
 		if ( ! isset( $atts['book'] ) ) {
 			$atts['book'] = 'content-seo';
 		}
-		switch( $atts['book'] ) {
+		switch ( $atts['book'] ) {
 			case 'content-seo':
 				$atts['text'] = 'Want to learn more about content-writing, keyword research, and creating a good site structure? Get our Content SEO eBook &raquo;';
-				$atts['url'] = 'https://yoast.com/ebooks/content-seo/';
+				$atts['url']  = 'https://yoast.com/ebooks/content-seo/';
 				break;
 			case 'ux-conversion':
 				$atts['text'] = 'Want to improve your site\'s user experience and conversion? Get our eBook: UX & Conversion from a Holistic SEO perspective &raquo;';
-				$atts['url'] = 'https://yoast.com/ebooks/ux-conversion-seo/';
+				$atts['url']  = 'https://yoast.com/ebooks/ux-conversion-seo/';
 				break;
 		}
 
@@ -275,11 +276,11 @@ class Shortcodes {
 	public function banner( $atts ) {
 
 		$args = wp_parse_args( $atts, array(
-			'text'      => '',
-			'url'       => '',
-			'icon'      => '',
-			'class'     => 'announcement--pointer',
-			'return'    => true,
+			'text'   => '',
+			'url'    => '',
+			'icon'   => '',
+			'class'  => 'announcement--pointer',
+			'return' => true,
 		) );
 
 		return $this->get_break_out_content() . get_template_part( 'html_includes/partials/announcement', $args ) . $this->get_content_restart();
@@ -312,8 +313,7 @@ class Shortcodes {
 
 		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
 			$break_out_content = '</section>';
-		}
-		elseif ( is_page() || is_singular() ) {
+		} elseif ( is_page() || is_singular() ) {
 			$break_out_content = '</div>';
 		}
 
@@ -330,12 +330,31 @@ class Shortcodes {
 
 		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
 			$restart_content = '<section class="content">';
-		}
-		elseif ( is_page() || is_singular() ) {
+		} elseif ( is_page() || is_singular() ) {
 			$restart_content = '<div class="content">';
 		}
 
 		return $restart_content;
+	}
+
+	/**
+	 * Handler for the read more link shortcode
+	 *
+	 * @param array $atts The shortcode attributes
+	 * @param string $content
+	 *
+	 * @return string The content to output on the page.
+	 */
+	public function read_more_link( $atts, $content ) {
+		$args = wp_parse_args( $atts, array(
+			'url'  => '',
+		) );
+
+		if ( $args['url'] === '' || $content === '' ) {
+			return '';
+		}
+
+		return '<p class="readmore">Keep reading: &lsquo;<a title="' . esc_attr( $content ) . '" href="' . esc_attr( $args['url'] ) . '">' . strip_tags( $content ) . '</a>&rsquo;</p>';
 	}
 
 	/**
@@ -348,8 +367,7 @@ class Shortcodes {
 
 		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
 			$break_out_content = '</section></div>';
-		}
-		elseif ( is_singular() ) {
+		} elseif ( is_singular() ) {
 			$break_out_content = '</div></article>';
 		}
 
@@ -364,11 +382,11 @@ class Shortcodes {
 
 		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
 			$restart_content = '<div class="row island iceberg"><section class="content">';
-		}
-		elseif ( is_singular() ) {
+		} elseif ( is_singular() ) {
 			$restart_content = '<article class="row"><div class="content">';
 		}
 
 		return $restart_content;
 	}
+
 }

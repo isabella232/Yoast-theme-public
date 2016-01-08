@@ -14,6 +14,11 @@ jQuery( document ).ready( function( $ ) {
 			__gaTracker( 'send', 'social', $( this ).data( 'name' ), $( this ).data( 'action' ), $( this ).attr( 'href' ) );
 		}
 	});
+	$( '.readmore a' ).on( 'mousedown', function() {
+		if ( typeof __gaTracker !== "undefined" ) {
+			__gaTracker( 'send', 'read-more', $( this ).attr( 'title' ) );
+		}
+	});
 });
 
 // YouTube tracking

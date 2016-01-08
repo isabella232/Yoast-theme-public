@@ -41,6 +41,10 @@
     }
   }
 
+  p.readmore a {
+    color: $color-secondary;
+  }
+
   .arrowed, .arrowed-medium, .arrowed-small {
     border-color: $color-primary;
   }

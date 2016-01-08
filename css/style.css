@@ -989,6 +989,8 @@ article, .article {
 
 .content p, .content ul {
   font-family: "Merriweather", Georgia, serif; }
+  .content p.readmore, .content ul.readmore {
+    font-size: 1.1em; }
 
 p, .p {
   margin-top: 0;
@@ -1131,6 +1133,9 @@ thead th {
     .theme-home a.more:hover, .theme-home a.more:focus {
       color: #A4286A;
       text-decoration: none; }
+
+.theme-home p.readmore a {
+  color: #A4286A; }
 
 .theme-home .arrowed, .theme-home .arrowed-medium, .theme-home .arrowed-small {
   border-color: #D93F69; }
@@ -1280,6 +1285,9 @@ thead th {
       color: #A4286A;
       text-decoration: none; }
 
+.theme-about p.readmore a {
+  color: #A4286A; }
+
 .theme-about .arrowed, .theme-about .arrowed-medium, .theme-about .arrowed-small {
   border-color: #D93F69; }
 
@@ -1427,6 +1435,9 @@ thead th {
     .theme-academy a.more:hover, .theme-academy a.more:focus {
       color: #A4286A;
       text-decoration: none; }
+
+.theme-academy p.readmore a {
+  color: #A4286A; }
 
 .theme-academy .arrowed, .theme-academy .arrowed-medium, .theme-academy .arrowed-small {
   border-color: #5D237A; }
@@ -1576,6 +1587,9 @@ thead th {
       color: #77B227;
       text-decoration: none; }
 
+.theme-review p.readmore a {
+  color: #77B227; }
+
 .theme-review .arrowed, .theme-review .arrowed-medium, .theme-review .arrowed-small {
   border-color: #009288; }
 
@@ -1723,6 +1737,9 @@ thead th {
     .theme-software a.more:hover, .theme-software a.more:focus {
       color: #009288;
       text-decoration: none; }
+
+.theme-software p.readmore a {
+  color: #009288; }
 
 .theme-software .arrowed, .theme-software .arrowed-medium, .theme-software .arrowed-small {
   border-color: #0075B3; }
@@ -5088,8 +5105,10 @@ a.promoblock {
     right: 0.47rem;
     font-size: 2.2rem;
     line-height: 1; }
-  body.theme-about [class*="promoblock--icon"]::before, body.theme-about .promoblock a {
+  body.theme-about [class*="promoblock--icon"]::before {
     color: #D93F69; }
+  body.theme-about .promoblock a.color-cta {
+    color: #009288 !important; }
   body.theme-academy [class*="promoblock--icon"]::before {
     color: #5D237A; }
   body.theme-software [class*="promoblock--icon"]::before {
