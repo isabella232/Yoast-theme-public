@@ -340,21 +340,39 @@ class Shortcodes {
 	/**
 	 * Handler for the read more link shortcode
 	 *
-	 * @param array $atts The shortcode attributes
+	 * @param array  $atts The shortcode attributes
 	 * @param string $content
 	 *
 	 * @return string The content to output on the page.
 	 */
 	public function read_more_link( $atts, $content ) {
 		$args = wp_parse_args( $atts, array(
-			'url'  => '',
+			'url'    => '',
+			'prefix' => '',
 		) );
 
 		if ( $args['url'] === '' || $content === '' ) {
 			return '';
 		}
 
-		return '<p class="readmore"><a title="\' . esc_attr( $content ) . \'" href="\' . esc_attr( $args[\'url\'] ) . \'">Keep reading: &lsquo;' . strip_tags( $content ) . '&rsquo;</a></p>';
+		if ( $args['prefix'] === '' ) {
+			global $readmore_counter;
+			if ( ! isset( $readmore_counter ) || $readmore_counter > 2 ) {
+				$readmore_counter = 0;
+			}
+
+			$prefixes       = array(
+				'Read more',
+				'Keep reading',
+				'Read on',
+				'Keep on reading',
+			);
+			$args['prefix'] = $prefixes[ $readmore_counter ];
+
+			$readmore_counter ++;
+		}
+
+		return '<p class="readmore"><a title="' . esc_attr( $content ) . '" href="' . esc_attr( $args['url'] ) . '">' . $args['prefix'] . ': &lsquo;' . strip_tags( $content ) . '&rsquo; &raquo;</a></p>';
 	}
 
 	/**
