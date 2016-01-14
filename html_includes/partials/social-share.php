@@ -22,7 +22,7 @@ function yst_build_share_url( $type ) {
 
 	switch ( $type ) {
 		case 'facebook':
-			$og_image = new \WPSEO_OpenGraph_Image();
+			$og_image = new \WPSEO_OpenGraph_Image( \WPSEO_Options::get_all() );
 			$images   = $og_image->get_images();
 
 			$url = 'http://www.facebook.com/sharer/sharer.php?s=100';
@@ -46,7 +46,7 @@ function yst_build_share_url( $type ) {
 				$img = wp_get_attachment_image_src( $image_id, 'original', false );
 				$img = $img[0];
 			} else {
-				$og_image = new \WPSEO_OpenGraph_Image();
+				$og_image = new \WPSEO_OpenGraph_Image( \WPSEO_Options::get_all() );
 				$images   = $og_image->get_images();
 				$img      = $images[0];
 			}
