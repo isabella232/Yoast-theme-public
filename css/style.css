@@ -2711,7 +2711,7 @@ a.announcement {
     margin-bottom: 1.88rem; }
   .entry-comments .depth-1 > .bd {
     min-height: 6.5em; }
-  .entry-comments .byuser > .bd {
+  .entry-comments .bypostauthor > .bd {
     min-height: 5.7em; }
   .entry-comments cite a {
     text-decoration: underline; }
@@ -2745,9 +2745,9 @@ a.announcement {
   .comment-list li:last-of-type {
     border: 0; }
 
-.byuser > .media > .img {
+.bypostauthor > .media > .img {
   position: relative; }
-  .byuser > .media > .img::before {
+  .bypostauthor > .media > .img::before {
     content: "Post author";
     position: absolute;
     left: 0;
@@ -2759,14 +2759,14 @@ a.announcement {
     width: 100%;
     display: block;
     line-height: 1rem; }
-  .byuser > .media > .img img {
+  .bypostauthor > .media > .img img {
     margin-top: 1.3125rem; }
 
-.byuser > .media .comment-content,
-.byuser > .media .comment-author {
+.bypostauthor > .media .comment-content,
+.bypostauthor > .media .comment-author {
   color: #5D237A; }
 
-.byuser.depth-1 > .img::before {
+.bypostauthor.depth-1 > .img::before {
   width: 100px; }
 
 .comment-respond label {

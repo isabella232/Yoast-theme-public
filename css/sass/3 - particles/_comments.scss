@@ -15,7 +15,7 @@
 	.depth-1 > .bd{
 		min-height: 6.5em;
 	}
-	.byuser > .bd{
+	.bypostauthor > .bd{
 		min-height: 5.7em;
 	}
 
@@ -64,7 +64,7 @@
 }
 
 // comments by one of the authors
-.byuser {
+.bypostauthor {
 	> .media > .img {
 		position: relative;
 		&::before { 
