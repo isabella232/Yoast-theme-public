@@ -120,7 +120,7 @@ class Text_Changes {
 	 */
 	public function add_youtube_container( $html, $url, $args ) {
 
-		if ( -1 !== strpos( $url, 'youtube' ) ) {
+		if ( false !== strpos( $url, 'youtube' ) ) {
 			$html = '<div class="videowrapper">' . $html . '</div>';
 		}
 
