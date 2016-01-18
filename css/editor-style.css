@@ -1945,6 +1945,9 @@ a.color-about--tertiary:hover, a.color-about--tertiary:focus, button.color-about
 a.color-white:hover, a.color-white:focus, button.color-white:hover, button.color-white:focus, input.color-white:hover, input.color-white:focus {
   color: white !important; }
 
+.wp-embedded-content {
+  max-width: 100% !important; }
+
 .pull-left {
   float: left; }
 
