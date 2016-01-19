@@ -63,6 +63,13 @@ class Query {
 	 * @param \WP_Query $query
 	 */
 	private function search_filter( $query ) {
+		/**
+		 * No filtering in admin search requests.
+		 */
+		if ( is_admin() ) {
+			return;
+		}
+
 		$post_types = array( 'post', 'page', 'yoast_plugins', 'yoast_ebooks', 'yoast_dev_article' );
 
 		if ( isset( $_GET['post_type'] ) && in_array( $_GET['post_type'], $post_types ) ) {
