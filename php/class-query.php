@@ -122,5 +122,4 @@ class Query {
 			$query->set( 'meta_value', 'on' );
 		}
 	}
-
 }

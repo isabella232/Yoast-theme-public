@@ -111,6 +111,3 @@ $html .= '</div>';
 if (get_option('lifterlms_course_display_outline') === 'yes') {
 	echo $html;
 }
-
-?>
-
