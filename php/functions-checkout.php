@@ -36,6 +36,7 @@ function the_gateway_image( $gateway ) {
 
 	switch ( $gateway['admin_label'] ) {
 
+		case 'PayPal Express':
 		case 'PayPal Standard':
 			$image = <<<'HTML'
 				<img class="edd_payment__method" alt="PayPal" src="%1$s/Paypal_90x24_x2.png" width="90" height="24"/>
