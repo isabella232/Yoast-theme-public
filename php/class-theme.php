@@ -92,7 +92,7 @@ class Theme {
 
 		$this->register_asset( 'style', 'yoast-com', 'css/style.min.css', array() );
 
-		$this->register_asset( 'script', 'yoast-com', 'js/yoast.js', array('jquery') );
+		$this->register_asset( 'script', 'yoast-com', 'js/yoast.js', array( 'jquery' ) );
 		$this->register_asset( 'script', 'yoast-com-checkout', 'js/checkout.min.js', array(
 			'jquery',
 			'chosen',
