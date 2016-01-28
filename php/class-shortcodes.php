@@ -17,6 +17,7 @@ class Shortcodes {
 		add_shortcode( 'plugin-stats', array( $this, 'plugin_stats' ) );
 		add_shortcode( 'yst_review_box', array( $this, 'review_box' ) );
 		add_shortcode( 'sidebar-content', array( $this, 'sidebar_content' ) );
+		add_shortcode( 'aside', array( $this, 'sidebar_content' ) );
 		add_shortcode( 'testimonial', array( $this, 'testimonial' ) );
 		add_shortcode( 'announcement', array( $this, 'announcement' ) );
 		add_shortcode( 'pdf-button', array( $this, 'pdf_button' ) );
@@ -185,9 +186,16 @@ class Shortcodes {
 	 * @return string
 	 */
 	public function sidebar_content( $atts, $content = null ) {
+		$atts = wp_parse_args( $atts, array(
+			'id'    => '',
+			'title' => false,
+		) );
 
 		$out = $this->get_break_out_body();
-		$out .= '<section class="extra">';
+		$out .= '<section class="alignright extra" id="' . $atts['id'] . '">';
+		if ( $atts['title'] ) {
+			$out .= '<h4>' . $atts['title'] . '</h4>';
+		}
 		if ( ! is_null( $content ) ) {
 			$content = trim( $content );
 		}
@@ -372,7 +380,7 @@ class Shortcodes {
 			$readmore_counter ++;
 		}
 
-		return '<p class="readmore"><a title="' . esc_attr( $content ) . '" href="' . esc_attr( $args['url'] ) . '">' . $args['prefix'] . ': &lsquo;' . strip_tags( $content ) . '&rsquo; &raquo;</a></p>';
+		return '<p class="readmore"><a title="' . esc_attr( $content ) . '" data-prefix="' . esc_attr( $args['prefix'] ) . '" href="' . esc_attr( $args['url'] ) . '">' . $args['prefix'] . ': &lsquo;' . strip_tags( $content ) . '&rsquo; &raquo;</a></p>';
 	}
 
 	/**
