@@ -28,7 +28,7 @@ class Shortcodes {
 		// Deprecated shortcodes.
 		add_shortcode( 'box', array( $this, 'deprecate_box' ) );
 		add_shortcode( 'download_button', array( $this, 'deprecated_download_button' ) );
-		add_shortcode( 'support', array( $this, 'deprecate_support' ) );
+		add_shortcode( 'support', array( $this, 'support' ) );
 
 		add_shortcode( 'llms_take_quiz', array( $this, 'llms_complete_lesson' ) );
 	}
@@ -48,8 +48,7 @@ class Shortcodes {
 	}
 
 	/**
-	 * Handler for the support shortcode, outputs something that is completely buildable using the WordPress admin so it
-	 * doesn't require a shortcode anymore. With this shortcode you used to be able to make a grid of boxes with content
+	 * Handler for the support shortcode. With this shortcode you used to be able to make a grid of boxes with content
 	 * in them.
 	 *
 	 * @param array  $args    The shortcode arguments.
@@ -57,7 +56,7 @@ class Shortcodes {
 	 *
 	 * @return string HTML to output.
 	 */
-	public function deprecate_support( $args, $content ) {
+	public function support( $args, $content ) {
 
 		$class = '';
 		if ( isset( $args['class'] ) ) {
@@ -69,7 +68,7 @@ class Shortcodes {
 			$name = $args['name'];
 		}
 
-		return get_template_part( 'html_includes/shortcodes/deprecate-support', array(
+		return get_template_part( 'html_includes/shortcodes/support', array(
 			'return'  => true,
 			'class'   => $class,
 			'name'    => $name,
