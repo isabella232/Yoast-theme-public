@@ -29,7 +29,7 @@ if ( isset( $template_args['class'] ) ) {
 	</a>
 	<a class="fa fa-youtube-square" data-name="youtube" data-action="view" target="_blank" rel="external" href="https://www.youtube.com/yoast">
 		<span>YouTube</span>
-		<?php output_social_counter( 'youtube_subscribes' ); ?>
+		<?php output_social_counter( 'youtube_subs' ); ?>
 	</a>
 	<a class="fa fa-rss-square" data-name="rss" data-action="view" target="_blank" rel="alternate" href="https://yoast.com/feed/">
 		<span>RSS Feed</span>
