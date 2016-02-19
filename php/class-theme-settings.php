@@ -64,7 +64,7 @@ class Theme_Settings
      */
     public function add_options_page()
     {
-        $this->options_page = add_theme_page($this->title, __('Settings', 'yoastcom'), 'manage_options', $this->key, array(
+        $this->options_page = add_theme_page($this->title, __('Settings', 'yoastcom'), 'edit_posts', $this->key, array(
             $this,
             'admin_page_display',
         ));
@@ -128,7 +128,7 @@ class Theme_Settings
                 'default' => get_legacy_option($option, 'child-settings'),
             ));
         }
-        
+
     }
 
     /**
