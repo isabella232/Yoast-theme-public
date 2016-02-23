@@ -241,20 +241,20 @@
 		color: $color-black;
 	}
 
-	button {
+	button, a.button {
 		background-color: $color-pink;
 		color: $color-white;
 		width: 90%;
 		margin-bottom: 15px;
 	}
-	button::after {
+	button::after, a.button::after {
 		border-left-color: $color-pink;
 	}
 
-	button:hover {
+	button:hover, a.button:hover {
 		background-color: $color-pink-hover;
 	}
-	button:hover::after {
+	button:hover::after, a.button:hover::after {
 		border-left-color: $color-pink-hover;
 	}
 }
