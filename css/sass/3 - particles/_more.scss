@@ -140,6 +140,12 @@
 		@include vendor(align-self, center);
 	}
 
+	.more__holder.arrowed .more__link {
+		max-width: 40%;
+		line-height: 1.4em;
+		text-align: right;
+	}
+
 	.more__superlink {
 		font-weight: 300;
 		margin-top: 0.3em;
