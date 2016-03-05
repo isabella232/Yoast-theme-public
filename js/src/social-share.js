@@ -16,7 +16,7 @@ jQuery( document ).ready( function( $ ) {
 	});
 	$( '.readmore a' ).on( 'mousedown', function() {
 		if ( typeof __gaTracker !== "undefined" ) {
-			__gaTracker( 'send', 'event', 'read-more', $( this ).attr( 'title' ) );
+			__gaTracker( 'send', 'event', 'read-more', $( this ).attr( 'title' ), $( this ).data( 'prefix' ) );
 		}
 	});
 });
