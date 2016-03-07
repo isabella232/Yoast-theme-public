@@ -2196,19 +2196,19 @@ a.announcement {
 .supportbox p {
   color: #000; }
 
-.supportbox button {
+.supportbox button, .supportbox a.button, .supportbox a.llms-button, .supportbox .llms-return a, .llms-return .supportbox a {
   background-color: #D93F69;
   color: #FFF;
   width: 90%;
   margin-bottom: 15px; }
 
-.supportbox button::after {
+.supportbox button::after, .supportbox a.button::after, .supportbox a.llms-button::after, .supportbox .llms-return a::after, .llms-return .supportbox a::after {
   border-left-color: #D93F69; }
 
-.supportbox button:hover {
+.supportbox button:hover, .supportbox a.button:hover, .supportbox a.llms-button:hover, .supportbox .llms-return a:hover, .llms-return .supportbox a:hover {
   background-color: #d42a59; }
 
-.supportbox button:hover::after {
+.supportbox button:hover::after, .supportbox a.button:hover::after, .supportbox a.llms-button:hover::after, .supportbox .llms-return a:hover::after, .llms-return .supportbox a:hover::after {
   border-left-color: #d42a59; }
 
 .breadcrumb {
