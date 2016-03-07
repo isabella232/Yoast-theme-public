@@ -4811,16 +4811,15 @@ svg .llms-animated-circle {
     height: 55px;
     margin-right: 1rem; }
   .more__link {
+    max-width: 40%;
+    line-height: 1.4em;
+    text-align: right;
     font-weight: 400;
     -webkit-align-self: center;
     -moz-align-self: center;
     -ms-align-self: center;
     -o-align-self: center;
     align-self: center; }
-  .more__holder.arrowed .more__link {
-    max-width: 40%;
-    line-height: 1.4em;
-    text-align: right; }
   .more__superlink {
     font-weight: 300;
     margin-top: 0.3em; }
