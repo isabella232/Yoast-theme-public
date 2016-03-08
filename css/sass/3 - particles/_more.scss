@@ -136,6 +136,9 @@
 	}
 
 	.more__link {
+		max-width: 40%;
+		line-height: 1.4em;
+		text-align: right;
 		font-weight: 400;
 		@include vendor(align-self, center);
 	}
