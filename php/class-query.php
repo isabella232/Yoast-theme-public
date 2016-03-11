@@ -46,7 +46,7 @@ class Query {
 			$this->search_filter( $query );
 		}
 
-		if ( $query->is_post_type_archive( 'yoast_ebooks' ) ) {
+		if ( ! is_admin() && $query->is_post_type_archive( 'yoast_ebooks' ) ) {
 			$this->ebooks_filter( $query );
 		}
 	}
