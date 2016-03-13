@@ -54,6 +54,7 @@ class Theme {
 		add_action( 'init', array( $shortcodes, 'add_shortcodes' ) );
 
 		$this->color = new Color_Scheme();
+		$this->extra_head = new Extra_Head();
 
 		$this->excerpt = new Excerpt_Manager();
 		$this->excerpt->add_hooks();
