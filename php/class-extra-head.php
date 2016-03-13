@@ -76,7 +76,7 @@ class Extra_Head {
 	 *
 	 * @return bool            (Modified) Whether metabox should be displayed or not.
 	 */
-	function cmb_show_meta_to_chosen_roles( $display, $meta_box ) {
+	public function cmb_show_meta_to_chosen_roles( $display, $meta_box ) {
 		if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
 			return $display;
 		}
