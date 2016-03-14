@@ -106,11 +106,19 @@ class Query {
 				'compare' => 'NOT EXISTS',
 			),
 			array(
-				'key'     => 'is_excluded',
-				'value'   => 'on',
-				'compare' => '!='
-			),
+				'relation' => 'OR',
+				array(
+					'key'     => 'is_excluded',
+					'value'   => 'on',
+					'compare' => '!='
+				),
+				array(
+					'key'     => 'is_excluded',
+					'compare' => 'NOT EXISTS'
+				)
+			)
 		);
+
 		$query->set( 'meta_query', $meta_query );
 		$query->set( 'orderby', 'menu_order' );
 		$query->set( 'order', 'ASC' );
