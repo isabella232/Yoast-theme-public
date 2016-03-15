@@ -17,8 +17,8 @@
 /**
  * Settings, variables and tools.
  */
-@import "0 - settings/all",
-        "0 - tools/mixins";
+@import "0-settings/all",
+        "0-tools/mixins";
 
 /*------------------------------------*\
     #GENERIC
@@ -27,7 +27,7 @@
  * These are far reaching styles that affect and underpin every element on the
  * page, e.g. `* {}`.
  */
-@import "1 - generic/all";
+@import "1-generic/all";
 
 /*------------------------------------*\
     #BASE
@@ -36,7 +36,7 @@
  * These are base HTML elements, things with no classes on them, e.g. `h1 {}`,
  * `blockquote {}`.
  */
-@import "2 - base/all";
+@import "2-base/all";
 
 /*------------------------------------*\
     #PARTICLES
@@ -45,7 +45,7 @@
  * These are your components and modules; things like buttons, accordions,
  * carousels, etc.
  */
-@import "3 - particles/all";
+@import "3-particles/all";
 
 /*------------------------------------*\
     #TRUMPS
@@ -54,4 +54,4 @@
  * These are helper classes and overrides that should take precedence over all
  * other styles, e.g. `.float--left {}`.
  */
-@import "9 - trumps/all";
+@import "9-trumps/all";
