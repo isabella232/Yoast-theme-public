@@ -10,20 +10,21 @@ class Shortcodes {
 	 * Adds the themes shortcodes
 	 */
 	public function add_shortcodes() {
+		add_shortcode( 'announcement', array( $this, 'announcement' ) );
+		add_shortcode( 'aside', array( $this, 'sidebar_content' ) );
 		add_shortcode( 'banner', array( $this, 'banner' ) );
 		add_shortcode( 'bundle', array( $this, 'bundle' ) );
+		add_shortcode( 'ebook-banner', array( $this, 'ebook_banner' ) );
+		add_shortcode( 'featured-image', array( $this, 'featured_image' ) );
+		add_shortcode( 'featured-img', array( $this, 'featured_image' ) );
+		add_shortcode( 'pdf-button', array( $this, 'pdf_button' ) );
 		add_shortcode( 'plugin-info', array( $this, 'plugin_info' ) );
 		add_shortcode( 'plugin-cta', array( $this, 'plugin_cta' ) );
 		add_shortcode( 'plugin-stats', array( $this, 'plugin_stats' ) );
-		add_shortcode( 'yst_review_box', array( $this, 'review_box' ) );
-		add_shortcode( 'sidebar-content', array( $this, 'sidebar_content' ) );
-		add_shortcode( 'aside', array( $this, 'sidebar_content' ) );
-		add_shortcode( 'testimonial', array( $this, 'testimonial' ) );
-		add_shortcode( 'announcement', array( $this, 'announcement' ) );
-		add_shortcode( 'pdf-button', array( $this, 'pdf_button' ) );
 		add_shortcode( 'readmore', array( $this, 'read_more_link' ) );
-
-		add_shortcode( 'ebook-banner', array( $this, 'ebook_banner' ) );
+		add_shortcode( 'sidebar-content', array( $this, 'sidebar_content' ) );
+		add_shortcode( 'testimonial', array( $this, 'testimonial' ) );
+		add_shortcode( 'yst_review_box', array( $this, 'review_box' ) );
 
 		// Deprecated shortcodes.
 		add_shortcode( 'box', array( $this, 'deprecate_box' ) );
@@ -45,6 +46,19 @@ class Shortcodes {
 	 */
 	public function deprecated_download_button() {
 		return '<!-- The "download_button" shortcode is deprecated -->';
+	}
+
+	/**
+	 * Place the featured image at the shortcode location.
+	 *
+	 * @return string
+	 */
+	public function featured_image() {
+		if ( has_post_thumbnail() ) {
+			return get_the_post_thumbnail();
+		}
+
+		return '';
 	}
 
 	/**
