@@ -10,8 +10,5 @@
             "name": "Team Yoast",
             "email": "suppor@yoast.com"
         }
-    ],
-    "extra": {
-        "installer-name": "yoast-v5"
-    }
+    ]
 }
