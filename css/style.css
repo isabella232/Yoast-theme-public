@@ -2515,6 +2515,9 @@ a.announcement {
   bottom: 0.5em;
   right: 0; }
 
+#edd_payment_mode_select {
+  font-family: "Open Sans", Arial, sans-serif; }
+
 .checkout ul {
   margin-bottom: 0; }
 
@@ -2644,7 +2647,8 @@ a.announcement {
 
 #edd_purchase_form .checkout--payment-option {
   float: left;
-  margin-right: 8px; }
+  margin-right: 8px;
+  color: #8c8c8c; }
   #edd_purchase_form .checkout--payment-option .edd-gateway-option-selected, #edd_purchase_form .checkout--payment-option:active, #edd_purchase_form .checkout--payment-option:hover {
     color: #0075B3; }
   #edd_purchase_form .checkout--payment-option .edd-gateway {
