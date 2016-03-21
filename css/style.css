@@ -2521,6 +2521,30 @@ a.announcement {
     padding-top: 0;
     border-top: none; }
 
+.checkout .checkout--price-total,
+.checkout .checkout--price-vat,
+.checkout .checkout--price-subtotal {
+  text-align: right;
+  margin-right: 15px;
+  color: #777; }
+
+.checkout .checkout--price-total {
+  color: #555;
+  font-weight: bold; }
+
+.checkout .hr__after-tax {
+  border-color: #ddd; }
+
+.checkout .checkout--total {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1em; }
+
+.checkout .checkout-item--icon {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 1rem; }
+
 .checkout .checkout__cancel {
   text-decoration: none;
   color: #646464;
@@ -2594,6 +2618,11 @@ a.announcement {
 
 #edd_purchase_form input.error {
   border: 1px solid #E23132; }
+
+#edd_purchase_form .checkout-payment--title {
+  font-weight: bold;
+  font-size: 1em;
+  color: #555; }
 
 #edd_purchase_form #edd_agree_to_terms-error {
   background: none;

@@ -13,6 +13,35 @@
     }
   }
 
+  .checkout--price-total,
+  .checkout--price-vat,
+  .checkout--price-subtotal {
+    text-align: right;
+    margin-right: 15px;
+    color: #777;
+  }
+
+  .checkout--price-total {
+    color: #555;
+    font-weight: bold;
+  }
+
+  .hr__after-tax {
+    border-color: #ddd;
+  }
+
+  .checkout--total {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1em;
+  }
+
+  .checkout-item--icon {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 1rem;
+  }
+
   .checkout__cancel {
     text-decoration: none;
     color: $color-grey-text;
@@ -135,6 +164,12 @@
 
   input.error {
     border: 1px solid $color-error;
+  }
+
+  .checkout-payment--title {
+    font-weight: bold;
+    font-size: 1em;
+    color: #555;
   }
 
   #edd_agree_to_terms-error {

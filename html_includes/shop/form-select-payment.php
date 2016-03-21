@@ -9,9 +9,9 @@ namespace Yoast\YoastCom\Theme;
 	<fieldset id="edd_payment_mode_select">
 		<div class="row iceberg">
 			<div class="island grid">
-				<div class="two-seventh">
-					<p><?php _e( 'How do you want to pay?', 'yoastcom' ); ?></p>
-				</div>
+
+				<div class="checkout-payment--title"><?php _e( 'How do you want to pay?', 'yoastcom' ); ?></div>
+
 				<div class="three-seventh">
 					<fieldset class="iceberg">
 						<?php $gateways = edd_get_enabled_payment_gateways( true ); ?>
@@ -24,6 +24,14 @@ namespace Yoast\YoastCom\Theme;
 
 								<?php echo esc_html( $gateway['checkout_label'] ); ?>
 
+								//// Font Awesome - Credit card
+								// credit card types
+								
+								//// Pay Pal
+								
+								//// Bank Transfer
+								
+								
 								<?php the_gateway_image( $gateway ); ?>
 							</label>
 						<?php endforeach; ?>
@@ -33,7 +41,7 @@ namespace Yoast\YoastCom\Theme;
 					<input type="hidden" name="edd_action" value="gateway_select" />
 					<input type="hidden" name="page_id" value="<?php the_ID(); ?>" />
 					<button type="submit" name="gateway_submit" value="test123" id="edd_next_button" class="edd-submit button default small">
-						<?php _e( 'Enter payment details', 'yoastcom' ); ?> &raquo;
+						<?php _e( 'Continue', 'yoastcom' ); ?> &raquo;
 					</button>
 				</div>
 			</div>

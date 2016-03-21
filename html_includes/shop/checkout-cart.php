@@ -57,7 +57,7 @@ namespace Yoast\YoastCom\Theme;
 	<?php if ( edd_use_taxes() && cart_has_tax() ) : ?>
 		<div class="row iceberg--small">
 			<div class="grid">
-				<div class="three-seventh offset-three-seventh small-four-fifth"><?php _e( 'Subtotal', 'yoastcom' ); ?></div>
+				<div class="three-seventh offset-three-seventh small-four-fifth checkout--price-subtotal"><?php _e( 'Subtotal', 'yoastcom' ); ?></div>
 				<div class="one-seventh small-one-fifth edd_cart_subtotal_amount">
 					<?php echo esc_html( edd_currency_filter( edd_format_amount( edd_get_cart_subtotal() - edd_get_cart_discounted_amount() ) ) ); ?>
 				</div>
@@ -67,7 +67,7 @@ namespace Yoast\YoastCom\Theme;
 		<?php if ( ! edd_prices_show_tax_on_checkout() ) : ?>
 			<div class="row iceberg--small">
 				<div class="grid">
-					<div class="three-seventh offset-three-seventh small-four-fifth">
+					<div class="three-seventh offset-three-seventh small-four-fifth checkout--price-vat">
 						<?php printf( __( 'VAT (<span class="yst-tax-rate">%s</span>%%)', 'yoastcom' ), number_format( ( edd_get_tax_rate() * 100 ), 1 ) ); ?>
 					</div>
 					<div class="one-seventh small-one-fifth">
@@ -82,14 +82,14 @@ namespace Yoast\YoastCom\Theme;
 		<hr class="hr--no-pointer tight hr__after-tax">
 	<?php endif; ?>
 
-	<div class="row iceberg">
+	<div class="row iceberg--small checkout--total">
 		<div class="grid">
 			<div class="three-seventh hide-on-mobile">
 				<?php if ( 2 === get_checkout_step() ) : ?>
 					<a href="<?php echo esc_url( url_shop_page() ); ?>" class="link--naked"><?php _e( '&laquo; Continue shopping', 'yoastcom' ); ?></a>
 				<?php endif; ?>
 			</div>
-			<div class="three-seventh small-four-fifth"><?php _e( 'Total', 'yoastcom' ); ?></div>
+			<div class="three-seventh small-four-fifth checkout--price-total"><?php _e( 'Total', 'yoastcom' ); ?></div>
 			<div class="one-seventh small-one-fifth edd_cart_total">
 				<span class="edd_cart_amount" data-subtotal="<?php echo esc_attr( edd_get_cart_total() ); ?>" data-total="<?php echo esc_attr( edd_get_cart_total() ); ?>">
 					<?php edd_cart_total(); ?>

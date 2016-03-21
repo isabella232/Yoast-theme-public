@@ -14,10 +14,14 @@ if ( isset( $template_args['readonly'] ) && $template_args['readonly'] ) {
 	id="<?php echo esc_attr( $id ); ?>"
 	data-download-id="<?php echo esc_attr( $item['id'] ); ?>">
 	<div class="three-seventh small-full checkout__title edd_cart_item_name">
-		<?php $icon = get_product_icon( $item['id'] ); ?>
-		<?php if ( $icon ) : ?>
+
+		<div class="checkout-item--icon">
+<?php
+		$icon = get_product_icon( $item['id'] );
+		if ( $icon ) : ?>
 			<img class="more__plug more__plug--small show-on-desktop" src="<?php echo esc_url( $icon ); ?>" width="40" height="40" />
 		<?php endif; ?>
+		</div>
 
 		<?php the_checkout_item_title( $item['id'] ); ?>
 	</div>
@@ -36,6 +40,7 @@ if ( isset( $template_args['readonly'] ) && $template_args['readonly'] ) {
 					'id'       => $item['id'],
 					'selected' => $item['options']['price_id'],
 					'class'    => 'yst-edd-pricing-switcher',
+					'label' => '',
 				) ); ?>
 			<?php endif; ?>
 		<?php elseif ( edd_item_quantities_enabled() ) : ?>

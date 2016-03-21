@@ -101,7 +101,6 @@ class Checkout_HTML {
 	 */
 	public function change_edd_csau_location() {
 		remove_action( 'edd_after_checkout_cart', 'edd_csau_display_on_checkout_page' );
-		// add_action( 'edd_after_purchase_form', 'edd_csau_display_on_checkout_page' );
 	}
 
 	/**
