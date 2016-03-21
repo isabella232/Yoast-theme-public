@@ -5,7 +5,7 @@ namespace Yoast\YoastCom\Theme;
 <div id="edd_checkout_cart" class="checkout<?php if ( ! edd_is_ajax_disabled() ) { echo ' ajaxed'; } ?>">
 	<?php $cart_items = edd_get_cart_contents(); ?>
 	<div class="row">
-		<ul class="list--unstyled">
+		<ul class="list--unstyled checkout--products">
 			<?php foreach ( $cart_items as $key => $cart_item ) : ?>
 				<?php get_template_part( 'html_includes/shop/checkout-item', array(
 					'class'    => '',

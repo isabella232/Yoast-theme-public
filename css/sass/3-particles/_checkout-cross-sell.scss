@@ -39,10 +39,13 @@
   }
 
   .cross-sell--title {
-    @extend .h3;
+    font-family: $font-stack-default;
+    font-weight: 300;
+
     font-size: 1.1em;
     line-height: 120%;
     margin-bottom: 0.5em;
+    color: #555;
   }
 
   .checkout-cross-sell {

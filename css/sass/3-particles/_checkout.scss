@@ -1,3 +1,9 @@
+#edd_next_button {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0;
+}
+
 .checkout {
   ul {
     margin-bottom: 0;
@@ -37,7 +43,7 @@
 
   .checkout-item--icon {
     width: 40px;
-    height: 40px;
+    min-height: 10px;
     float: left;
     margin-right: 1rem;
   }
@@ -72,7 +78,7 @@
   }
 
   select {
-    margin-left: 0;
+    margin: 0;
     line-height: 1.5em;
     border: none;
   }
@@ -83,6 +89,13 @@
 
   .item-discount {
     font-style: italic;
+    color: $color-pink-dark;
+  }
+
+  .checkout--products .item-discount {
+    border-top: none;
+    padding-top: 0;
+    margin-top: -1em;
   }
 }
 
@@ -112,6 +125,7 @@
 // Style the discount code form if it is present.
 #edd_discount_code {
   @extend .row;
+  @extend .iceberg;
 
   p {
     margin: 0;
@@ -144,8 +158,14 @@
   @extend .row;
 }
 
+#edd_checkout_cart_wrap {
+  @extend .iceberg;
+}
+
 // Style the purchase form to make it more compact and responsive
 #edd_purchase_form {
+  @extend .iceberg;
+
   p {
     display: block;
   }
@@ -166,10 +186,42 @@
     border: 1px solid $color-error;
   }
 
+  .checkout--payment-options {
+    fieldset {
+      margin: 0;
+    }
+  }
+
   .checkout-payment--title {
     font-weight: bold;
     font-size: 1em;
     color: #555;
+  }
+
+  .checkout--payment-icon {
+    font-size: 36px;
+    margin-right: 4px;
+  }
+
+  .checkout--payment-option {
+    float: left;
+    margin-right: 8px;
+
+    & .edd-gateway-option-selected,
+    &:active, &:hover {
+      color: $color-blue;
+    }
+
+    .edd-gateway {
+      position: relative;
+      top: -7px;
+    }
+  }
+
+  .bank-transfer {
+    .edd-gateway {
+      top: -14px;
+    }
   }
 
   #edd_agree_to_terms-error {
@@ -178,6 +230,23 @@
     color: $color-error;
     margin-right: 0;
     padding-right: 0;
+  }
+
+  .fa-bank-transfer {
+    background: url(../images/shop/BankTransfer.svg) top left no-repeat transparent;
+    width: 58px;
+    height: 34px;
+    margin: 2px 0;
+
+    &:hover, &:focus {
+      background-image: url(../images/shop/BankTransferActive.svg);
+    }
+  }
+
+  & .edd-gateway-option-selected {
+    .fa-bank-transfer {
+      background-image: url(../images/shop/BankTransferActive.svg);
+    }
   }
 
   .edd_errors {

@@ -24,6 +24,9 @@ class Checkout_HTML {
 		add_action( 'init', array( $this, 'init' ) );
 
 		add_shortcode( 'download_checkout', array ($this, 'edd_checkout_form_shortcode' ), 1 );
+
+		remove_action( 'edd_checkout_form_top', 'edd_discount_field', -1 );
+		add_action( 'edd_checkout_form_bottom', 'edd_discount_field' );
 	}
 	
 	public function edd_checkout_form_shortcode() {
