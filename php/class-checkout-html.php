@@ -14,10 +14,7 @@ class Checkout_HTML {
 	 * Constructor
 	 */
 	public function __construct() {
-
-		add_filter( 'edd_csau_html', array( $this, 'cross_selling_html' ), 10, 2 );
-
-		add_action( 'template_redirect', array( $this, 'change_edd_csau_location' ), 15 );
+		add_action( 'template_redirect', array( $this, 'change_edd_csau_location' ), 99 );
 
 		add_action( 'edd_cc_billing_bottom', array( $this, 'html_cc_billing_bottom' ) );
 		add_action( 'edd_purchase_form_before_submit', array( $this, 'html_what_happens_next' ), 175 );
@@ -25,6 +22,32 @@ class Checkout_HTML {
 		add_action( 'edd_purchase_link_end', array( $this, 'html_button_purchase_link' ), 10, 2 );
 
 		add_action( 'init', array( $this, 'init' ) );
+
+		add_shortcode( 'download_checkout', array ($this, 'edd_checkout_form_shortcode' ), 1 );
+	}
+	
+	public function edd_checkout_form_shortcode() {
+
+		ob_start();
+		get_template_part( 'html_includes/shop/progress' );
+		$output  = ob_get_clean();
+
+		$output .= '<div class="checkout-wrap--container row">';
+
+		$output .= '<div class="checkout--form">';
+		$output .= edd_checkout_form_shortcode();
+		$output .= '</div>'; // checkout--form
+
+		add_filter( 'edd_csau_html', array( $this, 'cross_selling_html' ), 10, 2 );
+
+		$output .= edd_csau_html();
+
+		remove_filter( 'edd_csau_html', array( $this, 'cross_selling_html' ), 10);
+
+		$output .= '</div>'; // checkout-wrap--container
+
+		return $output;
+
 	}
 
 	/**
@@ -45,8 +68,9 @@ class Checkout_HTML {
 	 * Changes the payment form to use our own HTML
 	 */
 	public function change_edd_payment_mode_form() {
-		remove_action( 'edd_payment_mode_select', 'edd_payment_mode_select' );
+		remove_action( 'edd_after_checkout_cart', 'edd_csau_display_on_checkout_page' );
 
+		remove_action( 'edd_payment_mode_select', 'edd_payment_mode_select' );
 		add_action( 'edd_payment_mode_select', array( $this, 'edd_payment_mode_select_html' ) );
 
 	}
@@ -77,7 +101,7 @@ class Checkout_HTML {
 	 */
 	public function change_edd_csau_location() {
 		remove_action( 'edd_after_checkout_cart', 'edd_csau_display_on_checkout_page' );
-		add_action( 'edd_after_purchase_form', 'edd_csau_display_on_checkout_page' );
+		// add_action( 'edd_after_purchase_form', 'edd_csau_display_on_checkout_page' );
 	}
 
 	/**

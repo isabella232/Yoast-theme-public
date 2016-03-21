@@ -565,7 +565,7 @@ a img.aligncenter {
 .extra {
   margin-bottom: 1.88rem; }
 
-.grid {
+.grid, .checkout-wrap--container, .checkout--cross-sell .checkout-cross-sell {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -589,16 +589,16 @@ a img.aligncenter {
   justify-content: space-between;
   width: 100%;
   vertical-align: top; }
-  .old-ie .grid {
+  .old-ie .grid, .old-ie .checkout-wrap--container, .old-ie .checkout--cross-sell .checkout-cross-sell, .checkout--cross-sell .old-ie .checkout-cross-sell {
     text-align: justify; }
-    .old-ie .grid::after {
+    .old-ie .grid::after, .old-ie .checkout-wrap--container::after, .old-ie .checkout--cross-sell .checkout-cross-sell::after, .checkout--cross-sell .old-ie .checkout-cross-sell::after {
       content: '';
       display: inline-block;
       width: 100%; }
-    .old-ie .grid > * {
+    .old-ie .grid > *, .old-ie .checkout-wrap--container > *, .old-ie .checkout--cross-sell .checkout-cross-sell > *, .checkout--cross-sell .old-ie .checkout-cross-sell > * {
       display: inline-block;
       text-align: left; }
-  .old-ie .grid > div {
+  .old-ie .grid > div, .old-ie .checkout-wrap--container > div, .old-ie .checkout--cross-sell .checkout-cross-sell > div, .checkout--cross-sell .old-ie .checkout-cross-sell > div {
     vertical-align: top;
     width: 100%; }
 
@@ -753,10 +753,10 @@ a img.aligncenter {
 .offset-four-seventh {
   margin-left: 58.77551%; }
 
-.grid > * {
+.grid > *, .checkout-wrap--container > *, .checkout--cross-sell .checkout-cross-sell > * {
   width: 100%; }
   @media only screen and (max-width: 50rem) {
-    .grid > * {
+    .grid > *, .checkout-wrap--container > *, .checkout--cross-sell .checkout-cross-sell > * {
       max-width: 100%;
       margin-left: 0;
       -webkit-flex-basis: 100%;
@@ -765,7 +765,7 @@ a img.aligncenter {
       -o-flex-basis: 100%;
       flex-basis: 100%; } }
 
-.grid:last-child {
+.grid:last-child, .checkout-wrap--container:last-child, .checkout--cross-sell .checkout-cross-sell:last-child {
   margin-right: 0; }
 
 @media only screen and (min-width: 30rem) and (max-width: 63.25rem) {
@@ -819,12 +819,12 @@ a img.aligncenter {
     margin-left: 80%; } }
 
 @media only screen and (max-width: 40em) {
-  .newsletter .grid > div {
+  .newsletter .grid > div, .newsletter .checkout-wrap--container > div, .newsletter .checkout--cross-sell .checkout-cross-sell > div, .checkout--cross-sell .newsletter .checkout-cross-sell > div {
     flex-basis: 100% !important;
     max-width: 100% !important; } }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, legend, .llms-quiz-results h3, .h3, .h4, .h5, .h6 {
+.h1, .h2, legend, .llms-quiz-results h3, .h3, .checkout--cross-sell .cross-sell--title, .h4, .h5, .h6 {
   font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   margin-top: 0;
@@ -846,17 +846,17 @@ h2, .h2, legend, .llms-quiz-results h3 {
   h2.tight, .h2.tight, legend.tight, .llms-quiz-results h3.tight {
     margin-bottom: .6rem; }
 
-h3, .h3 {
+h3, .h3, .checkout--cross-sell .cross-sell--title {
   font-size: 1.25em;
   line-height: 1.88rem;
   margin-bottom: 0.8rem; }
-  h3.tight, .h3.tight {
+  h3.tight, .h3.tight, .checkout--cross-sell .tight.cross-sell--title {
     margin-bottom: 0.4rem; }
   @media only screen and (min-width: 30rem) {
-    h3, .h3 {
+    h3, .h3, .checkout--cross-sell .cross-sell--title {
       font-size: 1.375em; } }
   @media only screen and (min-width: 50rem) {
-    h3, .h3 {
+    h3, .h3, .checkout--cross-sell .cross-sell--title {
       font-size: 1.5em; } }
 
 h4, .h4,
@@ -1071,13 +1071,13 @@ thead th {
 .widget.theme-home .h2,
 .widget.theme-home legend,
 .widget.theme-home .llms-quiz-results h3, .llms-quiz-results
-.widget.theme-home h3, .widget.theme-home .h3, .widget.theme-home .h4, .widget.theme-home .h5, .widget.theme-home .h6 {
+.widget.theme-home h3, .widget.theme-home .h3, .widget.theme-home .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .widget.theme-home .cross-sell--title, .widget.theme-home .h4, .widget.theme-home .h5, .widget.theme-home .h6 {
   color: #D93F69; }
   .widget.theme-home h2 a, .widget.theme-home h3 a, .widget.theme-home h4 a, .widget.theme-home h5 a, .widget.theme-home h6 a,
   .widget.theme-home .h2 a,
   .widget.theme-home legend a,
   .widget.theme-home .llms-quiz-results h3 a, .llms-quiz-results
-  .widget.theme-home h3 a, .widget.theme-home .h3 a, .widget.theme-home .h4 a, .widget.theme-home .h5 a, .widget.theme-home .h6 a {
+  .widget.theme-home h3 a, .widget.theme-home .h3 a, .widget.theme-home .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .widget.theme-home .cross-sell--title a, .widget.theme-home .h4 a, .widget.theme-home .h5 a, .widget.theme-home .h6 a {
     color: #D93F69;
     text-decoration: none; }
     .widget.theme-home h2 a:hover, .widget.theme-home h2 a:focus, .widget.theme-home h3 a:hover, .widget.theme-home h3 a:focus, .widget.theme-home h4 a:hover, .widget.theme-home h4 a:focus, .widget.theme-home h5 a:hover, .widget.theme-home h5 a:focus, .widget.theme-home h6 a:hover, .widget.theme-home h6 a:focus,
@@ -1088,7 +1088,7 @@ thead th {
     .widget.theme-home .h2 a:focus,
     .widget.theme-home legend a:focus,
     .widget.theme-home .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .widget.theme-home h3 a:focus, .widget.theme-home .h3 a:hover, .widget.theme-home .h3 a:focus, .widget.theme-home .h4 a:hover, .widget.theme-home .h4 a:focus, .widget.theme-home .h5 a:hover, .widget.theme-home .h5 a:focus, .widget.theme-home .h6 a:hover, .widget.theme-home .h6 a:focus {
+    .widget.theme-home h3 a:focus, .widget.theme-home .h3 a:hover, .widget.theme-home .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .widget.theme-home .cross-sell--title a:hover, .widget.theme-home .h3 a:focus, .widget.theme-home .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .widget.theme-home .cross-sell--title a:focus, .widget.theme-home .h4 a:hover, .widget.theme-home .h4 a:focus, .widget.theme-home .h5 a:hover, .widget.theme-home .h5 a:focus, .widget.theme-home .h6 a:hover, .widget.theme-home .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1100,13 +1100,13 @@ thead th {
 .theme-home .h2,
 .theme-home legend,
 .theme-home .llms-quiz-results h3, .llms-quiz-results
-.theme-home h3, .theme-home .h3, .theme-home .h4, .theme-home .h5, .theme-home .h6 {
+.theme-home h3, .theme-home .h3, .theme-home .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-home .cross-sell--title, .theme-home .h4, .theme-home .h5, .theme-home .h6 {
   color: #D93F69; }
   .theme-home h2 a, .theme-home h3 a, .theme-home h4 a, .theme-home h5 a, .theme-home h6 a,
   .theme-home .h2 a,
   .theme-home legend a,
   .theme-home .llms-quiz-results h3 a, .llms-quiz-results
-  .theme-home h3 a, .theme-home .h3 a, .theme-home .h4 a, .theme-home .h5 a, .theme-home .h6 a {
+  .theme-home h3 a, .theme-home .h3 a, .theme-home .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .theme-home .cross-sell--title a, .theme-home .h4 a, .theme-home .h5 a, .theme-home .h6 a {
     color: #D93F69;
     text-decoration: none; }
     .theme-home h2 a:hover, .theme-home h2 a:focus, .theme-home h3 a:hover, .theme-home h3 a:focus, .theme-home h4 a:hover, .theme-home h4 a:focus, .theme-home h5 a:hover, .theme-home h5 a:focus, .theme-home h6 a:hover, .theme-home h6 a:focus,
@@ -1117,7 +1117,7 @@ thead th {
     .theme-home .h2 a:focus,
     .theme-home legend a:focus,
     .theme-home .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .theme-home h3 a:focus, .theme-home .h3 a:hover, .theme-home .h3 a:focus, .theme-home .h4 a:hover, .theme-home .h4 a:focus, .theme-home .h5 a:hover, .theme-home .h5 a:focus, .theme-home .h6 a:hover, .theme-home .h6 a:focus {
+    .theme-home h3 a:focus, .theme-home .h3 a:hover, .theme-home .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .theme-home .cross-sell--title a:hover, .theme-home .h3 a:focus, .theme-home .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .theme-home .cross-sell--title a:focus, .theme-home .h4 a:hover, .theme-home .h4 a:focus, .theme-home .h5 a:hover, .theme-home .h5 a:focus, .theme-home .h6 a:hover, .theme-home .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1172,14 +1172,14 @@ thead th {
 .theme-home .extra .h2,
 .theme-home .extra legend,
 .theme-home .extra .llms-quiz-results h3, .llms-quiz-results
-.theme-home .extra h3, .theme-home .extra .h3, .theme-home .extra .h4 {
+.theme-home .extra h3, .theme-home .extra .h3, .theme-home .extra .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-home .extra .cross-sell--title, .theme-home .extra .h4 {
   color: #A4286A; }
 
 .theme-home .newsletter {
   background: #A4286A;
   color: #FFF; }
   .theme-home .newsletter h1, .theme-home .newsletter h2, .theme-home .newsletter h3, .theme-home .newsletter h4,
-  .theme-home .newsletter .h1, .theme-home .newsletter .h2, .theme-home .newsletter legend, .theme-home .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-home .newsletter h3, .theme-home .newsletter .h3, .theme-home .newsletter .h4 {
+  .theme-home .newsletter .h1, .theme-home .newsletter .h2, .theme-home .newsletter legend, .theme-home .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-home .newsletter h3, .theme-home .newsletter .h3, .theme-home .newsletter .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-home .newsletter .cross-sell--title, .theme-home .newsletter .h4 {
     color: #FFF; }
 
 .theme-home .bio p {
@@ -1222,13 +1222,13 @@ thead th {
 .widget.theme-about .h2,
 .widget.theme-about legend,
 .widget.theme-about .llms-quiz-results h3, .llms-quiz-results
-.widget.theme-about h3, .widget.theme-about .h3, .widget.theme-about .h4, .widget.theme-about .h5, .widget.theme-about .h6 {
+.widget.theme-about h3, .widget.theme-about .h3, .widget.theme-about .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .widget.theme-about .cross-sell--title, .widget.theme-about .h4, .widget.theme-about .h5, .widget.theme-about .h6 {
   color: #D93F69; }
   .widget.theme-about h2 a, .widget.theme-about h3 a, .widget.theme-about h4 a, .widget.theme-about h5 a, .widget.theme-about h6 a,
   .widget.theme-about .h2 a,
   .widget.theme-about legend a,
   .widget.theme-about .llms-quiz-results h3 a, .llms-quiz-results
-  .widget.theme-about h3 a, .widget.theme-about .h3 a, .widget.theme-about .h4 a, .widget.theme-about .h5 a, .widget.theme-about .h6 a {
+  .widget.theme-about h3 a, .widget.theme-about .h3 a, .widget.theme-about .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .widget.theme-about .cross-sell--title a, .widget.theme-about .h4 a, .widget.theme-about .h5 a, .widget.theme-about .h6 a {
     color: #D93F69;
     text-decoration: none; }
     .widget.theme-about h2 a:hover, .widget.theme-about h2 a:focus, .widget.theme-about h3 a:hover, .widget.theme-about h3 a:focus, .widget.theme-about h4 a:hover, .widget.theme-about h4 a:focus, .widget.theme-about h5 a:hover, .widget.theme-about h5 a:focus, .widget.theme-about h6 a:hover, .widget.theme-about h6 a:focus,
@@ -1239,7 +1239,7 @@ thead th {
     .widget.theme-about .h2 a:focus,
     .widget.theme-about legend a:focus,
     .widget.theme-about .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .widget.theme-about h3 a:focus, .widget.theme-about .h3 a:hover, .widget.theme-about .h3 a:focus, .widget.theme-about .h4 a:hover, .widget.theme-about .h4 a:focus, .widget.theme-about .h5 a:hover, .widget.theme-about .h5 a:focus, .widget.theme-about .h6 a:hover, .widget.theme-about .h6 a:focus {
+    .widget.theme-about h3 a:focus, .widget.theme-about .h3 a:hover, .widget.theme-about .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .widget.theme-about .cross-sell--title a:hover, .widget.theme-about .h3 a:focus, .widget.theme-about .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .widget.theme-about .cross-sell--title a:focus, .widget.theme-about .h4 a:hover, .widget.theme-about .h4 a:focus, .widget.theme-about .h5 a:hover, .widget.theme-about .h5 a:focus, .widget.theme-about .h6 a:hover, .widget.theme-about .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1251,13 +1251,13 @@ thead th {
 .theme-about .h2,
 .theme-about legend,
 .theme-about .llms-quiz-results h3, .llms-quiz-results
-.theme-about h3, .theme-about .h3, .theme-about .h4, .theme-about .h5, .theme-about .h6 {
+.theme-about h3, .theme-about .h3, .theme-about .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-about .cross-sell--title, .theme-about .h4, .theme-about .h5, .theme-about .h6 {
   color: #D93F69; }
   .theme-about h2 a, .theme-about h3 a, .theme-about h4 a, .theme-about h5 a, .theme-about h6 a,
   .theme-about .h2 a,
   .theme-about legend a,
   .theme-about .llms-quiz-results h3 a, .llms-quiz-results
-  .theme-about h3 a, .theme-about .h3 a, .theme-about .h4 a, .theme-about .h5 a, .theme-about .h6 a {
+  .theme-about h3 a, .theme-about .h3 a, .theme-about .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .theme-about .cross-sell--title a, .theme-about .h4 a, .theme-about .h5 a, .theme-about .h6 a {
     color: #D93F69;
     text-decoration: none; }
     .theme-about h2 a:hover, .theme-about h2 a:focus, .theme-about h3 a:hover, .theme-about h3 a:focus, .theme-about h4 a:hover, .theme-about h4 a:focus, .theme-about h5 a:hover, .theme-about h5 a:focus, .theme-about h6 a:hover, .theme-about h6 a:focus,
@@ -1268,7 +1268,7 @@ thead th {
     .theme-about .h2 a:focus,
     .theme-about legend a:focus,
     .theme-about .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .theme-about h3 a:focus, .theme-about .h3 a:hover, .theme-about .h3 a:focus, .theme-about .h4 a:hover, .theme-about .h4 a:focus, .theme-about .h5 a:hover, .theme-about .h5 a:focus, .theme-about .h6 a:hover, .theme-about .h6 a:focus {
+    .theme-about h3 a:focus, .theme-about .h3 a:hover, .theme-about .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .theme-about .cross-sell--title a:hover, .theme-about .h3 a:focus, .theme-about .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .theme-about .cross-sell--title a:focus, .theme-about .h4 a:hover, .theme-about .h4 a:focus, .theme-about .h5 a:hover, .theme-about .h5 a:focus, .theme-about .h6 a:hover, .theme-about .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1323,14 +1323,14 @@ thead th {
 .theme-about .extra .h2,
 .theme-about .extra legend,
 .theme-about .extra .llms-quiz-results h3, .llms-quiz-results
-.theme-about .extra h3, .theme-about .extra .h3, .theme-about .extra .h4 {
+.theme-about .extra h3, .theme-about .extra .h3, .theme-about .extra .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-about .extra .cross-sell--title, .theme-about .extra .h4 {
   color: #A4286A; }
 
 .theme-about .newsletter {
   background: #A4286A;
   color: #FFF; }
   .theme-about .newsletter h1, .theme-about .newsletter h2, .theme-about .newsletter h3, .theme-about .newsletter h4,
-  .theme-about .newsletter .h1, .theme-about .newsletter .h2, .theme-about .newsletter legend, .theme-about .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-about .newsletter h3, .theme-about .newsletter .h3, .theme-about .newsletter .h4 {
+  .theme-about .newsletter .h1, .theme-about .newsletter .h2, .theme-about .newsletter legend, .theme-about .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-about .newsletter h3, .theme-about .newsletter .h3, .theme-about .newsletter .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-about .newsletter .cross-sell--title, .theme-about .newsletter .h4 {
     color: #FFF; }
 
 .theme-about .bio p {
@@ -1373,13 +1373,13 @@ thead th {
 .widget.theme-academy .h2,
 .widget.theme-academy legend,
 .widget.theme-academy .llms-quiz-results h3, .llms-quiz-results
-.widget.theme-academy h3, .widget.theme-academy .h3, .widget.theme-academy .h4, .widget.theme-academy .h5, .widget.theme-academy .h6 {
+.widget.theme-academy h3, .widget.theme-academy .h3, .widget.theme-academy .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .widget.theme-academy .cross-sell--title, .widget.theme-academy .h4, .widget.theme-academy .h5, .widget.theme-academy .h6 {
   color: #5D237A; }
   .widget.theme-academy h2 a, .widget.theme-academy h3 a, .widget.theme-academy h4 a, .widget.theme-academy h5 a, .widget.theme-academy h6 a,
   .widget.theme-academy .h2 a,
   .widget.theme-academy legend a,
   .widget.theme-academy .llms-quiz-results h3 a, .llms-quiz-results
-  .widget.theme-academy h3 a, .widget.theme-academy .h3 a, .widget.theme-academy .h4 a, .widget.theme-academy .h5 a, .widget.theme-academy .h6 a {
+  .widget.theme-academy h3 a, .widget.theme-academy .h3 a, .widget.theme-academy .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .widget.theme-academy .cross-sell--title a, .widget.theme-academy .h4 a, .widget.theme-academy .h5 a, .widget.theme-academy .h6 a {
     color: #5D237A;
     text-decoration: none; }
     .widget.theme-academy h2 a:hover, .widget.theme-academy h2 a:focus, .widget.theme-academy h3 a:hover, .widget.theme-academy h3 a:focus, .widget.theme-academy h4 a:hover, .widget.theme-academy h4 a:focus, .widget.theme-academy h5 a:hover, .widget.theme-academy h5 a:focus, .widget.theme-academy h6 a:hover, .widget.theme-academy h6 a:focus,
@@ -1390,7 +1390,7 @@ thead th {
     .widget.theme-academy .h2 a:focus,
     .widget.theme-academy legend a:focus,
     .widget.theme-academy .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .widget.theme-academy h3 a:focus, .widget.theme-academy .h3 a:hover, .widget.theme-academy .h3 a:focus, .widget.theme-academy .h4 a:hover, .widget.theme-academy .h4 a:focus, .widget.theme-academy .h5 a:hover, .widget.theme-academy .h5 a:focus, .widget.theme-academy .h6 a:hover, .widget.theme-academy .h6 a:focus {
+    .widget.theme-academy h3 a:focus, .widget.theme-academy .h3 a:hover, .widget.theme-academy .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .widget.theme-academy .cross-sell--title a:hover, .widget.theme-academy .h3 a:focus, .widget.theme-academy .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .widget.theme-academy .cross-sell--title a:focus, .widget.theme-academy .h4 a:hover, .widget.theme-academy .h4 a:focus, .widget.theme-academy .h5 a:hover, .widget.theme-academy .h5 a:focus, .widget.theme-academy .h6 a:hover, .widget.theme-academy .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1402,13 +1402,13 @@ thead th {
 .theme-academy .h2,
 .theme-academy legend,
 .theme-academy .llms-quiz-results h3, .llms-quiz-results
-.theme-academy h3, .theme-academy .h3, .theme-academy .h4, .theme-academy .h5, .theme-academy .h6 {
+.theme-academy h3, .theme-academy .h3, .theme-academy .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-academy .cross-sell--title, .theme-academy .h4, .theme-academy .h5, .theme-academy .h6 {
   color: #5D237A; }
   .theme-academy h2 a, .theme-academy h3 a, .theme-academy h4 a, .theme-academy h5 a, .theme-academy h6 a,
   .theme-academy .h2 a,
   .theme-academy legend a,
   .theme-academy .llms-quiz-results h3 a, .llms-quiz-results
-  .theme-academy h3 a, .theme-academy .h3 a, .theme-academy .h4 a, .theme-academy .h5 a, .theme-academy .h6 a {
+  .theme-academy h3 a, .theme-academy .h3 a, .theme-academy .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .theme-academy .cross-sell--title a, .theme-academy .h4 a, .theme-academy .h5 a, .theme-academy .h6 a {
     color: #5D237A;
     text-decoration: none; }
     .theme-academy h2 a:hover, .theme-academy h2 a:focus, .theme-academy h3 a:hover, .theme-academy h3 a:focus, .theme-academy h4 a:hover, .theme-academy h4 a:focus, .theme-academy h5 a:hover, .theme-academy h5 a:focus, .theme-academy h6 a:hover, .theme-academy h6 a:focus,
@@ -1419,7 +1419,7 @@ thead th {
     .theme-academy .h2 a:focus,
     .theme-academy legend a:focus,
     .theme-academy .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .theme-academy h3 a:focus, .theme-academy .h3 a:hover, .theme-academy .h3 a:focus, .theme-academy .h4 a:hover, .theme-academy .h4 a:focus, .theme-academy .h5 a:hover, .theme-academy .h5 a:focus, .theme-academy .h6 a:hover, .theme-academy .h6 a:focus {
+    .theme-academy h3 a:focus, .theme-academy .h3 a:hover, .theme-academy .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .theme-academy .cross-sell--title a:hover, .theme-academy .h3 a:focus, .theme-academy .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .theme-academy .cross-sell--title a:focus, .theme-academy .h4 a:hover, .theme-academy .h4 a:focus, .theme-academy .h5 a:hover, .theme-academy .h5 a:focus, .theme-academy .h6 a:hover, .theme-academy .h6 a:focus {
       color: #A4286A;
       text-decoration: underline; }
 
@@ -1474,14 +1474,14 @@ thead th {
 .theme-academy .extra .h2,
 .theme-academy .extra legend,
 .theme-academy .extra .llms-quiz-results h3, .llms-quiz-results
-.theme-academy .extra h3, .theme-academy .extra .h3, .theme-academy .extra .h4 {
+.theme-academy .extra h3, .theme-academy .extra .h3, .theme-academy .extra .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-academy .extra .cross-sell--title, .theme-academy .extra .h4 {
   color: #A4286A; }
 
 .theme-academy .newsletter {
   background: #A4286A;
   color: #FFF; }
   .theme-academy .newsletter h1, .theme-academy .newsletter h2, .theme-academy .newsletter h3, .theme-academy .newsletter h4,
-  .theme-academy .newsletter .h1, .theme-academy .newsletter .h2, .theme-academy .newsletter legend, .theme-academy .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-academy .newsletter h3, .theme-academy .newsletter .h3, .theme-academy .newsletter .h4 {
+  .theme-academy .newsletter .h1, .theme-academy .newsletter .h2, .theme-academy .newsletter legend, .theme-academy .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-academy .newsletter h3, .theme-academy .newsletter .h3, .theme-academy .newsletter .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-academy .newsletter .cross-sell--title, .theme-academy .newsletter .h4 {
     color: #FFF; }
 
 .theme-academy .bio p {
@@ -1524,13 +1524,13 @@ thead th {
 .widget.theme-review .h2,
 .widget.theme-review legend,
 .widget.theme-review .llms-quiz-results h3, .llms-quiz-results
-.widget.theme-review h3, .widget.theme-review .h3, .widget.theme-review .h4, .widget.theme-review .h5, .widget.theme-review .h6 {
+.widget.theme-review h3, .widget.theme-review .h3, .widget.theme-review .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .widget.theme-review .cross-sell--title, .widget.theme-review .h4, .widget.theme-review .h5, .widget.theme-review .h6 {
   color: #009288; }
   .widget.theme-review h2 a, .widget.theme-review h3 a, .widget.theme-review h4 a, .widget.theme-review h5 a, .widget.theme-review h6 a,
   .widget.theme-review .h2 a,
   .widget.theme-review legend a,
   .widget.theme-review .llms-quiz-results h3 a, .llms-quiz-results
-  .widget.theme-review h3 a, .widget.theme-review .h3 a, .widget.theme-review .h4 a, .widget.theme-review .h5 a, .widget.theme-review .h6 a {
+  .widget.theme-review h3 a, .widget.theme-review .h3 a, .widget.theme-review .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .widget.theme-review .cross-sell--title a, .widget.theme-review .h4 a, .widget.theme-review .h5 a, .widget.theme-review .h6 a {
     color: #009288;
     text-decoration: none; }
     .widget.theme-review h2 a:hover, .widget.theme-review h2 a:focus, .widget.theme-review h3 a:hover, .widget.theme-review h3 a:focus, .widget.theme-review h4 a:hover, .widget.theme-review h4 a:focus, .widget.theme-review h5 a:hover, .widget.theme-review h5 a:focus, .widget.theme-review h6 a:hover, .widget.theme-review h6 a:focus,
@@ -1541,7 +1541,7 @@ thead th {
     .widget.theme-review .h2 a:focus,
     .widget.theme-review legend a:focus,
     .widget.theme-review .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .widget.theme-review h3 a:focus, .widget.theme-review .h3 a:hover, .widget.theme-review .h3 a:focus, .widget.theme-review .h4 a:hover, .widget.theme-review .h4 a:focus, .widget.theme-review .h5 a:hover, .widget.theme-review .h5 a:focus, .widget.theme-review .h6 a:hover, .widget.theme-review .h6 a:focus {
+    .widget.theme-review h3 a:focus, .widget.theme-review .h3 a:hover, .widget.theme-review .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .widget.theme-review .cross-sell--title a:hover, .widget.theme-review .h3 a:focus, .widget.theme-review .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .widget.theme-review .cross-sell--title a:focus, .widget.theme-review .h4 a:hover, .widget.theme-review .h4 a:focus, .widget.theme-review .h5 a:hover, .widget.theme-review .h5 a:focus, .widget.theme-review .h6 a:hover, .widget.theme-review .h6 a:focus {
       color: #77B227;
       text-decoration: underline; }
 
@@ -1553,13 +1553,13 @@ thead th {
 .theme-review .h2,
 .theme-review legend,
 .theme-review .llms-quiz-results h3, .llms-quiz-results
-.theme-review h3, .theme-review .h3, .theme-review .h4, .theme-review .h5, .theme-review .h6 {
+.theme-review h3, .theme-review .h3, .theme-review .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-review .cross-sell--title, .theme-review .h4, .theme-review .h5, .theme-review .h6 {
   color: #009288; }
   .theme-review h2 a, .theme-review h3 a, .theme-review h4 a, .theme-review h5 a, .theme-review h6 a,
   .theme-review .h2 a,
   .theme-review legend a,
   .theme-review .llms-quiz-results h3 a, .llms-quiz-results
-  .theme-review h3 a, .theme-review .h3 a, .theme-review .h4 a, .theme-review .h5 a, .theme-review .h6 a {
+  .theme-review h3 a, .theme-review .h3 a, .theme-review .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .theme-review .cross-sell--title a, .theme-review .h4 a, .theme-review .h5 a, .theme-review .h6 a {
     color: #009288;
     text-decoration: none; }
     .theme-review h2 a:hover, .theme-review h2 a:focus, .theme-review h3 a:hover, .theme-review h3 a:focus, .theme-review h4 a:hover, .theme-review h4 a:focus, .theme-review h5 a:hover, .theme-review h5 a:focus, .theme-review h6 a:hover, .theme-review h6 a:focus,
@@ -1570,7 +1570,7 @@ thead th {
     .theme-review .h2 a:focus,
     .theme-review legend a:focus,
     .theme-review .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .theme-review h3 a:focus, .theme-review .h3 a:hover, .theme-review .h3 a:focus, .theme-review .h4 a:hover, .theme-review .h4 a:focus, .theme-review .h5 a:hover, .theme-review .h5 a:focus, .theme-review .h6 a:hover, .theme-review .h6 a:focus {
+    .theme-review h3 a:focus, .theme-review .h3 a:hover, .theme-review .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .theme-review .cross-sell--title a:hover, .theme-review .h3 a:focus, .theme-review .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .theme-review .cross-sell--title a:focus, .theme-review .h4 a:hover, .theme-review .h4 a:focus, .theme-review .h5 a:hover, .theme-review .h5 a:focus, .theme-review .h6 a:hover, .theme-review .h6 a:focus {
       color: #77B227;
       text-decoration: underline; }
 
@@ -1625,14 +1625,14 @@ thead th {
 .theme-review .extra .h2,
 .theme-review .extra legend,
 .theme-review .extra .llms-quiz-results h3, .llms-quiz-results
-.theme-review .extra h3, .theme-review .extra .h3, .theme-review .extra .h4 {
+.theme-review .extra h3, .theme-review .extra .h3, .theme-review .extra .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-review .extra .cross-sell--title, .theme-review .extra .h4 {
   color: #77B227; }
 
 .theme-review .newsletter {
   background: #77B227;
   color: #FFF; }
   .theme-review .newsletter h1, .theme-review .newsletter h2, .theme-review .newsletter h3, .theme-review .newsletter h4,
-  .theme-review .newsletter .h1, .theme-review .newsletter .h2, .theme-review .newsletter legend, .theme-review .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-review .newsletter h3, .theme-review .newsletter .h3, .theme-review .newsletter .h4 {
+  .theme-review .newsletter .h1, .theme-review .newsletter .h2, .theme-review .newsletter legend, .theme-review .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-review .newsletter h3, .theme-review .newsletter .h3, .theme-review .newsletter .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-review .newsletter .cross-sell--title, .theme-review .newsletter .h4 {
     color: #FFF; }
 
 .theme-review .bio p {
@@ -1675,13 +1675,13 @@ thead th {
 .widget.theme-software .h2,
 .widget.theme-software legend,
 .widget.theme-software .llms-quiz-results h3, .llms-quiz-results
-.widget.theme-software h3, .widget.theme-software .h3, .widget.theme-software .h4, .widget.theme-software .h5, .widget.theme-software .h6 {
+.widget.theme-software h3, .widget.theme-software .h3, .widget.theme-software .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .widget.theme-software .cross-sell--title, .widget.theme-software .h4, .widget.theme-software .h5, .widget.theme-software .h6 {
   color: #0075B3; }
   .widget.theme-software h2 a, .widget.theme-software h3 a, .widget.theme-software h4 a, .widget.theme-software h5 a, .widget.theme-software h6 a,
   .widget.theme-software .h2 a,
   .widget.theme-software legend a,
   .widget.theme-software .llms-quiz-results h3 a, .llms-quiz-results
-  .widget.theme-software h3 a, .widget.theme-software .h3 a, .widget.theme-software .h4 a, .widget.theme-software .h5 a, .widget.theme-software .h6 a {
+  .widget.theme-software h3 a, .widget.theme-software .h3 a, .widget.theme-software .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .widget.theme-software .cross-sell--title a, .widget.theme-software .h4 a, .widget.theme-software .h5 a, .widget.theme-software .h6 a {
     color: #0075B3;
     text-decoration: none; }
     .widget.theme-software h2 a:hover, .widget.theme-software h2 a:focus, .widget.theme-software h3 a:hover, .widget.theme-software h3 a:focus, .widget.theme-software h4 a:hover, .widget.theme-software h4 a:focus, .widget.theme-software h5 a:hover, .widget.theme-software h5 a:focus, .widget.theme-software h6 a:hover, .widget.theme-software h6 a:focus,
@@ -1692,7 +1692,7 @@ thead th {
     .widget.theme-software .h2 a:focus,
     .widget.theme-software legend a:focus,
     .widget.theme-software .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .widget.theme-software h3 a:focus, .widget.theme-software .h3 a:hover, .widget.theme-software .h3 a:focus, .widget.theme-software .h4 a:hover, .widget.theme-software .h4 a:focus, .widget.theme-software .h5 a:hover, .widget.theme-software .h5 a:focus, .widget.theme-software .h6 a:hover, .widget.theme-software .h6 a:focus {
+    .widget.theme-software h3 a:focus, .widget.theme-software .h3 a:hover, .widget.theme-software .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .widget.theme-software .cross-sell--title a:hover, .widget.theme-software .h3 a:focus, .widget.theme-software .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .widget.theme-software .cross-sell--title a:focus, .widget.theme-software .h4 a:hover, .widget.theme-software .h4 a:focus, .widget.theme-software .h5 a:hover, .widget.theme-software .h5 a:focus, .widget.theme-software .h6 a:hover, .widget.theme-software .h6 a:focus {
       color: #009288;
       text-decoration: underline; }
 
@@ -1704,13 +1704,13 @@ thead th {
 .theme-software .h2,
 .theme-software legend,
 .theme-software .llms-quiz-results h3, .llms-quiz-results
-.theme-software h3, .theme-software .h3, .theme-software .h4, .theme-software .h5, .theme-software .h6 {
+.theme-software h3, .theme-software .h3, .theme-software .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-software .cross-sell--title, .theme-software .h4, .theme-software .h5, .theme-software .h6 {
   color: #0075B3; }
   .theme-software h2 a, .theme-software h3 a, .theme-software h4 a, .theme-software h5 a, .theme-software h6 a,
   .theme-software .h2 a,
   .theme-software legend a,
   .theme-software .llms-quiz-results h3 a, .llms-quiz-results
-  .theme-software h3 a, .theme-software .h3 a, .theme-software .h4 a, .theme-software .h5 a, .theme-software .h6 a {
+  .theme-software h3 a, .theme-software .h3 a, .theme-software .checkout--cross-sell .cross-sell--title a, .checkout--cross-sell .theme-software .cross-sell--title a, .theme-software .h4 a, .theme-software .h5 a, .theme-software .h6 a {
     color: #0075B3;
     text-decoration: none; }
     .theme-software h2 a:hover, .theme-software h2 a:focus, .theme-software h3 a:hover, .theme-software h3 a:focus, .theme-software h4 a:hover, .theme-software h4 a:focus, .theme-software h5 a:hover, .theme-software h5 a:focus, .theme-software h6 a:hover, .theme-software h6 a:focus,
@@ -1721,7 +1721,7 @@ thead th {
     .theme-software .h2 a:focus,
     .theme-software legend a:focus,
     .theme-software .llms-quiz-results h3 a:focus, .llms-quiz-results
-    .theme-software h3 a:focus, .theme-software .h3 a:hover, .theme-software .h3 a:focus, .theme-software .h4 a:hover, .theme-software .h4 a:focus, .theme-software .h5 a:hover, .theme-software .h5 a:focus, .theme-software .h6 a:hover, .theme-software .h6 a:focus {
+    .theme-software h3 a:focus, .theme-software .h3 a:hover, .theme-software .checkout--cross-sell .cross-sell--title a:hover, .checkout--cross-sell .theme-software .cross-sell--title a:hover, .theme-software .h3 a:focus, .theme-software .checkout--cross-sell .cross-sell--title a:focus, .checkout--cross-sell .theme-software .cross-sell--title a:focus, .theme-software .h4 a:hover, .theme-software .h4 a:focus, .theme-software .h5 a:hover, .theme-software .h5 a:focus, .theme-software .h6 a:hover, .theme-software .h6 a:focus {
       color: #009288;
       text-decoration: underline; }
 
@@ -1776,14 +1776,14 @@ thead th {
 .theme-software .extra .h2,
 .theme-software .extra legend,
 .theme-software .extra .llms-quiz-results h3, .llms-quiz-results
-.theme-software .extra h3, .theme-software .extra .h3, .theme-software .extra .h4 {
+.theme-software .extra h3, .theme-software .extra .h3, .theme-software .extra .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-software .extra .cross-sell--title, .theme-software .extra .h4 {
   color: #009288; }
 
 .theme-software .newsletter {
   background: #009288;
   color: #FFF; }
   .theme-software .newsletter h1, .theme-software .newsletter h2, .theme-software .newsletter h3, .theme-software .newsletter h4,
-  .theme-software .newsletter .h1, .theme-software .newsletter .h2, .theme-software .newsletter legend, .theme-software .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-software .newsletter h3, .theme-software .newsletter .h3, .theme-software .newsletter .h4 {
+  .theme-software .newsletter .h1, .theme-software .newsletter .h2, .theme-software .newsletter legend, .theme-software .newsletter .llms-quiz-results h3, .llms-quiz-results .theme-software .newsletter h3, .theme-software .newsletter .h3, .theme-software .newsletter .checkout--cross-sell .cross-sell--title, .checkout--cross-sell .theme-software .newsletter .cross-sell--title, .theme-software .newsletter .h4 {
     color: #FFF; }
 
 .theme-software .bio p {
@@ -2510,12 +2510,23 @@ a.announcement {
     font-size: 140%;
     margin: 4px 10px 0 0; }
 
+.checkout ul {
+  margin-bottom: 0; }
+
 .checkout li {
-  min-height: 3.76rem; }
+  margin-bottom: 1em;
+  padding-top: 1em;
+  border-top: 1px dashed #ddd; }
+  .checkout li:first-child {
+    padding-top: 0;
+    border-top: none; }
 
 .checkout .checkout__cancel {
   text-decoration: none;
-  color: #646464; }
+  color: #646464;
+  float: right; }
+  .checkout .checkout__cancel:hover, .checkout .checkout__cancel:focus {
+    text-decoration: none; }
 
 .checkout__title {
   white-space: nowrap;
@@ -2542,10 +2553,6 @@ a.announcement {
 
 .checkout .item-discount {
   font-style: italic; }
-
-.checkout-cross-sell .button--naked {
-  width: auto;
-  font-size: 1em; }
 
 .edd_payment__method {
   vertical-align: middle;
@@ -2611,7 +2618,7 @@ a.announcement {
   margin: 0; }
 
 #edd_purchase_form .card-expiration input {
-  width: calc( 50% - ( 30px / 2 )); }
+  width: calc(50% - (30px / 2)); }
 
 #edd_purchase_form .card-expiration .separator {
   width: 30px;
@@ -2685,7 +2692,7 @@ a.announcement {
     float: left;
     padding: 0 10px; }
   #edd_purchase_form #edd-card-city-wrap {
-    width: calc( 100% - 13rem);
+    width: calc(100% - 13rem);
     float: left; }
   #edd_purchase_form #edd-card-zip-wrap {
     width: 13rem;
@@ -2702,6 +2709,44 @@ a.announcement {
     margin: 0 0 0 10px; }
     #edd_purchase_form #yst-edd-btw-wrap .fa-spinner.show {
       display: inline; }
+
+.checkout--form {
+  width: calc(100% - 300px); }
+
+.checkout--cross-sell {
+  width: 280px; }
+  .checkout--cross-sell h2 {
+    font-size: 1.4em; }
+  .checkout--cross-sell .promoblock {
+    padding: 15px; }
+  .checkout--cross-sell .cross-sell--icon {
+    width: 50px;
+    font-size: 0.8em; }
+    .checkout--cross-sell .cross-sell--icon .more__save--alone {
+      padding-top: 6px; }
+  .checkout--cross-sell .cross-sell--details {
+    width: calc(100% - 70px); }
+    .checkout--cross-sell .cross-sell--details select {
+      margin: 0;
+      width: 100%; }
+    .checkout--cross-sell .cross-sell--details .edd_download_purchase_form {
+      padding-bottom: 1em; }
+  .checkout--cross-sell .cross-sell--title {
+    font-size: 1.1em;
+    line-height: 120%;
+    margin-bottom: 0.5em; }
+  .checkout--cross-sell .checkout-cross-sell {
+    border-top: 1px dashed #ccc;
+    padding-top: 20px; }
+    .checkout--cross-sell .checkout-cross-sell:first-child {
+      border-top: none;
+      padding-top: 0; }
+  .checkout--cross-sell .button--naked {
+    width: auto;
+    font-size: 1em;
+    color: #A4286A; }
+    .checkout--cross-sell .button--naked:hover, .checkout--cross-sell .button--naked:focus {
+      color: #D93F69; }
 
 .edd_download_purchase_form:before, .edd_download_purchase_form:after {
   content: '';

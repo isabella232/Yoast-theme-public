@@ -2,8 +2,6 @@
 namespace Yoast\YoastCom\Theme;
 ?>
 
-<?php get_template_part( 'html_includes/shop/progress' ); ?>
-
 <div id="edd_checkout_cart" class="checkout<?php if ( ! edd_is_ajax_disabled() ) { echo ' ajaxed'; } ?>">
 	<?php $cart_items = edd_get_cart_contents(); ?>
 	<div class="row">
@@ -39,7 +37,8 @@ namespace Yoast\YoastCom\Theme;
 
 	<?php $discounts = get_global_discounts(); ?>
 	<?php if ( ! empty( $discounts ) ) : ?>
-		<hr class="hr--no-pointer tight">
+
+		<hr class="hr--no-pointer tight hr__before-global-discount">
 
 		<div class="row">
 			<ul class="list--unstyled">
@@ -53,9 +52,9 @@ namespace Yoast\YoastCom\Theme;
 		</div>
 	<?php endif; ?>
 
-	<?php if ( edd_use_taxes() && cart_has_tax() ) : ?>
-		<hr class="hr--no-pointer tight">
+	<hr class="hr--no-pointer tight">
 
+	<?php if ( edd_use_taxes() && cart_has_tax() ) : ?>
 		<div class="row iceberg--small">
 			<div class="grid">
 				<div class="three-seventh offset-three-seventh small-four-fifth"><?php _e( 'Subtotal', 'yoastcom' ); ?></div>
@@ -79,9 +78,9 @@ namespace Yoast\YoastCom\Theme;
 				</div>
 			</div>
 		<?php endif; ?>
-	<?php endif; ?>
 
-	<hr class="hr--no-pointer tight">
+		<hr class="hr--no-pointer tight hr__after-tax">
+	<?php endif; ?>
 
 	<div class="row iceberg">
 		<div class="grid">

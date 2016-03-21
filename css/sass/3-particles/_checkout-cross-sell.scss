@@ -1,0 +1,68 @@
+.checkout-wrap--container {
+  @extend .grid;
+}
+
+.checkout--form {
+  width: calc(100% - 300px);
+}
+
+.checkout--cross-sell {
+
+  width: 280px;
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .promoblock {
+    padding: 15px;
+  }
+
+  .cross-sell--icon {
+    width: 50px;
+    font-size: 0.8em;
+    .more__save--alone {
+      padding-top: 6px;
+    }
+  }
+
+  .cross-sell--details {
+    width: calc(100% - 70px);
+    select {
+      margin: 0;
+      width: 100%;
+    }
+
+    .edd_download_purchase_form {
+      padding-bottom: 1em;
+    }
+  }
+
+  .cross-sell--title {
+    @extend .h3;
+    font-size: 1.1em;
+    line-height: 120%;
+    margin-bottom: 0.5em;
+  }
+
+  .checkout-cross-sell {
+    @extend .grid;
+
+    border-top: 1px dashed #ccc;
+    padding-top: 20px;
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  .button--naked {
+    width: auto;
+    font-size: 1em;
+
+    color: $color-pink-dark;
+    &:hover, &:focus {
+      color: $color-pink-light;
+    }
+  }
+}
