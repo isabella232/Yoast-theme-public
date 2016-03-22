@@ -4,6 +4,14 @@
   right: 0;
 }
 
+.checkout-wrap--container {
+  @extend .grid;
+}
+
+.checkout--form {
+  width: calc(100% - 300px);
+}
+
 #edd_payment_mode_select {
   font-family: $font-stack-default;
 }
@@ -23,29 +31,29 @@
     }
   }
 
-  .checkout--price-total,
-  .checkout--price-vat,
-  .checkout--price-subtotal {
+  .hr__after-tax {
+    border-color: #bbb;
+    border-style: dotted;
+  }
+
+  &--price-total,
+  &--price-vat,
+  &--price-subtotal {
     text-align: right;
     margin-right: 15px;
     color: #777;
   }
 
-  .checkout--price-total {
-    color: #555;
+  &--price-total {
+    color: #333;
     font-weight: bold;
   }
 
-  .hr__after-tax {
-    border-color: #ddd;
+  &__price {
+    white-space: nowrap;
   }
 
-  .checkout--total {
-    border-bottom: 1px solid #eee;
-    margin-bottom: 1em;
-  }
-
-  .checkout-item--icon {
+  &-item--icon {
     width: 40px;
     min-height: 10px;
     float: left;
@@ -96,7 +104,7 @@
     color: $color-pink-dark;
   }
 
-  .checkout--products .item-discount {
+  &--products .item-discount {
     border-top: none;
     padding-top: 0;
     margin-top: -1em;

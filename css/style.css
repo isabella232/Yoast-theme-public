@@ -2515,6 +2515,9 @@ a.announcement {
   bottom: 0.5em;
   right: 0; }
 
+.checkout--form {
+  width: calc(100% - 300px); }
+
 #edd_payment_mode_select {
   font-family: "Open Sans", Arial, sans-serif; }
 
@@ -2529,25 +2532,23 @@ a.announcement {
     padding-top: 0;
     border-top: none; }
 
-.checkout .checkout--price-total,
-.checkout .checkout--price-vat,
-.checkout .checkout--price-subtotal {
+.checkout .hr__after-tax {
+  border-color: #bbb;
+  border-style: dotted; }
+
+.checkout--price-total, .checkout--price-vat, .checkout--price-subtotal {
   text-align: right;
   margin-right: 15px;
   color: #777; }
 
-.checkout .checkout--price-total {
-  color: #555;
+.checkout--price-total {
+  color: #333;
   font-weight: bold; }
 
-.checkout .hr__after-tax {
-  border-color: #ddd; }
+.checkout__price {
+  white-space: nowrap; }
 
-.checkout .checkout--total {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 1em; }
-
-.checkout .checkout-item--icon {
+.checkout-item--icon {
   width: 40px;
   min-height: 10px;
   float: left;
@@ -2587,7 +2588,7 @@ a.announcement {
   font-style: italic;
   color: #A4286A; }
 
-.checkout .checkout--products .item-discount {
+.checkout--products .item-discount {
   border-top: none;
   padding-top: 0;
   margin-top: -1em; }
@@ -2784,15 +2785,15 @@ a.announcement {
     #edd_purchase_form #yst-edd-btw-wrap .fa-spinner.show {
       display: inline; }
 
-.checkout--form {
-  width: calc(100% - 300px); }
-
 .checkout--cross-sell {
   width: 280px; }
   .checkout--cross-sell h2 {
     font-size: 1.4em; }
   .checkout--cross-sell .promoblock {
-    padding: 15px; }
+    padding: 15px;
+    border-color: #5D237A; }
+    .checkout--cross-sell .promoblock h2 {
+      color: #5D237A; }
   .checkout--cross-sell .cross-sell--icon {
     width: 50px;
     font-size: 0.8em; }

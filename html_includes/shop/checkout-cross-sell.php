@@ -1,9 +1,7 @@
 <?php
 namespace Yoast\YoastCom\Theme;
 
-/**
- * @var \WP_Query $downloads
- */
+/** @var \WP_Query $downloads */
 $downloads = $template_args['downloads'];
 
 if ( $downloads->have_posts() ):
@@ -11,7 +9,7 @@ if ( $downloads->have_posts() ):
 
 <div class="checkout--cross-sell">
 	<div class="row promoblock">
-		<h2><?php _e( 'You may also like:', 'yoastcom' ); ?></h2>
+		<h2><?php _e( 'Did you see:', 'yoastcom' ); ?></h2>
 		
 		<div class="cross-sell--promotions">
 		<?php while ( $downloads->have_posts() ) : $downloads->the_post(); ?>

@@ -1,13 +1,5 @@
-.checkout-wrap--container {
-  @extend .grid;
-}
-
-.checkout--form {
-  width: calc(100% - 300px);
-}
 
 .checkout--cross-sell {
-
   width: 280px;
 
   h2 {
@@ -16,6 +8,10 @@
 
   .promoblock {
     padding: 15px;
+    border-color: $color-purple;
+    h2 {
+      color: $color-purple;
+    }
   }
 
   .cross-sell--icon {

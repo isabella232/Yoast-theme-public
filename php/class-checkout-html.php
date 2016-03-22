@@ -23,34 +23,40 @@ class Checkout_HTML {
 
 		add_action( 'init', array( $this, 'init' ) );
 
-		add_shortcode( 'download_checkout', array ($this, 'edd_checkout_form_shortcode' ), 1 );
+		add_shortcode( 'download_checkout', array( $this, 'edd_checkout_form_shortcode' ) );
 
 		remove_action( 'edd_checkout_form_top', 'edd_discount_field', -1 );
 		add_action( 'edd_checkout_form_bottom', 'edd_discount_field' );
 	}
-	
-	public function edd_checkout_form_shortcode() {
 
+	/**
+	 * Rewrite store shortcode implementation
+	 *
+	 * @return string
+	 */
+	public function edd_checkout_form_shortcode() {
 		ob_start();
 		get_template_part( 'html_includes/shop/progress' );
-		$output  = ob_get_clean();
+		$output = ob_get_clean();
 
-		$output .= '<div class="checkout-wrap--container row">';
-
-		$output .= '<div class="checkout--form">';
-		$output .= edd_checkout_form_shortcode();
-		$output .= '</div>'; // checkout--form
+		$edd_checkout_form = edd_checkout_form();
 
 		add_filter( 'edd_csau_html', array( $this, 'cross_selling_html' ), 10, 2 );
+		$edd_cross_sells = edd_csau_html();
+		remove_filter( 'edd_csau_html', array( $this, 'cross_selling_html' ), 10 );
 
-		$output .= edd_csau_html();
-
-		remove_filter( 'edd_csau_html', array( $this, 'cross_selling_html' ), 10);
-
-		$output .= '</div>'; // checkout-wrap--container
+		// Don't modify columns if there are no cross sells.
+		if ( ! empty( $edd_cross_sells ) ) {
+			$output .= '<div class="checkout-wrap--container row">';
+			$output .= '<div class="checkout--form">' . $edd_checkout_form . '</div>'; // checkout--form
+			$output .= $edd_cross_sells;
+			$output .= '</div>'; // checkout-wrap--container
+		}
+		else {
+			$output .= $edd_checkout_form;
+		}
 
 		return $output;
-
 	}
 
 	/**
@@ -75,7 +81,6 @@ class Checkout_HTML {
 
 		remove_action( 'edd_payment_mode_select', 'edd_payment_mode_select' );
 		add_action( 'edd_payment_mode_select', array( $this, 'edd_payment_mode_select_html' ) );
-
 	}
 
 	/**
@@ -109,7 +114,7 @@ class Checkout_HTML {
 	/**
 	 * Changes the cross selling HTML to be more in line what we want
 	 *
-	 * @param string $html The current HTML, we discard this completely.
+	 * @param string $html      The current HTML, we discard this completely.
 	 * @param array  $downloads The downloads to cross/up sell.
 	 *
 	 * @return string The new HTML.
@@ -214,9 +219,13 @@ class Checkout_HTML {
 	 * Adds the checkout errors on the top of the page.
 	 */
 	public function add_errors_on_top() {
-		add_action( 'edd_checkout_form_top', function() { echo '<div class="row">'; } );
+		add_action( 'edd_checkout_form_top', function () {
+			echo '<div class="row">';
+		} );
 		add_action( 'edd_checkout_form_top', 'edd_print_errors' );
-		add_action( 'edd_checkout_form_top', function() { echo '</div>'; } );
+		add_action( 'edd_checkout_form_top', function () {
+			echo '</div>';
+		} );
 	}
 
 	/**
@@ -252,7 +261,7 @@ class Checkout_HTML {
 	 * Outputs the HTML for the purchase button
 	 *
 	 * @param int   $download_ID The ID of the download to output the purchase link for.
-	 * @param array $args The arguments passed to the purchase link function.
+	 * @param array $args        The arguments passed to the purchase link function.
 	 */
 	public function html_button_purchase_link( $download_ID, $args ) {
 		get_template_part( 'html_includes/shop/purchase-link', array(

@@ -82,7 +82,7 @@ namespace Yoast\YoastCom\Theme;
 		<hr class="hr--no-pointer tight hr__after-tax">
 	<?php endif; ?>
 
-	<div class="row iceberg--small checkout--total">
+	<div class="row iceberg--small">
 		<div class="grid">
 			<div class="three-seventh hide-on-mobile">
 				<?php if ( 2 === get_checkout_step() ) : ?>
