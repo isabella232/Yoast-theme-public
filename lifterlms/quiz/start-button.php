@@ -24,40 +24,46 @@ if ( $quiz ) {
 
 	<?php
 
-	$next_lesson_id = $lesson->get_next_lesson();
-	if ( $next_lesson_id && $quiz->is_passing_score( $user_id ) ) {
-		if ( $next_lesson_id && $lesson->is_complete() ) {
-			?>
-			<div class="iceberg">
-				<a class="button next-lesson" href="<?php echo esc_url( get_permalink( $next_lesson_id ) ); ?>"><?php _e( 'Next lesson', 'yoastcom' ); ?></a>
-			</div>
+	if ( empty( $quiz ) || $attempts === 'unlimited' || $attempts > 0 || $quiz->get_end_date( $user_id ) == '' ) {
+
+		$title = $quiz->is_passing_score( $user_id ) ? 'Re-take Quiz' : 'Start Quiz';
+
+		?>
+		<form method="POST" action="" name="llms_start_quiz" enctype="multipart/form-data">
+			<?php do_action( 'lifterlms_before_start_quiz' ); ?>
+			<input id="llms-user" name="llms-user_id" type="hidden" value="<?php echo $user_id; ?>"/>
+			<input id="llms-quiz" name="llms-quiz_id" type="hidden" value="<?php echo $quiz->id; ?>"/>
+			<input id="llms_start_quiz" type="button" class="button" name="llms_start_quiz"
+			       value="<?php _e( $title, 'lifterlms' ); ?>"/>
+			<input type="hidden" name="action" value="llms_start_quiz"/>
+
 			<?php
-		}
+
+			$next_lesson_id = $lesson->get_next_lesson();
+			if ( $next_lesson_id && $quiz->is_passing_score( $user_id ) ) {
+				if ( $next_lesson_id && $lesson->is_complete() ) {
+					?>
+					<a class="button next-lesson"
+					   href="<?php echo esc_url( get_permalink( $next_lesson_id ) ); ?>"><?php _e( 'Next lesson', 'yoastcom' ); ?></a>
+					<?php
+				}
+			}
+
+			?>
+
+			<?php wp_nonce_field( 'llms_start_quiz' ); ?>
+			<?php do_action( 'lifterlms_after_start_quiz' ); ?>
+		</form>
+		<?php
 	}
 	else {
-
-		if ( empty( $quiz ) || $attempts === 'unlimited' || $attempts > 0 || $quiz->get_end_date( $user_id ) == '' ) {
-			?>
-			<form method="POST" action="" name="llms_start_quiz" enctype="multipart/form-data">
-				<?php do_action( 'lifterlms_before_start_quiz' ); ?>
-				<input id="llms-user" name="llms-user_id" type="hidden" value="<?php echo $user_id; ?>"/>
-				<input id="llms-quiz" name="llms-quiz_id" type="hidden" value="<?php echo $quiz->id; ?>"/>
-				<input id="llms_start_quiz" type="button" class="button" name="llms_start_quiz"
-				       value="<?php _e( 'Start Quiz', 'lifterlms' ); ?>"/>
-				<input type="hidden" name="action" value="llms_start_quiz"/>
-
-				<?php
-
-				?>
-
-				<?php wp_nonce_field( 'llms_start_quiz' ); ?>
-				<?php do_action( 'lifterlms_after_start_quiz' ); ?>
-			</form>
-			<?php
-		}
-		else {
-			_e( '<p>You are not able take this quiz</p>', 'lifterlms' );
-		}
+		_e( '<p>You are not able take this quiz</p>', 'lifterlms' );
 	}
+
 	?>
 </div>
+<script type="text/javascript">
+	jQuery('#llms_start_quiz').click(function () {
+		jQuery('.next-lesson').hide();
+	});
+</script>
