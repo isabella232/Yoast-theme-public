@@ -4,9 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 global $quiz;
 
+$user_id = get_current_user_id();
 $passing_percent = $quiz->get_passing_percent();
 
-if ( $passing_percent ) :
+if ( $passing_percent && ! $quiz->is_passing_score( $user_id ) ) {
 	?>
 
 	<div class="clear"></div>
@@ -20,7 +21,6 @@ if ( $passing_percent ) :
 		</h3>
 	</div>
 
-<?php endif; ?>
+	<?php
 
-
-
+}
