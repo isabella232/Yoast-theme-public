@@ -9,13 +9,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $quiz;
+
 $user_id      = get_current_user_id();
 $quiz_session = LLMS()->session->get( 'llms_quiz' );
-$lessonid     = $quiz->get_assoc_lesson( $user_id );
-$lesson       = new LLMS_Lesson( $lessonid );
+$lesson_id    = $quiz->get_assoc_lesson( $user_id );
+$lesson       = new LLMS_Lesson( $lesson_id );
 
 if ( $quiz ) {
 	$attempts = $quiz->get_remaining_attempts_by_user( $user_id );
+} else {
+	$attempts = 0;
 }
 ?>
 
@@ -24,9 +27,10 @@ if ( $quiz ) {
 
 	<?php
 
-	if ( empty( $quiz ) || $attempts === 'unlimited' || $attempts > 0 || $quiz->get_end_date( $user_id ) == '' ) {
+	if ( $attempts === 'unlimited' || $attempts > 0 || $quiz->get_end_date( $user_id ) == '' ) {
 
-		$title = $quiz->is_passing_score( $user_id ) ? 'Re-take Quiz' : 'Start Quiz';
+		// Should this be 'Start Quiz' sometimes?
+		$title = 'Re-take Quiz';
 
 		?>
 		<form method="POST" action="" name="llms_start_quiz" enctype="multipart/form-data">
@@ -40,13 +44,11 @@ if ( $quiz ) {
 			<?php
 
 			$next_lesson_id = $lesson->get_next_lesson();
-			if ( $next_lesson_id && $quiz->is_passing_score( $user_id ) ) {
-				if ( $next_lesson_id && $lesson->is_complete() ) {
-					?>
-					<a class="button next-lesson"
-					   href="<?php echo esc_url( get_permalink( $next_lesson_id ) ); ?>"><?php _e( 'Next lesson', 'yoastcom' ); ?></a>
-					<?php
-				}
+			if ( $next_lesson_id && $lesson->is_complete() ) {
+				?>
+				<a class="button next-lesson"
+				   href="<?php echo esc_url( get_permalink( $next_lesson_id ) ); ?>"><?php _e( 'Next lesson', 'yoastcom' ); ?></a>
+				<?php
 			}
 
 			?>
@@ -62,8 +64,3 @@ if ( $quiz ) {
 
 	?>
 </div>
-<script type="text/javascript">
-	jQuery('#llms_start_quiz').click(function () {
-		jQuery('.next-lesson').hide();
-	});
-</script>
