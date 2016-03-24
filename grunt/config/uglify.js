@@ -2,11 +2,11 @@
 module.exports = {
 	options: {
 		preserveComments: false,
-		sourceMap: true,
+		sourceMap: true
 	},
 	dist: {
 		options: {
-			banner: '/* -- Yoast.js -- */\n',
+			banner: '/* -- Yoast.js -- */\n'
 		},
 		src: [
 			'js/src/*.js'
