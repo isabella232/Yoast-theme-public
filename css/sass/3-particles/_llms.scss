@@ -132,6 +132,13 @@ svg .llms-animated-circle {
 }
 
 .llms-quiz-result-details {
+
+  .llms-content-block {
+    font-size: 1.2em;
+    padding-top: 1.5em;
+  }
+
+
   // Only display the first item.
   ul {
     display: none;
