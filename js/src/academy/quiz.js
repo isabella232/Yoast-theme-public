@@ -29,5 +29,5 @@
         }
     }
 
-    $.ready(init);
+    init();
 }(jQuery));
