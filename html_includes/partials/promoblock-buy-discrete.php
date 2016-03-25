@@ -16,7 +16,20 @@ if ( ! $download_page_url ) {
 ?>
 	<div class="checkout-cross-sell__item">
 
-		<div class="checkout-cross-sell__icon"><?php get_template_part( 'html_includes/partials/more-save' ); ?></div>
+		<div class="checkout-cross-sell__icon show-on-desktop"><?php
+
+			$savings = get_template_part( 'html_includes/partials/more-save', array( 'return' => true, 'debug' => false ) );
+
+			if ( empty( $savings ) ) {
+				$icon = get_product_icon( $item['id'] );
+				if ( $icon ) {
+					$savings = sprintf( '<img class="more__plug more__plug--small" src="%s" width="55" height="55" />', esc_url( $icon ) );
+				}
+			}
+
+			echo $savings;
+
+			?></div>
 
 		<div class="checkout-cross-sell__details">
 			<div class="checkout-cross-sell__title"><a href="<?php echo $download_page_url ?>"
@@ -55,6 +68,6 @@ if ( ! $download_page_url ) {
 			</form>
 		</div>
 	</div>
-<?php
+	<?php
 
 theme_object()->excerpt->clear();

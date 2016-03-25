@@ -26,10 +26,17 @@
   }
 
   &__icon {
-    width: 50px;
+    width: 55px;
     font-size: 0.8em;
+
     .more__save--alone {
       padding-top: 6px;
+    }
+
+    .more__plug,
+    .more__plug--small {
+      width: 55px;
+      height: 55px;
     }
   }
 

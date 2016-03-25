@@ -64,7 +64,7 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 	}
 
 	ob_start();
-	if ( WP_DEBUG ) {
+	if ( WP_DEBUG &&  ! ( isset($template_args['debug']) && $template_args['debug'] === false ) ) {
 		printf( '<!-- Including template "%s" -->', $file );
 	}
 	$return = require( $file );

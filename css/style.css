@@ -2514,11 +2514,6 @@ body.edd-checkout .announcement.newsletter,
 body.edd-checkout #fullfooter {
   display: none; }
 
-#edd_next_button {
-  position: absolute;
-  bottom: 0.5em;
-  right: 0; }
-
 #edd_payment_mode_select {
   font-family: "Open Sans", Arial, sans-serif; }
 
@@ -2804,10 +2799,14 @@ body.edd-checkout #fullfooter {
       border-top: none;
       padding-top: 0; }
   .checkout-cross-sell__icon {
-    width: 50px;
+    width: 55px;
     font-size: 0.8em; }
     .checkout-cross-sell__icon .more__save--alone {
       padding-top: 6px; }
+    .checkout-cross-sell__icon .more__plug,
+    .checkout-cross-sell__icon .more__plug--small {
+      width: 55px;
+      height: 55px; }
   .checkout-cross-sell__details {
     width: calc(100% - 70px); }
     .checkout-cross-sell__details select {

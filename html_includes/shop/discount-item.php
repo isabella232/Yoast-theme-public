@@ -16,7 +16,7 @@ if ( ! empty( $template_args['title'] ) ) {
 
 	<?php if ( $title ) : ?>
 		<div class="three-seventh">
-			<div class="checkout-item__icon"></div>
+			<div class="checkout-item__icon show-on-desktop"></div>
 			<strong><?php echo esc_html( $title ); ?></strong>
 		</div>
 	<?php endif; ?>

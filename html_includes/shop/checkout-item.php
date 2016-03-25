@@ -15,11 +15,10 @@ if ( isset( $template_args['readonly'] ) && $template_args['readonly'] ) {
 	data-download-id="<?php echo esc_attr( $item['id'] ); ?>">
 	<div class="three-seventh small-full checkout__title edd_cart_item_name">
 
-		<div class="checkout-item__icon">
-<?php
+		<div class="checkout-item__icon show-on-desktop"><?php
 		$icon = get_product_icon( $item['id'] );
 		if ( $icon ) : ?>
-			<img class="more__plug more__plug--small show-on-desktop" src="<?php echo esc_url( $icon ); ?>" width="40" height="40" />
+			<img class="more__plug more__plug--small" src="<?php echo esc_url( $icon ); ?>" width="40" height="40" />
 		<?php endif; ?>
 		</div>
 
