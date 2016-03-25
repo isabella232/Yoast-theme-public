@@ -4071,6 +4071,10 @@ svg .llms-animated-circle {
 .llms-quiz-results h3 {
   background: none; }
 
+.llms-quiz-result-details .llms-content-block {
+  font-size: 1.2em;
+  padding-top: 1.5em; }
+
 .llms-quiz-result-details ul {
   display: none; }
   .llms-quiz-result-details ul:first-child {
