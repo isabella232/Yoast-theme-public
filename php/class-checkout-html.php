@@ -15,6 +15,7 @@ class Checkout_HTML {
 	 */
 	public function __construct() {
 		add_action( 'template_redirect', array( $this, 'change_edd_csau_location' ), 99 );
+		add_action( 'template_redirect', array( $this, 'change_edd_discount_location' ), 99 );
 
 		add_action( 'edd_cc_billing_bottom', array( $this, 'html_cc_billing_bottom' ) );
 		add_action( 'edd_purchase_form_before_submit', array( $this, 'html_what_happens_next' ), 175 );
@@ -24,9 +25,6 @@ class Checkout_HTML {
 		add_action( 'init', array( $this, 'init' ) );
 
 		add_shortcode( 'download_checkout', array( $this, 'edd_checkout_form_shortcode' ) );
-
-		remove_action( 'edd_checkout_form_top', 'edd_discount_field', -1 );
-		add_action( 'edd_checkout_form_bottom', 'edd_discount_field' );
 	}
 
 	/**
@@ -35,9 +33,7 @@ class Checkout_HTML {
 	 * @return string
 	 */
 	public function edd_checkout_form_shortcode() {
-		ob_start();
-		get_template_part( 'html_includes/shop/progress' );
-		$output = ob_get_clean();
+		$output = get_template_part( 'html_includes/shop/progress', array( 'return' => true ) );
 
 		$edd_checkout_form = edd_checkout_form();
 
@@ -47,8 +43,8 @@ class Checkout_HTML {
 
 		// Don't modify columns if there are no cross sells.
 		if ( ! empty( $edd_cross_sells ) ) {
-			$output .= '<div class="checkout-wrap--container row">';
-			$output .= '<div class="checkout--form">' . $edd_checkout_form . '</div>'; // checkout--form
+			$output .= '<div class="checkout-wrap__container">';
+			$output .= '<div class="checkout__form">' . $edd_checkout_form . '</div>'; // checkout--form
 			$output .= $edd_cross_sells;
 			$output .= '</div>'; // checkout-wrap--container
 		}
@@ -111,6 +107,13 @@ class Checkout_HTML {
 		remove_action( 'edd_after_checkout_cart', 'edd_csau_display_on_checkout_page' );
 	}
 
+	/**
+	 * Changes the location of the discount code entering form
+	 */
+	public function change_edd_discount_location() {
+		remove_action( 'edd_checkout_form_top', 'edd_discount_field', -1 );
+		add_action( 'edd_checkout_form_bottom', 'edd_discount_field' );
+	}
 	/**
 	 * Changes the cross selling HTML to be more in line what we want
 	 *

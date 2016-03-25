@@ -15,7 +15,7 @@ if ( isset( $template_args['readonly'] ) && $template_args['readonly'] ) {
 	data-download-id="<?php echo esc_attr( $item['id'] ); ?>">
 	<div class="three-seventh small-full checkout__title edd_cart_item_name">
 
-		<div class="checkout-item--icon">
+		<div class="checkout-item__icon">
 <?php
 		$icon = get_product_icon( $item['id'] );
 		if ( $icon ) : ?>

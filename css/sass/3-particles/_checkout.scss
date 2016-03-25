@@ -1,15 +1,19 @@
+body.edd-checkout {
+  .announcement.newsletter,
+  #fullfooter {
+    display: none;
+  }
+}
+
 #edd_next_button {
   position: absolute;
   bottom: 0.5em;
   right: 0;
 }
 
-.checkout-wrap--container {
+.checkout-wrap__container {
   @extend .grid;
-}
-
-.checkout--form {
-  width: calc(100% - 300px);
+  @extend .row;
 }
 
 #edd_payment_mode_select {
@@ -20,6 +24,11 @@
   ul {
     margin-bottom: 0;
   }
+
+  &__form {
+    width: calc(100% - 300px);
+  }
+
 
   li {
     margin-bottom: 1em;
@@ -36,24 +45,27 @@
     border-style: dotted;
   }
 
-  &--price-total,
-  &--price-vat,
-  &--price-subtotal {
+  &__cart-price {
     text-align: right;
     margin-right: 15px;
     color: #777;
-  }
 
-  &--price-total {
-    color: #333;
-    font-weight: bold;
+    &--total {
+      color: #333;
+      font-weight: bold;
+    }
   }
 
   &__price {
     white-space: nowrap;
   }
 
-  &-item--icon {
+  .item-discount {
+    font-style: italic;
+    color: $color-pink-dark;
+  }
+
+  &-item__icon {
     width: 40px;
     min-height: 10px;
     float: left;
@@ -99,12 +111,7 @@
     margin-right: $spacing-half;
   }
 
-  .item-discount {
-    font-style: italic;
-    color: $color-pink-dark;
-  }
-
-  &--products .item-discount {
+  &__products .item-discount {
     border-top: none;
     padding-top: 0;
     margin-top: -1em;

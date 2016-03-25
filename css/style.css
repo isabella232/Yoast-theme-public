@@ -511,7 +511,7 @@ a img.aligncenter {
   padding-bottom: 1px;
   position: relative; }
 
-.row, #edd_sl_cancel_renewal_form, #edd_discount_code, .edd_empty_cart, #edd_checkout_user_info,
+.row, .checkout-wrap__container, #edd_sl_cancel_renewal_form, #edd_discount_code, .edd_empty_cart, #edd_checkout_user_info,
 #edd_cc_fields,
 #edd_cc_address,
 #edd_purchase_submit,
@@ -525,7 +525,7 @@ a img.aligncenter {
   width: 100%;
   margin: 0 auto; }
   @media only screen and (max-width: 65.25rem) {
-    .row, #edd_sl_cancel_renewal_form, #edd_discount_code, .edd_empty_cart, #edd_checkout_user_info,
+    .row, .checkout-wrap__container, #edd_sl_cancel_renewal_form, #edd_discount_code, .edd_empty_cart, #edd_checkout_user_info,
     #edd_cc_fields,
     #edd_cc_address,
     #edd_purchase_submit,
@@ -533,7 +533,7 @@ a img.aligncenter {
     #edd_check_payment_info,
     #edd_terms_agreement, .comment-respond {
       padding: 0 1rem; } }
-  .announcement + .row, .announcement + #edd_sl_cancel_renewal_form, .announcement + #edd_discount_code, .announcement + .edd_empty_cart, .announcement + #edd_checkout_user_info, .announcement +
+  .announcement + .row, .announcement + .checkout-wrap__container, .announcement + #edd_sl_cancel_renewal_form, .announcement + #edd_discount_code, .announcement + .edd_empty_cart, .announcement + #edd_checkout_user_info, .announcement +
   #edd_cc_fields, .announcement +
   #edd_cc_address, .announcement +
   #edd_purchase_submit, .announcement +
@@ -565,7 +565,7 @@ a img.aligncenter {
 .extra {
   margin-bottom: 1.88rem; }
 
-.grid, .checkout-wrap--container, .checkout--cross-sell .checkout-cross-sell {
+.grid, .checkout-wrap__container, .checkout-cross-sell__item {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -589,16 +589,16 @@ a img.aligncenter {
   justify-content: space-between;
   width: 100%;
   vertical-align: top; }
-  .old-ie .grid, .old-ie .checkout-wrap--container, .old-ie .checkout--cross-sell .checkout-cross-sell, .checkout--cross-sell .old-ie .checkout-cross-sell {
+  .old-ie .grid, .old-ie .checkout-wrap__container, .old-ie .checkout-cross-sell__item {
     text-align: justify; }
-    .old-ie .grid::after, .old-ie .checkout-wrap--container::after, .old-ie .checkout--cross-sell .checkout-cross-sell::after, .checkout--cross-sell .old-ie .checkout-cross-sell::after {
+    .old-ie .grid::after, .old-ie .checkout-wrap__container::after, .old-ie .checkout-cross-sell__item::after {
       content: '';
       display: inline-block;
       width: 100%; }
-    .old-ie .grid > *, .old-ie .checkout-wrap--container > *, .old-ie .checkout--cross-sell .checkout-cross-sell > *, .checkout--cross-sell .old-ie .checkout-cross-sell > * {
+    .old-ie .grid > *, .old-ie .checkout-wrap__container > *, .old-ie .checkout-cross-sell__item > * {
       display: inline-block;
       text-align: left; }
-  .old-ie .grid > div, .old-ie .checkout-wrap--container > div, .old-ie .checkout--cross-sell .checkout-cross-sell > div, .checkout--cross-sell .old-ie .checkout-cross-sell > div {
+  .old-ie .grid > div, .old-ie .checkout-wrap__container > div, .old-ie .checkout-cross-sell__item > div {
     vertical-align: top;
     width: 100%; }
 
@@ -753,10 +753,10 @@ a img.aligncenter {
 .offset-four-seventh {
   margin-left: 58.77551%; }
 
-.grid > *, .checkout-wrap--container > *, .checkout--cross-sell .checkout-cross-sell > * {
+.grid > *, .checkout-wrap__container > *, .checkout-cross-sell__item > * {
   width: 100%; }
   @media only screen and (max-width: 50rem) {
-    .grid > *, .checkout-wrap--container > *, .checkout--cross-sell .checkout-cross-sell > * {
+    .grid > *, .checkout-wrap__container > *, .checkout-cross-sell__item > * {
       max-width: 100%;
       margin-left: 0;
       -webkit-flex-basis: 100%;
@@ -765,7 +765,7 @@ a img.aligncenter {
       -o-flex-basis: 100%;
       flex-basis: 100%; } }
 
-.grid:last-child, .checkout-wrap--container:last-child, .checkout--cross-sell .checkout-cross-sell:last-child {
+.grid:last-child, .checkout-wrap__container:last-child, .checkout-cross-sell__item:last-child {
   margin-right: 0; }
 
 @media only screen and (min-width: 30rem) and (max-width: 63.25rem) {
@@ -819,7 +819,7 @@ a img.aligncenter {
     margin-left: 80%; } }
 
 @media only screen and (max-width: 40em) {
-  .newsletter .grid > div, .newsletter .checkout-wrap--container > div, .newsletter .checkout--cross-sell .checkout-cross-sell > div, .checkout--cross-sell .newsletter .checkout-cross-sell > div {
+  .newsletter .grid > div, .newsletter .checkout-wrap__container > div, .newsletter .checkout-cross-sell__item > div {
     flex-basis: 100% !important;
     max-width: 100% !important; } }
 
@@ -2510,19 +2510,23 @@ a.announcement {
     font-size: 140%;
     margin: 4px 10px 0 0; }
 
+body.edd-checkout .announcement.newsletter,
+body.edd-checkout #fullfooter {
+  display: none; }
+
 #edd_next_button {
   position: absolute;
   bottom: 0.5em;
   right: 0; }
-
-.checkout--form {
-  width: calc(100% - 300px); }
 
 #edd_payment_mode_select {
   font-family: "Open Sans", Arial, sans-serif; }
 
 .checkout ul {
   margin-bottom: 0; }
+
+.checkout__form {
+  width: calc(100% - 300px); }
 
 .checkout li {
   margin-bottom: 1em;
@@ -2536,19 +2540,22 @@ a.announcement {
   border-color: #bbb;
   border-style: dotted; }
 
-.checkout--price-total, .checkout--price-vat, .checkout--price-subtotal {
+.checkout__cart-price {
   text-align: right;
   margin-right: 15px;
   color: #777; }
-
-.checkout--price-total {
-  color: #333;
-  font-weight: bold; }
+  .checkout__cart-price--total {
+    color: #333;
+    font-weight: bold; }
 
 .checkout__price {
   white-space: nowrap; }
 
-.checkout-item--icon {
+.checkout .item-discount {
+  font-style: italic;
+  color: #A4286A; }
+
+.checkout-item__icon {
   width: 40px;
   min-height: 10px;
   float: left;
@@ -2584,11 +2591,7 @@ a.announcement {
 .checkout input[type="radio"] {
   margin-right: 0.94rem; }
 
-.checkout .item-discount {
-  font-style: italic;
-  color: #A4286A; }
-
-.checkout--products .item-discount {
+.checkout__products .item-discount {
   border-top: none;
   padding-top: 0;
   margin-top: -1em; }
@@ -2785,45 +2788,45 @@ a.announcement {
     #edd_purchase_form #yst-edd-btw-wrap .fa-spinner.show {
       display: inline; }
 
-.checkout--cross-sell {
+.checkout-cross-sell {
   width: 280px; }
-  .checkout--cross-sell h2 {
+  .checkout-cross-sell h2 {
     font-size: 1.4em; }
-  .checkout--cross-sell .promoblock {
+  .checkout-cross-sell .promoblock {
     padding: 15px;
     border-color: #5D237A; }
-    .checkout--cross-sell .promoblock h2 {
+    .checkout-cross-sell .promoblock h2 {
       color: #5D237A; }
-  .checkout--cross-sell .cross-sell--icon {
+  .checkout-cross-sell__item {
+    border-top: 1px dashed #ccc;
+    padding-top: 20px; }
+    .checkout-cross-sell__item:first-child {
+      border-top: none;
+      padding-top: 0; }
+  .checkout-cross-sell__icon {
     width: 50px;
     font-size: 0.8em; }
-    .checkout--cross-sell .cross-sell--icon .more__save--alone {
+    .checkout-cross-sell__icon .more__save--alone {
       padding-top: 6px; }
-  .checkout--cross-sell .cross-sell--details {
+  .checkout-cross-sell__details {
     width: calc(100% - 70px); }
-    .checkout--cross-sell .cross-sell--details select {
+    .checkout-cross-sell__details select {
       margin: 0;
       width: 100%; }
-    .checkout--cross-sell .cross-sell--details .edd_download_purchase_form {
+    .checkout-cross-sell__details .edd_download_purchase_form {
       padding-bottom: 1em; }
-  .checkout--cross-sell .cross-sell--title {
+  .checkout-cross-sell__title {
     font-family: "Open Sans", Arial, sans-serif;
     font-weight: 300;
     font-size: 1.1em;
     line-height: 120%;
     margin-bottom: 0.5em;
     color: #555; }
-  .checkout--cross-sell .checkout-cross-sell {
-    border-top: 1px dashed #ccc;
-    padding-top: 20px; }
-    .checkout--cross-sell .checkout-cross-sell:first-child {
-      border-top: none;
-      padding-top: 0; }
-  .checkout--cross-sell .button--naked {
+  .checkout-cross-sell .button--naked {
     width: auto;
     font-size: 1em;
     color: #A4286A; }
-    .checkout--cross-sell .button--naked:hover, .checkout--cross-sell .button--naked:focus {
+    .checkout-cross-sell .button--naked:hover, .checkout-cross-sell .button--naked:focus {
       color: #D93F69; }
 
 .edd_download_purchase_form:before, .edd_download_purchase_form:after {

@@ -1,5 +1,5 @@
 
-.checkout--cross-sell {
+.checkout-cross-sell {
   width: 280px;
 
   h2 {
@@ -14,7 +14,18 @@
     }
   }
 
-  .cross-sell--icon {
+  &__item {
+    @extend .grid;
+
+    border-top: 1px dashed #ccc;
+    padding-top: 20px;
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  &__icon {
     width: 50px;
     font-size: 0.8em;
     .more__save--alone {
@@ -22,7 +33,7 @@
     }
   }
 
-  .cross-sell--details {
+  &__details {
     width: calc(100% - 70px);
     select {
       margin: 0;
@@ -34,7 +45,7 @@
     }
   }
 
-  .cross-sell--title {
+  &__title {
     font-family: $font-stack-default;
     font-weight: 300;
 
@@ -42,17 +53,6 @@
     line-height: 120%;
     margin-bottom: 0.5em;
     color: #555;
-  }
-
-  .checkout-cross-sell {
-    @extend .grid;
-
-    border-top: 1px dashed #ccc;
-    padding-top: 20px;
-    &:first-child {
-      border-top: none;
-      padding-top: 0;
-    }
   }
 
   .button--naked {
