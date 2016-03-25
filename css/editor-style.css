@@ -757,7 +757,14 @@ a img.aligncenter {
     -ms-flex-basis: 29.79592%;
     -o-flex-basis: 29.79592%;
     flex-basis: 29.79592%;
-    max-width: 29.79592%; } }
+    max-width: 29.79592%; }
+  .medium-two-third {
+    -webkit-flex-basis: 65%;
+    -moz-flex-basis: 65%;
+    -ms-flex-basis: 65%;
+    -o-flex-basis: 65%;
+    flex-basis: 65%;
+    max-width: 65%; } }
 
 @media only screen and (min-width: 30rem) and (max-width: 50rem) {
   .medium-one-half {

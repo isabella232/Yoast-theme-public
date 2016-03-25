@@ -2,12 +2,10 @@
 namespace Yoast\YoastCom\Theme;
 ?>
 
-<?php get_template_part( 'html_includes/shop/progress' ); ?>
-
 <div id="edd_checkout_cart" class="checkout<?php if ( ! edd_is_ajax_disabled() ) { echo ' ajaxed'; } ?>">
 	<?php $cart_items = edd_get_cart_contents(); ?>
 	<div class="row">
-		<ul class="list--unstyled">
+		<ul class="list--unstyled checkout__products">
 			<?php foreach ( $cart_items as $key => $cart_item ) : ?>
 				<?php get_template_part( 'html_includes/shop/checkout-item', array(
 					'class'    => '',
@@ -39,7 +37,8 @@ namespace Yoast\YoastCom\Theme;
 
 	<?php $discounts = get_global_discounts(); ?>
 	<?php if ( ! empty( $discounts ) ) : ?>
-		<hr class="hr--no-pointer tight">
+
+		<hr class="hr--no-pointer tight hr__before-global-discount">
 
 		<div class="row">
 			<ul class="list--unstyled">
@@ -53,13 +52,13 @@ namespace Yoast\YoastCom\Theme;
 		</div>
 	<?php endif; ?>
 
-	<?php if ( edd_use_taxes() && cart_has_tax() ) : ?>
-		<hr class="hr--no-pointer tight">
+	<hr class="hr--no-pointer tight">
 
+	<?php if ( edd_use_taxes() && cart_has_tax() ) : ?>
 		<div class="row iceberg--small">
 			<div class="grid">
-				<div class="three-seventh offset-three-seventh small-four-fifth"><?php _e( 'Subtotal', 'yoastcom' ); ?></div>
-				<div class="one-seventh small-one-fifth edd_cart_subtotal_amount">
+				<div class="three-seventh offset-three-seventh medium-two-third small-half checkout__cart-price checkout__cart-cart--subtotal"><?php _e( 'Subtotal', 'yoastcom' ); ?></div>
+				<div class="one-seventh medium-one-third small-half edd_cart_subtotal_amount">
 					<?php echo esc_html( edd_currency_filter( edd_format_amount( edd_get_cart_subtotal() - edd_get_cart_discounted_amount() ) ) ); ?>
 				</div>
 			</div>
@@ -68,10 +67,10 @@ namespace Yoast\YoastCom\Theme;
 		<?php if ( ! edd_prices_show_tax_on_checkout() ) : ?>
 			<div class="row iceberg--small">
 				<div class="grid">
-					<div class="three-seventh offset-three-seventh small-four-fifth">
+					<div class="three-seventh offset-three-seventh medium-two-third small-half checkout__cart-price checkout__cart-cart--vat">
 						<?php printf( __( 'VAT (<span class="yst-tax-rate">%s</span>%%)', 'yoastcom' ), number_format( ( edd_get_tax_rate() * 100 ), 1 ) ); ?>
 					</div>
-					<div class="one-seventh small-one-fifth">
+					<div class="one-seventh medium-one-third small-half">
 						<span class="edd_cart_tax_amount" id="yst_main_tax" data-tax="<?php echo esc_attr( edd_get_cart_tax() ); ?>">
 							<?php echo esc_html( edd_currency_filter( edd_format_amount( edd_get_cart_tax() ) ) ); ?>
 						</span>
@@ -79,19 +78,19 @@ namespace Yoast\YoastCom\Theme;
 				</div>
 			</div>
 		<?php endif; ?>
+
+		<hr class="hr--no-pointer tight hr__after-tax">
 	<?php endif; ?>
 
-	<hr class="hr--no-pointer tight">
-
-	<div class="row iceberg">
+	<div class="row iceberg--small">
 		<div class="grid">
-			<div class="three-seventh hide-on-mobile">
+			<div class="three-seventh medium-one-third hide-on-mobile">
 				<?php if ( 2 === get_checkout_step() ) : ?>
 					<a href="<?php echo esc_url( url_shop_page() ); ?>" class="link--naked"><?php _e( '&laquo; Continue shopping', 'yoastcom' ); ?></a>
 				<?php endif; ?>
 			</div>
-			<div class="three-seventh small-four-fifth"><?php _e( 'Total', 'yoastcom' ); ?></div>
-			<div class="one-seventh small-one-fifth edd_cart_total">
+			<div class="three-seventh medium-one-third small-half checkout__cart-price checkout__cart-price--total"><?php _e( 'Total', 'yoastcom' ); ?></div>
+			<div class="one-seventh medium-one-third small-half edd_cart_total">
 				<span class="edd_cart_amount" data-subtotal="<?php echo esc_attr( edd_get_cart_total() ); ?>" data-total="<?php echo esc_attr( edd_get_cart_total() ); ?>">
 					<?php edd_cart_total(); ?>
 				</span>

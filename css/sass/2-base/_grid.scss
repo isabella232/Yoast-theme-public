@@ -240,6 +240,10 @@ $one-sevent-gutter: percentage(28 / 980);
 		@include vendor(flex-basis, $one-third); 
 		max-width: $one-third;
 	}
+	.medium-two-third {
+		@include vendor(flex-basis, 65%);
+		max-width: 65%;
+	}
 }
 
 // for footer

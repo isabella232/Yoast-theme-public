@@ -15,6 +15,12 @@ body {
 
 }
 
+body.edd-checkout {
+	.siteheader {
+		margin-bottom: 1rem;
+	}
+}
+
 	.tagline {
 		@media only screen and (max-width: $page-width-medium) {
 			display: none;
