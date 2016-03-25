@@ -4021,7 +4021,12 @@ svg .llms-animated-circle {
   stroke: #77B227; }
 
 .view-summary {
-  cursor: pointer; }
+  cursor: pointer;
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px; }
 
 .quiz-summary .panel {
   cursor: pointer; }

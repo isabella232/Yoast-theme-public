@@ -54,13 +54,9 @@ $associated_quiz = get_post_meta( $post->ID, '_llms_assigned_quiz', true );
 	<?php }
 
 	if ($associated_quiz) {
-		$quiz = new LLMS_Quiz( $associated_quiz );
-		if ( 0 === $quiz->get_total_attempts_by_user( get_current_user_id() ) ) {
-			$button_text = __( 'Take quiz', 'yoastcom' );
-		}
-		else {
-			$button_text = __( 'Re-take quiz', 'yoastcom' );
-		}
+
+		$button_text = __( 'Start Quiz', 'yoastcom' );
+		
 		?>
 
 		<form method="POST" action="" name="take_quiz" enctype="multipart/form-data">
@@ -68,9 +64,7 @@ $associated_quiz = get_post_meta( $post->ID, '_llms_assigned_quiz', true );
 			<input type="hidden" name="associated_lesson" value="<?php echo esc_attr( $post->ID ); ?>" />
 			<input type="hidden" name="quiz_id" value="<?php echo esc_attr( $associated_quiz ); ?>" />
 			<button type="submit" class="button" name="take_quiz" value="<?php echo $button_text; ?>">
-				<i class="fa fa-pencil-square-o"></i>
-				<?php echo $button_text; ?>
-			</button>
+				<i class="fa fa-pencil-square-o"></i><?php echo $button_text; ?></button>
 			<input type="hidden" name="action" value="take_quiz" />
 
 			<?php wp_nonce_field( 'take_quiz' ); ?>
