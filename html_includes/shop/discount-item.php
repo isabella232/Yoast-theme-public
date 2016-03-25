@@ -13,8 +13,10 @@ if ( ! empty( $template_args['title'] ) ) {
 }
 ?>
 <li class="grid edd_cart_item item-discount">
+
 	<?php if ( $title ) : ?>
 		<div class="three-seventh">
+			<div class="checkout-item__icon show-on-desktop"></div>
 			<strong><?php echo esc_html( $title ); ?></strong>
 		</div>
 	<?php endif; ?>
