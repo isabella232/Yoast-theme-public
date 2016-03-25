@@ -45,7 +45,7 @@ body.edd-checkout {
 
   &__cart-price {
     text-align: right;
-    margin-right: 15px;
+    padding-right: 15px;
     color: #777;
 
     &--total {
@@ -74,6 +74,7 @@ body.edd-checkout {
     text-decoration: none;
     color: $color-grey-text;
     float: right;
+    margin-left: 4px;
     &:hover, &:focus {
       text-decoration: none;
     }
@@ -83,12 +84,6 @@ body.edd-checkout {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  &__price {
-    @media only screen and (max-width: $page-width-medium) {
-      text-align: right;
-    }
   }
 
   label {

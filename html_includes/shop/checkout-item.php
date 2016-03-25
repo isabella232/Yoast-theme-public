@@ -27,7 +27,7 @@ if ( isset( $template_args['readonly'] ) && $template_args['readonly'] ) {
 	<?php
 	$variable_pricing = edd_has_variable_prices( $item['id'] );
 ?>
-	<div class="three-seventh medium-one-half small-four-fifth">
+	<div class="three-seventh medium-two-third small-full">
 		<?php if ( $variable_pricing ) : ?>
 			<?php if ( $readonly ) : ?>
 				<?php get_template_part( 'html_includes/shop/pricing-option', array(
@@ -56,7 +56,7 @@ if ( isset( $template_args['readonly'] ) && $template_args['readonly'] ) {
 			</label>
 		<?php endif; ?>
 	</div>
-	<div class="checkout__price one-seventh medium-one-half small-one-fifth">
+	<div class="checkout__price one-seventh medium-one-third small-full">
 		<?php
 			echo esc_html(
 				edd_currency_filter( edd_format_amount(
