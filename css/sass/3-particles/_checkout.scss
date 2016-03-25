@@ -116,6 +116,12 @@ body.edd-checkout {
   margin-left: 1rem;
 }
 
+#edd-discount-error-wrap {
+  display: block;
+  clear: both;
+  color: red;
+}
+
 // Hide renewal form and style the cancel renewal form.
 #edd_sl_renewal_form {
   display: none;

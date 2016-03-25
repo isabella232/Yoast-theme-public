@@ -2599,6 +2599,11 @@ body.edd-checkout #fullfooter {
   vertical-align: middle;
   margin-left: 1rem; }
 
+#edd-discount-error-wrap {
+  display: block;
+  clear: both;
+  color: red; }
+
 #edd_sl_renewal_form {
   display: none; }
 

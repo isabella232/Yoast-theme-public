@@ -14,7 +14,26 @@
 		$body.on( 'change', '.yst-edd-pricing-switcher', handleChangeDownloadVariation );
 		$body.on( 'edd_cart_billing_address_updated', hideProvinceField );
 
+		$(document).ajaxComplete(reloadOnFreeCart);
+		
 		$( '#edd_first' ).focus();
+	}
+	
+	function reloadOnFreeCart( event, xhr, settings ) {
+		if ( settings.url !== edd_global_vars.ajaxurl) {
+			return;
+		}
+
+		if ( typeof xhr.responseJSON === 'undefined' ) {
+			return;
+		}
+
+		var discount_response = xhr.responseJSON;
+		if ( discount_response && discount_response.msg == 'valid') {
+			if( '0.00' == discount_response.total_plain ) {
+				location.reload();
+			}
+		}
 	}
 
 	/**
