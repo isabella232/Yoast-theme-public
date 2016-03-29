@@ -172,7 +172,7 @@
         background-color: $color-grey !important;
         //text-shadow: none;
         a.mainnav-menuitem, > a {
-          background-color: $color-grey;
+          background-color: $color-grey !important;
           color: $color-grey-text;
         }
       }
