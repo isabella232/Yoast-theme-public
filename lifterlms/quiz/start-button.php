@@ -30,7 +30,7 @@ if ( $quiz ) {
 	if ( $attempts === 'unlimited' || $attempts > 0 || $quiz->get_end_date( $user_id ) == '' ) {
 
 		// Should this be 'Start Quiz' sometimes?
-		$title = 'Re-take Quiz';
+		$title = 'Re-take quiz';
 
 		?>
 		<form method="POST" action="" name="llms_start_quiz" enctype="multipart/form-data">

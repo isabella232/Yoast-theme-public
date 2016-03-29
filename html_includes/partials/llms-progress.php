@@ -6,6 +6,6 @@ namespace Yoast\YoastCom\Theme;
 $course = \Yoast\YoastCom\Academy\get_course();
 $course_progress = $course->get_percent_complete();
 
-_e( 'Course Progress' );
+_e( 'Course progress' );
 
 lifterlms_course_progress_bar( $course_progress, false, false );

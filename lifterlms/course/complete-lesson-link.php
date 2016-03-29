@@ -55,7 +55,7 @@ $associated_quiz = get_post_meta( $post->ID, '_llms_assigned_quiz', true );
 
 	if ($associated_quiz) {
 
-		$button_text = __( 'Start Quiz', 'yoastcom' );
+		$button_text = __( 'Start quiz', 'yoastcom' );
 		
 		?>
 
