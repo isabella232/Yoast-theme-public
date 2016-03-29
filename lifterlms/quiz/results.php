@@ -31,7 +31,7 @@ $is_passing_score = $quiz->is_passing_score( $user_id );
 <div class="clear"></div>
 <div class="llms-template-wrapper">
 	<div class="llms-quiz-results">
-		<h3>Quiz Results</h3>
+		<h3>Quiz results</h3>
 
 		<?php
 		//determine if grade, best grade or none should be shown.

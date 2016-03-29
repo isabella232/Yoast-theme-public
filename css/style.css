@@ -4339,7 +4339,7 @@ svg .llms-animated-circle {
       .theme-software .mainnav .mainnav__software {
         background-color: #DCDCDC !important; }
         .theme-software .mainnav .mainnav__software a.mainnav-menuitem, .theme-software .mainnav .mainnav__software > a {
-          background-color: #DCDCDC;
+          background-color: #DCDCDC !important;
           color: #646464; } }
     .theme-software .mainnav .mainnav__software .mainnav-menuitem, .theme-software .mainnav .mainnav__software > a {
       background-color: #0075B3; }

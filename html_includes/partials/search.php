@@ -10,7 +10,7 @@ $search_url = apply_filters( 'yoastcom_search_url', home_url() );
 	</form>
 <?php elseif ( 'desktop' === $template_args['type'] ) : ?>
 	<form action="<?php echo esc_attr( $search_url ); ?>">
-		<input type="search" name="s" class="size-m" placeholder="<?php _e( 'Search', 'yoastcom' ); ?>">
+		<input type="search" name="s" class="size-m" placeholder="<?php _e( apply_filters( 'yoast_theme-search_placeholder', 'Search' ), 'yoastcom' ); ?>">
 		<button class="button--naked">
 			<span class="visuallyhidden focusable"><?php _e( 'Search', 'yoastcom' ); ?></span>
 			<span class="text-icon">&#xf002;</span>
