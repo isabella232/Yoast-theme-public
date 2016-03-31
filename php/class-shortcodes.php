@@ -51,7 +51,7 @@ class Shortcodes {
 	 * Handler for the support shortcode. With this shortcode you used to be able to make a grid of boxes with content
 	 * in them.
 	 *
-	 * @param array  $args    The shortcode arguments.
+	 * @param array $args The shortcode arguments.
 	 * @param string $content The content inside the shortcode.
 	 *
 	 * @return string HTML to output.
@@ -151,7 +151,7 @@ class Shortcodes {
 	/**
 	 * Handler for the testimonial shortcode. Outputs a neat testimonial box with the possibility of an image.
 	 *
-	 * @param array  $atts    The shortcode attributes.
+	 * @param array $atts The shortcode attributes.
 	 * @param string $content The shortcode content.
 	 *
 	 * @return string
@@ -179,7 +179,7 @@ class Shortcodes {
 	/**
 	 * Allows putting the sidebar content higher up along the content than it would normally happen if there is other break out content
 	 *
-	 * @param array  $atts
+	 * @param array $atts
 	 * @param string $content
 	 *
 	 * @return string
@@ -188,11 +188,15 @@ class Shortcodes {
 		$atts = wp_parse_args( $atts, array(
 			'id'    => '',
 			'title' => false,
+			'icon'  => false,
 		) );
 
 		$out = $this->get_break_out_body();
 		$out .= '<section class="alignright extra" id="' . $atts['id'] . '">';
 		if ( $atts['title'] ) {
+			if ( $atts['icon'] ) {
+				$atts['title'] = '<i class="fa fa-' . $atts['icon'] . '"></i> ' . $atts['title'];
+			}
 			$out .= '<h4>' . $atts['title'] . '</h4>';
 		}
 		if ( ! is_null( $content ) ) {
@@ -347,7 +351,7 @@ class Shortcodes {
 	/**
 	 * Handler for the read more link shortcode
 	 *
-	 * @param array  $atts The shortcode attributes
+	 * @param array $atts The shortcode attributes
 	 * @param string $content
 	 *
 	 * @return string The content to output on the page.
