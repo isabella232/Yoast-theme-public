@@ -4,9 +4,7 @@ namespace Yoast\YoastCom\Theme;
 <div class="media media--nofloat product">
 	<?php if ( post_meta( 'promo_video_embed' ) ) : ?>
 		<div class="vid">
-			<div class="videowrapper">
-				<?php echo wp_oembed_get( post_meta( 'promo_video_embed' ) ); ?>
-			</div>
+			<?php echo wp_oembed_get( post_meta( 'promo_video_embed' ) ); ?>
 		</div>
 	<?php endif; ?>
 	<div class="bd">

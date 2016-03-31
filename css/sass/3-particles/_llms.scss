@@ -60,6 +60,11 @@ svg .llms-animated-circle {
 
 .view-summary {
   cursor: pointer;
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
 }
 
 .quiz-summary {
@@ -127,6 +132,13 @@ svg .llms-animated-circle {
 }
 
 .llms-quiz-result-details {
+
+  .llms-content-block {
+    font-size: 1.2em;
+    padding-top: 1.5em;
+  }
+
+
   // Only display the first item.
   ul {
     display: none;
@@ -206,7 +218,7 @@ svg .llms-animated-circle {
 
 .yoast_academy .extra {
   position: -webkit-sticky;
-  position:         sticky;
+  position: sticky;
   top: 115px;
 }
 

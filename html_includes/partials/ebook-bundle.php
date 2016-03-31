@@ -21,12 +21,8 @@ $products = array_map( function( $product_id ) {
 		<h2 class="h3 tight color-academy--tertiary"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></h2>
 		<h3 class="h2 tight color-academy--tertiary"><a href="<?php echo $url; ?>"><?php echo implode( ' &amp ', array_map( 'esc_html', wp_list_pluck( $products, 'post_title' ) ) ); ?></a></h3>
 		<?php the_content(); ?>
-
-		<?php if ( post_meta( 'savings' ) ) : ?>
-			<div class="more__save more__save--alone color-cta">
-				<?php printf( __( 'Save %s', 'yoastcom' ), '<span>' . str_replace( ' ', '', edd_currency_filter( post_meta( 'savings' ) ) ) ) . '</span>'; ?>
-			</div>
-		<?php endif; ?>
+		
+		<?php get_template_part( 'html_includes/partials/more-save' ); ?>
 
 		<?php echo edd_get_purchase_link( array(
 			'class' => 'button default',

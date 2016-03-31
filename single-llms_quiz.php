@@ -1,15 +1,16 @@
 <?php
+
 namespace Yoast\YoastCom\Theme;
 
 function yst_return_empty_string() {
 	return '';
 }
 
+get_header();
+
+get_template_part( 'html_includes/siteheader', array( 'academy-sub' => true ) );
+
 ?>
-
-<?php get_header(); ?>
-
-<?php get_template_part( 'html_includes/siteheader', array( 'academy-sub' => true ) ); ?>
 <div class="site">
 
 	<div class="row">
@@ -47,4 +48,6 @@ function yst_return_empty_string() {
 	</main>
 </div>
 
-<?php get_footer(); ?>
+<?php
+
+get_footer();

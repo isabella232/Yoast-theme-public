@@ -14,10 +14,8 @@ class Checkout_HTML {
 	 * Constructor
 	 */
 	public function __construct() {
-
-		add_filter( 'edd_csau_html', array( $this, 'cross_selling_html' ), 10, 2 );
-
-		add_action( 'template_redirect', array( $this, 'change_edd_csau_location' ), 15 );
+		add_action( 'template_redirect', array( $this, 'change_edd_csau_location' ), 99 );
+		add_action( 'template_redirect', array( $this, 'change_edd_discount_location' ), 99 );
 
 		add_action( 'edd_cc_billing_bottom', array( $this, 'html_cc_billing_bottom' ) );
 		add_action( 'edd_purchase_form_before_submit', array( $this, 'html_what_happens_next' ), 175 );
@@ -25,6 +23,36 @@ class Checkout_HTML {
 		add_action( 'edd_purchase_link_end', array( $this, 'html_button_purchase_link' ), 10, 2 );
 
 		add_action( 'init', array( $this, 'init' ) );
+
+		add_shortcode( 'download_checkout', array( $this, 'edd_checkout_form_shortcode' ) );
+	}
+
+	/**
+	 * Rewrite store shortcode implementation
+	 *
+	 * @return string
+	 */
+	public function edd_checkout_form_shortcode() {
+		$output = get_template_part( 'html_includes/shop/progress', array( 'return' => true ) );
+
+		$edd_checkout_form = edd_checkout_form();
+
+		add_filter( 'edd_csau_html', array( $this, 'cross_selling_html' ), 10, 2 );
+		$edd_cross_sells = edd_csau_html();
+		remove_filter( 'edd_csau_html', array( $this, 'cross_selling_html' ), 10 );
+
+		// Don't modify columns if there are no cross sells.
+		if ( ! empty( $edd_cross_sells ) ) {
+			$output .= '<div class="checkout-wrap__container">';
+			$output .= '<div class="checkout__form">' . $edd_checkout_form . '</div>'; // checkout--form
+			$output .= $edd_cross_sells;
+			$output .= '</div>'; // checkout-wrap--container
+		}
+		else {
+			$output .= $edd_checkout_form;
+		}
+
+		return $output;
 	}
 
 	/**
@@ -45,10 +73,10 @@ class Checkout_HTML {
 	 * Changes the payment form to use our own HTML
 	 */
 	public function change_edd_payment_mode_form() {
+		remove_action( 'edd_after_checkout_cart', 'edd_csau_display_on_checkout_page' );
+
 		remove_action( 'edd_payment_mode_select', 'edd_payment_mode_select' );
-
 		add_action( 'edd_payment_mode_select', array( $this, 'edd_payment_mode_select_html' ) );
-
 	}
 
 	/**
@@ -77,13 +105,19 @@ class Checkout_HTML {
 	 */
 	public function change_edd_csau_location() {
 		remove_action( 'edd_after_checkout_cart', 'edd_csau_display_on_checkout_page' );
-		add_action( 'edd_after_purchase_form', 'edd_csau_display_on_checkout_page' );
 	}
 
 	/**
+	 * Changes the location of the discount code entering form
+	 */
+	public function change_edd_discount_location() {
+		remove_action( 'edd_checkout_form_top', 'edd_discount_field', -1 );
+		add_action( 'edd_checkout_form_bottom', 'edd_discount_field' );
+	}
+	/**
 	 * Changes the cross selling HTML to be more in line what we want
 	 *
-	 * @param string $html The current HTML, we discard this completely.
+	 * @param string $html      The current HTML, we discard this completely.
 	 * @param array  $downloads The downloads to cross/up sell.
 	 *
 	 * @return string The new HTML.
@@ -188,9 +222,13 @@ class Checkout_HTML {
 	 * Adds the checkout errors on the top of the page.
 	 */
 	public function add_errors_on_top() {
-		add_action( 'edd_checkout_form_top', function() { echo '<div class="row">'; } );
+		add_action( 'edd_checkout_form_top', function () {
+			echo '<div class="row">';
+		} );
 		add_action( 'edd_checkout_form_top', 'edd_print_errors' );
-		add_action( 'edd_checkout_form_top', function() { echo '</div>'; } );
+		add_action( 'edd_checkout_form_top', function () {
+			echo '</div>';
+		} );
 	}
 
 	/**
@@ -226,7 +264,7 @@ class Checkout_HTML {
 	 * Outputs the HTML for the purchase button
 	 *
 	 * @param int   $download_ID The ID of the download to output the purchase link for.
-	 * @param array $args The arguments passed to the purchase link function.
+	 * @param array $args        The arguments passed to the purchase link function.
 	 */
 	public function html_button_purchase_link( $download_ID, $args ) {
 		get_template_part( 'html_includes/shop/purchase-link', array(
