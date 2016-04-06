@@ -108,3 +108,11 @@ a img.aligncenter {
 .clear {
   clear: both;
 }
+
+
+:target:before {
+	content: '';
+	display: block;
+	height: 7.5rem; /* fixed header height*/
+	margin: -7.5rem 0 0; /* negative fixed header height */
+}
