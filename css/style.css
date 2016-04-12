@@ -550,6 +550,9 @@ a img.aligncenter {
   #edd_terms_agreement, .announcement + .comment-respond {
     padding-top: 1.88rem; }
 
+.hidden {
+  display: none !important; }
+
 .full {
   width: 100%; }
 

@@ -10,6 +10,7 @@ $args = array(
 	'posts_per_page' => 25,
 	'orderby'        => 'menu_order',
 	'order'          => 'ASC',
+	'post__not_in' => ['247896','99668'], // Exclude GA + GA eCommerce.
 );
 
 if ( ! empty( $categories ) ) {

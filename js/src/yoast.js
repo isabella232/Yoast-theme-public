@@ -11,7 +11,6 @@ document.onreadystatechange = function () {
 		document.querySelector('html').classList.add('supports-filter');
 	}
 
-
 	// Make sure the top banner on the homepage has the right height
 	if(document.querySelector('[data-header-home]')) {
 		setHomeBannerHeight();	
@@ -70,3 +69,20 @@ function initToggle() {
 		});
 	}
 }
+
+(function($) {
+
+	$(document).ready(function() {
+		$('.js-random-show-items').each( function() {
+			var $this = $(this);
+			var items = $this.data('show-items');
+			
+			for( var i = 0; i < items; i++ ) {
+				var $items = $this.find('.js-random-show-item.hidden');
+				var index = Math.floor( Math.random() * $items.length );
+				$items.eq(index).removeClass('hidden');
+			}
+		});
+	});
+
+})(jQuery);

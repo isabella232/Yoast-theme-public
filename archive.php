@@ -16,6 +16,7 @@ namespace Yoast\YoastCom\Theme;
 
 	<main role="main">
 		<div class="row">
+
 			<h1><?php echo esc_html( get_the_archive_title() ); ?></h1>
 			<?php if ( is_search() ) { ?>
 				<form action="<?php echo home_url(); ?>">
@@ -106,9 +107,8 @@ namespace Yoast\YoastCom\Theme;
 
 			<hr class="hr--no-pointer">
 		<?php endif; ?>
-		<!---->
-		<!--		--><?php //get_template_part( 'html_includes/partials/announcement', array( 'text' => "Want to learn more long tail keywords and keyword research? Check out our eBook Optimize your WordPress site / Optimize your website &raquo;", ) );
-		?>
+
+		<?php //get_template_part( 'html_includes/partials/announcement', array( 'text' => "Want to learn more long tail keywords and keyword research? Check out our eBook Optimize your WordPress site / Optimize your website &raquo;", ) ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php theme_object()->excerpt->more( ' <a href="' . get_permalink() . '">&raquo;</a>' ); ?>
@@ -120,8 +120,7 @@ namespace Yoast\YoastCom\Theme;
 		<?php endwhile; ?>
 		<?php theme_object()->excerpt->clear(); ?>
 
-		<?php //get_template_part( 'html_includes/partials/announcement-addonmodules', array( 'class' => "fill--secondary", ) );
-		?>
+		<?php //get_template_part( 'html_includes/partials/announcement-addonmodules', array( 'class' => "fill--secondary", ) ); ?>
 
 		<div class="row">
 			<?php get_template_part( 'html_includes/partials/pagination' ); ?>

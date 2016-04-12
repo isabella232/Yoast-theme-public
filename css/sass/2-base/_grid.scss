@@ -19,7 +19,10 @@
 	.announcement + & {
 		padding-top: $spacing;
 	}
+}
 
+.hidden {
+	display: none !important;
 }
 
 .full {

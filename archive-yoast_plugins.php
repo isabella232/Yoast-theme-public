@@ -16,7 +16,7 @@ namespace Yoast\YoastCom\Theme;
 		<div class="row iceberg">
 			<h1 id="seo-plugins"><?php _e( 'SEO plugins by Yoast' ); ?></h1>
 			<ul class="list list--unstyled">
-				<li><a href="#ga-plugins"><?php _e( 'Google Analytics plugins', 'yoastcom' ); ?> &raquo;</a></li>
+<!--				<li><a href="#ga-plugins">--><?php //_e( 'Google Analytics plugins', 'yoastcom' ); ?><!-- &raquo;</a></li>-->
 				<li><a href="#other-plugins"><?php _e( 'Other plugins', 'yoastcom' ); ?> &raquo;</a></li>
 			</ul>
 			<?php get_template_part( 'html_includes/partials/more-pluginlist', array( 'categories' => array( 303 ) ) ); ?>
@@ -29,25 +29,13 @@ namespace Yoast\YoastCom\Theme;
 			</div>
 		</div>
 
-		<hr class="hr--no-pointer">
-
-		<section class="row island iceberg">
-			<h2 class="h1" id="ga-plugins"><?php _e( 'Google Analytics by Yoast plugins', 'yoastcom' ); ?></h2>
-
-			<ul class="list list--unstyled">
-				<li><a href="#seo-plugins"><?php _e( 'WordPress SEO plugins', 'yoastcom' ); ?> &raquo;</a></li>
-				<li><a href="#other-plugins"><?php _e( 'Other plugins', 'yoastcom' ); ?> &raquo;</a></li>
-			</ul>
-			<?php get_template_part( 'html_includes/partials/more-pluginlist', array( 'categories' => array( 407 ) ) ); ?>
-		</section>
-
 		<hr>
 
 		<div class="row iceberg">
 			<h2 class="h1" id="other-plugins"><?php _e( 'Other plugins', 'yoastcom' ); ?></h2>
 			<ul class="list list--unstyled">
 				<li><a href="#seo-plugins"><?php _e( 'WordPress SEO plugins', 'yoastcom' ); ?> &raquo;</a></li>
-				<li><a href="#ga-plugins"><?php _e( 'Google Analytics plugins', 'yoastcom' ); ?> &raquo;</a></li>
+<!--				<li><a href="#ga-plugins">--><?php //_e( 'Google Analytics plugins', 'yoastcom' ); ?><!-- &raquo;</a></li>-->
 			</ul>
 			<?php get_template_part( 'html_includes/partials/promoblocks-plugins' ); ?>
 		</div>

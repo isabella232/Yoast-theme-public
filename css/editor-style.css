@@ -532,6 +532,9 @@ a img.aligncenter {
   .announcement + .row {
     padding-top: 1.88rem; }
 
+.hidden {
+  display: none !important; }
+
 .full {
   width: 100%; }
 

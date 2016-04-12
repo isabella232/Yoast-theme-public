@@ -3,7 +3,7 @@ namespace Yoast\YoastCom\Theme;
 
 $plugins = query_plugins(
 	array(
-		'posts_per_page' => 2,
+		'posts_per_page' => -1,
 		'orderby' => 'rand',
 		'tax_query' => array(
 			array(
@@ -14,11 +14,16 @@ $plugins = query_plugins(
 		),
 	)
 );
+
 $i = 0;
+
 ?>
+
+<div class="js-random-show-items" data-show-items="2">
+
 <?php while ( $plugins->have_posts() ) : $plugins->the_post(); ?>
 	<?php $icon = get_product_icon(); ?>
-	<a href="<?php the_permalink(); ?>" class="more color-academy">
+	<a href="<?php the_permalink(); ?>" class="more color-academy hidden js-random-show-item">
 		<?php if ( $icon && 0 === ( $i % 2 ) ) : ?>
 			<img src="<?php echo esc_url( $icon ); ?>" class="more__plug show-on-desktop" width="40" height="40" />
 		<?php endif; ?>
@@ -31,3 +36,4 @@ $i = 0;
 		<?php endif; ?>
 	</a>
 <?php endwhile; wp_reset_postdata(); ?>
+</div>
