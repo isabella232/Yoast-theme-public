@@ -5222,6 +5222,8 @@ svg .llms-animated-circle {
   border: 1px solid;
   border-radius: 30px;
   border-bottom-right-radius: 0; }
+  .promoblock p {
+    color: #000; }
   .promoblock p:last-child {
     margin-bottom: 0; }
   .promoblock a img {

@@ -10,6 +10,10 @@
   @extend %bordered;
   @include rounded--large();
 
+  p {
+    color: $color-black;
+  }
+
   p:last-child {
     margin-bottom: 0;
   }
