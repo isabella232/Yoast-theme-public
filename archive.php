@@ -144,7 +144,7 @@ namespace Yoast\YoastCom\Theme;
 
 			<div class="row iceberg">
 				<h2 class="tight"><?php _e( 'Browse other Yoast Categories', 'yoastcom' ); ?></h2>
-				<?php get_template_part( 'html_includes/partials/list-categories' ); ?>
+				<?php get_template_part( 'html_includes/partials/more-categories' ); ?>
 
 			</div>
 		<?php endif; ?>

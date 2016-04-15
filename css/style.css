@@ -4969,6 +4969,7 @@ svg .llms-animated-circle {
     line-height: 1.4em;
     text-align: right;
     font-weight: 400;
+    text-decoration: underline;
     -webkit-align-self: center;
     -moz-align-self: center;
     -ms-align-self: center;
@@ -5013,8 +5014,27 @@ svg .llms-animated-circle {
         line-height: 1.4em;
         margin-right: 1rem; } }
 
-.more__plug ~ .arrowed {
-  color: #DC5C04; }
+.more--category {
+  margin-bottom: 0;
+  line-height: 1em; }
+  .more--category .more__supertitle {
+    font-size: 1.1em;
+    margin-right: 2em; }
+  .more--category .more__holder {
+    min-height: 2em; }
+  .more--category .more__superlink {
+    font-size: 0.9em;
+    font-family: "Merriweather", Georgia, serif; }
+  @media only screen and (min-width: 63.25rem) {
+    .more--category .more__plug {
+      font-size: 1.5rem;
+      margin-right: .5rem;
+      line-height: 1.3em;
+      height: 1.1em;
+      flex: 0 0 30px;
+      text-align: left; } }
+  .more--category .more__plug ~ .arrowed {
+    color: #DC5C04; }
 
 .package {
   position: relative;
@@ -5200,8 +5220,8 @@ svg .llms-animated-circle {
   .promoblock a img {
     border: 1px solid #DCDCDC; }
   .promoblock p a {
-    font-weight: 400 !important;
-    text-decoration: none; }
+    font-weight: 600 !important;
+    text-decoration: underline; }
   .promoblock form a {
     font-weight: 400 !important;
     text-decoration: none;
@@ -5216,6 +5236,8 @@ svg .llms-animated-circle {
     border-color: #FFF !important; }
   .promoblock.theme-academy a {
     color: #5D237A !important; }
+  .promoblock.theme-academy.secondary a {
+    color: #A4286A !important; }
   .promoblock.theme-software a {
     color: #0075B3 !important; }
   .promoblock.theme-review a {

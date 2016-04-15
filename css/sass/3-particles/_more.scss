@@ -140,6 +140,7 @@
 		line-height: 1.4em;
 		text-align: right;
 		font-weight: 400;
+		text-decoration: underline;
 		@include vendor(align-self, center);
 	}
 
@@ -186,6 +187,37 @@
 	}
 }
 
-.more__plug ~ .arrowed {
-	color: $color-orange;
+.more--category {
+
+	margin-bottom: 0;
+	line-height: 1em;
+
+	.more__supertitle {
+		font-size: 1.1em;
+		margin-right: 2em;
+	}
+
+	.more__holder {
+		min-height: 2em;
+	}
+
+	.more__superlink {
+		font-size: 0.9em;
+		font-family: $font-stack-article;
+	}
+
+	.more__plug {
+		@media only screen and (min-width: $page-width-full) {
+			font-size: 1.5rem;
+			margin-right: .5rem;
+			line-height: 1.3em;
+			height: 1.1em;
+			flex: 0 0 30px;
+			text-align: left;
+		}
+	}
+
+	.more__plug ~ .arrowed {
+		color: $color-orange;
+	}
 }

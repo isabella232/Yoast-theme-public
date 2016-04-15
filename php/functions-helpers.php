@@ -234,8 +234,16 @@ function query_bundles( $args = array() ) {
  * @return array
  */
 function query_categories( $args = array() ) {
+	$exclude = array(
+		'494', // announcements
+	);
+
+	if ( is_category() ) {
+		array_push( $exclude, get_queried_object_id() );
+	}
+
 	$args = wp_parse_args( $args, array(
-		'exclude' => '494'
+		'exclude' => $exclude,
 	) );
 
 	return get_categories( $args );

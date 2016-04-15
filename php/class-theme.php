@@ -42,6 +42,7 @@ class Theme {
 		new Checkout_HTML();
 		new Checkout();
 		new Text_Changes();
+		new Term();
 		new Page_Academy_Settings();
 		new Query();
 

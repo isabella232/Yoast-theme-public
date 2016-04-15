@@ -58,8 +58,8 @@ namespace Yoast\YoastCom\Theme;
 
 		<div class="rowholder">
 			<section class="row island iceberg">
-				<?php get_template_part( 'html_includes/partials/more-categories', array( 'class' => 'color-software--secondary' ) ); ?>
-				<a href="<?php echo home_url( 'seo-blog/' ); ?>" class="color-software--secondary link--naked rightaligned"><?php _e( 'Browse our SEO Blog &raquo;', 'yoastcom' ); ?></a>
+				<h2 class="color-academy"><?php _e( 'Browse our SEO blog categories', 'yoastcom' ); ?></h2>
+				<?php get_template_part( 'html_includes/partials/more-categories', array( 'class' => 'color-academy' ) ); ?>
 			</section>
 		</div>
 

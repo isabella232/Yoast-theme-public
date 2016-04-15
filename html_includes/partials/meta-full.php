@@ -13,16 +13,6 @@ use Yoast\YoastCom\Settings\Hide_Comments;
 		<img src="<?php echo esc_url( url_author_image() ); ?>" class="meta__authorpic">
 	</div>
 
-	<?php $tags = get_the_tags(); ?>
-	<?php if ( ! empty( $tags ) ) : ?>
-		<div class="meta__tags">
-			<h4 class="p"><?php _e( 'Tags', 'yoastcom' ); ?></h4>
-			<?php foreach ( $tags as $tag ) : ?>
-				<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><?php echo esc_html( $tag->name ); ?> &raquo;</a>
-			<?php endforeach; ?>
-		</div>
-	<?php endif; ?>
-
 	<?php if ( is_singular( 'post' ) ) : ?>
 		<?php $categories = wp_get_post_categories( get_the_ID() ); ?>
 		<?php if ( ! empty( $categories ) ) : ?>
@@ -47,6 +37,16 @@ use Yoast\YoastCom\Settings\Hide_Comments;
 				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
+	<?php endif; ?>
+
+	<?php $tags = get_the_tags(); ?>
+	<?php if ( ! empty( $tags ) ) : ?>
+		<div class="meta__tags">
+			<h4 class="p"><?php _e( 'Tags', 'yoastcom' ); ?></h4>
+			<?php foreach ( $tags as $tag ) : ?>
+				<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><?php echo esc_html( $tag->name ); ?> &raquo;</a>
+			<?php endforeach; ?>
+		</div>
 	<?php endif; ?>
 
 	<?php $comments_number = get_comments_number(); ?>
