@@ -45,6 +45,9 @@
 
   &--pointer-top {
     .supports-filter & {
+
+      padding-top: 1.88rem;
+
       &::before {
         content: '';
         border: none;

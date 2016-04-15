@@ -32,7 +32,7 @@ class Term {
 		) );
 
 		$cmb_term->add_field( array(
-			'name'     => __( 'Theme metadata', 'yoastcom' ),
+			'name'     => __( 'Theme specific data', 'yoastcom' ),
 			'id'       => $prefix . 'title',
 			'type'     => 'title',
 		) );
@@ -48,7 +48,7 @@ class Term {
 			'name'     => __( 'Icon', 'yoastcom' ),
 			'desc'     => __( 'Used in category lists, select a Font Awesome icon and put its name here, like <code>search</code>.', 'yoastcom' ),
 			'id'       => $prefix . 'icon',
-			'type'     => 'text',
+			'type'     => 'text_small',
 		) );
 
 		$cmb_term->add_field( array(
@@ -59,8 +59,32 @@ class Term {
 				'url' => false,
 				'add_upload_file_text' => __( 'Change term image', 'yoastcom' ),
 			)
-
 		) );
+
+		$cmb_term->add_field( array(
+			'name'     => __( 'Banner on page', 'yoastcom' ),
+			'id'       => $prefix . 'banner_title',
+			'type'     => 'title',
+		) );
+
+		$cmb_term->add_field( array(
+			'name'     => __( 'Banner Icon', 'yoastcom' ),
+			'id'       => $prefix . 'banner_icon',
+			'type'     => 'text_small',
+		) );
+
+		$cmb_term->add_field( array(
+			'name'     => __( 'Banner Text', 'yoastcom' ),
+			'id'       => $prefix . 'banner_text',
+			'type'     => 'text',
+		) );
+
+		$cmb_term->add_field( array(
+			'name'     => __( 'Banner URL', 'yoastcom' ),
+			'id'       => $prefix . 'banner_url',
+			'type'     => 'text_url',
+		) );
+
 	}
 
 

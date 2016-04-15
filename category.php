@@ -7,6 +7,10 @@ namespace Yoast\YoastCom\Theme;
 
 $cat_image_id = get_term_meta( get_queried_object_id(), 'yoastcom_term_image_id', true );
 
+$banner_text = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_text', true );
+$banner_url  = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_url', true );
+$banner_icon = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_icon', true );
+
 ?>
 <?php get_header(); ?>
 
@@ -20,37 +24,49 @@ $cat_image_id = get_term_meta( get_queried_object_id(), 'yoastcom_term_image_id'
 	<main role="main">
 		<div class="row">
 
-		<?php if ( ! is_paged() ) : ?>
+			<?php if ( ! is_paged() ) : ?>
 
-		<h1><?php echo esc_html( get_the_archive_title() ); ?></h1>
+				<h1><?php echo esc_html( get_the_archive_title() ); ?></h1>
 
-		<?php if ( '' !== get_the_archive_description() ) : ?>
-			<div class="row">
-				<div class="media media--nofloat">
-					<?php if ( $cat_image_id ) : ?>
-					<div class="imgExt">
-						<img src="<?php echo wp_get_attachment_image_url( $cat_image_id, 'thumbnail-recent-articles' ); ?>" width="250" height="131" class="promoblock promoblock--imageholder theme-academy--secondary">
+				<?php if ( '' !== get_the_archive_description() ) : ?>
+					<div class="row">
+						<div class="media media--nofloat">
+							<?php if ( $cat_image_id ) : ?>
+								<div class="imgExt">
+									<img
+										src="<?php echo wp_get_attachment_image_url( $cat_image_id, 'thumbnail-recent-articles' ); ?>"
+										width="250" height="131"
+										class="promoblock promoblock--imageholder theme-academy--secondary">
+								</div>
+							<?php endif; ?>
+							<div class="content promoblock theme-academy--secondary">
+								<?php the_archive_description(); ?>
+							</div>
+						</div>
 					</div>
-					<?php endif; ?>
-					<div class="content promoblock theme-academy--secondary">
-						<?php the_archive_description(); ?>
-					</div>
-				</div>
-			</div>
-		<?php endif; ?>
-		<?php else: ?>
-			<h1><?php printf( __( '%s archives', 'yoastcom' ), esc_html( get_the_archive_title() ) ); ?></h1>
-		<?php endif; ?>
+				<?php endif; ?>
+			<?php else: ?>
+				<h1><?php printf( __( '%s archives', 'yoastcom' ), esc_html( get_the_archive_title() ) ); ?></h1>
+			<?php endif; ?>
 
 		</div>
 
-		<hr>
+		<?php
+		if ( $banner_text && $banner_url ) {
+			get_template_part( 'html_includes/partials/announcement', array(
+				'class' => 'announcement--pointer announcement--pointer-top',
+				'text'  => $banner_text . ' &raquo;',
+				'url'   => $banner_url,
+				'icon'  => $banner_icon,
+			) );
+		} else {
+			echo '<hr>';
+		}
+		?>
 
 		<?php if ( ! is_paged() ) : ?>
 			<?php get_template_part( 'html_includes/partials/must-read-articles', array( 'class1' => 'theme-academy--secondary' ) ); ?>
 		<?php endif; ?>
-
-		<?php //get_template_part( 'html_includes/partials/announcement', array( 'text' => "Want to learn more long tail keywords and keyword research? Check out our eBook Optimize your WordPress site / Optimize your website &raquo;", ) ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php theme_object()->excerpt->more( ' <a href="' . get_permalink() . '">&raquo;</a>' ); ?>
@@ -62,7 +78,8 @@ $cat_image_id = get_term_meta( get_queried_object_id(), 'yoastcom_term_image_id'
 		<?php endwhile; ?>
 		<?php theme_object()->excerpt->clear(); ?>
 
-		<?php //get_template_part( 'html_includes/partials/announcement-addonmodules', array( 'class' => "fill--secondary", ) ); ?>
+		<?php //get_template_part( 'html_includes/partials/announcement-addonmodules', array( 'class' => "fill--secondary", ) );
+		?>
 
 		<div class="row">
 			<?php get_template_part( 'html_includes/partials/pagination' ); ?>

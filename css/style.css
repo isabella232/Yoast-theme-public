@@ -1890,22 +1890,24 @@ thead th {
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%); }
-  .supports-filter .announcement--pointer-top::before {
-    content: '';
-    border: none;
-    border-top: 20px solid #FFF;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    position: absolute;
-    top: -1px;
-    left: 50%;
-    height: 0;
-    line-height: 0;
-    -webkit-transform: translateX(-40px);
-    -moz-transform: translateX(-40px);
-    -ms-transform: translateX(-40px);
-    -o-transform: translateX(-40px);
-    transform: translateX(-40px); }
+  .supports-filter .announcement--pointer-top {
+    padding-top: 1.88rem; }
+    .supports-filter .announcement--pointer-top::before {
+      content: '';
+      border: none;
+      border-top: 20px solid #FFF;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      height: 0;
+      line-height: 0;
+      -webkit-transform: translateX(-40px);
+      -moz-transform: translateX(-40px);
+      -ms-transform: translateX(-40px);
+      -o-transform: translateX(-40px);
+      transform: translateX(-40px); }
   .announcement i {
     float: right;
     margin: 0.47rem 1.88rem 0.47rem 0.47rem;
@@ -4659,6 +4661,9 @@ svg .llms-animated-circle {
       float: none;
       width: 100%;
       margin-bottom: 1.88rem; } }
+
+.category .media {
+  margin-bottom: 0; }
 
 .media, .media-right, .bd {
   overflow: hidden;
