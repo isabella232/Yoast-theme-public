@@ -4662,7 +4662,7 @@ svg .llms-animated-circle {
       width: 100%;
       margin-bottom: 1.88rem; } }
 
-.category .media {
+.category .media:first-child {
   margin-bottom: 0; }
 
 .media, .media-right, .bd {
