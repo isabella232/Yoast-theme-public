@@ -14,8 +14,10 @@
 }
 
 .meta__date {
+	font-family: $font-stack-default;
 	color: $color-grey-text;
 	font-weight: 300;
+	margin: 0 0 20px 0;
 }
 
 .meta__author,

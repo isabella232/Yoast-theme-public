@@ -36,7 +36,7 @@ namespace Yoast\YoastCom\Theme;
 
 		<div class="rowholder">
 			<section class="row island">
-				<h2><?php _e( 'Check out our Must Read Articles', 'yoastcom' ); ?></h2>
+				<h2><?php _e( 'Check out our must read articles', 'yoastcom' ); ?></h2>
 				<?php get_template_part( 'html_includes/partials/recent-articles', array( 'must_read' => true ) ); ?>
 			</section>
 

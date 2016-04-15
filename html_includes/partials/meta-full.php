@@ -3,6 +3,19 @@ namespace Yoast\YoastCom\Theme;
 
 use Yoast\YoastCom\Settings\Hide_Comments;
 ?>
+<?php $comments_number = get_comments_number(); ?>
+<div class="meta__date">
+	<?php if ( ! Hide_Comments::hide_comments() && $comments_number > 0 ) { ?>
+		<?php the_time( 'F dS, Y' ); ?>
+		&ndash;
+		<a href="#comments"><?php
+			get_template_part( 'html_includes/partials/comments-number' );
+			?></a>
+	<?php } else { ?>
+		Last update: <?php the_modified_date( 'd F, Y' ); ?>
+	<?php } ?>
+</div>
+
 <div class="meta meta--full">
 	<div class="meta__author">
 		<h4 class="p"><?php _e( 'Post author', 'yoastcom' ); ?></h4>
@@ -48,17 +61,4 @@ use Yoast\YoastCom\Settings\Hide_Comments;
 			<?php endforeach; ?>
 		</div>
 	<?php endif; ?>
-
-	<?php $comments_number = get_comments_number(); ?>
-	<div class="meta__date">
-		<?php if ( ! Hide_Comments::hide_comments() && $comments_number > 0 ) { ?>
-			<?php the_time( 'd F, Y' ); ?>
-			&ndash;
-			<a href="#comments"><?php
-				get_template_part( 'html_includes/partials/comments-number' );
-			?></a>
-		<?php } else { ?>
-			Last update: <?php the_modified_date( 'd F, Y' ); ?>
-		<?php } ?>
-	</div>
 </div>

@@ -4683,8 +4683,10 @@ svg .llms-animated-circle {
   margin-left: 0.94rem; }
 
 .meta__date {
+  font-family: "Open Sans", Arial, sans-serif;
   color: #646464;
-  font-weight: 300; }
+  font-weight: 300;
+  margin: 0 0 20px 0; }
 
 .meta__author,
 .meta__tags {
