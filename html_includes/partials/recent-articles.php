@@ -16,6 +16,9 @@ if ( $must_read ) {
 	if ( is_category() ) {
 		$args['category__in'] = get_queried_object_id();
 	}
+	if ( is_tag() ) {
+		$args['tag__in'] = get_queried_object_id();
+	}
 	$posts_query = query_must_read_articles( $args );
 }
 else {

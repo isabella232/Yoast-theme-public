@@ -238,7 +238,7 @@ function query_categories( $args = array() ) {
 		'494', // announcements
 	);
 
-	if ( is_category() ) {
+	if ( is_category() || is_tag() ) {
 		array_push( $exclude, get_queried_object_id() );
 	}
 
