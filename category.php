@@ -20,6 +20,8 @@ $cat_image_id = get_term_meta( get_queried_object_id(), 'yoastcom_term_image_id'
 	<main role="main">
 		<div class="row">
 
+		<?php if ( ! is_paged() ) : ?>
+
 		<h1><?php echo esc_html( get_the_archive_title() ); ?></h1>
 
 		<?php if ( '' !== get_the_archive_description() ) : ?>
@@ -36,17 +38,22 @@ $cat_image_id = get_term_meta( get_queried_object_id(), 'yoastcom_term_image_id'
 				</div>
 			</div>
 		<?php endif; ?>
+		<?php else: ?>
+			<h1><?php printf( __( '%s archives', 'yoastcom' ), esc_html( get_the_archive_title() ) ); ?></h1>
+		<?php endif; ?>
 
 		</div>
 
 		<hr>
 
+		<?php if ( ! is_paged() ) : ?>
 		<div class="row iceberg">
 			<h3 class="color-academy--secondary"><?php printf( __( ' Must read articles about %s' ), get_the_archive_title() ); ?></h3>
 			<?php get_template_part( 'html_includes/partials/recent-articles', array( 'must_read' => true, 'class1' => 'theme-academy--secondary' ) ); ?>
 		</div>
 
 		<hr>
+		<?php endif; ?>
 
 		<?php //get_template_part( 'html_includes/partials/announcement', array( 'text' => "Want to learn more long tail keywords and keyword research? Check out our eBook Optimize your WordPress site / Optimize your website &raquo;", ) ); ?>
 
