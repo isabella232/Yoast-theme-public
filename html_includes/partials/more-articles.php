@@ -20,7 +20,7 @@ theme_object()->excerpt->more( ' &raquo;' );
 			<div class="more__title">
 				<?php the_title(); ?>
 			</div>
-			<small class="more__link hide-on-tablet"><?php echo esc_html( strip_tags( wp_trim_words( get_the_excerpt(), 8, ' &raquo;' ) ) ); ?></small>
+			<small class="more__link hide-on-tablet"><?php echo esc_html( strip_tags( wp_trim_words( get_the_excerpt(), 8, ' &hellip; &raquo;' ) ) ); ?></small>
 		</div>
 	</a>
 <?php endwhile; wp_reset_postdata(); theme_object()->excerpt->clear(); ?>
