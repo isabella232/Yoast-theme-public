@@ -2232,11 +2232,12 @@ a.announcement {
   border-left-color: #d42a59; }
 
 .breadcrumb {
-  font-size: 0.88em;
   margin-bottom: 1rem; }
   @media only screen and (max-width: 50rem) {
     .breadcrumb {
       display: none; } }
+  .breadcrumb i.fa {
+    margin: 0 3px; }
   .breadcrumb a {
     text-decoration: none; }
   .breadcrumb span {
