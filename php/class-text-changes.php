@@ -23,6 +23,8 @@ class Text_Changes {
 		add_filter( 'edd_payment_receipt_products_title', array( $this, 'edd_payment_receipt_products_title' ) );
 
 		add_filter( 'oembed_result', array( $this, 'add_youtube_container' ), 10, 3 );
+
+		add_filter( 'comment_form_defaults', array( $this, 'comment_form_labels' ) );
 	}
 
 	/**
@@ -46,7 +48,8 @@ class Text_Changes {
 		if ( is_home() ) {
 			if ( is_front_page() ) {
 				$title = __( 'Blog', 'yoastcom' );
-			} else {
+			}
+			else {
 				$title = get_the_title( get_option( 'page_for_posts' ) );
 			}
 		}
@@ -65,6 +68,7 @@ class Text_Changes {
 		if ( is_author() ) {
 			$title = get_the_author();
 		}
+
 		return $title;
 	}
 
@@ -103,7 +107,7 @@ class Text_Changes {
 	 *
 	 * @param string $html The current youtube embed HTML.
 	 * @param string $url The URL that has been auto embedded.
-	 * @param array  $args The auto embed arguments.
+	 * @param array $args The auto embed arguments.
 	 *
 	 * @return string
 	 */
@@ -114,5 +118,20 @@ class Text_Changes {
 		}
 
 		return $html;
+	}
+
+	/**
+	 * Change the comment form labels to match our style
+	 *
+	 * @param array $defaults
+	 *
+	 * @return array
+	 */
+	public function comment_form_labels( $defaults ) {
+		$defaults['title_reply']    = __( 'Leave a reply' );
+		$defaults['title_reply_to'] = __( 'Leave a reply to %s' );
+		$defaults['label_submit']   = __( 'Post comment', 'yoastcom' );
+
+		return $defaults;
 	}
 }
