@@ -416,6 +416,7 @@
   padding: 0;
   display: block;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 300;
 
   @media only screen and (max-width: $page-width-medium) {
     display: none;
@@ -442,6 +443,11 @@
     &:last-child a {
       //border-right: 1px solid rgba($color-white, .5);
     }
+  }
+
+  .current_page_parent a {
+    font-weight: bold;
+    text-decoration: underline;
   }
 
   @media only screen and (min-width: $page-width-medium) {

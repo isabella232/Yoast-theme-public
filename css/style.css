@@ -4495,7 +4495,8 @@ svg .llms-animated-circle {
   width: 100%;
   padding: 0;
   display: block;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 300; }
   @media only screen and (max-width: 50rem) {
     .subnav {
       display: none;
@@ -4516,6 +4517,8 @@ svg .llms-animated-circle {
     padding: 0; }
     .subnav li:first-child a {
       border-left: none; }
+  .subnav .current_page_parent a {
+    font-weight: bold; }
   @media only screen and (min-width: 50rem) {
     .subnav {
       display: none; }
@@ -4728,6 +4731,8 @@ svg .llms-animated-circle {
     border-bottom-right-radius: 0;
     color: #5D237A;
     margin-right: .4em; }
+  .meta__category a.primary {
+    font-weight: bold; }
   .meta__author,
   .meta__tags,
   .meta__category {
