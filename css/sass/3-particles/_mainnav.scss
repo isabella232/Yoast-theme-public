@@ -443,11 +443,11 @@
     &:last-child a {
       //border-right: 1px solid rgba($color-white, .5);
     }
-  }
 
-  .current_page_parent a {
-    font-weight: bold;
-    text-decoration: underline;
+    &.current_page_parent a, &.current-menu-item a {
+      font-weight: bold;
+      text-decoration: underline;
+    }
   }
 
   @media only screen and (min-width: $page-width-medium) {
