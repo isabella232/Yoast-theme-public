@@ -30,7 +30,7 @@ use Yoast\YoastCom\Settings\Hide_Comments;
 		<?php $categories = wp_get_post_categories( get_the_ID() ); ?>
 		<?php if ( ! empty( $categories ) ) : ?>
 			<div class="meta__category">
-				<h4 class="p"><?php _n( 'Category', 'Categories', count( $categories ), 'yoastcom' ); ?></h4>
+				<h4 class="p"><?php echo _n( 'Category', 'Categories', count( $categories ), 'yoastcom' ); ?></h4>
 				<?php
 				$primary_category = yoast_get_primary_term_id( 'category', get_the_ID() );
 				foreach ( $categories as $category ) :
@@ -49,7 +49,7 @@ use Yoast\YoastCom\Settings\Hide_Comments;
 		<?php $dev_categories = get_the_terms( get_the_ID(), 'yoast_dev_category' ); ?>
 		<?php if ( ! empty( $dev_categories ) ) : ?>
 			<div class="meta__category">
-				<h4 class="p"><?php _n( 'Category', 'Categories', count( $dev_categories ), 'yoastcom' ); ?>></h4>
+				<h4 class="p"><?php echo _n( 'Category', 'Categories', count( $dev_categories ), 'yoastcom' ); ?>></h4>
 				<?php foreach ( $dev_categories as $term ) : ?>
 					<a href="<?php echo esc_url( get_term_link( $term->term_id, 'yoast_dev_category' ) ); ?>">
 						<?php echo esc_html( $term->name ); ?> &raquo;
@@ -62,7 +62,7 @@ use Yoast\YoastCom\Settings\Hide_Comments;
 	<?php $tags = get_the_tags(); ?>
 	<?php if ( ! empty( $tags ) ) : ?>
 		<div class="meta__tags">
-			<h4 class="p"><?php _n( 'Tag', 'Tags', count( $tags ), 'yoastcom' ); ?></h4>
+			<h4 class="p"><?php echo _n( 'Tag', 'Tags', count( $tags ), 'yoastcom' ); ?></h4>
 			<?php foreach ( $tags as $tag ) : ?>
 				<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><?php echo esc_html( $tag->name ); ?> &raquo;</a>
 			<?php endforeach; ?>
