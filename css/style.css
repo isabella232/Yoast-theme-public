@@ -1918,6 +1918,63 @@ a.announcement {
   a.announcement:hover, a.announcement:focus {
     color: #FFF; }
 
+body.single-post .post-header {
+  margin-bottom: 1em;
+  min-height: 400px;
+  position: relative;
+  z-index: -1;
+  display: table; }
+  body.single-post .post-header__title {
+    position: absolute;
+    height: 60%;
+    top: 0;
+    width: 100%; }
+    body.single-post .post-header__title h1 {
+      font-family: "Merriweather", sans-serif;
+      font-size: 52px;
+      line-height: 62px;
+      color: white;
+      font-style: italic;
+      text-shadow: 4px 4px 5px black;
+      margin: 0; }
+    body.single-post .post-header__title span {
+      font-family: "Open Sans", sans-serif;
+      font-style: normal; }
+  body.single-post .post-header .post-header__title__container {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 40px 10px 20px;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4); }
+
+body.single-post .content {
+  background-color: #ffffff;
+  padding: 20px 20px 0 0;
+  z-index: 1; }
+
+body.single-post .content__after-post-header {
+  margin-top: -225px; }
+
+body.single-post .meta__after-post_header {
+  float: right;
+  clear: right;
+  height: 225px;
+  width: 292px; }
+
+body.single-post .content__first {
+  border-top-right-radius: 50px; }
+  body.single-post .content__first p:first-child {
+    font-weight: bold; }
+    body.single-post .content__first p:first-child:first-letter {
+      float: left;
+      font-size: 60px;
+      line-height: 50px;
+      font-weight: normal;
+      padding-top: 4px;
+      margin-top: 4px;
+      padding-right: 8px;
+      padding-left: 3px; }
+
 .banner {
   height: 80px;
   background-position: center center;
@@ -4683,6 +4740,8 @@ svg .llms-animated-circle {
   .meta h2 {
     display: inline-block;
     margin-right: 0.5rem; }
+  .meta h4 {
+    font-weight: bold; }
 
 .meta__tags h2 {
   margin-left: 0.94rem; }
@@ -4714,7 +4773,13 @@ svg .llms-animated-circle {
   .meta--full {
     width: 292px;
     float: right;
+    clear: right;
     font-size: 0.94em; }
+  .meta__date {
+    width: 292px;
+    float: right;
+    clear: right;
+    margin-bottom: 40px; }
   .meta__author {
     position: relative; }
   .meta__authorpic {
