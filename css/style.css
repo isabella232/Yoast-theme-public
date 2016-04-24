@@ -4643,6 +4643,8 @@ svg .llms-animated-circle {
   .media .imgExt, .media .img--right {
     float: right;
     margin-left: 15px; }
+  .media img {
+    border: 1px solid #DCDCDC; }
   .media .img {
     float: left;
     margin-right: 15px; }
