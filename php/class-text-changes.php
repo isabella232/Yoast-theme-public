@@ -24,7 +24,7 @@ class Text_Changes {
 
 		add_filter( 'comment_form_defaults', array( $this, 'comment_form_labels' ) );
 
-		add_filter( 'wpseo_breadcrumb_links', array( $this, 'filter_crumbs') );
+		add_filter( 'wpseo_breadcrumb_links', array( $this, 'filter_crumbs' ) );
 	}
 
 	/**
@@ -159,6 +159,7 @@ class Text_Changes {
 				array_slice( $links, 1, count( $links ) )
 			);
 		}
+
 		return $links;
 	}
 }

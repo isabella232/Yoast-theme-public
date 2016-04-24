@@ -4517,7 +4517,7 @@ svg .llms-animated-circle {
     padding: 0; }
     .subnav li:first-child a {
       border-left: none; }
-    .subnav li.current_page_parent a, .subnav li.current-menu-item a {
+    .subnav li.current-page-ancestor:first-of-type a, .subnav li.current_page_parent a, .subnav li.current-menu-item a {
       font-weight: bold;
       text-decoration: underline; }
   @media only screen and (min-width: 50rem) {
