@@ -2312,14 +2312,14 @@ a.announcement {
       border-left-color: #DC5C04; }
     .button.default::before, .comment-respond input.default[type="submit"]::before, .comment-respond input[type="submit"].llms-button::before, .llms-button::before, .llms-return a.default::before, button.default::before, button.llms-button::before {
       border-right-color: #DC5C04; }
-    .button.default:hover, .comment-respond input.default[type="submit"]:hover, .comment-respond input[type="submit"].llms-button:hover, .llms-button:hover, .llms-return a.default:hover, .button.default a:focus, .comment-respond input.default[type="submit"] a:focus, .comment-respond input[type="submit"].llms-button a:focus, .llms-button a:focus, .llms-return a.default a:focus, .llms-return a.llms-button a:focus, button.default:hover, button.llms-button:hover, button.default a:focus, button.llms-button a:focus {
-      background-color: #F58223;
-      color: #FFF;
-      text-decoration: underline; }
-      .button.default:hover::after, .comment-respond input.default[type="submit"]:hover::after, .llms-button:hover::after, .llms-return a.default:hover::after, .button.default a:focus::after, .comment-respond input.default[type="submit"] a:focus::after, .comment-respond input[type="submit"].llms-button a:focus::after, .llms-button a:focus::after, .llms-return a.default a:focus::after, .llms-return a.llms-button a:focus::after, button.default:hover::after, button.llms-button:hover::after, button.default a:focus::after, button.llms-button a:focus::after {
-        border-left-color: #F58223; }
-      .button.default:hover::before, .comment-respond input.default[type="submit"]:hover::before, .llms-button:hover::before, .llms-return a.default:hover::before, .button.default a:focus::before, .comment-respond input.default[type="submit"] a:focus::before, .comment-respond input[type="submit"].llms-button a:focus::before, .llms-button a:focus::before, .llms-return a.default a:focus::before, .llms-return a.llms-button a:focus::before, button.default:hover::before, button.llms-button:hover::before, button.default a:focus::before, button.llms-button a:focus::before {
-        border-right-color: #F58223; }
+  .button:hover, .comment-respond input[type="submit"]:hover, .llms-button:hover, .llms-return a:hover, .button a:focus, .comment-respond input[type="submit"] a:focus, .llms-button a:focus, .llms-return a a:focus, button:hover, button a:focus {
+    background-color: #F58223;
+    color: #FFF;
+    text-decoration: underline; }
+    .button:hover::after, .comment-respond input[type="submit"]:hover::after, .llms-button:hover::after, .llms-return a:hover::after, .button a:focus::after, .comment-respond input[type="submit"] a:focus::after, .llms-button a:focus::after, .llms-return a a:focus::after, button:hover::after, button a:focus::after {
+      border-left-color: #F58223; }
+    .button:hover::before, .comment-respond input[type="submit"]:hover::before, .llms-button:hover::before, .llms-return a:hover::before, .button a:focus::before, .comment-respond input[type="submit"] a:focus::before, .llms-button a:focus::before, .llms-return a a:focus::before, button:hover::before, button a:focus::before {
+      border-right-color: #F58223; }
   .button.academy, .comment-respond input.academy[type="submit"], .academy.llms-button, .llms-return a.academy, button.academy {
     color: #FFF; }
     .button.academy::after, .comment-respond input.academy[type="submit"]::after, .academy.llms-button::after, .llms-return a.academy::after, button.academy::after {

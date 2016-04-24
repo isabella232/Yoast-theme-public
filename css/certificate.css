@@ -1717,14 +1717,14 @@ thead th {
       border-left-color: #DC5C04; }
     .button.default::before, button.default::before {
       border-right-color: #DC5C04; }
-    .button.default:hover, .button.default a:focus, button.default:hover, button.default a:focus {
-      background-color: #F58223;
-      color: #FFF;
-      text-decoration: underline; }
-      .button.default:hover::after, .button.default a:focus::after, button.default:hover::after, button.default a:focus::after {
-        border-left-color: #F58223; }
-      .button.default:hover::before, .button.default a:focus::before, button.default:hover::before, button.default a:focus::before {
-        border-right-color: #F58223; }
+  .button:hover, .button a:focus, button:hover, button a:focus {
+    background-color: #F58223;
+    color: #FFF;
+    text-decoration: underline; }
+    .button:hover::after, .button a:focus::after, button:hover::after, button a:focus::after {
+      border-left-color: #F58223; }
+    .button:hover::before, .button a:focus::before, button:hover::before, button a:focus::before {
+      border-right-color: #F58223; }
   .button.academy, button.academy {
     color: #FFF; }
     .button.academy::after, button.academy::after {
