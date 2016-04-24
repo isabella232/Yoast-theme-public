@@ -23,6 +23,8 @@ class Text_Changes {
 		add_filter( 'oembed_result', array( $this, 'add_youtube_container' ), 10, 3 );
 
 		add_filter( 'comment_form_defaults', array( $this, 'comment_form_labels' ) );
+
+		add_filter( 'wpseo_breadcrumb_links', array( $this, 'filter_crumbs') );
 	}
 
 	/**
@@ -114,5 +116,49 @@ class Text_Changes {
 		$defaults['label_submit']   = __( 'Post comment', 'yoastcom' );
 
 		return $defaults;
+	}
+
+	/**
+	 * Filter the breadcrumbs for pages that have a parent but don't show it otherwise
+	 *
+	 * @param array $links
+	 *
+	 * @return array
+	 */
+	public function filter_crumbs( $links ) {
+		$this->filter_crumbs_helper( $links, 'theme-software', 478759 );
+		$this->filter_crumbs_helper( $links, 'theme-academy', 409369 );
+
+		return $links;
+	}
+
+	/**
+	 * Helper function to filter the breadcrumbs
+	 *
+	 * @param array $links
+	 * @param string $page_theme
+	 * @param string $page_id
+	 *
+	 * @return array
+	 */
+	private function filter_crumbs_helper( &$links, $page_theme, $page_id ) {
+		static $theme;
+		if ( ! isset( $theme ) ) {
+			$theme = theme_object()->color->get_color_scheme();
+		}
+
+		if ( $theme == $page_theme ) {
+			if ( isset( $links[1] ) ) {
+				if ( isset( $links[1]['id'] ) && $links[1]['id'] === $page_id ) {
+					return $links;
+				}
+			}
+			$links = array_merge(
+				array_slice( $links, 0, 1 ),
+				array( array( 'id' => $page_id ) ),
+				array_slice( $links, 1, count( $links ) )
+			);
+		}
+		return $links;
 	}
 }

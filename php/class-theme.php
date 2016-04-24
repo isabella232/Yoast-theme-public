@@ -22,7 +22,7 @@ class Theme {
 	/**
 	 * @var Color_Scheme
 	 */
-	protected $color;
+	public $color;
 
 	/**
 	 * Constructor. Adds WordPress hooks.
