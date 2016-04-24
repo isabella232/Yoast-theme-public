@@ -5080,19 +5080,6 @@ svg .llms-animated-circle {
     color: #FFF;
     border: none;
     width: 100%; }
-  @media only screen and (min-width: 50rem) {
-    .package {
-      border-bottom: 0; } }
-  .package .arrow {
-    display: none; }
-    @media only screen and (min-width: 50rem) {
-      .package .arrow {
-        display: block;
-        position: absolute;
-        bottom: -1.4em;
-        left: 0;
-        width: 100%;
-        height: 2em; } }
   .package .edd_download_quantity_wrapper {
     display: none; }
   .package input[type="submit"] {
