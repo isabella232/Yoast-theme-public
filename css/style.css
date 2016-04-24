@@ -5763,6 +5763,8 @@ body.edd-checkout .siteheader {
     margin: 0 20px 0 0;
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 1em; }
+    #social-share .socialbox:last-of-type {
+      margin-right: 0; }
   #social-share .socialbox a {
     color: #000; }
   #social-share .socialbox .fa {
@@ -5795,31 +5797,15 @@ blockquote {
   color: #8C8C8C;
   position: relative;
   display: inline-block;
-  font-size: 1.2em;
-  line-height: 2.3rem;
+  font-size: 1.1em;
+  line-height: 1.8rem;
   font-family: "Merriweather", Georgia, serif;
   font-style: italic;
   font-weight: 300;
   letter-spacing: 0;
-  padding: 0 4.5rem;
-  margin: 0 0 2.5rem 0;
-  max-width: 100%; }
-  blockquote::before, blockquote::after {
-    color: #E6E6E6;
-    position: absolute;
-    line-height: 0;
-    font-size: 11.3rem;
-    letter-spacing: -38px;
-    font-family: serif;
-    font-style: normal; }
-  blockquote::before {
-    content: "‘" " " "‘";
-    left: -1rem;
-    top: 4rem; }
-  blockquote::after {
-    content: "’" " " "’";
-    right: 2.2rem;
-    top: 4.2rem; }
+  padding: 0 2.5rem;
+  margin: 0;
+  width: 100%; }
   blockquote cite {
     display: block;
     font-style: normal; }

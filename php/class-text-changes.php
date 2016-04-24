@@ -16,8 +16,6 @@ class Text_Changes {
 	public function __construct() {
 		add_filter( 'get_the_archive_title', array( $this, 'filter_archive_title' ) );
 
-		add_filter( 'the_content', array( $this, 'blockquote_full_width' ) );
-
 		add_action( 'wp_editor_expand', array( $this, 'reinstate_editor_for_posts_page' ) );
 
 		add_filter( 'edd_payment_receipt_products_title', array( $this, 'edd_payment_receipt_products_title' ) );
@@ -70,23 +68,6 @@ class Text_Changes {
 		}
 
 		return $title;
-	}
-
-	/**
-	 * Breaks block quotes out of the content they're in. We want blockquotes to be full width
-	 *
-	 * @param string $content Current content of the page.
-	 *
-	 * @return string
-	 */
-	public function blockquote_full_width( $content ) {
-
-		$shortcode = new Shortcodes();
-
-		$content = str_replace( '<blockquote>', $shortcode->get_break_out_body() . '<blockquote>', $content );
-		$content = str_replace( '</blockquote>', '</blockquote>' . $shortcode->get_restart_body(), $content );
-
-		return $content;
 	}
 
 	/**
