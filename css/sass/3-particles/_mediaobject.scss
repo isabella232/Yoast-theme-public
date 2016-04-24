@@ -8,10 +8,11 @@
 	.imgExt, .img--right{
 		float:right; 
 		margin-left: 15px;
-	}
 
-	img {
-		border: 1px solid $color-grey;
+		img {
+			border: 1px solid $color-grey;
+		}
+
 	}
 
 	.img {
