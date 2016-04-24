@@ -64,11 +64,7 @@ if ( $post->post_parent !== 0 ) {
 
 			<section class="content">
 				<?php if ( post_meta( 'promo_video_embed' ) ) : ?>
-					<div class="iceberg">
-						<div class="videowrapper">
 							<?php echo wp_oembed_get( post_meta( 'promo_video_embed' ) ); ?>
-						</div>
-					</div>
 				<?php endif; ?>
 
 				<?php the_content(); ?>
