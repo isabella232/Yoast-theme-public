@@ -116,7 +116,6 @@ class Theme_Settings
                      'instagram_followers' => __('Instagram followers', 'yoastcom'),
                      'pinterest_followers' => __('Pinterest followers', 'yoastcom'),
                      'linkedin_followers' => __('LinkedIn followers', 'yoastcom'),
-                     'rss' => __('RSS subscribers', 'yoastcom'),
                      'twitter_subs' => __('Twitter followers', 'yoastcom'),
                      'youtube_subs' => __('YouTube subscribers', 'yoastcom')
                  ) as $option => $label) {

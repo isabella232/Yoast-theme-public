@@ -105,4 +105,10 @@ function yst_build_share_url( $type ) {
 		   href="<?php yst_build_share_url( 'print' ); ?>"><i
 				class="fa fa-print"></i>Print</a>
 	</div>
+
+	<div class="socialbox">
+		<a target="_blank" data-name="subscribe" data-action="subscribe" data-popup="false" class="manual-optin-trigger" data-optin-slug="kbpo9ryqjbnahlcc"
+		   href="https://yoast.com/newsletter/"><i
+				class="color-academy--secondary fa fa-envelope-square"></i>Subscribe</a>
+	</div>
 </div>
