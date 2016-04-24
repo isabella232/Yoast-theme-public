@@ -5450,7 +5450,7 @@ a.promoblock {
       right: -1.7rem;
       top: -1px;
       border-left: 1.8rem solid #FFF;
-      border-top: 1.8rem solid transparent;
+      border-top: 1.9rem solid transparent;
       border-bottom: 1.8rem solid transparent; }
 
 .theme-home .arrowed-small::after, .arrowed-small.theme-home::after, .theme-home
@@ -5475,9 +5475,11 @@ a.promoblock {
   -o-filter: drop-shadow(1px 0 0 #5D237A);
   filter: drop-shadow(1px 0 0 #5D237A); }
 
-.arrowed-small.theme-academy--secondary::after,
+.arrowed-small.theme-academy--secondary::after, .arrowed-small.border-color-academy--secondary::after,
 .arrowed-medium.theme-academy--secondary::after,
-.arrowed.theme-academy--secondary::after {
+.arrowed-medium.border-color-academy--secondary::after,
+.arrowed.theme-academy--secondary::after,
+.arrowed.border-color-academy--secondary::after {
   -webkit-filter: drop-shadow(1px 0 0 #A4286A);
   -moz-filter: drop-shadow(1px 0 0 #A4286A);
   -ms-filter: drop-shadow(1px 0 0 #A4286A);
@@ -5495,9 +5497,11 @@ a.promoblock {
   -o-filter: drop-shadow(1px 0 0 #0075B3);
   filter: drop-shadow(1px 0 0 #0075B3); }
 
-.arrowed-small.theme-software--secondary::after,
+.arrowed-small.theme-software--secondary::after, .arrowed-small.border-color-software--secondary::after,
 .arrowed-medium.theme-software--secondary::after,
-.arrowed.theme-software--secondary::after {
+.arrowed-medium.border-color-software--secondary::after,
+.arrowed.theme-software--secondary::after,
+.arrowed.border-color-software--secondary::after {
   -webkit-filter: drop-shadow(1px 0 0 #009288);
   -moz-filter: drop-shadow(1px 0 0 #009288);
   -ms-filter: drop-shadow(1px 0 0 #009288);
@@ -5950,6 +5954,42 @@ blockquote {
 
 .color-white {
   color: #FFF !important; }
+
+.border-color-academy {
+  border-color: #5D237A !important; }
+
+.border-color-academy--secondary {
+  border-color: #A4286A !important; }
+
+.border-color-academy--tertiary {
+  border-color: #D93F69 !important; }
+
+.border-color-software {
+  border-color: #0075B3 !important; }
+
+.border-color-software--secondary {
+  border-color: #009288 !important; }
+
+.border-color-review {
+  border-color: #009288 !important; }
+
+.border-color-review--secondary {
+  border-color: #77B227 !important; }
+
+.border-color-about {
+  border-color: #D93F69 !important; }
+
+.border-color-about--secondary {
+  border-color: #A4286A !important; }
+
+.border-color-about--tertiary {
+  border-color: #5D237A !important; }
+
+.border-color-cta {
+  border-color: #DC5C04 !important; }
+
+.border-color-white {
+  border-color: #FFF !important; }
 
 a.color-academy:hover, a.color-academy:focus, button.color-academy:hover, button.color-academy:focus, input.color-academy:hover, input.color-academy:focus {
   color: #A4286A !important; }

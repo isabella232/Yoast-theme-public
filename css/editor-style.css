@@ -1930,6 +1930,42 @@ thead th {
 .color-white {
   color: #FFF !important; }
 
+.border-color-academy {
+  border-color: #5D237A !important; }
+
+.border-color-academy--secondary {
+  border-color: #A4286A !important; }
+
+.border-color-academy--tertiary {
+  border-color: #D93F69 !important; }
+
+.border-color-software {
+  border-color: #0075B3 !important; }
+
+.border-color-software--secondary {
+  border-color: #009288 !important; }
+
+.border-color-review {
+  border-color: #009288 !important; }
+
+.border-color-review--secondary {
+  border-color: #77B227 !important; }
+
+.border-color-about {
+  border-color: #D93F69 !important; }
+
+.border-color-about--secondary {
+  border-color: #A4286A !important; }
+
+.border-color-about--tertiary {
+  border-color: #5D237A !important; }
+
+.border-color-cta {
+  border-color: #DC5C04 !important; }
+
+.border-color-white {
+  border-color: #FFF !important; }
+
 a.color-academy:hover, a.color-academy:focus, button.color-academy:hover, button.color-academy:focus, input.color-academy:hover, input.color-academy:focus {
   color: #A4286A !important; }
 

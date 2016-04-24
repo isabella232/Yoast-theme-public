@@ -15,8 +15,8 @@ theme_object()->excerpt->length( 8 );
 theme_object()->excerpt->more( ' &raquo;' );
 ?>
 <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
-	<a href="<?php the_permalink(); ?>" class="more">
-		<div class="more__holder arrowed">
+	<a href="<?php the_permalink(); ?>" class="more <?php echo $template_args['class']; ?>">
+		<div class="more__holder arrowed border-<?php echo $template_args['class']; ?> <?php echo $template_args['class']; ?>">
 			<div class="more__title">
 				<?php the_title(); ?>
 			</div>

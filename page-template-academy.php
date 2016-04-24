@@ -4,10 +4,12 @@
  */
 
 namespace Yoast\YoastCom\Theme;
+
+$class = 'color-' . str_replace( 'theme-', '', get_post_meta( get_the_ID(), 'yoastcom_color_scheme', true ) );
 ?>
 <?php get_header(); ?>
 
-<?php get_template_part( 'html_includes/siteheader', array( 'academy' => true ) ); ?>
+<?php get_template_part( 'html_includes/siteheader' ); ?>
 
 <div class="site">
 	<div class="row">
@@ -43,8 +45,8 @@ namespace Yoast\YoastCom\Theme;
 			<hr>
 
 			<section class="row iceberg">
-				<h2 class="color-academy--secondary"><?php _e( 'Read the latests posts on our SEO blog', 'yoastcom' ); ?></h2>
-				<?php get_template_part( 'html_includes/partials/more-articles' ); ?>
+				<h2 class="<?php echo $class; ?>--secondary"><?php _e( 'Read the latests posts on our SEO blog', 'yoastcom' ); ?></h2>
+				<?php get_template_part( 'html_includes/partials/more-articles', array( 'class' => $class . '--secondary' ) ); ?>
 			</section>
 		</div>
 
