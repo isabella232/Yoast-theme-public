@@ -5218,8 +5218,14 @@ svg .llms-animated-circle {
   border-bottom-right-radius: 0; }
   .promoblock p {
     color: #000; }
-  .promoblock p:last-child {
+  .promoblock p:last-of-type {
     margin-bottom: 0; }
+  .promoblock i.blockicon {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 0 0 0 .5em;
+    font-size: 2.25em; }
   .promoblock a img {
     border: 1px solid #DCDCDC; }
   .promoblock p a {
