@@ -5088,6 +5088,11 @@ svg .llms-animated-circle {
     line-height: 1.88;
     display: block !important;
     margin-bottom: 0; }
+  .package button {
+    margin-right: 0 !important;
+    width: 100%; }
+  .package button::after {
+    border: 0; }
   .package .edd_go_to_checkout {
     display: none; }
 
