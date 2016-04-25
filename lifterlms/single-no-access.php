@@ -2,10 +2,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-?>
-<?php get_header(); ?>
+get_header();
 
-<?php get_template_part( 'html_includes/siteheader' ); ?>
+get_template_part( 'html_includes/siteheader' );
+
+?>
 <div class="site">
 
 	<div class="row">
@@ -25,4 +26,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	</main>
 </div>
 
-<?php get_footer(); ?>
+<?php
+
+get_footer();

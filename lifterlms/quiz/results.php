@@ -44,12 +44,10 @@ $is_passing_score = $quiz->is_passing_score( $user_id );
 			<div class="llms-progress-circle">
 				<svg>
 					<g>
-						<circle cx="-40" cy="40" r="68" class="llms-background-circle"
-						        transform="translate(50,50) rotate(-90)"/>
+						<circle cx="-40" cy="40" r="68" class="llms-background-circle" transform="translate(50,50) rotate(-90)"/>
 					</g>
 					<g>
-						<circle cx="-40" cy="40" r="68" class="llms-animated-circle"
-						        transform="translate(50,50) rotate(-90)"/>
+						<circle cx="-40" cy="40" r="68" class="llms-animated-circle" transform="translate(50,50) rotate(-90)"/>
 					</g>
 					<g>
 						<circle cx="40" cy="40" r="63" transform="translate(50,50)"/>
@@ -83,6 +81,12 @@ $is_passing_score = $quiz->is_passing_score( $user_id );
 			</ul>
 
 		</div>
+		
+		<?php
+		
+		// Modification: removed "best grade" part
+		
+		?>
 
 	</div>
 </div>
