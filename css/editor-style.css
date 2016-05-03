@@ -1075,6 +1075,8 @@ code, pre {
 
 table {
   margin-bottom: 1.88rem; }
+  table.full-width {
+    width: 100%; }
 
 th, td {
   border: 1px solid #E6E6E6;

@@ -1,5 +1,9 @@
 table {
   margin-bottom: $spacing;
+
+  &.full-width {
+    width: 100%;
+  }
 }
 
 th, td {
