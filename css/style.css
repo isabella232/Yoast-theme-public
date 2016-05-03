@@ -1096,13 +1096,12 @@ table {
 
 th, td {
   border: 1px solid #E6E6E6;
-  padding: 0.94rem 1.88rem;
+  padding: 0.47rem 0.94rem;
   border-collapse: collapse; }
 
 thead th {
-  border-bottom: 1px solid #5D237A; }
-  thead th:last-child {
-    border-right: none; }
+  border-bottom: 1px solid #5D237A;
+  text-align: left; }
 
 .widget.theme-home h1,
 .widget.theme-home .h1 {

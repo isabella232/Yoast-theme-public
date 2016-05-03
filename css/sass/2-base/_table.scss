@@ -1,15 +1,14 @@
 table {
-	margin-bottom: $spacing;
+  margin-bottom: $spacing;
 }
 
 th, td {
-	border: 1px solid $color-grey-line;
-	padding: $spacing-half $spacing;
-	border-collapse: collapse;
+  border: 1px solid $color-grey-line;
+  padding: $spacing-quarter $spacing-half;
+  border-collapse: collapse;
 }
+
 thead th {
-	border-bottom: 1px solid $color-purple;
-	&:last-child {
-		border-right: none;
-	}
+  border-bottom: 1px solid $color-purple;
+  text-align: left;
 }
