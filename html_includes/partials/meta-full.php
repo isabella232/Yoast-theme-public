@@ -49,7 +49,7 @@ use Yoast\YoastCom\Settings\Hide_Comments;
 		<?php $dev_categories = get_the_terms( get_the_ID(), 'yoast_dev_category' ); ?>
 		<?php if ( ! empty( $dev_categories ) ) : ?>
 			<div class="meta__category">
-				<h4 class="p"><?php echo _n( 'Category', 'Categories', count( $dev_categories ), 'yoastcom' ); ?>></h4>
+				<h4 class="p"><?php echo _n( 'Category', 'Categories', count( $dev_categories ), 'yoastcom' ); ?></h4>
 				<?php foreach ( $dev_categories as $term ) : ?>
 					<a href="<?php echo esc_url( get_term_link( $term->term_id, 'yoast_dev_category' ) ); ?>">
 						<?php echo esc_html( $term->name ); ?> &raquo;
