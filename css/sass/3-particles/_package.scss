@@ -1,20 +1,33 @@
 .package {
   position: relative;
   padding: $spacing-half;
-  text-align: center;
+  text-align: left;
   font-family: $font-stack-article;
   margin-bottom: $spacing;
+  border-radius: 20px 20px 0 20px;
+
+  li, p {
+    font-family: $font-stack-article;
+    font-size: 0.9em;
+  }
 
   p {
     margin-bottom: 0;
   }
 
-  &__title {
-    font-family: $font-stack-default;
+  p + p {
+    margin-top: 0.5em;
+  }
+
+
+  h4 {
+    font-size: 1.3em;
+    margin-bottom: .5em;
+  }
+
+  h4, a {
     color: $scheme-review-primary;
-    margin-bottom: $spacing / 1.5;
-    padding-left: $spacing;
-    padding-right: $spacing;
+    font-family: $font-stack-default;
   }
 
   &__content {
@@ -33,12 +46,8 @@
     height: auto;
   }
 
-  .button {
-    margin-top: $spacing-half;
-    background-color: $scheme-review-secondary;
-    color: $color-white;
-    border: none;
-    width: 100%;
+  .edd_download_purchase_form {
+    padding-bottom: 0;
   }
 
   .edd_download_quantity_wrapper {
@@ -53,8 +62,11 @@
   }
 
   button {
-    margin-right: 0 !important;
+    margin: 1em 0 !important;
     width: 100%;
+    text-align: left;
+    background-color: $scheme-review-primary;
+    color: $color-black;
   }
 
   button::after {
@@ -67,15 +79,34 @@
 
 }
 
-.package--cta {
+.theme-review .bordered.package--cta {
   border-color: $color-orange;
 
-  .package__title {
+  h4, h4 a, a {
     color: $color-orange;
   }
 
-  .button {
+  li {
+    font-weight: bold;
+  }
+
+  button {
     background-color: $color-orange;
+    color: $color-white;
+  }
+
+}
+
+.theme-review .bordered.package--consulting {
+  border-color: $color-grey-text;
+
+  h4, h4 a, a {
+    color: $color-grey-text;
+  }
+
+  button {
+    background-color: $color-grey-text;
+    color: $color-white;
   }
 
 }

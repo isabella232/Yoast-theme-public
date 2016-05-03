@@ -15,11 +15,12 @@ ul, ol {
 	}
 
 	&--usp {
-		list-style: none;
 		padding: 0;
+		margin-bottom: 1em;
 		font-family: $font-stack-default;
 
 		li {
+			list-style: none outside;
 			position: relative;
 			padding-left: $spacing / 1.5;
 

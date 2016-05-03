@@ -916,10 +916,11 @@ ul, ol {
   padding-left: 0.94rem; }
 
 .list--usp {
-  list-style: none;
   padding: 0;
+  margin-bottom: 1em;
   font-family: "Open Sans", Arial, sans-serif; }
   .list--usp li {
+    list-style: none outside;
     position: relative;
     padding-left: 1.25333rem; }
     .list--usp li::before {
@@ -1937,6 +1938,9 @@ thead th {
 
 .color-white {
   color: #FFF !important; }
+
+.color-black {
+  color: #000 !important; }
 
 .border-color-academy {
   border-color: #5D237A !important; }

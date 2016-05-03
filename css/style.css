@@ -934,10 +934,11 @@ ul, ol {
   padding-left: 0.94rem; }
 
 .list--usp {
-  list-style: none;
   padding: 0;
+  margin-bottom: 1em;
   font-family: "Open Sans", Arial, sans-serif; }
   .list--usp li {
+    list-style: none outside;
     position: relative;
     padding-left: 1.25333rem; }
     .list--usp li::before {
@@ -5046,7 +5047,9 @@ svg .llms-animated-circle {
   line-height: 1em; }
   .more--category .more__supertitle {
     font-size: 1.1em;
-    margin-right: 2em; }
+    margin-right: .5em; }
+    .more--category .more__supertitle i.fa {
+      margin-left: .5em; }
   .more--category .more__holder {
     min-height: 2em; }
   .more--category .more__superlink {
@@ -5066,17 +5069,23 @@ svg .llms-animated-circle {
 .package {
   position: relative;
   padding: 0.94rem;
-  text-align: center;
+  text-align: left;
   font-family: "Merriweather", Georgia, serif;
-  margin-bottom: 1.88rem; }
+  margin-bottom: 1.88rem;
+  border-radius: 20px 20px 0 20px; }
+  .package li, .package p {
+    font-family: "Merriweather", Georgia, serif;
+    font-size: 0.9em; }
   .package p {
     margin-bottom: 0; }
-  .package__title {
-    font-family: "Open Sans", Arial, sans-serif;
+  .package p + p {
+    margin-top: 0.5em; }
+  .package h4 {
+    font-size: 1.3em;
+    margin-bottom: .5em; }
+  .package h4, .package a {
     color: #009288;
-    margin-bottom: 1.25333rem;
-    padding-left: 1.88rem;
-    padding-right: 1.88rem; }
+    font-family: "Open Sans", Arial, sans-serif; }
   .package__content {
     min-height: 8em; }
   .package__notice {
@@ -5087,12 +5096,8 @@ svg .llms-animated-circle {
     top: -8px;
     width: 80px;
     height: auto; }
-  .package .button, .package .comment-respond input[type="submit"], .comment-respond .package input[type="submit"], .package .llms-button, .package .llms-return a, .llms-return .package a {
-    margin-top: 0.94rem;
-    background-color: #77B227;
-    color: #FFF;
-    border: none;
-    width: 100%; }
+  .package .edd_download_purchase_form {
+    padding-bottom: 0; }
   .package .edd_download_quantity_wrapper {
     display: none; }
   .package input[type="submit"] {
@@ -5100,19 +5105,33 @@ svg .llms-animated-circle {
     display: block !important;
     margin-bottom: 0; }
   .package button {
-    margin-right: 0 !important;
-    width: 100%; }
+    margin: 1em 0 !important;
+    width: 100%;
+    text-align: left;
+    background-color: #009288;
+    color: #000; }
   .package button::after {
     border: 0; }
   .package .edd_go_to_checkout {
     display: none; }
 
-.package--cta {
+.theme-review .bordered.package--cta {
   border-color: #DC5C04; }
-  .package--cta .package__title {
+  .theme-review .bordered.package--cta h4, .theme-review .bordered.package--cta h4 a, .theme-review .bordered.package--cta a {
     color: #DC5C04; }
-  .package--cta .button, .package--cta .comment-respond input[type="submit"], .comment-respond .package--cta input[type="submit"], .package--cta .llms-button, .package--cta .llms-return a, .llms-return .package--cta a {
-    background-color: #DC5C04; }
+  .theme-review .bordered.package--cta li {
+    font-weight: bold; }
+  .theme-review .bordered.package--cta button {
+    background-color: #DC5C04;
+    color: #FFF; }
+
+.theme-review .bordered.package--consulting {
+  border-color: #646464; }
+  .theme-review .bordered.package--consulting h4, .theme-review .bordered.package--consulting h4 a, .theme-review .bordered.package--consulting a {
+    color: #646464; }
+  .theme-review .bordered.package--consulting button {
+    background-color: #646464;
+    color: #FFF; }
 
 .pagination {
   border: 1px solid;
@@ -5958,6 +5977,9 @@ blockquote {
 
 .color-white {
   color: #FFF !important; }
+
+.color-black {
+  color: #000 !important; }
 
 .border-color-academy {
   border-color: #5D237A !important; }
