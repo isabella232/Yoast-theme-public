@@ -997,11 +997,13 @@ article, .article {
   margin-bottom: 0; }
 
 .content ul li {
-  list-style-type: square; }
+  list-style-type: square;
+  list-style-position: outside;
+  margin-left: 1.5em; }
   .content ul li ul li {
-    margin-left: 1.5em; }
+    margin-left: 2.5em; }
     .content ul li ul li ul li {
-      margin-left: 2.5em; }
+      margin-left: 3.5em; }
 
 p, .p {
   margin-top: 0;
@@ -1035,6 +1037,16 @@ ul {
   display: block;
   text-align: right;
   text-decoration: none; }
+
+code, pre {
+  background-color: #edf5fa;
+  padding: 2px 5px; }
+
+.content .toplink {
+  float: right; }
+
+.content h2 i.fa-level-up, .content h3 i.fa-level-up {
+  font-size: 18px; }
 
 @media only screen and (max-width: 50rem) {
   .text-columns img {

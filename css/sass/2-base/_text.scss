@@ -26,11 +26,13 @@ article, .article {
 
   li {
     list-style-type: square;
+    list-style-position: outside;
+    margin-left: 1.5em;
     ul li {
-      margin-left: 1.5em;
+      margin-left: 2.5em;
 
       ul li {
-        margin-left: 2.5em;
+        margin-left: 3.5em;
       }
     }
   }
@@ -77,6 +79,19 @@ ul {
   display: block;
   text-align: right;
   text-decoration: none;
+}
+
+code, pre {
+  background-color: #edf5fa;
+  padding: 2px 5px;
+}
+
+.content .toplink {
+  float: right;
+}
+
+.content h2 i.fa-level-up, .content h3 i.fa-level-up {
+  font-size: 18px;
 }
 
 // display the text over 2 and 3 columns
