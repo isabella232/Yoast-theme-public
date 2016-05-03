@@ -20,7 +20,7 @@ ul, ol {
 		font-family: $font-stack-default;
 
 		li {
-			list-style: none outside;
+			list-style: none !important;
 			position: relative;
 			padding-left: $spacing / 1.5;
 

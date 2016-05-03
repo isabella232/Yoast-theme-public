@@ -938,7 +938,7 @@ ul, ol {
   margin-bottom: 1em;
   font-family: "Open Sans", Arial, sans-serif; }
   .list--usp li {
-    list-style: none outside;
+    list-style: none !important;
     position: relative;
     padding-left: 1.25333rem; }
     .list--usp li::before {
