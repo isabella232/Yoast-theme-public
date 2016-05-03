@@ -3918,6 +3918,32 @@ hr {
     .text-icon--pinterest:hover, .text-icon--pinterest:focus {
       color: #d75463; }
 
+.fa.fa-bank-transfer {
+  background: url(../images/shop/BankTransfer.svg) top left no-repeat transparent; }
+  .fa.fa-bank-transfer.fa-icon {
+    width: 1.5em;
+    height: 1.2em;
+    margin-top: 2px; }
+
+.fa.fa-icon {
+  font-size: 2.5em;
+  float: left;
+  margin: 0 10px 0 0; }
+  .fa.fa-icon:last-child {
+    margin-right: 0; }
+
+.fa.fa-cc-paypal {
+  color: #05305c; }
+
+.fa.fa-cc-mastercard {
+  color: #ec1d23; }
+
+.fa.fa-cc-visa {
+  color: #0f60a2; }
+
+.fa.fa-cc-amex {
+  color: #0053c7; }
+
 .island, .comment-respond, .llms-lesson-button-wrapper {
   padding-top: 1.88rem; }
 
