@@ -15,9 +15,9 @@ namespace Yoast\YoastCom\Theme;
  *
  * @throws \Exception When an undefined template is included.
  *
- * @param string $file          The file to include.
- * @param array  $template_args style argument list.
- * @param array  $cache_args    The arguments to cache.
+ * @param string $file The file to include.
+ * @param array $template_args style argument list.
+ * @param array $cache_args The arguments to cache.
  *
  * @return false|string
  */
@@ -31,7 +31,8 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 		foreach ( $template_args as $key => $value ) {
 			if ( is_scalar( $value ) || is_array( $value ) ) {
 				$cache_args[ $key ] = $value;
-			} else if ( is_object( $value ) && method_exists( $value, 'get_id' ) ) {
+			}
+			else if ( is_object( $value ) && method_exists( $value, 'get_id' ) ) {
 				$cache_args[ $key ] = call_user_method( 'get_id', $value );
 			}
 		}
@@ -54,9 +55,11 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 
 	if ( file_exists( get_stylesheet_directory() . '/' . $file . '.php' ) ) {
 		$file = get_stylesheet_directory() . '/' . $file . '.php';
-	} elseif ( file_exists( get_template_directory() . '/' . $file . '.php' ) ) {
+	}
+	elseif ( file_exists( get_template_directory() . '/' . $file . '.php' ) ) {
 		$file = get_template_directory() . '/' . $file . '.php';
-	} else {
+	}
+	else {
 		$backtrace = debug_backtrace();
 		$backtrace = $backtrace[0];
 
@@ -64,7 +67,7 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 	}
 
 	ob_start();
-	if ( WP_DEBUG &&  ! ( isset($template_args['debug']) && $template_args['debug'] === false ) ) {
+	if ( WP_DEBUG && ! ( isset( $template_args['debug'] ) && $template_args['debug'] === false ) ) {
 		printf( '<!-- Including template "%s" -->', $file );
 	}
 	$return = require( $file );
@@ -79,7 +82,8 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 	if ( ! empty( $template_args['return'] ) ) {
 		if ( $return === false ) {
 			return false;
-		} else {
+		}
+		else {
 			return $data;
 		}
 	}
@@ -92,7 +96,7 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 /**
  * Returns a legacy option as it was set with genesis
  *
- * @param string      $key     The key to retrieve from the setting.
+ * @param string $key The key to retrieve from the setting.
  * @param null|string $setting The settings to retrieve.
  *
  * @return mixed The retrieved option
@@ -106,7 +110,8 @@ function get_legacy_option( $key, $setting = null ) {
 
 	if ( is_array( $options[ $key ] ) ) {
 		return stripslashes_deep( $options[ $key ] );
-	} else {
+	}
+	else {
 		return stripslashes( wp_kses_decode_entities( $options[ $key ] ) );
 	}
 }
@@ -114,7 +119,7 @@ function get_legacy_option( $key, $setting = null ) {
 /**
  * Retrieve a yoast theme option
  *
- * @param string      $key            The key to retrieve.
+ * @param string $key The key to retrieve.
  * @param null|string $legacy_setting The legacy setting to retrieve the key from.
  *
  * @return mixed The retrieved option
@@ -179,6 +184,7 @@ function query_plugins( $args = array() ) {
 	$args = wp_parse_args( $args, array(
 		'post_type'   => 'yoast_plugins',
 		'post_parent' => 0,
+		'post_status' => 'publish', // specify specifically so we don't get "private" added to it
 	) );
 
 	return new \WP_Query( $args );
@@ -218,9 +224,10 @@ function query_bundles( $args = array() ) {
 	);
 
 	$args = wp_parse_args( $args, array(
-		'post_type'  => 'download',
-		'tax_query'  => $tax_query,
-		'meta_query' => $meta_query,
+		'post_status' => 'publish', // specify specifically so we don't get "private" added to it
+		'post_type'   => 'download',
+		'tax_query'   => $tax_query,
+		'meta_query'  => $meta_query,
 	) );
 
 	return new \WP_Query( $args );
@@ -258,8 +265,9 @@ function query_categories( $args = array() ) {
  */
 function query_must_read_articles( $args = array() ) {
 	$args = wp_parse_args( $args, array(
-		'orderby'    => 'rand',
-		'meta_query' => array(
+		'post_status' => 'publish', // specify specifically so we don't get "private" added to it
+		'orderby'     => 'rand',
+		'meta_query'  => array(
 			array(
 				'key'   => 'must_read',
 				'value' => 'on',
@@ -326,7 +334,7 @@ function kses_blockquote( $content ) {
  * Returns the url of an icon for a certain product (This can be free/premium/download), will try to find the icon
  * through references download_ids
  *
- * @param int  $product_id  The product to find the icon for.
+ * @param int $product_id The product to find the icon for.
  * @param bool $diapositive Whether to retrieve the diapositive version.
  *
  * @return string
@@ -369,10 +377,12 @@ function yst_skip_social() {
 			global $post;
 			if ( get_post_meta( $post->ID, 'no_social', true ) || 'on' === post_meta( 'hide_social_share' ) ) {
 				$skip_social = true;
-			} else {
+			}
+			else {
 				$skip_social = false;
 			}
-		} else {
+		}
+		else {
 			$skip_social = false;
 		}
 	}
