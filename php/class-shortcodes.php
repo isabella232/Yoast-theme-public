@@ -221,7 +221,15 @@ class Shortcodes {
 			$content = wp_kses_post( post_meta( 'sidebar_content' ) );
 		}
 
+		// Prevent infinite loops:
+		remove_shortcode( 'aside' );
+		remove_shortcode( 'sidebar-content' );
+
 		$content = do_shortcode( shortcode_unautop( wpautop( $content ) ) );
+
+		// Re-attach shortcodes.
+		add_shortcode( 'aside', array( $this, 'sidebar_content' ) );
+		add_shortcode( 'sidebar-content', array( $this, 'sidebar_content' ) );
 
 		// Remove empty paragraphs.
 		$content = str_replace( '<p></p>', '', $content );

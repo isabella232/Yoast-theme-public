@@ -20,7 +20,7 @@ class Text_Changes {
 
 		add_filter( 'edd_payment_receipt_products_title', array( $this, 'edd_payment_receipt_products_title' ) );
 
-		add_filter( 'oembed_result', array( $this, 'add_youtube_container' ), 10, 3 );
+		add_filter( 'oembed_result', array( $this, 'add_video_container' ), 10, 2 );
 
 		add_filter( 'comment_form_defaults', array( $this, 'comment_form_labels' ) );
 
@@ -94,10 +94,13 @@ class Text_Changes {
 	 *
 	 * @return string
 	 */
-	public function add_youtube_container( $html, $url, $args ) {
+	public function add_video_container( $html, $url ) {
 
-		if ( false !== strpos( $url, 'youtube' ) ) {
-			$html = '<div class="videowrapper">' . $html . '</div>';
+		$providers = array( 'youtube', 'vimeo' );
+		foreach ( $providers as $provider ) {
+			if ( false !== strpos( $url, $provider ) ) {
+				return '<div class="videowrapper">' . $html . '</div>';
+			}
 		}
 
 		return $html;
