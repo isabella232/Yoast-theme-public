@@ -993,7 +993,7 @@ article, .article {
   .content p.readmore, .content ul.readmore {
     font-size: 1.1em; }
 
-.toc .content ul {
+.content ul ul {
   margin-bottom: 0; }
 
 .content ul li {
