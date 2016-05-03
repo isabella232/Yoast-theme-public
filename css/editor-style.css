@@ -1007,6 +1007,14 @@ p, .p {
 ul {
   margin-top: 0;
   margin-bottom: 1.88rem; }
+  .toc ul {
+    margin-bottom: 0; }
+  ul li {
+    list-style-type: square; }
+    ul li ul li {
+      margin-left: 1.5em; }
+      ul li ul li ul li {
+        margin-left: 2.5em; }
 
 .p {
   font-size: 1em;
