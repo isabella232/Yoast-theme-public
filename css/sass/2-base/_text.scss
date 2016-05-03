@@ -19,6 +19,23 @@ article, .article {
   }
 }
 
+.content ul {
+  .toc & {
+    margin-bottom: 0;
+  }
+
+  li {
+    list-style-type: square;
+    ul li {
+      margin-left: 1.5em;
+
+      ul li {
+        margin-left: 2.5em;
+      }
+    }
+  }
+}
+
 p, .p {
   margin-top: 0;
   margin-bottom: 1.88rem;
@@ -39,22 +56,6 @@ p, .p {
 ul {
   margin-top: 0;
   margin-bottom: 1.88rem;
-
-  .toc & {
-    margin-bottom: 0;
-  }
-
-  li {
-    list-style-type: square;
-    ul li {
-      margin-left: 1.5em;
-
-      ul li {
-        margin-left: 2.5em;
-      }
-    }
-  }
-
 }
 
 .p {
