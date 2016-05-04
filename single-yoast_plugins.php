@@ -19,7 +19,12 @@ namespace Yoast\YoastCom\Theme;
 	<main role="main">
 
 		<div class="row">
-			<?php printf( '<img class="alignright" width="175" height="175" alt="%1$s" src="%2$s">', get_the_title() . ' icon', get_product_icon( post_meta( 'download_id' ) ) ); ?>
+			<?php
+			$icon = get_product_icon( post_meta( 'download_id' ) );
+			if ( $icon ) {
+				printf( '<img class="alignright" width="175" height="175" alt="%1$s" src="%2$s">', get_the_title() . ' icon', $icon );
+			}
+			?>
 
 			<h1><?php the_title(); ?></h1>
 		</div>
@@ -64,18 +69,6 @@ namespace Yoast\YoastCom\Theme;
 			<?php endif; ?>
 
 		</div>
-
-		<hr class="hr--no-pointer">
-
-		<?php if ( ! post_has_shortcode( 'testimonial' ) ) : ?>
-			<div class="row island">
-				<?php get_template_part( 'html_includes/partials/testimonial' ); ?>
-			</div>
-		<?php endif; ?>
-
-		<?php if ( ! post_has_shortcode( 'plugin-info' ) && ! post_has_shortcode( 'plugin-stats' ) ) : ?>
-			<?php get_template_part( 'html_includes/shortcodes/plugin-info' ); ?>
-		<?php endif; ?>
 
 		<hr class="hr--no-pointer">
 
