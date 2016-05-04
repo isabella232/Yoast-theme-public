@@ -15,6 +15,7 @@ namespace Yoast\YoastCom\Theme;
 	</div>
 
 	<main role="main">
+		<?php if ( ! is_paged() ) { ?>
 		<section class="row">
 			<h1 class="color-about--secondary">Posts by <?php the_author(); ?></h1>
 		</section>
@@ -38,14 +39,20 @@ namespace Yoast\YoastCom\Theme;
 			</div>
 		</section>
 
-		<?php get_template_part( 'html_includes/partials/announcement', array( 'class' => "announcement--pointer-top island fill--secondary", 'text' => "Get more visitors! Our SEO Website review will tell you what to improve. Order a SEO Website review &raquo;" ) ); ?>
+		<?php get_template_part( 'html_includes/partials/announcement', array( 'class' => "announcement--pointer-top island fill--secondary", 'text' => "Get more visitors! Our SEO Website review will tell you what to improve. Order an SEO Website review &raquo;" ) ); ?>
+		<?php } else { ?>
+		<section class="row">
+			<h1 class="color-about--secondary">Posts by <?php the_author(); ?> archive - page <?php echo esc_html( get_query_var( 'paged' ) ); ?></h1>
+		</section>
+		<hr />
+		<?php } ?>
 
 		<?php
 			$i=1;
 			while ( have_posts() ) : the_post();
 				?>
 			<section class="row">
-				<?php if ( $i === 1 ) { ?>
+				<?php if ( ! is_paged() && $i === 1 ) { ?>
 				<h2 class="h3 color-about--tertiary"><?php printf( __( 'Check out posts by %s', 'yoastcom' ), get_the_author_meta( 'first_name' ) ); ?></h2>
 				<?php } ?>
 				<?php get_template_part( 'html_includes/partials/article-intro' ); ?>
