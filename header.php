@@ -14,3 +14,4 @@ namespace Yoast\YoastCom\Theme;
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<?php do_action( 'yst_body_open' ); ?>
