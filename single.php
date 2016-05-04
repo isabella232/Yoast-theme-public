@@ -43,11 +43,10 @@ get_header(); ?>
 			</section>
 		</aside>
 
-		<hr>
-
 		<?php if ( ! Hide_Comments::hide_comments() ) : ?>
 			<?php $comments_number = get_comments_number(); ?>
 			<?php if ( $comments_number > 0 ) : ?>
+				<hr>
 				<div class="entry-comments" id="comments">
 					<div class="row" >
 						<h3><?php printf( _n( '%d Response', '%d Responses', $comments_number ), $comments_number ); ?></h3>
