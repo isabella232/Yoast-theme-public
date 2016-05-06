@@ -17,4 +17,4 @@ if ( isset( $template_args['banner'] ) ) {
 	$classes[] = $template_args['banner'];
 }
 ?>
-<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>"<?php echo esc_attr( $sticky ); ?>></div>
+<div class="announcement--pointer-top <?php echo esc_attr( implode( ' ', $classes ) ); ?>"<?php echo esc_attr( $sticky ); ?>></div>

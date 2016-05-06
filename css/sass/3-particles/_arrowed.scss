@@ -121,7 +121,7 @@
 			right: - ($arrowwidth - .1rem);
 			top: -1px;
 			border-left: $arrowwidth solid $color-white;
-			border-top: $arrowwidth solid transparent;
+			border-top: ($arrowwidth + .1rem) solid transparent;
 			border-bottom: $arrowwidth solid transparent;
 		}
 
@@ -149,7 +149,7 @@
 		@include line-arrow-color($scheme-academy-primary);
 	}
 
-	&.theme-academy--secondary {
+	&.theme-academy--secondary, &.border-color-academy--secondary {
 		@include line-arrow-color($scheme-academy-secondary);
 	}
 
@@ -158,7 +158,7 @@
 		@include line-arrow-color($scheme-software-primary);
 	}
 
-	&.theme-software--secondary {
+	&.theme-software--secondary, &.border-color-software--secondary {
 		@include line-arrow-color($scheme-software-secondary);
 	}
 

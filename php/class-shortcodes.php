@@ -23,6 +23,7 @@ class Shortcodes {
 		add_shortcode( 'plugin-stats', array( $this, 'plugin_stats' ) );
 		add_shortcode( 'readmore', array( $this, 'read_more_link' ) );
 		add_shortcode( 'sidebar-content', array( $this, 'sidebar_content' ) );
+		add_shortcode( 'sidebar-payment', array( $this, 'sidebar_payment_method' ) );
 		add_shortcode( 'testimonial', array( $this, 'testimonial' ) );
 		add_shortcode( 'yst_review_box', array( $this, 'review_box' ) );
 
@@ -221,7 +222,15 @@ class Shortcodes {
 			$content = wp_kses_post( post_meta( 'sidebar_content' ) );
 		}
 
+		// Prevent infinite loops:
+		remove_shortcode( 'aside' );
+		remove_shortcode( 'sidebar-content' );
+
 		$content = do_shortcode( shortcode_unautop( wpautop( $content ) ) );
+
+		// Re-attach shortcodes.
+		add_shortcode( 'aside', array( $this, 'sidebar_content' ) );
+		add_shortcode( 'sidebar-content', array( $this, 'sidebar_content' ) );
 
 		// Remove empty paragraphs.
 		$content = str_replace( '<p></p>', '', $content );
@@ -231,6 +240,28 @@ class Shortcodes {
 		$out .= $this->get_restart_body();
 
 		return $out;
+	}
+
+	/**
+	 * Generates an accepted payment methods box in the sidebar
+	 *
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	public function sidebar_payment_method( $atts ) {
+		$atts = wp_parse_args( $atts, array(
+			'title' => 'Accepted payment methods',
+		) );
+		$atts['icon'] = false;
+
+		$content = '<i class="fa fa-icon fa-cc-paypal" title="PayPal"></i>';
+		$content .= '<i class="fa fa-icon fa-cc-mastercard" title="MasterCard"></i>';
+		$content .= '<i class="fa fa-icon fa-cc-visa" title="VISA"></i>';
+		$content .= '<i class="fa fa-icon fa-cc-amex" title="American Express"></i>';
+		$content .= '<i class="fa fa-icon fa-bank-transfer" title="Bank Transfer"></i>';
+
+		return $this->sidebar_content( $atts, $content );
 	}
 
 	/**

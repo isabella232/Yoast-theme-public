@@ -4,6 +4,8 @@
  */
 
 namespace Yoast\YoastCom\Theme;
+
+
 ?>
 <?php get_header(); ?>
 
@@ -17,21 +19,30 @@ namespace Yoast\YoastCom\Theme;
 	<main role="main">
 
 		<div class="row">
+			<?php
+			$icon = get_product_icon( post_meta( 'download_id' ) );
+			if ( $icon ) {
+				printf( '<img class="alignright" width="175" height="175" alt="%1$s" src="%2$s">', get_the_title() . ' icon', $icon );
+			}
+			?>
+
 			<h1><?php the_title(); ?></h1>
 		</div>
 
-		<hr class="hr--no-pointer">
-
-		<div class="row">
-			<?php if ( ! empty( post_meta( 'usps' ) ) ) : ?>
-				<?php get_template_part( 'html_includes/partials/list-usp', array(
+		<?php if ( ! empty( post_meta( 'usps' ) ) ) : ?>
+			<div class="row">
+				<?php
+				get_template_part( 'html_includes/partials/list-usp', array(
 					'usps'  => wp_list_pluck( (array) post_meta( 'usps' ), 'usp' ),
 					'class' => 'color-software',
-				) ); ?>
-			<?php endif; ?>
-		</div>
+				) );
+				?>
 
-		<?php if ( post_meta( 'announcement_link' ) ) : ?>
+			</div>
+			<div class="clear"></div>
+		<?php endif; ?>
+
+		<?php if ( post_meta( 'announcement_link' ) ) { ?>
 			<?php get_template_part( 'html_includes/partials/announcement', array(
 				'class' => 'announcement--small announcement--pointer fill--secondary',
 				'text'  => post_meta( 'announcement_text' ),
@@ -41,7 +52,9 @@ namespace Yoast\YoastCom\Theme;
 			<?php get_template_part( 'html_includes/partials/fullbanner', array(
 				'banner' => post_meta( 'announcement_image' ),
 			) ); ?>
-		<?php endif; ?>
+		<?php } else if ( ! post_meta( 'announcement_link' ) && ! empty( post_meta( 'usps' ) ) ) { ?>
+			<hr/>
+		<?php } ?>
 
 		<div class="row island iceberg">
 
@@ -56,18 +69,6 @@ namespace Yoast\YoastCom\Theme;
 			<?php endif; ?>
 
 		</div>
-
-		<hr class="hr--no-pointer">
-
-		<?php if ( ! post_has_shortcode( 'testimonial' ) ) : ?>
-		<div class="row island">
-			<?php get_template_part( 'html_includes/partials/testimonial' ); ?>
-		</div>
-		<?php endif; ?>
-
-		<?php if ( ! post_has_shortcode( 'plugin-info' ) && ! post_has_shortcode( 'plugin-stats' ) ) : ?>
-			<?php get_template_part( 'html_includes/shortcodes/plugin-info' ); ?>
-		<?php endif; ?>
 
 		<hr class="hr--no-pointer">
 

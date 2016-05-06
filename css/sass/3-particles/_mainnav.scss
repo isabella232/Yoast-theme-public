@@ -383,7 +383,7 @@
     -webkit-order: 1;
     order: 1;
     border-bottom: 1px solid $color-white;
-    background-color: $scheme-academy-menu-primary;
+    background-color: $scheme-academy-menu-secondary;
   }
 
   .mainnav__software {
@@ -444,7 +444,7 @@
       //border-right: 1px solid rgba($color-white, .5);
     }
 
-    &.current_page_parent a, &.current-menu-item a {
+    &.current-page-ancestor:first-of-type a, &.current_page_parent a, &.current-menu-item a {
       font-weight: bold;
       text-decoration: underline;
     }

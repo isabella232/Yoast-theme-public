@@ -12,10 +12,6 @@ get_header(); ?>
 <?php get_template_part( 'html_includes/siteheader', array( 'academy-sub' => true ) ); ?>
 <div class="site">
 
-	<div class="row">
-		<?php get_template_part( 'html_includes/partials/breadcrumbs' ); ?>
-	</div>
-
 	<main role="main">
 
 		<article class="row">
@@ -33,6 +29,12 @@ get_header(); ?>
 
 		<hr class="hr--no-pointer">
 
+		<div class="row">
+			<?php get_template_part( 'html_includes/partials/breadcrumbs' ); ?>
+		</div>
+
+		<hr class="hr--no-pointer">
+
 		<?php get_template_part( 'html_includes/partials/bio' ); ?>
 
 		<hr>
@@ -44,11 +46,10 @@ get_header(); ?>
 			</section>
 		</aside>
 
-		<hr>
-
 		<?php if ( ! Hide_Comments::hide_comments() ) : ?>
 			<?php $comments_number = get_comments_number(); ?>
 			<?php if ( $comments_number > 0 ) : ?>
+				<hr>
 				<div class="entry-comments" id="comments">
 					<div class="row" >
 						<h3><?php printf( _n( '%d Response', '%d Responses', $comments_number ), $comments_number ); ?></h3>
@@ -58,6 +59,9 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<?php if ( comments_open() ) : ?>
+				<?php if ( $comments_number == 0 ) : ?>
+				<hr>
+				<?php endif; ?>
 				<?php comment_form(); ?>
 			<?php endif; ?>
 		<?php endif; ?>

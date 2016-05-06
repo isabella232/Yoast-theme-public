@@ -16,15 +16,15 @@ class Text_Changes {
 	public function __construct() {
 		add_filter( 'get_the_archive_title', array( $this, 'filter_archive_title' ) );
 
-		add_filter( 'the_content', array( $this, 'blockquote_full_width' ) );
-
 		add_action( 'wp_editor_expand', array( $this, 'reinstate_editor_for_posts_page' ) );
 
 		add_filter( 'edd_payment_receipt_products_title', array( $this, 'edd_payment_receipt_products_title' ) );
 
-		add_filter( 'oembed_result', array( $this, 'add_youtube_container' ), 10, 3 );
+		add_filter( 'oembed_result', array( $this, 'add_video_container' ), 10, 2 );
 
 		add_filter( 'comment_form_defaults', array( $this, 'comment_form_labels' ) );
+
+		add_filter( 'wpseo_breadcrumb_links', array( $this, 'filter_crumbs' ) );
 	}
 
 	/**
@@ -73,23 +73,6 @@ class Text_Changes {
 	}
 
 	/**
-	 * Breaks block quotes out of the content they're in. We want blockquotes to be full width
-	 *
-	 * @param string $content Current content of the page.
-	 *
-	 * @return string
-	 */
-	public function blockquote_full_width( $content ) {
-
-		$shortcode = new Shortcodes();
-
-		$content = str_replace( '<blockquote>', $shortcode->get_break_out_body() . '<blockquote>', $content );
-		$content = str_replace( '</blockquote>', '</blockquote>' . $shortcode->get_restart_body(), $content );
-
-		return $content;
-	}
-
-	/**
 	 * Add a notice to the receipt that products include the VAT
 	 *
 	 * @param string $title The current title.
@@ -111,10 +94,13 @@ class Text_Changes {
 	 *
 	 * @return string
 	 */
-	public function add_youtube_container( $html, $url, $args ) {
+	public function add_video_container( $html, $url ) {
 
-		if ( false !== strpos( $url, 'youtube' ) ) {
-			$html = '<div class="videowrapper">' . $html . '</div>';
+		$providers = array( 'youtube', 'vimeo' );
+		foreach ( $providers as $provider ) {
+			if ( false !== strpos( $url, $provider ) ) {
+				return '<div class="videowrapper">' . $html . '</div>';
+			}
 		}
 
 		return $html;
@@ -133,5 +119,50 @@ class Text_Changes {
 		$defaults['label_submit']   = __( 'Post comment', 'yoastcom' );
 
 		return $defaults;
+	}
+
+	/**
+	 * Filter the breadcrumbs for pages that have a parent but don't show it otherwise
+	 *
+	 * @param array $links
+	 *
+	 * @return array
+	 */
+	public function filter_crumbs( $links ) {
+		$this->filter_crumbs_helper( $links, 'theme-software', 478759 );
+		$this->filter_crumbs_helper( $links, 'theme-academy', 409369 );
+
+		return $links;
+	}
+
+	/**
+	 * Helper function to filter the breadcrumbs
+	 *
+	 * @param array $links
+	 * @param string $page_theme
+	 * @param string $page_id
+	 *
+	 * @return array
+	 */
+	private function filter_crumbs_helper( &$links, $page_theme, $page_id ) {
+		static $theme;
+		if ( ! isset( $theme ) ) {
+			$theme = theme_object()->color->get_color_scheme();
+		}
+
+		if ( $theme == $page_theme ) {
+			if ( isset( $links[1] ) ) {
+				if ( isset( $links[1]['id'] ) && $links[1]['id'] === $page_id ) {
+					return $links;
+				}
+			}
+			$links = array_merge(
+				array_slice( $links, 0, 1 ),
+				array( array( 'id' => $page_id ) ),
+				array_slice( $links, 1, count( $links ) )
+			);
+		}
+
+		return $links;
 	}
 }

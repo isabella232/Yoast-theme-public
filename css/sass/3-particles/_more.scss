@@ -194,7 +194,11 @@
 
 	.more__supertitle {
 		font-size: 1.1em;
-		margin-right: 2em;
+		margin-right: .5em;
+
+		i.fa {
+			margin-left: .5em;
+		}
 	}
 
 	.more__holder {

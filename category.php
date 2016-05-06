@@ -6,6 +6,7 @@
 namespace Yoast\YoastCom\Theme;
 
 $cat_image_id = get_term_meta( get_queried_object_id(), 'yoastcom_term_image_id', true );
+$cat_icon = get_term_meta( get_queried_object_id(), 'yoastcom_term_icon', true );
 
 $banner_text = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_text', true );
 $banner_url  = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_url', true );
@@ -41,6 +42,7 @@ $banner_icon = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_ico
 							<?php endif; ?>
 							<div class="content promoblock theme-academy--secondary">
 								<?php the_archive_description(); ?>
+								<i aria-hidden="true" class="blockicon color-academy--secondary fa fa-<?php echo $cat_icon; ?>"></i>
 							</div>
 						</div>
 					</div>

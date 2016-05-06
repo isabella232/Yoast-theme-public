@@ -51,6 +51,10 @@ if ( !$sections ) {
 			$html .= '<h3>';
 				$html .= '<i class="fa fa-check-square" aria-hidden="true"></i>';
 				$html .= $section->post->post_title;
+		
+		// updated?
+		
+		
 				$html .= '<i class="fa fa-caret-down" aria-hidden="true"></i>';
 			$html .= '</h3>';
 		$html .= '</button>';

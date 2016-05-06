@@ -52,14 +52,20 @@ class Extra_Head {
 	public function extra_head_insertion() {
 		$meta_box = new_cmb2_box( array(
 			'id'           => 'yoastcom_extra_head_input',
-			'title'        => __( 'Add header scripts or tags', 'yoastcom' ),
+			'title'        => __( 'Advanced post settings', 'yoastcom' ),
 			'object_types' => array( 'page', 'post', 'yoast_dev_article' ),
 			'priority'     => 'low',
 			'show_on'      => array( 'key' => 'role', 'value' => 'administrator' ),
 		) );
 
 		$meta_box->add_field( array(
-			'name' => __( 'Extra scripts or tags', 'yoastcom' ),
+			'name' => __( 'Add body class', 'yoastcom' ),
+			'id'   => 'yoastcom_extra_body_class',
+			'type' => 'text',
+		) );
+
+		$meta_box->add_field( array(
+			'name' => __( 'Extra header scripts or tags', 'yoastcom' ),
 			'id'   => 'yoastcom_extra_head',
 			'desc' => __( 'Note that these are not escaped in any way, so be cautious!' ),
 			'type' => 'textarea_code',

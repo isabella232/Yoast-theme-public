@@ -32,8 +32,8 @@ $question_count = count( $quiz->questions );
 			printf( __( 'Question %d of %d', 'lifterlms' ), ( empty( $current_question ) ? '' : $current_question ), $question_count );
 
 		}
-		?>
-		<?php
+		
+		// Modification: allow directly editting of this question.
 		if ( current_user_can( 'edit_posts' ) ) {
 			printf( '<a href="%s">Edit</a>', admin_url( 'post.php?action=edit&post=' . $args['question_id'] ) );
 		}
