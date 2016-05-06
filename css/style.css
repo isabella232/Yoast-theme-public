@@ -1989,25 +1989,23 @@ body.single-post .post-header {
     body.single-post .post-header {
       display: none; } }
 
+@media only screen and (max-width: 50rem) {
+  body.single-post .breadcrumb__container {
+    display: none; } }
+
 body.single-post .content {
   background-color: #ffffff;
   padding: 20px 20px 0 0;
   z-index: 1; }
 
-body.single-post .content__after-post-header {
-  margin-top: -225px; }
-  @media only screen and (max-width: 50rem) {
-    body.single-post .content__after-post-header {
-      margin-top: 0; } }
-
-body.single-post .meta__after-post_header {
-  float: right;
-  clear: right;
-  height: 225px;
-  width: 292px; }
-  @media only screen and (max-width: 50rem) {
-    body.single-post .meta__after-post_header {
-      display: none; } }
+@media only screen and (min-width: 50rem) {
+  body.single-post .content__after-post-header {
+    margin-top: -225px; }
+  body.single-post .meta__after-post_header {
+    float: right;
+    clear: right;
+    height: 225px;
+    width: 292px; } }
 
 body.single-post .content__first {
   border-top-right-radius: 50px; }

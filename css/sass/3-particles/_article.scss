@@ -57,29 +57,28 @@ body.single-post {
     }
   }
 
+  @media only screen and (max-width: $page-width-medium) {
+    .breadcrumb__container {
+      display: none;
+    }
+  }
+
   .content {
     background-color: #ffffff;
     padding: 20px 20px 0 0;
     z-index: 1;
   }
 
-  .content__after-post-header {
-    margin-top: -225px;
-
-    @media only screen and (max-width: $page-width-medium) {
-      margin-top: 0;
+  @media only screen and (min-width: $page-width-medium) {
+    .content__after-post-header {
+      margin-top: -225px;
     }
 
-  }
-
-  .meta__after-post_header {
-    float: right;
-    clear: right;
-    height: 225px;
-    width: 292px;
-
-    @media only screen and (max-width: $page-width-medium) {
-      display: none;
+    .meta__after-post_header {
+      float: right;
+      clear: right;
+      height: 225px;
+      width: 292px;
     }
   }
 

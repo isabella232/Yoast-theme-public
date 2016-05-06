@@ -27,12 +27,13 @@ get_header(); ?>
 			<?php get_template_part( 'html_includes/partials/social-share' ); ?>
 		</article>
 
+		<div class="breadcrumb__container">
 		<hr class="hr--no-pointer">
-
 		<div class="row">
 			<?php get_template_part( 'html_includes/partials/breadcrumbs' ); ?>
 		</div>
-
+		</div>
+		
 		<hr class="hr--no-pointer">
 
 		<?php get_template_part( 'html_includes/partials/bio' ); ?>
