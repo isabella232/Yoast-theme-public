@@ -45,6 +45,7 @@ class Theme {
 		new Term();
 		new Page_Academy_Settings();
 		new Query();
+		new Featured_Image();
 
 		if ( is_admin() ) {
 			$theme_settings = new Theme_Settings();

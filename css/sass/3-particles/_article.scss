@@ -70,6 +70,10 @@ body.single-post {
   }
 
   @media only screen and (min-width: $page-width-medium) {
+    img.featured-image {
+      display: none;
+    }
+
     .content__after-post-header {
       margin-top: -225px;
     }
