@@ -13,11 +13,15 @@ if ( has_post_thumbnail() ) {
 					$custom_title_top = get_post_meta( get_the_ID(), 'title_top_line', true );
 					$custom_title_bottom = get_post_meta( get_the_ID(), 'title_bottom_line', true );
 
-					if ( empty( $custom_title_bottom ) || empty( $custom_title_top ) ) {
+					if ( empty( $custom_title_top ) ) {
 						the_title();
 					}
 					else {
-						printf( '%s<br><span class="post-header__title--second-line">%s</span>', $custom_title_top, $custom_title_bottom );
+						echo $custom_title_top;
+					}
+
+					if ( ! empty( $custom_title_bottom ) ) {
+						printf( '<br><span class="post-header__title--second-line">%s</span>', $custom_title_bottom );
 					}
 					
 					?></h1>
