@@ -10,7 +10,10 @@ namespace Yoast\YoastCom\Theme;
  * @package Yoast\YoastCom\Theme
  */
 class Featured_Image {
-	
+
+	/**
+	 * Featured_Image constructor.
+	 */
 	public function __construct() {
 		if ( ! is_admin() ) {
 			add_filter( 'the_content', array( $this, 'article_mark_featured_image' ) );
