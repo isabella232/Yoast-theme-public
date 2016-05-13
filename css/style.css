@@ -1998,9 +1998,9 @@ body.single-post .meta__after-post_header {
 
 body.single-post .content__first {
   border-top-right-radius: 50px; }
-  body.single-post .content__first p:first-child {
+  body.single-post .content__first > p:first-child {
     font-weight: bold; }
-    body.single-post .content__first p:first-child:first-letter {
+    body.single-post .content__first > p:first-child:first-letter {
       float: left;
       font-size: 60px;
       line-height: 50px;

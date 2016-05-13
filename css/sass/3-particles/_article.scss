@@ -77,7 +77,7 @@ body.single-post {
 
     border-top-right-radius: 50px;
 
-    p:first-child {
+    & > p:first-child {
 
       font-weight: bold;
 
