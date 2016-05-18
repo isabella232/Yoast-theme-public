@@ -7,8 +7,10 @@ global $quiz;
 $user_id = get_current_user_id();
 $passing_percent = $quiz->get_passing_percent();
 
+$grade = $quiz->get_user_grade( $user_id );
+
 // Modification: When passed we don't want to show what was needed to pass.
-if ( $passing_percent && ! $quiz->is_passing_score( $user_id ) ) :
+if ( $passing_percent && ! $quiz->is_passing_score( $user_id, $grade ) ) :
 	?>
 
 	<div class="clear"></div>

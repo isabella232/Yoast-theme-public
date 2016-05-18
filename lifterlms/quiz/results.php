@@ -18,13 +18,14 @@ if ( ! $quiz->get_total_attempts_by_user( $user_id ) ) {
 	return;
 }
 
-$quiz->is_passing_score( $user_id );
-$passing_percent = $quiz->get_passing_percent();
-
 $grade      = $quiz->get_user_grade( $user_id );
 $best_grade = $quiz->get_best_grade( $user_id );
 
-$is_passing_score = $quiz->is_passing_score( $user_id );
+$quiz->is_passing_score( $user_id, $grade );
+$passing_percent = $quiz->get_passing_percent();
+
+
+$is_passing_score = $quiz->is_passing_score( $user_id, $grade );
 
 ?>
 
