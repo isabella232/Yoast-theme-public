@@ -11,12 +11,6 @@ if ( ! isset( $template_args['class2'] ) ) {
 
 $args = array( 'posts_per_page' => 3, 'post__not_in' => array( get_the_ID() ) );
 
-if ( is_category() ) {
-	$args['category__in'] = get_queried_object_id();
-}
-if ( is_tag() ) {
-	$args['tag__in'] = get_queried_object_id();
-}
 $posts_query = query_must_read_articles( $args );
 
 if ( $posts_query->have_posts() ) :

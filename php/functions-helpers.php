@@ -270,29 +270,21 @@ function query_categories( $args = array() ) {
  * @return \WP_Query
  */
 function query_must_read_articles( $args = array() ) {
-	if ( is_tag() || is_category() ) {
+	if ( is_tag() || is_category() || is_tax() ) {
 		$must_read = get_term_meta( get_queried_object_id(), 'yoastcom_term_mustread_posts', true );
 		if ( $must_read ) {
-			$args = array(
-				'post_status' => 'publish',
-				'post__in'    => $must_read,
+			$args = wp_parse_args( $args, array(
+					'post_status' => 'publish',
+					'post__in'    => $must_read,
+					'orderby'     => 'none',
+				)
 			);
+
 			return new \WP_Query( $args );
 		}
+
 		return false;
 	}
-	$args = wp_parse_args( $args, array(
-		'post_status' => 'publish', // specify specifically so we don't get "private" added to it
-		'orderby'     => 'rand',
-		'meta_query'  => array(
-			array(
-				'key'   => 'must_read',
-				'value' => 'on',
-			),
-		),
-	) );
-
-	return new \WP_Query( $args );
 }
 
 /**
