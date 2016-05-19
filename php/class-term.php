@@ -32,57 +32,80 @@ class Term {
 		) );
 
 		$cmb_term->add_field( array(
-			'name'     => __( 'Theme specific data', 'yoastcom' ),
-			'id'       => $prefix . 'title',
-			'type'     => 'title',
+			'name' => __( 'Theme specific data', 'yoastcom' ),
+			'id'   => $prefix . 'title',
+			'type' => 'title',
 		) );
 
 		$cmb_term->add_field( array(
-			'name'     => __( 'Short description', 'yoastcom' ),
-			'desc'     => __( 'Used in category lists', 'yoastcom' ),
-			'id'       => $prefix . 'shortdesc',
-			'type'     => 'text',
+			'name' => __( 'Short description', 'yoastcom' ),
+			'desc' => __( 'Used in category lists', 'yoastcom' ),
+			'id'   => $prefix . 'shortdesc',
+			'type' => 'text',
 		) );
 
 		$cmb_term->add_field( array(
-			'name'     => __( 'Icon', 'yoastcom' ),
-			'desc'     => __( 'Used in category lists, select a Font Awesome icon and put its name here, like <code>search</code>.', 'yoastcom' ),
-			'id'       => $prefix . 'icon',
-			'type'     => 'text_small',
+			'name' => __( 'Icon', 'yoastcom' ),
+			'desc' => __( 'Used in category lists, select a Font Awesome icon and put its name here, like <code>search</code>.', 'yoastcom' ),
+			'id'   => $prefix . 'icon',
+			'type' => 'text_small',
 		) );
 
 		$cmb_term->add_field( array(
-			'name' => __( 'Term Image', 'yoastcom' ),
-			'id'   => $prefix . 'image',
-			'type' => 'file',
+			'name'    => __( 'Must read posts', 'yoastcom' ),
+			'desc'    => __( 'The must read posts for this term.', 'yoastcom' ),
+			'id'      => $prefix . 'mustread_posts',
+			'type'    => 'custom_attached_posts',
 			'options' => array(
-				'url' => false,
+				'filter_boxes'    => true,
+				'show_thumbnails' => true,
+				'hide_selected'   => true,
+				'query_args'      => array(
+					'tax_query'      => array(
+						array(
+							'taxonomy' => $_GET['taxonomy'],
+							'field'    => 'term_id',
+							'operator' => 'IN',
+							'terms'    => array( $_GET['tag_ID'] ),
+						)
+					),
+					'posts_per_page' => - 1,
+				),
+			),
+		) );
+
+		$cmb_term->add_field( array(
+			'name'    => __( 'Term Image', 'yoastcom' ),
+			'id'      => $prefix . 'image',
+			'type'    => 'file',
+			'options' => array(
+				'url'                  => false,
 				'add_upload_file_text' => __( 'Change term image', 'yoastcom' ),
 			)
 		) );
 
 		$cmb_term->add_field( array(
-			'name'     => __( 'Banner on page', 'yoastcom' ),
-			'id'       => $prefix . 'banner_title',
-			'type'     => 'title',
+			'name' => __( 'Banner on page', 'yoastcom' ),
+			'id'   => $prefix . 'banner_title',
+			'type' => 'title',
 		) );
 
 		$cmb_term->add_field( array(
-			'name'     => __( 'Banner Icon', 'yoastcom' ),
-			'id'       => $prefix . 'banner_icon',
-			'type'     => 'text_small',
+			'name' => __( 'Banner Icon', 'yoastcom' ),
+			'id'   => $prefix . 'banner_icon',
+			'type' => 'text_small',
 		) );
 
 		$cmb_term->add_field( array(
-			'name'     => __( 'Banner Text', 'yoastcom' ),
-			'id'       => $prefix . 'banner_text',
-			'type'     => 'text',
+			'name' => __( 'Banner Text', 'yoastcom' ),
+			'id'   => $prefix . 'banner_text',
+			'type' => 'text',
 		) );
 
 		$cmb_term->add_field( array(
-			'name'     => __( 'Banner URL', 'yoastcom' ),
-			'id'       => $prefix . 'banner_url',
-			'type'     => 'text_url',
+			'name' => __( 'Banner URL', 'yoastcom' ),
+			'id'   => $prefix . 'banner_url',
+			'type' => 'text_url',
 		) );
 
 	}

@@ -31,8 +31,7 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 		foreach ( $template_args as $key => $value ) {
 			if ( is_scalar( $value ) || is_array( $value ) ) {
 				$cache_args[ $key ] = $value;
-			}
-			else if ( is_object( $value ) && method_exists( $value, 'get_id' ) ) {
+			} else if ( is_object( $value ) && method_exists( $value, 'get_id' ) ) {
 				$cache_args[ $key ] = call_user_method( 'get_id', $value );
 			}
 		}
@@ -55,11 +54,9 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 
 	if ( file_exists( get_stylesheet_directory() . '/' . $file . '.php' ) ) {
 		$file = get_stylesheet_directory() . '/' . $file . '.php';
-	}
-	elseif ( file_exists( get_template_directory() . '/' . $file . '.php' ) ) {
+	} elseif ( file_exists( get_template_directory() . '/' . $file . '.php' ) ) {
 		$file = get_template_directory() . '/' . $file . '.php';
-	}
-	else {
+	} else {
 		$backtrace = debug_backtrace();
 		$backtrace = $backtrace[0];
 
@@ -82,8 +79,7 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 	if ( ! empty( $template_args['return'] ) ) {
 		if ( $return === false ) {
 			return false;
-		}
-		else {
+		} else {
 			return $data;
 		}
 	}
@@ -110,8 +106,7 @@ function get_legacy_option( $key, $setting = null ) {
 
 	if ( is_array( $options[ $key ] ) ) {
 		return stripslashes_deep( $options[ $key ] );
-	}
-	else {
+	} else {
 		return stripslashes( wp_kses_decode_entities( $options[ $key ] ) );
 	}
 }
@@ -275,16 +270,26 @@ function query_categories( $args = array() ) {
  * @return \WP_Query
  */
 function query_must_read_articles( $args = array() ) {
-	$args = wp_parse_args( $args, array(
-		'post_status' => 'publish', // specify specifically so we don't get "private" added to it
-		'orderby'     => 'rand',
-		'meta_query'  => array(
-			array(
-				'key'   => 'must_read',
-				'value' => 'on',
+	$must_read = false;
+	if ( is_tag() || is_category() ) {
+		$must_read = get_term_meta( get_queried_object_id(), 'yoastcom_term_mustread_posts', true );
+		$args      = array(
+			'post_status' => 'publish',
+			'post__in'    => $must_read,
+		);
+	}
+	if ( ! $must_read ) {
+		$args = wp_parse_args( $args, array(
+			'post_status' => 'publish', // specify specifically so we don't get "private" added to it
+			'orderby'     => 'rand',
+			'meta_query'  => array(
+				array(
+					'key'   => 'must_read',
+					'value' => 'on',
+				),
 			),
-		),
-	) );
+		) );
+	}
 
 	return new \WP_Query( $args );
 }
@@ -388,12 +393,10 @@ function yst_skip_social() {
 			global $post;
 			if ( get_post_meta( $post->ID, 'no_social', true ) || 'on' === post_meta( 'hide_social_share' ) ) {
 				$skip_social = true;
-			}
-			else {
+			} else {
 				$skip_social = false;
 			}
-		}
-		else {
+		} else {
 			$skip_social = false;
 		}
 	}
