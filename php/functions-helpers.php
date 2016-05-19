@@ -283,7 +283,7 @@ function query_must_read_articles( $args = array() ) {
 			return new \WP_Query( $args );
 		}
 
-		return false;
+		return new \WP_Query( array( 'post__in' => array( 0 ) ) );
 	}
 }
 
