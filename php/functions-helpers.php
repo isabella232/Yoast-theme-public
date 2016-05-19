@@ -146,6 +146,17 @@ function post_meta( $key ) {
 }
 
 /**
+ * Outputs the post's meta description
+ */
+function post_meta_desc() {
+	$desc = trim( \WPSEO_Meta::get_value( 'metadesc' ) );
+	if ( ! $desc || '' === $desc ) {
+		$desc = get_the_excerpt();
+	}
+	echo '<p>' . esc_html( $desc ) . '</p>';
+}
+
+/**
  * Outputs a counter for a certain social network
  *
  * @param string $network

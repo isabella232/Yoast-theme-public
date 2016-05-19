@@ -38,7 +38,7 @@ if ( $posts_query->have_posts() ) :
 					<h3 class="h4"><a href="<?php the_permalink(); ?>"
 					                  class="<?php echo esc_attr( $template_args['class2'] ); ?>"><?php the_title(); ?></a>
 					</h3>
-					<?php the_excerpt(); ?>
+					<?php post_meta_desc(); ?>
 				</div>
 			</div>
 		<?php endwhile;
