@@ -66,7 +66,7 @@ get_header(); ?>
 			<section class="row island iceberg">
 				<h2 class="color-academy--secondary"><?php printf( __( 'Check out our must read articles about %s' ), $primary_term->name ); ?></h2>
 				<?php
-				get_template_part( 'html_includes/partials/more-articles', array(
+				get_template_part( 'html_includes/partials/must-read-articles', array(
 					'must_read' => true,
 					'term_id'   => $primary_term_id
 				) );
