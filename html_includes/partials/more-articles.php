@@ -16,7 +16,7 @@ if ( $must_read ) {
 theme_object()->excerpt->length( 8 );
 theme_object()->excerpt->more( ' &raquo;' );
 
-if ( $posts_query->have_posts() ) :
+if ( is_object( $posts_query ) && ! is_wp_error( $posts_query ) && $posts_query->have_posts() ) :
 	while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
 		<a href="<?php the_permalink(); ?>" class="more <?php echo $template_args['class']; ?>">
 			<div
