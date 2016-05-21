@@ -8,6 +8,7 @@ if ( isset( $template_args['dev-blog'] ) && $template_args['dev-blog'] ) {
 	$args['post_type'] = 'yoast_dev_article';
 }
 if ( $must_read ) {
+	$args['term_id'] = $template_args['term_id'];
 	$posts_query = query_must_read_articles( $args );
 } else {
 	$posts_query = new \WP_Query( $args );

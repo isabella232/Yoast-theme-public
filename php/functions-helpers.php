@@ -270,8 +270,8 @@ function query_categories( $args = array() ) {
  * @return \WP_Query
  */
 function query_must_read_articles( $args = array() ) {
-	if ( is_tag() || is_category() || is_tax() ) {
-		$must_read = get_term_meta( get_queried_object_id(), 'yoastcom_term_mustread_posts', true );
+	if ( isset( $args['term_id'] ) ) {
+		$must_read = get_term_meta( $args['term_id'], 'yoastcom_term_mustread_posts', true );
 		if ( $must_read ) {
 			$args = wp_parse_args( $args, array(
 					'post_status' => 'publish',

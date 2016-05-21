@@ -5,12 +5,13 @@
 
 namespace Yoast\YoastCom\Theme;
 
-$cat_image_id = get_term_meta( get_queried_object_id(), 'yoastcom_term_image_id', true );
-$cat_icon = get_term_meta( get_queried_object_id(), 'yoastcom_term_icon', true );
+$term_id      = get_queried_object_id();
+$cat_image_id = get_term_meta( $term_id, 'yoastcom_term_image_id', true );
+$cat_icon     = get_term_meta( $term_id, 'yoastcom_term_icon', true );
 
-$banner_text = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_text', true );
-$banner_url  = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_url', true );
-$banner_icon = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_icon', true );
+$banner_text = get_term_meta( $term_id, 'yoastcom_term_banner_text', true );
+$banner_url  = get_term_meta( $term_id, 'yoastcom_term_banner_url', true );
+$banner_icon = get_term_meta( $term_id, 'yoastcom_term_banner_icon', true );
 
 ?>
 <?php get_header(); ?>
@@ -42,7 +43,8 @@ $banner_icon = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_ico
 							<?php endif; ?>
 							<div class="content promoblock theme-academy--secondary">
 								<?php the_archive_description(); ?>
-								<i aria-hidden="true" class="blockicon color-academy--secondary fa fa-<?php echo $cat_icon; ?>"></i>
+								<i aria-hidden="true"
+								   class="blockicon color-academy--secondary fa fa-<?php echo $cat_icon; ?>"></i>
 							</div>
 						</div>
 					</div>
@@ -67,7 +69,7 @@ $banner_icon = get_term_meta( get_queried_object_id(), 'yoastcom_term_banner_ico
 		?>
 
 		<?php if ( ! is_paged() ) : ?>
-			<?php get_template_part( 'html_includes/partials/must-read-articles', array( 'class1' => 'theme-academy--secondary' ) ); ?>
+			<?php get_template_part( 'html_includes/partials/must-read-articles', array( 'class1' => 'theme-academy--secondary', 'term_id' => $term_id ) ); ?>
 		<?php endif; ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>

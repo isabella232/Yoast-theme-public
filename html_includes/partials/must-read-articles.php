@@ -9,7 +9,7 @@ if ( ! isset( $template_args['class2'] ) ) {
 	$template_args['class2'] = '';
 }
 
-$args = array( 'posts_per_page' => 3, 'post__not_in' => array( get_the_ID() ) );
+$args = array( 'posts_per_page' => 3, 'post__not_in' => array( get_the_ID() ), 'term_id' => $template_args['term_id'] );
 
 $posts_query = query_must_read_articles( $args );
 
