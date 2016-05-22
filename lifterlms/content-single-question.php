@@ -15,9 +15,11 @@ llms_print_notices();
 $html = '';
 
 if ( Drag_And_Drop_Question::QUESTION_ID === (int) $args['question_id'] ) {
-	
+
+	ob_start();
 	$html = Drag_And_Drop_Question::html();
-	
+	ob_clean();
+
 }
 else {
 	$query_args = array(
