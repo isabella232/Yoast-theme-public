@@ -56,4 +56,5 @@ else {
 }
 
 echo $html;
+
 wp_reset_postdata();
