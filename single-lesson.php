@@ -4,11 +4,9 @@ namespace Yoast\YoastCom\Theme;
 
 remove_filter( 'the_content', 'llms_get_post_content' );
 
-?>
+get_header();
+get_template_part( 'html_includes/siteheader', array( 'academy-sub' => true ) ); ?>
 
-<?php get_header(); ?>
-
-<?php get_template_part( 'html_includes/siteheader', array( 'academy-sub' => true ) ); ?>
 <div class="site">
 
 	<div class="row">
