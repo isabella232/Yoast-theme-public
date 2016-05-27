@@ -9,6 +9,8 @@ use Yoast\YoastCom\Settings\Hide_Comments;
 
 /**
  * Adds yoast.com theme functionality
+ *
+ * Change to bust cache
  */
 class Theme {
 
