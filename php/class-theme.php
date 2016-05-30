@@ -156,10 +156,8 @@ class Theme {
 
 		// Academy scripts.
 		if ( is_singular( array( 'course', 'lesson', 'llms_quiz' ) ) ) {
-
 			wp_enqueue_script( 'yoast-com-academy' );
 			wp_enqueue_script( 'jquery-ui-sortable', false, array( 'jquery', 'jquery-ui' ) );
-
 		}
 	}
 
