@@ -69,7 +69,7 @@ $quiz_data = get_user_meta( $user_id, 'llms_quiz_data', true );
 
 									<li>
 										<span class="llms-quiz-summary-label user-answer">
-										<?php echo sprintf( __( 'Your answer:%s', 'lifterlms' ), wp_kses_post( $options[ $question['answer'] ]['option_text'] ) ); ?>
+										<?php echo sprintf( __( 'Your answer: %s', 'lifterlms' ), wp_kses_post( $options[ $question['answer'] ]['option_text'] ) ); ?>
 										</span>
 
 										<?php
