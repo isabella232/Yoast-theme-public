@@ -40,17 +40,11 @@ get_header(); ?>
 
 		<hr>
 
-		<aside>
-			<section class="row">
-				<h2><?php _e( 'You might also like', 'yoastcom' ); ?></h2>
-				<?php get_template_part( 'html_includes/partials/recent-articles' ); ?>
-			</section>
-		</aside>
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'fill--secondary announcement--pointer' ) ); ?>
 
 		<?php if ( ! Hide_Comments::hide_comments() ) : ?>
 			<?php $comments_number = get_comments_number(); ?>
 			<?php if ( $comments_number > 0 ) : ?>
-				<hr>
 				<div class="entry-comments" id="comments">
 					<div class="row">
 						<h3><?php printf( _n( '%d Response to %s', '%d Responses to %s', $comments_number ), $comments_number, get_the_title() ); ?></h3>
@@ -60,9 +54,6 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<?php if ( comments_open() ) : ?>
-				<?php if ( $comments_number == 0 ) : ?>
-				<hr>
-				<?php endif; ?>
 				<?php comment_form(); ?>
 			<?php endif; ?>
 		<?php endif; ?>
