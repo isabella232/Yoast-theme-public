@@ -38,8 +38,6 @@ get_header(); ?>
 
 		<?php get_template_part( 'html_includes/partials/bio' ); ?>
 
-		<hr>
-
 		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'fill--secondary announcement--pointer' ) ); ?>
 
 		<?php if ( ! Hide_Comments::hide_comments() ) : ?>
