@@ -26,6 +26,7 @@ jQuery( document ).ready( function( $ ) {
 // YouTube tracking
 (function( document, window, config ) {
 	'use strict';
+
 	window.onYouTubeIframeAPIReady = (function() {
 		var cached = window.onYouTubeIframeAPIReady;
 		return function() {
@@ -57,14 +58,18 @@ jQuery( document ).ready( function( $ ) {
 	function init() {
 		var iframes = document.getElementsByTagName( 'iframe' );
 		var embeds = document.getElementsByTagName( 'embed' );
-		digestPotentialVideos( iframes );
-		digestPotentialVideos( embeds );
+
+		if ( iframes.length || embeds.length ) {
+			if ( iframes.length ) {
+				digestPotentialVideos( iframes );
+			}
+
+			if ( embeds.length ) {
+				digestPotentialVideos( embeds );
+			}
+		}
 	}
 
-	var tag = document.createElement( 'script' );
-	tag.src = '//www.youtube.com/iframe_api';
-	var firstScriptTag = document.getElementsByTagName( 'script' )[ 0 ];
-	firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
 	function digestPotentialVideos( potentialVideos ) {
 		var i;
 		for ( i = 0; i < potentialVideos.length; i++ ) {
@@ -87,6 +92,12 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	function normalizeYouTubeIframe( youTubeVideo ) {
+		if ( typeof tag == 'undefined' ) {
+			tag = document.createElement( 'script' );
+			tag.src = '//www.youtube.com/iframe_api';
+			var firstScriptTag = document.getElementsByTagName( 'script' )[ 0 ];
+			firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
+		}
 
 		var a = document.createElement( 'a' );
 		a.href = youTubeVideo.src;
