@@ -26,7 +26,6 @@ jQuery( document ).ready( function( $ ) {
 // YouTube tracking
 (function( document, window, config ) {
 	'use strict';
-
 	window.onYouTubeIframeAPIReady = (function() {
 		var cached = window.onYouTubeIframeAPIReady;
 		return function() {
@@ -34,7 +33,8 @@ jQuery( document ).ready( function( $ ) {
 				cached.apply( this, arguments );
 			}
 			if ( !navigator.userAgent.match( /MSIE [67]\./gi ) ) {
-				init();
+				digestPotentialVideos( iframes );
+				console.log( 'init' );
 			}
 		};
 	})();
@@ -55,19 +55,19 @@ jQuery( document ).ready( function( $ ) {
 		}
 	}
 
-	function init() {
-		var iframes = document.getElementsByTagName( 'iframe' );
-		var embeds = document.getElementsByTagName( 'embed' );
-
-		if ( iframes.length || embeds.length ) {
-			if ( iframes.length ) {
-				digestPotentialVideos( iframes );
-			}
-
-			if ( embeds.length ) {
-				digestPotentialVideos( embeds );
-			}
+	var loadYoutube = false;
+	var iframes = document.getElementsByTagName( 'iframe' );
+	[].forEach.call( iframes, function( iframe ) {
+		if ( checkIfYouTubeVideo( iframe ) ) {
+			loadYoutube = true;
 		}
+	});
+
+	if ( loadYoutube ) {
+		var tag = document.createElement( 'script' );
+		tag.src = '//www.youtube.com/iframe_api';
+		var firstScriptTag = document.getElementsByTagName( 'script' )[ 0 ];
+		firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
 	}
 
 	function digestPotentialVideos( potentialVideos ) {
@@ -92,12 +92,6 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	function normalizeYouTubeIframe( youTubeVideo ) {
-		if ( typeof tag == 'undefined' ) {
-			tag = document.createElement( 'script' );
-			tag.src = '//www.youtube.com/iframe_api';
-			var firstScriptTag = document.getElementsByTagName( 'script' )[ 0 ];
-			firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
-		}
 
 		var a = document.createElement( 'a' );
 		a.href = youTubeVideo.src;
