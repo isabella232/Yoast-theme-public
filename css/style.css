@@ -1971,7 +1971,7 @@ body.single-post .post-header {
     top: 0;
     width: 100%; }
     body.single-post .post-header__title h1 {
-      font-family: "Open Sans", sans-serif;
+      font-family: "Open Sans", Arial, sans-serif;
       font-size: 52px;
       line-height: 62px;
       font-weight: 400;
@@ -1979,7 +1979,7 @@ body.single-post .post-header {
       text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.6);
       margin: 0; }
     body.single-post .post-header__title span {
-      font-family: "Merriweather", sans-serif;
+      font-family: "Merriweather", Georgia, serif;
       font-weight: 800;
       font-style: italic; }
   body.single-post .post-header .post-header__title__container {
@@ -4789,6 +4789,8 @@ svg .llms-animated-circle {
     margin-left: 15px; }
     .media .imgExt img, .media .img--right img {
       border: 1px solid #DCDCDC; }
+    .media .imgExt img.noborder, .media .img--right img.noborder {
+      border: none; }
   .media .img {
     float: left;
     margin-right: 15px; }

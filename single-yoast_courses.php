@@ -34,7 +34,7 @@ if ( $post->post_parent !== 0 ) {
 						$thumb_id = get_post_thumbnail_id();
 						$thumb_src = wp_get_attachment_image_src( $thumb_id, 'large' );
 						?>
-						<img src="<?php echo $thumb_src[0]; ?>" width="150" alt="<?php the_title(); ?>" />
+						<img class="noborder" src="<?php echo $thumb_src[0]; ?>" width="150" alt="<?php the_title(); ?>" />
 					</div>
 				<?php endif; ?>
 
