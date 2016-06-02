@@ -88,19 +88,6 @@ $banner_icon = get_term_meta( $term_id, 'yoastcom_term_banner_icon', true );
 		<div class="row">
 			<?php get_template_part( 'html_includes/partials/pagination' ); ?>
 		</div>
-		<!--		<hr>-->
-		<!--		<div class="row">-->
-		<!--			<h2 class="color-academy--tertiary">Check out the Yoast Series</h2>-->
-		<!--			--><?php //get_template_part( 'html_includes/partials/list-series' );
-		?>
-		<!--		</div>-->
-		<!---->
-		<!--		<hr class="hr--no-pointer">-->
-		<!---->
-		<!--		<div class="row">-->
-		<!--			--><?php //get_template_part( 'html_includes/partials/list-series' );
-		?>
-		<!--		</div>-->
 
 		<?php if ( is_category() ) : ?>
 			<hr>
