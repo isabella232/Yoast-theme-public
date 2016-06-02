@@ -79,7 +79,12 @@ get_header(); ?>
 		endif;
 		?>
 
-		<hr class="hr--no-pointer">
+		<?php get_template_part( 'html_includes/partials/announcement', array(
+			'class' => 'theme-academy announcement--pointer-top',
+			'text'  => __( 'Want to learn the basics of SEO? Or how to use Yoast SEO properly? Follow a course on Yoast Academy &raquo;', 'yoastcom' ),
+			'url'   => url_academy_overview() . 'courses/',
+			'icon'  => 'graduation-cap',
+		) ); ?>
 
 	</main>
 
