@@ -1948,6 +1948,18 @@ body.single-post div.site {
 body.single-post .breadcrumb {
   margin-bottom: 1.88rem; }
 
+body.single-post article.row > h1, body.single-post article.checkout-wrap__container > h1, body.single-post article#edd_sl_cancel_renewal_form > h1, body.single-post article#edd_discount_code > h1, body.single-post article.edd_empty_cart > h1, body.single-post article#edd_checkout_user_info > h1, body.single-post
+article#edd_cc_fields > h1, body.single-post
+article#edd_cc_address > h1, body.single-post
+article#edd_purchase_submit > h1, body.single-post
+article#edd-stripe-payment-errors > h1, body.single-post
+article#edd_check_payment_info > h1, body.single-post
+article#edd_terms_agreement > h1, body.single-post article.comment-respond > h1 {
+  margin-top: 2em; }
+
+body.single-post section.alignright {
+  clear: right; }
+
 body.single-post .post-header {
   margin-bottom: 1em;
   min-height: 400px;
@@ -4195,6 +4207,9 @@ svg .llms-animated-circle {
   margin-top: 1.88rem; }
   .quiz-summary .panel-body li:first-child {
     margin-top: 0; }
+
+.quiz-summary .panel-body a {
+  font-size: 1em; }
 
 .single-llms_quiz .llms-return a {
   width: 100%;
