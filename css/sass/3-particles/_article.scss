@@ -29,7 +29,7 @@ body.single-post {
       width: 100%;
 
       h1 {
-        font-family: "Open Sans", sans-serif;
+        font-family: $font-stack-default;
         font-size: 52px;
         line-height: 62px;
         font-weight: 400;
@@ -40,7 +40,7 @@ body.single-post {
       }
 
       span {
-        font-family: "Merriweather", sans-serif;
+        font-family: $font-stack-article;
         font-weight: 800;
         font-style: italic;
       }
