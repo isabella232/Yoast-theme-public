@@ -60,12 +60,23 @@ namespace Yoast\YoastCom\Theme;
 			<?php } ?>
 		</div>
 
-		<?php if ( is_home() && ! is_front_page() ) : ?>
+		<?php if ( is_home() && ! is_front_page() ) :
+			$posts_page_id = get_option( 'page_for_posts' );
+			?>
 			<div class="row">
 				<div class="media media--nofloat">
+					<?php if ( has_post_thumbnail( $posts_page_id ) ) : ?>
+						<div class="imgExt">
+							<img
+								src="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $posts_page_id ), 'thumbnail-recent-articles' ); ?>"
+								width="250" height="131"
+								class="promoblock promoblock--imageholder theme-academy--secondary">
+						</div>
+					<?php endif; ?>
 					<div class="bd content color-academy--secondary">
+						<div class="content promoblock theme-academy--secondary">
 						<?php
-						$home_post = get_post( get_option( 'page_for_posts' ) );
+						$home_post = get_post( $posts_page_id );
 						if ( $home_post->post_content !== '' ) {
 							$content = $home_post->post_content;
 						} else {
@@ -74,6 +85,9 @@ namespace Yoast\YoastCom\Theme;
 
 						echo wpautop( do_shortcode( $content ) );
 						?>
+							<i aria-hidden="true"
+							   class="blockicon color-academy--secondary fa fa-newspaper-o"></i>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -125,19 +139,6 @@ namespace Yoast\YoastCom\Theme;
 		<div class="row">
 			<?php get_template_part( 'html_includes/partials/pagination' ); ?>
 		</div>
-		<!--		<hr>-->
-		<!--		<div class="row">-->
-		<!--			<h2 class="color-academy--tertiary">Check out the Yoast Series</h2>-->
-		<!--			--><?php //get_template_part( 'html_includes/partials/list-series' );
-		?>
-		<!--		</div>-->
-		<!---->
-		<!--		<hr class="hr--no-pointer">-->
-		<!---->
-		<!--		<div class="row">-->
-		<!--			--><?php //get_template_part( 'html_includes/partials/list-series' );
-		?>
-		<!--		</div>-->
 
 		<?php if ( is_category() ) : ?>
 			<hr>
