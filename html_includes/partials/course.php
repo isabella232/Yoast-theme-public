@@ -21,7 +21,7 @@ namespace Yoast\YoastCom\Theme;
 			<?php
 			echo edd_get_purchase_link( array(
 				'download_id' => post_meta( 'download_id' ),
-				'text'        => __( 'Order this Course now', 'yoastcom' ) . ' &raquo;',
+				'text'        => __( 'Follow this course now', 'yoastcom' ) . ' &raquo;',
 				'class' => 'alignleft'
 			) );
 			?>
