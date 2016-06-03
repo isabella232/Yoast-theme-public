@@ -26,6 +26,7 @@ if ( $post->post_parent !== 0 ) {
 
 		<hr class="hr--no-pointer">
 
+		<?php if ( ! empty( post_meta( 'usps' ) ) ) : ?>
 		<div class="row">
 			<div class="media">
 				<?php if ( has_post_thumbnail() ) : ?>
@@ -39,12 +40,10 @@ if ( $post->post_parent !== 0 ) {
 				<?php endif; ?>
 
 				<div class="bd">
-					<?php if ( ! empty( post_meta( 'usps' ) ) ) : ?>
 						<?php get_template_part( 'html_includes/partials/list-usp', array(
 							'usps'  => wp_list_pluck( (array) post_meta( 'usps' ), 'usp' ),
 							'class' => 'color-academy',
 						) ); ?>
-					<?php endif; ?>
 
 					<?php if ( post_meta( 'download_id' ) ) : ?>
 						<?php
@@ -57,6 +56,7 @@ if ( $post->post_parent !== 0 ) {
 				</div>
 			</div>
 		</div>
+		<?php endif; ?>
 
 		<hr class="hr--no-pointer">
 
