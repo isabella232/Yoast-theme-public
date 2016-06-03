@@ -24,9 +24,8 @@ if ( $post->post_parent !== 0 ) {
 			<h1><?php the_title(); ?></h1>
 		</div>
 
-		<hr class="hr--no-pointer">
-
 		<?php if ( ! empty( post_meta( 'usps' ) ) ) : ?>
+		<hr class="hr--no-pointer">
 		<div class="row">
 			<div class="media">
 				<?php if ( has_post_thumbnail() ) : ?>
@@ -56,9 +55,8 @@ if ( $post->post_parent !== 0 ) {
 				</div>
 			</div>
 		</div>
-		<?php endif; ?>
-
 		<hr class="hr--no-pointer">
+		<?php endif; ?>
 
 		<div class="row iceberg">
 
