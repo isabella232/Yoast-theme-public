@@ -48,7 +48,7 @@ if ( $post->post_parent !== 0 ) {
 						<?php
 						echo edd_get_purchase_link( array(
 							'download_id' => post_meta( 'download_id' ),
-							'text'        => __( 'Order this Course now', 'yoastcom' ) . ' &raquo;',
+							'text'        => __( 'Follow this course now', 'yoastcom' ) . ' &raquo;',
 						) );
 						?>
 					<?php endif; ?>
