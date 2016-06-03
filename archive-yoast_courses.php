@@ -18,10 +18,6 @@ namespace Yoast\YoastCom\Theme;
 		<?php while ( have_posts() ) : the_post(); ?>
 			<article class="row">
 				<?php get_template_part( 'html_includes/partials/course' ); ?>
-
-				<?php if ( post_meta( 'testimonial' ) ) : ?>
-					<blockquote><?php echo kses_blockquote( post_meta( 'testimonial' ) ); ?></blockquote>
-				<?php endif; ?>
 			</article>
 
 			<?php if ( ! is_last_post() ) : ?>
@@ -29,7 +25,7 @@ namespace Yoast\YoastCom\Theme;
 			<?php endif; ?>
 		<?php endwhile; ?>
 
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'announcement--pointer' ) ); ?>
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
 
 	</main>
 

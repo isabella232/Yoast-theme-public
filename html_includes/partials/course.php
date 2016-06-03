@@ -2,7 +2,11 @@
 namespace Yoast\YoastCom\Theme;
 ?>
 <div class="media media--nofloat product">
-	<?php if ( post_meta( 'promo_video_embed' ) ) : ?>
+	<?php if ( post_meta( 'course_image' ) ) : ?>
+		<div class="vid">
+			<a href="<?php the_permalink(); ?>"><img alt="<?php esc_attr_e( get_the_title() ); ?>" src="<?php echo post_meta( 'course_image' ); ?>"/></a>
+		</div>
+	<?php elseif ( post_meta( 'promo_video_embed' ) ) : ?>
 		<div class="vid">
 			<?php echo wp_oembed_get( post_meta( 'promo_video_embed' ) ); ?>
 		</div>
@@ -18,8 +22,21 @@ namespace Yoast\YoastCom\Theme;
 			echo edd_get_purchase_link( array(
 				'download_id' => post_meta( 'download_id' ),
 				'text'        => __( 'Order this Course now', 'yoastcom' ) . ' &raquo;',
+				'class' => 'alignleft'
 			) );
 			?>
 		<?php endif; ?>
+
+		<?php if ( post_meta( 'testimonial' ) ) : ?>
+			<blockquote>
+				<?php if ( post_meta( 'testimonial_image' ) ) {
+					echo '<img class="alignright" src="' . esc_url( post_meta( 'testimonial_image' ) ) . '"/>';
+				} ?>
+				<?php echo wpautop( kses_blockquote( post_meta( 'testimonial' ) ) ); ?>
+			</blockquote>
+			<br/><br/>
+		<?php endif; ?>
+
+		<?php printf( __( 'More info on %s', 'yoastcom' ), '<a href="' . get_permalink() . '">' . get_the_title() . ' &raquo;</a>' ); ?>
 	</div>
 </div>
