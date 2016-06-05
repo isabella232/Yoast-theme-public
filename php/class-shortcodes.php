@@ -467,16 +467,25 @@ class Shortcodes {
 	/**
 	 * Returns buy buttons
 	 *
+	 * @param array $atts The shortcode attributes
+	 * 
 	 * @return string
 	 */
-	public function buy_buttons() {
-		$plugin_id       = post_meta( 'download_id' );
-		$plugin_title    = get_the_title( $plugin_id );
-		$plugin_price    = edd_get_price_option_amount( $plugin_id, 0 );
-		$plugin_buy_link = edd_get_checkout_uri() . '?yst_action_edd=add_to_cart&license=0&download_id=' . $plugin_id;
+	public function buy_buttons( $atts ) {
+		$args = wp_parse_args( $atts, array(
+			'id'    => post_meta( 'download_id' ),
+			'text'  => __( 'Buy %s for $%d &raquo;', 'yoastcom' ),
+			'title' => '',
+		) );
+		if ( '' === $args['title'] ) {
+			$args['title'] = get_the_title( $args['id'] );
+		}
+
+		$plugin_price    = edd_get_price_option_amount( $args['id'], 0 );
+		$plugin_buy_link = edd_get_checkout_uri() . '?yst_action_edd=add_to_cart&license=0&download_id=' . $args['id'];
 
 		$out = '<a rel="nofollow" class="alignleft button default"
-				   href="' . $plugin_buy_link . '">' . sprintf( __( 'Buy %s for $%d &raquo;', 'yoastcom' ), $plugin_title, $plugin_price ) . '</a>
+				   href="' . $plugin_buy_link . '">' . sprintf( $args['text'], $args['title'], $plugin_price ) . '</a>
 	<a rel="nofollow" href="#"
    class="alignleft button dimmed default openmodal">' . sprintf( __( 'Pricing for multiple sites', 'yoastcom' ) ) . '</a>';
 
