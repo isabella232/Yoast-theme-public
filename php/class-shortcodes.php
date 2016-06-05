@@ -26,6 +26,7 @@ class Shortcodes {
 		add_shortcode( 'sidebar-payment', array( $this, 'sidebar_payment_method' ) );
 		add_shortcode( 'testimonial', array( $this, 'testimonial' ) );
 		add_shortcode( 'yst_review_box', array( $this, 'review_box' ) );
+		add_shortcode( 'buy_buttons', array( $this, 'buy_buttons' ) );
 
 		// Deprecated shortcodes.
 		add_shortcode( 'box', array( $this, 'deprecate_box' ) );
@@ -102,6 +103,38 @@ class Shortcodes {
 			. get_template_part( 'html_includes/shortcodes/plugin-info', array( 'return' => true ) )
 			. '<hr>'
 			. $this->get_content_restart();
+	}
+
+	/**
+	 * Returns HTML tags to break out of the content container to allow for full width shortcodes
+	 *
+	 * @return string
+	 */
+	private function get_break_out_content() {
+		$break_out_content = '';
+
+		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
+			$break_out_content = '</section></div>';
+		} elseif ( is_singular() ) {
+			$break_out_content = '</div></article>';
+		}
+
+		return $break_out_content;
+	}
+
+	/**
+	 * Restart the content area to make sure content after the shortcode is still valid
+	 */
+	private function get_content_restart() {
+		$restart_content = '';
+
+		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
+			$restart_content = '<div class="row island iceberg"><section class="content">';
+		} elseif ( is_singular() ) {
+			$restart_content = '<article class="row"><div class="content">';
+		}
+
+		return $restart_content;
 	}
 
 	/**
@@ -192,6 +225,28 @@ class Shortcodes {
 	}
 
 	/**
+	 * Generates an accepted payment methods box in the sidebar
+	 *
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	public function sidebar_payment_method( $atts ) {
+		$atts         = wp_parse_args( $atts, array(
+			'title' => 'Accepted payment methods',
+		) );
+		$atts['icon'] = false;
+
+		$content = '<i class="fa fa-icon fa-cc-paypal" title="PayPal"></i>';
+		$content .= '<i class="fa fa-icon fa-cc-mastercard" title="MasterCard"></i>';
+		$content .= '<i class="fa fa-icon fa-cc-visa" title="VISA"></i>';
+		$content .= '<i class="fa fa-icon fa-cc-amex" title="American Express"></i>';
+		$content .= '<i class="fa fa-icon fa-bank-transfer" title="Bank Transfer"></i>';
+
+		return $this->sidebar_content( $atts, $content );
+	}
+
+	/**
 	 * Allows putting the sidebar content higher up along the content than it would normally happen if there is other break out content
 	 *
 	 * @param array $atts
@@ -243,25 +298,37 @@ class Shortcodes {
 	}
 
 	/**
-	 * Generates an accepted payment methods box in the sidebar
-	 *
-	 * @param array $atts
+	 * Break out of the article body
 	 *
 	 * @return string
 	 */
-	public function sidebar_payment_method( $atts ) {
-		$atts = wp_parse_args( $atts, array(
-			'title' => 'Accepted payment methods',
-		) );
-		$atts['icon'] = false;
+	public function get_break_out_body() {
+		$break_out_content = '';
 
-		$content = '<i class="fa fa-icon fa-cc-paypal" title="PayPal"></i>';
-		$content .= '<i class="fa fa-icon fa-cc-mastercard" title="MasterCard"></i>';
-		$content .= '<i class="fa fa-icon fa-cc-visa" title="VISA"></i>';
-		$content .= '<i class="fa fa-icon fa-cc-amex" title="American Express"></i>';
-		$content .= '<i class="fa fa-icon fa-bank-transfer" title="Bank Transfer"></i>';
+		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
+			$break_out_content = '</section>';
+		} elseif ( is_page() || is_singular() ) {
+			$break_out_content = '</div>';
+		}
 
-		return $this->sidebar_content( $atts, $content );
+		return $break_out_content;
+	}
+
+	/**
+	 * Restart the article body
+	 *
+	 * @return string
+	 */
+	public function get_restart_body() {
+		$restart_content = '';
+
+		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
+			$restart_content = '<section class="content">';
+		} elseif ( is_page() || is_singular() ) {
+			$restart_content = '<div class="content">';
+		}
+
+		return $restart_content;
 	}
 
 	/**
@@ -360,40 +427,6 @@ class Shortcodes {
 	}
 
 	/**
-	 * Break out of the article body
-	 *
-	 * @return string
-	 */
-	public function get_break_out_body() {
-		$break_out_content = '';
-
-		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
-			$break_out_content = '</section>';
-		} elseif ( is_page() || is_singular() ) {
-			$break_out_content = '</div>';
-		}
-
-		return $break_out_content;
-	}
-
-	/**
-	 * Restart the article body
-	 *
-	 * @return string
-	 */
-	public function get_restart_body() {
-		$restart_content = '';
-
-		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
-			$restart_content = '<section class="content">';
-		} elseif ( is_page() || is_singular() ) {
-			$restart_content = '<div class="content">';
-		}
-
-		return $restart_content;
-	}
-
-	/**
 	 * Handler for the read more link shortcode
 	 *
 	 * @param array $atts The shortcode attributes
@@ -432,35 +465,22 @@ class Shortcodes {
 	}
 
 	/**
-	 * Returns HTML tags to break out of the content container to allow for full width shortcodes
+	 * Returns buy buttons
 	 *
 	 * @return string
 	 */
-	private function get_break_out_content() {
-		$break_out_content = '';
+	public function buy_buttons() {
+		$plugin_id       = post_meta( 'download_id' );
+		$plugin_title    = get_the_title( $plugin_id );
+		$plugin_price    = edd_get_price_option_amount( $plugin_id, 0 );
+		$plugin_buy_link = edd_get_checkout_uri() . '?yst_action_edd=add_to_cart&license=0&download_id=' . $plugin_id;
 
-		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
-			$break_out_content = '</section></div>';
-		} elseif ( is_singular() ) {
-			$break_out_content = '</div></article>';
-		}
+		$out = '<a rel="nofollow" class="alignleft button default"
+				   href="' . $plugin_buy_link . '">' . sprintf( __( 'Buy %s for $%d &raquo;', 'yoastcom' ), $plugin_title, $plugin_price ) . '</a>
+	<a rel="nofollow" href="#"
+   class="alignleft button dimmed default openmodal">' . sprintf( __( 'Pricing for multiple sites', 'yoastcom' ) ) . '</a>';
 
-		return $break_out_content;
-	}
-
-	/**
-	 * Restart the content area to make sure content after the shortcode is still valid
-	 */
-	private function get_content_restart() {
-		$restart_content = '';
-
-		if ( is_singular( array( 'yoast_plugins', 'yoast_courses' ) ) ) {
-			$restart_content = '<div class="row island iceberg"><section class="content">';
-		} elseif ( is_singular() ) {
-			$restart_content = '<article class="row"><div class="content">';
-		}
-
-		return $restart_content;
+		return $out;
 	}
 
 }

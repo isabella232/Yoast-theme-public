@@ -401,6 +401,9 @@ div.aligncenter {
   float: left;
   margin: 5px 20px 20px 0; }
 
+.left {
+  float: left; }
+
 a img.alignright {
   float: right;
   margin: 5px 0 20px 20px; }
@@ -869,13 +872,24 @@ img {
 .link--light {
   color: #FFF; }
 
-.link--naked {
+.link--naked, .link--download {
   text-decoration: none !important; }
-  .link--naked:hover, .link--naked:focus {
-    text-decoration: underline; }
+  .link--naked:hover, .link--naked:focus, .link--download:hover, .link--download:focus {
+    text-decoration: underline !important; }
 
 .link--explicit {
   text-decoration: underline !important; }
+
+.link--download {
+  display: block;
+  margin: 15px 0;
+  color: #646464 !important; }
+  .link--download::before {
+    font-family: "FontAwesome", "Open Sans", Arial, sans-serif;
+    content: '\f019';
+    margin-right: 5px; }
+    .link--download::before:hover {
+      text-decoration: none !important; }
 
 ul, ol {
   padding-left: 0;
@@ -1725,6 +1739,8 @@ thead th {
           border-right: 1.43rem solid #DC5C04;
           border-top: 1.43rem solid transparent;
           border-bottom: 1.44rem solid transparent; } }
+  .button.alignleft, button.alignleft {
+    margin: 1rem 2.5rem 0 0 !important; }
   .button .arrow, button .arrow {
     display: none; }
   .button + .button, button + .button, .button + button, button + button {

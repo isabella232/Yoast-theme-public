@@ -25,6 +25,11 @@ class Theme {
 	public $color;
 
 	/**
+	 * @var Shortcodes
+	 */
+	public $shortcodes;
+
+	/**
 	 * Constructor. Adds WordPress hooks.
 	 */
 	public function __construct() {
@@ -52,8 +57,8 @@ class Theme {
 			$theme_settings->hooks();
 		}
 
-		$shortcodes = new Shortcodes();
-		add_action( 'init', array( $shortcodes, 'add_shortcodes' ) );
+		$this->shortcodes = new Shortcodes();
+		add_action( 'init', array( $this->shortcodes, 'add_shortcodes' ) );
 
 		$this->color = new Color_Scheme();
 		$this->extra_head = new Extra_Head();
@@ -105,6 +110,8 @@ class Theme {
 		$this->register_asset( 'script', 'yoast-com-academy', 'js/academy.min.js', array(
 			'jquery',
 		) );
+
+		$this->register_asset( 'script', 'jquery-modal', 'js/includes/jquery.modal.min.js', array( 'jquery' ), '0.7', true );
 	}
 
 	/**
@@ -145,6 +152,10 @@ class Theme {
 				'taxes_enabled'  => edd_use_taxes() ? '1' : '0',
 				'tax_rates'      => $this->get_tax_rates()
 			) );
+		}
+
+		if ( is_singular( 'yoast_plugins' ) ) {
+			wp_enqueue_script( 'jquery-modal' );
 		}
 
 		// Remove the cross selling CSS because we overwrite it completely.

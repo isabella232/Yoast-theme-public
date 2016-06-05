@@ -5,11 +5,18 @@
 
 namespace Yoast\YoastCom\Theme;
 
+$plugin_id    = post_meta( 'download_id' );
+$plugin_title = get_the_title( $plugin_id );
+$plugin_price = edd_get_price_option_amount( $plugin_id, 0 );
+if ( $plugin_price === 0.00 ) {
+	$plugin_price = edd_get_price_option_amount( $plugin_id, 1 );
+}
+
+get_header();
+
+get_template_part( 'html_includes/siteheader', array( 'software-sub' => true ) );
 
 ?>
-<?php get_header(); ?>
-
-<?php get_template_part( 'html_includes/siteheader', array( 'software-sub' => true ) ); ?>
 
 <div class="site">
 	<div class="row">
@@ -38,6 +45,38 @@ namespace Yoast\YoastCom\Theme;
 				) );
 				?>
 
+				<?php
+				if ( $plugin_price !== 0.00 ) :
+					?>
+					<div id="prices-modal">
+						<h3>
+							<i class="fa fa-cart-plus"
+							   aria-hidden="true"></i> <?php printf( __( 'Buy %s', 'yoastcom' ), $plugin_title ); ?>
+						</h3>
+						<div class="content">
+							<p>
+								<?php _e( 'Price includes one year updates &amp; support.', 'yoastcom' ); ?><br/>
+								<br/>
+								<strong><?php printf( __( 'How many sites will you use %s on?', 'yoastcom' ), $plugin_title ); ?></strong><br/>
+							</p>
+							<?php
+							echo edd_get_purchase_link( array(
+								'download_id' => $plugin_id,
+								'text'        => __( 'Add to cart', 'yoastcom' ) . ' &raquo;',
+							) );
+							?>
+						</div>
+					</div>
+
+					<?php echo theme_object()->shortcodes->buy_buttons(); ?>
+
+					<div class="clear"></div>
+				<?php endif; ?>
+				<?php if ( post_meta( 'plugin' ) ) : ?>
+					<a class="link--download"
+					   href="<?php printf( 'https://downloads.wordpress.org/plugin/%s.zip', post_meta( 'plugin' ) ); ?>">Download
+						the free version &raquo;</a>
+				<?php endif; ?>
 			</div>
 			<div class="clear"></div>
 		<?php endif; ?>
@@ -53,6 +92,7 @@ namespace Yoast\YoastCom\Theme;
 				'banner' => post_meta( 'announcement_image' ),
 			) ); ?>
 		<?php } else if ( ! post_meta( 'announcement_link' ) && ! empty( post_meta( 'usps' ) ) ) { ?>
+			<br/>
 			<hr/>
 		<?php } ?>
 
@@ -81,3 +121,17 @@ namespace Yoast\YoastCom\Theme;
 </div>
 
 <?php get_footer(); ?>
+
+<script>
+	jQuery(document).ready(function ($) {
+		$('a.button.openmodal').click(function () {
+			$('#prices-modal').modal({
+				closeText: '<i class="fa fa-times-circle"></i>'
+			});
+			$('label').click(function (e) {
+				e.preventDefault();
+				$('input#' + $(this).attr('for')).prop('checked', true);
+			});
+		});
+	});
+</script>
