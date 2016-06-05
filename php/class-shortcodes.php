@@ -468,7 +468,7 @@ class Shortcodes {
 	 * Returns buy buttons
 	 *
 	 * @param array $atts The shortcode attributes
-	 * 
+	 *
 	 * @return string
 	 */
 	public function buy_buttons( $atts ) {
@@ -478,7 +478,7 @@ class Shortcodes {
 			'title' => '',
 		) );
 		if ( '' === $args['title'] ) {
-			$args['title'] = get_the_title( $args['id'] );
+			$args['title'] = str_replace( ' for WordPress', '', get_the_title( $args['id'] ) );
 		}
 
 		$plugin_price    = edd_get_price_option_amount( $args['id'], 0 );
