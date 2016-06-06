@@ -12,7 +12,7 @@ namespace Yoast\YoastCom\Theme;
 
 	<main role="main">
 		<div class="row">
-			<h1>Online SEO Training by Yoast</h1>
+			<h1>Online SEO training by Yoast</h1>
 			<div class="content">
 				<p>Our online SEO courses will teach you about various aspects of SEO. We offer an online training
 					which covers all the basics of SEO. We also offer a course that focuses on our Yoast

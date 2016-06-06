@@ -26,7 +26,7 @@ namespace Yoast\YoastCom\Theme;
 			) );
 			?>
 		<?php endif; ?>
-
+<?php /*
 		<?php if ( post_meta( 'testimonial' ) ) : ?>
 			<blockquote>
 				<?php if ( post_meta( 'testimonial_image' ) ) {
@@ -36,7 +36,7 @@ namespace Yoast\YoastCom\Theme;
 			</blockquote>
 			<br/><br/>
 		<?php endif; ?>
-
+*/ ?>
 		<?php printf( __( 'More info on %s', 'yoastcom' ), '<a href="' . get_permalink() . '">' . get_the_title() . ' &raquo;</a>' ); ?>
 	</div>
 </div>
