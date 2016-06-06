@@ -474,7 +474,7 @@ class Shortcodes {
 	public function buy_buttons( $atts ) {
 		$args = wp_parse_args( $atts, array(
 			'id'    => post_meta( 'download_id' ),
-			'text'  => __( 'Buy %s for $%d &raquo;', 'yoastcom' ),
+			'text'  => __( 'Buy %s', 'yoastcom' ),
 			'title' => '',
 		) );
 		if ( '' === $args['title'] ) {
@@ -484,12 +484,16 @@ class Shortcodes {
 		$plugin_price    = edd_get_price_option_amount( $args['id'], 0 );
 		$plugin_buy_link = edd_get_checkout_uri() . '?yst_action_edd=add_to_cart&license=0&download_id=' . $args['id'];
 
-		$out = '<a rel="nofollow" class="alignleft button default"
-				   href="' . $plugin_buy_link . '">' . sprintf( $args['text'], $args['title'], $plugin_price ) . '</a>
-	<a rel="nofollow" href="#"
-   class="alignleft button dimmed default openmodal">' . sprintf( __( 'Pricing for multiple sites', 'yoastcom' ) ) . '</a>';
+		$out = '<a rel="nofollow" href="'.$plugin_buy_link.'"
+   class="button default openmodal">' . sprintf( $args['text'], $args['title'], $plugin_price ) . '</a>';
+
+		add_action( 'wp_footer', array( $this, 'buy_button_modal' ) );
 
 		return $out;
+	}
+
+	public function buy_button_modal() {
+		get_template_part( '/html_includes/partials/modal' );
 	}
 
 }
