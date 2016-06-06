@@ -32,7 +32,7 @@ namespace Yoast\YoastCom\Theme;
 		<div class="rowholder">
 			<section class="row">
 
-				<h2 class="color-academy--secondary"><a class="color-academy--secondary" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Recent posts', 'yoastcom' ); ?></a></h2>
+				<h2 class="color-academy--secondary"><a class="color-academy--secondary" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'Recent posts on our SEO blog', 'yoastcom' ); ?></a></h2>
 
 				<?php get_template_part( 'html_includes/partials/recent-articles', array( 'class1' => 'theme-academy--secondary color-academy--secondary', 'class2' => 'color-academy--secondary' ) ); ?>
 
