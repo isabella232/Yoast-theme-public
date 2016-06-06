@@ -19,6 +19,11 @@ namespace Yoast\YoastCom\Theme;
 					SEO plugin, which teaches you everything you need to know to use our plugin to the
 					fullest. For everyone who creates content we have the SEO copywriting training. This SEO training
 					focuses on all aspects important in creating awesome and SEO-friendly articles.</p>
+
+				<p>
+					If you want to learn more about the specific courses and figure out which one's for you,
+					<a href="https://yoast.com/academy/seo-training/">read this article</a>.
+				</p>
 			</div>
 		</div>
 
