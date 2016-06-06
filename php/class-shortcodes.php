@@ -471,7 +471,7 @@ class Shortcodes {
 	 *
 	 * @return string
 	 */
-	public function buy_buttons( $atts ) {
+	public function buy_buttons( $atts = array() ) {
 		$args = wp_parse_args( $atts, array(
 			'id'    => post_meta( 'download_id' ),
 			'text'  => __( 'Buy %s', 'yoastcom' ),
