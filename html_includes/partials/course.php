@@ -19,9 +19,16 @@ namespace Yoast\YoastCom\Theme;
 
 		<?php if ( post_meta( 'download_id' ) ) : ?>
 			<?php
+			$button_text = __( 'Follow this course now', 'yoastcom' );
+			$download_id = post_meta( 'download_id' );
+
+			if ( edd_is_bundled_product( $download_id ) ) {
+				$button_text = __( 'Follow these courses', 'yoastcom' );
+			}
+
 			echo edd_get_purchase_link( array(
 				'download_id' => post_meta( 'download_id' ),
-				'text'        => __( 'Follow this course now', 'yoastcom' ) . ' &raquo;',
+				'text'        => $button_text . ' &raquo;',
 				'class' => 'alignleft'
 			) );
 			?>
