@@ -58,6 +58,7 @@ class Query {
 	 */
 	private function courses_filter( $query ) {
 		$query->set( 'post_parent', 0 );
+		$query->set( 'orderby', 'menu_order' );
 	}
 
 	/**
