@@ -123,8 +123,8 @@ class Theme {
 	 * @param array  $dependencies The dependencies of this asset.
 	 */
 	private function register_asset( $script_or_style, $handle, $file_path, $dependencies = array() ) {
-		$url  = trailingslashit( get_stylesheet_directory_uri() ) . $file_path;
-		$global_path = trailingslashit( get_stylesheet_directory() ) . $file_path;
+		$url  = trailingslashit( get_template_directory_uri() ) . $file_path;
+		$global_path = trailingslashit( get_template_directory() ) . $file_path;
 		$last_modified = filemtime( $global_path );
 
 		if ( 'style' === $script_or_style ) {
