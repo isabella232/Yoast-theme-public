@@ -49,6 +49,11 @@ class Color_Scheme {
 	 * @return string
 	 */
 	public function get_color_scheme() {
+		$color_scheme = apply_filters( 'yst_pre_get_color_scheme', false );
+		if ( $color_scheme !== false ) {
+			return $color_scheme;
+		}
+
 		$color_scheme = self::ABOUT;
 
 		if ( $this->is_home_color_scheme() ) {
