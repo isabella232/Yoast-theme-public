@@ -1,6 +1,6 @@
 (function(){if(!/*@cc_on!@*/0)return;var e = "abbr,article,aside,audio,canvas,details,figure,figcaption,footer,header,hgroup,main,mark,menu,meter,nav,output,progress,section,summary,time,video".split(','),i=e.length;while(i--){document.createElement(e[i])}})()
 
-loadCSS('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic|Open+Sans:400italic,400,300');
+loadCSS('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Open+Sans:400italic,400,300');
 loadCSS('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css');
 
 

@@ -1003,6 +1003,15 @@ p, .p {
   .extra p, .extra .p {
     font-size: 0.94em;
     color: #646464; }
+  .extra.show-off p, .extra.show-off .p {
+    font-size: 1.4em;
+    line-height: 1.5em;
+    color: #D93F69;
+    font-family: "Open Sans", Arial, sans-serif; }
+    .extra.show-off p span, .extra.show-off .p span {
+      font-family: "Merriweather", Georgia, serif;
+      font-weight: bold;
+      font-style: italic; }
 
 ul {
   margin-top: 0;
