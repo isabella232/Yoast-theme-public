@@ -5031,9 +5031,11 @@ svg .llms-animated-circle {
     .modal h3 i {
       margin-right: 10px; }
   .modal .content {
-    padding: 15px 30px; }
+    padding: 15px 20px; }
     .modal .content strong {
       color: #0075B3; }
+    .modal .content p, .modal .content form {
+      padding: 0 10px; }
   .modal a.close-modal {
     position: absolute;
     top: 10px;
