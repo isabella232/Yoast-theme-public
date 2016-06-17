@@ -58,8 +58,10 @@ body.single-post {
   }
 
   .content {
+    &:first-child {
+      padding: 20px 20px 0 0;
+    }
     background-color: #ffffff;
-    padding: 20px 20px 0 0;
     z-index: 1;
   }
 

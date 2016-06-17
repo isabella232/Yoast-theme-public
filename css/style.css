@@ -2015,8 +2015,9 @@ body.single-post .post-header {
 
 body.single-post .content {
   background-color: #ffffff;
-  padding: 20px 20px 0 0;
   z-index: 1; }
+  body.single-post .content:first-child {
+    padding: 20px 20px 0 0; }
 
 @media only screen and (max-width: 50rem) {
   body.single-post .content {
@@ -5861,14 +5862,14 @@ a.promoblock {
   padding: 0;
   background: url("../images/stars-sprite-2.png") no-repeat 0 -15px; }
 
-.show-off p {
-  margin-bottom: 20px; }
-
-.show-off .edd_download_purchase_form {
-  padding-bottom: 5px; }
-
-.show-off img {
-  margin: 0; }
+.show-off {
+  margin-top: 0 !important; }
+  .show-off p {
+    margin-bottom: 20px; }
+  .show-off .edd_download_purchase_form {
+    padding-bottom: 5px; }
+  .show-off img {
+    margin: 0; }
 
 .social.promoblock {
   margin-top: 0.94rem;
