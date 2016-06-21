@@ -100,7 +100,7 @@
 
   &.academy {
     color: $color-white;
-    //background-color: $scheme-academy-primary;
+    background-color: $scheme-academy-primary;
 
     &::after {
       border-left-color: $scheme-academy-primary;
@@ -111,7 +111,24 @@
     }
 
     @media only screen and (max-width: $page-width-xsmall) {
-      //background-color: $scheme-academy-primary;
+      background-color: $scheme-academy-primary;
+    }
+  }
+
+  &.academy--secondary {
+    color: $color-white;
+    background-color: $scheme-academy-secondary;
+
+    &::after {
+      border-left-color: $scheme-academy-secondary;
+    }
+
+    &::before {
+      border-right-color: $scheme-academy-secondary;
+    }
+
+    @media only screen and (max-width: $page-width-xsmall) {
+      background-color: $scheme-academy-secondary;
     }
   }
 
@@ -224,6 +241,12 @@
           border-right-color: $color-grey-hover;
         }
       }
+    }
+  }
+
+  &--noarrow {
+    &::after {
+      content: none;
     }
   }
 

@@ -2462,11 +2462,25 @@ body.single-post .hide-on-desktop h1 {
     .button:hover::before, .comment-respond input[type="submit"]:hover::before, .llms-button:hover::before, .llms-return a:hover::before, .button a:focus::before, .comment-respond input[type="submit"] a:focus::before, .llms-button a:focus::before, .llms-return a a:focus::before, button:hover::before, button a:focus::before {
       border-right-color: #F58223; }
   .button.academy, .comment-respond input.academy[type="submit"], .academy.llms-button, .llms-return a.academy, button.academy {
-    color: #FFF; }
+    color: #FFF;
+    background-color: #5D237A; }
     .button.academy::after, .comment-respond input.academy[type="submit"]::after, .academy.llms-button::after, .llms-return a.academy::after, button.academy::after {
       border-left-color: #5D237A; }
     .button.academy::before, .comment-respond input.academy[type="submit"]::before, .academy.llms-button::before, .llms-return a.academy::before, button.academy::before {
       border-right-color: #5D237A; }
+    @media only screen and (max-width: 20rem) {
+      .button.academy, .comment-respond input.academy[type="submit"], .academy.llms-button, .llms-return a.academy, button.academy {
+        background-color: #5D237A; } }
+  .button.academy--secondary, .comment-respond input.academy--secondary[type="submit"], .academy--secondary.llms-button, .llms-return a.academy--secondary, button.academy--secondary {
+    color: #FFF;
+    background-color: #A4286A; }
+    .button.academy--secondary::after, .comment-respond input.academy--secondary[type="submit"]::after, .academy--secondary.llms-button::after, .llms-return a.academy--secondary::after, button.academy--secondary::after {
+      border-left-color: #A4286A; }
+    .button.academy--secondary::before, .comment-respond input.academy--secondary[type="submit"]::before, .academy--secondary.llms-button::before, .llms-return a.academy--secondary::before, button.academy--secondary::before {
+      border-right-color: #A4286A; }
+    @media only screen and (max-width: 20rem) {
+      .button.academy--secondary, .comment-respond input.academy--secondary[type="submit"], .academy--secondary.llms-button, .llms-return a.academy--secondary, button.academy--secondary {
+        background-color: #A4286A; } }
   .button.software, .comment-respond input.software[type="submit"], .software.llms-button, .llms-return a.software, button.software {
     color: #FFF;
     background-color: #0075B3; }
@@ -2662,6 +2676,8 @@ body.single-post .hide-on-desktop h1 {
       .yoast_academy button.dimmed a:focus:before,
       .yoast_academy button#llms_prev_question a:focus:before {
         border-right-color: #CDCDCD; }
+  .button--noarrow::after, button--noarrow::after {
+    content: none; }
   .button--naked, button--naked {
     border: none;
     background-color: transparent;

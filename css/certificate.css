@@ -1775,11 +1775,25 @@ thead th {
     .button:hover::before, .button a:focus::before, button:hover::before, button a:focus::before {
       border-right-color: #F58223; }
   .button.academy, button.academy {
-    color: #FFF; }
+    color: #FFF;
+    background-color: #5D237A; }
     .button.academy::after, button.academy::after {
       border-left-color: #5D237A; }
     .button.academy::before, button.academy::before {
       border-right-color: #5D237A; }
+    @media only screen and (max-width: 20rem) {
+      .button.academy, button.academy {
+        background-color: #5D237A; } }
+  .button.academy--secondary, button.academy--secondary {
+    color: #FFF;
+    background-color: #A4286A; }
+    .button.academy--secondary::after, button.academy--secondary::after {
+      border-left-color: #A4286A; }
+    .button.academy--secondary::before, button.academy--secondary::before {
+      border-right-color: #A4286A; }
+    @media only screen and (max-width: 20rem) {
+      .button.academy--secondary, button.academy--secondary {
+        background-color: #A4286A; } }
   .button.software, button.software {
     color: #FFF;
     background-color: #0075B3; }
@@ -1849,6 +1863,8 @@ thead th {
       .yoast_academy button.dimmed:hover:before,
       .yoast_academy button.dimmed a:focus:before {
         border-right-color: #CDCDCD; }
+  .button--noarrow::after, button--noarrow::after {
+    content: none; }
   .button--naked, button--naked {
     border: none;
     background-color: transparent;
