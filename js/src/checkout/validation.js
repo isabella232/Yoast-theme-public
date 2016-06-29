@@ -1,8 +1,8 @@
-;(function( $ ) {
+;(function ( $ ) {
 	var validBtwNr = false;
 	var $body;
 
-	var VATStatistics = function() {
+	var VATStatistics = function () {
 		this.startTime = 0;
 		this.endTime = 0;
 		this.duration = 0;
@@ -10,39 +10,40 @@
 		if ( typeof __gaTracker !== "undefined" ) {
 			this.tracker = __gaTracker;
 		} else {
-			this.tracker = function(){};
+			this.tracker = function () {
+			};
 		}
 	};
 
-	VATStatistics.prototype.start = function() {
+	VATStatistics.prototype.start = function () {
 		this.startTime = new Date().getTime();
 		this.endTime = 0;
 		this.duration = 0;
 
-		this.tracker('send','event', 'checkout', 'vat-check', 'start');
+		this.tracker( 'send', 'event', 'checkout', 'vat-check', 'start' );
 	};
 
-	VATStatistics.prototype.end = function() {
+	VATStatistics.prototype.end = function () {
 		this.endTime = new Date().getTime();
 		this.duration = this.endTime - this.startTime;
 	};
 
-	VATStatistics.prototype.notVerified = function() {
+	VATStatistics.prototype.notVerified = function () {
 		this.end();
 
-		this.tracker('send','event', 'checkout', 'vat-check', 'cannot verify', this.duration);
+		this.tracker( 'send', 'event', 'checkout', 'vat-check', 'cannot verify', this.duration );
 	};
 
-	VATStatistics.prototype.failed = function() {
+	VATStatistics.prototype.failed = function () {
 		this.end();
 
-		this.tracker('send','event', 'checkout', 'vat-check', 'failed', this.duration);
+		this.tracker( 'send', 'event', 'checkout', 'vat-check', 'failed', this.duration );
 	};
 
-	VATStatistics.prototype.success = function() {
+	VATStatistics.prototype.success = function () {
 		this.end();
 
-		this.tracker('send','event', 'checkout', 'vat-check', 'ok', this.duration);
+		this.tracker( 'send', 'event', 'checkout', 'vat-check', 'ok', this.duration );
 	};
 
 	var vatStatistics = new VATStatistics();
@@ -54,37 +55,41 @@
 		$( '#yst-edd-btw-wrap .fa-spinner' ).addClass( 'show' );
 		vatStatistics.start();
 
-		var xhr = jQuery.post(yoast_com_checkout_vars.ajaxurl, { action: 'yst_check_vat', country: country, vat_nr: btw_nr }, function (response) {
+		var xhr = jQuery.post( yoast_com_checkout_vars.ajaxurl, {
+			action: 'yst_check_vat',
+			country: country,
+			vat_nr: btw_nr
+		}, function ( response ) {
 			$( '#yst-edd-btw-wrap .fa-spinner' ).removeClass( 'show' );
 			$( '#vaterror' ).remove();
-			if ('1' == response) {
-				$('#yst_btw').removeClass('error').addClass('valid');
+			if ( '1' == response ) {
+				$( '#yst_btw' ).removeClass( 'error' ).addClass( 'valid' );
 				EDD_Checkout.recalculate_taxes();
 
 				validBtwNr = true;
 				vatStatistics.success();
-			} else if('2' == response){
+			} else if ( '2' == response ) {
 				// Show error, the service is down
-				$('#yst_btw').removeClass('valid').addClass('error');
+				$( '#yst_btw' ).removeClass( 'valid' ).addClass( 'error' );
 				EDD_Checkout.recalculate_taxes();
-				jQuery("#yst-edd-btw-wrap").append('<span id="vaterror" class="error">We cannot check if your VAT number is correct because the VAT checking system for the EU is currently down. We\'re sorry for the inconvenience. Please send us an email on <a href="mailto:support@yoast.com">support@yoast.com</a> or try again later.</span>');
+				jQuery( "#yst-edd-btw-wrap" ).append( '<span id="vaterror" class="error">We cannot check if your VAT number is correct because the VAT checking system for the EU is currently down. We\'re sorry for the inconvenience. Please send us an email on <a href="mailto:support@yoast.com">support@yoast.com</a> or try again later.</span>' );
 
 				validBtwNr = false;
 				vatStatistics.failed();
 			} else {
-				$('#yst_btw').removeClass('valid').addClass('error');
+				$( '#yst_btw' ).removeClass( 'valid' ).addClass( 'error' );
 				EDD_Checkout.recalculate_taxes();
-				jQuery("#yst-edd-btw-wrap").append('<span id="vaterror" class="error">We cannot verify this VAT number, this means you will have to pay VAT. Please make sure you\'ve entered the number correctly.</span>');
+				jQuery( "#yst-edd-btw-wrap" ).append( '<span id="vaterror" class="error">We cannot verify this VAT number, this means you will have to pay VAT. Please make sure you\'ve entered the number correctly.</span>' );
 
 				validBtwNr = false;
 				vatStatistics.notVerified();
 			}
-		});
+		} );
 
 		// If we fail, try again in a second.
-		xhr.fail( function() {
+		xhr.fail( function () {
 			setTimeout( checkBtwNr, 1000 );
-		});
+		} );
 	}
 
 	/**
@@ -115,13 +120,15 @@
 
 			// Format fancy prices
 			taxData.total = '$ ' + roundPrice( taxData.total_raw );
-			taxData.tax   = '$'  + roundPrice( taxData.tax_raw );
+			taxData.tax = '$' + roundPrice( taxData.tax_raw );
 
 			$( '.edd_cart_amount' ).html( taxData.total );
 			$( '.yst-tax-rate' ).html( taxData.tax_rate.replace( '%', '' ) );
 			$( '.edd_cart_tax_amount' ).html( taxData.tax );
 		}
-
+		else {
+			hideOrShowVATNumber( taxData );
+		}
 		$( '#yst_secondary_tax_rate' ).html( taxData.tax_rate.replace( '%', '' ) );
 		$( '#yst_secondary_tax' ).html( taxData.tax );
 
@@ -145,56 +152,48 @@
 	/**
 	 * Hides or shows the VAT Number field based on the selected country
 	 */
-	function hideOrShowVATNumber() {
-		var $billingCountry = $( '#billing_country' );
-		var billingCountry = $billingCountry.val();
+	function hideOrShowVATNumber( taxData ) {
+		var billingCountry = $( '#billing_country' ).val();
+		var btw_wrap = $( '#yst-edd-btw-wrap' );
 
 		// No special BTW rule for The Netherlands
-		if ('NL' == billingCountry) {
-			$('#yst-edd-btw-wrap')
+		if ( 'NL' == billingCountry ) {
+			btw_wrap
 				.hide()
-				.after('<p id="yst-dutch-vat-notice"><strong>Please note:</strong> VAT will be added to the invoice. Since Yoast is based in the Netherlands we cannot reverse charge the VAT.</p>');
-				$('.edd_cart_tax_row').css('display','table-row');
+				.after( '<p id="yst-dutch-vat-notice"><strong>Please note:</strong> VAT will be added to the invoice. Since Yoast is based in the Netherlands we cannot reverse charge the VAT.</p>' );
+			$( '.edd_cart_tax_row' ).css( 'display', 'table-row' );
 			return;
 		} else {
 			$( '#yst-dutch-vat-notice' ).remove();
 		}
 
 		// Check if the country is in our special tax list
-		if (undefined == yoast_com_checkout_vars.tax_rates[ billingCountry ]) {
-			$('#yst-edd-btw-wrap').hide();
-			$('.edd_cart_tax_row').css('display','none');
+		if ( taxData && taxData.tax_rate_raw === 0 ) {
+			btw_wrap.hide();
+			$( '.edd_cart_tax_row' ).css( 'display', 'none' );
 			return;
 		} else {
-			$('.edd_cart_tax_row').css('display','table-row');
+			$( '.edd_cart_tax_row' ).css( 'display', 'table-row' );
 		}
 
-		$('#yst-edd-btw-wrap').show();
-
-		var btw_nr = $('#yst_btw').val();
-
-		// VAT nr given, check it
-		if ('' != btw_nr) {
-			checkBtwNr( billingCountry, btw_nr );
-		}
+		btw_wrap.show();
 	}
 
 	function initChosen() {
 		$( ".chosen-select" ).chosen();
-		$body.on( 'edd_cart_billing_address_updated', function() {
+		$body.on( 'edd_cart_billing_address_updated', function () {
 			// Remove the old chosen select box.
 			$( '#edd-card-state-wrap .chosen-container' ).remove();
 
 			// Chosenfy the new select box.
 			$( 'select[name="card_state"]' ).chosen();
-		});
+		} );
 	}
 
 	jQuery( document ).ready( function ( $ ) {
 		$body = $( 'body' );
 
 		hideOrShowStateField();
-		hideOrShowVATNumber();
 		initChosen();
 
 		$body.on( 'edd_taxes_recalculated', fixTaxAfterRecalculation );
@@ -298,8 +297,13 @@
 			}
 		} );
 
-		$body.on("change", "#yst_btw, #billing_country", function () {
-			hideOrShowVATNumber();
-		});
+		$body.on( "change", "#yst_btw", function () {
+			var btw_nr = $( '#yst_btw' ).val();
+			var billingCountry = $( '#billing_country' ).val();
+			// VAT nr given, check it
+			if ( '' != btw_nr ) {
+				checkBtwNr( billingCountry, btw_nr );
+			}
+		} );
 	} );
 }( jQuery ));
