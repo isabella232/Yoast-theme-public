@@ -33,21 +33,7 @@ namespace Yoast\YoastCom\Theme;
 
 	<?php get_template_part( 'html_includes/header-controls-desktop' ); ?>
 
-	<nav role="navigation" class="sitenav sitenav--home sticky" data-sticky data-sticky-desktop>
-		<?php wp_nav_menu( array(
-			'theme_location'  => 'primary',
-			'container_class' => 'mainnav',
-			'walker'          => new Menu_Walker(),
-		) ); ?>
-	</nav>
-
-	<nav role="navigation" class="sitenav sitenav--offcanvas">
-		<?php wp_nav_menu( array(
-			'theme_location'  => 'primary',
-			'container_class' => 'mainnav',
-			'walker'          => new Menu_Walker(),
-		)); ?>
-	</nav>
+	<?php get_template_part( 'html_includes/partials/navigation-menu' ); ?>
 
 	<?php if ( isset( $template_args['home-sub'] ) ) : ?>
 		<!-- Decoration -->

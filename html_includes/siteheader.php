@@ -9,25 +9,13 @@ namespace Yoast\YoastCom\Theme;
 		<?php get_template_part( 'html_includes/header-controls-mobile' ); ?>
 	</div>
 
-	<?php get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
+	<?php
+	get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) );
 
-	<?php get_template_part( 'html_includes/header-controls-desktop' ); ?>
+	get_template_part( 'html_includes/header-controls-desktop' );
 
-	<nav role="navigation" class="sitenav sticky" data-sticky data-sticky-desktop aria-hidden="true">
-		<?php wp_nav_menu( array(
-			'theme_location'  => 'primary',
-			'container_class' => 'mainnav',
-			'walker'          => new Menu_Walker(),
-		) ); ?>
-	</nav>
-
-	<nav role="navigation" class="sitenav sitenav--offcanvas">
-		<?php wp_nav_menu( array(
-			'theme_location'  => 'primary',
-			'container_class' => 'mainnav',
-			'walker'          => new Menu_Walker(),
-		) ); ?>
-	</nav>
+	get_template_part( 'html_includes/partials/navigation-menu' );
+	?>
 
 	<!-- Decoration -->
 	<div class="row">
