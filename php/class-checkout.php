@@ -36,6 +36,11 @@ class Checkout {
 		$country = trim( $country );
 		$vat_nr  = trim( $vat_nr );
 
+		// Exception for Greece:
+		if ( strtoupper( $country ) === 'GR' ) {
+			$country = 'EL';
+		}
+
 		// Strip all spaces from the VAT number to improve usability of the VAT field.
 		$vat_nr = str_replace( ' ', '', $vat_nr );
 
