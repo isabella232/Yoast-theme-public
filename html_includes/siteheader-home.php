@@ -29,11 +29,7 @@ namespace Yoast\YoastCom\Theme;
 
 				<?php get_template_part( 'html_includes/header-controls-mobile' ); ?>
 			</div>
-
-<!--			--><?php //get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
 		<?php endif; ?>
-
-<!--		--><?php //get_template_part( 'html_includes/header-controls-desktop' ); ?>
 
 		<?php $navigation = new Yoast_Navigation(); ?>
 		<?php $navigation->output_menu_bar(); ?>

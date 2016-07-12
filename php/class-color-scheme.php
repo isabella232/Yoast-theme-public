@@ -18,6 +18,15 @@ class Color_Scheme {
 	const REVIEW = 'theme-review';
 	const ABOUT = 'theme-about';
 
+
+//	const HOME = 'home';
+//	const SEO_BLOG = 'seo-blog';
+//	const PLUGINS = 'plugins';
+//	const COURCES = 'cources';
+//	const EBOOKS = 'ebooks';
+//	const HIRE_US = 'hire-us';
+//	const FAQ = 'faq';
+
 	/**
 	 * Constructor, adds WordPress hooks
 	 */
@@ -54,7 +63,7 @@ class Color_Scheme {
 			return $color_scheme;
 		}
 
-		$color_scheme = self::ABOUT;
+		$color_scheme = '';
 
 		if ( $this->is_home_color_scheme() ) {
 			$color_scheme = self::HOME;
@@ -105,7 +114,7 @@ class Color_Scheme {
 	 * @return bool
 	 */
 	private function is_home_color_scheme() {
-		return is_page_template( 'page-template-front-page.php' ) || ( is_home() && is_front_page() ) || ( function_exists( 'edd_is_checkout' )  && edd_is_checkout() );
+		return is_page_template( 'page-template-front-page.php' ) || ( is_home() && is_front_page() ) || ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() );
 	}
 
 	/**
@@ -141,7 +150,12 @@ class Color_Scheme {
 		return (
 			is_post_type_archive( array( 'yoast_plugins', 'yoast_dev_article' ) )
 			|| is_tax( 'yoast_dev_category' )
-			|| in_array( get_post_type(), array( 'plugin_review', 'yoast_plugins', 'yoast_themes', 'yoast_dev_article' ) )
+			|| in_array( get_post_type(), array(
+				'plugin_review',
+				'yoast_plugins',
+				'yoast_themes',
+				'yoast_dev_article'
+			) )
 			|| self::SOFTWARE === $this->get_color_scheme_setting()
 		);
 	}
@@ -173,6 +187,7 @@ class Color_Scheme {
 	 * Returns the color scheme setting as set in the admin
 	 *
 	 * @param int $post_id Optional The ID to get the color scheme for.
+	 *
 	 * @return string
 	 */
 	private function get_color_scheme_setting( $post_id = null ) {
@@ -194,10 +209,11 @@ class Color_Scheme {
 	 * Returns the color scheme setting for the parent as set in the admin
 	 *
 	 * @param int $post_id The ID to get the parent setting for.
+	 *
 	 * @return string
 	 */
 	private function get_parent_color_scheme_setting( $post_id ) {
-		$parent_id = wp_get_post_parent_id( $post_id );
+		$parent_id    = wp_get_post_parent_id( $post_id );
 		$color_scheme = '';
 
 		// If there is a parent return the parents color scheme.

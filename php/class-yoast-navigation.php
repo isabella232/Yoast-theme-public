@@ -8,6 +8,7 @@
 
 namespace Yoast\YoastCom\Theme;
 
+use Yoast\YoastCom\Menu\Menu_Item;
 use Yoast\YoastCom\Menu\Menu_Structure;
 
 class Yoast_Navigation {
@@ -18,9 +19,9 @@ class Yoast_Navigation {
 	protected $current_url;
 
 	public function __construct( $menu_structure = null ) {
-		$this->menu_structure  = ( is_null( $menu_structure ) ? new Menu_Structure() : $menu_structure );
-		$this->main_menu_items = $this->menu_structure->getMenuItems();
-		$this->current_url     = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		$this->menu_structure       = ( is_null( $menu_structure ) ? new Menu_Structure() : $menu_structure );
+		$this->main_menu_items      = $this->menu_structure->getMenuItems();
+		$this->current_url          = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$this->setActiveMenuItem();
 	}
 
@@ -62,14 +63,14 @@ class Yoast_Navigation {
 		}
 		$data = array();
 		foreach ( $main_menu_item->getChildren() as $child ) {
-			$child_data             = array();
-			$activeClass            = ( $this->current_url === $child->getUrl() ) ? 'current-menu-item' : '';
-			$child_data['classes']  = 'sub-menu-item ' . $activeClass;
-			$child_data['label']    = $child->getLabel();
-			$child_data['url']      = $child->getUrl();
-			$child_data['icon']     = $child->getIcon();
+			$child_data                   = array();
+			$activeClass                  = ( $this->current_url === $child->getUrl() ) ? 'current-menu-item' : '';
+			$child_data['classes']        = 'sub-menu-item ' . $activeClass;
+			$child_data['label']          = $child->getLabel();
+			$child_data['url']            = $child->getUrl();
+			$child_data['icon']           = $child->getIcon();
 			$child_data['anchor_classes'] = ( empty ( $child->getIcon() ) ? '' : 'icon' );
-			$data[]                 = $child_data;
+			$data[]                       = $child_data;
 		}
 
 		return $data;
@@ -92,6 +93,18 @@ class Yoast_Navigation {
 
 					return true;
 				}
+			}
+		}
+
+		return false;
+	}
+
+	private function setActiveByColorScheme() {
+		foreach ( $this->main_menu_items as $main_menu_item ) {
+			if ( $main_menu_item->getType() === $this->get_current_page_type() ) {
+				$main_menu_item->setActive();
+
+				return true;
 			}
 		}
 
@@ -130,10 +143,37 @@ class Yoast_Navigation {
 
 	private function setActiveMenuItem() {
 		if ( ! $this->setActiveByUrl() ) {
-			if ( ! $this->setActiveByPage() ) {
-				$this->setActiveByDefault();
+			if ( ! $this->setActiveByColorScheme() ) {
+				if ( ! $this->setActiveByPage() ) {
+					$this->setActiveByDefault();
+				}
 			}
 		}
+	}
+
+	private function get_current_page_type() {
+		$scheme = theme_object()->get_color_scheme();
+		if ( empty( $scheme ) ) {
+			return '';
+		}
+
+		$type = $this->convert_color_scheme_to_type( $scheme );
+		if ( empty( $type ) ) {
+			return '';
+		}
+		return $type;
+	}
+
+	private function convert_color_scheme_to_type( $color_scheme ) {
+		$map = array( // todo [diedexx] Check if these are correct.
+			Color_Scheme::HOME     => Menu_Structure::HOME_TYPE,
+			Color_Scheme::ACADEMY  => Menu_Structure::COURCES_TYPE,
+			Color_Scheme::SOFTWARE => Menu_Structure::PLUGINS_TYPE,
+			Color_Scheme::REVIEW   => Menu_Structure::HIRE_US_TYPE,
+			Color_Scheme::ABOUT    => Menu_Structure::FAQ_TYPE,
+		);
+
+		return $map[ $color_scheme ];
 	}
 
 }
