@@ -11,10 +11,11 @@ namespace Yoast\YoastCom\Theme;
 
 	<?php
 	get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) );
+	get_template_part( 'html_includes/partials/search', array( 'type' => 'desktop' ) );
 
-	get_template_part( 'html_includes/header-controls-desktop' );
+	$navigation = new Yoast_Navigation();
+	$navigation->output_menu_bar();
 
-	get_template_part( 'html_includes/partials/navigation-menu' );
 	?>
 
 	<!-- Decoration -->

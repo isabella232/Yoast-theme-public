@@ -3,59 +3,64 @@ namespace Yoast\YoastCom\Theme;
 
 use Yoast\YoastCom\Menu\Menu_Structure;
 
-if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure') ) {
-	display_menu_structure();
+if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
+	$main_menu_items = $template_args['menu_data'];
+	
+	echo '<div id="yoast-main-menu">';
+	echo '<nav role="navigation">';
+	echo '<ul class="yoast-main-menu">';
+
+	foreach ( $main_menu_items as $main_menu_item ) {
+		echo '<li class="' . $main_menu_item['classes'] . '">';
+		echo '<a href="' . $main_menu_item['url'] . '" class="' . $main_menu_item['anchor_classes'] . '">';
+		echo $main_menu_item['label'];
+		if ( isset( $main_menu_item['icon'] ) ) {
+			echo '<span class="fa fa-' . $main_menu_item['icon'] . '" aria-hidden="true"></span>';
+		}
+		echo '</a>';
+
+		echo '<div class="yoast-sub-menu">';
+		echo '<ul class="yoast-sub-menu">';
+		foreach ( $main_menu_item['children'] as $child ) {
+			echo '<li class="' . $child['classes'] . '">';
+			echo '<a href="' . $child['url'] . '" class="' . $child['anchor_classes'] . '">';
+			if ( isset( $child['icon'] ) ) {
+				echo '<span class="fa fa-' . $child['icon'] . '" aria-hidden="true"></span>';
+			}
+			echo $child['label'];
+			echo '</a>';
+			echo '</li>';
+		}
+		echo '</ul>';
+		echo '</div>';
+		echo '</li>';
+	}
+
+	echo '<li class="controls">';
+//	echo '<a href="my.yoast.com">';
+//	echo '<span class="fa fa-user"></span>login';
+//	echo '</a>';
+	if ( function_exists( 'edd_get_checkout_uri' ) ) {
+		echo '<a class="cart" href="' . esc_attr( edd_get_checkout_uri() ) . '">';
+		echo '<img src="' . get_template_directory_uri() . '/images/cart.svg">';
+		echo '<span class="visuallyhidden focusable">Cart</span >';
+		echo '<div class="num-items-container">';
+		echo '<span class="num-items">..</span >';
+		echo '</div>';
+		echo '</a >';
+	}
+//		echo '<a href="#">';
+//		echo '<span class="fa fa-search fa-flip-horizontal"></span>';
+//		echo '</a>';
+	echo '</li>';
+
+	echo '</ul>'; // main menu
+	echo '</nav>'; // nav holder
+
+	echo '</div>'; // main menu id
+
 }
 else {
-	display_old_menu();
-}
-
-function display_menu_structure() {
-	$menuStructure = new Menu_Structure();
-	$menuItems     = $menuStructure->getMenuItems();
-
-	echo "<nav>";
-	echo "<ul>";
-	foreach ( $menuItems as $index => $menuItem ) {
-		$parentIndex = $menuItem->getParentIndex();
-		if ( ! isset ( $parentIndex ) ) {
-			echo '<li class="menu-item main-menu-item menu-item-' . $menuItem->getType() . '">';
-			displayMenuItem( $menuItem );
-			$children = $menuStructure->getChildrenOf( $index );
-			if ( ! empty( $children ) ) {
-				echo "<ul>";
-				foreach ( $children as $child ) {
-					echo '<li class="menu-item child-menu-item">';
-					displayMenuItem( $child );
-					echo "</li>";
-				}
-				echo "</ul>";
-				echo "</li>";
-			}
-		}
-	}
-	echo "</ul>";
-	echo "</nav>";
-}
-
-function displayMenuItem( $menuItem ) {
-	echo '<a href="' . $menuItem->getUrl() . '" title="' . $menuItem->getScreenreaderText() . '">';
-	echo $menuItem->getLabel() . displayIconSpan( $menuItem );
-	echo '</a>';
-}
-
-
-function displayIconSpan( $menuItem ) {
-	$iconSpan  = '';
-	$iconClass = $menuItem->getIcon();
-	if ( isset( $iconClass ) ) {
-		$iconSpan = '<span class="fa fa-' . $iconClass . '" aria-hidden="true"></span>';
-	}
-	echo $iconSpan;
-}
-
-
-function display_old_menu() {
 	?>
 	<nav role="navigation" class="sitenav sticky" data-sticky data-sticky-desktop aria-hidden="true">
 		<?php wp_nav_menu( array(
@@ -76,4 +81,3 @@ function display_old_menu() {
 	</nav>
 	<?php
 }
-?>

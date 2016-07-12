@@ -528,7 +528,7 @@ a img.aligncenter {
 #edd_purchase_submit,
 #edd-stripe-payment-errors,
 #edd_check_payment_info,
-#edd_terms_agreement, .comment-respond {
+#edd_terms_agreement, .comment-respond, #yoast-main-menu nav, #yoast-main-menu div.yoast-sub-menu > ul {
   display: block;
   position: relative;
   max-width: 1012px;
@@ -542,7 +542,7 @@ a img.aligncenter {
     #edd_purchase_submit,
     #edd-stripe-payment-errors,
     #edd_check_payment_info,
-    #edd_terms_agreement, .comment-respond {
+    #edd_terms_agreement, .comment-respond, #yoast-main-menu nav, #yoast-main-menu div.yoast-sub-menu > ul {
       padding: 0 1rem; } }
   .announcement + .row, .announcement + .checkout-wrap__container, .announcement + #edd_sl_cancel_renewal_form, .announcement + #edd_discount_code, .announcement + .edd_empty_cart, .announcement + #edd_checkout_user_info, .announcement +
   #edd_cc_fields, .announcement +
@@ -550,7 +550,7 @@ a img.aligncenter {
   #edd_purchase_submit, .announcement +
   #edd-stripe-payment-errors, .announcement +
   #edd_check_payment_info, .announcement +
-  #edd_terms_agreement, .announcement + .comment-respond {
+  #edd_terms_agreement, .announcement + .comment-respond, #yoast-main-menu .announcement + nav, #yoast-main-menu div.yoast-sub-menu > .announcement + ul {
     padding-top: 1.88rem; }
 
 .hidden {
@@ -5908,6 +5908,12 @@ a.promoblock {
     .social-top {
       display: none; } }
 
+.desktop-search {
+  position: absolute;
+  display: inline;
+  top: 40px;
+  right: 100px; }
+
 .searchform-global button:hover {
   color: #F58223;
   text-decoration: none; }
@@ -6119,6 +6125,169 @@ blockquote {
     display: none !important; }
   blockquote.wp-embedded-content {
     display: block !important; } }
+
+#yoast-main-menu {
+  background-color: #A4286A; }
+  #yoast-main-menu:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    border-top: 1px solid #FFF; }
+  #yoast-main-menu nav {
+    position: static; }
+  #yoast-main-menu a {
+    color: white; }
+  #yoast-main-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; }
+    #yoast-main-menu ul li {
+      display: inline-block; }
+      #yoast-main-menu ul li a {
+        display: block;
+        padding: 2px 10px;
+        text-decoration: none; }
+  #yoast-main-menu li {
+    z-index: 0; }
+  #yoast-main-menu li.menu-item > a.icon {
+    width: 40px;
+    padding: 0; }
+    #yoast-main-menu li.menu-item > a.icon > .fa {
+      width: 100%;
+      font-size: 30px;
+      text-align: center; }
+  #yoast-main-menu li.menu-item > a:not(.icon):after {
+    padding-left: 5px;
+    font-family: FontAwesome;
+    content: "\f107";
+    width: 16px;
+    height: 16px;
+    display: inline-block; }
+  #yoast-main-menu li.sub-menu-item:first-child {
+    padding-left: 0px; }
+  #yoast-main-menu li.sub-menu-item .fa {
+    padding: 0 3px; }
+  #yoast-main-menu li.sub-menu-item:first-child a {
+    padding-left: 0px; }
+  #yoast-main-menu li.sub-menu-item a {
+    padding: 0 0.8em; }
+  #yoast-main-menu li.sub-menu-item:before {
+    color: #FFF;
+    position: absolute;
+    content: '|';
+    margin-left: -4px; }
+  #yoast-main-menu li.sub-menu-item:first-child:before {
+    content: ''; }
+  #yoast-main-menu li.current-menu-item,
+  #yoast-main-menu li.current-menu-parent {
+    z-index: 2; }
+    #yoast-main-menu li.current-menu-item .yoast-sub-menu,
+    #yoast-main-menu li.current-menu-parent .yoast-sub-menu {
+      display: block; }
+  #yoast-main-menu li.current-menu-parent {
+    border: 1px solid #FFF;
+    border-top: none;
+    border-bottom: none; }
+  #yoast-main-menu li:hover, #yoast-main-menu li:focus {
+    z-index: 3; }
+    #yoast-main-menu li:hover.menu-item, #yoast-main-menu li:focus.menu-item {
+      border: 1px solid #FFF;
+      border-top: none;
+      border-bottom: none; }
+    #yoast-main-menu li:hover .yoast-sub-menu, #yoast-main-menu li:focus .yoast-sub-menu {
+      display: block; }
+  #yoast-main-menu .yoast-main-menu {
+    width: 100%; }
+    #yoast-main-menu .yoast-main-menu > li {
+      padding: 4px 4px 0; }
+      #yoast-main-menu .yoast-main-menu > li > a {
+        height: 40px; }
+  #yoast-main-menu div.yoast-sub-menu {
+    position: absolute;
+    display: none;
+    left: 0;
+    width: 100%;
+    padding: 4px 0; }
+    #yoast-main-menu div.yoast-sub-menu a:hover,
+    #yoast-main-menu div.yoast-sub-menu li.current-menu-item a {
+      text-decoration: underline; }
+    #yoast-main-menu div.yoast-sub-menu > ul {
+      padding: 2px 0; }
+  #yoast-main-menu .menu-item__home {
+    border-left: 1px solid #77B227;
+    border-right: 1px solid #77B227;
+    background-color: #77B227; }
+    #yoast-main-menu .menu-item__home.current-menu-item {
+      border-bottom-color: #77B227; }
+    #yoast-main-menu .menu-item__home .yoast-sub-menu {
+      background-color: #77B227; }
+  #yoast-main-menu .menu-item__seo-blog {
+    border-left: 1px solid #5D237A;
+    border-right: 1px solid #5D237A;
+    background-color: #5D237A; }
+    #yoast-main-menu .menu-item__seo-blog .yoast-sub-menu {
+      background-color: #5D237A; }
+  #yoast-main-menu .menu-item__plugins {
+    border-left: 1px solid #0075B3;
+    border-right: 1px solid #0075B3;
+    background-color: #0075B3; }
+    #yoast-main-menu .menu-item__plugins .yoast-sub-menu {
+      background-color: #0075B3; }
+  #yoast-main-menu .menu-item__cources {
+    border-left: 1px solid #D93F69;
+    border-right: 1px solid #D93F69;
+    background-color: #D93F69; }
+    #yoast-main-menu .menu-item__cources .yoast-sub-menu {
+      background-color: #D93F69; }
+  #yoast-main-menu .menu-item__ebooks {
+    border-left: 1px solid #6C2548;
+    border-right: 1px solid #6C2548;
+    background-color: #6C2548; }
+    #yoast-main-menu .menu-item__ebooks .yoast-sub-menu {
+      background-color: #6C2548; }
+  #yoast-main-menu .menu-item__hire-us {
+    border-left: 1px solid #009288;
+    border-right: 1px solid #009288;
+    background-color: #009288; }
+    #yoast-main-menu .menu-item__hire-us .yoast-sub-menu {
+      background-color: #009288; }
+  #yoast-main-menu .menu-item__faq {
+    border-left: 1px solid #084A67;
+    border-right: 1px solid #084A67;
+    background-color: #084A67; }
+    #yoast-main-menu .menu-item__faq .yoast-sub-menu {
+      background-color: #084A67; }
+  #yoast-main-menu li.controls {
+    color: #FFF;
+    margin-left: auto; }
+    #yoast-main-menu li.controls a {
+      margin: 0 6px;
+      display: inline-flex; }
+      #yoast-main-menu li.controls a .fa {
+        font-size: 1.4em;
+        padding: 2px 5px; }
+    #yoast-main-menu li.controls a.cart img {
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      margin-left: -12px; }
+    #yoast-main-menu li.controls a.cart .num-items-container {
+      position: relative;
+      top: -11px;
+      left: -5px;
+      width: 20px;
+      display: block;
+      text-align: center; }
+    #yoast-main-menu li.controls a.cart .num-items {
+      background-color: #DC5C04;
+      border-radius: 100%;
+      font-size: 0.8em;
+      padding: 0 4px; }
 
 /*------------------------------------*    #TRUMPS
 \*------------------------------------*/

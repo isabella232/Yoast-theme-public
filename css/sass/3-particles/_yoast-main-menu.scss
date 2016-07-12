@@ -1,0 +1,254 @@
+
+#yoast-main-menu {
+  background-color: $color-pink-dark;
+
+  &:after { // line between the main and submenu
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    border-top: 1px solid $color-white;
+  }
+
+  nav {
+    @extend .row;
+    position: static;
+
+  }
+
+  a {
+    color: white;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: 2px 10px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  li {
+    z-index: 0;
+  }
+
+  li.menu-item {
+    & > a.icon {
+      width: 40px;
+      padding: 0;
+
+      & > .fa {
+        width: 100%;
+        font-size: 30px;
+        text-align: center;
+      }
+    }
+
+    & > a:not(.icon):after {
+      padding-left: 5px;
+      font-family: FontAwesome;
+      content: "\f107";
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+    }
+  }
+
+  li.sub-menu-item {
+
+    &:first-child {
+      padding-left: 0px;
+    }
+
+    .fa {
+      padding: 0 3px;
+    }
+
+    &:first-child a {
+      padding-left: 0px;
+    }
+
+    a {
+      padding: 0 0.8em;
+    }
+
+    &:before {
+      color: $color-white;
+      position: absolute;
+      content: '|';
+      margin-left: -4px;
+    }
+
+    &:first-child:before {
+      content: '';
+    }
+  }
+
+  li.current-menu-item,
+  li.current-menu-parent {
+    z-index: 2;
+    .yoast-sub-menu {
+      display: block;
+    }
+  }
+
+  li.current-menu-parent {
+    border: 1px solid $color-white;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  li:hover, li:focus {
+    z-index: 3;
+
+    &.menu-item {
+      border: 1px solid $color-white;
+      border-top: none;
+      border-bottom: none;
+    }
+    .yoast-sub-menu {
+      display: block;
+    }
+  }
+
+  .yoast-main-menu {
+    width: 100%;
+    > li {
+      padding: 4px 4px 0;
+      > a {
+        height: 40px;
+      }
+    }
+  }
+
+  div.yoast-sub-menu {
+    position: absolute;
+    display: none;
+    left: 0;
+    width: 100%;
+    padding: 4px 0;
+
+    a:hover,
+    li.current-menu-item a {
+      text-decoration: underline
+    }
+
+    > ul {
+      @extend .row;
+      padding: 2px 0;
+    }
+  }
+
+  .menu-item {
+    &__home {
+      border-left: 1px solid $color-green;
+      border-right: 1px solid $color-green;
+      background-color: $color-green;
+      &.current-menu-item {
+        border-bottom-color: $color-green;
+      }
+      .yoast-sub-menu {
+        background-color: $color-green;
+      }
+    }
+
+    &__seo-blog {
+      border-left: 1px solid $color-purple;
+      border-right: 1px solid $color-purple;
+      background-color: $color-purple;
+      .yoast-sub-menu {
+        background-color: $color-purple;
+      }
+    }
+    &__plugins {
+      border-left: 1px solid $color-blue;
+      border-right: 1px solid $color-blue;
+      background-color: $color-blue;
+      .yoast-sub-menu {
+        background-color: $color-blue;
+      }
+    }
+    &__cources {
+      border-left: 1px solid $color-pink-light;
+      border-right: 1px solid $color-pink-light;
+      background-color: $color-pink-light;
+      .yoast-sub-menu {
+        background-color: $color-pink-light;
+      }
+    }
+    &__ebooks {
+      border-left: 1px solid $color-purple-dark;
+      border-right: 1px solid $color-purple-dark;
+      background-color: $color-purple-dark;
+      .yoast-sub-menu {
+        background-color: $color-purple-dark;
+      }
+    }
+    &__hire-us {
+      border-left: 1px solid $color-green-blue;
+      border-right: 1px solid $color-green-blue;
+      background-color: $color-green-blue;
+      .yoast-sub-menu {
+        background-color: $color-green-blue;
+      }
+    }
+    &__faq {
+      border-left: 1px solid $color-blue-dark;
+      border-right: 1px solid $color-blue-dark;
+      background-color: $color-blue-dark;
+      .yoast-sub-menu {
+        background-color: $color-blue-dark;
+      }
+    }
+  }
+
+  li.controls {
+    color: $color-white;
+    margin-left: auto;
+    a {
+      margin: 0 6px;
+      display: inline-flex;
+
+      .fa {
+        font-size: 1.4em;
+        padding: 2px 5px;
+      }
+    }
+
+    a.cart {
+      img {
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        margin-left: -12px;
+      }
+      .num-items-container {
+        position: relative;
+        top: -11px;
+        left: -5px;
+        width: 20px;
+        display: block;
+        text-align: center;
+      }
+      .num-items {
+        background-color: $color-orange;
+        border-radius: 100%;
+        font-size: 0.8em;
+        padding: 0 4px;
+      }
+    }
+  }
+}

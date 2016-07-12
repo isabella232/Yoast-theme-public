@@ -37,6 +37,7 @@ class Theme {
 
 		add_action( 'init', array( $this, 'register_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 20 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 20 );
 
 		add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 
@@ -112,6 +113,11 @@ class Theme {
 		) );
 
 		$this->register_asset( 'script', 'jquery-modal', 'js/includes/jquery.modal.min.js', array( 'jquery' ), '0.7', true );
+	}
+
+	public function enqueue_styles() {
+		wp_enqueue_style( 'open-sans', 'https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic|Open+Sans:400italic,400,300' );
+		wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
 	}
 
 	/**
