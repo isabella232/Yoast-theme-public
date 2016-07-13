@@ -19,7 +19,6 @@
     margin-top: 0.5em;
   }
 
-
   h4 {
     font-size: 1.3em;
     margin-bottom: .5em;
@@ -97,11 +96,28 @@
 
 }
 
+.theme-review .bordered.package--platinum {
+
+  li {
+    font-weight: bold;
+  }
+
+  button {
+    background-color: #009288;
+    color: $color-white;
+  }
+
+}
+
 .theme-review .bordered.package--consulting {
   border-color: $scheme-academy-secondary;
 
   h4, h4 a, a {
     color: $scheme-academy-secondary;
+  }
+
+  li {
+    font-weight: bold;
   }
 
   button {
