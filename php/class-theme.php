@@ -147,7 +147,8 @@ class Theme {
 	public function enqueue_assets() {
 		wp_enqueue_style( 'yoast-com' );
 		wp_enqueue_script( 'yoast-com' );
-		wp_localize_script( 'yoast-com', 'YoastAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+		wp_localize_script( 'yoast-com', 'YoastAjax', array( 'ajaxurl' => $this->my_yoast_ajaxurl() ) );
 
 		if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() ) {
 			wp_enqueue_style( 'chosen' );
@@ -175,6 +176,21 @@ class Theme {
 		if ( is_singular( array( 'course', 'lesson', 'llms_quiz' ) ) ) {
 			wp_enqueue_script( 'yoast-com-academy' );
 			wp_enqueue_script( 'jquery-ui-sortable', false, array( 'jquery', 'jquery-ui' ) );
+		}
+	}
+
+	/**
+	 * Get the admin-ajax url for my.yoast.
+	 *
+	 * @return string
+	 */
+	private function my_yoast_ajaxurl(){
+		$endpoint = 'wp-admin/admin-ajax.php';
+		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+			return 'http://my.yoast.dev/' . $endpoint;
+		}
+		else {
+			return 'https://my.yoast.com/' . $endpoint;
 		}
 	}
 
