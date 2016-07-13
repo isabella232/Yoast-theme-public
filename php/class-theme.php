@@ -148,7 +148,7 @@ class Theme {
 		wp_enqueue_style( 'yoast-com' );
 		wp_enqueue_script( 'yoast-com' );
 
-		wp_localize_script( 'yoast-com', 'YoastAjax', array( 'ajaxurl' => $this->my_yoast_ajaxurl() ) );
+		wp_localize_script( 'yoast-com', 'YoastAjax', array( 'ajaxurl' => $this->yoastcom_ajaxurl() ) );
 
 		if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() ) {
 			wp_enqueue_style( 'chosen' );
@@ -180,17 +180,17 @@ class Theme {
 	}
 
 	/**
-	 * Get the admin-ajax url for my.yoast.
+	 * Get the admin-ajax url for yoast.com.
 	 *
 	 * @return string
 	 */
-	private function my_yoast_ajaxurl(){
+	private function yoastcom_ajaxurl() {
 		$endpoint = 'wp-admin/admin-ajax.php';
 		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
-			return 'http://my.yoast.dev/' . $endpoint;
+			return 'http://yoast.dev/' . $endpoint;
 		}
 		else {
-			return 'https://my.yoast.com/' . $endpoint;
+			return 'https://yoast.com/' . $endpoint;
 		}
 	}
 
