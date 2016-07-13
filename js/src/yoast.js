@@ -60,10 +60,15 @@ function initStickyElements() {
 function initToggle() {
 	window.toggleEls = document.querySelectorAll('[data-toggle]');
 
-	for (var i = 0; i < window.toggleEls.length; i++) {
-		window.toggleEls[i].addEventListener('click', function(event) {
-			this.classList.toggle('is-active');
+	for ( var i = 0; i < window.toggleEls.length; i++ ) {
+		window.toggleEls[ i ].addEventListener('click', function( event ) {
 
+			if ( !this.classList.contains('is-active') ) {
+				var hideOnActive = this.getAttribute('data-hide-on-active');
+				var elementToHide = document.querySelector('[data-toggle="' + hideOnActive + '"]');
+				removeAttribute(hideOnActive);
+				elementToHide.classList.remove('is-active');
+			}
 			event.preventDefault();
 			toggleElement(this.getAttribute('data-toggle'));
 		});
