@@ -44,7 +44,7 @@ if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 	echo '<img src="' . get_template_directory_uri() . '/images/cart.svg">';
 	echo '<span class="visuallyhidden focusable">Cart</span >';
 	echo '<div class="num-items-container">';
-	echo '<span class="num-items">..</span >';
+	echo '<span class="num-items"></span >';
 	echo '</div>';
 	echo '</a >';
 	

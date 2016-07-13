@@ -6,6 +6,7 @@
   }
 
   #yoast-main-menu {
+    padding-left: 5px;
     background-color: $color-pink-dark;
 
     &:after { // line between the main and submenu
@@ -20,17 +21,10 @@
 
     nav {
       display: block;
-      position: relative;
       max-width: $page-width-full-unitless * 16px; // fallback
       max-width: $page-width-full;
       width: 100%;
       margin: 0 auto;
-
-      @media only screen and (max-width: $page-width-full-padded) {
-        padding: 0 1rem;
-      }
-      position: static;
-
     }
 
     a {
@@ -168,11 +162,7 @@
         max-width: $page-width-full;
         width: 100%;
         margin: 0 auto;
-
-        @media only screen and (max-width: $page-width-full-padded) {
-          padding: 0 1rem;
-        }
-        padding: 2px 0;
+        padding: 2px 5px;
       }
     }
 
@@ -267,7 +257,11 @@
           display: block;
           text-align: center;
         }
+        .num-items:empty {
+          visibility: hidden;
+        }
         .num-items {
+          display: inline;
           background-color: $color-orange;
           border-radius: 100%;
           font-size: 0.8em;
@@ -314,6 +308,11 @@
           padding: 0.5rem 1rem;
           display: block;
           color: $color-white;
+          .fa {
+            font-size: 1.4em;
+            position: relative;
+            top: 0.1em;
+          }
         }
 
         &.menu-item {
@@ -345,6 +344,9 @@
             color: $color-black;
           }
           background-color: $color-grey;
+        }
+        &.controls {
+          display: none;
         }
       }
     }
@@ -388,4 +390,3 @@
     }
   }
 }
-

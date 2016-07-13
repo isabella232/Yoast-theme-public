@@ -5596,8 +5596,7 @@ body.edd-checkout .siteheader {
     margin: 0;
     line-height: 1em;
     display: block;
-    background: url(./../images/logo-diap.svg) no-repeat left 0.47rem;
-    background-size: 80%; }
+    background: url(./../images/logo-diap.svg) no-repeat left; }
     @media only screen and (min-width: 56rem) {
       .masthead .pagetitle {
         width: 15em;
@@ -5607,11 +5606,10 @@ body.edd-checkout .siteheader {
       width: 100%;
       height: 7em;
       margin: auto;
-      background: url(./../images/logo-diap.svg) no-repeat left 0.47rem;
+      background: url(./../images/logo-diap.svg) no-repeat left;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); }
       @media only screen and (max-width: 56rem) {
         .masthead .pagetitle--home {
-          background-size: 80%;
           height: 4em; } }
 
 #social-share {
@@ -5719,6 +5717,7 @@ blockquote {
     border-top: 1px solid #FFF;
     margin-top: 2em; }
   #yoast-main-menu {
+    padding-left: 5px;
     background-color: #A4286A; }
     #yoast-main-menu:after {
       content: '';
@@ -5730,17 +5729,10 @@ blockquote {
       border-top: 1px solid #FFF; }
     #yoast-main-menu nav {
       display: block;
-      position: relative;
       max-width: 1012px;
       max-width: 63.25rem;
       width: 100%;
-      margin: 0 auto;
-      position: static; } }
-    @media only screen and (min-width: 56rem) and (max-width: 65.25rem) {
-      #yoast-main-menu nav {
-        padding: 0 1rem; } }
-
-@media only screen and (min-width: 56rem) {
+      margin: 0 auto; }
     #yoast-main-menu a {
       color: white; }
     #yoast-main-menu ul {
@@ -5826,12 +5818,7 @@ blockquote {
         max-width: 63.25rem;
         width: 100%;
         margin: 0 auto;
-        padding: 2px 0; } }
-      @media only screen and (min-width: 56rem) and (max-width: 65.25rem) {
-        #yoast-main-menu div.yoast-sub-menu > ul {
-          padding: 0 1rem; } }
-
-@media only screen and (min-width: 56rem) {
+        padding: 2px 5px; }
     #yoast-main-menu .menu-item__home {
       border-left: 1px solid #77B227;
       border-right: 1px solid #77B227;
@@ -5897,7 +5884,10 @@ blockquote {
         width: 20px;
         display: block;
         text-align: center; }
+      #yoast-main-menu li.controls a.cart .num-items:empty {
+        visibility: hidden; }
       #yoast-main-menu li.controls a.cart .num-items {
+        display: inline;
         background-color: #DC5C04;
         border-radius: 100%;
         font-size: 0.8em;
@@ -5927,6 +5917,10 @@ blockquote {
       padding: 0.5rem 1rem;
       display: block;
       color: #FFF; }
+      #yoast-main-menu ul.yoast-main-menu li a .fa {
+        font-size: 1.4em;
+        position: relative;
+        top: 0.1em; }
     #yoast-main-menu ul.yoast-main-menu li.menu-item__home {
       background-color: #77B227; }
     #yoast-main-menu ul.yoast-main-menu li.menu-item__seo-blog {
@@ -5945,6 +5939,8 @@ blockquote {
       background-color: #DCDCDC; }
       #yoast-main-menu ul.yoast-main-menu li.current-menu-parent a {
         color: #000; }
+    #yoast-main-menu ul.yoast-main-menu li.controls {
+      display: none; }
     #yoast-main-menu ul.yoast-sub-menu {
       background-color: #FFF;
       margin: 0; }
