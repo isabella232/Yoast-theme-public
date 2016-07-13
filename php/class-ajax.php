@@ -26,13 +26,14 @@ class Ajax {
 	 */
 	public function cart_item_number() {
 
-		echo wp_json_encode([
+		$data = wp_json_encode([
 			'status' => 'success',
 			'data'   => [
 				'cartItems' => function_exists( 'edd_get_cart_quantity' ) ? edd_get_cart_quantity() : 0,
 			],
 		]);
-
+		header('Content-Type: text/javascript');
+		echo $_GET['callback'] . '(' . $data .');';
 		wp_die();
 	}
 
