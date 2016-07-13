@@ -5,7 +5,7 @@ use Yoast\YoastCom\Menu\Menu_Structure;
 
 if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 	$main_menu_items = $template_args['menu_data'];
-	
+
 	echo '<div id="yoast-main-menu">';
 	echo '<nav role="navigation">';
 	echo '<ul class="yoast-main-menu">';
@@ -40,15 +40,14 @@ if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 //	echo '<a href="my.yoast.com">';
 //	echo '<span class="fa fa-user"></span>login';
 //	echo '</a>';
-	if ( function_exists( 'edd_get_checkout_uri' ) ) {
-		echo '<a class="cart" href="' . esc_attr( edd_get_checkout_uri() ) . '">';
-		echo '<img src="' . get_template_directory_uri() . '/images/cart.svg">';
-		echo '<span class="visuallyhidden focusable">Cart</span >';
-		echo '<div class="num-items-container">';
-		echo '<span class="num-items">..</span >';
-		echo '</div>';
-		echo '</a >';
-	}
+	echo '<a class="cart" href="my.yoast.dev/checkout">';
+	echo '<img src="' . get_template_directory_uri() . '/images/cart.svg">';
+	echo '<span class="visuallyhidden focusable">Cart</span >';
+	echo '<div class="num-items-container">';
+	echo '<span class="num-items">..</span >';
+	echo '</div>';
+	echo '</a >';
+	
 //		echo '<a href="#">';
 //		echo '<span class="fa fa-search fa-flip-horizontal"></span>';
 //		echo '</a>';

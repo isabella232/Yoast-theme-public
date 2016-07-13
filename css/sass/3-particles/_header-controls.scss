@@ -37,7 +37,7 @@
 		}
 	}
 
-	@media only screen and (min-width: $page-width-medium-plus) {
+	@media only screen and (min-width: $page-width-medium) {
 		font-size: 1em;
 		
 	}
@@ -143,8 +143,8 @@
 			&::after {
 				content: '';
 				position: absolute;
-				top: 2.8em;
-				left: .2rem;
+				top: 2.6em;
+				left: .7rem;
 				right: auto;
 				border-top: 1rem solid $color-pink-dark;
 				border-left: 1rem solid transparent;

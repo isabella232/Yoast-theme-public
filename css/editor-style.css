@@ -751,7 +751,7 @@ a img.aligncenter {
 
 .grid > * {
   width: 100%; }
-  @media only screen and (max-width: 50rem) {
+  @media only screen and (max-width: 56rem) {
     .grid > * {
       max-width: 100%;
       margin-left: 0;
@@ -780,7 +780,7 @@ a img.aligncenter {
     flex-basis: 65%;
     max-width: 65%; } }
 
-@media only screen and (min-width: 30rem) and (max-width: 50rem) {
+@media only screen and (min-width: 30rem) and (max-width: 56rem) {
   .medium-one-half {
     -webkit-flex-basis: 45.91837%;
     -moz-flex-basis: 45.91837%;
@@ -858,7 +858,7 @@ h3, .h3 {
   @media only screen and (min-width: 30rem) {
     h3, .h3 {
       font-size: 1.375em; } }
-  @media only screen and (min-width: 50rem) {
+  @media only screen and (min-width: 56rem) {
     h3, .h3 {
       font-size: 1.5em; } }
 
@@ -987,7 +987,7 @@ dt {
 dd {
   float: left; }
 
-@media only screen and (max-width: 50rem) {
+@media only screen and (max-width: 56rem) {
   .home main {
     padding-top: 1.88rem; } }
 
@@ -1062,7 +1062,7 @@ code, pre {
 .content h2 i.fa-level-up, .content h3 i.fa-level-up {
   font-size: 18px; }
 
-@media only screen and (max-width: 50rem) {
+@media only screen and (max-width: 56rem) {
   .text-columns img {
     display: none; } }
 
@@ -1075,7 +1075,7 @@ code, pre {
     column-count: 2;
     column-gap: 1em; } }
 
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 56rem) {
   .text-columns {
     -moz-column-count: 3;
     -webkit-column-count: 3;
@@ -1204,7 +1204,7 @@ thead th {
 
 .theme-home .sitenav {
   background-color: #A4286A; }
-  @media only screen and (min-width: 50rem) {
+  @media only screen and (min-width: 56rem) {
     .theme-home .sitenav::before {
       background-color: #A4286A; } }
 
@@ -1328,7 +1328,7 @@ thead th {
 
 .theme-about .sitenav {
   background-color: #A4286A; }
-  @media only screen and (min-width: 50rem) {
+  @media only screen and (min-width: 56rem) {
     .theme-about .sitenav::before {
       background-color: #A4286A; } }
 
@@ -1452,7 +1452,7 @@ thead th {
 
 .theme-academy .sitenav {
   background-color: #A4286A; }
-  @media only screen and (min-width: 50rem) {
+  @media only screen and (min-width: 56rem) {
     .theme-academy .sitenav::before {
       background-color: #A4286A; } }
 
@@ -1576,7 +1576,7 @@ thead th {
 
 .theme-review .sitenav {
   background-color: #009288; }
-  @media only screen and (min-width: 50rem) {
+  @media only screen and (min-width: 56rem) {
     .theme-review .sitenav::before {
       background-color: #009288; } }
 
@@ -1700,7 +1700,7 @@ thead th {
 
 .theme-software .sitenav {
   background-color: #009288; }
-  @media only screen and (min-width: 50rem) {
+  @media only screen and (min-width: 56rem) {
     .theme-software .sitenav::before {
       background-color: #009288; } }
 
@@ -2052,7 +2052,7 @@ a.color-white:hover, a.color-white:focus, button.color-white:hover, button.color
   float: right;
   margin-left: 0.94rem; }
 
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 56rem) {
   .bottom-right {
     position: absolute;
     bottom: 0.94rem;
@@ -2063,15 +2063,11 @@ a.color-white:hover, a.color-white:focus, button.color-white:hover, button.color
   .hide-on-mobile {
     display: none !important; } }
 
-@media only screen and (max-width: 50rem) {
+@media only screen and (max-width: 56rem) {
   .hide-on-tablet {
     display: none !important; } }
 
-@media only screen and (max-width: 56rem) {
-  .hide-on-tablet-large {
-    display: none !important; } }
-
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 56rem) {
   .hide-on-desktop {
     display: none !important; } }
 

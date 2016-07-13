@@ -10,8 +10,7 @@ namespace Yoast\YoastCom\Theme;
 	</div>
 
 	<?php
-	get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) );
-	get_template_part( 'html_includes/partials/search', array( 'type' => 'desktop' ) );
+	get_template_part( 'html_includes/partials/search' );
 
 	$navigation = new Yoast_Navigation();
 	$navigation->output_menu_bar();
