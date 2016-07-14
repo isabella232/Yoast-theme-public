@@ -32,8 +32,10 @@ class Ajax {
 				'cartItems' => function_exists( 'edd_get_cart_quantity' ) ? edd_get_cart_quantity() : 0,
 			],
 		]);
+
 		header('Content-Type: text/javascript');
-		echo $_GET['callback'] . '(' . $data .');';
+		echo 'handleGlobalCartItemNumber(' . $data .');';
+
 		wp_die();
 	}
 
