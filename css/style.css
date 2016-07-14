@@ -3971,6 +3971,14 @@ hr + .fullfooter {
     font-size: 1.2em;
     position: relative;
     padding: 8px 15px; }
+  .header-controls--mobile .cart img {
+    height: 1.1em;
+    width: 1.4em;
+    position: relative; }
+  .header-controls--mobile .cart .num-items-container {
+    position: relative;
+    top: -30px;
+    left: -2px; }
   .header-controls--mobile a.is-active::after {
     content: '';
     position: absolute;
@@ -5498,6 +5506,10 @@ a.promoblock {
     .searchbar .algolia-autocomplete {
       display: inline;
       margin-right: 20px; }
+    .searchbar .search-button {
+      width: 40px;
+      margin: 0;
+      font-size: 1.5em; }
     .searchbar .search-button:hover, .searchbar .search-button:focus {
       text-decoration: none;
       background-color: transparent;
@@ -5716,9 +5728,12 @@ blockquote {
   .siteheader--home #yoast-main-menu {
     border-top: 1px solid #FFF;
     margin-top: 2em; }
+    .siteheader--home #yoast-main-menu.is-sticky {
+      margin-top: 0; }
   #yoast-main-menu {
     padding-left: 5px;
-    background-color: #A4286A; }
+    background-color: #A4286A;
+    z-index: 2147483647; }
     #yoast-main-menu:after {
       content: '';
       position: absolute;
@@ -5891,7 +5906,9 @@ blockquote {
         background-color: #DC5C04;
         border-radius: 100%;
         font-size: 0.8em;
-        padding: 0 4px; } }
+        padding: 0 4px; }
+  .is-sticky {
+    width: 100%; } }
 
 @media only screen and (max-width: 56rem) {
   #yoast-main-menu {

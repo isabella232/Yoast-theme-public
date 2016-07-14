@@ -3,22 +3,17 @@
 //loadCSS('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic|Open+Sans:400italic,400,300');
 //loadCSS('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
 
-
 document.onreadystatechange = function () {
   if (document.readyState == "complete" && document.querySelector) {
-	
+
 	if( testFilter() ) {
 		document.querySelector('html').classList.add('supports-filter');
 	}
 
 	// Make sure the top banner on the homepage has the right height
 	if(document.querySelector('[data-header-home]')) {
-		setHomeBannerHeight();	
+		setHomeBannerHeight();
 	}
-
-	initStickyElements();
-	initToggle();
-
 
 	document.addEventListener('click', function() {
 		if(document.querySelector('body[data-show-mobile-search]')) {
@@ -48,10 +43,12 @@ function initStickyElements() {
 
 		// And of course do it on scroll
 		window.addEventListener('scroll', function() {
+			console.log('scrolling');
 			setStickyElements();
-		});	
+		});
 
 		window.addEventListener('resize', function() {
+			console.log('resizing');
 			setStickyElements(false);
 		});	
 	}
@@ -78,6 +75,9 @@ function initToggle() {
 (function($) {
 
 	$(document).ready(function() {
+
+		initStickyElements();
+		initToggle();
 		$('.js-random-show-items').each( function() {
 			var $this = $(this);
 			var items = $this.data('show-items');

@@ -19,15 +19,16 @@ class Yoast_Navigation {
 	protected $current_url;
 
 	public function __construct( $menu_structure = null ) {
-		$this->menu_structure       = ( is_null( $menu_structure ) ? new Menu_Structure() : $menu_structure );
-		$this->main_menu_items      = $this->menu_structure->getMenuItems();
-		$this->current_url          = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		$this->menu_structure  = ( is_null( $menu_structure ) ? new Menu_Structure() : $menu_structure );
+		$this->main_menu_items = $this->menu_structure->getMenuItems();
+		$this->current_url     = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$this->setActiveMenuItem();
 	}
 
 	public function output_menu_bar() {
 		get_template_part( 'html_includes/partials/navigation-menu', array(
 			'menu_data' => $this->get_menu_data(),
+			'cart_url'  => $this->get_cart_url(),
 		) );
 	}
 
@@ -99,7 +100,7 @@ class Yoast_Navigation {
 		return false;
 	}
 
-	private function setActiveByColorScheme() {
+	private function setActiveByPageType() {
 		foreach ( $this->main_menu_items as $main_menu_item ) {
 			if ( $main_menu_item->getType() === $this->get_current_page_type() ) {
 				$main_menu_item->setActive();
@@ -143,7 +144,7 @@ class Yoast_Navigation {
 
 	private function setActiveMenuItem() {
 		if ( ! $this->setActiveByUrl() ) {
-			if ( ! $this->setActiveByColorScheme() ) {
+			if ( ! $this->setActiveByPageType() ) {
 				if ( ! $this->setActiveByPage() ) {
 					$this->setActiveByDefault();
 				}
@@ -152,15 +153,14 @@ class Yoast_Navigation {
 	}
 
 	private function get_current_page_type() {
-		$scheme = theme_object()->get_color_scheme();
-		if ( empty( $scheme ) ) {
-			return '';
+		$type = theme_object()->get_page_type();
+		if ( empty ( $type ) ) {
+			$color_scheme = theme_object()->get_color_scheme();
+			if ( ! empty ( $color_scheme ) ) {
+				$type = $this->convert_color_scheme_to_type( $color_scheme );
+			}
 		}
 
-		$type = $this->convert_color_scheme_to_type( $scheme );
-		if ( empty( $type ) ) {
-			return '';
-		}
 		return $type;
 	}
 
@@ -174,6 +174,15 @@ class Yoast_Navigation {
 		);
 
 		return $map[ $color_scheme ];
+	}
+
+	private function get_cart_url() {
+		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+			return 'http://yoast.dev/checkout';
+		}
+		else {
+			return 'https://yoast.com/checkout';
+		}
 	}
 
 }

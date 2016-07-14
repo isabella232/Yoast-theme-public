@@ -18,21 +18,13 @@ class Color_Scheme {
 	const REVIEW = 'theme-review';
 	const ABOUT = 'theme-about';
 
-
-//	const HOME = 'home';
-//	const SEO_BLOG = 'seo-blog';
-//	const PLUGINS = 'plugins';
-//	const COURCES = 'cources';
-//	const EBOOKS = 'ebooks';
-//	const HIRE_US = 'hire-us';
-//	const FAQ = 'faq';
-
 	/**
 	 * Constructor, adds WordPress hooks
 	 */
 	public function __construct() {
 		add_filter( 'body_class', array( $this, 'body_class' ) );
-		add_action( 'cmb2_init', array( $this, 'page_color_selection' ) );
+		// replaced by the Page_Menu_Type selector.
+//		add_action( 'cmb2_init', array( $this, 'page_color_selection' ) );
 	}
 
 	/**
