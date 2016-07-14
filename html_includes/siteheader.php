@@ -27,6 +27,8 @@ namespace Yoast\YoastCom\Theme;
 			<div class="boxes boxes--header boxes--review"></div>
 		<?php elseif ( Color_Scheme::ABOUT === theme_object()->get_color_scheme() ) : ?>
 			<div class="boxes boxes--header boxes--about"></div>
+		<?php else : ?>
+			<div class="boxes boxes--header"></div>
 		<?php endif; ?>
 	</div>
 </header>
