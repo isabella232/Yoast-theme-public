@@ -48,10 +48,13 @@
   }
 
   .content {
-    padding: 15px 30px;
+    padding: 15px 20px;
 
     strong {
       color: $scheme-software-primary;
+    }
+    p, form {
+      padding: 0 10px;
     }
   }
 

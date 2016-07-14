@@ -53,6 +53,17 @@ p, .p {
     font-size: 0.94em;
     color: $color-grey-text
   }
+  .extra.show-off & {
+    font-size: 1.4em;
+    line-height: 1.5em;
+    color: $color-pink;
+    font-family: $font-stack-default;
+    span {
+      font-family: $font-stack-article;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
 }
 
 ul {

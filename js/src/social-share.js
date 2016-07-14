@@ -21,6 +21,16 @@ jQuery( document ).ready( function( $ ) {
 			__gaTracker( 'send', 'event', 'read-more', $( this ).attr( 'title' ), $( this ).data( 'prefix' ) );
 		}
 	});
+	$( 'section.show-off button' ).on( 'mousedown', function() {
+		if ( typeof __gaTracker !== "undefined" ) {
+			__gaTracker( 'send', 'event', 'banner-buy-click', $( this ).data( 'download-id' ) );
+		}
+	});
+	$( 'section.show-off a' ).on( 'mousedown', function() {
+		if ( typeof __gaTracker !== "undefined" ) {
+			__gaTracker( 'send', 'event', 'banner-read-more-click', $( this ).attr( 'href' ) );
+		}
+	});
 });
 
 // YouTube tracking

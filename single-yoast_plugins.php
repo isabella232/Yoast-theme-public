@@ -94,18 +94,3 @@ get_template_part( 'html_includes/siteheader', array( 'software-sub' => true ) )
 </div>
 
 <?php get_footer(); ?>
-
-<script>
-	jQuery(document).ready(function ($) {
-		$('a.button.openmodal').click(function (e) {
-			e.preventDefault();
-			$('#prices-modal').modal({
-				closeText: '<i class="fa fa-times-circle"></i>'
-			});
-		});
-		$('.modal label').click(function (e) {
-			e.preventDefault();
-			$('input#' + $(this).attr('for')).prop('checked', true);
-		});
-	});
-</script>
