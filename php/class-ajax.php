@@ -26,15 +26,16 @@ class Ajax {
 	 */
 	public function cart_item_number() {
 
-		$data = wp_json_encode([
+		$data = wp_json_encode( [
 			'status' => 'success',
 			'data'   => [
 				'cartItems' => function_exists( 'edd_get_cart_quantity' ) ? edd_get_cart_quantity() : 0,
 			],
-		]);
+		] );
 
-		header('Content-Type: text/javascript');
-		echo 'handleGlobalCartItemNumber(' . $data .');';
+		header( 'Content-Type: text/javascript' );
+		$callback = filter_input( INPUT_GET, 'callback' );
+		printf( '%s(%s);', $callback, $data );
 
 		wp_die();
 	}
@@ -47,10 +48,10 @@ class Ajax {
 		$price_id    = filter_input( INPUT_POST, 'price_id' );
 
 		if ( false === $download_id || false === $price_id ) {
-			echo wp_json_encode([
+			echo wp_json_encode( [
 				'status' => 'error',
 				'error'  => 'No download_id and price_id provided.',
-			]);
+			] );
 			wp_die();
 		}
 
@@ -60,9 +61,9 @@ class Ajax {
 		edd_add_to_cart( $download_id, array( 'price_id' => $price_id ) );
 		edd_remove_from_cart( $old_download );
 
-		echo wp_json_encode([
+		echo wp_json_encode( [
 			'status' => 'success',
-		]);
+		] );
 		wp_die();
 	}
 }
