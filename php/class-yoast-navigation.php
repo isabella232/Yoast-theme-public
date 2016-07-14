@@ -167,7 +167,7 @@ class Yoast_Navigation {
 	private function convert_color_scheme_to_type( $color_scheme ) {
 		$map = array( // todo [diedexx] Check if these are correct.
 			Color_Scheme::HOME     => Menu_Structure::HOME_TYPE,
-			Color_Scheme::ACADEMY  => Menu_Structure::COURCES_TYPE,
+			Color_Scheme::ACADEMY  => Menu_Structure::COURSES_TYPE,
 			Color_Scheme::SOFTWARE => Menu_Structure::PLUGINS_TYPE,
 			Color_Scheme::REVIEW   => Menu_Structure::HIRE_US_TYPE,
 			Color_Scheme::ABOUT    => Menu_Structure::FAQ_TYPE,
