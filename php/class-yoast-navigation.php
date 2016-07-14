@@ -102,7 +102,7 @@ class Yoast_Navigation {
 
 	private function setActiveByPageType() {
 		foreach ( $this->main_menu_items as $main_menu_item ) {
-			if ( $main_menu_item->getType() === $this->get_current_page_type() ) {
+			if ( $main_menu_item->getType() === theme_object()->get_page_type() ) {
 				$main_menu_item->setActive();
 
 				return true;
@@ -151,31 +151,7 @@ class Yoast_Navigation {
 			}
 		}
 	}
-
-	private function get_current_page_type() {
-		$type = theme_object()->get_page_type();
-		if ( empty ( $type ) ) {
-			$color_scheme = theme_object()->get_color_scheme();
-			if ( ! empty ( $color_scheme ) ) {
-				$type = $this->convert_color_scheme_to_type( $color_scheme );
-			}
-		}
-
-		return $type;
-	}
-
-	private function convert_color_scheme_to_type( $color_scheme ) {
-		$map = array( // todo [diedexx] Check if these are correct.
-			Color_Scheme::HOME     => Menu_Structure::HOME_TYPE,
-			Color_Scheme::ACADEMY  => Menu_Structure::COURSES_TYPE,
-			Color_Scheme::SOFTWARE => Menu_Structure::PLUGINS_TYPE,
-			Color_Scheme::REVIEW   => Menu_Structure::HIRE_US_TYPE,
-			Color_Scheme::ABOUT    => Menu_Structure::FAQ_TYPE,
-		);
-
-		return $map[ $color_scheme ];
-	}
-
+	
 	private function get_cart_url() {
 		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
 			return 'http://yoast.dev/checkout';
