@@ -1,10 +1,15 @@
 <?php
 namespace Yoast\YoastCom\Theme;
+
+$yoast_url = 'https://yoast.com/';
+if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+	$yoast_url = 'http://yoast.dev/';
+}
 ?>
 <header role="banner" class="siteheader">
 
 	<div class="row masthead">
-		<a href="<?php echo esc_attr( home_url() ); ?>" class="pagetitle"><span class="visuallyhidden">Yoast</span></a>
+		<a href="<?php echo $yoast_url; ?>" class="pagetitle"><span class="visuallyhidden">Yoast</span></a>
 
 		<?php get_template_part( 'html_includes/header-controls-mobile' ); ?>
 	</div>
