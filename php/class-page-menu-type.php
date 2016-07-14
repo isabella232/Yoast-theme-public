@@ -7,7 +7,7 @@ class Page_Menu_Type {
 	const HOME = 'home';
 	const SEO_BLOG = 'seo-blog';
 	const PLUGINS = 'plugins';
-	const COURCES = 'cources';
+	const COURCES = 'courses';
 	const EBOOKS = 'ebooks';
 	const HIRE_US = 'hire-us';
 	const FAQ = 'faq';
