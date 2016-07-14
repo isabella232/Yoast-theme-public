@@ -12,7 +12,7 @@
 
 	function retrieveGlobalCartItemNumber() {
 		$.getJSON(
-			YoastAjax.ajaxurl,
+			YoastAjax.ajaxurl + '?callback=?',
 			{ action: 'cart_item_number' },
 			handleGlobalCartItemNumber
 		);
