@@ -17,11 +17,18 @@ class Yoast_Navigation {
 	protected $main_menu_items;
 	protected $controls;
 	protected $current_url;
+	protected $scheme;
 
 	public function __construct( $menu_structure = null ) {
+		// We set this hard instead of using the $_SERVER global, as that's not reliable on WP Engine
+		$this->scheme = 'https';
+		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+			$this->scheme = 'http';
+		}
+
 		$this->menu_structure  = ( is_null( $menu_structure ) ? new Menu_Structure() : $menu_structure );
 		$this->main_menu_items = $this->menu_structure->getMenuItems();
-		$this->current_url     = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		$this->current_url     = $this->scheme . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$this->setActiveMenuItem();
 	}
 
@@ -151,7 +158,7 @@ class Yoast_Navigation {
 			}
 		}
 	}
-	
+
 	private function get_cart_url() {
 		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
 			return 'http://yoast.dev/checkout';
