@@ -16,7 +16,7 @@ function setStickyElements() {
 		if(window.matchMedia) {
 
 			// Sticky on desktop
-			if (window.matchMedia("(min-width: 50em)").matches ) {
+			if (window.matchMedia("(min-width: 56em)").matches ) {
 				if( stickyEl.hasAttribute("data-sticky-desktop") ) {
 					setToSticky(stickyEl, i);
 				} else {

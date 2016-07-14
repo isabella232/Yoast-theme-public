@@ -9,25 +9,13 @@ namespace Yoast\YoastCom\Theme;
 		<?php get_template_part( 'html_includes/header-controls-mobile' ); ?>
 	</div>
 
-	<?php get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
+	<?php
+	get_template_part( 'html_includes/partials/search' );
 
-	<?php get_template_part( 'html_includes/header-controls-desktop' ); ?>
+	$navigation = new Yoast_Navigation();
+	$navigation->output_menu_bar();
 
-	<nav role="navigation" class="sitenav sticky" data-sticky data-sticky-desktop aria-hidden="true">
-		<?php wp_nav_menu( array(
-			'theme_location'  => 'primary',
-			'container_class' => 'mainnav',
-			'walker'          => new Menu_Walker(),
-		) ); ?>
-	</nav>
-
-	<nav role="navigation" class="sitenav sitenav--offcanvas">
-		<?php wp_nav_menu( array(
-			'theme_location'  => 'primary',
-			'container_class' => 'mainnav',
-			'walker'          => new Menu_Walker(),
-		) ); ?>
-	</nav>
+	?>
 
 	<!-- Decoration -->
 	<div class="row">
@@ -39,6 +27,8 @@ namespace Yoast\YoastCom\Theme;
 			<div class="boxes boxes--header boxes--review"></div>
 		<?php elseif ( Color_Scheme::ABOUT === theme_object()->get_color_scheme() ) : ?>
 			<div class="boxes boxes--header boxes--about"></div>
+		<?php else : ?>
+			<div class="boxes boxes--header"></div>
 		<?php endif; ?>
 	</div>
 </header>
