@@ -98,14 +98,14 @@
 }
 
 .theme-review .bordered.package--consulting {
-  border-color: $color-grey-text;
+  border-color: $scheme-academy-secondary;
 
   h4, h4 a, a {
-    color: $color-grey-text;
+    color: $scheme-academy-secondary;
   }
 
   button {
-    background-color: $color-grey-text;
+    background-color: $scheme-academy-secondary;
     color: $color-white;
   }
 

@@ -155,7 +155,7 @@ function author_has( $social_site ) {
  * @return string
  */
 function url_shop_page() {
-	return home_url( 'shop/' );
+	return 'https://yoast.com/shop/';
 }
 
 /**

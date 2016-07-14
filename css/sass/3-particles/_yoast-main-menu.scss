@@ -1,6 +1,18 @@
 @media only screen and (min-width: $page-width-medium) {
+
+  .siteheader--home #yoast-main-menu {
+    border-top: 1px solid $color-white;
+    margin-top:2em;
+
+    &.is-sticky{
+      margin-top:0;
+    }
+  }
+
   #yoast-main-menu {
+    padding-left: 5px;
     background-color: $color-pink-dark;
+    z-index: 2147483647;
 
     &:after { // line between the main and submenu
       content: '';
@@ -14,17 +26,10 @@
 
     nav {
       display: block;
-      position: relative;
       max-width: $page-width-full-unitless * 16px; // fallback
       max-width: $page-width-full;
       width: 100%;
       margin: 0 auto;
-
-      @media only screen and (max-width: $page-width-full-padded) {
-        padding: 0 1rem;
-      }
-      position: static;
-
     }
 
     a {
@@ -162,11 +167,7 @@
         max-width: $page-width-full;
         width: 100%;
         margin: 0 auto;
-
-        @media only screen and (max-width: $page-width-full-padded) {
-          padding: 0 1rem;
-        }
-        padding: 2px 0;
+        padding: 2px 5px;
       }
     }
 
@@ -199,7 +200,7 @@
           background-color: $color-blue;
         }
       }
-      &__cources {
+      &__courses {
         border-left: 1px solid $color-pink-light;
         border-right: 1px solid $color-pink-light;
         background-color: $color-pink-light;
@@ -248,20 +249,24 @@
 
       a.cart {
         img {
-          height: 30px;
+          height: 40px;
           width: 30px;
           position: absolute;
           margin-left: -12px;
         }
         .num-items-container {
           position: relative;
-          top: -11px;
+          top: -9px;
           left: -5px;
           width: 20px;
           display: block;
           text-align: center;
         }
+        .num-items:empty {
+          visibility: hidden;
+        }
         .num-items {
+          display: inline;
           background-color: $color-orange;
           border-radius: 100%;
           font-size: 0.8em;
@@ -269,6 +274,10 @@
         }
       }
     }
+  }
+
+  .is-sticky {
+    width: 100%;
   }
 }
 
@@ -308,6 +317,11 @@
           padding: 0.5rem 1rem;
           display: block;
           color: $color-white;
+          .fa {
+            font-size: 1.4em;
+            position: relative;
+            top: 0.1em;
+          }
         }
 
         &.menu-item {
@@ -321,7 +335,7 @@
           &__plugins {
             background-color: $color-blue;
           }
-          &__cources {
+          &__courses {
             background-color: $color-pink-light;
           }
           &__ebooks {
@@ -339,6 +353,9 @@
             color: $color-black;
           }
           background-color: $color-grey;
+        }
+        &.controls {
+          display: none;
         }
       }
     }
@@ -382,4 +399,3 @@
     }
   }
 }
-

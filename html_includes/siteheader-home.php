@@ -6,19 +6,20 @@ namespace Yoast\YoastCom\Theme;
 
 		<?php if ( isset( $template_args['home'] ) ) : ?>
 			<div class="row masthead">
-				<h1 class="promoblock promoblock--hometitle">
+				<h1 class="home-title">
 					<a href="<?php echo esc_attr( home_url() ); ?>" class="pagetitle pagetitle--home"><span
 							class="visuallyhidden">Yoast</span></a>
 				</h1>
 
+				<p class="h2 tagline">
+					<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
+				</p>
+
 				<?php get_template_part( 'html_includes/header-controls-mobile' ); ?>
 			</div>
 
-			<?php get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
 
-			<p class="h2 tagline fill fill--transparent">
-				<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
-			</p>
+			<?php get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
 		<?php endif; ?>
 
 		<?php if ( isset( $template_args['home-sub'] ) ) : ?>

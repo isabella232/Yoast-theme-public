@@ -62,6 +62,7 @@ class Theme {
 		add_action( 'init', array( $this->shortcodes, 'add_shortcodes' ) );
 
 		$this->color = new Color_Scheme();
+		$this->page_type = new Page_Menu_Type();
 		$this->extra_head = new Extra_Head();
 
 		$this->excerpt = new Excerpt_Manager();
@@ -85,6 +86,13 @@ class Theme {
 	 */
 	public function get_color_scheme() {
 		return $this->color->get_color_scheme();
+	}
+
+	/**
+	 * @return string The type of the current page.
+	 */
+	public function get_page_type(){
+		return $this->page_type->get_page_type();
 	}
 
 	/**
