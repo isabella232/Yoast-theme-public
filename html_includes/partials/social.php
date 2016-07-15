@@ -31,7 +31,7 @@ if ( isset( $template_args['class'] ) ) {
 		<span>YouTube</span>
 		<?php output_social_counter( 'youtube_subs' ); ?>
 	</a>
-	<a class="fa fa-envelope-square manual-optin-trigger" data-name="newsletter" data-optin-slug="kbpo9ryqjbnahlcc" target="_blank" href="https://yoast.com/newsletter/">
+	<a class="fa fa-envelope-square manual-optin-trigger" data-name="newsletter" data-optin-slug="kbpo9ryqjbnahlcc" target="_blank" href="<?php echo apply_filters( 'yoast:domain', 'yoast.com' ); ?>/newsletter/">
 		<span>Newsletter</span>
 	</a>
 </div>

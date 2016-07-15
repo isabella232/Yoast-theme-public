@@ -155,7 +155,7 @@ function author_has( $social_site ) {
  * @return string
  */
 function url_shop_page() {
-	return 'https://yoast.com/shop/';
+	return apply_filters( 'yoast:url', 'shop' );
 }
 
 /**
@@ -164,7 +164,7 @@ function url_shop_page() {
  * @return string
  */
 function url_checkout() {
-	return home_url( 'checkout/' );
+	return apply_filters( 'yoast:url', 'checkout' );
 }
 
 /**
@@ -189,7 +189,7 @@ function url_plugin_download( $post_ID = null ) {
  * @return string
  */
 function url_plugin_overview() {
-	return home_url( '/wordpress/plugins/' );
+	return apply_filters( 'yoast:url', 'plugin_overview' );
 }
 
 /**
@@ -232,19 +232,19 @@ function url_plugin_changelog() {
  * @return string
  */
 function url_website_review() {
-	return home_url( '/hire-us/website-review/' );
+	return apply_filters( 'yoast:url', 'website_review' );
 }
 
 /**
  * Returns the URL of the ebooks archive
  */
 function url_ebooks_archive() {
-	return home_url( 'ebooks/' );
+	return apply_filters( 'yoast:url', 'ebooks_archive' );
 }
 
 /**
  * Returns the URL of the academy overview
  */
 function url_academy_overview() {
-	return home_url( 'academy/' );
+	return apply_filters( 'yoast:url', 'academy_overview' );
 }

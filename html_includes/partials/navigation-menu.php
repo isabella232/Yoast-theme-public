@@ -19,7 +19,7 @@ if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 
 	echo '<li class="controls">';
 
-//	echo '<a href="https://my.yoast.com">';
+//	echo '<a href="' . apply_filters( 'yoast:domain', 'my.yoast.com' ) . '">';
 //	echo '<span class="fa fa-user"></span>login';
 //	echo '</a>';
 
