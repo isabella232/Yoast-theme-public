@@ -11,7 +11,7 @@ $anchor_class = ( ! empty( $menu_item['anchor_classes'] ) ? ' class="' . implode
 echo '<a href="' . $menu_item['url'] . '"' . $anchor_class . '>';
 
 if ( $type === 'main' ) {
-	echo $menu_item['label'];
+	echo esc_html( $menu_item['label'] );
 }
 
 if ( ! empty( $menu_item['icon'] ) ) {
@@ -19,7 +19,7 @@ if ( ! empty( $menu_item['icon'] ) ) {
 }
 
 if ( $type === 'sub' ) {
-	echo $menu_item['label'];
+	echo esc_html( $menu_item['label'] );
 }
 
 echo '</a>';

@@ -32,6 +32,7 @@ class Yoast_Navigation {
 		$this->menu_structure  = ( is_null( $menu_structure ) ? new Menu_Structure() : $menu_structure );
 		$this->main_menu_items = $this->menu_structure->getMenuItems();
 		$this->current_url     = $this->scheme . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
 		$this->set_active_menu_item();
 	}
 
@@ -138,7 +139,11 @@ class Yoast_Navigation {
 
 		if ( function_exists( 'yoast_get_primary_term' ) ) {
 			$primary_category    = yoast_get_primary_term( 'category', get_the_ID() );
-			$is_primary_category = strcasecmp( $sub_menu_item->getLabel(), $primary_category ) === 0;
+
+			$compare_to_primary_category = apply_filters( 'yoast_nav_label-primary_category', $sub_menu_item->getLabel() );
+			$compare_to_primary_category = esc_html( $compare_to_primary_category );
+
+			$is_primary_category = strcasecmp( $compare_to_primary_category, $primary_category ) === 0;
 		}
 
 		$is_same_url = ( $this->current_url === $sub_menu_item->getUrl() );
