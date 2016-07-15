@@ -25,6 +25,11 @@ class Theme {
 	public $color;
 
 	/**
+	 * @var Shortcodes
+	 */
+	public $shortcodes;
+
+	/**
 	 * Constructor. Adds WordPress hooks.
 	 */
 	public function __construct() {
@@ -32,6 +37,7 @@ class Theme {
 
 		add_action( 'init', array( $this, 'register_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 20 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 20 );
 
 		add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 
@@ -45,16 +51,18 @@ class Theme {
 		new Term();
 		new Page_Academy_Settings();
 		new Query();
+		new Featured_Image();
 
 		if ( is_admin() ) {
 			$theme_settings = new Theme_Settings();
 			$theme_settings->hooks();
 		}
 
-		$shortcodes = new Shortcodes();
-		add_action( 'init', array( $shortcodes, 'add_shortcodes' ) );
+		$this->shortcodes = new Shortcodes();
+		add_action( 'init', array( $this->shortcodes, 'add_shortcodes' ) );
 
 		$this->color = new Color_Scheme();
+		$this->page_type = new Page_Menu_Type();
 		$this->extra_head = new Extra_Head();
 
 		$this->excerpt = new Excerpt_Manager();
@@ -81,6 +89,13 @@ class Theme {
 	}
 
 	/**
+	 * @return string The type of the current page.
+	 */
+	public function get_page_type(){
+		return $this->page_type->get_page_type();
+	}
+
+	/**
 	 * Registers all theme assets
 	 */
 	public function register_assets() {
@@ -104,6 +119,13 @@ class Theme {
 		$this->register_asset( 'script', 'yoast-com-academy', 'js/academy.min.js', array(
 			'jquery',
 		) );
+
+		$this->register_asset( 'script', 'jquery-modal', 'js/includes/jquery.modal.min.js', array( 'jquery' ), '0.7', true );
+	}
+
+	public function enqueue_styles() {
+		wp_enqueue_style( 'open-sans', 'https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic|Open+Sans:400italic,400,300' );
+		wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
 	}
 
 	/**
@@ -115,8 +137,8 @@ class Theme {
 	 * @param array  $dependencies The dependencies of this asset.
 	 */
 	private function register_asset( $script_or_style, $handle, $file_path, $dependencies = array() ) {
-		$url  = trailingslashit( get_stylesheet_directory_uri() ) . $file_path;
-		$global_path = trailingslashit( get_stylesheet_directory() ) . $file_path;
+		$url  = trailingslashit( get_template_directory_uri() ) . $file_path;
+		$global_path = trailingslashit( get_template_directory() ) . $file_path;
 		$last_modified = filemtime( $global_path );
 
 		if ( 'style' === $script_or_style ) {
@@ -133,7 +155,8 @@ class Theme {
 	public function enqueue_assets() {
 		wp_enqueue_style( 'yoast-com' );
 		wp_enqueue_script( 'yoast-com' );
-		wp_localize_script( 'yoast-com', 'YoastAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+		wp_localize_script( 'yoast-com', 'YoastAjax', array( 'ajaxurl' => $this->yoastcom_ajaxurl() ) );
 
 		if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() ) {
 			wp_enqueue_style( 'chosen' );
@@ -146,6 +169,10 @@ class Theme {
 			) );
 		}
 
+		if ( is_singular( 'yoast_plugins' ) ) {
+			wp_enqueue_script( 'jquery-modal' );
+		}
+
 		// Remove the cross selling CSS because we overwrite it completely.
 		wp_deregister_style( 'edd-csau-css' );
 
@@ -153,9 +180,25 @@ class Theme {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
+		// Academy scripts.
 		if ( is_singular( array( 'course', 'lesson', 'llms_quiz' ) ) ) {
 			wp_enqueue_script( 'yoast-com-academy' );
 			wp_enqueue_script( 'jquery-ui-sortable', false, array( 'jquery', 'jquery-ui' ) );
+		}
+	}
+
+	/**
+	 * Get the admin-ajax url for yoast.com.
+	 *
+	 * @return string
+	 */
+	private function yoastcom_ajaxurl() {
+		$endpoint = 'wp-admin/admin-ajax.php';
+		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+			return 'http://yoast.dev/' . $endpoint;
+		}
+		else {
+			return 'https://yoast.com/' . $endpoint;
 		}
 	}
 

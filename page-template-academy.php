@@ -34,34 +34,25 @@ $class        = 'color-' . $color_scheme;
 			) ); ?>
 		<?php endif; ?>
 
-		<div class="island">
-			<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'fill--secondary announcement--pointer announcement--pointer-top' ) ); ?>
-		</div>
-
 		<div class="rowholder">
-			<section class="row island">
-				<h2><?php _e( 'Check out our must read articles', 'yoastcom' ); ?></h2>
-				<?php get_template_part( 'html_includes/partials/recent-articles' ); ?>
-			</section>
-
-			<hr>
-
-			<section class="row iceberg">
+			<section class="row island iceberg">
 				<?php
 				if ( $color_scheme == 'software' ) : ?>
 					<h2 class="<?php echo $class; ?>--secondary"><?php _e( 'Read the latests posts on our Dev blog', 'yoastcom' ); ?></h2>
-					<?php get_template_part( 'html_includes/partials/more-articles', array(
-						'dev-blog' => true,
-						'class'    => $class . '--secondary'
+					<?php get_template_part( 'html_includes/partials/recent-articles', array(
+						'post_type' => 'yoast_dev_article',
 					) ); ?>
 				<?php else: ?>
 					<h2 class="<?php echo $class; ?>--secondary"><?php _e( 'Read the latests posts on our SEO blog', 'yoastcom' ); ?></h2>
-					<?php get_template_part( 'html_includes/partials/more-articles', array( 'class' => $class . '--secondary' ) ); ?>
+					<?php get_template_part( 'html_includes/partials/recent-articles' ); ?>
 				<?php endif; ?>
 			</section>
 		</div>
 
-		<?php get_template_part( 'html_includes/partials/announcement-addonmodules', array( 'class' => 'fill--tertiary' ) ); ?>
+		<div class="island">
+			<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'fill--secondary' ) ); ?>
+		</div>
+
 
 	</main>
 

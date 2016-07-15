@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package Yoast\YoastCom
  */
@@ -51,6 +50,9 @@ class Term {
 			'type' => 'text_small',
 		) );
 
+		$taxonomy = isset( $_GET['taxonomy'] ) ? $_GET['taxonomy'] : '';
+		$tag_ID   = isset( $_GET['tag_ID'] ) ? (int) $_GET['tag_ID'] : 0;
+
 		$cmb_term->add_field( array(
 			'name'    => __( 'Must read posts', 'yoastcom' ),
 			'desc'    => __( 'The must read posts for this term.', 'yoastcom' ),
@@ -63,10 +65,10 @@ class Term {
 				'query_args'      => array(
 					'tax_query'      => array(
 						array(
-							'taxonomy' => $_GET['taxonomy'],
+							'taxonomy' => $taxonomy,
 							'field'    => 'term_id',
 							'operator' => 'IN',
-							'terms'    => array( $_GET['tag_ID'] ),
+							'terms'    => array( $tag_ID ),
 						)
 					),
 					'posts_per_page' => - 1,
@@ -109,6 +111,4 @@ class Term {
 		) );
 
 	}
-
-
 }

@@ -86,3 +86,8 @@ function toggleElement(toggleAttr) {
 		body.setAttribute(toggleAttr, true);
 	}
 }
+
+function removeAttribute( attribute ) {
+	var body = document.querySelector('body');
+	body.removeAttribute( attribute );
+}

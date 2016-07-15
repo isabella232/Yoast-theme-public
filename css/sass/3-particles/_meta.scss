@@ -1,3 +1,4 @@
+
 .meta {
 	font-size: 0.88em;
 	margin-bottom: $spacing;
@@ -6,6 +7,9 @@
 	h2 {
 		display: inline-block;
 		margin-right: 0.5rem;
+	}
+	h4 {
+		font-weight: bold;
 	}
 }
 
@@ -52,8 +56,17 @@
 	.meta--full {
 		width: 292px;
 		float: right;
+		clear: right;
 		font-size: 0.94em;
 	}
+
+	.meta__date {
+		width: 292px;
+		float: right;
+		clear: right;
+		margin-bottom: 40px;
+	}
+
 	.meta__author {
 		position: relative;
 	}

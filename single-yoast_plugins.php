@@ -5,11 +5,14 @@
 
 namespace Yoast\YoastCom\Theme;
 
+$plugin_id    = post_meta( 'download_id' );
+$plugin_title = get_the_title( $plugin_id );
+
+get_header();
+
+get_template_part( 'html_includes/siteheader', array( 'software-sub' => true ) );
 
 ?>
-<?php get_header(); ?>
-
-<?php get_template_part( 'html_includes/siteheader', array( 'software-sub' => true ) ); ?>
 
 <div class="site">
 	<div class="row">
@@ -20,9 +23,9 @@ namespace Yoast\YoastCom\Theme;
 
 		<div class="row">
 			<?php
-			$icon = get_product_icon( post_meta( 'download_id' ) );
+			$icon = get_product_icon( $plugin_id );
 			if ( $icon ) {
-				printf( '<img class="alignright" width="175" height="175" alt="%1$s" src="%2$s">', get_the_title() . ' icon', $icon );
+				printf( '<img class="alignright" width="175" height="175" alt="%1$s" src="%2$s">', $plugin_title . ' icon', $icon );
 			}
 			?>
 
@@ -38,6 +41,15 @@ namespace Yoast\YoastCom\Theme;
 				) );
 				?>
 
+				<?php echo theme_object()->shortcodes->buy_buttons(); ?>
+
+				<div class="clear"></div>
+
+				<?php if ( post_meta( 'plugin' ) ) : ?>
+					<a class="link--download"
+					   href="<?php printf( 'https://downloads.wordpress.org/plugin/%s.zip', post_meta( 'plugin' ) ); ?>">Download
+						the free version &raquo;</a>
+				<?php endif; ?>
 			</div>
 			<div class="clear"></div>
 		<?php endif; ?>
@@ -53,6 +65,7 @@ namespace Yoast\YoastCom\Theme;
 				'banner' => post_meta( 'announcement_image' ),
 			) ); ?>
 		<?php } else if ( ! post_meta( 'announcement_link' ) && ! empty( post_meta( 'usps' ) ) ) { ?>
+			<br/>
 			<hr/>
 		<?php } ?>
 

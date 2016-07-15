@@ -21,6 +21,16 @@ jQuery( document ).ready( function( $ ) {
 			__gaTracker( 'send', 'event', 'read-more', $( this ).attr( 'title' ), $( this ).data( 'prefix' ) );
 		}
 	});
+	$( 'section.show-off button' ).on( 'mousedown', function() {
+		if ( typeof __gaTracker !== "undefined" ) {
+			__gaTracker( 'send', 'event', 'banner-buy-click', $( this ).data( 'download-id' ) );
+		}
+	});
+	$( 'section.show-off a' ).on( 'mousedown', function() {
+		if ( typeof __gaTracker !== "undefined" ) {
+			__gaTracker( 'send', 'event', 'banner-read-more-click', $( this ).attr( 'href' ) );
+		}
+	});
 });
 
 // YouTube tracking
@@ -33,7 +43,8 @@ jQuery( document ).ready( function( $ ) {
 				cached.apply( this, arguments );
 			}
 			if ( !navigator.userAgent.match( /MSIE [67]\./gi ) ) {
-				init();
+				digestPotentialVideos( iframes );
+				console.log( 'init' );
 			}
 		};
 	})();
@@ -54,17 +65,21 @@ jQuery( document ).ready( function( $ ) {
 		}
 	}
 
-	function init() {
-		var iframes = document.getElementsByTagName( 'iframe' );
-		var embeds = document.getElementsByTagName( 'embed' );
-		digestPotentialVideos( iframes );
-		digestPotentialVideos( embeds );
+	var loadYoutube = false;
+	var iframes = document.getElementsByTagName( 'iframe' );
+	[].forEach.call( iframes, function( iframe ) {
+		if ( checkIfYouTubeVideo( iframe ) ) {
+			loadYoutube = true;
+		}
+	});
+
+	if ( loadYoutube ) {
+		var tag = document.createElement( 'script' );
+		tag.src = '//www.youtube.com/iframe_api';
+		var firstScriptTag = document.getElementsByTagName( 'script' )[ 0 ];
+		firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
 	}
 
-	var tag = document.createElement( 'script' );
-	tag.src = '//www.youtube.com/iframe_api';
-	var firstScriptTag = document.getElementsByTagName( 'script' )[ 0 ];
-	firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
 	function digestPotentialVideos( potentialVideos ) {
 		var i;
 		for ( i = 0; i < potentialVideos.length; i++ ) {

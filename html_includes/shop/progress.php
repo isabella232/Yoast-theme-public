@@ -27,10 +27,10 @@ $step = get_checkout_step();
 			<li<?php if ( 2 === $step ) : ?> class="step--current"<?php endif; ?>>
 				<?php if ( 2 !== $step ) : ?><a href="<?php echo esc_attr( url_checkout() ); ?>"><?php endif; ?>
 				<?php
-				/* translators: Text between %1$s and %2$s is hidden on large tablets, text between %3$s and %4$s is hidden on mobile. */
+				/* translators: Text between %1$s and %2$s is hidden on tablets, text between %3$s and %4$s is hidden on mobile. */
 					printf(
 						'%1$sChoose your %2$s%3$spayment%4$s%1$s method%2$s',
-						'<span class="hide-on-tablet-large">',
+						'<span class="hide-on-tablet">',
 						'</span>',
 						'<span class="hide-on-mobile">',
 						'</span>'
@@ -41,10 +41,10 @@ $step = get_checkout_step();
 			<li<?php if ( 3 === $step ) : ?> class="step--current"<?php endif; ?>>
 				<?php if ( 3 !== $step ) : ?><a href="#" id="yst-to-step-3"><?php endif; ?>
 				<?php
-					/* translators: Text between %1$s and %2$s is hidden on large tablets, text between %3$s and %4$s is hidden on mobile. */
+					/* translators: Text between %1$s and %2$s is hidden on tablets, text between %3$s and %4$s is hidden on mobile. */
 					printf(
 						'%1$sEnter payment %2$s%3$sdetails%4$s',
-						'<span class="hide-on-tablet-large">',
+						'<span class="hide-on-tablet">',
 						'</span>',
 						'<span class="hide-on-mobile">',
 						'</span>'

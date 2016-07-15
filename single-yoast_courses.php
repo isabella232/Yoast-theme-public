@@ -24,8 +24,8 @@ if ( $post->post_parent !== 0 ) {
 			<h1><?php the_title(); ?></h1>
 		</div>
 
+		<?php if ( ! empty( post_meta( 'usps' ) ) ) : ?>
 		<hr class="hr--no-pointer">
-
 		<div class="row">
 			<div class="media">
 				<?php if ( has_post_thumbnail() ) : ?>
@@ -34,31 +34,29 @@ if ( $post->post_parent !== 0 ) {
 						$thumb_id = get_post_thumbnail_id();
 						$thumb_src = wp_get_attachment_image_src( $thumb_id, 'large' );
 						?>
-						<img src="<?php echo $thumb_src[0]; ?>" width="150" alt="<?php the_title(); ?>" />
+						<img class="noborder" src="<?php echo $thumb_src[0]; ?>" width="150" alt="<?php the_title(); ?>" />
 					</div>
 				<?php endif; ?>
 
 				<div class="bd">
-					<?php if ( ! empty( post_meta( 'usps' ) ) ) : ?>
 						<?php get_template_part( 'html_includes/partials/list-usp', array(
 							'usps'  => wp_list_pluck( (array) post_meta( 'usps' ), 'usp' ),
 							'class' => 'color-academy',
 						) ); ?>
-					<?php endif; ?>
 
 					<?php if ( post_meta( 'download_id' ) ) : ?>
 						<?php
 						echo edd_get_purchase_link( array(
 							'download_id' => post_meta( 'download_id' ),
-							'text'        => __( 'Order this Course now', 'yoastcom' ) . ' &raquo;',
+							'text'        => __( 'Follow this course now', 'yoastcom' ) . ' &raquo;',
 						) );
 						?>
 					<?php endif; ?>
 				</div>
 			</div>
 		</div>
-
 		<hr class="hr--no-pointer">
+		<?php endif; ?>
 
 		<div class="row iceberg">
 
