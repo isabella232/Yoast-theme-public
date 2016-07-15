@@ -23,7 +23,7 @@ if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 //	echo '<span class="fa fa-user"></span>login';
 //	echo '</a>';
 
-	echo '<a class="cart" href="' . $cart_url . '">';
+	echo '<a class="cart" href="' . apply_filters( 'yoast:url', 'checkout' ) . '">';
 	echo '<img src="' . get_template_directory_uri() . '/images/cart.svg" alt="Shopping Cart" />';
 	echo '<span class="visuallyhidden focusable">Cart</span>';
 	echo '<div class="num-items-container"><span class="num-items"></span></div>';

@@ -41,7 +41,6 @@ class Yoast_Navigation {
 	public function output_menu_bar() {
 		get_template_part( 'html_includes/partials/navigation-menu', array(
 			'menu_data' => $this->get_menu_data(),
-			'cart_url'  => apply_filters( 'yoast:url', 'checkout' ),
 		) );
 	}
 
