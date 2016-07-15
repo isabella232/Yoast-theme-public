@@ -92,6 +92,7 @@ class Yoast_Navigation {
 	 * @return bool
 	 */
 	private function menu_item_is_active( Menu_Item $sub_menu_item ) {
+		$is_primary_category = false;
 		if ( function_exists( 'yoast_get_primary_term' ) ) {
 			$primary_category    = yoast_get_primary_term( 'category', get_the_ID() );
 			$is_primary_category = strcasecmp( $sub_menu_item->getLabel(), $primary_category ) === 0;
