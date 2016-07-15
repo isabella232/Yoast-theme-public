@@ -72,7 +72,7 @@ class Yoast_Navigation {
 		$data = array();
 		foreach ( $main_menu_item->getChildren() as $child ) {
 			$child_data                   = array();
-			$activeClass                  = ( $this->sub_menu_item_is_active( $child ) ) ? 'current-menu-item' : '';
+			$activeClass                  = ( $this->menu_item_is_active( $child ) ) ? 'current-menu-item' : '';
 			$child_data['classes']        = 'sub-menu-item ' . $activeClass;
 			$child_data['label']          = $child->getLabel();
 			$child_data['url']            = $child->getUrl();
@@ -85,16 +85,18 @@ class Yoast_Navigation {
 	}
 
 	/**
-	 * Check if the submenu item is active.
+	 * Check if the child of a menu item is active.
 	 *
 	 * @param Menu_Item $sub_menu_item
 	 *
 	 * @return bool
 	 */
-	private function sub_menu_item_is_active( Menu_Item $sub_menu_item ) {
-		$primary_category    = yoast_get_primary_term( 'category', get_the_ID() );
-		$is_primary_category = strcasecmp( $sub_menu_item->getLabel() === $primary_category ) === 0;
-		$is_same_url         = ( $this->current_url === $sub_menu_item->getUrl() );
+	private function menu_item_is_active( Menu_Item $sub_menu_item ) {
+		if ( function_exists( 'yoast_get_primary_term' ) ) {
+			$primary_category    = yoast_get_primary_term( 'category', get_the_ID() );
+			$is_primary_category = strcasecmp( $sub_menu_item->getLabel(), $primary_category ) === 0;
+		}
+		$is_same_url = ( $this->current_url === $sub_menu_item->getUrl() );
 
 		return $is_primary_category || $is_same_url;
 	}
