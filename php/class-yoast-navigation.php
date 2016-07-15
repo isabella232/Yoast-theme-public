@@ -104,7 +104,7 @@ class Yoast_Navigation {
 		foreach ( $main_menu_item->getChildren() as $child ) {
 
 			$child_data = [
-				'classes'        => array(),
+				'classes'        => [ 'sub-menu-item' ],
 				'label'          => $child->getLabel(),
 				'url'            => $child->getUrl(),
 				'icon'           => $child->getIcon(),
@@ -142,15 +142,6 @@ class Yoast_Navigation {
 		$is_same_url = ( $this->current_url === $sub_menu_item->getUrl() );
 
 		return $is_primary_category || $is_same_url;
-	}
-
-	/**
-	 * Get all main menu items
-	 *
-	 * @return Main_Menu_Item[]
-	 */
-	public function get_main_menu_items() {
-		return $this->main_menu_items;
 	}
 
 	/**
