@@ -9,6 +9,8 @@ if ( is_user_admin() ) {
 	show_admin_bar( false );
 }
 
+$academy_overview = apply_filters( 'yoast:url', 'academy_overview');
+
 $is_public = isset( $template_args['is_public'] ) && true === $template_args['is_public'];
 
 // Prevent the syllabus from showing.
@@ -82,7 +84,7 @@ $certificate = new LLMS_Certificate;
 	</div>
 	<?php if ( $is_public ) : ?>
 		<section class="certificate-cta row iceberg">
-			<a href="https://yoast.com/academy/courses/"
+			<a href="<?php echo $academy_overview ?>courses/"
 			   class="button default"><?php _e( 'View all our courses on yoast.com', 'yoastcom' ); ?></a>
 		</section>
 	<?php else : ?>

@@ -1,16 +1,13 @@
 <?php
+
 namespace Yoast\YoastCom\Theme;
-$cart_url = '';
-if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
-	$cart_url = 'http://yoast.dev/checkout';
-}
-else {
-	$cart_url = 'https://yoast.com/checkout';
-}
+
+$cart = apply_filters( 'yoast:url', 'checkout' );
+
 ?>
 <div class="header-controls header-controls--mobile  hide-on-desktop">
 
-	<a class="cart" href="<?php echo $cart_url ?>">
+	<a class="cart" href="<?php echo $cart ?>">
 		<img src="<?php echo get_template_directory_uri() ?>/images/cart.svg">
 		<span class="visuallyhidden focusable">Cart</span>
 		<div class="num-items-container">

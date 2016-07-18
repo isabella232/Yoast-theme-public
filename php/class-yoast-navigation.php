@@ -42,7 +42,6 @@ class Yoast_Navigation {
 	public function output_menu_bar() {
 		get_template_part( 'html_includes/partials/navigation-menu', array(
 			'menu_data' => $this->get_menu_data(),
-			'cart_url'  => $this->get_cart_url(),
 		) );
 	}
 
@@ -263,16 +262,4 @@ class Yoast_Navigation {
 		$this->set_active_by_default();
 	}
 
-	/**
-	 * Get the URL that should be used when the cart is clicked
-	 *
-	 * @return string
-	 */
-	private function get_cart_url() {
-		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
-			return 'http://yoast.dev/checkout';
-		}
-
-		return 'https://yoast.com/checkout';
-	}
 }
