@@ -15,7 +15,7 @@ if ( $type === 'main' ) {
 }
 
 if ( ! empty( $menu_item['icon'] ) ) {
-	echo '<span class="fa fa-' . esc_html( $menu_item['icon'] ) . '" aria-hidden="true"></span>';
+	echo '<span class="fa fa-' . esc_attr( $menu_item['icon'] ) . '" aria-hidden="true"></span>';
 }
 
 if ( $type === 'sub' ) {
