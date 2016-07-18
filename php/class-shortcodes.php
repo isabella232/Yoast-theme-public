@@ -343,16 +343,15 @@ class Shortcodes {
 			$atts['book'] = 'content-seo';
 		}
 
-		$ebooks_archive = apply_filters( 'yoast:url', 'ebooks_archive' );
-
 		switch ( $atts['book'] ) {
 			case 'content-seo':
 				$atts['text'] = 'Want to learn more about content-writing, keyword research, and creating a good site structure? Get our Content SEO eBook &raquo;';
-				$atts['url']  = $ebooks_archive . 'content-seo/';
+				$atts['url']  = apply_filters( 'yoast:url', 'ebook_content-seo' );
 				break;
+
 			case 'ux-conversion':
 				$atts['text'] = 'Want to improve your site\'s user experience and conversion? Get our eBook: UX & Conversion from a Holistic SEO perspective &raquo;';
-				$atts['url']  = $ebooks_archive . 'ux-conversion-seo/';
+				$atts['url']  = apply_filters( 'yoast:url', 'ebook_conversion-seo' );
 				break;
 		}
 

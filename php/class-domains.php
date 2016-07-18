@@ -24,6 +24,12 @@ class Domains {
 
 				return $domain . '/ebooks/';
 
+			case 'ebook_content-seo':
+				return $this->get_url('ebooks_archive') . 'content-seo/';
+
+			case 'ebook_conversion-seo':
+				return $this->get_url('ebooks_archive') . 'ux-conversion-seo/';
+
 			case 'academy_overview':
 				$domain = apply_filters( 'yoast:domain', 'yoast.com' );
 
@@ -39,14 +45,21 @@ class Domains {
 
 				return $domain . '/checkout/';
 
+			case 'newsletter':
+				$domain = apply_filters( 'yoast:domain', 'yoast.com' );
+
+				return $domain . '/newsletter/';
+
 			case 'shop':
 				$domain = apply_filters( 'yoast:domain', 'yoast.com' );
 
 				return $domain . '/shop/';
-			
+
 			case 'shop_counter_ajax':
-				$domain = apply_filters( 'yoast:domain', 'yoast.com');
+				$domain = apply_filters( 'yoast:domain', 'yoast.com' );
+
 				return $domain . '/wp-admin/admin-ajax.php';
+
 		}
 
 		return null;
