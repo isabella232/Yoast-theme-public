@@ -6,7 +6,7 @@ namespace Yoast\YoastCom\Theme;
 $menu_item = $template_args['menu_item'];
 $type      = $template_args['type'];
 
-$anchor_class = ( ! empty( $menu_item['anchor_classes'] ) ? ' class="' . implode( ' ', esc_attr( $menu_item['anchor_classes'] ) ) . '"' : '' );
+$anchor_class = ( ! empty( $menu_item['anchor_classes'] ) ? ' class="' . esc_attr( implode( ' ', $menu_item['anchor_classes'] ) ) . '"' : '' );
 
 echo '<a href="' . esc_url( $menu_item['url'] ) . '"' . $anchor_class . '>';
 
