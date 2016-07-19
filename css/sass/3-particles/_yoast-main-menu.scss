@@ -154,6 +154,7 @@
       left: 0;
       width: 100%;
       padding: 4px 0;
+	  transition: box-shadow 0.2s ease-in-out;
 
       a:hover,
       li.current-menu-item a {
@@ -278,6 +279,10 @@
 
   .is-sticky {
     width: 100%;
+
+	div.yoast-sub-menu {
+	box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+	}
   }
 }
 
