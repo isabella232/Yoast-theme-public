@@ -136,7 +136,7 @@ class Yoast_Navigation {
 	private function menu_item_is_active( Menu_Item $sub_menu_item ) {
 		$is_primary_category = false;
 
-		if ( function_exists( 'yoast_get_primary_term' ) ) {
+		if ( is_singular() && function_exists( 'yoast_get_primary_term' ) ) {
 			$primary_category    = yoast_get_primary_term( 'category', get_the_ID() );
 
 			$compare_to_primary_category = apply_filters( 'yoast_nav_label-primary_category', $sub_menu_item->getLabel() );
