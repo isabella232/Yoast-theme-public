@@ -32,11 +32,16 @@ get_template_part( 'html_includes/siteheader', array( 'software-sub' => true ) )
 			<h1><?php the_title(); ?></h1>
 		</div>
 
-		<?php if ( ! empty( post_meta( 'usps' ) ) ) : ?>
+		<?php
+
+		$usps = (array) post_meta( 'usps' );
+		$usps = array_filter( $usps );
+
+		if ( ! empty( $usps ) ) : ?>
 			<div class="row">
 				<?php
 				get_template_part( 'html_includes/partials/list-usp', array(
-					'usps'  => wp_list_pluck( (array) post_meta( 'usps' ), 'usp' ),
+					'usps'  => wp_list_pluck( $usps, 'usp' ),
 					'class' => 'color-plugins',
 				) );
 				?>
@@ -64,7 +69,7 @@ get_template_part( 'html_includes/siteheader', array( 'software-sub' => true ) )
 			<?php get_template_part( 'html_includes/partials/fullbanner', array(
 				'banner' => post_meta( 'announcement_image' ),
 			) ); ?>
-		<?php } else if ( ! post_meta( 'announcement_link' ) && ! empty( post_meta( 'usps' ) ) ) { ?>
+		<?php } else if ( ! post_meta( 'announcement_link' ) && ! empty( $usps ) ) { ?>
 			<br/>
 			<hr/>
 		<?php } ?>

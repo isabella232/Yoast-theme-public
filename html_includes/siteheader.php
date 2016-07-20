@@ -1,10 +1,9 @@
 <?php
+
 namespace Yoast\YoastCom\Theme;
 
-$yoast_url = 'https://yoast.com/';
-if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
-	$yoast_url = 'http://yoast.dev/';
-}
+$yoast_url = apply_filters( 'yoast:domain', 'yoast.com' );
+
 ?>
 <header role="banner" class="siteheader">
 

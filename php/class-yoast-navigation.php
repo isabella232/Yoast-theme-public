@@ -32,6 +32,7 @@ class Yoast_Navigation {
 		$this->menu_structure  = ( is_null( $menu_structure ) ? new Menu_Structure() : $menu_structure );
 		$this->main_menu_items = $this->menu_structure->getMenuItems();
 		$this->current_url     = $this->scheme . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
 		$this->set_active_menu_item();
 	}
 
@@ -41,7 +42,6 @@ class Yoast_Navigation {
 	public function output_menu_bar() {
 		get_template_part( 'html_includes/partials/navigation-menu', array(
 			'menu_data' => $this->get_menu_data(),
-			'cart_url'  => $this->get_cart_url(),
 		) );
 	}
 
@@ -102,15 +102,16 @@ class Yoast_Navigation {
 
 		/** @var Menu_Item $child */
 		foreach ( $main_menu_item->getChildren() as $child ) {
+
 			$child_data = [
-				'classes'        => array(),
+				'classes'        => [ 'sub-menu-item' ],
 				'label'          => $child->getLabel(),
 				'url'            => $child->getUrl(),
 				'icon'           => $child->getIcon(),
 				'anchor_classes' => array()
 			];
 
-			if ( $this->current_url === $child->getUrl() ) {
+			if ( $this->menu_item_is_active( $child ) ) {
 				$child_data['classes'][] = 'current-menu-item';
 			}
 
@@ -122,6 +123,30 @@ class Yoast_Navigation {
 		}
 
 		return $children;
+	}
+
+	/**
+	 * Check if the child of a menu item is active.
+	 *
+	 * @param Menu_Item $sub_menu_item
+	 *
+	 * @return bool
+	 */
+	private function menu_item_is_active( Menu_Item $sub_menu_item ) {
+		$is_primary_category = false;
+
+		if ( function_exists( 'yoast_get_primary_term' ) ) {
+			$primary_category    = yoast_get_primary_term( 'category', get_the_ID() );
+
+			$compare_to_primary_category = apply_filters( 'yoast_nav_label-primary_category', $sub_menu_item->getLabel() );
+			$compare_to_primary_category = esc_html( $compare_to_primary_category );
+
+			$is_primary_category = strcasecmp( $compare_to_primary_category, $primary_category ) === 0;
+		}
+
+		$is_same_url = ( $this->current_url === $sub_menu_item->getUrl() );
+
+		return $is_primary_category || $is_same_url;
 	}
 
 	/**
@@ -247,18 +272,5 @@ class Yoast_Navigation {
 				return $main_menu_item->getType();
 			}
 		}
-	}
-
-	/**
-	 * Get the URL that should be used when the cart is clicked
-	 *
-	 * @return string
-	 */
-	private function get_cart_url() {
-		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
-			return 'http://yoast.dev/checkout';
-		}
-
-		return 'https://yoast.com/checkout';
 	}
 }

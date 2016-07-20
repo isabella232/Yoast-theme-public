@@ -108,7 +108,7 @@ function yst_build_share_url( $type ) {
 
 	<div class="socialbox">
 		<a target="_blank" data-name="subscribe" data-action="subscribe" data-popup="false" class="manual-optin-trigger" data-optin-slug="kbpo9ryqjbnahlcc"
-		   href="https://yoast.com/newsletter/"><i
+		   href="<?php echo apply_filters( 'yoast:url', 'newsletter' ); ?>"><i
 				class="color-courses--secondary fa fa-envelope-square"></i>Subscribe</a>
 	</div>
 </div>
