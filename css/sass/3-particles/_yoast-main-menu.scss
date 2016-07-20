@@ -1,401 +1,403 @@
+@mixin menu-item-color($color) {
+  border-left: 1px solid $color;
+  border-right: 1px solid $color;
+  background-color: $color;
+
+  .yoast-sub-menu {
+	background-color: $color;
+  }
+}
+
 @media only screen and (min-width: $page-width-medium) {
 
   .siteheader--home #yoast-main-menu {
-    border-top: 1px solid $color-white;
-    margin-top:2em;
+	border-top: 1px solid $color-white;
+	margin-top: 2em;
 
-    &.is-sticky{
-      margin-top:0;
-    }
+	&.is-sticky {
+	  margin-top: 0;
+	}
   }
 
   #yoast-main-menu {
-    padding-left: 5px;
-    background-color: $color-pink-dark;
-    z-index: 2147483647;
+	padding-left: 5px;
+	background-color: $color-pink-dark;
+	z-index: 2147483647;
 
-    &:after { // line between the main and submenu
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 0;
-      width: 100%;
-      border-top: 1px solid $color-white;
-    }
+	&:after { // line between the main and submenu
+	  content: '';
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  z-index: 0;
+	  width: 100%;
+	  border-top: 1px solid $color-white;
+	}
 
-    nav {
-      display: block;
-      max-width: $page-width-full-unitless * 16px; // fallback
-      max-width: $page-width-full;
-      width: 100%;
-      margin: 0 auto;
-    }
+	nav {
+	  display: block;
+	  max-width: $page-width-full-unitless * 16px; // fallback
+	  max-width: $page-width-full;
+	  width: 100%;
+	  margin: 0 auto;
+	}
 
-    a {
-      color: white;
-    }
+	a {
+	  color: white;
+	}
 
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+	ul {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
 
-      display: flex;
-      flex-wrap: wrap;
+	  display: flex;
+	  flex-wrap: wrap;
 
-      li {
-        display: inline-block;
+	  li {
+		display: inline-block;
 
-        a {
-          display: block;
-          padding: 2px 10px;
-          text-decoration: none;
-        }
-      }
-    }
+		a {
+		  display: block;
+		  padding: 2px 10px;
+		  text-decoration: none;
+		}
+	  }
+	}
 
-    li {
-      z-index: 0;
-    }
+	li {
+	  z-index: 0;
+	}
 
-    li.menu-item {
-      & > a.icon {
-        width: 40px;
-        padding: 0;
+	li.menu-item {
 
-        & > .fa {
-          width: 100%;
-          font-size: 30px;
-          text-align: center;
-        }
-      }
+	  & > a.icon {
+		width: 40px;
+		padding: 0;
 
-      & > a:not(.icon):after {
-        padding-left: 5px;
-        font-family: FontAwesome;
-        content: "\f107";
-        width: 16px;
-        height: 16px;
-        display: inline-block;
-      }
-    }
+		& > .fa {
+		  width: 100%;
+		  font-size: 30px;
+		  text-align: center;
+		}
+	  }
 
-    li.sub-menu-item {
+	  & > a:not(.icon):after {
+		padding-left: 5px;
+		font-family: FontAwesome;
+		content: "\f107";
+		width: 16px;
+		height: 16px;
+		display: inline-block;
+	  }
+	}
 
-      &:first-child {
-        padding-left: 0px;
-      }
+	li.sub-menu-item {
 
-      .fa {
-        padding: 0 3px;
-      }
+	  &:first-child {
+		padding-left: 0px;
+	  }
 
-      &:first-child a {
-        padding-left: 0px;
-      }
+	  .fa {
+		padding: 0 3px;
+	  }
 
-      a {
-        padding: 0 0.8em;
-      }
+	  &:first-child a {
+		padding-left: 0px;
+	  }
 
-      &:before {
-        color: $color-white;
-        position: absolute;
-        content: '|';
-        margin-left: -4px;
-      }
+	  a {
+		padding: 0 0.8em;
+	  }
 
-      &:first-child:before {
-        content: '';
-      }
-    }
+	  &:before {
+		color: $color-white;
+		position: absolute;
+		content: '|';
+		margin-left: -4px;
+	  }
 
-    li.current-menu-item,
-    li.current-menu-parent {
-      z-index: 2;
-      .yoast-sub-menu {
-        display: block;
-      }
-    }
+	  &:first-child:before {
+		content: '';
+	  }
+	}
 
-    li.current-menu-parent {
-      border: 1px solid $color-white;
-      border-top: none;
-      border-bottom: none;
-    }
+	li.current-menu-item,
+	li.current-menu-parent {
+	  z-index: 2;
 
-    li:hover, li:focus {
-      z-index: 3;
+	  .yoast-sub-menu {
+		display: block;
+	  }
+	}
 
-      &.menu-item {
-        border: 1px solid $color-white;
-        border-top: none;
-        border-bottom: none;
-      }
-      .yoast-sub-menu {
-        display: block;
-      }
-    }
+	li.current-menu-parent {
+	  border: 1px solid $color-white;
+	  border-top: none;
+	  border-bottom: none;
+	}
 
-    .yoast-main-menu {
-      width: 100%;
-      > li {
-        padding: 4px 4px 0;
-        > a {
-          height: 40px;
-        }
-      }
-    }
+	li:hover, li:focus {
+	  z-index: 3;
 
-    div.yoast-sub-menu {
-      position: absolute;
-      display: none;
-      left: 0;
-      width: 100%;
-      padding: 4px 0;
+	  &.menu-item {
+		border: 1px solid $color-white;
+		border-top: none;
+		border-bottom: none;
+	  }
 
-      a:hover,
-      li.current-menu-item a {
-        text-decoration: underline
-      }
+	  .yoast-sub-menu {
+		display: block;
+	  }
+	}
 
-      > ul {
-        display: block;
-        position: relative;
-        max-width: $page-width-full-unitless * 16px; // fallback
-        max-width: $page-width-full;
-        width: 100%;
-        margin: 0 auto;
-        padding: 2px 5px;
-      }
-    }
+	.yoast-main-menu {
+	  width: 100%;
 
-    .menu-item {
-      &__home {
-        border-left: 1px solid $color-green;
-        border-right: 1px solid $color-green;
-        background-color: $color-green;
-        &.current-menu-item {
-          border-bottom-color: $color-green;
-        }
-        .yoast-sub-menu {
-          background-color: $color-green;
-        }
-      }
+	  > li {
+		padding: 4px 4px 0;
 
-      &__seo-blog {
-        border-left: 1px solid $color-purple;
-        border-right: 1px solid $color-purple;
-        background-color: $color-purple;
-        .yoast-sub-menu {
-          background-color: $color-purple;
-        }
-      }
-      &__plugins {
-        border-left: 1px solid $color-blue;
-        border-right: 1px solid $color-blue;
-        background-color: $color-blue;
-        .yoast-sub-menu {
-          background-color: $color-blue;
-        }
-      }
-      &__courses {
-        border-left: 1px solid $color-pink-light;
-        border-right: 1px solid $color-pink-light;
-        background-color: $color-pink-light;
-        .yoast-sub-menu {
-          background-color: $color-pink-light;
-        }
-      }
-      &__ebooks {
-        border-left: 1px solid $color-purple-dark;
-        border-right: 1px solid $color-purple-dark;
-        background-color: $color-purple-dark;
-        .yoast-sub-menu {
-          background-color: $color-purple-dark;
-        }
-      }
-      &__hire-us {
-        border-left: 1px solid $color-green-blue;
-        border-right: 1px solid $color-green-blue;
-        background-color: $color-green-blue;
-        .yoast-sub-menu {
-          background-color: $color-green-blue;
-        }
-      }
-      &__faq {
-        border-left: 1px solid $color-blue-dark;
-        border-right: 1px solid $color-blue-dark;
-        background-color: $color-blue-dark;
-        .yoast-sub-menu {
-          background-color: $color-blue-dark;
-        }
-      }
-    }
+		> a {
+		  height: 40px;
+		}
+	  }
+	}
 
-    li.controls {
-      color: $color-white;
-      margin-left: auto;
-      a {
-        margin: 0 6px;
-        display: inline-flex;
+	div.yoast-sub-menu {
+	  position: absolute;
+	  display: none;
+	  left: 0;
+	  width: 100%;
+	  padding: 4px 0;
 
-        .fa {
-          font-size: 1.4em;
-          padding: 2px 5px;
-        }
-      }
+	  a:hover, li.current-menu-item a {
+		text-decoration: underline
+	  }
 
-      a.cart {
-        img {
-          height: 40px;
-          width: 30px;
-          position: absolute;
-          margin-left: -12px;
-        }
-        .num-items-container {
-          position: relative;
-          top: -9px;
-          left: -5px;
-          width: 20px;
-          display: block;
-          text-align: center;
-        }
-        .num-items:empty {
-          visibility: hidden;
-        }
-        .num-items {
-          display: inline;
-          background-color: $color-orange;
-          border-radius: 100%;
-          font-size: 0.8em;
-          padding: 0 4px;
-        }
-      }
-    }
+	  > ul {
+		display: block;
+		position: relative;
+		max-width: $page-width-full-unitless * 16px; // fallback
+		max-width: $page-width-full;
+		width: 100%;
+		margin: 0 auto;
+		padding: 2px 5px;
+	  }
+	}
+
+	.menu-item {
+	  &__home {
+		@include menu-item-color($scheme-home-menu-primary);
+	  }
+
+	  &__seo-blog {
+		@include menu-item-color($scheme-seo-blog-menu-primary);
+	  }
+
+	  &__plugins {
+		@include menu-item-color($scheme-plugins-menu-primary);
+	  }
+
+	  &__courses {
+		@include menu-item-color($scheme-courses-menu-primary);
+	  }
+
+	  &__ebooks {
+		@include menu-item-color($scheme-ebooks-menu-primary);
+	  }
+
+	  &__hire-us {
+		@include menu-item-color($scheme-hire-us-menu-primary);
+	  }
+
+	  &__faq {
+		@include menu-item-color($scheme-faq-menu-primary);
+	  }
+	}
+
+	li.controls {
+	  color: $color-white;
+	  margin-left: auto;
+
+	  a {
+		margin: 0 6px;
+		display: inline-flex;
+
+		.fa {
+		  font-size: 1.4em;
+		  padding: 2px 5px;
+		}
+	  }
+
+	  a.cart {
+
+		img {
+		  height: 40px;
+		  width: 30px;
+		  position: absolute;
+		  margin-left: -12px;
+		}
+
+		.num-items-container {
+		  position: relative;
+		  top: -9px;
+		  left: -5px;
+		  width: 20px;
+		  display: block;
+		  text-align: center;
+		}
+
+		.num-items:empty {
+		  visibility: hidden;
+		}
+
+		.num-items {
+		  display: inline;
+		  background-color: $color-orange;
+		  border-radius: 100%;
+		  font-size: 0.8em;
+		  padding: 0 4px;
+		}
+	  }
+	}
   }
 
   .is-sticky {
-    width: 100%;
+	width: 100%;
   }
 }
 
 @media only screen and (max-width: $page-width-medium) {
+
   #yoast-main-menu {
-    display: none;
+	display: none;
 
-    position: fixed;
-    top: 4em;
-    bottom: 0;
-    right: -70%;
-    z-index: 90;
-    width: 70%;
-    overflow: scroll;
+	position: fixed;
+	top: 4em;
+	bottom: 0;
+	right: -70%;
+	z-index: 90;
+	width: 70%;
+	overflow: scroll;
 
-    background-color: $color-white;
-    //text-shadow: none;
+	background-color: $color-white;
+	//text-shadow: none;
 
-    ul {
-      width: auto;
-      position: relative;
-      margin: 0;
+	ul {
+	  width: auto;
+	  position: relative;
+	  margin: 0;
 
-      li {
-        display: block;
-        width: 100%;
+	  li {
+		display: block;
+		width: 100%;
 
-        a {
-          text-decoration: none;
-        }
-      }
-    }
+		a {
+		  text-decoration: none;
+		}
+	  }
+	}
 
-    ul.yoast-main-menu {
-      li {
-        a {
-          padding: 0.5rem 1rem;
-          display: block;
-          color: $color-white;
-          .fa {
-            font-size: 1.4em;
-            position: relative;
-            top: 0.1em;
-          }
-        }
+	ul.yoast-main-menu {
 
-        &.menu-item {
-          &__home {
-            background-color: $color-green;
-          }
+	  li {
 
-          &__seo-blog {
-            background-color: $color-purple;
-          }
-          &__plugins {
-            background-color: $color-blue;
-          }
-          &__courses {
-            background-color: $color-pink-light;
-          }
-          &__ebooks {
-            background-color: $color-purple-dark;
-          }
-          &__hire-us {
-            background-color: $color-green-blue;
-          }
-          &__faq {
-            background-color: $color-blue-dark;
-          }
-        }
-        &.current-menu-parent {
-          a {
-            color: $color-black;
-          }
-          background-color: $color-grey;
-        }
-        &.controls {
-          display: none;
-        }
-      }
-    }
-    ul.yoast-sub-menu {
-      background-color: $color-white;
-      margin: 0;
-      li {
-        width: auto;
-        display: block;
-        padding: .4rem;
-        a {
-          color: $color-grey-text;
-        }
-        &.current-menu-item a {
-          text-decoration: underline;
-        }
-      }
-    }
+		a {
+		  padding: 0.5rem 1rem;
+		  display: block;
+		  color: $color-white;
+
+		  .fa {
+			font-size: 1.4em;
+			position: relative;
+			top: 0.1em;
+		  }
+		}
+
+		&.menu-item {
+
+		  &__home {
+			background-color: $scheme-home-menu-primary;
+		  }
+
+		  &__seo-blog {
+			background-color: $scheme-seo-blog-menu-primary;
+		  }
+
+		  &__plugins {
+			background-color: $scheme-plugins-menu-primary;
+		  }
+
+		  &__courses {
+			background-color: $scheme-courses-menu-primary;
+		  }
+
+		  &__ebooks {
+			background-color: $scheme-ebooks-menu-primary;
+		  }
+
+		  &__hire-us {
+			background-color: $scheme-hire-us-menu-primary;
+		  }
+
+		  &__faq {
+			background-color: $scheme-faq-menu-primary;
+		  }
+		}
+
+		&.current-menu-parent {
+		  a {
+			color: $color-black;
+		  }
+		  background-color: $color-grey;
+		}
+
+		&.controls {
+		  display: none;
+		}
+	  }
+	}
+	ul.yoast-sub-menu {
+	  background-color: $color-white;
+	  margin: 0;
+
+	  li {
+		width: auto;
+		display: block;
+		padding: .4rem;
+
+		a {
+		  color: $color-grey-text;
+		}
+
+		&.current-menu-item a {
+		  text-decoration: underline;
+		}
+	  }
+	}
   }
 
   [data-show-mobile-nav] {
-    #yoast-main-menu {
-      display: block;
-      right: -1%;
-    }
+	#yoast-main-menu {
+	  display: block;
+	  right: -1%;
+	}
   }
 
 }
 
 [data-show-mobile-nav] {
   @media only screen and (max-width: $page-width-medium) {
-    &::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 80;
-      background-color: rgba($color-black, .5);
-    }
+
+	&::after {
+	  content: '';
+	  position: fixed;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  z-index: 80;
+	  background-color: rgba($color-black, .5);
+	}
   }
 }

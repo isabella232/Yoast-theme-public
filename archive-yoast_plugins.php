@@ -38,7 +38,7 @@ namespace Yoast\YoastCom\Theme;
 			<?php get_template_part( 'html_includes/partials/promoblocks-plugins' ); ?>
 		</div>
 
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'theme-software announcement--pointer-top island' ) ); ?>
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'theme-plugins announcement--pointer-top island' ) ); ?>
 
 	</main>
 

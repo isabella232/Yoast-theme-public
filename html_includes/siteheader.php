@@ -17,21 +17,19 @@ if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
 	<?php
 	get_template_part( 'html_includes/partials/search' );
 
-	$navigation = new Yoast_Navigation();
-	$navigation->output_menu_bar();
-
+	theme_object()->navigation->output_menu_bar();
 	?>
 
 	<!-- Decoration -->
 	<div class="row">
-		<?php if ( Color_Scheme::ACADEMY === theme_object()->get_color_scheme() ) : ?>
-			<div class="boxes boxes--header boxes--academy"></div>
-		<?php elseif ( Color_Scheme::SOFTWARE === theme_object()->get_color_scheme() ) : ?>
-			<div class="boxes boxes--header boxes--software"></div>
-		<?php elseif ( Color_Scheme::REVIEW === theme_object()->get_color_scheme() ) : ?>
-			<div class="boxes boxes--header boxes--review"></div>
-		<?php elseif ( Color_Scheme::ABOUT === theme_object()->get_color_scheme() ) : ?>
-			<div class="boxes boxes--header boxes--about"></div>
+		<?php if ( Color_Scheme::COURSES === theme_object()->get_color_scheme() ) : ?>
+			<div class="boxes boxes--header boxes--courses"></div>
+		<?php elseif ( Color_Scheme::PLUGINS === theme_object()->get_color_scheme() ) : ?>
+			<div class="boxes boxes--header boxes--plugins"></div>
+		<?php elseif ( Color_Scheme::HIRE_US === theme_object()->get_color_scheme() ) : ?>
+			<div class="boxes boxes--header boxes--hire-us"></div>
+		<?php elseif ( Color_Scheme::HOME === theme_object()->get_color_scheme() ) : ?>
+			<div class="boxes boxes--header boxes--home"></div>
 		<?php else : ?>
 			<div class="boxes boxes--header"></div>
 		<?php endif; ?>

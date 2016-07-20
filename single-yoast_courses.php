@@ -41,7 +41,7 @@ if ( $post->post_parent !== 0 ) {
 				<div class="bd">
 						<?php get_template_part( 'html_includes/partials/list-usp', array(
 							'usps'  => wp_list_pluck( (array) post_meta( 'usps' ), 'usp' ),
-							'class' => 'color-academy',
+							'class' => 'color-courses',
 						) ); ?>
 
 					<?php if ( post_meta( 'download_id' ) ) : ?>

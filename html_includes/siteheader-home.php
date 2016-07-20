@@ -32,8 +32,7 @@ namespace Yoast\YoastCom\Theme;
 			</div>
 		<?php endif; ?>
 
-		<?php $navigation = new Yoast_Navigation(); ?>
-		<?php $navigation->output_menu_bar(); ?>
+		<?php theme_object()->navigation->output_menu_bar(); ?>
 
 		<?php if ( isset( $template_args['home-sub'] ) ) : ?>
 			<!-- Decoration -->

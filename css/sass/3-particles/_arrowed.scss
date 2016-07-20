@@ -124,7 +124,6 @@
 			border-top: ($arrowwidth + .1rem) solid transparent;
 			border-bottom: $arrowwidth solid transparent;
 		}
-
 	}
 }
 
@@ -144,39 +143,39 @@
 		@include line-arrow-color($scheme-home-primary);
 	}
 
-	.theme-academy &,
-	&.theme-academy {
-		@include line-arrow-color($scheme-academy-primary);
+	.theme-courses &,
+	&.theme-courses {
+		@include line-arrow-color($scheme-courses-primary);
 	}
 
-	&.theme-academy--secondary, &.border-color-academy--secondary {
-		@include line-arrow-color($scheme-academy-secondary);
+	&.theme-courses--secondary, &.border-color-courses--secondary {
+		@include line-arrow-color($scheme-courses-secondary);
 	}
 
-	.theme-software &,
-	&.theme-software {
-		@include line-arrow-color($scheme-software-primary);
+	.theme-plugins &,
+	&.theme-plugins {
+		@include line-arrow-color($scheme-plugins-primary);
 	}
 
-	&.theme-software--secondary, &.border-color-software--secondary {
-		@include line-arrow-color($scheme-software-secondary);
+	&.theme-plugins--secondary, &.border-color-plugins--secondary {
+		@include line-arrow-color($scheme-plugins-secondary);
 	}
 
-	.theme-review &,
-	&.theme-review {
-		@include line-arrow-color($scheme-review-primary);
+	.theme-hire-us &,
+	&.theme-hire-us {
+		@include line-arrow-color($scheme-hire-us-primary);
 	}
 
-	&.theme-review--secondary {
-		@include line-arrow-color($scheme-review-secondary);
+	&.theme-hire-us--secondary {
+		@include line-arrow-color($scheme-hire-us-secondary);
 	}
 
 	.theme-about &,
 	&.theme-about {
-		@include line-arrow-color($scheme-about-primary);
+		@include line-arrow-color($scheme-home-primary);
 	}
 
 	&.theme-about--secondary {
-		@include line-arrow-color($scheme-about-secondary);
+		@include line-arrow-color($scheme-home-secondary);
 	}
 }

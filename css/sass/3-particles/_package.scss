@@ -26,7 +26,7 @@
   }
 
   h4, a {
-    color: $scheme-review-primary;
+    color: $scheme-hire-us-primary;
     font-family: $font-stack-default;
   }
 
@@ -65,7 +65,7 @@
     margin: 1em 0 !important;
     width: 100%;
     text-align: left;
-    background-color: $scheme-review-primary;
+    background-color: $scheme-hire-us-primary;
     color: $color-black;
   }
 
@@ -79,7 +79,7 @@
 
 }
 
-.theme-review .bordered.package--cta {
+.theme-hire-us .bordered.package--cta {
   border-color: $color-orange;
 
   h4, h4 a, a {
@@ -97,15 +97,15 @@
 
 }
 
-.theme-review .bordered.package--consulting {
-  border-color: $scheme-academy-secondary;
+.theme-hire-us .bordered.package--consulting {
+  border-color: $scheme-courses-secondary;
 
   h4, h4 a, a {
-    color: $scheme-academy-secondary;
+    color: $scheme-courses-secondary;
   }
 
   button {
-    background-color: $scheme-academy-secondary;
+    background-color: $scheme-courses-secondary;
     color: $color-white;
   }
 

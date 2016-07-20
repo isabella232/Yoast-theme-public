@@ -70,11 +70,11 @@ namespace Yoast\YoastCom\Theme;
 							<img
 								src="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $posts_page_id ), 'thumbnail-recent-articles' ); ?>"
 								width="250" height="131"
-								class="promoblock promoblock--imageholder theme-academy--secondary">
+								class="promoblock promoblock--imageholder theme-courses--secondary">
 						</div>
 					<?php endif; ?>
-					<div class="bd content color-academy--secondary">
-						<div class="content promoblock theme-academy--secondary">
+					<div class="bd content color-courses--secondary">
+						<div class="content promoblock theme-courses--secondary">
 						<?php
 						$home_post = get_post( $posts_page_id );
 						if ( $home_post->post_content !== '' ) {
@@ -86,7 +86,7 @@ namespace Yoast\YoastCom\Theme;
 						echo wpautop( do_shortcode( $content ) );
 						?>
 							<i aria-hidden="true"
-							   class="blockicon color-academy--secondary fa fa-newspaper-o"></i>
+							   class="blockicon color-courses--secondary fa fa-newspaper-o"></i>
 						</div>
 					</div>
 				</div>
@@ -113,7 +113,7 @@ namespace Yoast\YoastCom\Theme;
 					<!--					<a href="#" class="imgExt">-->
 					<!--						<img src="http://placehold.it/250x160" class="promoblock promoblock--imageholder">-->
 					<!--					</a>-->
-					<div class="bd content color-academy--secondary">
+					<div class="bd content color-courses--secondary">
 						<?php the_archive_description(); ?>
 					</div>
 				</div>

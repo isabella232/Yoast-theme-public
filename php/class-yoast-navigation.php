@@ -159,7 +159,7 @@ class Yoast_Navigation {
 	private function set_active_by_page_type() {
 		/** @var Main_Menu_Item $main_menu_item */
 		foreach ( $this->main_menu_items as $main_menu_item ) {
-			if ( $main_menu_item->getType() === theme_object()->get_page_type() ) {
+			if ( $main_menu_item->getType() === Page_Menu_Type::get_page_type() ) {
 				$main_menu_item->setActive();
 
 				return true;
@@ -234,6 +234,19 @@ class Yoast_Navigation {
 		}
 
 		$this->set_active_by_default();
+	}
+
+	/**
+	 * Gets the type of the currently active menu item.
+	 *
+	 * @return mixed
+	 */
+	public function get_active_type(){
+		foreach ($this->main_menu_items as $main_menu_item){
+			if ($main_menu_item->isActive()){
+				return $main_menu_item->getType();
+			}
+		}
 	}
 
 	/**

@@ -98,88 +98,88 @@
     }
   }
 
-  &.academy {
+  &.courses {
     color: $color-white;
-    background-color: $scheme-academy-primary;
+    background-color: $scheme-courses-primary;
 
     &::after {
-      border-left-color: $scheme-academy-primary;
+      border-left-color: $scheme-courses-primary;
     }
 
     &::before {
-      border-right-color: $scheme-academy-primary;
+      border-right-color: $scheme-courses-primary;
     }
 
     @media only screen and (max-width: $page-width-xsmall) {
-      background-color: $scheme-academy-primary;
+      background-color: $scheme-courses-primary;
     }
   }
 
-  &.academy--secondary {
+  &.courses--secondary {
     color: $color-white;
-    background-color: $scheme-academy-secondary;
+    background-color: $scheme-courses-secondary;
 
     &::after {
-      border-left-color: $scheme-academy-secondary;
+      border-left-color: $scheme-courses-secondary;
     }
 
     &::before {
-      border-right-color: $scheme-academy-secondary;
+      border-right-color: $scheme-courses-secondary;
     }
 
     @media only screen and (max-width: $page-width-xsmall) {
-      background-color: $scheme-academy-secondary;
+      background-color: $scheme-courses-secondary;
     }
   }
 
-  &.software {
+  &.plugins {
     color: $color-white;
-    background-color: $scheme-software-primary;
+    background-color: $scheme-plugins-primary;
 
     &::after {
-      border-left-color: $scheme-software-primary;
+      border-left-color: $scheme-plugins-primary;
     }
 
     &::before {
-      border-right-color: $scheme-software-primary;
+      border-right-color: $scheme-plugins-primary;
     }
 
     @media only screen and (max-width: $page-width-xsmall) {
-      //background-color: $scheme-software-primary;
+      //background-color: $scheme-plugins-primary;
     }
   }
 
-  &.review {
+  &.hire-us {
     color: $color-white;
-    background-color: $scheme-review-primary;
+    background-color: $scheme-hire-us-primary;
 
     &::after {
-      border-left-color: $scheme-review-primary;
+      border-left-color: $scheme-hire-us-primary;
     }
 
     &::before {
-      border-right-color: $scheme-review-primary;
+      border-right-color: $scheme-hire-us-primary;
     }
 
     @media only screen and (max-width: $page-width-xsmall) {
-      //background-color: $scheme-review-primary;
+      //background-color: $scheme-hire-us-primary;
     }
   }
 
-  &.about {
+  &.home {
     color: $color-white;
-    background-color: $scheme-about-primary;
+    background-color: $scheme-home-primary;
 
     &::after {
-      border-left-color: $scheme-about-primary;
+      border-left-color: $scheme-home-primary;
     }
 
     &::before {
-      border-right-color: $scheme-about-primary;
+      border-right-color: $scheme-home-primary;
     }
 
     @media only screen and (max-width: $page-width-xsmall) {
-      //background-color: $scheme-about-primary;
+      //background-color: $scheme-home-primary;
     }
   }
 

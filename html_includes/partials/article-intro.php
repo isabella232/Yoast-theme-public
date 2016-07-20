@@ -12,7 +12,7 @@ if ( 'yoast_dev_article' === $post_type->name ) {
 <div class="meta">
 	<p>
 		<?php if ( is_tag() ) { ?>
-		<i class="fa color-academy--secondary fa-<?php echo $icon; ?>" title="<?php echo $post_type->labels->singular_name; ?>" aria-hidden="true"></i>
+		<i class="fa color-courses--secondary fa-<?php echo $icon; ?>" title="<?php echo $post_type->labels->singular_name; ?>" aria-hidden="true"></i>
 		<?php } ?>
 		<?php the_time( 'j F Y' ); ?> <?php _e( 'by', 'yoastcom' ); ?> <a
 			href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'nicename' ) ) ); ?>"><?php the_author(); ?> &raquo;</a>
