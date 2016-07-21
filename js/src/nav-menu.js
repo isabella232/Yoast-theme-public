@@ -1,19 +1,46 @@
 jQuery( document ).ready( function( $ ) {
 
 	/**
+	 * Close the menu if the user clicks next to the the menu.
+	 */
+	function init_tap_content_to_close_menu() {
+		/**
+		 * Simulate a click on the hamburger button to close the menu if the user clicks next to the menu for mobile users.
+		 */
+		$( window ).click( function() {
+			if ( $( 'body' ).attr( 'data-show-mobile-nav' ) ) { // if the mobile menu is showing
+				$( '#mobile-show-nav' ).trigger( 'click' );
+			}
+		} );
+
+		/**
+		 * Don't close the menu if any elements in the header are clicked.
+		 */
+		$( 'header' ).click( function( event ) {
+			if ( $( 'body' ).attr( 'data-show-mobile-nav' ) ) { // if the mobile menu is showing
+				event.stopPropagation();
+			}
+		} );
+	}
+
+	/**
 	 * Sets jQuery event listeners to improve the visual flow of 'current menu item parents'.
 	 */
-	function init() {
+	function init_active_item_flow() {
 		var parent_class = 'current-menu-parent';
 		var active_item = $( '.current-menu-parent' );
 		var non_active_items = $( '#yoast-main-menu .menu-item:not(.current-menu-parent)' );
 
 		non_active_items.hover(
 			function() {
-				active_item.removeClass( parent_class );
+				if ( !$( 'body' ).attr( 'data-show-mobile-nav' ) ) { // if the mobile menu is not showing
+					active_item.removeClass( parent_class );
+				}
 			},
 			function() {
-				active_item.addClass( parent_class );
+				if ( !$( 'body' ).attr( 'data-show-mobile-nav' ) ) { // if the mobile menu is not showing
+					active_item.addClass( parent_class );
+				}
 			}
 		);
 
@@ -25,9 +52,10 @@ jQuery( document ).ready( function( $ ) {
 			clicked_menu_item.addClass( parent_class );
 			non_active_items.unbind( 'hover' );
 			non_active_items.unbind( 'click' );
-			init();
+			init_active_item_flow();
 		} );
 	}
 
-	init();
+	init_active_item_flow();
+	init_tap_content_to_close_menu();
 } );
