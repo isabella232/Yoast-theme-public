@@ -19,6 +19,7 @@ namespace Yoast\YoastCom\Theme;
 
 			<h1><?php echo esc_html( get_the_archive_title() ); ?></h1>
 			<?php if ( is_search() ) { ?>
+				<div id="content">
 				<form action="<?php echo home_url(); ?>">
 					<input type="search" name="s" value="<?php echo get_search_query(); ?>"/>
 
@@ -57,6 +58,7 @@ namespace Yoast\YoastCom\Theme;
 					</p>
 					<input type="submit" class="button default" value="Search"/>
 				</form>
+				</div>
 			<?php } ?>
 		</div>
 
