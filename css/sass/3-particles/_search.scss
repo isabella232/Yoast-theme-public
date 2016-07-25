@@ -43,3 +43,34 @@
   }
 
 }
+
+#instant-search-facets-container .count {
+  padding: 0 6px;
+  font-size: .8em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: $color-purple-dark;
+  color: white;
+}
+
+#algolia_instant_selector.with-facets #algolia-left-container {
+  width: 25%;
+}
+
+#algolia_instant_selector.with-facets #algolia-right-container {
+  width: 75%;
+}
+
+#algolia_instant_selector .result .content {
+  width: auto;
+}
+
+#algolia_instant_selector .result .imgExt {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#algolia_instant_selector .result .result-title {
+  margin-bottom: auto;
+}
