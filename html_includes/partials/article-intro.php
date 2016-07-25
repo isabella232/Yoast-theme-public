@@ -12,7 +12,8 @@ if ( 'yoast_dev_article' === $post_type->name ) {
 <div class="meta">
 	<p>
 		<?php if ( is_tag() ) { ?>
-		<i class="fa color-academy--secondary fa-<?php echo $icon; ?>" title="<?php echo $post_type->labels->singular_name; ?>" aria-hidden="true"></i>
+			<i class="fa color-academy--secondary fa-<?php echo $icon; ?>"
+			   title="<?php echo $post_type->labels->singular_name; ?>" aria-hidden="true"></i>
 		<?php } ?>
 		<?php the_time( 'j F Y' ); ?> <?php _e( 'by', 'yoastcom' ); ?> <a
 			href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'nicename' ) ) ); ?>"><?php the_author(); ?> &raquo;</a>
@@ -31,23 +32,26 @@ if ( 'yoast_dev_article' === $post_type->name ) {
 			<?php
 			the_excerpt();
 
-			if ( 'yoast_dev_article' === $post_type ) {
+			if ( 'yoast_dev_article' === $post_type->name ) {
 				$dev_cats = get_the_term_list( $post_id, 'yoast_dev_category', '', ', ' );
-				if ( $dev_cats && count( $dev_cats ) > 0 ) {
-					echo _n( __( 'Category:', 'yoastcom' ), __( 'Categories:', 'yoastcom' ), count( $dev_cats ) ) . ' ';
+				if ( $dev_cats !== false ) {
+					echo _n( __( 'Category:', 'yoastcom' ), __( 'Categories:', 'yoastcom' ), substr_count( $dev_cats, ', ' ) + 1 ) . ' ';
 					echo $dev_cats;
 					echo '<br/>';
 				}
 			}
 			else {
-				echo _n( __( 'Category:', 'yoastcom' ), __( 'Categories:', 'yoastcom' ), count( get_the_category( $post_id ) ) ) . ' ';
-				the_category( ', ' );
-				echo '<br/>';
+				$categories = get_the_category( $post_id );
+				if ( false !== $categories ) {
+					echo _n( __( 'Category:', 'yoastcom' ), __( 'Categories:', 'yoastcom' ), count( $categories ) ) . ' ';
+					the_category( ', ' );
+					echo '<br/>';
+				}
 			}
 
-			$tag_count = count( get_the_tags( $post_id ) );
-			if ( $tag_count > 0 ) {
-				echo _n( __( 'Tag:', 'yoastcom' ), __( 'Tags:', 'yoastcom' ), $tag_count ) . ' ';
+			$tags = get_the_tags( $post_id );
+			if ( $tags !== false ) {
+				echo _n( __( 'Tag:', 'yoastcom' ), __( 'Tags:', 'yoastcom' ), count( $tags ) ) . ' ';
 				the_tags( '', ', ' );
 			}
 			?>
