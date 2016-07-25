@@ -37,6 +37,7 @@ class Theme {
 
 		add_action( 'init', array( $this, 'register_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 20 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 20 );
 
 		add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 
@@ -60,7 +61,12 @@ class Theme {
 		$this->shortcodes = new Shortcodes();
 		add_action( 'init', array( $this->shortcodes, 'add_shortcodes' ) );
 
+		$yoast_domains = new Domains();
+		add_filter( 'yoast:url', array( $yoast_domains, 'get_url' ) );
+		add_filter( 'yoast:domain', array( $yoast_domains, 'get_domain' ) );
+
 		$this->color = new Color_Scheme();
+		$this->page_type = new Page_Menu_Type();
 		$this->extra_head = new Extra_Head();
 
 		$this->excerpt = new Excerpt_Manager();
@@ -84,6 +90,13 @@ class Theme {
 	 */
 	public function get_color_scheme() {
 		return $this->color->get_color_scheme();
+	}
+
+	/**
+	 * @return string The type of the current page.
+	 */
+	public function get_page_type(){
+		return $this->page_type->get_page_type();
 	}
 
 	/**
@@ -114,6 +127,11 @@ class Theme {
 		$this->register_asset( 'script', 'jquery-modal', 'js/includes/jquery.modal.min.js', array( 'jquery' ), '0.7', true );
 	}
 
+	public function enqueue_styles() {
+		wp_enqueue_style( 'open-sans', 'https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic|Open+Sans:400italic,400,300' );
+		wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
+	}
+
 	/**
 	 * Registers a theme asset
 	 *
@@ -141,7 +159,8 @@ class Theme {
 	public function enqueue_assets() {
 		wp_enqueue_style( 'yoast-com' );
 		wp_enqueue_script( 'yoast-com' );
-		wp_localize_script( 'yoast-com', 'YoastAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+		wp_localize_script( 'yoast-com', 'YoastAjax', array( 'ajaxurl' => apply_filters( 'yoast:url', 'shop_counter_ajax' ) ) );
 
 		if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() ) {
 			wp_enqueue_style( 'chosen' );
@@ -169,6 +188,8 @@ class Theme {
 		if ( is_singular( array( 'course', 'lesson', 'llms_quiz' ) ) ) {
 			wp_enqueue_script( 'yoast-com-academy' );
 			wp_enqueue_script( 'jquery-ui-sortable', false, array( 'jquery', 'jquery-ui' ) );
+
+			wp_localize_script( 'yoast-com-academy', 'AcademyAjax', array( 'ajaxurl' => apply_filters( 'yoast:domain', 'https://yoast.academy' ) . '/wp-admin/admin-ajax.php' ) );
 		}
 	}
 

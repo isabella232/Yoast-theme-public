@@ -22,7 +22,7 @@ namespace Yoast\YoastCom\Theme;
 
 				<p>
 					If you want to learn more about the specific courses and figure out which one's for you,
-					<a href="https://yoast.com/academy/seo-training/">read this article</a>.
+					<a href="<?php echo apply_filters( 'yoast:url', 'academy_overview' ); ?>seo-training/">read this article</a>.
 				</p>
 			</div>
 		</div>
