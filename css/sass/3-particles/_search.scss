@@ -12,25 +12,25 @@
     background-color: $color-white;
     width: 100%;
     z-index: 90;
-    border-bottom:1px solid $color-grey-line;
+    border-bottom: 1px solid $color-grey-line;
 
-    form{
-      width:100%;
+    form {
+      width: 100%;
       display: flex;
     }
 
     .algolia-autocomplete {
-      display:inline;
+      display: inline;
       margin-right: 20px;
     }
 
-    .search-button{
-      width:40px;
+    .search-button {
+      width: 40px;
       margin: 0;
       font-size: 1.5em;
     }
 
-    .search-button:hover, .search-button:focus{
+    .search-button:hover, .search-button:focus {
       text-decoration: none;
       background-color: transparent;
       color: $color-orange-hover;
@@ -42,6 +42,32 @@
     }
   }
 
+}
+
+  // Algolia overrides.
+.no-results {
+  margin-bottom: 1em;
+}
+
+#refine-toggle,
+.no-results .button {
+  display: none;
+}
+
+@media only screen and (max-width: $page-width-medium) {
+  #algolia-left-container,
+  #instant-search-facets-container {
+    display: none;
+  }
+
+  #algolia_instant_selector.with-facets #algolia-right-container {
+    float: none;
+    width: 100%;
+  }
+
+  #algolia_instant_selector #instant-search-box svg.magnifying-glass {
+    right: 32px;
+  }
 }
 
 #instant-search-facets-container .count {

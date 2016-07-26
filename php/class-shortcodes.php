@@ -479,6 +479,7 @@ class Shortcodes {
 			'text'  => __( 'Buy %s', 'yoastcom' ),
 			'title' => '',
 		) );
+
 		if ( '' === $args['title'] ) {
 			$args['title'] = str_replace( ' for WordPress', '', get_the_title( $args['id'] ) );
 		}
