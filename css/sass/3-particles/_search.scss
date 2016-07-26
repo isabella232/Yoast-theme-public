@@ -37,7 +37,7 @@
     }
 
     [data-show-mobile-search] & {
-      display:block;
+      display: block;
       padding: 1.2em;
     }
   }
@@ -47,9 +47,9 @@
 #instant-search-facets-container .count {
   padding: 0 6px;
   font-size: .8em;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
   background-color: $color-purple-dark;
   color: white;
 }
