@@ -32,7 +32,7 @@ jQuery( document ).ready( function( $ ) {
 		var all_items = $( '#yoast-main-menu .menu-item' );
 		var non_active_items = all_items.not( '.' + parent_class );
 
-		non_active_items.bind( 'hover',
+		non_active_items.hover(
 			function() {
 				if ( !$( 'body' ).attr( 'data-show-mobile-nav' ) ) { // if the mobile menu is not showing
 					active_item.removeClass( parent_class );
