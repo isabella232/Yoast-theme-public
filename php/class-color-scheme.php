@@ -36,11 +36,7 @@ class Color_Scheme {
 	 */
 	public function body_class( $classes ) {
 
-		$color_scheme = $this->get_color_scheme();
-		if ( '' !== $color_scheme ) {
-			$classes[] = $color_scheme;
-		}
-
+		$classes[] = $this->get_color_scheme();
 		return $classes;
 	}
 
@@ -55,25 +51,23 @@ class Color_Scheme {
 			return $color_scheme;
 		}
 
-		$color_scheme = '';
-
-		if ( $this->is_home_color_scheme() ) {
-			$color_scheme = self::HOME;
-		}
-		elseif ( $this->is_academy_color_scheme() ) {
-			$color_scheme = self::ACADEMY;
-		}
-		elseif ( $this->is_software_color_scheme() ) {
-			$color_scheme = self::SOFTWARE;
-		}
-		elseif ( $this->is_review_color_scheme() ) {
-			$color_scheme = self::REVIEW;
-		}
-		elseif ( $this->is_about_color_scheme() ) {
-			$color_scheme = self::ABOUT;
+		if ( $this->is_academy_color_scheme() ) {
+			return self::ACADEMY;
 		}
 
-		return $color_scheme;
+		if ( $this->is_software_color_scheme() ) {
+			return self::SOFTWARE;
+		}
+
+		if ( $this->is_review_color_scheme() ) {
+			return self::REVIEW;
+		}
+
+		if ( $this->is_about_color_scheme() ) {
+			return self::ABOUT;
+		}
+
+		return self::HOME;
 	}
 
 	/**
