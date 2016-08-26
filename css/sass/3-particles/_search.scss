@@ -70,6 +70,16 @@
   }
 }
 
+@media only screen and (min-width: $page-width-medium) {
+  #algolia_instant_selector.with-facets #algolia-left-container {
+	width: 25%;
+  }
+
+  #algolia_instant_selector.with-facets #algolia-right-container {
+	width: 75%;
+  }
+}
+
 #instant-search-facets-container .count {
   padding: 0 6px;
   font-size: .8em;
@@ -78,14 +88,6 @@
   border-radius: 10px;
   background-color: $color-purple-dark;
   color: white;
-}
-
-#algolia_instant_selector.with-facets #algolia-left-container {
-  width: 25%;
-}
-
-#algolia_instant_selector.with-facets #algolia-right-container {
-  width: 75%;
 }
 
 #algolia_instant_selector .result .content {
