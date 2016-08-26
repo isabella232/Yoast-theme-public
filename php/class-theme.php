@@ -86,7 +86,7 @@ class Theme {
 	}
 
 	/**
-	 * @return Color_Scheme
+	 * @return string Color Scheme
 	 */
 	public function get_color_scheme() {
 		return $this->color->get_color_scheme();
@@ -124,7 +124,7 @@ class Theme {
 			'jquery',
 		) );
 
-		$this->register_asset( 'script', 'jquery-modal', 'js/includes/jquery.modal.min.js', array( 'jquery' ), '0.7', true );
+		$this->register_asset( 'script', 'jquery-modal', 'js/includes/jquery.modal.min.js', array( 'jquery' ) );
 	}
 
 	public function enqueue_styles() {
