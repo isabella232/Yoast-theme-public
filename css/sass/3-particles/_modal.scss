@@ -28,7 +28,6 @@
 }
 
 .modal {
-
   vertical-align: middle;
   position: relative;
   z-index: 2;
@@ -95,5 +94,9 @@
 }
 
 #prices-modal {
+  display: none;
+}
+
+#prices-modal.modal {
   display: inline-block;
 }
