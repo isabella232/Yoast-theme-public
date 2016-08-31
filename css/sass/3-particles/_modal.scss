@@ -28,7 +28,7 @@
 }
 
 .modal {
-  display: inline-block !important;
+
   vertical-align: middle;
   position: relative;
   z-index: 2;
@@ -95,5 +95,5 @@
 }
 
 #prices-modal {
-  display: none;
+  display: inline-block;
 }
