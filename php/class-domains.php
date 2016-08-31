@@ -41,7 +41,7 @@ class Domains {
 				return $domain . '/wordpress/plugins/';
 
 			case 'checkout':
-				$domain = apply_filters( 'yoast:domain', 'yoast.com' );
+				$domain = apply_filters( 'yoast:domain', 'my.yoast.com' );
 
 				return $domain . '/checkout/';
 
@@ -56,7 +56,7 @@ class Domains {
 				return $domain . '/shop/';
 
 			case 'shop_counter_ajax':
-				$domain = apply_filters( 'yoast:domain', 'yoast.com' );
+				$domain = apply_filters( 'yoast:domain', 'my.yoast.com' );
 
 				return $domain . '/wp-admin/admin-ajax.php';
 
