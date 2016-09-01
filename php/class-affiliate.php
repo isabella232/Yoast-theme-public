@@ -152,10 +152,10 @@ class Affiliate {
 		 */
 		if ( $commissions ) {
 			foreach ( $commissions as $commission => $prices ) {
-				$data = new \stdClass();
-				$data->sub_amount = array_sum( $prices );
-				$data->commission_type = $commission;
-				$output[] = $data;
+				$output[] = array(
+					'sub_amount' => array_sum( $prices ),
+					'commission_type' => $commission,
+				);
 			}
 		}
 
