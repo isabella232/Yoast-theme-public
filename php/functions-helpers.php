@@ -7,6 +7,8 @@
 
 namespace Yoast\YoastCom\Theme;
 
+use Yoast\YoastCom\Api\EDD_Client;
+
 /**
  * Like get_template_part() put lets you pass args to the template file
  * Args are available in the template as $template_args array
@@ -369,6 +371,14 @@ function get_product_icon( $product_id = null, $diapositive = false ) {
 	} // If there is a connected premium product, try to get it's icon.
 	elseif ( $premium_id = get_post_meta( $product_id, 'connected_premium_plugin', true ) ) {
 		$icon = get_product_icon( $premium_id, $diapositive );
+	}
+
+	if ( '' === $icon ) {
+		$edd_client = new EDD_Client();
+		$plugin_information = $edd_client->get_product( $product_id );
+		if ( isset( $plugin_information['meta'], $plugin_information['meta'][ $icon_key ] ) ) {
+			$icon = $plugin_information['meta'][ $icon_key ];
+		}
 	}
 
 	return $icon;
