@@ -66,10 +66,15 @@ class Affiliate {
 	 * @return bool
 	 */
 	private function is_checkout_success() {
+
+		if ( ! function_exists( 'edd_receipt_shortcode' ) ) {
+			return false;
+		}
+
 		global $edd_receipt_args;
 
 		// Call edd_receipt_shortcode to trigger $edd_receipt_args to be filled.
-		edd_receipt_shortcode( array() );
+		 edd_receipt_shortcode( array() );
 
 		if ( ! edd_is_payment_complete( $edd_receipt_args['id'] ) ) {
 			return false;
