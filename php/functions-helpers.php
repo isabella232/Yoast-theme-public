@@ -375,7 +375,7 @@ function get_product_icon( $product_id = null, $diapositive = false ) {
 		$icon = get_product_icon( $premium_id, $diapositive );
 	}
 
-	if ( '' === $icon && class_exists( 'Yoast\YoastCom\Api\EDD_Client' ) ) {
+	if ( '' === $icon && class_exists( 'Yoast\YoastCom\Api\EDD_Client', false ) ) {
 		$edd_client = new EDD_Client();
 
 		$plugin_information = $edd_client->get_product( $product_id );
