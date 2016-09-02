@@ -17,9 +17,9 @@ use Yoast\YoastCom\Api\EDD_Client;
  *
  * @throws \Exception When an undefined template is included.
  *
- * @param string $file The file to include.
- * @param array $template_args style argument list.
- * @param array $cache_args The arguments to cache.
+ * @param string $file          The file to include.
+ * @param array  $template_args style argument list.
+ * @param array  $cache_args    The arguments to cache.
  *
  * @return false|string
  */
@@ -94,7 +94,7 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 /**
  * Returns a legacy option as it was set with genesis
  *
- * @param string $key The key to retrieve from the setting.
+ * @param string      $key     The key to retrieve from the setting.
  * @param null|string $setting The settings to retrieve.
  *
  * @return mixed The retrieved option
@@ -116,7 +116,7 @@ function get_legacy_option( $key, $setting = null ) {
 /**
  * Retrieve a yoast theme option
  *
- * @param string $key The key to retrieve.
+ * @param string      $key            The key to retrieve.
  * @param null|string $legacy_setting The legacy setting to retrieve the key from.
  *
  * @return mixed The retrieved option
@@ -192,7 +192,8 @@ function query_plugins( $args = array() ) {
 	$args = wp_parse_args( $args, array(
 		'post_type'   => 'yoast_plugins',
 		'post_parent' => 0,
-		'post_status' => 'publish', // specify specifically so we don't get "private" added to it
+		'post_status' => 'publish',
+		// specify specifically so we don't get "private" added to it
 	) );
 
 	return new \WP_Query( $args );
@@ -232,7 +233,8 @@ function query_bundles( $args = array() ) {
 	);
 
 	$args = wp_parse_args( $args, array(
-		'post_status' => 'publish', // specify specifically so we don't get "private" added to it
+		'post_status' => 'publish',
+		// specify specifically so we don't get "private" added to it
 		'post_type'   => 'download',
 		'tax_query'   => $tax_query,
 		'meta_query'  => $meta_query,
@@ -345,7 +347,7 @@ function kses_blockquote( $content ) {
  * Returns the url of an icon for a certain product (This can be free/premium/download), will try to find the icon
  * through references download_ids
  *
- * @param int $product_id The product to find the icon for.
+ * @param int  $product_id  The product to find the icon for.
  * @param bool $diapositive Whether to retrieve the diapositive version.
  *
  * @return string
@@ -362,22 +364,13 @@ function get_product_icon( $product_id = null, $diapositive = false ) {
 		$icon_key = 'icon_diapositive';
 	}
 
-	// If we find the icon just return it.
-	if ( get_post_meta( $product_id, $icon_key, true ) ) {
-		$icon = get_post_meta( $product_id, $icon_key, true );
-	} // If there is a connected download_id, try to get it's icon.
-	elseif ( $download_id = get_post_meta( $product_id, 'download_id', true ) ) {
-		$icon = get_product_icon( $download_id, $diapositive );
-	} // If there is a connected premium product, try to get it's icon.
-	elseif ( $premium_id = get_post_meta( $product_id, 'connected_premium_plugin', true ) ) {
-		$icon = get_product_icon( $premium_id, $diapositive );
-	}
 
 	if ( '' === $icon ) {
 		$edd_client = new EDD_Client();
+
 		$plugin_information = $edd_client->get_product( $product_id );
 		if ( isset( $plugin_information['meta'], $plugin_information['meta'][ $icon_key ] ) ) {
-			$icon = $plugin_information['meta'][ $icon_key ];
+			$icon = $plugin_information['meta'][ $icon_key ][0];
 		}
 	}
 
