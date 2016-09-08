@@ -24,9 +24,9 @@ namespace Yoast\YoastCom\Theme;
 		<label for="card_exp_month" class="edd-label">
 			<?php _e( 'Expires', 'yoast-theme' ); ?>
 		</label>
-		<input type="text" min="1" max="12" placeholder="MM" pattern="\d*" name="card_exp_month" id="card_exp_month" class="card-expiry-month edd-input edd-input-cvc" />
+		<input type="text" min="1" max="12" placeholder="MM" pattern="\d*" name="card_exp_month" id="card_exp_month" maxlength="2" class="card-expiry-month edd-input edd-input-cvc" />
 		<span class="separator">/</span>
-		<input type="text" min="1" max="99" placeholder="YY" pattern="\d*" name="card_exp_year" id="card_exp_year" class="card-expiry-year edd-input edd-input-cvc" />
+		<input type="text" min="1" max="99" placeholder="YY" pattern="\d*" name="card_exp_year" id="card_exp_year" maxlength="2" class="card-expiry-year edd-input edd-input-cvc" />
 	</p>
 	<?php do_action( 'edd_after_cc_expiration' ); ?>
 
