@@ -292,9 +292,7 @@
 			}
 		} );
 
-		$body.on( "change", "#yst_btw,#billing_country,#card_state", updateVAT) ;
-
-		function updateVAT() {
+		$body.on( "change", "#yst_btw,#billing_country,#card_state", function() {
 			var btw_nr = $( '#yst_btw' ).val();
 			var billingCountry = $( '#billing_country' ).val();
 
@@ -305,6 +303,6 @@
 
 			// Re-calculate taxes based on current country and state.
 			EDD_Checkout.recalculate_taxes();
-		}
+		} );
 	} );
 }( jQuery ));
