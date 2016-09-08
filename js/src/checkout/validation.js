@@ -64,21 +64,20 @@
 			$( '#vaterror' ).remove();
 			if ( '1' == response ) {
 				$( '#yst_btw' ).removeClass( 'error' ).addClass( 'valid' );
-				EDD_Checkout.recalculate_taxes();
 
 				validBtwNr = true;
 				vatStatistics.success();
 			} else if ( '2' == response ) {
 				// Show error, the service is down
 				$( '#yst_btw' ).removeClass( 'valid' ).addClass( 'error' );
-				EDD_Checkout.recalculate_taxes();
+
 				jQuery( "#yst-edd-btw-wrap" ).append( '<span id="vaterror" class="error">We cannot check if your VAT number is correct because the VAT checking system for the EU is currently down. We\'re sorry for the inconvenience. Please send us an email on <a href="mailto:support@yoast.com">support@yoast.com</a> or try again later.</span>' );
 
 				validBtwNr = false;
 				vatStatistics.failed();
 			} else {
 				$( '#yst_btw' ).removeClass( 'valid' ).addClass( 'error' );
-				EDD_Checkout.recalculate_taxes();
+
 				jQuery( "#yst-edd-btw-wrap" ).append( '<span id="vaterror" class="error">We cannot verify this VAT number, this means you will have to pay VAT. Please make sure you\'ve entered the number correctly.</span>' );
 
 				validBtwNr = false;
@@ -282,7 +281,7 @@
 				billing_country: "required",
 				card_state: "required",
 
-				edd_agree_to_terms: "required",
+				edd_agree_to_terms: "required"
 			},
 			messages: {
 				edd_first: "Please enter your first name",
@@ -297,13 +296,21 @@
 			}
 		} );
 
-		$body.on( "change", "#yst_btw", function () {
+		$body.on( "change", "#yst_btw", updateVAT) ;
+		$body.on( "change", "#billing_country", updateVAT) ;
+		$body.on( "change", "#card_state", updateVAT) ;
+
+		function updateVAT() {
 			var btw_nr = $( '#yst_btw' ).val();
 			var billingCountry = $( '#billing_country' ).val();
-			// VAT nr given, check it
+
+			// VAT nr given, validate it.
 			if ( '' != btw_nr ) {
 				checkBtwNr( billingCountry, btw_nr );
 			}
-		} );
+
+			// Re-calculate taxes based on current country and state.
+			EDD_Checkout.recalculate_taxes();
+		}
 	} );
 }( jQuery ));
