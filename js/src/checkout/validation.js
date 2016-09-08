@@ -292,9 +292,7 @@
 			}
 		} );
 
-		$body.on( "change", "#yst_btw", updateVAT) ;
-		$body.on( "change", "#billing_country", updateVAT) ;
-		$body.on( "change", "#card_state", updateVAT) ;
+		$body.on( "change", "#yst_btw,#billing_country,#card_state", updateVAT) ;
 
 		function updateVAT() {
 			var btw_nr = $( '#yst_btw' ).val();
