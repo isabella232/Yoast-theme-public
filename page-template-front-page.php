@@ -43,7 +43,7 @@ namespace Yoast\YoastCom\Theme;
 
 		<div class="rowholder">
 			<section class="row island iceberg theme-about">
-				<h2><?php _e( 'Bundle plugins and save money!', 'yoastcom' ); ?></h2>
+				<h2><?php _e( 'Bundle products and save money!', 'yoastcom' ); ?></h2>
 				<?php get_template_part( 'html_includes/partials/more-bundleplugin', array( 'class1' => 'color-about', 'class2' => 'color-cta' ) ); ?>
 			</section>
 		</div>
