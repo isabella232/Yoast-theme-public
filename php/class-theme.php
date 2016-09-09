@@ -74,6 +74,8 @@ class Theme {
 		$this->excerpt->add_hooks();
 
 		$this->content_width();
+
+		do_action( 'yoast_after_theme_setup' );
 	}
 
 	/**
