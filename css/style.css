@@ -4630,7 +4630,7 @@ svg .llms-animated-circle {
   -ms-border-radius: 8px;
   border-radius: 8px; }
 
-#prices-modal {
+.prices-modal {
   display: none; }
 
 .more {

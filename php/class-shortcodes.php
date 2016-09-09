@@ -488,15 +488,10 @@ class Shortcodes {
 		$plugin_buy_link = edd_get_checkout_uri() . '?yst_action_edd=add_to_cart&license=0&download_id=' . $args['id'];
 
 		$out = '<a rel="nofollow" href="'.$plugin_buy_link.'"
-   class="button default openmodal">' . sprintf( $args['text'], $args['title'], $plugin_price ) . '</a>';
+   class="button default openmodal" data-modal-product-id="' . $args['id'] . '">' . sprintf( $args['text'], $args['title'], $plugin_price ) . '</a>';
 
-		add_action( 'wp_footer', array( $this, 'buy_button_modal' ) );
+		Product_Options_Modal::add_product_modal( $args );
 
 		return $out;
 	}
-
-	public function buy_button_modal() {
-		get_template_part( '/html_includes/partials/modal' );
-	}
-
 }
