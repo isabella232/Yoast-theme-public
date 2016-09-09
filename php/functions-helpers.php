@@ -208,35 +208,35 @@ function query_plugins( $args = array() ) {
  */
 function query_bundles( $args = array() ) {
 
-	$tax_query = array(
-		array(
-			'taxonomy' => 'download_category',
-			'field'    => 'slug',
-			'terms'    => 'bundles',
-		),
-	);
+	$post_type = 'any';
 
 	if ( isset( $args['query_ebook_bundles'] ) && $args['query_ebook_bundles'] ) {
-		$tax_query['relation'] = 'and';
-		$tax_query[]           = array(
-			'taxonomy' => 'download_category',
-			'field'    => 'slug',
-			'terms'    => 'books',
-		);
+		$post_type = 'yoast_ebooks';
+	}
+
+	if ( isset( $args['query_plugin_bundles'] ) && $args['query_plugin_bundles'] ) {
+		$post_type = 'yoast_plugins';
+	}
+
+	if ( isset( $args['query_course_bundles'] ) && $args['query_course_bundles'] ) {
+		$post_type = 'yoast_courses';
 	}
 
 	$meta_query = array(
+		'relation' => 'and',
 		array(
-			'key'     => 'private_bundle',
-			'compare' => 'NOT EXISTS',
+			'key'     => 'no_promotion',
+			'compare' => 'NOT EXISTS'
 		),
+		array(
+			'key'   => 'is_bundle',
+			'value' => 'on'
+		)
 	);
 
 	$args = wp_parse_args( $args, array(
 		'post_status' => 'publish',
-		// specify specifically so we don't get "private" added to it
-		'post_type'   => 'download',
-		'tax_query'   => $tax_query,
+		'post_type'   => $post_type,
 		'meta_query'  => $meta_query,
 	) );
 
