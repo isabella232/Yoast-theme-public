@@ -159,6 +159,8 @@
 			var billingCountry = $( '#billing_country' ).val();
 			var btw_wrap = $( '#yst-edd-btw-wrap' );
 
+			$( '#yst-dutch-vat-notice' ).remove();
+
 			// No special BTW rule for The Netherlands
 			if ( 'NL' == billingCountry ) {
 				btw_wrap
@@ -168,8 +170,6 @@
 				$( '.edd_cart_tax_row' ).css( 'display', 'table-row' );
 				return;
 			}
-
-			$( '#yst-dutch-vat-notice' ).remove();
 
 			// Check if the country is in our special tax list
 			if ( taxData && taxData.tax_rate_raw === 0 ) {
