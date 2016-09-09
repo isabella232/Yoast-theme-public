@@ -152,7 +152,7 @@ class Shortcodes {
 	 * @return string
 	 */
 	public function bundle( $args ) {
-		$heading = __( 'Bundle plugins and save money', 'yoastcom' );
+		$heading = __( 'Bundle products and save money', 'yoastcom' );
 		if ( isset( $args['heading'] ) ) {
 			$heading = $args['heading'];
 		}
