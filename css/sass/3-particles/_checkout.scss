@@ -81,9 +81,10 @@ body.edd-checkout {
   }
 
   &__title {
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 140%;
+    max-height: 44px;
   }
 
   label {
