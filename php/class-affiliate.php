@@ -23,68 +23,38 @@ class Affiliate {
 	public function __construct() {
 		// This is hooked just after the <body> tag.
 		add_action( 'yst_body_open', array( $this, 'output_affiliate_code' ) );
+
+		add_action( 'edd_complete_purchase', array( $this, 'set_conversion_cookie' ) );
+	}
+
+	/**
+	 * Communicate conversion details to JavaScript
+	 *
+	 * @param int $payment_id Payment ID of the completed purchase.
+	 */
+	public function set_conversion_cookie( $payment_id ) {
+		$payment = new \EDD_Payment( $payment_id );
+		if ( empty( $payment->ID ) ) {
+			return;
+		}
+
+		$commissions = $this->get_commissions( $payment );
+
+		$arguments = json_encode( array(
+			'account_id'  => self::ACCOUNT_ID,
+			'order_id'    => $payment->ID,
+			'commissions' => $commissions,
+			'group'       => self::GROUP,
+		) );
+
+		setcookie( 'yst_affiliate_conversion', $arguments, 0, '/' );
 	}
 
 	/**
 	 * Output the HTML/JS needed to track affiliate
 	 */
 	public function output_affiliate_code() {
-
-		if ( $this->is_checkout_success() ) {
-			$this->output_conversion_code();
-
-			return;
-		}
-
 		get_template_part( 'html_includes/partials/affiliate-code', array( 'account_id' => self::ACCOUNT_ID ) );
-	}
-
-	/**
-	 * Output the HTML needed to register conversion
-	 */
-	public function output_conversion_code() {
-
-		if ( ! function_exists( 'EDD' ) ) {
-			return;
-		}
-
-		$edd_purchase = EDD()->session->get( 'edd_purchase' );
-		if ( empty( $edd_purchase ) && ! empty( $edd_purchase['purchase_key'] ) ) {
-			return;
-		}
-
-		$purchase_id = edd_get_purchase_id_by_key( $edd_purchase['purchase_key'] );
-
-		$template = 'html_includes/partials/affiliate-conversion';
-
-		$payment     = new \EDD_Payment( $purchase_id );
-		$commissions = $this->get_commissions( $payment );
-
-		$arguments = array(
-			'account_id'  => self::ACCOUNT_ID,
-			'order_id'    => $payment->ID,
-			'commissions' => $commissions,
-			'group'       => self::GROUP,
-		);
-
-		get_template_part( $template, $arguments );
-	}
-
-	/**
-	 * Check if we are on a checkout page after completing a purchase
-	 *
-	 * @return bool
-	 */
-	private function is_checkout_success() {
-
-		if ( ! function_exists( 'edd_get_option' ) ) {
-			return false;
-		}
-
-		// EDD_settings success_page
-		$success_page = edd_get_option( 'success_page', '' );
-
-		return ( get_the_ID() === (int) $success_page );
 	}
 
 	/**
@@ -143,6 +113,7 @@ class Affiliate {
 				/** @var \WP_Term[] $terms */
 				$terms = get_the_terms( $item['id'], 'download_category' );
 				if ( count( $terms ) === 1 ) {
+
 					$commission_type = $terms[0]->slug;
 				}
 			}
