@@ -42,7 +42,6 @@ class Affiliate {
 
 		$arguments = json_encode( array(
 			'account_id'  => self::ACCOUNT_ID,
-			'price' => '',
 			'order_id'    => $payment->ID,
 			'commissions' => $commissions,
 			'group'       => self::GROUP,
