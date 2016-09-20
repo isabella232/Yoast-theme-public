@@ -8,5 +8,4 @@
 		};
 
 	tap( 'create', '<?php echo $template_args['account_id'] ?>' );
-	tap( 'conversion', '<?php echo $template_args['order_id'] ?>', {program_group: '<?php echo $template_args['group'] ?>'}, <?php echo json_encode( $template_args['commissions'] ) ?> );
 </script>
