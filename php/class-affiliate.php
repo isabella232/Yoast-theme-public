@@ -43,11 +43,21 @@ class Affiliate {
 	 * Output the HTML needed to register conversion
 	 */
 	public function output_conversion_code() {
-		global $edd_receipt_args;
+
+		if ( ! function_exists( 'EDD' ) ) {
+			return;
+		}
+
+		$edd_purchase = EDD()->session->get( 'edd_purchase' );
+		if ( empty( $edd_purchase ) && ! empty( $edd_purchase['purchase_key'] ) ) {
+			return;
+		}
+
+		$purchase_id = edd_get_purchase_id_by_key( $edd_purchase['purchase_key'] );
 
 		$template = 'html_includes/partials/affiliate-conversion';
 
-		$payment     = new \EDD_Payment( $edd_receipt_args['id'] );
+		$payment     = new \EDD_Payment( $purchase_id );
 		$commissions = $this->get_commissions( $payment );
 
 		$arguments = array(
@@ -67,16 +77,7 @@ class Affiliate {
 	 */
 	private function is_checkout_success() {
 
-		if ( ! function_exists( 'edd_receipt_shortcode' ) ) {
-			return false;
-		}
-
-		global $edd_receipt_args;
-
-		// Call edd_receipt_shortcode to trigger $edd_receipt_args to be filled.
-		 edd_receipt_shortcode( array() );
-
-		if ( ! edd_is_payment_complete( $edd_receipt_args['id'] ) ) {
+		if ( ! function_exists( 'edd_get_option' ) ) {
 			return false;
 		}
 
@@ -110,7 +111,7 @@ class Affiliate {
 			$amount_override = null;
 
 			// We parse the bundle as item, not the individual products inside.
-			if ( $item['in_bundle' ] ) {
+			if ( $item['in_bundle'] ) {
 				continue;
 			}
 
@@ -129,7 +130,7 @@ class Affiliate {
 			 * Needed to get the discount from the order
 			 */
 			$payment_meta = $payment->get_meta();
-			$price = edd_get_download_final_price( $download_id, $payment_meta['user_info'], $amount_override );
+			$price        = edd_get_download_final_price( $download_id, $payment_meta['user_info'], $amount_override );
 
 			/*
 			 * Determine the commission type based on taxonomy or bundle
@@ -158,7 +159,7 @@ class Affiliate {
 		if ( $commissions ) {
 			foreach ( $commissions as $commission => $prices ) {
 				$output[] = array(
-					'sub_amount' => array_sum( $prices ),
+					'sub_amount'      => array_sum( $prices ),
 					'commission_type' => $commission,
 				);
 			}
