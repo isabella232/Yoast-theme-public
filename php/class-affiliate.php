@@ -106,7 +106,6 @@ class Affiliate {
 		}
 
 		$commissions = array();
-		var_dump( $cart );
 
 		foreach ( $cart as $key => $item ) {
 			$amount_override = null;
