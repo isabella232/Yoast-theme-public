@@ -44,6 +44,10 @@ class Affiliate {
 	 */
 	public function output_conversion_code() {
 
+		if ( ! function_exists( 'EDD' ) ) {
+			return;
+		}
+
 		$edd_purchase = EDD()->session->get( 'edd_purchase' );
 		if ( empty( $edd_purchase ) && ! empty( $edd_purchase['purchase_key'] ) ) {
 			return;
