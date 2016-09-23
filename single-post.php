@@ -28,13 +28,11 @@ get_header(); ?>
 		</article>
 
 		<div class="breadcrumb__container">
-		<hr class="hr--no-pointer">
+		<hr class="hr--no-pointer row">
 		<div class="row">
 			<?php get_template_part( 'html_includes/partials/breadcrumbs' ); ?>
 		</div>
 		</div>
-		
-		<hr>
 
 		<?php get_template_part( 'html_includes/partials/bio' ); ?>
 

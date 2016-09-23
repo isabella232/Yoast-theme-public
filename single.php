@@ -30,8 +30,6 @@ get_header(); ?>
 			<?php get_template_part( 'html_includes/partials/social-share' ); ?>
 		</article>
 
-		<hr>
-
 		<?php get_template_part( 'html_includes/partials/bio' ); ?>
 
 

@@ -9,15 +9,18 @@ if ( ! isset( $template_args['class2'] ) ) {
 	$template_args['class2'] = '';
 }
 
-// Get all and randomize by JavaScript
-
-$bundles = query_bundles(
-	array(
-		'posts_per_page' => - 1,
-		'orderby' => 'rand',
-		'post__not_in' => ['247896','99668'], // Exclude GA + GA eCommerce.
-	)
+$query_args = array(
+	'posts_per_page' => - 1,
+	'orderby' => 'rand',
+	'post__not_in' => ['247896','99668'], // Exclude GA + GA eCommerce.
 );
+
+if ( isset( $template_args['query_args'] ) ) {
+	$query_args = array_merge($template_args['query_args'], $query_args  );
+}
+
+// Get all and randomize by JavaScript
+$bundles = query_bundles( $query_args );
 
 ?>
 <div class="js-random-show-items" data-show-items="3">

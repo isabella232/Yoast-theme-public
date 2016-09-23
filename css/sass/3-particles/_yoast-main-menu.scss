@@ -11,8 +11,7 @@
 @media only screen and (min-width: $page-width-medium) {
 
   .siteheader--home #yoast-main-menu {
-	border-top: 1px solid $color-white;
-	margin-top: 2em;
+    border-top: 1px solid $color-white;
 
 	&.is-sticky {
 	  margin-top: 0;

@@ -77,38 +77,33 @@ function yst_build_share_url( $type ) {
 ?>
 <div id="social-share">
 	<div class="socialbox">
-		<a rel="nofollow" target="_blank" data-name="facebook" data-action="share"
+		<a rel="nofollow" target="_blank" data-name="facebook" aria-label="Share on Facebook" data-action="share"
 		   href="<?php yst_build_share_url( 'facebook' ); ?>"><i
-				class="fa fa-facebook-square text-icon--facebook"></i>Share</a>
+				class="fa fa-facebook-square text-icon--facebook"></i></a>
 	</div>
 
 	<div class="socialbox">
-		<a rel="nofollow" target="_blank" data-name="twitter" data-action="tweet"
+		<a rel="nofollow" target="_blank" data-name="twitter" aria-label="Share on Twitter" data-action="tweet"
 		   href="<?php yst_build_share_url( 'twitter' ); ?>"><i
-				class="fa fa-twitter-square text-icon--twitter"></i>Tweet</a>
+				class="fa fa-twitter-square text-icon--twitter"></i></a>
 	</div>
 
 	<div class="socialbox">
-		<a rel="nofollow" target="_blank" data-name="linkedin" data-action="share"
+		<a rel="nofollow" target="_blank" data-name="linkedin" aria-label="Share on LinkedIn" data-action="share"
 		   href="<?php yst_build_share_url( 'linkedin' ); ?>"><i
-				class="fa fa-linkedin-square text-icon--linkedin"></i>Share</a>
+				class="fa fa-linkedin-square text-icon--linkedin"></i></a>
 	</div>
 
 	<div class="socialbox">
-		<a rel="nofollow" target="_blank" data-name="pinterest" data-action="pin"
+		<a rel="nofollow" target="_blank" data-name="pinterest" aria-label="Share on Pinterest" data-action="pin"
 		   href="<?php yst_build_share_url( 'pinterest' ); ?>"><i
-				class="fa fa-pinterest-square text-icon--pinterest"></i>Pin it</a>
+				class="fa fa-pinterest-square text-icon--pinterest"></i></a>
 	</div>
 
 	<div class="socialbox">
-		<a rel="nofollow" target="_blank" data-name="print" data-action="print"
+		<a rel="nofollow" target="_blank" data-name="print" aria-label="Print this page" data-action="print"
 		   href="<?php yst_build_share_url( 'print' ); ?>"><i
-				class="fa fa-print"></i>Print</a>
+				class="fa fa-print"></i></a>
 	</div>
 
-	<div class="socialbox">
-		<a target="_blank" data-name="subscribe" data-action="subscribe" data-popup="false" class="manual-optin-trigger" data-optin-slug="kbpo9ryqjbnahlcc"
-		   href="<?php echo apply_filters( 'yoast:url', 'newsletter' ); ?>"><i
-				class="color-courses--secondary fa fa-envelope-square"></i>Subscribe</a>
-	</div>
 </div>

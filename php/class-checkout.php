@@ -17,7 +17,7 @@ class Checkout {
 		// VAT related functions.
 		add_action( 'wp_ajax_yst_check_vat', array( $this, 'ajax_check_vat' ) );
 		add_action( 'wp_ajax_nopriv_yst_check_vat', array( $this, 'ajax_check_vat' ) );
-		add_action( 'edd_checkout_error_checks', array( $this, 'validate_btw_nr' ), 10, 2 );
+//		add_action( 'edd_checkout_error_checks', array( $this, 'validate_btw_nr' ), 10, 2 );
 		add_filter( 'edd_payment_meta', array( $this, 'add_btw_nr_to_payment' ) );
 		add_filter( 'edd_purchase_data_before_gateway', array( $this, 'maybe_remove_tax' ) );
 		add_filter( 'edd_purchase_form_required_fields', array( $this, 'fix_state_required' ), 10 );
@@ -27,7 +27,7 @@ class Checkout {
 	 * Check a given VAT number with the europe VIES check
 	 *
 	 * @param string $country The country code to check with the VAT number.
-	 * @param string $vat_nr The VAT number to check.
+	 * @param string $vat_nr  The VAT number to check.
 	 *
 	 * @return bool|null
 	 */
@@ -48,6 +48,10 @@ class Checkout {
 			$vat_nr = trim( substr( $vat_nr, strlen( $country ) ) );
 		}
 
+		if ( empty( $vat_nr ) ) {
+			return 0;
+		}
+
 		try {
 			// Do the remote request.
 			$client = new \SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
@@ -57,18 +61,20 @@ class Checkout {
 				'vatNumber'   => $vat_nr,
 			) );
 		} catch ( \Exception $e ) {
+
+			if ( $e->getMessage() === 'INVALID_INPUT' ) {
+				return 0;
+			}
+
 			error_log( 'VIES API Error for ' . $country . ' - ' . $vat_nr . ': ' . $e->getMessage() );
 
+			echo $e->getMessage();
 			return 2;
 		}
 
 		// Return the response.
 		if ( isset( $returnVat ) ) {
-			if ( true == $returnVat->valid ) {
-				return 1;
-			} else {
-				return 0;
-			}
+			return $returnVat->valid ? 1 : 0;
 		}
 
 		// Return null if the service is down.
@@ -98,7 +104,7 @@ class Checkout {
 	 * Check for errors with out custom fields
 	 *
 	 * @param array $valid_data Unused.
-	 * @param array $data The data filled in by the customer.
+	 * @param array $data       The data filled in by the customer.
 	 */
 	public function validate_btw_nr( $valid_data, $data ) {
 		if ( ! empty( $data['yst_btw'] ) ) {
@@ -106,8 +112,7 @@ class Checkout {
 
 			if ( 0 === $vat_response ) {
 				edd_set_error( 'yst_btw', __( 'We cannot verify this VAT number, this means you will have to pay VAT. Please make sure you\'ve entered the number correctly.', 'yoastcom' ) );
-			}
-			elseif ( 2 === $vat_response ) {
+			} elseif ( 2 === $vat_response ) {
 				edd_set_error( 'yst_btw_unavailable', __( 'We cannot check if your VAT number is correct because the VAT checking system for the EU is currently down. We\'re sorry for the inconvenience. Please try again later.', 'yoastcom' ) );
 			}
 		}
@@ -133,27 +138,50 @@ class Checkout {
 	 */
 	public function maybe_remove_tax( $purchase_data ) {
 
-		// If we get to this point with a btw nr, we can assume it's correct (validate_btw_nr takes care of the validation).
-		if ( ! empty( $purchase_data['post_data']['yst_btw'] ) ) {
+		if ( empty( $purchase_data['post_data']['yst_btw'] ) ) {
+			return $purchase_data;
+		}
 
-			// Subtract tax from the total price.
-			$purchase_data['price'] = ( $purchase_data['price'] - $purchase_data['tax'] );
-			$purchase_data['tax']   = 0.00;
+		// If the customer is based in the Netherlands, do not subtract VAT.
+		if ( 'NL' === strtoupper( $purchase_data['post_data']['billing_country'] ) ) {
+			$purchase_data = $this->remove_tax_from_purchase_data( $purchase_data );
 
-			// Update cart with new price information.
-			if ( ! empty( $purchase_data['cart_details'] ) && is_array( $purchase_data['cart_details'] ) ) {
-				foreach ( $purchase_data['cart_details'] as $item_key => $item_value ) {
+			return $purchase_data;
+		}
 
-					// Subtract tax from the current cart item.
-					$item_value['price'] = ( $item_value['price'] - $item_value['tax'] );
-					$item_value['tax']   = 0.00;
+		// If we get to this point with a VAT nr, we can assume it's correct (validate_btw_nr takes care of the validation).
+		// Subtract tax from the total price.
+		$purchase_data['price'] = ( $purchase_data['price'] - $purchase_data['tax'] );
 
-					// Save the new item to the array.
-					$purchase_data['cart_details'][ $item_key ] = $item_value;
-
-				}
+		// Update cart with new price information.
+		if ( ! empty( $purchase_data['cart_details'] ) && is_array( $purchase_data['cart_details'] ) ) {
+			foreach ( $purchase_data['cart_details'] as $item_key => & $item_value ) {
+				// Subtract tax from the current cart item.
+				$item_value['price'] = ( $item_value['price'] - $item_value['tax'] );
 			}
+			unset( $item_value );
+		}
 
+		$purchase_data = $this->remove_tax_from_purchase_data( $purchase_data );
+
+		return $purchase_data;
+	}
+
+	/**
+	 * Make sure the tax is not applied multiple times.
+	 *
+	 * @param array $purchase_data
+	 *
+	 * @return array
+	 */
+	protected function remove_tax_from_purchase_data( $purchase_data ) {
+		$purchase_data['tax'] = 0.00;
+
+		if ( ! empty( $purchase_data['cart_details'] ) && is_array( $purchase_data['cart_details'] ) ) {
+			foreach ( $purchase_data['cart_details'] as $item_key => & $item_value ) {
+				$item_value['tax'] = 0.00;
+			}
+			unset( $item_value );
 		}
 
 		return $purchase_data;

@@ -101,11 +101,6 @@ class Query {
 	 */
 	private function ebooks_filter( $query ) {
 		$meta_query = array(
-			'relation' => 'AND',
-			array(
-				'key'     => 'is_bundle',
-				'compare' => 'NOT EXISTS',
-			),
 			array(
 				'relation' => 'OR',
 				array(

@@ -7,6 +7,8 @@
 		$body = $(document.body);
 
 		initCheckoutPage();
+
+		$body.ready( disableAutocompleteDiscount );
 	}
 
 	function initCheckoutPage() {
@@ -90,6 +92,10 @@
 		} else {
 			$( '#edd-card-state-wrap' ).show();
 		}
+	}
+
+	function disableAutocompleteDiscount() {
+		$( '#edd-discount' ).attr( "autocomplete", "off" );
 	}
 
 	$( init );

@@ -62,7 +62,7 @@ class Text_Changes {
 		}
 
 		if ( is_search() ) {
-			$title = sprintf( __( 'Search for "%s"', 'yoastcom' ), get_search_query() );
+			$title = __( 'Search', 'yoastcom' );
 		}
 
 		if ( is_author() ) {

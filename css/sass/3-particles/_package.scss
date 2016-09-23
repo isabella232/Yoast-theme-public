@@ -19,7 +19,6 @@
     margin-top: 0.5em;
   }
 
-
   h4 {
     font-size: 1.3em;
     margin-bottom: .5em;
@@ -95,6 +94,12 @@
     color: $color-white;
   }
 
+}
+
+.theme-hire-us .bordered.package--platinum {
+  button {
+    color: $color-white;
+  }
 }
 
 .theme-hire-us .bordered.package--consulting {

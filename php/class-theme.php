@@ -58,6 +58,7 @@ class Theme {
 		new Page_Academy_Settings();
 		new Query();
 		new Featured_Image();
+		new Affiliate();
 
 		if ( is_admin() ) {
 			$theme_settings = new Theme_Settings();
@@ -80,6 +81,8 @@ class Theme {
 		$this->excerpt->add_hooks();
 
 		$this->content_width();
+
+		do_action( 'yoast_after_theme_setup' );
 	}
 
 	/**
@@ -93,7 +96,7 @@ class Theme {
 	}
 
 	/**
-	 * @return Color_Scheme
+	 * @return string Color Scheme
 	 */
 	public function get_color_scheme() {
 		return $this->color->get_color_scheme();
@@ -124,7 +127,7 @@ class Theme {
 			'jquery',
 		) );
 
-		$this->register_asset( 'script', 'jquery-modal', 'js/includes/jquery.modal.min.js', array( 'jquery' ), '0.7', true );
+		$this->register_asset( 'script', 'jquery-modal', 'js/includes/jquery.modal.min.js', array( 'jquery' ) );
 	}
 
 	public function enqueue_styles() {

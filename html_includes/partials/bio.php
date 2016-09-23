@@ -1,6 +1,9 @@
 <?php
 namespace Yoast\YoastCom\Theme;
 ?>
+
+<hr class="row hr--no-pointer">
+
 <aside class="bio">
 	<div class="row">
 		<div class="media">

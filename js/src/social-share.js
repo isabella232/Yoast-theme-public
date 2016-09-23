@@ -44,7 +44,6 @@ jQuery( document ).ready( function( $ ) {
 			}
 			if ( !navigator.userAgent.match( /MSIE [67]\./gi ) ) {
 				digestPotentialVideos( iframes );
-				console.log( 'init' );
 			}
 		};
 	})();
