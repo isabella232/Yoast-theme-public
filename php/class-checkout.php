@@ -17,7 +17,7 @@ class Checkout {
 		// VAT related functions.
 		add_action( 'wp_ajax_yst_check_vat', array( $this, 'ajax_check_vat' ) );
 		add_action( 'wp_ajax_nopriv_yst_check_vat', array( $this, 'ajax_check_vat' ) );
-		add_action( 'edd_checkout_error_checks', array( $this, 'validate_btw_nr' ), 10, 2 );
+//		add_action( 'edd_checkout_error_checks', array( $this, 'validate_btw_nr' ), 10, 2 );
 		add_filter( 'edd_payment_meta', array( $this, 'add_btw_nr_to_payment' ) );
 		add_filter( 'edd_purchase_data_before_gateway', array( $this, 'maybe_remove_tax' ) );
 		add_filter( 'edd_purchase_form_required_fields', array( $this, 'fix_state_required' ), 10 );
@@ -48,6 +48,10 @@ class Checkout {
 			$vat_nr = trim( substr( $vat_nr, strlen( $country ) ) );
 		}
 
+		if ( empty( $vat_nr ) ) {
+			return 0;
+		}
+
 		try {
 			// Do the remote request.
 			$client = new \SoapClient( 'http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl' );
@@ -57,18 +61,20 @@ class Checkout {
 				'vatNumber'   => $vat_nr,
 			) );
 		} catch ( \Exception $e ) {
+
+			if ( $e->getMessage() === 'INVALID_INPUT' ) {
+				return 0;
+			}
+
 			error_log( 'VIES API Error for ' . $country . ' - ' . $vat_nr . ': ' . $e->getMessage() );
 
+			echo $e->getMessage();
 			return 2;
 		}
 
 		// Return the response.
 		if ( isset( $returnVat ) ) {
-			if ( true == $returnVat->valid ) {
-				return 1;
-			} else {
-				return 0;
-			}
+			return $returnVat->valid ? 1 : 0;
 		}
 
 		// Return null if the service is down.
@@ -139,6 +145,7 @@ class Checkout {
 		// If the customer is based in the Netherlands, do not subtract VAT.
 		if ( 'NL' === strtoupper( $purchase_data['post_data']['billing_country'] ) ) {
 			$purchase_data = $this->remove_tax_from_purchase_data( $purchase_data );
+
 			return $purchase_data;
 		}
 
@@ -156,6 +163,7 @@ class Checkout {
 		}
 
 		$purchase_data = $this->remove_tax_from_purchase_data( $purchase_data );
+
 		return $purchase_data;
 	}
 
