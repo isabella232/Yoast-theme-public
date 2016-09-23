@@ -7,7 +7,8 @@ if ( ! isset( $template_args['class'] ) ) {
 ?>
 <div class="announcement fill newsletter <?php echo esc_attr( $template_args['class'] ); ?>">
 	<div class="row">
-		<p><?php _e( 'Subscribe to our newsletter and never miss a post!', 'yoastcom' ); ?></p>
+		<i class="fa fa-envelope-o"></i>
+		<p><?php _e( 'Subscribe to our newsletter and get a 50 page eBook for free!', 'yoastcom' ); ?></p>
 		<form action="https://yoast.us1.list-manage.com/subscribe/post?u=ffa93edfe21752c921f860358&amp;id=972f1c9122" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<div class="grid">
