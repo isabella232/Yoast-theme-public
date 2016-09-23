@@ -24,12 +24,6 @@
     letter-spacing: 0.05em;
   }
 
-  &.newsletter {
-    i.fa {
-      margin-top: 1.47rem;
-    }
-  }
-
   &--pointer {
     .supports-filter & {
       &::after {
