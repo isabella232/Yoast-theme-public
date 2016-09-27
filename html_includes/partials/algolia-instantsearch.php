@@ -135,7 +135,7 @@
 							attributeName: 'post_type_label',
 							operator: 'or',
 							limit: 10,
-							sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
+							sortBy: ['count:desc', 'name:asc'],
 							templates: {
 								header: '<h3 class="widgettitle">Post types</h3>'
 							},
@@ -150,7 +150,7 @@
 							attributeName: 'taxonomies.category',
 							operator: 'or',
 							limit: 10,
-							sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
+							sortBy: ['count:desc', 'name:asc'],
 							templates: {
 								header: '<h3 class="widgettitle">Categories</h3>'
 							},
@@ -165,7 +165,7 @@
 							attributeName: 'post_author.display_name',
 							operator: 'or',
 							limit: 15,
-							sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
+							sortBy: ['count:desc', 'name:asc'],
 							templates: {
 								header: '<h3 class="widgettitle">Authors</h3>'
 							},
