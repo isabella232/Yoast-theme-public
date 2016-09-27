@@ -1,7 +1,12 @@
 ;(
 	function( $ ) {
-		var validBtwNr = false;
 		var $body;
+
+		var VATDetails = {
+			valid: false,
+			number: '',
+			country: ''
+		};
 
 		var VATStatistics = function() {
 			this.startTime = 0;
@@ -54,20 +59,26 @@
 		 * Checks the BTW NR with the VIES API
 		 */
 		function checkBtwNr( country, btw_nr ) {
-			$( '#yst-edd-btw-wrap .fa-spinner' ).addClass( 'show' );
+			var $spinner = $( '#yst-edd-btw-wrap .fa-spinner' );
+			$spinner.addClass( 'show' );
 			vatStatistics.start();
+
+			VATDetails.country = country;
+			VATDetails.number = btw_nr;
+			VATDetails.valid = null;
 
 			var xhr = jQuery.post( yoast_com_checkout_vars.ajaxurl, {
 				action: 'yst_check_vat',
 				country: country,
 				vat_nr: btw_nr
 			}, function( response ) {
-				$( '#yst-edd-btw-wrap .fa-spinner' ).removeClass( 'show' );
+				$spinner.removeClass( 'show' );
 				$( '#vaterror' ).remove();
+
 				if ( '1' == response ) {
 					$( '#yst_btw' ).removeClass( 'error' ).addClass( 'valid' );
 
-					validBtwNr = true;
+					VATDetails.valid = true;
 					vatStatistics.success();
 				}
 				else if ( '2' == response ) {
@@ -76,7 +87,7 @@
 
 					jQuery( "#yst-edd-btw-wrap" ).append( '<span id="vaterror" class="error">We cannot check if your VAT number is correct because the VAT checking system for the EU is currently down. We\'re sorry for the inconvenience. Please send us an email on <a href="mailto:support@yoast.com">support@yoast.com</a> or try again later.</span>' );
 
-					validBtwNr = false;
+					VATDetails.valid = false;
 					vatStatistics.failed();
 				}
 				else {
@@ -84,7 +95,7 @@
 
 					jQuery( "#yst-edd-btw-wrap" ).append( '<span id="vaterror" class="error">We cannot verify this VAT number, this means you will have to pay VAT. Please make sure you\'ve entered the number correctly.</span>' );
 
-					validBtwNr = false;
+					VATDetails.valid = false;
 					vatStatistics.notVerified();
 				}
 			} );
@@ -114,7 +125,7 @@
 		function fixTaxAfterRecalculation( e, data ) {
 			var taxData = data.response;
 
-			if ( validBtwNr && 0 !== taxData.tax_rate_raw ) {
+			if ( VATDetails.valid == true && VATDetails.country != 'NL' && 0 !== taxData.tax_rate_raw ) {
 				taxData.total_raw = taxData.total_raw - parseFloat( taxData.tax_raw );
 
 				taxData.tax_raw = 0;
@@ -130,7 +141,12 @@
 				$( '.edd_cart_tax_amount' ).html( taxData.tax );
 			}
 			else {
-				hideOrShowVATNumber( taxData );
+				if (VATDetails.country == '' ) {
+					// Don't hide the field when no country is selected yet.
+					hideOrShowVATNumber();
+				} else {
+					hideOrShowVATNumber( taxData );
+				}
 			}
 			$( '#yst_secondary_tax_rate' ).html( taxData.tax_rate.replace( '%', '' ) );
 			$( '#yst_secondary_tax' ).html( taxData.tax );
@@ -148,7 +164,7 @@
 			}
 			else {
 				// Trigger a 'change' in the billing country so EDD can 'fix' the state field.
-				 $billingCountry.trigger( 'change' );
+				$billingCountry.trigger( 'change' );
 			}
 		}
 
@@ -164,11 +180,8 @@
 			// No special BTW rule for The Netherlands
 			if ( 'NL' == billingCountry ) {
 				btw_wrap
-					.hide()
 					.after( '<p id="yst-dutch-vat-notice"><strong>Please note:</strong> Since Yoast is based in the Netherlands we cannot reverse charge the VAT.<br />VAT will be added to the invoice.</p>' );
 
-				$( '.edd_cart_tax_row' ).css( 'display', 'table-row' );
-				return;
 			}
 
 			// Check if the country is in our special tax list
@@ -197,6 +210,7 @@
 			$body = $( 'body' );
 
 			hideOrShowStateField();
+			hideOrShowVATNumber();
 			initChosen();
 
 			$body.on( 'edd_taxes_recalculated', fixTaxAfterRecalculation );
@@ -204,7 +218,6 @@
 			$( '#card_number' ).payment( 'formatCardNumber' );
 			$( '#card-cvc' ).payment( 'formatCardCVC' );
 
-			var card_type = undefined;
 			$( '#card_number' ).on( "input", function() {
 				if ( $.payment.validateCardNumber( $( this ).val() ) ) {
 					$( this ).removeClass( 'error' ).addClass( 'valid' );
@@ -308,7 +321,7 @@
 				var billingCountry = $( '#billing_country' ).val();
 
 				// VAT nr given, validate it.
-				if ( '' != btw_nr ) {
+				if ( '' != btw_nr && '' != billingCountry ) {
 					checkBtwNr( billingCountry, btw_nr );
 				}
 

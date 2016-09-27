@@ -23,67 +23,38 @@ class Affiliate {
 	public function __construct() {
 		// This is hooked just after the <body> tag.
 		add_action( 'yst_body_open', array( $this, 'output_affiliate_code' ) );
+
+		add_action( 'edd_complete_purchase', array( $this, 'set_conversion_cookie' ) );
+	}
+
+	/**
+	 * Communicate conversion details to JavaScript
+	 *
+	 * @param int $payment_id Payment ID of the completed purchase.
+	 */
+	public function set_conversion_cookie( $payment_id ) {
+		$payment = new \EDD_Payment( $payment_id );
+		if ( empty( $payment->ID ) ) {
+			return;
+		}
+
+		$commissions = $this->get_commissions( $payment );
+
+		$arguments = json_encode( array(
+			'account_id'  => self::ACCOUNT_ID,
+			'order_id'    => $payment->ID,
+			'commissions' => $commissions,
+			'group'       => self::GROUP,
+		) );
+
+		setcookie( 'yst_affiliate_conversion', $arguments, 0, '/' );
 	}
 
 	/**
 	 * Output the HTML/JS needed to track affiliate
 	 */
 	public function output_affiliate_code() {
-
-		if ( $this->is_checkout_success() ) {
-			$this->output_conversion_code();
-
-			return;
-		}
-
 		get_template_part( 'html_includes/partials/affiliate-code', array( 'account_id' => self::ACCOUNT_ID ) );
-	}
-
-	/**
-	 * Output the HTML needed to register conversion
-	 */
-	public function output_conversion_code() {
-		global $edd_receipt_args;
-
-		$template = 'html_includes/partials/affiliate-conversion';
-
-		$payment     = new \EDD_Payment( $edd_receipt_args['id'] );
-		$commissions = $this->get_commissions( $payment );
-
-		$arguments = array(
-			'account_id'  => self::ACCOUNT_ID,
-			'order_id'    => $payment->ID,
-			'commissions' => $commissions,
-			'group'       => self::GROUP,
-		);
-
-		get_template_part( $template, $arguments );
-	}
-
-	/**
-	 * Check if we are on a checkout page after completing a purchase
-	 *
-	 * @return bool
-	 */
-	private function is_checkout_success() {
-
-		if ( ! function_exists( 'edd_receipt_shortcode' ) ) {
-			return false;
-		}
-
-		global $edd_receipt_args;
-
-		// Call edd_receipt_shortcode to trigger $edd_receipt_args to be filled.
-		 edd_receipt_shortcode( array() );
-
-		if ( ! edd_is_payment_complete( $edd_receipt_args['id'] ) ) {
-			return false;
-		}
-
-		// EDD_settings success_page
-		$success_page = edd_get_option( 'success_page', '' );
-
-		return ( get_the_ID() === (int) $success_page );
 	}
 
 	/**
@@ -110,7 +81,7 @@ class Affiliate {
 			$amount_override = null;
 
 			// We parse the bundle as item, not the individual products inside.
-			if ( $item['in_bundle' ] ) {
+			if ( $item['in_bundle'] ) {
 				continue;
 			}
 
@@ -129,7 +100,7 @@ class Affiliate {
 			 * Needed to get the discount from the order
 			 */
 			$payment_meta = $payment->get_meta();
-			$price = edd_get_download_final_price( $download_id, $payment_meta['user_info'], $amount_override );
+			$price        = edd_get_download_final_price( $download_id, $payment_meta['user_info'], $amount_override );
 
 			/*
 			 * Determine the commission type based on taxonomy or bundle
@@ -142,6 +113,7 @@ class Affiliate {
 				/** @var \WP_Term[] $terms */
 				$terms = get_the_terms( $item['id'], 'download_category' );
 				if ( count( $terms ) === 1 ) {
+
 					$commission_type = $terms[0]->slug;
 				}
 			}
@@ -158,7 +130,7 @@ class Affiliate {
 		if ( $commissions ) {
 			foreach ( $commissions as $commission => $prices ) {
 				$output[] = array(
-					'sub_amount' => array_sum( $prices ),
+					'sub_amount'      => array_sum( $prices ),
 					'commission_type' => $commission,
 				);
 			}
