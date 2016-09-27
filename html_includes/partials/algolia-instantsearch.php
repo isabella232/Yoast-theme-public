@@ -26,30 +26,34 @@
 							{{{data.post_author.display_name}}}
 						</a>
 					</p>
-					<p>
-						<# for (var index in data.taxonomies.post_tag) { #>
-							<span class="ais-hits--tag">{{{ data._highlightResult.taxonomies.post_tag[index].value }}}</span>
-						<# } #>
-					</p>
+					<# if (data.taxonomies.post_tag) { #>
+						<p>
+							<# for (var index in data.taxonomies.post_tag) { #>
+								<span class="ais-hits--tag">{{{ data._highlightResult.taxonomies.post_tag[index].value }}}</span>
+							<# } #>
+						</p>
+					<# } #>
 				</div>
 
-				<div class="media media--nofloat">
-					<# if ( data.images.thumbnail ) { #>
-						<a href="{{{data.permalink}}}" class="imgExt">
-							<img src="{{ data.images.thumbnail.url }}" class="ais-hits--thumbnail attachment-thumbnail-recent-articles size-thumbnail-recent-articles wp-post-image" width="250" height="131" alt="{{ data.post_title }}" title="{{ data.post_title }}"
-							     itemprop="image"/>
-						</a>
+				<# if ( data.images.thumbnail || data.metadesc || data.excerpt ) { #>
+					<div class="media media--nofloat">
+						<# if ( data.images.thumbnail ) { #>
+							<a href="{{{data.permalink}}}" class="imgExt">
+								<img src="{{ data.images.thumbnail.url }}" class="ais-hits--thumbnail attachment-thumbnail-recent-articles size-thumbnail-recent-articles wp-post-image" width="250" height="131" alt="{{ data.post_title }}" title="{{ data.post_title }}"
+								     itemprop="image"/>
+							</a>
 						<# } #>
-					<article class="bd">
-						<div class="metadesc">
-							<# if(data._yoast_wpseo_metadesc){ #>
-								<p class="metadesc">{{{data._yoast_wpseo_metadesc}}}</p>
-							<# } else if(!data._yoast_wpseo_metadesc && data.excerpt) { #>
-								<p class="excerpt">{{{data.excerpt}}}</p>
-							<# } #>
-						</div>
-					</article>
-				</div>
+						<article class="bd">
+							<div class="metadesc">
+								<# if(data.metadesc){ #>
+									<p class="metadesc">{{{data.metadesc}}}</p>
+								<# } else if(!data.metadesc && data.excerpt) { #>
+									<p class="excerpt">{{{data.excerpt}}}</p>
+								<# } #>
+							</div>
+						</article>
+					</div>
+				<# } #>
 			</div>
 			<hr class="hr--no-pointer">
 		</script>
