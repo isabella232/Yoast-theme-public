@@ -58,8 +58,7 @@
 
     &:hover, &:focus {
       color: $color-white;
-      text-decoration: underline;
-
+      text-decoration: none;
       &.dimmed {
         color: $color-grey-text;
       }

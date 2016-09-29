@@ -62,3 +62,23 @@
 }
 
 .media, .media-right, .bd {overflow:hidden; _overflow:visible; zoom:1;}
+
+.archive {
+
+	.media {
+		margin-bottom: 0;
+	}
+
+ .bd {
+	 p {
+		 margin-bottom: 1.5rem;
+	 }
+
+	 .button, button {
+		 & + p {
+			 margin-top: 1.5rem;
+			 font-size: 0.9em;
+		 }
+	 }
+ }
+}
