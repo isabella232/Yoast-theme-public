@@ -145,6 +145,12 @@
       @include vendor(filter, drop-shadow(0 1px 0 $color-primary));
     }
 
+    &.unavailable-section {
+      &::after {
+        @include vendor(filter, drop-shadow(0 1px 0 $color-grey-quote));
+      }
+    }
+
     &.current-section {
       &::after {
         @include vendor(filter, drop-shadow(0 1px 0 $color-secondary));
