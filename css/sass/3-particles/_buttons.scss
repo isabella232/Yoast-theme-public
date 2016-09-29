@@ -67,12 +67,6 @@
   &.dimmed {
     color: $color-grey-text;
     background: $color-grey;
-    box-shadow: none;
-    text-shadow: none;
-
-    @media only screen and (max-width: $page-width-xsmall) {
-      //background-color: $color-grey;
-    }
 
     &:hover, a:focus {
       color: $color-grey-text;
@@ -83,7 +77,20 @@
   &--naked {
     border: none;
     background: transparent;
+    box-shadow: none;
+    text-shadow: none;
     padding: 0;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+      background: transparent;
+    }
+
+    &:active {
+      top: 0;
+      box-shadow: none;
+      background: transparent;
+    }
   }
 
   i.fa {
