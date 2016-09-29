@@ -54,9 +54,9 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 
 	do_action( 'start_operation', 'hm_template_part::' . $file_handle );
 
-	if ( file_exists( get_stylesheet_directory() . '/' . $file . '.php' ) ) {
+	if ( is_file( get_stylesheet_directory() . '/' . $file . '.php' ) ) {
 		$file = get_stylesheet_directory() . '/' . $file . '.php';
-	} elseif ( file_exists( get_template_directory() . '/' . $file . '.php' ) ) {
+	} elseif ( is_file( get_template_directory() . '/' . $file . '.php' ) ) {
 		$file = get_template_directory() . '/' . $file . '.php';
 	} else {
 		$backtrace = debug_backtrace();
@@ -66,10 +66,10 @@ function get_template_part( $file, $template_args = array(), $cache_args = array
 	}
 
 	ob_start();
-	if ( WP_DEBUG && ! ( isset( $template_args['debug'] ) && $template_args['debug'] === false ) ) {
+	if ( is_admin() || ( isset( $template_args['debug'] ) && $template_args['debug'] === true ) ) {
 		printf( '<!-- Including template "%s" -->', $file );
 	}
-	$return = require( $file );
+	$return = require $file;
 	$data   = ob_get_clean();
 
 	do_action( 'end_operation', 'hm_template_part::' . $file_handle );
