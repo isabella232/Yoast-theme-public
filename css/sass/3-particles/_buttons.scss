@@ -1,11 +1,20 @@
-.button, button {
+body .button, body button {
   font-family: $font-stack-default;
+  color: $color-white;
+
+  background: rgb(230, 102, 14); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(230, 102, 14, 1) 0%, rgba(195, 67, 0, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(230, 102, 14, 1) 0%, rgba(195, 67, 0, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(230, 102, 14, 1) 0%, rgba(195, 67, 0, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6660e', endColorstr='#c34300', GradientType=0); /* IE6-9 */
+}
+
+.button, button {
   position: relative;
   display: inline-block;
   width: 100%;
   padding: 0.345em 1em;
   font-size: 1.1em;
-  color: $color-white;
   border: 0;
   text-decoration: none;
   cursor: pointer;
@@ -13,12 +22,6 @@
   text-shadow: $text-shadow;
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.8);
   overflow: hidden;
-
-  background: rgb(230, 102, 14); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(230, 102, 14, 1) 0%, rgba(195, 67, 0, 1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(230, 102, 14, 1) 0%, rgba(195, 67, 0, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(230, 102, 14, 1) 0%, rgba(195, 67, 0, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6660e', endColorstr='#c34300', GradientType=0); /* IE6-9 */
 
   @media only screen and (min-width: $page-width-small) {
     margin-right: 1.36rem;
