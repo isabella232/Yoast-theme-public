@@ -102,3 +102,53 @@
 #algolia_instant_selector .result .result-title {
   margin-bottom: auto;
 }
+
+// New Algolia plugin overrides
+
+.ais-hits--item {
+  margin-bottom: 0;
+  .meta {
+    margin-bottom:0;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .ais-hits--item {
+    border-bottom: 0;
+  }
+}
+
+.ais-refinement-list--label .ais-refinement-list--checkbox {
+  margin-right: 5px;
+}
+
+.search-header {
+  @media only screen and (max-width: $page-width-medium) {
+    flex-wrap: wrap;
+  }
+
+  @include display-flex;
+  margin-bottom: 1em;
+
+  & h1 {
+    width: 30%;
+
+    @media only screen and (max-width: $page-width-medium) {
+      margin-bottom:0;
+    }
+  }
+
+  & #algolia-search-box {
+    min-width: 300px;
+    margin-bottom: 0;
+
+    @media only screen and (max-width: $page-width-medium) {
+      width: 100%;
+      margin-left: .7em;
+    }
+    @media only screen and (min-width: $page-width-medium) {
+      width: 70%;
+      margin-left: 0;
+    }
+  }
+}

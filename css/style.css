@@ -2704,7 +2704,7 @@ body.edd-checkout #fullfooter {
 
 .checkout-item__icon {
   width: 40px;
-  min-height: 10px;
+  min-height: 40px;
   float: left;
   margin-right: 1rem; }
 

@@ -1,7 +1,8 @@
 <?php
 namespace Yoast\YoastCom\Theme;
 ?>
-<hr class="hr--no-pointer">
+
+<hr>
 
 <section class="row iceberg grid">
 	<div class="one-third">
