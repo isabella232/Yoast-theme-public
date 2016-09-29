@@ -60,26 +60,23 @@
   &:active {
     background: #c34300;
     text-shadow: none;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
     top: 1px;
   }
 
-  body &,
-  .yoast_academy & {
-    &.dimmed {
+  &.dimmed {
+    color: $color-grey-text;
+    background: $color-grey;
+    box-shadow: none;
+    text-shadow: none;
+
+    @media only screen and (max-width: $page-width-xsmall) {
+      //background-color: $color-grey;
+    }
+
+    &:hover, a:focus {
       color: $color-grey-text;
-      background: $color-grey;
-      box-shadow: none;
-      text-shadow: none;
-
-      @media only screen and (max-width: $page-width-xsmall) {
-        //background-color: $color-grey;
-      }
-
-      &:hover, a:focus {
-        color: $color-grey-text;
-        background: $color-grey-hover;
-      }
+      background: $color-grey-hover;
     }
   }
 
