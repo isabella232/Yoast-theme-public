@@ -24,18 +24,8 @@ body .button, body button {
   overflow: hidden;
 
   @media only screen and (min-width: $page-width-small) {
-    margin-right: 1.36rem;
     width: auto;
     max-height: 1.43rem + 1.43rem;
-
-    &.left {
-      margin-right: 0;
-      margin-left: 1.36rem;
-    }
-  }
-
-  &.alignleft {
-    margin: 1rem 2.5rem 0 0 !important;
   }
 
   .arrow {
