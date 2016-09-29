@@ -9,10 +9,9 @@
     color: $color-primary;
     a {
       color: $color-primary;
-      text-decoration: none;
+
       &:hover, &:focus {
         color: $color-secondary;
-        text-decoration: underline;
       }
     }
   }
@@ -23,20 +22,15 @@
 
   a {
     color: $color-secondary;
-    text-decoration: underline;
 
     &:hover, &:focus {
       color: $color-primary;
-      text-decoration: underline;
     }
 
     &.more {
       color: $color-primary;
-      text-decoration: none;
-
       &:hover, &:focus {
         color: $color-secondary;
-        text-decoration: none;
       }
     }
   }
@@ -49,42 +43,8 @@
     border-color: $color-primary;
   }
 
-  dl a {
-    //color: $color-secondary;
-  }
-
-  .button, button {
-    text-decoration: none;
-
-    &:hover, &:focus {
-      color: $color-white;
-      text-decoration: none;
-      &.dimmed {
-        color: $color-grey-text;
-      }
-    }
-  }
-
-  // all links placed in a fill block get the color white
-  .fill {
-    color: $color-white;
-    a {
-      color: $color-white;
-      text-decoration: none;
-      &:hover, &:focus {
-        color: $color-white;
-        text-decoration: underline;
-      }
-    }
-    h1, h2, h3, h4 {
-      color: $color-white;
-    }
-  }
-
   hr {
-    border-top: 1px solid $color-secondary;
-    padding-left: 0;
-    padding-right: 0;
+    border-top-color: $color-secondary;
 
     &::after {
       @include vendor(filter, drop-shadow(0 1px 0 $color-secondary));
@@ -101,17 +61,11 @@
   // newsletter block
   .newsletter {
     background: $color-secondary;
-    color: $color-white;
-    h1, h2, h3, h4,
-    .h1, .h2, .h3, .h4 {
-      color: $color-white;
-    }
+
   }
 
   // bio block
   .bio {
-    //border-top: 1px solid $color-secondary;
-    //border-bottom: 1px solid $color-primary;
     p {
       color: $color-primary;
     }
