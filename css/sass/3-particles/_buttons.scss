@@ -57,7 +57,14 @@ body .button, body button {
 
   &.dimmed {
     color: $color-grey-text;
-    background: $color-grey;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,bebebe+100 */
+    background: rgb(230,230,230); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(230,230,230,1) 0%, rgba(190,190,190,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(230,230,230,1) 0%,rgba(190,190,190,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(230,230,230,1) 0%,rgba(190,190,190,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#bebebe',GradientType=0 ); /* IE6-9 */
+
     text-shadow: none;
 
     &:hover, a:focus {
