@@ -68,27 +68,31 @@
   .yoast_academy & {
     &.dimmed {
       color: $color-grey-text;
-      background-color: $color-grey;
+      background: $color-grey;
+      box-shadow: none;
+      text-shadow: none;
 
       @media only screen and (max-width: $page-width-xsmall) {
         //background-color: $color-grey;
       }
 
       &:hover, a:focus {
-        background-color: $color-grey-hover;
         color: $color-grey-text;
+        background: $color-grey-hover;
       }
     }
   }
 
   &--naked {
     border: none;
-    background-color: transparent;
+    background: transparent;
     padding: 0;
   }
 
   i.fa {
     font-size: 140%;
-    margin: 4px 10px 0 0;
+    margin: 0 10px 0 0;
+    position: relative;
+    top: 1px;
   }
 }
