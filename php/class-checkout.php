@@ -142,10 +142,8 @@ class Checkout {
 			return $purchase_data;
 		}
 
-		// If the customer is based in the Netherlands, do not subtract VAT.
+		// If the customer is based in the Netherlands, leave VAT intact.
 		if ( 'NL' === strtoupper( $purchase_data['post_data']['billing_country'] ) ) {
-			$purchase_data = $this->remove_tax_from_purchase_data( $purchase_data );
-
 			return $purchase_data;
 		}
 
