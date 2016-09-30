@@ -80,7 +80,7 @@ $banner_icon = get_term_meta( $term_id, 'yoastcom_term_banner_icon', true );
 			<?php theme_object()->excerpt->more( ' <a href="' . get_permalink() . '">&raquo;</a>' ); ?>
 
 				<?php get_template_part( 'html_includes/partials/article-intro' ); ?>
-			<hr class="row hr--no-pointer">
+			<hr class="hr--no-pointer">
 		<?php endwhile; ?>
 		<?php theme_object()->excerpt->clear(); ?>
 
