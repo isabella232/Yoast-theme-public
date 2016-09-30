@@ -4,8 +4,7 @@
  */
 
 namespace Yoast\YoastCom\Theme;
-?>
-<?php use Yoast\YoastCom\Settings\Hide_Comments;
+use Yoast\YoastCom\Settings\Hide_Comments;
 
 get_header(); ?>
 
@@ -15,10 +14,11 @@ get_header(); ?>
 	<main role="main">
 
 		<article class="row">
-			
-			<?php get_template_part( 'html_includes/partials/post-title'); ?>
-			
-			<?php get_template_part( 'html_includes/partials/meta-full' ); ?>
+
+			<?php
+			get_template_part( 'html_includes/partials/post-title' );
+			get_template_part( 'html_includes/partials/meta-full' );
+			?>
 
 			<div class="content content__first">
 				<?php the_content(); ?>
@@ -28,33 +28,34 @@ get_header(); ?>
 		</article>
 
 		<div class="breadcrumb__container">
-		<hr class="hr--no-pointer row">
-		<div class="row">
-			<?php get_template_part( 'html_includes/partials/breadcrumbs' ); ?>
-		</div>
+			<hr class="hr--no-pointer row">
+			<div class="row">
+				<?php get_template_part( 'html_includes/partials/breadcrumbs' ); ?>
+			</div>
 		</div>
 
 		<?php get_template_part( 'html_includes/partials/bio' ); ?>
 
 		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'fill--secondary announcement--pointer' ) ); ?>
 
-		<?php if ( ! Hide_Comments::hide_comments() ) : ?>
-			<?php $comments_number = get_comments_number(); ?>
-			<?php if ( $comments_number > 0 ) : ?>
+		<?php if ( ! Hide_Comments::hide_comments() ) :
+			$comments_number = get_comments_number();
+
+			if ( $comments_number > 0 ) : ?>
 				<div class="entry-comments" id="comments">
 					<div class="row">
 						<h3><?php printf( _n( '%d Response to %s', '%d Responses to %s', $comments_number ), $comments_number, get_the_title() ); ?></h3>
 					</div>
 					<?php comments_template(); ?>
 				</div>
-			<?php endif; ?>
+				<?php
+			endif;
 
-			<?php if ( comments_open() ) : ?>
-				<?php comment_form(); ?>
-			<?php endif; ?>
-		<?php endif; ?>
+			if ( comments_open() ) {
+				comment_form();
+			}
+		endif;
 
-		<?php
 		$primary_term_id = yoast_get_primary_term_id();
 		if ( ! $primary_term_id ) {
 			$cats            = get_categories( array( 'fields' => 'ids' ) );
@@ -75,9 +76,8 @@ get_header(); ?>
 			</section>
 			<?php
 		endif;
-		?>
 
-		<?php get_template_part( 'html_includes/partials/announcement', array(
+		get_template_part( 'html_includes/partials/announcement', array(
 			'class' => 'theme-academy announcement--pointer-top',
 			'text'  => __( 'Want to learn the basics of SEO? Or how to use Yoast SEO properly? Follow a course on Yoast Academy &raquo;', 'yoastcom' ),
 			'url'   => url_academy_overview() . 'courses/',
