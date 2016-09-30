@@ -1,45 +1,49 @@
 .searchbar {
 
+  .aa-input {
+	width: 20rem;
+  }
+
   @media only screen and (min-width: $page-width-medium) {
-    position: absolute;
-    top: 40px;
-    right: 100px;
+	position: absolute;
+	top: 40px;
+	right: 100px;
   }
 
   @media only screen and (max-width: $page-width-medium) {
-    display: none;
-    position: fixed;
-    background-color: $color-white;
-    width: 100%;
-    z-index: 90;
-    border-bottom: 1px solid $color-grey-line;
+	display: none;
+	position: fixed;
+	background-color: $color-white;
+	width: 100%;
+	z-index: 90;
+	border-bottom: 1px solid $color-grey-line;
 
-    form {
-      width: 100%;
-      display: flex;
-    }
+	form {
+	  width: 100%;
+	  display: flex;
+	}
 
-    .algolia-autocomplete {
-      display: inline;
-      margin-right: 20px;
-    }
+	.algolia-autocomplete {
+	  display: inline;
+	  margin-right: 20px;
+	}
 
-    .search-button {
-      width: 40px;
-      margin: 0;
-      font-size: 1.5em;
-    }
+	.search-button {
+	  width: 40px;
+	  margin: 0;
+	  font-size: 1.5em;
+	}
 
-    .search-button:hover, .search-button:focus {
-      text-decoration: none;
-      background-color: transparent;
-      color: $color-orange-hover;
-    }
+	.search-button:hover, .search-button:focus {
+	  text-decoration: none;
+	  background-color: transparent;
+	  color: $color-orange-hover;
+	}
 
-    [data-show-mobile-search] & {
-      display: block;
-      padding: 1.2em;
-    }
+	[data-show-mobile-search] & {
+	  display: block;
+	  padding: 1.2em;
+	}
   }
 
 }
@@ -49,13 +53,13 @@
 .ais-hits--item {
   margin-bottom: 0;
   .meta {
-    margin-bottom:0;
+	margin-bottom: 0;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .ais-hits--item {
-    border-bottom: 0;
+	border-bottom: 0;
   }
 }
 
@@ -65,31 +69,56 @@
 
 .search-header {
   @media only screen and (max-width: $page-width-medium) {
-    flex-wrap: wrap;
+	flex-wrap: wrap;
   }
 
   @include display-flex;
   margin-bottom: 1em;
 
   & h1 {
-    width: 30%;
+	width: 30%;
 
-    @media only screen and (max-width: $page-width-medium) {
-      margin-bottom:0;
-    }
+	@media only screen and (max-width: $page-width-medium) {
+	  margin-bottom: 0;
+	}
   }
 
   & #algolia-search-box {
-    min-width: 300px;
-    margin-bottom: 0;
+	min-width: 300px;
+	margin-bottom: 0;
 
-    @media only screen and (max-width: $page-width-medium) {
-      width: 100%;
-      margin-left: .7em;
-    }
-    @media only screen and (min-width: $page-width-medium) {
-      width: 70%;
-      margin-left: 0;
-    }
+	@media only screen and (max-width: $page-width-medium) {
+	  width: 100%;
+	  margin-left: .7em;
+	}
+	@media only screen and (min-width: $page-width-medium) {
+	  width: 70%;
+	  margin-left: 0;
+	}
+  }
+}
+
+.aa-dropdown-menu {
+
+  width: 25rem;
+
+  .suggestion-post-attributes {
+	float: left;
+	display: block;
+
+	width: 100%;
+	&.with-image {
+	  width: 78%;
+	}
+
+	.suggestion-post-title {
+	  font-size: 1.2em;
+	}
+
+  }
+
+  .suggestion-post-thumbnail {
+	height: 49px;
+	width: 60px;
   }
 }
