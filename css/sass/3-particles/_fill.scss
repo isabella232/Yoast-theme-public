@@ -89,7 +89,7 @@
 .fill {
 	color: $color-white;
 
-	a {
+	a, a.more {
 		color: $color-white;
 		text-decoration: none;
 		&:hover, &:focus {

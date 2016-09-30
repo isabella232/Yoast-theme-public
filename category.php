@@ -69,25 +69,24 @@ $banner_icon = get_term_meta( $term_id, 'yoastcom_term_banner_icon', true );
 		?>
 
 		<?php if ( ! is_paged() ) : ?>
+
 			<?php get_template_part( 'html_includes/partials/must-read-articles', array( 'class1' => 'theme-academy--secondary', 'term_id' => $term_id ) ); ?>
+			<hr>
 		<?php endif; ?>
 
+		<?php if ( have_posts() ): ?>
+		<div class="row">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php theme_object()->excerpt->more( ' <a href="' . get_permalink() . '">&raquo;</a>' ); ?>
-			<div class="row">
-				<?php get_template_part( 'html_includes/partials/article-intro' ); ?>
-			</div>
 
-			<hr class="hr--no-pointer">
+				<?php get_template_part( 'html_includes/partials/article-intro' ); ?>
+			<hr class="row hr--no-pointer">
 		<?php endwhile; ?>
 		<?php theme_object()->excerpt->clear(); ?>
 
-		<?php //get_template_part( 'html_includes/partials/announcement-addonmodules', array( 'class' => "fill--secondary", ) );
-		?>
-
-		<div class="row">
 			<?php get_template_part( 'html_includes/partials/pagination' ); ?>
 		</div>
+		<?php endif; ?>
 
 		<?php if ( is_category() ) : ?>
 			<hr>
