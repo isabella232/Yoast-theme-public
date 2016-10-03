@@ -17,7 +17,7 @@ body .button, body button {
 .button, button {
   position: relative;
   display: inline-block;
-  width: 100%;
+  width: auto;
   padding: 0.345em 1em;
   font-size: 1.1em;
   border: 0;
@@ -28,13 +28,10 @@ body .button, body button {
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.8);
   overflow: hidden;
 
-  margin-bottom: 1em;
+  max-height: 1.43rem + 1.43rem;
 
-  @media only screen and (min-width: $page-width-small) {
-    width: auto;
-    max-height: 1.43rem + 1.43rem;
-    margin-right: 1em;
-  }
+  margin-bottom: 1em;
+  margin-right: 1em;
 
   .arrow {
     display: none;
@@ -71,9 +68,18 @@ body .button, body button {
 
     text-shadow: none;
 
-    &:hover, a:focus {
+    &:hover, &:focus {
       color: $color-grey-text;
       background: $color-grey-hover;
+    }
+
+    &.flat {
+      background: #e6e6e6;
+      box-shadow: none;
+
+      &:hover, &:focus {
+        background: $color-grey-hover;
+      }
     }
   }
 
@@ -111,11 +117,23 @@ body .button, body button {
     &.fa-arrow-circle-right {
       top: 2px;
     }
+
+    &.fa-info-circle {
+      font-size: 130%;
+      margin: 0 5px 0 0;
+      top: 2px;
+    }
   }
 }
 
 .alignright {
   .button, button {
     margin: 0;
+    min-width: 60%;
+  }
+
+  .button + .button.dimmed {
+    min-width: 35%;
+    float: right;
   }
 }
