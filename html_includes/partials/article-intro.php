@@ -1,5 +1,8 @@
 <?php
+
 namespace Yoast\YoastCom\Theme;
+
+use Yoast\YoastCom\Settings\Hide_Comments;
 
 $post_id   = get_the_ID();
 $post_type = get_post_type_object( get_post_type() );
@@ -17,7 +20,7 @@ if ( 'yoast_dev_article' === $post_type->name ) {
 		<?php } ?>
 		<?php the_time( 'j F Y' ); ?> <?php _e( 'by', 'yoastcom' ); ?> <a
 			href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'nicename' ) ) ); ?>"><?php the_author(); ?> &raquo;</a>
-		<?php if ( get_comments_number() > 0 ) : ?>
+		<?php if ( ! Hide_Comments::hide_comments( $post_id ) && get_comments_number() > 0 ) : ?>
 			- <a
 				href="<?php the_permalink(); ?>#comments"><?php get_template_part( 'html_includes/partials/comments-number' ); ?></a>
 		<?php endif; ?>
