@@ -18,7 +18,7 @@ if ( isset( $template_args['readonly'] ) && $template_args['readonly'] ) {
 		<div class="checkout-item__icon show-on-desktop"><?php
 			$icon = get_product_icon( $item['id'] );
 			if ( $icon ) {
-				printf( '<img class="more__plug more__plug--small" src="%s" width="40" height="40"/>', esc_url( $icon ) );
+				printf( '<img class="more__plug more__plug--small" src="%s" width="40" height="40" alt="">', esc_url( $icon ) );
 			}
 			?>
 		</div>
