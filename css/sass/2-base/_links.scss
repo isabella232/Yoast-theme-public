@@ -14,6 +14,14 @@
 	}
 }
 
+.link--implicit {
+	text-decoration: none !important;
+
+	&:hover, &:focus {
+		text-decoration: none !important;
+	}
+}
+
 .link--explicit {
 	text-decoration: underline !important;
 }
