@@ -37,6 +37,11 @@ body .button, body button {
     display: none;
   }
 
+  &--slim {
+    padding: 0.2em 0.5em;
+    font-size: 1em;
+  }
+
   &--full {
     width: 100%;
   }

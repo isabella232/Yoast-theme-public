@@ -5,6 +5,8 @@
 
 namespace Yoast\YoastCom\Theme;
 
+use Yoast\YoastCom\EDD\Alternate_Currency;
+
 /**
  * Handles all the customization to the EDD checkout HTML
  */
@@ -17,13 +19,21 @@ class Checkout_HTML {
 		add_action( 'template_redirect', array( $this, 'change_edd_csau_location' ), 99 );
 
 		add_action( 'edd_cc_billing_bottom', array( $this, 'html_cc_billing_bottom' ) );
+
 		add_action( 'edd_purchase_form_before_submit', array( $this, 'html_what_happens_next' ), 175 );
 		add_action( 'edd_purchase_form_before_submit', array( $this, 'html_purchase_summary' ), 180 );
+		add_action( 'edd_purchase_form_before_submit', array( $this, 'html_switch_currency' ), 200 );
+		add_action( 'edd_purchase_form_before_submit', array( $this, 'html_clear' ), 220 );
+
 		add_action( 'edd_purchase_link_end', array( $this, 'html_button_purchase_link' ), 10, 2 );
 
 		add_action( 'init', array( $this, 'init' ) );
 
 		add_shortcode( 'download_checkout', array( $this, 'edd_checkout_form_shortcode' ) );
+	}
+
+	public function html_clear() {
+		echo '<div class="clear"></div><br/>';
 	}
 
 	/**
@@ -46,8 +56,7 @@ class Checkout_HTML {
 			$output .= '<div class="checkout__form">' . $edd_checkout_form . '</div>'; // checkout--form
 			$output .= $edd_cross_sells;
 			$output .= '</div>'; // checkout-wrap--container
-		}
-		else {
+		} else {
 			$output .= $edd_checkout_form;
 		}
 
@@ -95,7 +104,7 @@ class Checkout_HTML {
 		$always_show_discount = true;
 
 		if ( ! $always_show_discount && ! $yst_edd_discount ) {
-			remove_action( 'edd_checkout_form_top', 'edd_discount_field', -1 );
+			remove_action( 'edd_checkout_form_top', 'edd_discount_field', - 1 );
 		}
 	}
 
@@ -177,6 +186,18 @@ class Checkout_HTML {
 		}
 
 		get_template_part( 'html_includes/shop/input-creditcard' );
+	}
+
+	public function html_switch_currency() {
+		get_template_part( 'html_includes/shop/switch-currency', array(
+			'is_switched' => ( isset( $_COOKIE['yoast_currency_switched'] ) ? $_COOKIE['yoast_currency_switched'] : false ),
+			'options'     => array(
+				'EUR' => __( 'euros', 'yoastcom' ),
+				'USD' => __( 'dollars', 'yoastcom' )
+			),
+			'default'     => 'USD',
+			'current'     => Alternate_Currency::get_currency(),
+		) );
 	}
 
 	/**
