@@ -15,11 +15,14 @@ if ( $template_args['default'] !== $template_args['current'] || $template_args['
 		$to_dollars_class = ' hidden';
 	}
 
+	$toggle = 'I want to pay in <button class="button--slim yst_currency_switch%s" data-currency="USD">dollars</button><button class="button--slim yst_currency_switch%s" data-currency="EUR">euro\'s</button>';
+
+	/** @todo Translatable strings! */
 	echo '<p class="switch-currency' . $to_dollars_class . '">';
-	echo 'We\'ve detected that you probably want to pay in euro\'s.<br>If we made a mistake you can <button class="button--slim yst_currency_switch" data-currency="USD">change to dollars</button>';
+	echo 'We\'ve detected that you probably want to pay in euro\'s.<br>' . sprintf( $toggle, '', ' flat dimmed' );
 	echo '</p>';
 
 	echo '<p class="switch-currency' . $to_euros_class . '">';
-	echo 'You have switched to dollars instead of euro\'s.<br>If you want to switch back you can <button class="button--slim yst_currency_switch" data-currency="EUR">change to euro\'s</button>';
+	echo 'You have switched to dollars instead of euro\'s.<br>' . sprintf( $toggle, ' flat dimmed', '' );
 	echo '</p>';
 }

@@ -13,7 +13,13 @@
 
 	function bindCurrencySwitch() {
 		$('.yst_currency_switch').click(function(e) {
-			createCookie( 'yoast_cart_currency', $( this ).data( 'currency' ), 356 );
+			var current_currency = readCookie( 'yoast_cart_currency' );
+			var to_currency = $( this ).data( 'currency' );
+			if ( current_currency == to_currency ) {
+				return false;
+			}
+
+			createCookie( 'yoast_cart_currency', to_currency, 356 );
 			createCookie( 'yoast_currency_switched', true, 356 );
 
 			$('.switch-currency').toggleClass('hidden');
