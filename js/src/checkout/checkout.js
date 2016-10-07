@@ -7,8 +7,15 @@
 		$body = $(document.body);
 
 		initCheckoutPage();
+		bindCurrencySwitch();
 
 		$body.ready( disableAutocompleteDiscount );
+	}
+
+	function bindCurrencySwitch() {
+		$(window).on('currency_switched', function() {
+			recalculate_taxes();
+		});
 	}
 
 	function initCheckoutPage() {
