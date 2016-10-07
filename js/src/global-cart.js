@@ -19,8 +19,8 @@
 				return false;
 			}
 
-			createCookie( 'yoast_cart_currency', to_currency, 356 );
-			createCookie( 'yoast_currency_switched', true, 356 );
+			createCookie( 'yoast_cart_currency', to_currency, 356, '.yoast.com' );
+			createCookie( 'yoast_currency_switched', true, 356, '.yoast.com' );
 
 			$('.switch-currency').toggleClass('hidden');
 
@@ -58,14 +58,18 @@
 		}
 	}
 
-	function createCookie(name,value,days) {
+	function createCookie(name,value,days,domain) {
+		var extra = "; path=/";
 		if (days) {
 			var date = new Date();
 			date.setTime(date.getTime()+(days*24*60*60*1000));
-			var expires = "; expires="+date.toGMTString();
+			extra += "; expires="+date.toGMTString();
 		}
-		else var expires = "";
-		document.cookie = name+"="+value+expires+"; path=/";
+
+		if (domain) {
+			extra += "; domain="+domain;
+		}
+		document.cookie = name+"="+value+extra+"";
 	}
 
 	function readCookie(name) {
