@@ -2,11 +2,13 @@
 
 namespace Yoast\YoastCom\Theme;
 
+$forced_currency = apply_filters( 'yoast_detect_visitor_currency', null );
+
 // If we have switched currencies (and must provide a way to switch back)
 // Or the currenct currency is not the default one
-if ( $template_args['default'] !== $template_args['current'] || $template_args['is_switched'] ) {
+if ( is_null( $forced_currency ) && ( $template_args['default'] !== $template_args['current'] || $template_args['is_switched'] ) ) {
 
-	$to_euros_class = '';
+	$to_euros_class   = '';
 	$to_dollars_class = '';
 
 	if ( $template_args['default'] !== $template_args['current'] ) {
