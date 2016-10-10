@@ -7,9 +7,11 @@
 		}
 
 		function bindCurrencySwitch() {
-			$( '.yst_currency_switch' ).click( function() {
+			$( '.yst_currency_switch' ).change( function() {
 				var current_currency = readCookie( 'yoast_cart_currency' );
-				var to_currency = $( this ).data( 'currency' );
+				var to_currency = $( this ).val();
+				console.log($(this));
+				console.log(to_currency);
 
 				if ( current_currency == to_currency ) {
 					return false;
