@@ -17,6 +17,10 @@
   input[type="submit"], input[type="button"] {
     color: $color-white;
   }
+
+  .button, button {
+    display: inline;
+  }
 }
 
 .llms-button {
@@ -94,8 +98,6 @@ svg .llms-animated-circle {
 
 .llms-return {
   a {
-    @extend .button, .left, .dimmed;
-
     .single-llms_quiz & {
       width: 100%;
       text-align: center;
