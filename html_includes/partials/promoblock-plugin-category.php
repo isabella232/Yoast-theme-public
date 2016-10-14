@@ -22,6 +22,8 @@ $plugins = query_plugins( array(
 ) );
 
 $term = get_term_by( 'slug', $category, 'yoast_plugin_category' );
+
+$title = get_the_title();
 ?>
 
 <div class="one-third">
@@ -34,9 +36,9 @@ $term = get_term_by( 'slug', $category, 'yoast_plugin_category' );
 		<ul class="list list--unstyled list--plugin hide-on-mobile">
 			<?php while ( $plugins->have_posts() ) : $plugins->the_post(); ?>
 				<li>
-					<a href="<?php the_permalink(); ?>" class=""><?php the_title(); ?>&nbsp;&raquo;</a>
-					<a href="<?php the_permalink(); ?>" class="text-icon link--naked pull-right more-info"><span class="screen-reader-text"><?php printf( __( 'More information about %s', 'yoastcom' ), get_the_title() ); ?></span>&#xf05a;</a>
-					<a href="<?php echo esc_url( url_plugin_download() ); ?>" class="text-icon link--naked pull-right">&#xf01a;</a>
+					<a href="<?php the_permalink(); ?>" class=""><?php echo $title ?>&nbsp;&raquo;</a>
+					<a href="<?php the_permalink(); ?>" class="text-icon link--naked pull-right more-info"><span class="screen-reader-text"><?php printf( __( 'More information about %s', 'yoastcom' ), $title ); ?></span>&#xf05a;</a>
+					<a href="<?php echo esc_url( url_plugin_download() ); ?>" class="text-icon link--naked pull-right" aria-label="<?php echo esc_attr( sprintf( __('Download %s', 'yoastcom'), $title ) ) ?>">&#xf01a;</a>
 				</li>
 			<?php endwhile; wp_reset_postdata(); ?>
 		</ul>
