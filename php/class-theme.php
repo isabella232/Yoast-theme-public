@@ -163,7 +163,15 @@ class Theme {
 		wp_enqueue_style( 'yoast-com' );
 		wp_enqueue_script( 'yoast-com' );
 
-		wp_localize_script( 'yoast-com', 'YoastAjax', array( 'ajaxurl' => apply_filters( 'yoast:url', 'shop_counter_ajax' ) ) );
+		wp_localize_script(
+			'yoast-com',
+			'YoastAjax',
+			array(
+				'ajaxurl' => apply_filters( 'yoast:url', 'shop_counter_ajax' ),
+				'shop' => apply_filters( 'yoast:url', 'shop_counter_ajax' ),
+				'admin' => admin_url( 'admin-ajax.php' ),
+			)
+		);
 
 		if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() ) {
 			wp_enqueue_style( 'chosen' );

@@ -4,35 +4,58 @@
 
 		function init() {
 			$( document ).ready( bindCurrencySwitch );
+			$( document ).ready( detectCurrency );
+		}
+
+		function detectCurrency() {
+			var current_currency = readCookie( 'yoast_cart_currency' );
+//			if ( null == current_currency ) {
+				$.getJSON(
+					YoastAjax.admin + '?callback=?',
+					{ action: 'detect_currency' },
+					setCurrentCurrency
+				);
+//			}
+		}
+
+		function setCurrentCurrency( response ) {
+			if ( 'success' === response.status ) {
+				switchCurrency( response.data.currency );
+			}
 		}
 
 		function bindCurrencySwitch() {
-			$( '.yst_currency_switch' ).change( function() {
-				var current_currency = readCookie( 'yoast_cart_currency' );
-				var to_currency = $( this ).val();
-				console.log($(this));
-				console.log(to_currency);
-
-				if ( current_currency == to_currency ) {
-					return false;
-				}
-
-				createCookie( 'yoast_cart_currency', to_currency, 356, '.yoast.com' );
-				createCookie( 'yoast_currency_switched', true, 356, '.yoast.com' );
-
-				createCookie( 'yoast_cart_currency', to_currency, 356, '.yoast.dev' );
-				createCookie( 'yoast_currency_switched', true, 356, '.yoast.dev' );
-
-				$( '.switch-currency__' + to_currency ).addClass( 'hidden' );
-				$( '.switch-currency__' + current_currency ).removeClass( 'hidden' );
-
-				$( '.yoast-currency' ).addClass( 'hidden' );
-				$( '.yoast-currency__' + to_currency ).removeClass( 'hidden' );
-
-				$( window ).trigger( 'currency_switched', {'from': current_currency, 'to': to_currency} );
-
+			$( '.yst_currency_switch' ).click( function() {
+				switchCurrency( $( this ).data( 'currency' ) );
 				return false;
 			} );
+
+			$( '.yst_currency_switch_dropdown' ).change( function() {
+				switchCurrency( $( this ).val() );
+				return false;
+			} );
+		}
+
+		function switchCurrency( to_currency ) {
+			var current_currency = readCookie( 'yoast_cart_currency' );
+
+			if ( current_currency == to_currency ) {
+				return false;
+			}
+
+			createCookie( 'yoast_cart_currency', to_currency, 356, '.yoast.com' );
+			createCookie( 'yoast_cart_currency', to_currency, 356, '.yoast.dev' );
+
+			$( '.switch-currency__' + to_currency ).removeClass( 'hidden' );
+			$( '.switch-currency__' + current_currency ).addClass( 'hidden' );
+
+			$( '.yst_currency_switch_dropdown').val( to_currency );
+
+			// Switch price fields to reflect currency change:
+			$( '.yoast-currency' ).addClass( 'hidden' );
+			$( '.yoast-currency__' + to_currency ).removeClass( 'hidden' );
+
+			$( window ).trigger( 'currency_switched', {'from': current_currency, 'to': to_currency} );
 		}
 
 		function createCookie( name, value, days, domain ) {
@@ -40,7 +63,7 @@
 			if ( days ) {
 				var date = new Date();
 				date.setTime( date.getTime() + (
-					days * 24 * 60 * 60 * 1000
+						days * 24 * 60 * 60 * 1000
 					) );
 				extra += "; expires=" + date.toGMTString();
 			}

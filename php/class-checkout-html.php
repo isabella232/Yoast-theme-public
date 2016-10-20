@@ -5,7 +5,7 @@
 
 namespace Yoast\YoastCom\Theme;
 
-use Yoast\YoastCom\EDD\Alternate_Currency;
+use Yoast\YoastCom\VisitorCurrency\Currency_Controller;
 
 /**
  * Handles all the customization to the EDD checkout HTML
@@ -189,15 +189,22 @@ class Checkout_HTML {
 	}
 
 	public function html_switch_currency() {
-		get_template_part( 'html_includes/shop/switch-currency', array(
+		get_template_part( 'html_includes/shop/switch-currency', self::get_currency_switch_template_arguments() );
+	}
+
+	public static function get_currency_switch_template_arguments() {
+
+		$currency_controller = Currency_Controller::get_instance();
+
+		return [
 			'is_switched' => ( isset( $_COOKIE['yoast_currency_switched'] ) ? $_COOKIE['yoast_currency_switched'] : false ),
-			'options'     => array(
+			'options'     => [
 				'EUR' => __( 'euros', 'yoastcom' ),
 				'USD' => __( 'dollars', 'yoastcom' )
-			),
-			'default'     => 'USD',
-			'current'     => Alternate_Currency::get_currency(),
-		) );
+			],
+			'default'     => $currency_controller->get_default_currency(),
+			'current'     => $currency_controller->get_currency(),
+		];
 	}
 
 	/**
