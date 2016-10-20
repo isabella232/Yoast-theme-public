@@ -9,13 +9,13 @@
 
 		function detectCurrency() {
 			var current_currency = readCookie( 'yoast_cart_currency' );
-//			if ( null == current_currency ) {
+			if ( null == current_currency ) {
 				$.getJSON(
 					YoastAjax.admin + '?callback=?',
 					{ action: 'detect_currency' },
 					setCurrentCurrency
 				);
-//			}
+			}
 		}
 
 		function setCurrentCurrency( response ) {
