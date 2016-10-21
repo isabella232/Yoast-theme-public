@@ -12,6 +12,7 @@ if ( is_null( $forced_currency ) ) {
 
 	$to_euros_class = $to_dollars_class = '';
 
+	/** @noinspection PhpUndefinedVariableInspection */
 	if ( $template_args['current'] === 'USD' ) {
 		$to_dollars_class = ' selected="selected"';
 	}

@@ -247,6 +247,13 @@
         }
       }
 
+      select {
+        float: right;
+        margin-top: 0.5rem;
+        color: black;
+        font-size: 1em;
+      }
+
       a.cart {
         img {
           height: 40px;
