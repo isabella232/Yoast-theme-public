@@ -20,8 +20,6 @@ namespace Yoast\YoastCom\Theme;
 			<h1 class="color-about--secondary">Posts by <?php the_author(); ?></h1>
 		</section>
 
-		<hr class="hr--no-pointer">
-
 		<section class="row bio">
 			<div class="media media--nofloat">
 				<a href="<?php echo esc_attr( get_the_author_meta( 'yst_profile_url' ) ); ?>" class="imgExt">
@@ -44,22 +42,20 @@ namespace Yoast\YoastCom\Theme;
 		<section class="row">
 			<h1 class="color-about--secondary">Posts by <?php the_author(); ?> archive - page <?php echo esc_html( get_query_var( 'paged' ) ); ?></h1>
 		</section>
-		<hr />
+		<hr class="row"/>
 		<?php } ?>
 
 		<?php
 			$i=1;
 			while ( have_posts() ) : the_post();
+				if ( $i > 1 ) {
+					echo '<hr class="row hr--no-pointer">';
+				}
 				?>
 			<section class="row">
-				<?php if ( ! is_paged() && $i === 1 ) { ?>
-				<h2 class="h3 color-about--tertiary"><?php printf( __( 'Check out posts by %s', 'yoastcom' ), get_the_author_meta( 'first_name' ) ); ?></h2>
-				<?php } ?>
 				<?php get_template_part( 'html_includes/partials/article-intro' ); ?>
 			</section>
 			<?php theme_object()->excerpt->more( ' <a href="' . get_permalink() . '">&raquo;</a>' ); ?>
-
-			<hr class="hr--no-pointer">
 		<?php
 			$i++;
 			endwhile;
