@@ -180,11 +180,16 @@ body.edd-checkout {
 
 #edd_checkout_cart_wrap {
   @extend .iceberg;
+  padding: 20px;
+  margin-bottom: 2em;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
 }
 
 // Style the purchase form to make it more compact and responsive
 #edd_purchase_form {
   @extend .iceberg;
+
+  padding-bottom: 0;
 
   p {
     display: block;
