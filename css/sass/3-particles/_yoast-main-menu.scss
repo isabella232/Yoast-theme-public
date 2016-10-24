@@ -278,7 +278,11 @@
           background-color: $color-orange;
           border-radius: 100%;
           font-size: 0.8em;
-          padding: 0 4px;
+          padding: 0 5px;
+
+          &.has-items {
+            background-color: $color-green;
+          }
         }
       }
     }
