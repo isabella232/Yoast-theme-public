@@ -33,7 +33,7 @@ class Checkout_HTML {
 	}
 
 	public function html_clear() {
-		echo '<div class="clear"></div><br/>';
+		echo '<div class="clear"></div>';
 	}
 
 	/**
