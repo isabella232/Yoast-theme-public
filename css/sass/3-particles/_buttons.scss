@@ -37,6 +37,12 @@ body .button, body button {
     display: none;
   }
 
+  &--slim {
+    padding: 0.18em 0.5em;
+    font-size: 0.9em;
+    margin: 0 0.5em 0.5em 0;
+  }
+
   &--full {
     width: 100%;
   }

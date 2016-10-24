@@ -7,8 +7,15 @@
 		$body = $(document.body);
 
 		initCheckoutPage();
+		bindCurrencySwitch();
 
 		$body.ready( disableAutocompleteDiscount );
+	}
+
+	function bindCurrencySwitch() {
+		$( window ).on( 'currency_switched', function() {
+			recalculate_taxes();
+		} );
 	}
 
 	function initCheckoutPage() {
@@ -17,10 +24,10 @@
 		$body.on( 'edd_cart_billing_address_updated', hideProvinceField );
 
 		$(document).ajaxComplete(reloadOnFreeCart);
-		
+
 		$( '#edd_first' ).focus();
 	}
-	
+
 	function reloadOnFreeCart( event, xhr, settings ) {
 		if ( settings.url !== edd_global_vars.ajaxurl) {
 			return;
