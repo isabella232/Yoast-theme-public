@@ -13,9 +13,7 @@
 	}
 
 	function bindCurrencySwitch() {
-		$(window).on('currency_switched', function() {
-			recalculate_taxes();
-		});
+		$( window ).on( 'currency_switched', recalculate_taxes );
 	}
 
 	function initCheckoutPage() {
