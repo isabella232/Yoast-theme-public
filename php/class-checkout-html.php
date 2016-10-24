@@ -189,21 +189,32 @@ class Checkout_HTML {
 	}
 
 	public function html_switch_currency() {
+		if ( ! class_exists( 'Yoast\YoastCom\VisitorCurrency\Currency_Controller' ) ) {
+			return;
+		}
+
 		get_template_part( 'html_includes/shop/switch-currency', self::get_currency_switch_template_arguments() );
 	}
 
 	public static function get_currency_switch_template_arguments() {
 
-		$currency_controller = Currency_Controller::get_instance();
+		$default = 'USD';
+		$current = 'USD';
+
+		if ( class_exists( 'Yoast\YoastCom\VisitorCurrency\Currency_Controller' ) ) {
+			$currency_controller = Currency_Controller::get_instance();
+
+			$default = $currency_controller->get_default_currency();
+			$current = $currency_controller->get_currency();
+		}
 
 		return [
-			'is_switched' => ( isset( $_COOKIE['yoast_currency_switched'] ) ? $_COOKIE['yoast_currency_switched'] : false ),
 			'options'     => [
-				'EUR' => __( 'euros', 'yoastcom' ),
-				'USD' => __( 'dollars', 'yoastcom' )
+				'EUR' => __( 'EUR (&euro;)', 'yoastcom' ),
+				'USD' => __( 'USD ($)', 'yoastcom' )
 			],
-			'default'     => $currency_controller->get_default_currency(),
-			'current'     => $currency_controller->get_currency(),
+			'default'     => $default,
+			'current'     => $current,
 		];
 	}
 

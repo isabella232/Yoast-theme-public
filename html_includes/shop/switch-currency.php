@@ -22,11 +22,11 @@ if ( is_null( $forced_currency ) ) {
 
 	// I want to pay in USD [switch to EUR]
 	// I want to pay in EUR [switch to USD]
-	$toggle_template = sprintf( __( 'I want to pay in %s', 'yoastcom' ), ' %1$s <button class="yst_currency_switch dimmed button--slim" data-currency="%2$s">' . __( 'switch to', 'yoastcom' ) . ' %2$s</button>' );
+	$toggle_template = sprintf( __( 'I want to pay in %s', 'yoastcom' ), ' %2$s <button class="yst_currency_switch dimmed button--slim" data-currency="%1$s">' . __( 'switch to', 'yoastcom' ) . ' %3$s</button>' );
 
 	echo '<p>';
-	echo '<span class="switch-currency switch-currency__USD' . $to_dollars_class . '">' . sprintf( $toggle_template, 'USD ($)', 'EUR' ) . '</span>';
-	echo '<span class="switch-currency switch-currency__EUR' . $to_euros_class . '">' . sprintf( $toggle_template, 'EUR (&euro;)', 'USD' ) . '</span>';
+	echo '<span class="switch-currency switch-currency__USD' . $to_dollars_class . '">' . sprintf( $toggle_template, 'EUR', $template_args['options']['USD'], $template_args['options']['EUR'] ) . '</span>';
+	echo '<span class="switch-currency switch-currency__EUR' . $to_euros_class . '">' . sprintf( $toggle_template, 'USD', $template_args['options']['EUR'], $template_args['options']['USD'] ) . '</span>';
 	echo '</p>';
 
 	echo '<div class="clear"></div>';
