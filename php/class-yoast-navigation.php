@@ -71,12 +71,13 @@ class Yoast_Navigation {
 	private function get_main_menu_data( Main_Menu_Item $main_menu_item ) {
 
 		$data = [
-			'classes'        => [ 'menu-item', 'menu-item__' . $main_menu_item->getType() ],
-			'label'          => $main_menu_item->getLabel(),
-			'url'            => $main_menu_item->getUrl(),
-			'icon'           => $main_menu_item->getIcon(),
-			'anchor_classes' => array(),
-			'children'       => $this->get_children_menu_data( $main_menu_item )
+			'classes'          => [ 'menu-item', 'menu-item__' . $main_menu_item->getType() ],
+			'label'            => $main_menu_item->getLabel(),
+			'url'              => $main_menu_item->getUrl(),
+			'icon'             => $main_menu_item->getIcon(),
+			'screenReaderText' => $main_menu_item->getScreenreaderText(),
+			'anchor_classes'   => array(),
+			'children'         => $this->get_children_menu_data( $main_menu_item )
 		];
 
 		if ( ! empty( $main_menu_item->getIcon() ) ) {

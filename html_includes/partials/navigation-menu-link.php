@@ -10,6 +10,10 @@ $anchor_class = ( ! empty( $menu_item['anchor_classes'] ) ? ' class="' . esc_att
 
 echo '<a href="' . esc_url( $menu_item['url'] ) . '"' . $anchor_class . '>';
 
+if ( isset( $menu_item['screenReaderText'] ) ) {
+	echo '<span class="screen-reader-text">' . $menu_item['screenReaderText'] . '</span>';
+}
+
 if ( $type === 'main' ) {
 	echo esc_html( $menu_item['label'] );
 }
