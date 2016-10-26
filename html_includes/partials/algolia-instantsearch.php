@@ -80,6 +80,7 @@
 							facetingAfterDistinct: true
 						},
 						searchFunction: function( helper ) {
+							var savedPage = helper.state.page;
 							if ( search.helper.state.query === '' ) {
 								search.helper.setQueryParameter( 'distinct', false );
 								search.helper.setQueryParameter( 'filters', 'record_index=0' );
@@ -88,6 +89,7 @@
 								search.helper.setQueryParameter( 'filters', '' );
 							}
 
+							search.helper.setPage(savedPage);
 							helper.search();
 						}
 					} );

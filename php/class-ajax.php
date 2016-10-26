@@ -5,6 +5,8 @@
 
 namespace Yoast\YoastCom\Theme;
 
+use Yoast\YoastCom\VisitorCurrency\Currency_Controller;
+
 /**
  * Handles the ajax requests in the theme
  */
@@ -17,8 +19,30 @@ class Ajax {
 		add_action( 'wp_ajax_cart_item_number', array( $this, 'cart_item_number' ) );
 		add_action( 'wp_ajax_nopriv_cart_item_number', array( $this, 'cart_item_number' ) );
 
+		add_action( 'wp_ajax_detect_currency', array( $this, 'detect_currency' ) );
+		add_action( 'wp_ajax_nopriv_detect_currency', array( $this, 'detect_currency' ) );
+
 		add_action( 'wp_ajax_yst_update_variation', array( $this, 'update_variation' ) );
 		add_action( 'wp_ajax_nopriv_yst_update_variation', array( $this, 'update_variation' ) );
+	}
+
+	/**
+	 * Detect currency
+	 */
+	public function detect_currency() {
+		$alternate_currency = Currency_Controller::get_instance();
+		$data = wp_json_encode( [
+			'status' => 'success',
+			'data'   => [
+				'currency' => $alternate_currency->get_currency(),
+			],
+		] );
+
+		header( 'Content-Type: text/javascript' );
+		$callback = filter_input( INPUT_GET, 'callback' );
+		printf( '%s(%s);', $callback, $data );
+
+		wp_die();
 	}
 
 	/**
