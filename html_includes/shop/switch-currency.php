@@ -12,22 +12,20 @@ if ( is_null( $forced_currency ) ) {
 
 	$to_euros_class = $to_dollars_class = '';
 
+	/** @noinspection PhpUndefinedVariableInspection */
 	if ( $template_args['current'] === 'USD' ) {
-		$to_euros_class = ' hidden';
+		$to_dollars_class = ' selected="selected"';
 	}
 
 	if ( $template_args['current'] === 'EUR' ) {
-		$to_dollars_class = ' hidden';
+		$to_euros_class = ' selected="selected"';
 	}
 
 	// I want to pay in USD [switch to EUR]
 	// I want to pay in EUR [switch to USD]
-	$toggle_template = sprintf( __( 'I want to pay in %s', 'yoastcom' ), ' %2$s <button class="yst_currency_switch dimmed button--slim" data-currency="%1$s">' . __( 'switch to', 'yoastcom' ) . ' %3$s</button>' );
+	$toggle = sprintf( __( 'I want to pay in %s', 'yoastcom' ), '<select class="yst_currency_switch_dropdown"><option value="%1$s"%3$s>%1$s %2$s</option><option value="%4$s"%6$s>%4$s %5$s</option></select>' );
 
-	echo '<p>';
-	echo '<span class="switch-currency switch-currency__USD' . $to_dollars_class . '">' . sprintf( $toggle_template, 'EUR', $template_args['options']['USD'], $template_args['options']['EUR'] ) . '</span>';
-	echo '<span class="switch-currency switch-currency__EUR' . $to_euros_class . '">' . sprintf( $toggle_template, 'USD', $template_args['options']['EUR'], $template_args['options']['USD'] ) . '</span>';
-	echo '</p>';
+	echo sprintf( $toggle, 'USD', '($)', $to_dollars_class, 'EUR', '(&euro;)', $to_euros_class );
 
 	echo '<div class="clear"></div>';
 }
