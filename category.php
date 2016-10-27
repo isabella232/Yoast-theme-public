@@ -69,9 +69,7 @@ $banner_icon = get_term_meta( $term_id, 'yoastcom_term_banner_icon', true );
 		?>
 
 		<?php if ( ! is_paged() ) : ?>
-
 			<?php get_template_part( 'html_includes/partials/must-read-articles', array( 'class1' => 'theme-academy--secondary', 'term_id' => $term_id ) ); ?>
-			<hr>
 		<?php endif; ?>
 
 		<?php if ( have_posts() ): ?>
