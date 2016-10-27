@@ -33,12 +33,6 @@ body {
 
 }
 
-body.edd-checkout {
-  .siteheader {
-    margin-bottom: 1rem;
-  }
-}
-
 .siteheader--home {
   @media only screen and (min-width: $page-width-medium) {
     padding-top: 2.1rem;
