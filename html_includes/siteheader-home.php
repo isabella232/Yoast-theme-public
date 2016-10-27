@@ -16,10 +16,9 @@ namespace Yoast\YoastCom\Theme;
 				</p>
 
 				<?php get_template_part( 'html_includes/header-controls-mobile' ); ?>
+				<?php get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
 			</div>
 
-
-			<?php get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
 		<?php endif; ?>
 
 		<?php if ( isset( $template_args['home-sub'] ) ) : ?>
