@@ -1,3 +1,13 @@
+.siteheader--home {
+	.searchbar {
+		@media only screen and (min-width: $page-width-medium) {
+			position: absolute;
+			top: 112px;
+			right: 0;
+		}
+	}
+}
+
 .searchbar {
 
   .aa-input {
@@ -6,8 +16,8 @@
 
   @media only screen and (min-width: $page-width-medium) {
 	position: absolute;
-	top: 40px;
-	right: 100px;
+	top: 20px;
+	right: 0;
   }
 
   @media only screen and (max-width: $page-width-medium) {
