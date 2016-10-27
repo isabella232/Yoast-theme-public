@@ -30,7 +30,7 @@ class Ajax {
 	 * Detect currency
 	 */
 	public function detect_currency() {
-		$data = [ 'status' => 'failed' ];
+		$data = [ 'status' => 'error' ];
 
 		if ( class_exists( 'Yoast\YoastCom\VisitorCurrency\Currency_Controller' ) ) {
 			$alternate_currency = Currency_Controller::get_instance();
