@@ -1,7 +1,6 @@
 @media only screen and (min-width: $page-width-medium) {
 
   .siteheader--home #yoast-main-menu {
-    border-top: 1px solid $color-white;
 
     &.is-sticky{
       margin-top: 0;
@@ -20,7 +19,6 @@
       left: 0;
       z-index: 0;
       width: 100%;
-      border-top: 1px solid $color-white;
     }
 
     nav {
@@ -118,20 +116,9 @@
       }
     }
 
-    li.current-menu-parent {
-      border: 1px solid $color-white;
-      border-top: none;
-      border-bottom: none;
-    }
-
     li:hover, li:focus {
       z-index: 3;
 
-      &.menu-item {
-        border: 1px solid $color-white;
-        border-top: none;
-        border-bottom: none;
-      }
       .yoast-sub-menu {
         display: block;
       }
@@ -174,60 +161,43 @@
 
     .menu-item {
       &__home {
-        border-left: 1px solid $color-green;
-        border-right: 1px solid $color-green;
         background-color: $color-green;
-        &.current-menu-item {
-          border-bottom-color: $color-green;
-        }
         .yoast-sub-menu {
           background-color: $color-green;
         }
       }
 
       &__seo-blog {
-        border-left: 1px solid $color-purple;
-        border-right: 1px solid $color-purple;
         background-color: $color-purple;
         .yoast-sub-menu {
           background-color: $color-purple;
         }
       }
       &__plugins {
-        border-left: 1px solid $color-blue;
-        border-right: 1px solid $color-blue;
         background-color: $color-blue;
         .yoast-sub-menu {
           background-color: $color-blue;
         }
       }
       &__courses {
-        border-left: 1px solid $color-pink-light;
-        border-right: 1px solid $color-pink-light;
         background-color: $color-pink-light;
         .yoast-sub-menu {
           background-color: $color-pink-light;
         }
       }
       &__ebooks {
-        border-left: 1px solid $color-purple-dark;
-        border-right: 1px solid $color-purple-dark;
         background-color: $color-purple-dark;
         .yoast-sub-menu {
           background-color: $color-purple-dark;
         }
       }
       &__hire-us {
-        border-left: 1px solid $color-green-blue;
-        border-right: 1px solid $color-green-blue;
         background-color: $color-green-blue;
         .yoast-sub-menu {
           background-color: $color-green-blue;
         }
       }
       &__faq {
-        border-left: 1px solid $color-blue-dark;
-        border-right: 1px solid $color-blue-dark;
         background-color: $color-blue-dark;
         .yoast-sub-menu {
           background-color: $color-blue-dark;
@@ -294,7 +264,7 @@
     width: 100%;
 
 	div.yoast-sub-menu {
-	  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+	  box-shadow: 0 5px 10px -4px rgba(0,0,0,0.3);
 	}
   }
 }
