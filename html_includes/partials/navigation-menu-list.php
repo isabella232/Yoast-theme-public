@@ -21,7 +21,6 @@ foreach ( $menu_items as $menu_item ) {
 	if ( ! empty( $menu_item['children'] ) ) {
 
 		echo '<div class="yoast-sub-menu">';
-		
 		get_template_part( 'html_includes/partials/navigation-menu-list', array(
 			'menu_items' => $menu_item['children'],
 			'menu_type' => 'sub'
