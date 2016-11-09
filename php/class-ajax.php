@@ -27,7 +27,7 @@ class Ajax {
 		add_action( 'wp_ajax_nopriv_yst_update_variation', array( $this, 'update_variation' ) );
 
 		add_action( 'wp_ajax_yst_update_payment_methods', array( $this, 'update_payment_methods' ) );
-		add_action( 'wp_ajax_nopriv_update_payment_methods', array( $this, 'update_payment_methods' ) );
+		add_action( 'wp_ajax_nopriv_yst_update_payment_methods', array( $this, 'update_payment_methods' ) );
 	}
 
 	/**
