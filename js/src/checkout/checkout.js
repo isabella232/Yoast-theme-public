@@ -3,6 +3,11 @@
 
 	var $body;
 
+	/**
+	 * Initializes all the code for the checkout page and binds events.
+	 *
+	 * @returns {void}
+	 */
 	function init() {
 		$body = $(document.body);
 
@@ -12,6 +17,11 @@
 		$body.ready( disableAutocompleteDiscount );
 	}
 
+	/**
+	 * Binds recaclulation of taxes and the displaying of various payment methods to the currency_switched event.
+	 *
+	 * @returns {void}
+	 */
 	function bindCurrencySwitch() {
 		$( window ).on( 'currency_switched', function() {
 			recalculate_taxes();
@@ -19,6 +29,11 @@
 		} );
 	}
 
+	/**
+	 * Initializes the checkout pages and binds certain events.
+	 *
+	 * @returns {void}
+	 */
 	function initCheckoutPage() {
 		$body.on( 'edd_quantity_updated', handleQuantityUpdate );
 		$body.on( 'change', '.yst-edd-pricing-switcher', handleChangeDownloadVariation );
@@ -30,6 +45,15 @@
 		$( '#edd_first' ).focus();
 	}
 
+	/**
+	 * Reloads cart when the total sum results in a 0.
+	 *
+	 * @param {HTMLEvent} event The event being fired.
+	 * @param {Object} xhr The request object.
+	 * @param {Object} settings The settings to apply to the current reload.
+	 *
+	 * @returns {void}
+	 */
 	function reloadOnFreeCart( event, xhr, settings ) {
 		if ( settings.url !== edd_global_vars.ajaxurl) {
 			return;
@@ -103,10 +127,20 @@
 		}
 	}
 
+	/**
+	 * Disables autocompletion for the discount field.
+	 *
+	 * @returns {void}
+	 */
 	function disableAutocompleteDiscount() {
 		$( '#edd-discount' ).attr( "autocomplete", "off" );
 	}
 
+	/**
+	 * Retrieves the supported payment methods and returns them to the user.
+	 *
+	 * @returns {void}
+	 */
 	function displaySupportedPaymentMethods() {
 		var country_code = $( '#billing_country' ).val();
 		var currency = $( '.yst_currency_switch_dropdown' ).val();

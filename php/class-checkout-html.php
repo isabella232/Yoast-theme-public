@@ -190,6 +190,9 @@ class Checkout_HTML {
 		get_template_part( 'html_includes/shop/input-creditcard' );
 	}
 
+	/**
+	 * Ouputs the HTML for switching between currencies.
+	 */
 	public function html_switch_currency() {
 		if ( ! class_exists( 'Yoast\YoastCom\VisitorCurrency\Currency_Controller' ) ) {
 			return;
@@ -198,8 +201,12 @@ class Checkout_HTML {
 		get_template_part( 'html_includes/shop/switch-currency', self::get_currency_switch_template_arguments() );
 	}
 
+	/**
+	 * Retrieves the settings to be used for the currency switcher.
+	 *
+	 * @return array Array containing the options for the currency switcher.
+	 */
 	public static function get_currency_switch_template_arguments() {
-
 		$default = 'USD';
 		$current = 'USD';
 
@@ -220,12 +227,22 @@ class Checkout_HTML {
 		];
 	}
 
+	/**
+	 * Retrieves the shop country from the EDD settings page. Defaults to no country.
+	 *
+	 * @see edd_get_shop_country()
+	 *
+	 * @return string The current country.
+	 */
 	public function get_shop_country() {
 		$country = edd_get_option( 'base_country', '' );
 
 		return apply_filters( 'edd_shop_country', $country );
 	}
 
+	/**
+	 * Outputs the HTML to display the available payment providers.
+	 */
 	public function html_payment_providers() {
 		$providers = new Payment_Method_Provider();
 		$current_country = $this->get_shop_country();

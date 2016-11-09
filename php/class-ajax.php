@@ -99,6 +99,9 @@ class Ajax {
 		wp_die();
 	}
 
+	/**
+	 * Updates the list of available payment providers.
+	 */
 	public function update_payment_methods() {
 		$country_code = filter_input( INPUT_POST, 'country_code' );
 		$currency = filter_input( INPUT_POST, 'currency' );
