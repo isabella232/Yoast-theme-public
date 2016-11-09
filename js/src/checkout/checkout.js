@@ -15,6 +15,7 @@
 	function bindCurrencySwitch() {
 		$( window ).on( 'currency_switched', function() {
 			recalculate_taxes();
+			displaySupportedPaymentMethods();
 		} );
 	}
 
@@ -22,6 +23,7 @@
 		$body.on( 'edd_quantity_updated', handleQuantityUpdate );
 		$body.on( 'change', '.yst-edd-pricing-switcher', handleChangeDownloadVariation );
 		$body.on( 'edd_cart_billing_address_updated', hideProvinceField );
+		$( '#billing_country' ).on( 'change', displaySupportedPaymentMethods );
 
 		$(document).ajaxComplete(reloadOnFreeCart);
 
@@ -103,6 +105,39 @@
 
 	function disableAutocompleteDiscount() {
 		$( '#edd-discount' ).attr( "autocomplete", "off" );
+	}
+
+	function displaySupportedPaymentMethods() {
+		var country_code = $( '#billing_country' ).val();
+		var currency = $( '.yst_currency_switch_dropdown' ).val();
+		var payment_options_list = $( '#yst-payment-methods-list' )
+
+		if ( country_code === '' ) {
+			payment_options_list.text( YoastI18n.select_country );
+			return;
+		}
+
+		if ( currency === '' ) {
+			payment_options_list.text( YoastI18n.select_currency );
+			return;
+		}
+
+		$.ajax({
+			type: "POST",
+			data: {
+				country_code: country_code,
+				currency: currency
+			},
+			dataType: "json",
+			url: YoastAjax.admin + '?action=yst_update_payment_methods',
+			beforeSend: function() {
+				payment_options_list.text( YoastI18n.loading + '...' );
+			}
+		}).success(function( response ) {
+			if ( 'success' === response.status ) {
+				payment_options_list.html( response.html );
+			}
+		});
 	}
 
 	$( init );

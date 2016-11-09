@@ -173,6 +173,16 @@ class Theme {
 			)
 		);
 
+		wp_localize_script(
+			'yoast-com-checkout',
+			'YoastI18n',
+			array(
+				'loading' => __( 'Loading', 'yoastcom' ),
+				'select_country' => __( 'Please select a country first', 'yoastcom' ),
+				'select_currency' => __( 'Please select a currency first', 'yoastcom' ),
+			)
+		);
+
 		if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() ) {
 			wp_enqueue_style( 'chosen' );
 			wp_enqueue_script( 'yoast-com-checkout' );
@@ -180,7 +190,7 @@ class Theme {
 				'ajaxurl'        => edd_get_ajax_url(),
 				'checkout_nonce' => wp_create_nonce( 'edd_checkout_nonce' ),
 				'taxes_enabled'  => edd_use_taxes() ? '1' : '0',
-				'tax_rates'      => $this->get_tax_rates()
+				'tax_rates'      => $this->get_tax_rates(),
 			) );
 		}
 
