@@ -16,10 +16,9 @@ namespace Yoast\YoastCom\Theme;
 				</p>
 
 				<?php get_template_part( 'html_includes/header-controls-mobile' ); ?>
+				<?php get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
 			</div>
 
-
-			<?php get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
 		<?php endif; ?>
 
 		<?php if ( isset( $template_args['home-sub'] ) ) : ?>
@@ -32,18 +31,15 @@ namespace Yoast\YoastCom\Theme;
 			</div>
 		<?php endif; ?>
 
-		<?php $navigation = new Yoast_Navigation(); ?>
-		<?php $navigation->output_menu_bar(); ?>
+		<?php
+		$navigation = new Yoast_Navigation();
+		$navigation->output_menu_bar();
+		?>
 
-		<?php if ( isset( $template_args['home-sub'] ) ) : ?>
-			<!-- Decoration -->
-			<div class="row">
-				<div class="boxes boxes--header boxes--header-home"></div>
-			</div>
-
-		<?php endif; ?>
 	</header>
 
-<?php if ( isset( $template_args['home'] ) ) {
+<?php
+
+if ( isset( $template_args['home'] ) ) {
 	get_template_part( 'html_includes/partials/fullbanner-home' );
 }

@@ -30,17 +30,21 @@ class Ajax {
 	 * Detect currency
 	 */
 	public function detect_currency() {
-		$alternate_currency = Currency_Controller::get_instance();
-		$data = wp_json_encode( [
-			'status' => 'success',
-			'data'   => [
-				'currency' => $alternate_currency->get_currency(),
-			],
-		] );
+		$data = [ 'status' => 'error' ];
+
+		if ( class_exists( 'Yoast\YoastCom\VisitorCurrency\Currency_Controller' ) ) {
+			$alternate_currency = Currency_Controller::get_instance();
+			$data               = [
+				'status' => 'success',
+				'data'   => [
+					'currency' => $alternate_currency->get_currency(),
+				],
+			];
+		}
 
 		header( 'Content-Type: text/javascript' );
 		$callback = filter_input( INPUT_GET, 'callback' );
-		printf( '%s(%s);', $callback, $data );
+		printf( '%s(%s);', $callback, wp_json_encode( $data ) );
 
 		wp_die();
 	}
