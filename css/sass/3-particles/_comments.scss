@@ -125,7 +125,42 @@
 	}
 }
 
-@media (min-width: 640px) {
+@media (min-width: 63.25rem) {
+	#commentform {
+		width: 62rem;
+
+		.comment-form-comment {
+			float: left;
+			width: 32rem;
+			textarea {
+				height: 14.1em;
+			}
+		}
+
+		.comment-form-author {
+			float: right;
+			clear: right;
+			width: 28rem;
+		}
+
+		.comment-form-email {
+			float: right;
+			clear: right;
+			width: 28rem;
+		}
+
+		.comment-form-url {
+			float: right;
+			clear: right;
+			width: 28rem;
+		}
+
+		.form-submit {
+			clear: both;
+		}
+	}
+}
+@media (min-width: 640px) and (max-width: 63.24rem) {
 	#commentform {
 		width: 600px;
 
@@ -144,3 +179,9 @@
 		}
 	}
 }
+
+
+.entry-comments {
+	clear: both;
+}
+
