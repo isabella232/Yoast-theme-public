@@ -104,12 +104,12 @@ class Ajax {
 	 */
 	public function update_payment_methods() {
 		$country_code = filter_input( INPUT_POST, 'country_code' );
-		$currency = filter_input( INPUT_POST, 'currency' );
+		$currency     = filter_input( INPUT_POST, 'currency' );
 
 		if ( $country_code === false || $currency === false ) {
 			echo wp_json_encode( [
 				'status' => 'error',
-				'error'  => 'No country code and currency provided.',
+				'error'  => __( 'No country code and currency provided.', 'yoastcom' ),
 			] );
 			wp_die();
 		}
@@ -118,9 +118,9 @@ class Ajax {
 
 		echo wp_json_encode( [
 			'status' => 'success',
-			'html' => get_template_part( 'html_includes/shop/payment-providers',
+			'html'   => get_template_part( 'html_includes/shop/payment-providers',
 				[
-					'return' => true,
+					'return'    => true,
 					'providers' => $providers->filter_by_currency_and_country( $currency, $country_code )
 				] )
 		] );
