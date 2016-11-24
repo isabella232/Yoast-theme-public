@@ -60,6 +60,8 @@ namespace Yoast\YoastCom\Theme;
 		$discount_amount = $edd_dp->discounts->get_discount();
 		if ( ! empty( $discount_amount ) ) {
 			?>
+			<hr class="hr--no-pointer tight hr__before-global-discount">
+
 			<div class="row">
 				<ul class="list--unstyled">
 					<?php get_template_part( 'html_includes/partials/discount-item-flat', array(
