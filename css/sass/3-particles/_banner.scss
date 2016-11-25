@@ -11,3 +11,12 @@
 		border-color: $scheme-academy-secondary;
 	}
 }
+
+.black-friday-2016 {
+	background-image: url(./../images/black-friday-2016-bg.gif);
+	background-position: center center;
+	background-size: cover;
+	img {
+		display: block;
+	}
+}
