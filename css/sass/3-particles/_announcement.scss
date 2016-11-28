@@ -24,12 +24,6 @@
     letter-spacing: 0.05em;
   }
 
-  &.newsletter {
-    i.fa {
-      margin-top: 1.47rem;
-    }
-  }
-
   &--pointer {
     .supports-filter & {
       &::after {
@@ -73,8 +67,8 @@
 
   i {
     float: left;
-    margin: $spacing-quarter $spacing $spacing-quarter -7rem;
-    font-size: 4rem;
+    margin: 0.3rem $spacing $spacing-quarter -4.8rem;
+    font-size: 2rem;
   }
 }
 

@@ -89,15 +89,26 @@
 			border-top-color: rgba($color-primary, $transparency);
 		}
 	}
-
-
 }
 
 
 .fill {
+	color: $color-white;
+
+	a, a.more {
+		color: $color-white;
+		text-decoration: none;
+		&:hover, &:focus {
+			color: $color-white;
+			text-decoration: underline;
+		}
+	}
+	h1, h2, h3, h4 {
+		color: $color-white;
+	}
+
 	p, .p {
 		color: $color-white;
-		//text-shadow: $text-shadow;
 	}
 
 	.theme-courses & {

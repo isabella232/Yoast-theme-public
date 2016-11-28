@@ -40,7 +40,5 @@ if ( $posts_query->have_posts() ) :
 		theme_object()->excerpt->clear(); ?>
 	</div>
 </div>
-
-<hr>
 <?php
 endif;
