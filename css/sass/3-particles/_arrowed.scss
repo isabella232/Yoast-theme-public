@@ -139,8 +139,23 @@
 .arrowed {
 
 	.theme-home &,
-	&.theme-home  {
+	&.theme-home {
 		@include line-arrow-color($scheme-home-primary);
+	}
+
+	.theme-seo-blog &,
+	&.theme-seo-blog {
+		@include line-arrow-color($scheme-seo-blog-primary);
+	}
+
+	.theme-ebooks &,
+	&.theme-ebooks {
+		@include line-arrow-color($scheme-ebooks-primary);
+	}
+
+	.theme-faq &,
+	&.theme-faq {
+		@include line-arrow-color($scheme-faq-primary);
 	}
 
 	.theme-courses &,
