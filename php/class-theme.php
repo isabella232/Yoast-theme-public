@@ -29,6 +29,12 @@ class Theme {
 	 */
 	public $shortcodes;
 
+
+	/**
+	 * @var Yoast_Navigation
+	 */
+	public $navigation;
+
 	/**
 	 * Constructor. Adds WordPress hooks.
 	 */
@@ -71,6 +77,7 @@ class Theme {
 		$this->color      = new Color_Scheme();
 		$this->page_type  = new Page_Menu_Type();
 		$this->extra_head = new Extra_Head();
+		$this->navigation = new Yoast_Navigation();
 
 		$this->excerpt = new Excerpt_Manager();
 		$this->excerpt->add_hooks();
@@ -110,13 +117,6 @@ class Theme {
 	 */
 	public function get_color_scheme() {
 		return $this->color->get_color_scheme();
-	}
-
-	/**
-	 * @return string The type of the current page.
-	 */
-	public function get_page_type() {
-		return $this->page_type->get_page_type();
 	}
 
 	/**
