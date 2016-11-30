@@ -33,7 +33,13 @@ class Yoast_Navigation {
 		$this->main_menu_items = $this->menu_structure->getMenuItems();
 		$this->current_url     = $this->scheme . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-		$this->set_active_menu_item();
+		// We use the wp filter here, so the post_id is available and the page isn't rendered yet, so we can change the active menu item.
+		if ( ! is_admin() ) {
+			add_filter( 'wp', function () {
+				$this->set_active_menu_item();
+			} );
+		}
+
 	}
 
 	/**
@@ -213,7 +219,6 @@ class Yoast_Navigation {
 	private function set_active_by_page() {
 		/** @var Main_Menu_Item $main_menu_item */
 		foreach ( $this->main_menu_items as $main_menu_item ) {
-
 			$activeOn = $main_menu_item->getActiveOn();
 			if ( ! is_array( $activeOn ) ) {
 				continue;
