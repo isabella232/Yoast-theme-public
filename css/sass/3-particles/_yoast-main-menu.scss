@@ -1,8 +1,5 @@
 @mixin menu-item-color($color) {
-  border-left: 1px solid $color;
-  border-right: 1px solid $color;
   background-color: $color;
-
   .yoast-sub-menu {
 	background-color: $color;
   }
@@ -11,7 +8,6 @@
 @media only screen and (min-width: $page-width-medium) {
 
   .siteheader--home #yoast-main-menu {
-    border-top: 1px solid $color-white;
 
 	&.is-sticky {
 	  margin-top: 0;
@@ -30,7 +26,6 @@
       left: 0;
       z-index: 0;
       width: 100%;
-      border-top: 1px solid $color-white;
     }
 
     nav {
@@ -130,20 +125,9 @@
       }
     }
 
-    li.current-menu-parent {
-      border: 1px solid $color-white;
-      border-top: none;
-      border-bottom: none;
-    }
-
     li:hover, li:focus {
       z-index: 3;
 
-      &.menu-item {
-        border: 1px solid $color-white;
-        border-top: none;
-        border-bottom: none;
-      }
       .yoast-sub-menu {
         display: block;
       }
@@ -272,7 +256,7 @@
   .is-sticky {
 	width: 100%;
 	div.yoast-sub-menu {
-	  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+	  box-shadow: 0 5px 10px -4px rgba(0,0,0,0.3);
 	}
   }
 }
