@@ -10,11 +10,13 @@ if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 	echo '<div class="grid">';
 
 	foreach ( $menu_items as $item ) {
-		echo '<div class="one-third medium-one-half small-full promoblock arrowed-medium widget_nav_menu theme-' . $item['type'] . '">';
+		echo '<div class="one-third medium-one-half small-full">';
+		echo '<div class="promoblock arrowed-medium widget_nav_menu theme-' . $item['type'] . '">';
 		get_template_part( 'html_includes/partials/navigation-menu-list', array(
 			'menu_items' => array( $item ),
 			'menu_type'  => 'footer'
 		) );
+		echo '</div>';
 		echo '</div>';
 	}
 	echo '</div>'; // grid
