@@ -46,6 +46,15 @@ class Yoast_Navigation {
 	}
 
 	/**
+	 * Run footer menu output
+	 */
+	public function output_menu_footer() {
+		get_template_part( 'html_includes/partials/footer-menu', array(
+			'menu_data' => $this->get_menu_data(),
+		) );
+	}
+
+	/**
 	 * Get the template data of the entire menu
 	 *
 	 * @return array
@@ -77,7 +86,8 @@ class Yoast_Navigation {
 			'icon'             => $main_menu_item->getIcon(),
 			'screenReaderText' => $main_menu_item->getScreenreaderText(),
 			'anchor_classes'   => array(),
-			'children'         => $this->get_children_menu_data( $main_menu_item )
+			'children'         => $this->get_children_menu_data( $main_menu_item ),
+			'type'             => $main_menu_item->getType(),
 		];
 
 		if ( ! empty( $main_menu_item->getIcon() ) ) {
