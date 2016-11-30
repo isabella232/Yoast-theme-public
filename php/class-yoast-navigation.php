@@ -267,9 +267,9 @@ class Yoast_Navigation {
 	 *
 	 * @return mixed
 	 */
-	public function get_active_type(){
-		foreach ($this->main_menu_items as $main_menu_item){
-			if ($main_menu_item->isActive()){
+	public function get_active_type() {
+		foreach ( $this->main_menu_items as $main_menu_item ) {
+			if ( $main_menu_item->isActive() ) {
 				return $main_menu_item->getType();
 			}
 		}
