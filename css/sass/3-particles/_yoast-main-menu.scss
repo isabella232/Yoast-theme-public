@@ -104,10 +104,12 @@
       }
 
       &:before {
-        color: $color-white;
+        color: rgba(255,255,255,0.3);
         position: absolute;
-        content: '|';
-        margin-left: -4px;
+        height: 100%;
+        content: '●';
+        margin-left: -5px;
+        margin-top: -1px;
       }
 
       &:first-child:before {
