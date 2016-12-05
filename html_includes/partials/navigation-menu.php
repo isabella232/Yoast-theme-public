@@ -8,7 +8,7 @@ if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 	$main_menu_items = $template_args['menu_data'];
 
 	echo '<div id="yoast-main-menu" class="sticky" data-sticky-desktop data-sticky>';
-	echo '<nav role="navigation">';
+	echo '<nav role="navigation" aria-label="' . __( "Main menu", "yoastcom" ) .'">';
 
 	get_template_part( 'html_includes/partials/navigation-menu-list', array(
 		'menu_items' => $main_menu_items,
