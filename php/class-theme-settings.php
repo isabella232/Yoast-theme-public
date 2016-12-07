@@ -111,6 +111,22 @@ class Theme_Settings
             'default' => get_legacy_option('footer', 'child-settings'),
         ));
 
+	    $cmb->add_field(array(
+		    'name' => __('Show banner', 'yoastcom'),
+		    'desc' => __('Should the banner be shown?', 'yoastcom'),
+		    'id' => 'show_banner',
+		    'type' => 'checkbox',
+		    'default' => get_theme_option( 'show_banner', 'child-settings'),
+	    ));
+
+	    $cmb->add_field(array(
+		    'name' => __('Banner HTML', 'yoastcom'),
+		    'desc' => __('Will be displayed in the banner above the Yoast logo', 'yoastcom'),
+		    'id' => 'banner',
+		    'type' => 'wysiwyg',
+		    'default' => get_theme_option( 'banner', 'child-settings'),
+	    ));
+
         foreach (array(
                      'facebook_likes' => __('Facebook likes', 'yoastcom'),
                      'instagram_followers' => __('Instagram followers', 'yoastcom'),

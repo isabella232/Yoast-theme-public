@@ -1,0 +1,19 @@
+.announcement-banner {
+  background-color: $color-pink-dark;
+  color: $color-white;
+  min-height:2em;
+  text-align: center;
+
+  a, a:visited {
+	text-decoration: none;
+	color: $color-white;
+	&:hover, &:focus {
+	  color: $color-white;
+	  text-decoration: underline;
+	}
+  }
+
+  .fa {
+	padding:5px;
+  }
+}
