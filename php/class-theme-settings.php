@@ -120,16 +120,16 @@ class Theme_Settings {
 			'default' => get_theme_option( 'banner', 'child-settings' ),
 		) );
 
-		foreach (
-			array(
-				'facebook_likes'      => __( 'Facebook likes', 'yoastcom' ),
-				'instagram_followers' => __( 'Instagram followers', 'yoastcom' ),
-				'pinterest_followers' => __( 'Pinterest followers', 'yoastcom' ),
-				'linkedin_followers'  => __( 'LinkedIn followers', 'yoastcom' ),
-				'twitter_subs'        => __( 'Twitter followers', 'yoastcom' ),
-				'youtube_subs'        => __( 'YouTube subscribers', 'yoastcom' )
-			) as $option => $label
-		) {
+		$social_labels = array(
+			'facebook_likes'      => __( 'Facebook likes', 'yoastcom' ),
+			'instagram_followers' => __( 'Instagram followers', 'yoastcom' ),
+			'pinterest_followers' => __( 'Pinterest followers', 'yoastcom' ),
+			'linkedin_followers'  => __( 'LinkedIn followers', 'yoastcom' ),
+			'twitter_subs'        => __( 'Twitter followers', 'yoastcom' ),
+			'youtube_subs'        => __( 'YouTube subscribers', 'yoastcom' )
+		);
+
+		foreach ( $social_labels as $option => $label ) {
 			$cmb->add_field( array(
 				'name'    => $label,
 				'desc'    => __( 'Keep to 3-4 chars', 'yoastcom' ),
@@ -138,7 +138,6 @@ class Theme_Settings {
 				'default' => get_legacy_option( $option, 'child-settings' ),
 			) );
 		}
-
 	}
 
 	/**
