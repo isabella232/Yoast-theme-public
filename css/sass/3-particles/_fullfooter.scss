@@ -11,7 +11,7 @@
 		@media only screen and (min-width: $page-width-medium) {
 			@include vendor(flex-direction, column);
 			@include vendor(justify-content, flex-start);
-			height: 45em;
+			height: 46em;
 
 			.one-third{
 				flex: 0 1 auto;
