@@ -18,8 +18,9 @@ namespace Yoast\YoastCom\Theme;
 
 <?php $banner = get_theme_option( 'banner', 'child-settings' ); ?>
 <?php $show_banner = get_theme_option( 'show_banner', 'child-settings' ); ?>
+<?php $class = get_theme_option( 'banner_theme_class', 'child-settings' ); ?>
 <?php if ( $show_banner === "on" && ! empty( $banner ) ) { ?>
-	<div class="announcement-banner">
+	<div class="announcement-banner theme-<?php echo $class;?>">
 		<div class="row">
 			<?php echo $banner; ?>
 		</div>

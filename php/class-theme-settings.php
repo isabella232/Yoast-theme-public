@@ -113,6 +113,23 @@ class Theme_Settings {
 		) );
 
 		$cmb->add_field( array(
+			'name'    => __( 'Banner theme', 'yoastcom' ),
+			'desc'    => __( 'What theme/background color should the banner have?', 'yoastcom' ),
+			'id'      => 'banner_theme_class',
+			'type'    => 'select',
+			'options' => [
+				'home' => __( 'Home (green)', 'yoastcom' ),
+				'seo-blog' => __( 'SEO blog (purple)', 'yoastcom' ),
+				'plugins' => __( 'Plugins (blue)', 'yoastcom' ),
+				'courses' => __( 'Courses (pink)', 'yoastcom' ),
+				'ebooks' => __( 'eBooks (dark purple)', 'yoastcom' ),
+				'hire-us' => __( 'Hire us (teal)', 'yoastcom' ),
+				'faq' => __( 'FAQ (dark blue)', 'yoastcom' ),
+			],
+			'default' => get_theme_option( 'banner_theme_class', 'child-settings' ),
+		) );
+
+		$cmb->add_field( array(
 			'name'    => __( 'Banner HTML', 'yoastcom' ),
 			'desc'    => __( 'Will be displayed in the banner above the Yoast logo', 'yoastcom' ),
 			'id'      => 'banner',
