@@ -203,7 +203,7 @@ class Theme {
 		 * Apply hotjar tracking code if supplied by the child theme.
 		 */
 		$tracking_code = apply_filters( 'yoast_hotjar_tracking_code', null );
-		if ( is_array($tracking_code ) ) {
+		if ( is_array( $tracking_code ) ) {
 			wp_localize_script(
 				'yoast-com',
 				'yoast_hotjar',
