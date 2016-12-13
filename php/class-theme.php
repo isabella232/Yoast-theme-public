@@ -199,6 +199,21 @@ class Theme {
 			)
 		);
 
+		/**
+		 * Apply hotjar tracking code if supplied by the child theme.
+		 */
+		$tracking_code = apply_filters( 'yoast_hotjar_tracking_code', null );
+		if ( is_array($tracking_code ) ) {
+			wp_localize_script(
+				'yoast-com',
+				'yoast_hotjar',
+				[
+					'id' => $tracking_code['id'],
+					'sv' => $tracking_code['sv']
+				]
+			);
+		}
+
 		if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() ) {
 			wp_enqueue_style( 'chosen' );
 			wp_enqueue_script( 'yoast-com-checkout' );
