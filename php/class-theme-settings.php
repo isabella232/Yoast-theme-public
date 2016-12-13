@@ -130,6 +130,18 @@ class Theme_Settings {
 		) );
 
 		$cmb->add_field( array(
+			'name'    => __( 'Banner variation', 'yoastcom' ),
+			'desc'    => __( 'What variation should the banner have?', 'yoastcom' ),
+			'id'      => 'banner_theme_variation',
+			'type'    => 'select',
+			'options' => [
+				'' => __( 'None', 'yoastcom' ),
+				'site-structure' => __( 'Honeycomb and bee', 'yoastcom' ),
+			],
+			'default' => get_theme_option( 'banner_theme_variation', 'child-settings' ),
+		) );
+
+		$cmb->add_field( array(
 			'name'    => __( 'Banner HTML', 'yoastcom' ),
 			'desc'    => __( 'Will be displayed in the banner above the Yoast logo', 'yoastcom' ),
 			'id'      => 'banner',
