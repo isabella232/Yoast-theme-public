@@ -27,7 +27,7 @@ $social_profiles = [
 
 array_map( function ( $social_profile ) {
 
-	if ( author_has( 'twitter' ) ) {
+	if ( author_has( $social_profile['identifier'] ) ) {
 
 		printf( '<a href="%1$s" class="link--implicit"><span class="visuallyhidden focusable">%2$s</span><span class="text-icon text-icon--%3$s text-icon--social">%4$s</span></a>',
 			esc_url( url_social_site( $social_profile['identifier'] ) ),
