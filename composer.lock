@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "735847a3fb4876e547f2d613725abeec",
-    "content-hash": "c151a1a947df76c4c64d5c4ebae838db",
+    "content-hash": "ef3f670abca1489ef6746ffc4aef0dd8",
     "packages": [
         {
             "name": "composer/installers",
@@ -107,13 +106,42 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-07-05 06:18:20"
+            "time": "2016-07-05T06:18:20+00:00"
+        },
+        {
+            "name": "yoast/menu-structure",
+            "version": "dev-DE/composer",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Yoast/website-menu-structure.git",
+                "reference": "4a913051d9acb179f3ee8f93af6b26f92bb07835"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Yoast/website-menu-structure/zipball/4a913051d9acb179f3ee8f93af6b26f92bb07835",
+                "reference": "4a913051d9acb179f3ee8f93af6b26f92bb07835",
+                "shasum": ""
+            },
+            "type": "library",
+            "authors": [
+                {
+                    "name": "Team Yoast",
+                    "email": "support@yoast.com"
+                }
+            ],
+            "description": "Used to generate the menus on Yoast.com and other yoast sites",
+            "support": {
+                "source": "https://github.com/Yoast/website-menu-structure/tree/DE/composer"
+            },
+            "time": "2017-01-20 09:50:19"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "yoast/menu-structure": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

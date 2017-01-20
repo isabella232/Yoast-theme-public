@@ -2,17 +2,16 @@
     "name": "yoast/yoast-theme",
     "description": "Theme used on yoast.com and other yoast sites",
     "type": "wordpress-theme",
-    "require": {
-        "composer/installers": "^1.0",
-        "yoast/menu-structure": "dev-master"
-    },
-
     "repositories": [
         {
-          "type": "vcs",
-          "url": "https://github.com/Yoast/website-menu-structure"
-       }
+            "type": "vcs",
+            "url": "https://github.com/Yoast/website-menu-structure"
+        }
     ],
+    "require": {
+        "composer/installers": "^1.0",
+        "yoast/menu-structure": "dev-DE/composer"
+    },
 
     "authors": [
         {
