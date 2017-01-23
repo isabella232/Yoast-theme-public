@@ -15,7 +15,7 @@
     ],
     "require": {
         "composer/installers": "^1.0",
-        "yoast/visitor-to-currency": "dev-DE/composer",
+        "yoast/visitor-to-currency": "dev-master",
         "yoast/menu-structure": "dev-master"
     },
 
