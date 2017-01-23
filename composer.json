@@ -1,4 +1,5 @@
 {
+    "minimum-stability": "dev",
     "name": "yoast/yoast-theme",
     "description": "Theme used on yoast.com and other yoast sites",
     "type": "wordpress-theme",
