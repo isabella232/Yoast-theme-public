@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef3f670abca1489ef6746ffc4aef0dd8",
+    "content-hash": "f821a0b7707f96a475d9126a60a306d2",
     "packages": [
         {
             "name": "composer/installers",
@@ -134,13 +134,41 @@
                 "source": "https://github.com/Yoast/website-menu-structure/tree/DE/composer"
             },
             "time": "2017-01-20 09:50:19"
+        },
+        {
+            "name": "yoast/visitor-to-currency",
+            "version": "dev-DE/composer",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Yoast/visitor-to-currency.git",
+                "reference": "573f00d13d7326965e1853f6ae1588a909398565"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Yoast/visitor-to-currency/zipball/573f00d13d7326965e1853f6ae1588a909398565",
+                "reference": "573f00d13d7326965e1853f6ae1588a909398565",
+                "shasum": ""
+            },
+            "type": "library",
+            "authors": [
+                {
+                    "name": "Team Yoast",
+                    "email": "support@yoast.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/Yoast/visitor-to-currency/tree/DE/composer",
+                "issues": "https://github.com/Yoast/visitor-to-currency/issues"
+            },
+            "time": "2017-01-23 08:09:31"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "yoast/menu-structure": 20
+        "yoast/menu-structure": 20,
+        "yoast/visitor-to-currency": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
