@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d51822cc315979c21054a682f5491b22",
+    "content-hash": "16fd7a805377b3d0c17f7a8787efcbb6",
     "packages": [
         {
             "name": "composer/installers",
@@ -149,19 +149,28 @@
         },
         {
             "name": "yoast/visitor-to-currency",
-            "version": "dev-DE/composer",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Yoast/visitor-to-currency.git",
-                "reference": "573f00d13d7326965e1853f6ae1588a909398565"
+                "reference": "ee1fe834d465c8226a4681c62c6357675197f583"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Yoast/visitor-to-currency/zipball/573f00d13d7326965e1853f6ae1588a909398565",
-                "reference": "573f00d13d7326965e1853f6ae1588a909398565",
+                "url": "https://api.github.com/repos/Yoast/visitor-to-currency/zipball/ee1fe834d465c8226a4681c62c6357675197f583",
+                "reference": "ee1fe834d465c8226a4681c62c6357675197f583",
                 "shasum": ""
             },
             "type": "library",
+            "autoload": {
+                "classmap": [
+                    "php/class-currency-controller.php",
+                    "php/class-lookup-interface.php",
+                    "php/class-ip-to-country.php",
+                    "php/class-country-to-currency.php",
+                    "php/class-language-to-country.php"
+                ]
+            },
             "authors": [
                 {
                     "name": "Team Yoast",
@@ -169,10 +178,10 @@
                 }
             ],
             "support": {
-                "source": "https://github.com/Yoast/visitor-to-currency/tree/DE/composer",
+                "source": "https://github.com/Yoast/visitor-to-currency/tree/master",
                 "issues": "https://github.com/Yoast/visitor-to-currency/issues"
             },
-            "time": "2017-01-23 08:09:31"
+            "time": "2017-01-23 16:58:40"
         }
     ],
     "packages-dev": [],
