@@ -1,0 +1,68 @@
+.hosting-partners--container {
+  @extend .row;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hosting-partner {
+  flex-basis: 450px;
+  flex-grow: 1;
+  margin: 0 1em 1em 0;
+}
+
+.hosting-partner--title {
+  border-radius: 30px 30px 0 0;
+  padding: 1em 1em 0.5em;
+}
+
+.hosting-partner--content {
+  border: 1px solid $color-purple;
+  border-top: none;
+  padding: 1em;
+  border-radius: 0 0 0 30px;
+  overflow: hidden;
+}
+
+.hosting-partner--introduction,
+.hosting-partner--features,
+.hosting-partner--support-languages {
+  margin-bottom: 1em;
+}
+
+.hosting-partner--feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.hosting-partner-feature-present {
+  width: 16px;
+  display: inline-block;
+  &__yes {
+    color: green;
+  }
+  &__no {
+    color: red;
+  }
+}
+
+.hosting-partner--support-languages {
+  .flag-icon {
+    border-radius: 50%;
+  }
+}
+
+.hosting-partner--price-range {
+  float: left;
+  &__faded {
+    color: #aaa;
+  }
+}
+
+.hosting-partner--cta {
+  float: right;
+  .button {
+    margin: 0.5em 0 0 0;
+  }
+}
