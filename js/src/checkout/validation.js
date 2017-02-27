@@ -206,6 +206,18 @@
 			} );
 		}
 
+		/**
+		 * Removes the required attribute from fields that should never be required.
+		 *
+		 * @returns {void}
+		 */
+		function fixRequiredFields() {
+			var neverRequired = '#card_address_2, #yst_btw';
+
+			// Get all required fields
+			$( neverRequired ).removeAttr('required');
+		}
+
 		jQuery( document ).ready( function( $ ) {
 			$body = $( 'body' );
 
@@ -214,6 +226,7 @@
 			initChosen();
 
 			$body.on( 'edd_taxes_recalculated', fixTaxAfterRecalculation );
+			$body.on( 'edd_discount_applied', fixRequiredFields );
 
 			$( '#card_number' ).payment( 'formatCardNumber' );
 			$( '#card-cvc' ).payment( 'formatCardCVC' );
