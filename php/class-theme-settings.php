@@ -126,6 +126,7 @@ class Theme_Settings {
 				'hire-us' => __( 'Hire us (teal)', 'yoastcom' ),
 				'faq' => __( 'FAQ (dark blue)', 'yoastcom' ),
 				'new-years' => __( 'New years 2017', 'yoastcom' ),
+				'yoast-con' => __( 'Yoast Con', 'yoastcom' ),
 			],
 			'default' => get_theme_option( 'banner_theme_class', 'child-settings' ),
 		) );
@@ -140,6 +141,7 @@ class Theme_Settings {
 				'site-structure' => __( 'Honeycomb and bee', 'yoastcom' ),
 				'new-years' => __( 'Fireworks', 'yoastcom' ),
 				'balloons' => __( 'Balloons', 'yoastcom' ),
+				'owl' => __( 'Owl', 'yoast.com' ),
 			],
 			'default' => get_theme_option( 'banner_theme_variation', 'child-settings' ),
 		) );
