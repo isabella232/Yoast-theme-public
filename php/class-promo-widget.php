@@ -61,7 +61,7 @@ class Promo_Widget extends Widget {
 
 		$instance = $this->set_defaults( $instance );
 
-		$args['before_widget'] = str_replace( 'width-seventh', $instance['width'], $args['before_widget'] );
+		$args['before_widget'] = str_replace( 'width-seventh', "", $args['before_widget'] );
 
 		echo $args['before_widget'];
 
