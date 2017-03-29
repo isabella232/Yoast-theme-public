@@ -5,7 +5,7 @@
 
 namespace Yoast\YoastCom\Theme;
 ?>
-<?php use Yoast\YoastCom\Settings\Hide_Comments;
+<?php use Yoast\YoastCom\Core\WordPress\Settings\Hide_Comments;
 
 get_header(); ?>
 
