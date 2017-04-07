@@ -127,6 +127,7 @@ class Theme_Settings {
 				'faq' => __( 'FAQ (dark blue)', 'yoastcom' ),
 				'new-years' => __( 'New years 2017', 'yoastcom' ),
 				'yoast-con' => __( 'Yoast Con', 'yoastcom' ),
+				'birthday' => __( 'Birthday', 'yoastcom' ),
 			],
 			'default' => get_theme_option( 'banner_theme_class', 'child-settings' ),
 		) );
