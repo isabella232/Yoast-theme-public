@@ -47,6 +47,8 @@ class Theme {
 
 		add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 
+		add_action( 'yst_body_open', array( $this, 'add_google_tag_manager' ) );
+
 		add_filter( 'site_icon_meta_tags', array( $this, 'site_icons' ) );
 
 		add_filter( 'comments_template_query_args', array( $this, 'reverse_comments_order' ) );
@@ -269,6 +271,15 @@ class Theme {
 	public function register_widgets() {
 		register_widget( __NAMESPACE__ . '\\Promo_Widget' );
 		register_widget( __NAMESPACE__ . '\\Social_Widget' );
+	}
+
+	/**
+	 * Adds the google tag manager to the body.
+	 */
+	public function add_google_tag_manager() {
+		if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) {
+			gtm4wp_the_gtm_tag();
+		}
 	}
 
 	/**
