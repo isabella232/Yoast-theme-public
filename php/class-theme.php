@@ -194,8 +194,8 @@ class Theme {
 			'yoast-com-checkout',
 			'YoastI18n',
 			array(
-				'loading' => __( 'Loading', 'yoastcom' ),
-				'select_country' => __( 'Please select a country first', 'yoastcom' ),
+				'loading'         => __( 'Loading', 'yoastcom' ),
+				'select_country'  => __( 'Please select a country first', 'yoastcom' ),
 				'select_currency' => __( 'Please select a currency first', 'yoastcom' ),
 			)
 		);
@@ -289,10 +289,21 @@ class Theme {
 		$this->register_menus();
 		$this->register_sidebars();
 		$this->register_theme_support();
+		$this->inject_vwo_options();
 
 		load_theme_textdomain( 'yoastcom', get_template_directory() . '/languages' );
 
 		add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
+	}
+
+	/**
+	 * Force add configuration options in VWO script.
+	 */
+	protected function inject_vwo_options() {
+		global $clhf_header_script_async;
+
+		// Because this script is global, we can modify it before it is rendered in `wp_head` at prio `1`.
+		$clhf_header_script_async = str_replace( '<script type=\'text/javascript\'>', '<script type=\'text/javascript\'>' . PHP_EOL . '_vis_opt_check_segment = {"global" : true};', $clhf_header_script_async );
 	}
 
 	/**
