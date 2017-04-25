@@ -144,6 +144,7 @@ class Theme_Settings {
 				'new-years' => __( 'Fireworks', 'yoastcom' ),
 				'balloons' => __( 'Balloons', 'yoastcom' ),
 				'owl' => __( 'Owl', 'yoast.com' ),
+				'starwars' => __( 'Star Wars', 'yoast.com' ),
 			],
 			'default' => get_theme_option( 'banner_theme_variation', 'child-settings' ),
 		) );
