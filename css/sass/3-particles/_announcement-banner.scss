@@ -16,6 +16,10 @@
 		background-color: #e6d5e9;
 	}
 
+	&.theme-starwars {
+		background-color: #000000;
+	}
+
 	.row {
 		padding: 0.4em;
 	}
@@ -60,6 +64,10 @@
 			width: 60px;
 			height: 40px;
 			//left: 0;
+		}
+
+		&.starwars {
+			background-image: url(./../images/announcement-banners/starwars.png);
 		}
 
 		&.right {
