@@ -128,6 +128,7 @@ class Theme_Settings {
 				'new-years' => __( 'New years 2017', 'yoastcom' ),
 				'yoast-con' => __( 'Yoast Con', 'yoastcom' ),
 				'birthday' => __( 'Birthday', 'yoastcom' ),
+				'starwars' => __( 'Star Wars', 'yoastcom' )
 			],
 			'default' => get_theme_option( 'banner_theme_class', 'child-settings' ),
 		) );
@@ -143,6 +144,7 @@ class Theme_Settings {
 				'new-years' => __( 'Fireworks', 'yoastcom' ),
 				'balloons' => __( 'Balloons', 'yoastcom' ),
 				'owl' => __( 'Owl', 'yoast.com' ),
+				'starwars' => __( 'Star Wars', 'yoast.com' ),
 			],
 			'default' => get_theme_option( 'banner_theme_variation', 'child-settings' ),
 		) );
