@@ -34,7 +34,7 @@ $path = get_template_directory_uri();
 		</p>
 		<div class="conference--logo--container">
 			<div>
-			<img src="<?php echo $path ?>/images/Yoastcon_Logo.png"
+			<img src="<?php echo $path ?>/images/YoastCon_Logo.png"
 				 class="conference--logo" alt="Yoast Con - Practical SEO"/>
 			</div>
 			<div><a href="https://yoast.com/conference/" class="button">Information &raquo;</a></div>
