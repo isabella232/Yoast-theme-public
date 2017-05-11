@@ -13,6 +13,13 @@ namespace Yoast\YoastCom\Theme;
 
 	<main role="main">
 
+		<?php
+		$conference_banner = get_theme_option( 'yoastcon_2017_banner', 'child-settings' );
+		if ( $conference_banner ) {
+			get_template_part( 'html_includes/partials/conference-banner' );
+		}
+		?>
+
 		<section class="row iceberg">
 			<?php get_template_part( 'html_includes/partials/promoblocks-homepage' ); ?>
 		</section>

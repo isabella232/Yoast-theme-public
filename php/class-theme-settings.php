@@ -157,6 +157,14 @@ class Theme_Settings {
 			'default' => get_theme_option( 'banner', 'child-settings' ),
 		) );
 
+		$cmb->add_field( array(
+			'name'    => __( 'YoastCon 2017 banner', 'yoastcom' ),
+			'desc'    => __( 'Should the banner be shown?', 'yoastcom' ),
+			'id'      => 'yoastcon_2017_banner',
+			'type'    => 'checkbox',
+			'default' => get_theme_option( 'yoastcon_2017_banner', 'child-settings' ),
+		) );
+
 		$social_labels = array(
 			'facebook_likes'      => __( 'Facebook likes', 'yoastcom' ),
 			'instagram_followers' => __( 'Instagram followers', 'yoastcom' ),
