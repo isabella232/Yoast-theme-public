@@ -62,7 +62,7 @@ class Domains {
 
 		}
 
-		return null;
+		return $type;
 	}
 
 	/**
