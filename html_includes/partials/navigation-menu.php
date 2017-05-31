@@ -7,7 +7,7 @@ if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 	/** @noinspection PhpUndefinedVariableInspection */
 	$main_menu_items = $template_args['menu_data'];
 
-	echo '<div id="yoast-main-menu" class="sticky" data-sticky-desktop data-sticky>';
+	echo '<div id="yoast-main-menu">';
 	echo '<nav role="navigation">';
 
 	get_template_part( 'html_includes/partials/navigation-menu-list', array(
