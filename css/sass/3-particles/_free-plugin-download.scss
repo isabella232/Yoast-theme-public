@@ -1,0 +1,13 @@
+.free-plugin-download__container {
+  vertical-align: top;
+  margin-top: 0.6em;
+  margin-left: 0.3em;
+  display: inline-block;
+
+  a.free-plugin-download {
+    display: inline-block;
+    margin-left: 1em;
+    color: $color-green-blue !important;
+    text-decoration: underline !important;
+  }
+}
