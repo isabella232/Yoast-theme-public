@@ -129,7 +129,7 @@ class Theme_Settings {
 				'yoast-con' => __( 'Yoast Con', 'yoastcom' ),
 				'birthday' => __( 'Birthday', 'yoastcom' ),
 				'starwars' => __( 'Star Wars', 'yoastcom' ),
-                'vierdaagse' => __( 'Vierdaagse', 'yoastcom' ),
+				 'vierdaagse' => __( 'Vierdaagse', 'yoastcom' ),
 				'wceu2017' => __( 'WC Europe 2017', 'yoastcom' ),
 				'structured-data' => __( 'Structured Data', 'yoastcom' )
 			],
@@ -148,6 +148,9 @@ class Theme_Settings {
 				'balloons' => __( 'Balloons', 'yoastcom' ),
 				'owl' => __( 'Owl', 'yoast.com' ),
 				'starwars' => __( 'Star Wars', 'yoast.com' ),
+				'vierdaagse' => __( 'Vierdaagse', 'yoastcom' ),
+				'wceu2017' => __( 'WC Europe 2017', 'yoastcom' ),
+				'structured-data' => __( 'Structured Data', 'yoastcom' )
 			],
 			'default' => get_theme_option( 'banner_theme_variation', 'child-settings' ),
 		) );
