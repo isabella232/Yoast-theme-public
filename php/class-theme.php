@@ -45,6 +45,9 @@ class Theme {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ), 20 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 20 );
 
+		add_action( 'wp', [ $this, 'control_navigation'] );
+		add_filter( 'body_class', [ $this, 'add_navigation_body_class' ] );
+
 		add_action( 'widgets_init', array( $this, 'register_widgets' ) );
 
 		add_action( 'yst_body_open', array( $this, 'add_google_tag_manager' ) );
@@ -86,6 +89,29 @@ class Theme {
 		$this->content_width();
 
 		do_action( 'yoast_after_theme_setup' );
+	}
+
+	/**
+	 * Adds a body class when the navigation is disabled.
+	 *
+	 * @param array $classes List of body classes.
+	 *
+	 * @return array Extended list of body classes.
+	 */
+	public function add_navigation_body_class( $classes ) {
+		if ( ! apply_filters( 'yoast_theme-show_navigation', true ) ) {
+			$classes[] = 'no-navigation';
+		}
+		return $classes;
+	}
+
+	/**
+	 * Adds a filter to remove the navigation if the current post has the setting enabled.
+	 */
+	public function control_navigation() {
+		if ( 'on' === post_meta( 'hide_navigation' ) ) {
+			add_filter( 'yoast_theme-show_navigation', '__return_false' );
+		}
 	}
 
 	/**
