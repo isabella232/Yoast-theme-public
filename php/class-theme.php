@@ -109,7 +109,7 @@ class Theme {
 	 * Adds a filter to remove the navigation if the current post has the setting enabled.
 	 */
 	public function control_navigation() {
-		if ( 'on' === post_meta( 'hide_navigation' ) ) {
+		if ( 'on' === get_post_meta( get_queried_object_id(), 'hide_navigation', true ) ) {
 			add_filter( 'yoast_theme-show_navigation', '__return_false' );
 		}
 	}
