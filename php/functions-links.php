@@ -236,6 +236,15 @@ function url_website_review() {
 }
 
 /**
+ * Returns the URL to the website review page
+ *
+ * @return string
+ */
+function url_courses_archive() {
+	return apply_filters( 'yoast:url', 'courses_archive' );
+}
+
+/**
  * Returns the URL of the ebooks archive
  */
 function url_ebooks_archive() {
