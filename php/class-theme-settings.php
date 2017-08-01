@@ -131,6 +131,7 @@ class Theme_Settings {
 				'starwars' => __( 'Star Wars', 'yoastcom' ),
 				 'vierdaagse' => __( 'Vierdaagse', 'yoastcom' ),
 				'wceu2017' => __( 'WC Europe 2017', 'yoastcom' ),
+                'confetti' => __( 'Confetti', 'yoastcom' ),
 				'structured-data' => __( 'Structured Data', 'yoastcom' )
 			],
 			'default' => get_theme_option( 'banner_theme_class', 'child-settings' ),
@@ -150,6 +151,7 @@ class Theme_Settings {
 				'starwars' => __( 'Star Wars', 'yoast.com' ),
 				'vierdaagse' => __( 'Vierdaagse', 'yoastcom' ),
 				'wceu2017' => __( 'WC Europe 2017', 'yoastcom' ),
+                'confetti' => __( 'Confetti', 'yoastcom' ),
 				'structured-data' => __( 'Structured Data', 'yoastcom' )
 			],
 			'default' => get_theme_option( 'banner_theme_variation', 'child-settings' ),
