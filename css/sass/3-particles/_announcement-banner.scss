@@ -37,6 +37,9 @@
 		background: -ms-linear-gradient(left, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
 		background: linear-gradient(to right, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
 	}
+	&.theme-confetti {
+		background-color: #eaff14;
+	}
 
 	.row {
 		padding: 0.4em;
@@ -98,6 +101,9 @@
 
 		&.wceu2017 {
 			background-image: url(./../images/announcement-banners/cloud.png);
+		}
+		&.confetti {
+			background-image: url(./../images/announcement-banners/confetti.png);
 		}
 
 		&.right {
