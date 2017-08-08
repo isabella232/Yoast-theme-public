@@ -27,7 +27,7 @@ get_template_part( 'html_includes/siteheader', array( 'academy-sub' => true ) );
 
             </article>
 
-			<?php get_template_part( 'html_includes/partials/newsletter-subscribe-single-post', array( 'class' => 'newsletter--single-post' ) ); ?>
+			<?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
 
             <div class="social-share__container">
                 <div class="row">

@@ -46,7 +46,11 @@ namespace Yoast\YoastCom\Theme;
 			</section>
 		</div>
 
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'theme-seo-blog announcement--pointer-top island' ) ); ?>
+        <hr>
+
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => '--home' ) ); ?>
+
+        <hr>
 
 		<div class="rowholder">
 			<section class="row island iceberg theme-courses">

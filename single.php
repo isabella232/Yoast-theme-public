@@ -32,11 +32,15 @@ get_header(); ?>
 
 		<?php
 
-		get_template_part( 'html_includes/partials/bio' );
+		get_template_part( 'html_includes/partials/bio' ); ?>
 
-		get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'fill--secondary announcement--pointer' ) );
+        <hr>
 
-		get_template_part( 'html_includes/partials/comments' );
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
+
+        <hr>
+
+		<?php get_template_part( 'html_includes/partials/comments' );
 
 		$primary_term_id = yoast_get_primary_term_id();
 		if ( ! $primary_term_id ) {

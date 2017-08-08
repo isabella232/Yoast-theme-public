@@ -25,7 +25,11 @@ namespace Yoast\YoastCom\Theme;
 			</article>
 		<?php endwhile; ?>
 
+        <hr>
+
 		<?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
+
+        <hr>
 
 	</main>
 

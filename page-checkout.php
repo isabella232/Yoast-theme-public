@@ -20,7 +20,11 @@ namespace Yoast\YoastCom\Theme;
 
 		<?php the_content(); ?>
 
+        <hr>
+
 		<?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
+
+        <hr>
 
 	</main>
 
