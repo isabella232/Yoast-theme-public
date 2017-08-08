@@ -10,7 +10,6 @@ get_header();
 get_template_part( 'html_includes/siteheader', array( 'academy-sub' => true ) );
 
 ?>
-<?php get_template_part( 'html_includes/partials/breadcrumbs' ); ?>
     <div class="site">
 
         <main role="main">
