@@ -1,7 +1,7 @@
 div.conference-banner {
   background-color: #cce9fe;
   margin-bottom: 2em;
-  margin-top: -2.5em;
+  margin-top: -0.9em;
 
   .row {
     padding: 1em;
@@ -54,8 +54,11 @@ div.conference-banner {
       font-size: 0.8em;
     }
   }
-
+  @media screen and (max-width: 895px) {
+    margin-top: -2.9em;
+  }
   @media screen and (max-width: 800px) {
+
     .row {
       display: block;
       overflow: hidden;
