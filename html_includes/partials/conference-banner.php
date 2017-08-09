@@ -29,7 +29,7 @@ $path = get_template_directory_uri();
 			</script>
 		</div>
 		<p class="conference--info">
-			November 2<sup>nd</sup>, 2017<br/>
+			November 2, 2017<br/>
 			Nijmegen, The Netherlands<br/>
 		</p>
 		<div class="conference--logo--container">
