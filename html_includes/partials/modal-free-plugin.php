@@ -1,24 +1,21 @@
 <?php
-function yst_footer_modal_script() {
+function yst_footer_modal_free_plugin_script() {
 ?>
 	<script>
 		jQuery(document).ready(function ($) {
-            $('a.free-plugin-download-modal').click(function (e) {
-                e.preventDefault(); // prevents the download
+
+            $('a.free-plugin-download-modal').click(function () {
                 $('#free-plugin-download-modal').modal({
                     closeText: '<i class="fa fa-times-circle"></i>'
                 });
-
                 position_modal();
             });
 
             $(window).resize(position_modal);
 
             function position_modal(){
-                $windowheight = $(window).height();
                 $modal_margin_top = ($(window).height() / 2) - ($('#free-plugin-download-modal').outerHeight() / 2) + 'px';
                 $modal_margin_left = ($(window).width() / 2) - ($('#free-plugin-download-modal').outerWidth() / 2) + 'px';
-                $outerwidth = $('#free-plugin-download-modal').outerWidth() / 2;
 
                 $('#free-plugin-download-modal').css({
                     'top':  $modal_margin_top,
@@ -32,7 +29,7 @@ function yst_footer_modal_script() {
 }
 
 wp_enqueue_script( 'jquery-modal' );
-add_action( 'wp_footer', 'yst_footer_modal_script', 90 );
+add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 10 );
 
 	?>
 	<div id="free-plugin-download-modal" style="display: none;">
