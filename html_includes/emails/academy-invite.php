@@ -3,13 +3,13 @@
 namespace Yoast\YoastCom\Theme;
 
 ?>
-Thank you for buying a course in Yoast Academy
+Thank you for buying a Yoast Academy course!
 
-<a href="<?php echo esc_url( $template_args['url'] ); ?>">Login or register for an account here.</a>
+If you already have a Yoast Academy account, the course you bought is now accessible in <a href="https://yoast.academy/my-courses/">My academy</a>.
 
-If you cannot click on the link, paste this url in the browser: <?php echo esc_url( $template_args['url'] ); ?>
+If you are new to Yoast Academy, <a href="<?php echo esc_url( $template_args['url'] ); ?>">click here to create an account</a>.
 
+If you cannot click on the link, paste this url in your browser: <?php echo esc_url( $template_args['url'] ); ?>
 
-Greetings,
+Happy learning!
 Team Yoast
-

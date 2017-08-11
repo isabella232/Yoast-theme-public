@@ -1,0 +1,51 @@
+body.has-sticky-purchase-button {
+  margin-bottom: 69px;
+}
+
+.sticky-purchase-button {
+  &__container {
+    position: fixed;
+    z-index: 2;
+
+    width: 100%;
+    color: white;
+    bottom: 0;
+    padding: 12px;
+    text-align: center;
+
+    background-color: $color-blue;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
+
+    transform: translate(0, 100%);
+    transition: transform 0.2s ease-out;
+
+    .button {
+      margin: 0;
+      overflow: inherit;
+    }
+
+    &.active {
+      transform: translate(0, 0);
+    }
+  }
+
+  &__label {
+    margin-left: 12px;
+    &::before {
+      content: '\2190';
+      margin-right: 4px;
+      font-weight: 900;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    &__label {
+      &::before {
+        display: none;
+      }
+
+      display: block;
+      margin-left: 0;
+    }
+  }
+}
