@@ -1,0 +1,60 @@
+@media only screen and (max-width: $page-width-small) {
+  table.comparison_table {
+    width: 100%;
+    tr {
+      &:first-of-type {
+        display: none;
+      }
+      td {
+        display: block;
+        width: 100%;
+        border: none;
+        padding: .47rem 0;
+        i {
+          margin-right: 10px;
+        }
+        &:first-of-type {
+          p {
+            &:before {
+              content: 'Yoast SEO Premium:';
+              display: block;
+              font-size: 1em;
+              margin-bottom: .47rem;
+              color: $color-black;
+              font-weight: 700;
+              font-family: $font-stack-default;
+            }
+          }
+        }
+        &:last-of-type {
+          border-bottom: 1px solid $color-grey;
+          padding-bottom: 1rem;
+          margin-bottom: .47rem;
+          &:before {
+            content: 'Yoast SEO Free:';
+            margin-bottom: .47rem;
+            display: block;
+            font-size: 1em;
+            color: $color-black;
+            font-weight: 700;
+          }
+        }
+        p {
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+      &:last-of-type {
+        td:last-of-type {
+          text-align: center;
+          &:before {
+            display: none;
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}
+
+
