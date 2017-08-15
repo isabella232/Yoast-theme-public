@@ -47,11 +47,11 @@ add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 10 );
 		</div>
         <div class="content content-usps">
             <p>
-                <strong><?php _e( 'Wait! we get that you\'re thrilled to get started. but wait...', 'yoastcom' ); ?></strong><br/>
+                <strong><?php _e( 'Wait! we get that you\'re thrilled to get started. But wait...', 'yoastcom' ); ?></strong><br/>
                 <?php _e( 'Why not first make sure you get the most out of it?', 'yoastcom' ); ?>
             </p>
             <ul class="list--usp">
-                <li><?php _e( 'Get weekly tips on how to optimize your website\'s SEO, usavility and conversion', 'yoastcom' ); ?></li>
+                <li><?php _e( 'Get weekly tips on how to optimize your website\'s SEO, usavility and conversion.', 'yoastcom' ); ?></li>
                 <li><?php _e( 'Be the first to know about new features and other cool (free) plugins.', 'yoastcom' ); ?></li>
                 <li><?php _e( 'Get our <strong>free 50-page SEO guide</strong> right away to help you become an SEO genius.', 'yoastcom' ); ?></li>
             </ul>
