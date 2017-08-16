@@ -3,11 +3,15 @@
 namespace Yoast\YoastCom\Theme;
 
 ?>
-Thank you for buying a Yoast Academy course!
+Thank you for buying the <?php echo $template_args['title']; ?>!
 
-If you already have a Yoast Academy account, the course you bought is now accessible in <a href="https://yoast.academy/my-courses/">My academy</a>.
-
-If you are new to Yoast Academy, <a href="<?php echo esc_url( $template_args['url'] ); ?>">click here to create an account</a>.
+All that's left now is activating your course.
+<ol>
+    <li><a href="<?php echo esc_url( $template_args['url'] ); ?>">Click this link.</a></li>
+    <li>Login or create an account.</li>
+    <li>Activate your course by clicking the button.</li>
+    <li>Your course is now available in <a href="https://yoast.academy/my-courses/">My Academy</a>.</li>
+</ol>
 
 If you cannot click on the link, paste this url in your browser: <?php echo esc_url( $template_args['url'] ); ?>
 
