@@ -46,7 +46,7 @@ $quiz_data = get_user_meta( $user_id, 'llms_quiz_data', true );
 
 						<h4 class="panel-title">
 
-							<?php echo LLMS_Language::output( 'Question' . ( $key + 1 ) ); ?>
+							<?php echo __( 'Question' . ( $key + 1 ) ); ?>
 
 							<?php echo LLMS_Svg::get_icon( $icon, 'Lesson', 'Lesson', 'tree-icon' ); ?>
 
@@ -93,7 +93,7 @@ $quiz_data = get_user_meta( $user_id, 'llms_quiz_data', true );
 									if ( $quiz->show_description_right_answer() ) {
 										if ( array_key_exists( 'option_description', $options[ $question['answer'] ] ) ) {
 											echo '<li><span class="llms-quiz-summary-label clarification">' .
-											     LLMS_Language::output( '<strong class="answer_clarification">Clarification:</strong><br>' . wpautop( $options[ $question['answer'] ]['option_description'] ) )
+                                                __( '<strong class="answer_clarification">Clarification:</strong><br>' . wpautop( $options[ $question['answer'] ]['option_description'] ) )
 											     . '</span></li>';
 										}
 									}
@@ -102,7 +102,7 @@ $quiz_data = get_user_meta( $user_id, 'llms_quiz_data', true );
 									if ( $quiz->show_description_wrong_answer() ) {
 										if ( array_key_exists( 'option_description', $options[ $question['answer'] ] ) ) {
 											echo '<li><span class="llms-quiz-summary-label clarification">' .
-											     LLMS_Language::output( '<strong class="answer_clarification">Clarification:</strong><br>' . wpautop( $options[ $question['answer'] ]['option_description'] ) )
+                                                __( '<strong class="answer_clarification">Clarification:</strong><br>' . wpautop( $options[ $question['answer'] ]['option_description'] ) )
 											     . '</span></li>';
 										}
 									}
