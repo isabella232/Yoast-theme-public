@@ -5,13 +5,19 @@ if ( ! isset( $template_args['class'] ) ) {
 	$template_args['class'] = '';
 }
 ?>
+<?php
+if (strpos($template_args['class'], 'arrow-top') !== false) {
+	echo "<hr>";
+}
+?>
+
 <div class="announcement newsletter <?php echo esc_attr( $template_args['class'] ); ?>">
     <div class="row">
         <h2><?php _e( 'Get more free tips like this!', 'yoastcom' ); ?></h2>
         <ul class="list--usp">
             <li><?php _e( 'Get weekly tips on how to optimize your website\'s SEO, usabillity and conversation', 'yoastcom '); ?></li>
             <li><?php _e( 'Be the first to know about new features and other cool (free) plugins.', 'yoastcom '); ?></li>
-            <li><?php _e( 'Get our <strong>free 50-page SEO guide</strong> right away to help you become an SEO genius.', 'yoastcom '); ?></li>
+            <li><?php printf( __( 'Get our %1$sfree 50-page SEO guide%2$s right away to help you become an SEO genius.', 'yoastcom '), '<strong>', '</strong>'); ?></li>
         </ul>
         <form action="https://yoast.us1.list-manage.com/subscribe/post?u=ffa93edfe21752c921f860358&amp;id=972f1c9122" method="post" enctype="multipart/form-data">
             <fieldset>
@@ -32,6 +38,12 @@ if ( ! isset( $template_args['class'] ) ) {
         </form>
     </div>
 </div>
+
+<?php
+if (strpos($template_args['class'], 'arrow-bottom') !== false) {
+    echo "<hr>";
+}
+?>
 
 
 

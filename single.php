@@ -31,16 +31,9 @@ get_header(); ?>
 		</article>
 
 		<?php
-
-		get_template_part( 'html_includes/partials/bio' ); ?>
-
-        <hr>
-
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
-
-        <hr>
-
-		<?php get_template_part( 'html_includes/partials/comments' );
+		get_template_part( 'html_includes/partials/bio' );
+		get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top arrow-bottom' ) );
+        get_template_part( 'html_includes/partials/comments' );
 
 		$primary_term_id = yoast_get_primary_term_id();
 		if ( ! $primary_term_id ) {

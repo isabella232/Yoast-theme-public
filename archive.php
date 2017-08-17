@@ -145,11 +145,7 @@ namespace Yoast\YoastCom\Theme;
 			</div>
 		<?php endif; ?>
 
-        <hr>
-
-        <?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
-
-        <hr>
+        <?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top arrow-bottom' ) ); ?>
 
 	</main>
 

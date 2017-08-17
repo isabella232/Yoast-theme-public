@@ -46,11 +46,7 @@ namespace Yoast\YoastCom\Theme;
 			</section>
 		</div>
 
-        <hr>
-
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => '--home' ) ); ?>
-
-        <hr>
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => '--home arrow-top arrow-bottom' ) ); ?>
 
 		<div class="rowholder">
 			<section class="row island iceberg theme-courses">
