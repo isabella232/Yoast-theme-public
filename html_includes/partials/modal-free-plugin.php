@@ -40,18 +40,17 @@ add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 10 );
         <div class="hourglass"><i class="fa fa-hourglass-end" aria-hidden="true"></i></div>
         <div class="notification">
             <h2><?php _e( 'Your plugin is downloading right now.', 'yoastcom' ); ?></h2>
-            <p><?php _e( 'You\'ll find it in your downloadfolder in a few seconds.', 'yoastcom' ); ?></p>
+            <p><?php _e( 'You\'ll find it on your computer in a few seconds.', 'yoastcom' ); ?></p>
         </div>
     </div>
     <div class="content content-usps">
-        <p>
-            <strong><?php _e( 'Wait! we get that you\'re thrilled to get started. But wait...', 'yoastcom' ); ?></strong><br/>
-			<?php _e( 'Why not first make sure you get the most out of it?', 'yoastcom' ); ?>
+        <p><?php printf( __( '%1$sWait!%2$s We get that you’re thrilled to get started, but hear us out…', 'yoastcom '), '<strong>', '</strong>' ); ?><br/>
+			<?php _e( 'Why not make sure you get the most out of it?', 'yoastcom' ); ?>
         </p>
         <ul class="list--usp">
             <li><?php _e( 'Get weekly tips on how to optimize your website\'s SEO, usability and conversion.', 'yoastcom' ); ?></li>
             <li><?php _e( 'Be the first to know about new features and other cool (free) plugins.', 'yoastcom' ); ?></li>
-            <li><?php _e( 'Get our <strong>free 50-page SEO guide</strong> right away to help you become an SEO genius.', 'yoastcom' ); ?></li>
+            <li><?php printf( __( 'Get our %1$sfree 50-page SEO guide%2$s right away to help you become an SEO genius.', 'yoastcom' ), '<strong>', '</strong>' ); ?></li>
         </ul>
         <form action="https://yoast.us1.list-manage.com/subscribe/post?u=ffa93edfe21752c921f860358&amp;id=972f1c9122"
               method="post" enctype="multipart/form-data">
