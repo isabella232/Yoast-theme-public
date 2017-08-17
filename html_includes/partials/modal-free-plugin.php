@@ -34,7 +34,7 @@ add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 10 );
 ?>
 <div id="free-plugin-download-modal" style="display: none;">
     <h3>
-		<?php _e( 'Great idea to get our free SEO plugin', 'yoastcom' ); ?>
+		<?php _e( 'Great idea to get our free SEO plugin!', 'yoastcom' ); ?>
     </h3>
     <div class="content content-downloading grid">
         <div class="hourglass"><i class="fa fa-hourglass-end" aria-hidden="true"></i></div>
