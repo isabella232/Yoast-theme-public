@@ -19,7 +19,6 @@ if ( ! $quiz->get_total_attempts_by_user( $user_id ) ) {
 }
 
 $grade      = $quiz->get_user_grade( $user_id );
-$best_grade = $quiz->get_best_grade( $user_id );
 
 $quiz->is_passing_score( $user_id, $grade );
 $passing_percent = $quiz->get_passing_percent();
@@ -36,12 +35,9 @@ $is_passing_score = $quiz->is_passing_score( $user_id, $grade );
 
 		<?php
 		//determine if grade, best grade or none should be shown.
-		if ( isset( $grade ) && isset( $best_grade ) ) :
-
-			$graph_grade = empty( $grade ) ? $best_grade : $grade;
-
-			?>
-			<input type="hidden" id="llms-grade-value" name="llms_grade" value="<?php echo $graph_grade; ?>"/>
+		if ( isset( $grade ) ) :
+            ?>
+			<input type="hidden" id="llms-grade-value" name="llms_grade" value="<?php echo $grade; ?>"/>
 			<div class="llms-progress-circle">
 				<svg>
 					<g>
@@ -54,8 +50,7 @@ $is_passing_score = $quiz->is_passing_score( $user_id, $grade );
 						<circle cx="40" cy="40" r="63" transform="translate(50,50)"/>
 					</g>
 				</svg>
-
-				<div class="llms-progress-circle-count"><?php printf( __( '%s%%' ), $graph_grade ); ?></div>
+				<div class="llms-progress-circle-count"><?php printf( __( '%s%%' ), $grade ); ?></div>
 			</div>
 
 		<?php endif; ?>
