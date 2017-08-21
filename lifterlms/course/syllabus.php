@@ -20,7 +20,7 @@ $html .= '<div class="llms-syllabus-wrapper">';
 //get section data
 $sections = $course->get_children_sections();
 if ( !$sections ) {
-	$html .= LLMS_Language::output('This course does not have any sections.');
+	$html .= __('This course does not have any sections.', 'lifterlms');
 } else {
 
 	$current_section = false;
@@ -64,7 +64,7 @@ if ( !$sections ) {
 
 		if ( !$lessons ) {
 
-			$html .= LLMS_Language::output('This section does not have any lessons.');
+			$html .= __('This section does not have any lessons.', 'lifterlms');
 
 		} else {
 
@@ -86,12 +86,12 @@ if ( !$sections ) {
 				$title = '';
 				$linkclass = '';
 
-				if ( ! $page_restricted['is_restricted'] ) {
+				if ( ! $page_restricted['is_restricted'] || $lesson->get_is_free()) {
 					$permalink = get_permalink( $lesson->id );
 					$linkclass = 'llms-lesson-link';
 				}
 				else {
-					$title = LLMS_Language::output( 'Take this course to unlock this lesson' );
+					$title = __( 'Take this course to unlock this lesson', 'lifterlms' );
 					$linkclass = 'llms-lesson-link-locked';
 				}
 

@@ -12,6 +12,35 @@
 		background-color: #99bed8;
 	}
 
+	&.theme-birthday {
+		background-color: #e6d5e9;
+	}
+
+	&.theme-starwars {
+		background-color: #000000;
+	}
+
+	&.theme-vierdaagse {
+		background-color: #0a9b0a;
+	}
+
+	&.theme-structured-data {
+		background-color: #fee471;
+	}
+
+	&.theme-wceu2017 {
+		background: rgba(24,14,219,1);
+		background: -moz-linear-gradient(left, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+		background: -webkit-gradient(left top, right top, color-stop(0%, rgba(24,14,219,1)), color-stop(100%, rgba(255,0,200,1)));
+		background: -webkit-linear-gradient(left, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+		background: -o-linear-gradient(left, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+		background: -ms-linear-gradient(left, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+		background: linear-gradient(to right, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+	}
+	&.theme-confetti {
+		background-color: #eaff14;
+	}
+
 	.row {
 		padding: 0.4em;
 	}
@@ -56,6 +85,25 @@
 			width: 60px;
 			height: 40px;
 			//left: 0;
+		}
+
+		&.starwars {
+			background-image: url(./../images/announcement-banners/starwars.png);
+		}
+
+		&.vierdaagse {
+			background-image: url(./../images/announcement-banners/shoes.png);
+		}
+
+		&.structured-data {
+			background-image: url(./../images/announcement-banners/sliders.png);
+		}
+
+		&.wceu2017 {
+			background-image: url(./../images/announcement-banners/cloud.png);
+		}
+		&.confetti {
+			background-image: url(./../images/announcement-banners/confetti.png);
 		}
 
 		&.right {
