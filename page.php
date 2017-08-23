@@ -33,11 +33,7 @@ namespace Yoast\YoastCom\Theme;
 			<?php get_template_part( 'html_includes/partials/recent-articles' ); ?>
 		</section>
 
-        <hr>
-
-        <?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
-
-        <hr>
+        <?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top arrow-bottom' ) ); ?>
 
 	</main>
 
