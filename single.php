@@ -5,7 +5,7 @@
 
 namespace Yoast\YoastCom\Theme;
 ?>
-<?php use Yoast\YoastCom\Settings\Hide_Comments;
+<?php use Yoast\YoastCom\Core\WordPress\Settings\Hide_Comments;
 
 get_header(); ?>
 
@@ -31,12 +31,9 @@ get_header(); ?>
 		</article>
 
 		<?php
-
-		get_template_part( 'html_includes/partials/bio' );
-
-		get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'fill--secondary announcement--pointer' ) );
-
-		get_template_part( 'html_includes/partials/comments' );
+        get_template_part( 'html_includes/partials/bio' );
+        get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top arrow-bottom' ) );
+        get_template_part( 'html_includes/partials/comments' );
 
 		$primary_term_id = yoast_get_primary_term_id();
 		if ( ! $primary_term_id ) {

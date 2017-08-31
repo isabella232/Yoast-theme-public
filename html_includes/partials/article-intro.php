@@ -2,7 +2,7 @@
 
 namespace Yoast\YoastCom\Theme;
 
-use Yoast\YoastCom\Settings\Hide_Comments;
+use Yoast\YoastCom\Core\WordPress\Settings\Hide_Comments;
 
 $post_id   = get_the_ID();
 $post_type = get_post_type_object( get_post_type() );

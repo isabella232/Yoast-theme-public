@@ -96,7 +96,11 @@ $banner_icon = get_term_meta( $term_id, 'yoastcom_term_banner_icon', true );
 			</div>
 		<?php endif; ?>
 
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
+        <hr>
+
+        <?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
+
+        <hr>
 
 	</main>
 

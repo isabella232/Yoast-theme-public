@@ -1,7 +1,7 @@
 <?php
 namespace Yoast\YoastCom\Theme;
 
-use Yoast\YoastCom\Settings\Hide_Comments;
+use Yoast\YoastCom\Core\WordPress\Settings\Hide_Comments;
 ?>
 <?php $comments_number = get_comments_number(); ?>
 <div class="meta__date">

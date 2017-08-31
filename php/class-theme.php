@@ -5,7 +5,7 @@
 
 namespace Yoast\YoastCom\Theme;
 
-use Yoast\YoastCom\Settings\Hide_Comments;
+use Yoast\YoastCom\Core\WordPress\Settings\Hide_Comments;
 
 /**
  * Adds yoast.com theme functionality
