@@ -66,13 +66,9 @@ namespace Yoast\YoastCom\Theme;
 			<?php get_template_part( 'html_includes/partials/pagination' ); ?>
 		</div>
 
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top arrow-bottom' ) ); ?>
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top' ) ); ?>
 
     </main>
-
-	<div class="rowholder">
-		<?php get_template_part( 'html_includes/fullfooter' ); ?>
-	</div>
 
 </div>
 
