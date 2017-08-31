@@ -29,6 +29,19 @@
           margin-top: 5px;
           float: left;
         }
+
+        &.checkout {
+          position: relative;
+          span.num-items {
+            position: absolute;
+            top: -8px;
+            left: 6px;
+            display: block;
+            width: 20px;
+            text-align: center;
+            font-size: .9rem;
+          }
+        }
       }
     }
 
