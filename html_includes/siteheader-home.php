@@ -11,8 +11,13 @@ namespace Yoast\YoastCom\Theme;
 							class="visuallyhidden">Yoast</span></a>
 				</h1>
 
-				<?php get_template_part( 'html_includes/header-controls-mobile' ); ?>
-				<?php get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) ); ?>
+				<?php
+				    echo '<div class="navigation-header">';
+                    get_template_part( 'html_includes/header-controls-mobile' );
+                    get_template_part( 'html_includes/partials/navigation-header' );
+                    get_template_part( 'html_includes/partials/search', array( 'type' => 'mobile' ) );
+				echo '</div>';
+				?>
 			</div>
 
 		<?php endif; ?>
@@ -21,12 +26,15 @@ namespace Yoast\YoastCom\Theme;
             <div class="row masthead">
                 <a href="<?php echo $yoast_url; ?>" class="pagetitle"><span class="visuallyhidden">Yoast</span></a>
 
-				<?php
-				if ( $show_navigation ) {
-					get_template_part( 'html_includes/header-controls-mobile' );
-					get_template_part( 'html_includes/partials/search' );
-				}
-				?>
+	            <?php
+	            if ( $show_navigation ) {
+		            echo '<div class="navigation-header">';
+		            get_template_part( 'html_includes/header-controls-mobile' );
+		            get_template_part( 'html_includes/partials/navigation-header' );
+		            get_template_part( 'html_includes/partials/search' );
+		            echo '</div>';
+	            }
+	            ?>
             </div>
 		<?php endif; ?>
 

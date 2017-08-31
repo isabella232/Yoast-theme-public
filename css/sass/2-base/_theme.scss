@@ -39,6 +39,10 @@
       }
     }
   }
+  .searchbar form input:focus,
+  .searchbar form input.active{
+    border-color: $color-secondary
+  }
 
   .pagination {
     border-color: $color-secondary;
