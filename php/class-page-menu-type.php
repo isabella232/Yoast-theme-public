@@ -9,7 +9,6 @@ class Page_Menu_Type {
 	const PLUGINS = 'plugins';
 	const COURSES = 'courses';
 	const EBOOKS = 'ebooks';
-	const HIRE_US = 'hire-us';
 	const FAQ = 'faq';
 
 	/**
@@ -41,7 +40,6 @@ class Page_Menu_Type {
 				self::PLUGINS  => __( 'Plugins', 'yoastcom' ),
 				self::COURSES  => __( 'Courses', 'yoastcom' ),
 				self::EBOOKS   => __( 'eBooks', 'yoastcom' ),
-				self::HIRE_US  => __( 'Hire us', 'yoastcom' ),
 				self::FAQ      => __( 'FAQ', 'yoastcom' ),
 			),
 		) );
