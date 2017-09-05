@@ -66,7 +66,6 @@ class Product_Options_Modal {
 		];
 		$args['dynamic_pricing']   = array_merge( $args['dynamic_pricing'], current( $dynamic_pricing )['rules'] );
 
-
 		return $args;
 	}
 
