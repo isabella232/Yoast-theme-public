@@ -34,22 +34,22 @@ class Product_Options_Modal {
 	public static function footer_modal_script() {
 		?>
 		<script>
-			jQuery(document).ready(function ($) {
-				$('a[data-modal-product-id]').click(function (e) {
+			jQuery( document ).ready( function ( $ ) {
+				$( 'a[data-modal-product-id]' ).click( function ( e ) {
 					e.preventDefault();
 
-					var $this = $(this);
-					var product_id = $this.data('modal-product-id');
+					var $this = $( this );
+					var product_id = $this.data( 'modal-product-id' );
 
-					$('#prices-modal-' + product_id).modal({
+					$( '#prices-modal-' + product_id ).modal( {
 						closeText: '<i class="fa fa-times-circle"></i>'
-					});
-				});
-				$('.modal label').click(function (e) {
+					} );
+				} );
+				$( '.modal label' ).click( function ( e ) {
 					e.preventDefault();
-					$('input#' + $(this).attr('for')).prop('checked', true);
-				});
-			});
+					$( 'input#' + $( this ).attr( 'for' ) ).prop( 'checked', true );
+				} );
+			} );
 		</script>
 		<?php
 	}
