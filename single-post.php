@@ -69,17 +69,13 @@ get_template_part( 'html_includes/siteheader', array( 'academy-sub' => true ) );
         endif;
 
         get_template_part( 'html_includes/partials/announcement', array(
-            'class' => 'theme-courses announcement--pointer-top',
+            'class' => 'theme-courses announcement--pointer-top announcement--pointer-top',
             'text'  => __( 'Want to learn the basics of SEO? Or how to use Yoast SEO properly? Follow a course on Yoast Academy &raquo;', 'yoastcom' ),
             'url'   => url_academy_overview() . 'courses/',
             'icon'  => 'graduation-cap',
         ) ); ?>
 
     </main>
-
-    <div class="rowholder">
-        <?php get_template_part( 'html_includes/fullfooter' ); ?>
-    </div>
 
 </div>
 
