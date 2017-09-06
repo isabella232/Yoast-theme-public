@@ -371,7 +371,7 @@ function get_product_icon( $product_id = null, $diapositive = false ) {
 	if ( get_post_meta( $product_id, $icon_key, true ) ) {
 		$icon = get_post_meta( $product_id, $icon_key, true );
 
-		// If there is a connected woocommerce product, try to get its icon.
+		// If there is a connected WooCommerce product, try to get its icon.
 	} elseif ( $woo_product_id = get_post_meta( $product_id, 'product_id', true ) ) {
 		$icon = get_product_icon( $woo_product_id, $diapositive );
 
@@ -379,11 +379,6 @@ function get_product_icon( $product_id = null, $diapositive = false ) {
 	} elseif ( $download_id = get_post_meta( $product_id, 'download_id', true ) ) {
 		$download_id = Migration_Utils::Products()->lookup( $download_id );
 		$icon        = get_product_icon( $download_id, $diapositive );
-
-		// If there is a connected premium product, try to get its icon.
-	} elseif ( $premium_id = get_post_meta( $product_id, 'connected_premium_plugin', true ) ) {
-		$product_id = Migration_Utils::Products()->lookup( $product_id );
-		$icon       = get_product_icon( $product_id, $diapositive );
 	}
 
 	if ( '' === $icon && class_exists( 'Yoast\YoastCom\RemoteCheckout\Remote_Product' ) ) {
