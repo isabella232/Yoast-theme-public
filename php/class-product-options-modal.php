@@ -55,16 +55,21 @@ class Product_Options_Modal {
 	}
 
 	public static function build_args( $args ) {
-		$product_id                = $args['id'];
-		$dynamic_pricing           = apply_filters( 'dynamic_pricing_product_rules', \WC_Dynamic_Pricing_Compatibility::get_product_meta( wc_get_product( $product_id ), '_pricing_rules' ) );
-		$args['dynamic_pricing'][] = [
+		if ( isset( $args['shop_id'] ) && get_current_blog_id() !== $args['shop_id'] ) {
+			switch_to_blog( $args['shop_id'] );
+		}
+		$dynamic_pricing = apply_filters( 'dynamic_pricing_product_rules', \WC_Dynamic_Pricing_Compatibility::get_product_meta( wc_get_product( $args['id'] ), '_pricing_rules' ) );
+		restore_current_blog();
+
+		$standard_pricing_option = [
 			'from'   => '1',
 			'to'     => '1',
 			'amount' => '0',
 			'type'   => 'percentage_discount',
 
 		];
-		$args['dynamic_pricing']   = array_merge( $args['dynamic_pricing'], current( $dynamic_pricing )['rules'] );
+		$args['dynamic_pricing'] = array_merge( [ $standard_pricing_option ], current( $dynamic_pricing )['rules'] );
+
 
 		return $args;
 	}
