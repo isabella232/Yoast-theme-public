@@ -38,6 +38,7 @@ body.has-sticky-purchase-button {
     }
   }
 
+
   @media screen and (max-width: 480px) {
     &__label {
       &::before {
@@ -46,6 +47,17 @@ body.has-sticky-purchase-button {
 
       display: block;
       margin-left: 0;
+    }
+  }
+}
+.sticky-purchase-button__container {
+  .free-plugin-download__container {
+    margin-top: 0;
+    vertical-align: baseline;
+    a.link--download.free-plugin-download {
+      color: #fff;
+      margin-bottom: 0;
+      text-decoration: underline !important;
     }
   }
 }
