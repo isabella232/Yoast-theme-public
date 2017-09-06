@@ -68,10 +68,12 @@ class Promo_Widget extends Widget {
 		?>
 		<h2><a href="<?php echo esc_url( $instance['link'] ); ?>"><?php echo esc_html( $instance['title'] ); ?> &raquo;</a></h2>
 
-			<p class="hide-on-mobile">
-				<?php echo esc_html( $instance['text'] ); ?>
-				<a href="<?php echo esc_url( $instance['link'] ); ?>" class="font-default"><?php echo esc_html( $instance['link_text'] ); ?> &raquo;</a>
-			</p>
+			<div class="hide-on-mobile">
+				<?php echo $instance['text']; ?>
+				<p>
+					<a href="<?php echo esc_url( $instance['link'] ); ?>" class="font-default"><?php echo esc_html( $instance['link_text'] ); ?> &raquo;</a>
+				</p>	
+			</div>
 		<?php
 
 		echo $args['after_widget'];

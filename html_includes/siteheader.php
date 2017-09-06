@@ -13,8 +13,11 @@ $show_navigation = apply_filters( 'yoast_theme-show_navigation', true );
 
 		<?php
 		if ( $show_navigation ) {
+			echo '<div class="navigation-header">';
 			get_template_part( 'html_includes/header-controls-mobile' );
+			get_template_part( 'html_includes/partials/navigation-header' );
 			get_template_part( 'html_includes/partials/search' );
+			echo '</div>';
 		}
 		?>
 	</div>
