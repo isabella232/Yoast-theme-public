@@ -4,7 +4,7 @@ function yst_footer_modal_free_plugin_script() {
     <script>
         jQuery(document).ready(function ($) {
 
-            $('a.free-plugin-download-modal').click(function () {
+            $('a.free-plugin-download').click(function () {
                 $('#free-plugin-download-modal').modal({
                     closeText: '<i class="fa fa-times-circle"></i>'
                 });
@@ -29,7 +29,7 @@ function yst_footer_modal_free_plugin_script() {
 }
 
 wp_enqueue_script( 'jquery-modal' );
-add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 10 );
+add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 50 );
 
 ?>
 <div id="free-plugin-download-modal" style="display: none;">
