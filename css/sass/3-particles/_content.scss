@@ -1,6 +1,7 @@
 .content{
    &--full-width {
         width: 100%;
+        margin-right: 0;
        > * {
          max-width: 600px;
        }
@@ -8,6 +9,16 @@
          width: 100%;
          max-width: 100%;
          margin-right: 0;
+         tr {
+           td {
+             &:last-of-type {
+               @media only screen and (max-width: $page-width-small) {
+                 padding-top: 0;
+               }
+
+             }
+           }
+         }
        }
        > p,
        > ul{
