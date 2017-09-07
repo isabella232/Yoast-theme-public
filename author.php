@@ -36,8 +36,7 @@ namespace Yoast\YoastCom\Theme;
 				</div>
 			</div>
 		</section>
-
-		<?php get_template_part( 'html_includes/partials/announcement', array( 'class' => "announcement--pointer-top island fill--secondary", 'text' => "Get more visitors! Our SEO Website review will tell you what to improve. Order an SEO Website review &raquo;" ) ); ?>
+            <hr>
 		<?php } else { ?>
 		<section class="row">
 			<h1 class="color-home--secondary">Posts by <?php the_author(); ?> archive - page <?php echo esc_html( get_query_var( 'paged' ) ); ?></h1>
