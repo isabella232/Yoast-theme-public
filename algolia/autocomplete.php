@@ -178,7 +178,6 @@
 
 			function updateDropdownWidth() {
 				var inputWidth = $searchInput.outerWidth();
-				console.log('resize', inputWidth);
 				if ( inputWidth >= dropdownMinWidth ) {
 					$menu.css( 'width', inputWidth );
 				} else {
