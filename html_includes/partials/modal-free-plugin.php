@@ -4,7 +4,7 @@ function yst_footer_modal_free_plugin_script() {
     <script>
         jQuery(document).ready(function ($) {
 
-            $('a.free-plugin-download-modal').click(function () {
+            $('a.free-plugin-download').click(function () {
                 $('#free-plugin-download-modal').modal({
                     closeText: '<i class="fa fa-times-circle"></i>'
                 });
@@ -29,7 +29,7 @@ function yst_footer_modal_free_plugin_script() {
 }
 
 wp_enqueue_script( 'jquery-modal' );
-add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 10 );
+add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 50 );
 
 ?>
 <div id="free-plugin-download-modal" style="display: none;">
@@ -41,6 +41,7 @@ add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 10 );
         <div class="notification">
             <h2><?php _e( 'Your plugin is downloading right now.', 'yoastcom' ); ?></h2>
             <p><?php _e( 'You\'ll find it on your computer in a few seconds.', 'yoastcom' ); ?></p>
+            <p><?php printf( __( 'Need help? Check out our %sinstallation guide%s', 'yoastcom'), '<a href="https://kb.yoast.com/kb/installation-guide-for-wordpress-seo/" title="Yoast SEO Installation guide" target="_blank">', '</a>' ); ?></p>
         </div>
     </div>
     <div class="content content-usps">
@@ -63,7 +64,7 @@ add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 10 );
                     </div>
                     <div class="one-half">
                         <button type="submit" class="default"
-                                name="Yes, give me your free tips"><?php _e( 'Yes, give me your free tips', 'yoastcom' ); ?></button>
+                                name="Yes, give me your free tips"><?php _e( 'Yes, give me your SEO tips', 'yoastcom' ); ?></button>
                     </div>
                 </div>
             </fieldset>
