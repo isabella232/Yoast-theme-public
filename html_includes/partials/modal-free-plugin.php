@@ -41,6 +41,7 @@ add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 50 );
         <div class="notification">
             <h2><?php _e( 'Your plugin is downloading right now.', 'yoastcom' ); ?></h2>
             <p><?php _e( 'You\'ll find it on your computer in a few seconds.', 'yoastcom' ); ?></p>
+            <p><?php printf( __( 'Need help? Check out our %sinstallation guide%s', 'yoastcom'), '<a href="https://kb.yoast.com/kb/installation-guide-for-wordpress-seo/" title="Yoast SEO Installation guide" target="_blank">', '</a>' ); ?></p>
         </div>
     </div>
     <div class="content content-usps">
@@ -63,7 +64,7 @@ add_action( 'wp_footer', 'yst_footer_modal_free_plugin_script', 50 );
                     </div>
                     <div class="one-half">
                         <button type="submit" class="default"
-                                name="Yes, give me your free tips"><?php _e( 'Yes, give me your free tips', 'yoastcom' ); ?></button>
+                                name="Yes, give me your free tips"><?php _e( 'Yes, give me your SEO tips', 'yoastcom' ); ?></button>
                     </div>
                 </div>
             </fieldset>
