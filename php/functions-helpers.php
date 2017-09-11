@@ -7,7 +7,8 @@
 
 namespace Yoast\YoastCom\Theme;
 
-use Yoast\YoastCom\Api\EDD_Client;
+use Yoast\YoastCom\Core\WordPress\Integration\BC\Migration_Utils;
+use Yoast\YoastCom\RemoteCheckout\Remote_Product;
 
 /**
  * Like get_template_part() put lets you pass args to the template file
@@ -365,23 +366,25 @@ function get_product_icon( $product_id = null, $diapositive = false ) {
 		$icon_key = 'icon_diapositive';
 	}
 
+
 	// If we find the icon just return it.
 	if ( get_post_meta( $product_id, $icon_key, true ) ) {
 		$icon = get_post_meta( $product_id, $icon_key, true );
-	} // If there is a connected download_id, try to get it's icon.
-	elseif ( $download_id = get_post_meta( $product_id, 'download_id', true ) ) {
-		$icon = get_product_icon( $download_id, $diapositive );
-	} // If there is a connected premium product, try to get it's icon.
-	elseif ( $premium_id = get_post_meta( $product_id, 'connected_premium_plugin', true ) ) {
-		$icon = get_product_icon( $premium_id, $diapositive );
+
+		// If there is a connected WooCommerce product, try to get its icon.
+	} elseif ( $woo_product_id = get_post_meta( $product_id, 'product_id', true ) ) {
+		$icon = get_product_icon( $woo_product_id, $diapositive );
+
+		// If there is a connected download_id, try to get its icon.
+	} elseif ( $download_id = get_post_meta( $product_id, 'download_id', true ) ) {
+		$download_id = Migration_Utils::Products()->lookup( $download_id );
+		$icon        = get_product_icon( $download_id, $diapositive );
 	}
 
-	if ( '' === $icon && class_exists( 'Yoast\YoastCom\Api\EDD_Client', false ) ) {
-		$edd_client = new EDD_Client();
-
-		$plugin_information = $edd_client->get_product( $product_id );
-		if ( isset( $plugin_information['meta'], $plugin_information['meta'][ $icon_key ] ) ) {
-			$icon = $plugin_information['meta'][ $icon_key ][0];
+	if ( '' === $icon && class_exists( 'Yoast\YoastCom\RemoteCheckout\Remote_Product' ) ) {
+		$remote_product = new Remote_Product( $product_id );
+		if ( method_exists( $remote_product, 'get_icon_url' ) ) {
+			$icon = $remote_product->get_icon_url( $icon_key );
 		}
 	}
 

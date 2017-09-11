@@ -18,7 +18,7 @@ body .button, body button {
   position: relative;
   display: inline-block;
   width: auto;
-  padding: 0.345em 1em;
+  padding: 8px 1em 10px;
   font-size: 1.1em;
   border: 0;
   text-decoration: none;
@@ -28,7 +28,8 @@ body .button, body button {
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.8);
   overflow: hidden;
 
-  max-height: 1.43rem + 1.43rem;
+  max-height: inherit;
+  line-height: 1.5;
 
   margin-bottom: 1em;
   margin-right: 1em;
@@ -60,6 +61,20 @@ body .button, body button {
     text-shadow: none;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
     top: 1px;
+  }
+
+  &.disabled {
+    color: $color-white;
+    background: $color-grey-text;
+    text-shadow: $text-shadow;
+    box-shadow: none;
+    &:hover, &:focus, &:active {
+      color: $color-white;
+      background: $color-grey-text;
+      text-shadow: $text-shadow;
+      box-shadow: none;
+      top: 0;
+    }
   }
 
   &.dimmed {

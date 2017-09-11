@@ -61,17 +61,19 @@ class Promo_Widget extends Widget {
 
 		$instance = $this->set_defaults( $instance );
 
-		$args['before_widget'] = str_replace( 'width-seventh', $instance['width'], $args['before_widget'] );
+		$args['before_widget'] = str_replace( 'width-seventh', "", $args['before_widget'] );
 
 		echo $args['before_widget'];
 
 		?>
 		<h2><a href="<?php echo esc_url( $instance['link'] ); ?>"><?php echo esc_html( $instance['title'] ); ?> &raquo;</a></h2>
 
-			<p class="hide-on-mobile">
-				<?php echo esc_html( $instance['text'] ); ?>
-				<a href="<?php echo esc_url( $instance['link'] ); ?>" class="font-default"><?php echo esc_html( $instance['link_text'] ); ?> &raquo;</a>
-			</p>
+			<div class="hide-on-mobile">
+				<?php echo $instance['text']; ?>
+				<p>
+					<a href="<?php echo esc_url( $instance['link'] ); ?>" class="font-default"><?php echo esc_html( $instance['link_text'] ); ?> &raquo;</a>
+				</p>	
+			</div>
 		<?php
 
 		echo $args['after_widget'];

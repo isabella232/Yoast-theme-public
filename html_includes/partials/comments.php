@@ -1,6 +1,6 @@
 <?php
 
-use Yoast\YoastCom\Settings\Hide_Comments;
+use Yoast\YoastCom\Core\WordPress\Settings\Hide_Comments;
 
 if ( ! Hide_Comments::hide_comments() ) :
 	comment_form();

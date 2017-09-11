@@ -1,0 +1,133 @@
+.announcement-banner {
+	color: $color-white;
+	min-height: 2em;
+	text-align: center;
+	display: flex;
+
+	&.theme-new-years {
+		background-color: #27002d;
+	}
+
+	&.theme-yoast-con {
+		background-color: #99bed8;
+	}
+
+	&.theme-birthday {
+		background-color: #e6d5e9;
+	}
+
+	&.theme-starwars {
+		background-color: #000000;
+	}
+
+	&.theme-vierdaagse {
+		background-color: #0a9b0a;
+	}
+
+	&.theme-structured-data {
+		background-color: #fee471;
+	}
+
+	&.theme-wceu2017 {
+		background: rgba(24,14,219,1);
+		background: -moz-linear-gradient(left, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+		background: -webkit-gradient(left top, right top, color-stop(0%, rgba(24,14,219,1)), color-stop(100%, rgba(255,0,200,1)));
+		background: -webkit-linear-gradient(left, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+		background: -o-linear-gradient(left, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+		background: -ms-linear-gradient(left, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+		background: linear-gradient(to right, rgba(24,14,219,1) 0%, rgba(255,0,200,1) 100%);
+	}
+	&.theme-confetti {
+		background-color: #eaff14;
+	}
+
+	.row {
+		padding: 0.4em;
+	}
+
+	a, a:visited {
+		text-decoration: none;
+		color: $color-white;
+		&:hover, &:focus {
+			color: $color-white;
+			text-decoration: underline;
+		}
+	}
+
+	.fa {
+	padding: 5px;
+	}
+
+	.decoration {
+
+		background-size:contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		width: 250px;
+		height: 2.7em;
+
+		&.site-structure {
+			background-image: url(./../images/announcement-banners/banner-honeycomb-bg.png);
+		}
+
+		&.new-years {
+			background-image: url(./../images/announcement-banners/banner-fireworks-bg.png);
+		}
+
+		&.balloons {
+			background-image: url(./../images/announcement-banners/banner-balloons-bg.png);
+		}
+
+		&.owl {
+			background-image: url(./../images/announcement-banners/banner-owl.png);
+			background-size: 65px;
+			position: absolute;
+			width: 60px;
+			height: 40px;
+			//left: 0;
+		}
+
+		&.starwars {
+			background-image: url(./../images/announcement-banners/starwars.png);
+		}
+
+		&.vierdaagse {
+			background-image: url(./../images/announcement-banners/shoes.png);
+		}
+
+		&.structured-data {
+			background-image: url(./../images/announcement-banners/sliders.png);
+		}
+
+		&.wceu2017 {
+			background-image: url(./../images/announcement-banners/cloud.png);
+		}
+		&.confetti {
+			background-image: url(./../images/announcement-banners/confetti.png);
+		}
+
+		&.right {
+			@include vendor(transform, scaleX(-1));
+			right: 0;
+		}
+
+		@media only screen and (max-width: $page-width-medium) {
+			display: none;
+		}
+	}
+
+	.accent {
+		&.site-structure {
+			background-image: url(./../images/announcement-banners/banner-bee.png);
+			background-size: 65px;
+			position: absolute;
+			width: 65px;
+			height: 40px;
+			left: 100px;
+		}
+
+		@media only screen and (max-width: $page-width-full) {
+			display: none;
+		}
+	}
+}

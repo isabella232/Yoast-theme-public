@@ -39,6 +39,10 @@
       }
     }
   }
+  .searchbar form input:focus,
+  .searchbar form input.active{
+    border-color: $color-secondary
+  }
 
   .pagination {
     border-color: $color-secondary;
@@ -50,6 +54,10 @@
 
   .arrowed, .arrowed-medium, .arrowed-small {
     border-color: $color-primary;
+  }
+
+  &.announcement-banner{
+    background-color: $color-primary;
   }
 
   hr {
@@ -65,11 +73,6 @@
     .h2, .h3, .h4 {
       color: $color-secondary
     }
-  }
-
-  // newsletter block
-  .newsletter {
-    background-color: $color-secondary;
   }
 
   // bio block

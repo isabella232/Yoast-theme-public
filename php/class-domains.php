@@ -25,15 +25,18 @@ class Domains {
 				return $domain . '/ebooks/';
 
 			case 'ebook_content-seo':
-				return $this->get_url('ebooks_archive') . 'content-seo/';
+				return $this->get_url( 'ebooks_archive' ) . 'content-seo/';
 
 			case 'ebook_conversion-seo':
-				return $this->get_url('ebooks_archive') . 'ux-conversion-seo/';
+				return $this->get_url( 'ebooks_archive' ) . 'ux-conversion-seo/';
 
 			case 'academy_overview':
 				$domain = apply_filters( 'yoast:domain', 'yoast.com' );
 
 				return $domain . '/academy/';
+
+			case 'courses_archive':
+				return $this->get_url( 'academy_overview' ) . 'courses';
 
 			case 'plugin_overview':
 				$domain = apply_filters( 'yoast:domain', 'yoast.com' );
@@ -62,7 +65,7 @@ class Domains {
 
 		}
 
-		return null;
+		return $type;
 	}
 
 	/**
