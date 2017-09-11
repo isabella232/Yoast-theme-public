@@ -145,13 +145,9 @@ namespace Yoast\YoastCom\Theme;
 			</div>
 		<?php endif; ?>
 
-        <?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top arrow-bottom' ) ); ?>
+        <?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top' ) ); ?>
 
 	</main>
-
-	<div class="rowholder">
-		<?php get_template_part( 'html_includes/fullfooter' ); ?>
-	</div>
 
 </div>
 

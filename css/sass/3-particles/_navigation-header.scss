@@ -54,7 +54,8 @@
       width: 100px;
     }
 
-    span.fa {
+    span.fa,
+    label.fa{
       margin-right: 10px;
       font-size: 25px;
       float: left;
@@ -69,6 +70,9 @@
   .search-trigger {
     font-weight: 600;
     margin-top: 7px;
+    label.fa {
+      margin-right: 0;
+    }
   }
 }
 

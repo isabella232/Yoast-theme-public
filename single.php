@@ -57,13 +57,7 @@ get_header(); ?>
 		endif;
 		?>
 
-		<hr class="hr--no-pointer">
-
 	</main>
-
-	<div class="rowholder">
-		<?php get_template_part( 'html_includes/fullfooter' ); ?>
-	</div>
 
 </div>
 

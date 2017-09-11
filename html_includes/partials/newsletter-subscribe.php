@@ -13,7 +13,7 @@ if (strpos($template_args['class'], 'arrow-top') !== false) {
 
 <div class="announcement newsletter <?php echo esc_attr( $template_args['class'] ); ?>">
     <div class="row">
-        <h2><?php _e( 'Get more free tips like this!', 'yoastcom' ); ?></h2>
+        <h2><?php _e( 'Get free SEO tips!', 'yoastcom' ); ?></h2>
         <ul class="list--usp">
             <li><?php _e( 'Get weekly tips on how to optimize your website\'s SEO, usabillity and conversation', 'yoastcom '); ?></li>
             <li><?php _e( 'Be the first to know about new features and other cool (free) plugins.', 'yoastcom '); ?></li>

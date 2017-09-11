@@ -7,6 +7,7 @@
 
 namespace Yoast\YoastCom\Theme;
 
+use Yoast\YoastCom\Core\WordPress\Integration\BC\Migration_Utils;
 use Yoast\YoastCom\RemoteCheckout\Remote_Product;
 
 /**
@@ -365,15 +366,19 @@ function get_product_icon( $product_id = null, $diapositive = false ) {
 		$icon_key = 'icon_diapositive';
 	}
 
+
 	// If we find the icon just return it.
 	if ( get_post_meta( $product_id, $icon_key, true ) ) {
 		$icon = get_post_meta( $product_id, $icon_key, true );
-	} // If there is a connected download_id, try to get it's icon.
-	elseif ( $download_id = get_post_meta( $product_id, 'download_id', true ) ) {
-		$icon = get_product_icon( $download_id, $diapositive );
-	} // If there is a connected premium product, try to get it's icon.
-	elseif ( $premium_id = get_post_meta( $product_id, 'connected_premium_plugin', true ) ) {
-		$icon = get_product_icon( $premium_id, $diapositive );
+
+		// If there is a connected WooCommerce product, try to get its icon.
+	} elseif ( $woo_product_id = get_post_meta( $product_id, 'product_id', true ) ) {
+		$icon = get_product_icon( $woo_product_id, $diapositive );
+
+		// If there is a connected download_id, try to get its icon.
+	} elseif ( $download_id = get_post_meta( $product_id, 'download_id', true ) ) {
+		$download_id = Migration_Utils::Products()->lookup( $download_id );
+		$icon        = get_product_icon( $download_id, $diapositive );
 	}
 
 	if ( '' === $icon && class_exists( 'Yoast\YoastCom\RemoteCheckout\Remote_Product' ) ) {

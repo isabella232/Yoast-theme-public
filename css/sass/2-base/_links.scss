@@ -29,8 +29,7 @@
 .link--download {
 	display: block;
 	margin: 0 0 1em 0;
-	color: $color-grey-text !important;
-
+	color: $color-grey-text;
 	&::before {
 		font-family: $font-stack-icon;
 		content: '\f019';

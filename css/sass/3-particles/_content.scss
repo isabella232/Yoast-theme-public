@@ -1,0 +1,43 @@
+.content{
+   &--full-width {
+        width: 100%;
+        margin-right: 0;
+       > * {
+         max-width: 600px;
+       }
+       > table.compare-free-premium {
+         width: 100%;
+         max-width: 100%;
+         margin-right: 0;
+         tr {
+           td {
+             &:last-of-type {
+               @media only screen and (max-width: $page-width-small) {
+                 padding-top: 0;
+               }
+
+             }
+           }
+         }
+       }
+       > p,
+       > ul{
+         font-family: $font-stack-default;
+       }
+     img {
+       &.aligncenter {
+         margin-left: auto;
+         margin-right: auto;
+       }
+     }
+  }
+}
+.no-usps .content--full-width {
+  @media only screen and (min-width: $page-width-full) {
+    margin-top: -150px;
+  }
+  @media only screen and (min-width: $page-width-medium) and (max-width: $page-width-full) {
+    margin-top: -60px;
+  }
+
+}
