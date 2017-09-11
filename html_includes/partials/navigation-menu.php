@@ -8,7 +8,7 @@ if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 	$main_menu_items = $template_args['menu_data'];
 
 	echo '<div id="yoast-main-menu">';
-	echo '<nav role="navigation">';
+	echo '<nav role="navigation" aria-label="' . __( "Main menu", "yoastcom" ) .'">';
 
 	get_template_part( 'html_includes/partials/navigation-menu-list', array(
 		'menu_items' => $main_menu_items,
@@ -16,10 +16,6 @@ if ( class_exists( 'Yoast\YoastCom\Menu\Menu_Structure' ) ) {
 	) );
 
 	echo '<li class="controls">';
-
-//	echo '<a href="' . apply_filters( 'yoast:domain', 'my.yoast.com' ) . '">';
-//	echo '<span class="fa fa-user"></span>login';
-//	echo '</a>';
 
 	echo '<a class="cart" href="' . apply_filters( 'yoast:url', 'checkout' ) . '">';
 	echo '<img src="' . get_template_directory_uri() . '/images/cart.svg" alt="' . esc_attr( __( 'Shopping Cart', 'yoastcom' ) ) . '" />';
