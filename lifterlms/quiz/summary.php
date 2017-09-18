@@ -83,7 +83,7 @@ $quiz_data = get_user_meta( $user_id, 'llms_quiz_data', true );
 
 								<?php
 
-								if ( $options[ $question['answer'] ]['option_text'] !== $correct_option['option_text'] && $quiz->show_correct_answer() ) {
+								if ( ( ! isset( $options[ $question['answer'] ] ) || $options[ $question['answer'] ]['option_text'] !== $correct_option['option_text'] ) && $quiz->show_correct_answer() ) {
 									echo '<li><span class="llms-quiz-summary-label correct-answer">';
 									echo '<strong class="answer_correct">Correct answer:</strong><br>' . wp_kses_post( $correct_option['option_text'] );
 									echo '</span></li>';
