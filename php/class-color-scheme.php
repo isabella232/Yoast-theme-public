@@ -18,7 +18,6 @@ class Color_Scheme {
 	const PLUGINS = 'theme-plugins';
 	const COURSES = 'theme-courses';
 	const EBOOKS = 'theme-ebooks';
-	const HIRE_US = 'theme-hire-us';
 	const FAQ = 'theme-faq';
 
 	/**
@@ -57,7 +56,6 @@ class Color_Scheme {
 			Menu_Structure::PLUGINS_TYPE  => self::PLUGINS,
 			Menu_Structure::COURSES_TYPE  => self::COURSES,
 			Menu_Structure::EBOOKS_TYPE   => self::EBOOKS,
-			Menu_Structure::HIRE_US_TYPE  => self::HIRE_US,
 			Menu_Structure::FAQ_TYPE      => self::FAQ,
 		];
 

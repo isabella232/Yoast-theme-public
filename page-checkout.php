@@ -1,13 +1,10 @@
 <?php
-/**
- * Template Name: Full Width
- */
-
 namespace Yoast\YoastCom\Theme;
 ?>
 <?php get_header(); ?>
 
-<?php get_template_part( 'html_includes/siteheader', array( 'about-sub' => true ) ); ?>
+<?php get_template_part( 'html_includes/siteheader-home', array( 'home-sub' => true ) ); ?>
+
 <div class="site">
 
 	<div class="row">
@@ -15,20 +12,17 @@ namespace Yoast\YoastCom\Theme;
 	</div>
 
 	<main role="main">
+		<div class="row">
+			<h1>Checkout</h1>
 
-		<?php while ( have_posts() ) : the_post(); ?>
-			<article class="row">
-				<h1><?php the_title(); ?></h1>
+			<a href="<?php echo esc_url( url_shop_page() ); ?>" class="link--naked"><?php _e( '&laquo; Continue shopping', 'yoastcom' ); ?></a>
+		</div>
 
-				<?php the_content(); ?>
-
-			</article>
-		<?php endwhile; ?>
+		<?php the_content(); ?>
 
 		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top' ) ); ?>
 
 	</main>
-
 
 </div>
 

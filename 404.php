@@ -35,14 +35,9 @@ namespace Yoast\YoastCom\Theme;
 			<h2><?php _e( 'Recent posts', 'yoastcom' ); ?></h2>
 			<?php get_template_part( 'html_includes/partials/recent-articles' ); ?>
 		</section>
-
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe' ); ?>
-
+        <hr>
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top' ) ); ?>
 	</main>
-
-	<div class="rowholder">
-		<?php get_template_part( 'html_includes/fullfooter' ); ?>
-	</div>
 
 </div>
 

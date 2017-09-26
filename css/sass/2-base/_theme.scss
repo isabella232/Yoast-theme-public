@@ -39,6 +39,10 @@
       }
     }
   }
+  .searchbar form input:focus,
+  .searchbar form input.active{
+    border-color: $color-secondary
+  }
 
   .pagination {
     border-color: $color-secondary;
@@ -69,11 +73,6 @@
     .h2, .h3, .h4 {
       color: $color-secondary
     }
-  }
-
-  // newsletter block
-  .newsletter {
-    background-color: $color-secondary;
   }
 
   // bio block

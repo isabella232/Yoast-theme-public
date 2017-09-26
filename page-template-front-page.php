@@ -46,7 +46,7 @@ namespace Yoast\YoastCom\Theme;
 			</section>
 		</div>
 
-		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'theme-seo-blog announcement--pointer-top island' ) ); ?>
+		<?php get_template_part( 'html_includes/partials/newsletter-subscribe', array( 'class' => 'arrow-top arrow-bottom' ) ); ?>
 
 		<div class="rowholder">
 			<section class="row island iceberg theme-courses">
@@ -69,13 +69,7 @@ namespace Yoast\YoastCom\Theme;
 			</section>
 		</div>
 
-		<hr class="hr--no-pointer">
-
 	</main>
-
-	<div class="rowholder">
-		<?php get_template_part( 'html_includes/fullfooter' ); ?>
-		</div>
 
 </div>
 

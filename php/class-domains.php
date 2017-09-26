@@ -112,10 +112,10 @@ class Domains {
 	 */
 	private function get_development_domains() {
 		return [
-			'yoast.com'     => 'http://yoast.dev',
-			'kb.yoast.com'  => 'http://kb.yoast.dev',
-			'my.yoast.com'  => 'http://my.yoast.dev',
-			'yoast.academy' => 'http://yoast.academy.dev',
+			'yoast.com'     => defined( 'YOAST_COM_DEV_BASEURL' ) ? YOAST_COM_DEV_BASEURL : 'http://yoast.dev',
+			'kb.yoast.com'  => defined( 'KB_YOAST_DEV_BASEURL' ) ? KB_YOAST_DEV_BASEURL : 'http://kb.yoast.dev',
+			'my.yoast.com'  => defined( 'MY_YOAST_DEV_BASEURL' ) ? MY_YOAST_DEV_BASEURL : 'http://my.yoast.dev',
+			'yoast.academy' => defined( 'YOAST_ACADEMY_DEV_BASEURL' ) ? YOAST_ACADEMY_DEV_BASEURL : 'http://yoast.academy.dev',
 		];
 	}
 

@@ -40,10 +40,6 @@ namespace Yoast\YoastCom\Theme;
 
 	</main>
 
-	<div class="rowholder">
-		<?php get_template_part( 'html_includes/fullfooter' ); ?>
-	</div>
-
 </div>
 
 <?php get_footer(); ?>

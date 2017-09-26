@@ -100,3 +100,94 @@
 .prices-modal.modal {
   display: inline-block;
 }
+
+
+#free-plugin-download-modal {
+  display: block;
+  border-radius: 5px;
+  border: 1px solid $color-pink-dark;
+  max-width: 800px;
+  .content {
+    width: 100%;
+    &.content-downloading {
+      border-bottom: 1px solid $color-pink-dark;
+      > * {
+        width: auto;
+      }
+      .hourglass {
+        width: 70px;
+        i.fa-hourglass-end {
+          position: relative;
+          top: 18px;
+          left: 10px;
+          color: $color-grey-text;
+          font-size: 2.3em;
+          -webkit-animation: spin 3s linear infinite;
+          -moz-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+        }
+      }
+      .notification {
+        flex-grow: 1;
+        h2 {
+          font-weight: 600;
+          font-size: 1.5em;
+          color: $color-black;
+          margin: 0;
+        }
+        p {
+          padding-left: 0;
+          &:first-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    p,ul {
+      font-family: $font-stack-default;
+    }
+  }
+  > h3 {
+    background: $color-pink-dark;
+    color: $color-white;
+    padding: 10px 20px;
+    font-weight: 400;
+  }
+  a.close-modal {
+    top: 9px;
+    font-size: 1.1em;
+  }
+
+  .content-usps {
+    p {
+      margin-bottom: 1rem;
+      strong {
+        color: $color-pink-dark;
+      }
+    }
+    ul {
+      li {
+        margin-left: 1em;
+        strong {
+          color: $color-black;
+        }
+
+      }
+    }
+  }
+  form {
+    button {
+      background: rgb(174,50,116);
+      background: -moz-linear-gradient(top, rgba(174,50,116,1) 0%, rgba(144,20,86,1) 100%);
+      background: -webkit-linear-gradient(top, rgba(174,50,116,1) 0%,rgba(144,20,86,1) 100%);
+      background: linear-gradient(to bottom, rgba(174,50,116,1) 0%,rgba(144,20,86,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ae3274', endColorstr='#901456',GradientType=0 );
+    }
+    input {
+      border-color: darken($color-grey, 10%);
+    }
+  }
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }}
+}

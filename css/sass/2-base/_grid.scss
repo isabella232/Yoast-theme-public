@@ -242,15 +242,14 @@ $one-sevent-gutter: percentage(28 / 980);
 }
 
 
-// for newsletter
-@media only screen and (min-width: $page-width-small) and (max-width: $page-width-full){
-	.medium-one-third {
-		@include vendor(flex-basis, $one-third); 
-		max-width: $one-third;
-	}
-	.medium-two-third {
-		@include vendor(flex-basis, 65%);
-		max-width: 65%;
+
+// for newsletter, specific size duo issue with the current copy of the button
+@media only screen and (max-width: 935px){
+	.medium-one-third,
+	.medium-two-third,
+	.one-third,{
+		flex-basis: 100%;
+		max-width: 100%;
 	}
 }
 
