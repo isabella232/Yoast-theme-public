@@ -68,17 +68,14 @@ dd {
 .content {
 	ul.ordered-list {
 		counter-reset: rowNumber;
-
 		li {
 			counter-increment: rowNumber;
 			list-style: none;
 			margin-left: 0;
 			position: relative;
 			padding-left: 3rem;
-
 			&:before {
 				content: counter(rowNumber);
-
 				padding: 4px 9px;
 				line-height: 1.2em;
 				min-width: 1.2em;
