@@ -132,7 +132,9 @@ class Theme_Settings {
 				'vierdaagse'      => __( 'Vierdaagse', 'yoastcom' ),
 				'wceu2017'        => __( 'WC Europe 2017', 'yoastcom' ),
 				'confetti'        => __( 'Confetti', 'yoastcom' ),
-				'structured-data' => __( 'Structured Data', 'yoastcom' )
+				'structured-data' => __( 'Structured Data', 'yoastcom' ),
+				'yoast-con-sale'  => __( 'Yoast Con Sale', 'yoastcom' ),
+				'black-friday'    => __( 'Black Friday', 'yoastcom' ),
 			],
 			'default' => get_theme_option( 'banner_theme_class', 'child-settings' ),
 		) );
@@ -152,7 +154,8 @@ class Theme_Settings {
 				'vierdaagse'      => __( 'Vierdaagse', 'yoastcom' ),
 				'wceu2017'        => __( 'WC Europe 2017', 'yoastcom' ),
 				'confetti'        => __( 'Confetti', 'yoastcom' ),
-				'structured-data' => __( 'Structured Data', 'yoastcom' )
+				'structured-data' => __( 'Structured Data', 'yoastcom' ),
+				'yoast-con-sale'  => __( 'Yoast Con Sale', 'yoastcom' ),
 			],
 			'default' => get_theme_option( 'banner_theme_variation', 'child-settings' ),
 		) );
