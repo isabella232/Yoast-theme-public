@@ -41,6 +41,58 @@
 		background-color: #eaff14;
 	}
 
+	&.theme-yoast-con-sale {
+		background-color: #1143fc;
+	}
+
+	&.theme-black-friday {
+		background: #000000;
+		background: -moz-linear-gradient(-30deg, #000000 0%, #000000 50%, #000000 50%, #359f18 51%);
+		background: -webkit-linear-gradient(-30deg, #000000 0%, #000000 50%, #000000 50%, #359f18 51%);
+		background: linear-gradient(130deg, #000000 0%, #000000 50%, #000000 50%, #359f18 51%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#359f18', GradientType=1);
+		.row {
+			padding: 0;
+		}
+		.black-friday-container {
+			&:hover,
+			&:active,
+			&:visited {
+				text-decoration: none;
+			}
+			.sale {
+				position: relative;
+				max-width: 350px;
+				margin: 0 auto;
+				height: 100%;
+				text-transform: uppercase;
+				line-height: 43px;
+				@include vendor(transition, all 200ms ease-in-out);
+				&:hover {
+					max-width: 450px;
+				}
+				&:after {
+					width: 100%;
+					content: "";
+					background: #86169e;
+					@include vendor(transform, skew(-35deg));
+					height: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+					z-index:1;
+				}
+				span {
+					position: relative;
+					z-index: 2;
+					font-size: 25px;
+					height: 100%;
+					display: block;
+				}
+			}
+		}
+	}
+
 	.row {
 		padding: 0.4em;
 	}
@@ -104,6 +156,10 @@
 		}
 		&.confetti {
 			background-image: url(./../images/announcement-banners/confetti.png);
+		}
+
+		&.yoast-con-sale {
+			background-image: url(./../images/announcement-banners/yoast-con-sale.png);
 		}
 
 		&.right {
