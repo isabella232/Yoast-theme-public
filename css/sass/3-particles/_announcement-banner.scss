@@ -62,14 +62,15 @@
 			}
 			.sale {
 				position: relative;
-				max-width: 470px;
 				margin: 0 auto;
 				height: 100%;
 				text-transform: uppercase;
-				line-height: 43px;
+				line-height: 25px;
+				display: inline-block;
+				padding: 9px 20px;
 				@include vendor(transition, all 200ms ease-in-out);
 				&:hover {
-					max-width: 490px;
+					padding: 9px 30px;
 				}
 				&:after {
 					width: 100%;
@@ -90,10 +91,6 @@
 					display: block;
 				}
 				@media screen and (max-width: $page-width-small) {
-					max-width: 300px;
-					&:hover {
-						max-width: 300px;
-					}
 					span {
 						font-size: 16px;
 					}
