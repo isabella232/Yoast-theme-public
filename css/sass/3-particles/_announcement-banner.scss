@@ -67,10 +67,6 @@
 				text-transform: uppercase;
 				display: inline-block;
 				padding: 9px 20px;
-				@include vendor(transition, padding 200ms ease-in-out);
-				&:hover {
-					padding: 9px 30px;
-				}
 				&:after {
 					width: 100%;
 					content: "";
@@ -81,6 +77,12 @@
 					left: 0;
 					top: 0;
 					z-index:1;
+					@include vendor(transition, background 200ms ease-in-out);
+				}
+				&:hover {
+					&:after {
+						background: darken(#86169e, 5%);
+					}
 				}
 				span {
 					position: relative;
